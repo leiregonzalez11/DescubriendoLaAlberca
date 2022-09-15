@@ -18,7 +18,7 @@
         android:fontFamily="cursive"
         android:text="¡Bienvenidos a La Alberca!"
         android:textAlignment="center"
-        android:textColor="#090000"
+        android:textColor="@color/black"
         android:textSize="35sp" />
 
     <com.google.android.material.card.MaterialCardView
@@ -52,6 +52,5 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="24dp" />
-
 
 </LinearLayout>

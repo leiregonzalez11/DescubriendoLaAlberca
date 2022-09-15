@@ -7,10 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
-public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample.SliderViewHolder>{
+public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHolder>{
     private int images[];
     //private String text[];
-    public SliderAdapterExample(int[] images) {
+    public SliderAdapter(int[] images) {
         this.images = images;
         //this.text = text;
     }
