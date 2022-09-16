@@ -28,9 +28,8 @@
             android:autoSizeTextType="uniform"
             android:fontFamily="@font/aref_ruqaa"
             android:gravity="center"
-            android:text="¡Bienvenidos a La Alberca!"
+            android:text="@string/tituloprincipal"
             android:textAlignment="gravity"
-            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
@@ -63,17 +62,31 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textoprincipal1"
             android:layout_width="369dp"
             android:layout_height="187dp"
-            android:layout_marginTop="-15dp"
-            android:autoSizeMaxTextSize="20sp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="-20dp"
+            android:autoSizeMaxTextSize="23sp"
             android:autoSizeMinTextSize="15sp"
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:fontFamily="@font/aref_ruqaa"
             android:gravity='center'
             android:text="@string/textoprincipal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoprincipal2"
+            android:layout_width="369dp"
+            android:layout_height="187dp"
+            android:autoSizeMaxTextSize="23sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/aref_ruqaa"
+            android:gravity='center'
+            android:text="@string/textoprincipal2"
             android:textStyle="bold" />
 
     </LinearLayout>
