@@ -5,10 +5,12 @@
 
     <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
         la Sierra de Francia, se encuentra La Alberca, un pueblo para soñar, como
-        le gusta decir al poeta y catedrático Jose María Requejo.</string>
+        le gusta decir al poeta y catedrático Don José María Requejo.</string>
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         este precioso pueblo destaca por su entramado urbano, conservando como pocos la
         arquitectura típica de la \n Sierra de Francia.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
