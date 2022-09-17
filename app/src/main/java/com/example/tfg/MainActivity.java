@@ -2,6 +2,7 @@ package com.example.tfg;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -20,11 +21,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private SliderAdapter adapter;
     private SliderView sliderView;
     BottomNavigationView bottomNavigationView;
+    String tour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle datos = getIntent().getExtras();
+        tour = datos.getString("tour");
 
         //SLIDER
         sliderView=findViewById(R.id.imageSlider);
@@ -39,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.navigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_inicio);
+
+        if (tour.equals("tour")){
+            DialogFragment tourSiFragment = new tourSiFragment();
+            tourSiFragment.setCancelable(false);
+            tourSiFragment.show(getSupportFragmentManager(),"toursi_dialog");
+        }
 
     }
 

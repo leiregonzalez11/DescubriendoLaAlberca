@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-public class tourFragment extends DialogFragment{
+public class tourSiFragment extends DialogFragment{
 
     @NonNull
     @Override
@@ -28,24 +28,13 @@ public class tourFragment extends DialogFragment{
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.fragment_tour, null));
+        builder.setView(inflater.inflate(R.layout.fragment_tour_si, null));
 
-        builder.setNegativeButton(R.string.button_notour, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.button_tourSi, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int id) {
                 dismiss();
-                inicio.putExtra("tour", "notour");
-                startActivity(inicio);
-
-
-            }
-        });
-
-        builder.setPositiveButton(R.string.button_tour, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int id) {
-                dismiss();
-                inicio.putExtra("tour", "tour");
+                inicio.putExtra("tour", "siguiente");
                 startActivity(inicio);
             }
         });
