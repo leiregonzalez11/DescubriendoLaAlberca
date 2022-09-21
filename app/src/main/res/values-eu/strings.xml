@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">La Alberca</string>
+
+    <string name="tituloprincipal">Ongi etorri La Albercara!</string>
+
+    <string name="textoprincipal">Salamancako hegoaldean, Frantziako mendilerroaren iparraldeko isurialdean,
+        La Alberca dago, amets egiteko herria, Don Jose Maria Requejo poeta
+        eta katedradunari esatea gustatzen zaion bezala.</string>
+
+    <string name="textoprincipal2">Multzo Historiko Artistiko izendatu zuten 1940an, eta herri eder hau bere
+        hiri-egituragatik nabarmentzen da, Sierra de Franciako arkitektura tipikoa gutxik bezala kontserbatuz. </string>
+
+    <string name="dialog_tour_titulo">Ongi etorri La Albercara!</string>
+    <string name="dialog_tour"> Berria zara hemendik? Dohain tour bar egin nahi duzu aplikaziotik?</string>
+    <string name="button_tour">Bai!</string>
+    <string name="button_notour">Ez, eskerrik asko</string>
+    <string name="button_tourSi">Hurrengoa</string>
+    <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
+    <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo el resto de secciones de la aplicación.</string>
+    <string name="seleccione_un_idioma">Idioma bat aukeratu:</string>
+
+</resources>

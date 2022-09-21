@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.tour;
 
 import androidx.fragment.app.DialogFragment;
 import android.app.Dialog;
@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+
+import com.example.tfg.MainActivity;
+import com.example.tfg.R;
 
 public class tourSiFragment extends DialogFragment{
 

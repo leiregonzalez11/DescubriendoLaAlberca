@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tfg">
     <!-- PERMISOS -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,6 +18,12 @@
         android:theme="@style/Theme.Trabajofingrado"
         tools:targetApi="31">
         <activity
+            android:name=".ajustesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".categoriasActivity"
+            android:exported="false" />
+        <activity
             android:name=".MapsActivity"
             android:exported="false" />
         <activity
@@ -29,6 +35,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

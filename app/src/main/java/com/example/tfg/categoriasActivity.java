@@ -9,19 +9,19 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MapsActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class categoriasActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_categorias);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewMaps);
+        bottomNavigationView = findViewById(R.id.navigationViewCategorias);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_mapa);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
     }
 
     @Override
@@ -35,12 +35,12 @@ public class MapsActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
 
             case R.id.navigation_mapa:
+                Intent mapa = new Intent(this, MapsActivity.class);
+                startActivity(mapa);
+                finish();
                 return true;
 
             case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
-                startActivity(categorias);
-                finish();
                 return true;
 
             case R.id.navigation_ajustes:

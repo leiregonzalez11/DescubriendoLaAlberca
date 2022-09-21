@@ -3,9 +3,13 @@
 
     <item
         android:id="@+id/navigation_inicio"
-        android:fontFamily="@font/aref_ruqaa"
         android:icon="@drawable/home_foreground"
         android:title="Inicio" />
+
+    <item
+        android:id="@+id/navigation_categoria"
+        android:title="Categorías"
+        android:icon="@drawable/list_foreground"/>
 
     <item
         android:id="@+id/navigation_mapa"

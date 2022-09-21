@@ -11,6 +11,9 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/drawable/maps_foreground.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/drawable/person_background.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/drawable/splash.xml" value="0.1" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout-v26/activity_categorias.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_ajustes.xml" value="0.1" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_categorias.xml" value="0.176" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_maps.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_principal.xml" value="0.1265625" />
@@ -21,6 +24,8 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_maps.xml" value="0.23404255319148937" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tour.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tour_si.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/grid_item.xml" value="0.2" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/gris_item.xml" value="0.176" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/slider_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/slider_layout.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/menu/navigation.xml" value="0.264" />

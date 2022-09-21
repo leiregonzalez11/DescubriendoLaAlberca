@@ -10,8 +10,7 @@
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         este precioso pueblo destaca por su entramado urbano, conservando como pocos la
         arquitectura típica de la \n Sierra de Francia.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
     <string name="button_tour">¡Si!</string>
@@ -19,5 +18,6 @@
     <string name="button_tourSi">Siguiente</string>
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
     <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo el resto de secciones de la aplicación.</string>
+    <string name="seleccione_un_idioma">Seleccione un idioma:</string>
 
 </resources>

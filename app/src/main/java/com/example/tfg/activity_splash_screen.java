@@ -35,14 +35,19 @@ public class activity_splash_screen extends AppCompatActivity {
         // to send a message with a delayed time.
 
 
-        new Handler().postDelayed(() -> { DialogFragment tourFragment = new tourFragment();
-            tourFragment.setCancelable(false);
-            tourFragment.show(getSupportFragmentManager(),"tour_dialog");
+        new Handler().postDelayed(() -> {
 
-                    /*Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();*/
-                },3500); // 3000 is the delayed time in milliseconds.
+                /* TOUR */
+                /*DialogFragment tourFragment = new tourFragment();
+                tourFragment.setCancelable(false);
+                tourFragment.show(getSupportFragmentManager(),"tour_dialog"); */
+
+                /* INTERFAZ PRINCIPAL*/
+                Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+            },3500); // 3000 is the delayed time in milliseconds.
 
     }
 

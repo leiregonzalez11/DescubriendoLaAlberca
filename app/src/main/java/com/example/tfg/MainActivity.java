@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bundle datos = getIntent().getExtras();
-        tour = datos.getString("tour");
+        /*Bundle datos = getIntent().getExtras();
+        tour = datos.getString("tour");*/
 
         //SLIDER
         sliderView=findViewById(R.id.imageSlider);
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_inicio);
 
-        if (tour.equals("tour")){
+        /*if (tour.equals("tour")){
             DialogFragment tourSiFragment = new tourSiFragment();
             tourSiFragment.setCancelable(false);
             tourSiFragment.show(getSupportFragmentManager(),"toursi_dialog");
-        }
+        }*/
 
     }
 
@@ -61,9 +61,21 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
 
             case R.id.navigation_mapa:
+                Intent mapa = new Intent(this, MapsActivity.class);
+                startActivity(mapa);
+                finish();
+                return true;
+
+            case R.id.navigation_categoria:
+                Intent categorias = new Intent(this, categoriasActivity.class);
+                startActivity(categorias);
+                finish();
                 return true;
 
             case R.id.navigation_ajustes:
+                Intent intent = new Intent(this, ajustesActivity.class);
+                startActivity(intent);
+                finish();
                 return true;
 
             default:
