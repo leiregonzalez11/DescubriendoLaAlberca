@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.mapa;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.tfg.inicio.MainActivity;
+import com.example.tfg.R;
+import com.example.tfg.ajustes.ajustesActivity;
+import com.example.tfg.categorias.categoriasActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MapsActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {

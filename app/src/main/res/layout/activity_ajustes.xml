@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustesActivity">
+    tools:context=".ajustes.ajustesActivity">
 
     <ScrollView
         android:id="@+id/scrollviewAjustes"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/bienvenidatext"
+                android:id="@+id/textoajustes"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="15dp"
@@ -46,7 +46,7 @@
                 android:gravity="left"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bienvenidatext">
+                app:layout_constraintTop_toBottomOf="@+id/textoajustes">
 
                 <RadioButton
                     android:id="@+id/radio_castellano"

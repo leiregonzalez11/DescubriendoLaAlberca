@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
+import com.example.tfg.inicio.MainActivity;
+import com.example.tfg.R;
+import com.example.tfg.categorias.categoriasActivity;
+import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Locale;
@@ -30,7 +35,16 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
 
-        radioCas.setChecked(true);
+        TextView texto = findViewById(R.id.textoajustes);
+        System.out.println("TEXTOOOO " + texto.getText().toString());
+
+        if (texto.getText().toString().contains("idioma:")){
+            radioCas.setChecked(true);
+        } else if (texto.getText().toString().contains("aukeratu:")){
+            radioEus.setChecked(true);
+        }else if (texto.getText().toString().contains("language:")){
+            radioIng.setChecked(true);
+        }
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
@@ -77,13 +91,9 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
                 language ="es";
                 changeLanguage();
                 finish();
-                radioCas.setChecked(true);
-                radioEus.setChecked(false);
-                radioIng.setChecked(false);
                 startActivity(getIntent());
 
             }
-
         });
 
         radioEus.setOnClickListener(new View.OnClickListener() {
@@ -92,13 +102,8 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
                 language="eu";
                 changeLanguage();
                 finish();
-                radioCas.setChecked(false);
-                radioEus.setChecked(true);
-                radioIng.setChecked(false);
                 startActivity(getIntent());
-
             }
-
         });
 
         radioIng.setOnClickListener(new View.OnClickListener() {
@@ -107,9 +112,6 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
                 language="en";
                 changeLanguage();
                 finish();
-                radioCas.setChecked(false);
-                radioEus.setChecked(false);
-                radioIng.setChecked(true);
                 startActivity(getIntent());
             }
 

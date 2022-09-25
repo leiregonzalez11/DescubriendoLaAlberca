@@ -1,7 +1,6 @@
 package com.example.tfg;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.tfg.inicio.MainActivity;
 
 public class activity_splash_screen extends AppCompatActivity {
 

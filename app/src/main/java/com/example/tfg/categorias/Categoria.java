@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.categorias;
 
 public class Categoria {
 

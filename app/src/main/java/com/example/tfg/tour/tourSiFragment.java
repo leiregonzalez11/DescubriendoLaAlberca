@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.tfg.MainActivity;
+import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 
 public class tourSiFragment extends DialogFragment{

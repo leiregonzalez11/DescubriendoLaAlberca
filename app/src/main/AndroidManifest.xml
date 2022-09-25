@@ -18,16 +18,16 @@
         android:theme="@style/Theme.Trabajofingrado"
         tools:targetApi="31">
         <activity
-            android:name=".ajustesActivity"
+            android:name=".ajustes.ajustesActivity"
             android:exported="false" />
         <activity
-            android:name=".categoriasActivity"
+            android:name=".categorias.categoriasActivity"
             android:exported="false" />
         <activity
-            android:name=".MapsActivity"
+            android:name=".mapa.MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".inicio.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity_splash_screen"

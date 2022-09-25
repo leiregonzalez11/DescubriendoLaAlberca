@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            tools:context=".categoriasActivity">
+            tools:context=".categorias.categoriasActivity">
 
             <Button
                 android:id="@+id/botontradiciones"
