@@ -19,5 +19,17 @@
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
     <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo el resto de secciones de la aplicación.</string>
     <string name="seleccione_un_idioma">Seleccione un idioma:</string>
+    <string name="tradiciones">Tradiciones</string>
+    <string name="arquitectura">Arquitectura</string>
+    <string name="monumentos">Monumentos</string>
+    <string name="gastronomia">Gastronomia</string>
+    <string name="alojamiento">Alojamiento</string>
+    <string name="arte">Arte</string>
+    <string name="rutas">Rutas</string>
+    <string name="otros">Otros</string>
+    <string name="inicio">Inicio</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="mapa">Mapa</string>
+    <string name="categorias">Categorías</string>
 
 </resources>
