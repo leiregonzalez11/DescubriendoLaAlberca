@@ -4,12 +4,12 @@
     <string name="tituloprincipal">¡Bienvenidos a La Alberca!</string>
 
     <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
-        la Sierra de Francia, se encuentra La Alberca, un pueblo para soñar, como
+        la Sierra de Francia, se encuentra La Alberca: "un pueblo para soñar", como
         le gusta decir al poeta y catedrático Don José María Requejo.</string>
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         este precioso pueblo destaca por su entramado urbano, conservando como pocos la
-        arquitectura típica de la \n Sierra de Francia.</string>
+        arquitectura típica de la Sierra de Francia.</string>
 
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -31,5 +31,9 @@
     <string name="ajustes">Ajustes</string>
     <string name="mapa">Mapa</string>
     <string name="categorias">Categorías</string>
+    <string name="fiestas">Fiestas</string>
+    <string name="castellano">Castellano</string>
+    <string name="euskera">Euskera</string>
+    <string name="ingles">Ingles</string>
 
 </resources>

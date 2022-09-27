@@ -36,6 +36,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/botonarquitectura"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/laalberca4"
                 tools:targetApi="o" />
 
             <Button
@@ -88,7 +89,7 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/aref_ruqaa"
-                android:text="@string/gastronomia"
+                android:text="@string/fiestas"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botonmonumentos"
@@ -107,7 +108,7 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/aref_ruqaa"
-                android:text="@string/alojamiento"
+                android:text="@string/gastronomia"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/botonarte"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +127,7 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/aref_ruqaa"
-                android:text="@string/arte"
+                android:text="@string/alojamiento"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botonalojamientos"
