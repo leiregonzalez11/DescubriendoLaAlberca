@@ -27,6 +27,9 @@
             android:name=".mapa.MapsActivity"
             android:exported="false" />
         <activity
+            android:name=".categorias.arquitectura.ArquitecturaActivity"
+            android:exported="false" />
+        <activity
             android:name=".inicio.MainActivity"
             android:exported="false" />
         <activity
