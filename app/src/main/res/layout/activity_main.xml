@@ -55,7 +55,7 @@
                     app:sliderAnimationDuration="600"
                     app:sliderAutoCycleDirection="right"
                     app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
+                    app:sliderIndicatorAnimationDuration="600"
                     app:sliderIndicatorGravity="center_horizontal|bottom"
                     app:sliderIndicatorMargin="15dp"
                     app:sliderIndicatorOrientation="horizontal"

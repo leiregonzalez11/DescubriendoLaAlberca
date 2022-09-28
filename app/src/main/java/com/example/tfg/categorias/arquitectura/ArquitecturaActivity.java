@@ -31,7 +31,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements BottomNav
         setContentView(R.layout.activity_arquitectura);
 
         //SLIDER
-        sliderView=findViewById(R.id.imageSlider);
+        sliderView=findViewById(R.id.imageSliderArqui);
         images= new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         adapter=new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);

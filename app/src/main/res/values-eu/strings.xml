@@ -35,5 +35,7 @@
     <string name="castellano">Gaztelania</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Ingelesa</string>
+    <string name="artesania">Artisautza</string>
+    <string name="historia">Historia</string>
 
 </resources>

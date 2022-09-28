@@ -35,5 +35,7 @@
     <string name="castellano">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="ingles">English</string>
+    <string name="artesania">Handicrafts</string>
+    <string name="historia">History</string>
 
 </resources>

@@ -100,6 +100,10 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
         switch (btn.getId()){
 
+            //case R.id.botonhistoria:
+
+            //case R.id.botonartesania:
+
             //case R.id.botontradiciones:
 
             case R.id.botonarquitectura:
