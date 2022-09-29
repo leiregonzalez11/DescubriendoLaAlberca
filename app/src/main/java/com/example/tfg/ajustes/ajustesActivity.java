@@ -3,12 +3,12 @@ package com.example.tfg.ajustes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -17,10 +17,11 @@ import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.Locale;
 
-public class ajustesActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
     RadioButton radioCas, radioEus, radioIng;
@@ -48,12 +49,13 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 
         comprobarIdioma();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -84,37 +86,26 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
 
     private void comprobarIdioma(){
 
-        //intent.setClassName("com.android.settings", "com.android.settings.LanguageSettings");
-        radioCas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                language ="es";
-                changeLanguage();
-                finish();
-                startActivity(getIntent());
+        radioCas.setOnClickListener(view -> {
+            language ="es";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
 
-            }
         });
 
-        radioEus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                language="eu";
-                changeLanguage();
-                finish();
-                startActivity(getIntent());
-            }
+        radioEus.setOnClickListener(view -> {
+            language="eu";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
         });
 
-        radioIng.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                language="en";
-                changeLanguage();
-                finish();
-                startActivity(getIntent());
-            }
-
+        radioIng.setOnClickListener(view -> {
+            language="en";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
         });
 
     }
@@ -132,7 +123,7 @@ public class ajustesActivity extends AppCompatActivity implements BottomNavigati
 
     }
 
-    protected void onSaveInstanceState(Bundle savedInstanceState) {
+    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putString("language",language );
     }
