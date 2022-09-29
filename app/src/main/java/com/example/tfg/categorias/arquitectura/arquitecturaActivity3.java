@@ -21,10 +21,10 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class arquitecturaActivity2 extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, OnClickListener{
+public class arquitecturaActivity3 extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, OnClickListener {
 
-    private  int images[];
-    private Button atrasBtn, siguienteBtn;
+    private int images[];
+    private Button atrasBtn, finBtn;
     private SliderAdapter adapter;
     private SliderView sliderView;
     BottomNavigationView bottomNavigationView;
@@ -32,12 +32,12 @@ public class arquitecturaActivity2 extends AppCompatActivity implements BottomNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura2);
+        setContentView(R.layout.activity_arquitectura3);
 
         //SLIDER
-        sliderView=findViewById(R.id.imageSliderArqui2);
-        images= new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        adapter=new SliderAdapter(images);
+        sliderView = findViewById(R.id.imageSliderArqui3);
+        images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
+        adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
@@ -45,14 +45,14 @@ public class arquitecturaActivity2 extends AppCompatActivity implements BottomNa
 
         //BOTON SIGUIENTE y ATRAS
 
-        atrasBtn = findViewById(R.id.arquiatras);
+        atrasBtn = findViewById(R.id.arqui3atras);
         atrasBtn.setOnClickListener(this);
 
-        siguienteBtn = findViewById(R.id.arquisiguiente2);
-        siguienteBtn.setOnClickListener(this);
+        finBtn = findViewById(R.id.arquifin);
+        finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui3);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
@@ -61,7 +61,7 @@ public class arquitecturaActivity2 extends AppCompatActivity implements BottomNa
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.navigation_inicio:
                 Intent inicio = new Intent(this, MainActivity.class);
                 startActivity(inicio);
@@ -97,16 +97,18 @@ public class arquitecturaActivity2 extends AppCompatActivity implements BottomNa
 
         Button btn = (Button) view;
 
-        switch (btn.getId()){
+        switch (btn.getId()) {
 
-            case R.id.arquiatras:
-                Intent atras = new Intent(this, ArquitecturaActivity.class);
+            case R.id.arqui3atras:
+                Intent atras = new Intent(this, arquitecturaActivity2.class);
                 startActivity(atras);
+                finish();
                 break;
 
-            case R.id.arquisiguiente2:
-                Intent inicio = new Intent(this, arquitecturaActivity3.class);
-                startActivity(inicio);
+            case R.id.arquifin:
+                Intent cat = new Intent(this, categoriasActivity.class);
+                startActivity(cat);
+                finish();
                 break;
         }
     }
