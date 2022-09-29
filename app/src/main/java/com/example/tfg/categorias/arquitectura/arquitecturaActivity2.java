@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.tfg.R;
@@ -20,10 +21,10 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class ArquitecturaActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class arquitecturaActivity2 extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, OnClickListener{
 
     private  int images[];
-    private Button sigBtn;
+    private Button atrasBtn, siguienteBtn;
     private SliderAdapter adapter;
     private SliderView sliderView;
     BottomNavigationView bottomNavigationView;
@@ -31,10 +32,10 @@ public class ArquitecturaActivity extends AppCompatActivity implements BottomNav
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura);
+        setContentView(R.layout.activity_arquitectura2);
 
         //SLIDER
-        sliderView=findViewById(R.id.imageSliderArqui);
+        sliderView=findViewById(R.id.imageSliderArqui2);
         images= new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         adapter=new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -42,13 +43,16 @@ public class ArquitecturaActivity extends AppCompatActivity implements BottomNav
         sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
         sliderView.startAutoCycle();
 
-        //BOTON SIGUIENTE
+        //BOTON SIGUIENTE y ATRAS
 
-        sigBtn = findViewById(R.id.arquisiguiente);
-        sigBtn.setOnClickListener(this);
+        atrasBtn = findViewById(R.id.arquiatras);
+        atrasBtn.setOnClickListener(this);
+
+        siguienteBtn = findViewById(R.id.arquisiguiente2);
+        siguienteBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
@@ -95,8 +99,13 @@ public class ArquitecturaActivity extends AppCompatActivity implements BottomNav
 
         switch (btn.getId()){
 
-            case R.id.arquisiguiente:
-                Intent inicio = new Intent(this, arquitecturaActivity2.class);
+            /*case R.id.arquisiguiente:
+                Intent inicio = new Intent(this, arquitecturaActivity3.class);
+                startActivity(inicio);
+                finish();*/
+
+            case R.id.arquiatras:
+                Intent inicio = new Intent(this, ArquitecturaActivity.class);
                 startActivity(inicio);
                 finish();
 

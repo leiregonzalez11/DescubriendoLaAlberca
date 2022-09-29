@@ -14,7 +14,7 @@
     <string name="dialog_tour"> Berria zara hemendik? Dohain tour bar egin nahi duzu aplikaziotik?</string>
     <string name="button_tour">Bai!</string>
     <string name="button_notour">Ez, eskerrik asko</string>
-    <string name="button_tourSi">Hurrengoa</string>
+    <string name="siguiente">Hurrengoa</string>
     <string name="dialog_toursi_titulo">Hasiera pantaila</string>
     <string name="dialog_tourSi">" Hau da aplikazioaren hasierako pantaila. Bertatik aplikazioaren gainerako atal
         guztietara sartu ahal izango zara. "</string>

@@ -15,7 +15,7 @@
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
     <string name="button_tour">¡Si!</string>
     <string name="button_notour">No, gracias</string>
-    <string name="button_tourSi">Siguiente</string>
+    <string name="siguiente">Siguiente</string>
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
     <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo el resto de secciones de la aplicación.</string>
     <string name="seleccione_un_idioma">Seleccione un idioma:</string>

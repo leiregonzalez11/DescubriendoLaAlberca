@@ -14,7 +14,7 @@
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app?</string>
     <string name="button_tour">Yes!</string>
     <string name="button_notour">No, thanks</string>
-    <string name="button_tourSi">Next</string>
+    <string name="siguiente">Next</string>
     <string name="dialog_toursi_titulo">Home screen</string>
     <string name="dialog_tourSi">This is the home screen of the application. You will be
         able to access all the other sections of the application from here.</string>

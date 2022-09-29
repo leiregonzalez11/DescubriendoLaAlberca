@@ -33,7 +33,7 @@ public class tourSiFragment extends DialogFragment{
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(inflater.inflate(R.layout.fragment_tour_si, null));
 
-        builder.setPositiveButton(R.string.button_tourSi, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.siguiente, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int id) {
                 dismiss();
