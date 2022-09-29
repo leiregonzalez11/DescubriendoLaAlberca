@@ -1,5 +1,6 @@
 package com.example.tfg.inicio;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,14 @@ import com.example.tfg.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHolder>{
-    private int images[];
+
+    private final int[] images;
 
     public SliderAdapter(int[] images) {
         this.images = images;
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public SliderViewHolder onCreateViewHolder(ViewGroup parent) {
         View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_item_layout,null);
@@ -31,8 +34,8 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
     public int getCount() {
         return images.length;
     }
-    public class SliderViewHolder extends ViewHolder {
-        private  ImageView imageView;
+    public static class SliderViewHolder extends ViewHolder {
+        private final ImageView imageView;
         public SliderViewHolder(View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.image);

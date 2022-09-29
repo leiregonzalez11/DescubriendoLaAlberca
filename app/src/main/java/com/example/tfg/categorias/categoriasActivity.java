@@ -3,6 +3,7 @@ package com.example.tfg.categorias;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,8 +17,9 @@ import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
-public class categoriasActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class categoriasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     protected Button btnhistoria, btnArte, btnTrad, btnArqui, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
@@ -31,7 +33,7 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewCategorias);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
     }
 
@@ -69,6 +71,7 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -100,6 +103,7 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
@@ -123,7 +127,7 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
                 finish();
                 break;
 
-            //case R.id.botonmonumentos:
+            // case R.id.botonmonumentos:
 
             //case R.id.botonfiestas:
 
