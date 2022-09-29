@@ -52,7 +52,7 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alatsi"
                 android:gravity="left"
-                android:text="2. Aspecto Interior"
+                android:text="1. Aspecto Exterior"
                 />
 
             <com.google.android.material.card.MaterialCardView

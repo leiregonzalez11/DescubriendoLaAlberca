@@ -52,7 +52,7 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alatsi"
                 android:gravity="left"
-                android:text="2. Aspecto Interior"
+                android:text="3. Inscripciones"
                 />
 
             <com.google.android.material.card.MaterialCardView
@@ -62,7 +62,7 @@
                 app:cardCornerRadius="15dp">
 
                 <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui2"
+                    android:id="@+id/imageSliderArqui3"
                     android:layout_width="match_parent"
                     android:layout_height="232dp"
                     app:sliderAnimationDuration="600"
@@ -82,14 +82,14 @@
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
-                android:id="@+id/layoutArqui22"
+                android:id="@+id/layoutArqui32"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arquiatras"
+                    android:id="@+id/arqui3atras"
                     android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -99,11 +99,11 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/arquisiguiente2"
-                    android:layout_width="115dp"
+                    android:id="@+id/arquifin"
+                    android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/siguiente"
+                    android:text="Volver a Categorias"
                     android:layout_gravity="center">
 
                 </Button>
@@ -115,7 +115,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui2"
+        android:id="@+id/navigationViewArqui3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"

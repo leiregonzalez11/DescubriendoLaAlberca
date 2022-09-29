@@ -23,17 +23,17 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class arquitecturaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
+public class arquitecturaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura2);
+        setContentView(R.layout.activity_arquitectura3);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui2);
+        SliderView sliderView = findViewById(R.id.imageSliderArqui3);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -43,14 +43,14 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arquiatras);
+        Button atrasBtn = findViewById(R.id.arqui3atras);
         atrasBtn.setOnClickListener(this);
 
-        Button siguienteBtn = findViewById(R.id.arquisiguiente2);
-        siguienteBtn.setOnClickListener(this);
+        Button finBtn = findViewById(R.id.arquifin);
+        finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui3);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -60,7 +60,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.navigation_inicio:
                 Intent inicio = new Intent(this, MainActivity.class);
                 startActivity(inicio);
@@ -97,16 +97,18 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         Button btn = (Button) view;
 
-        switch (btn.getId()){
+        switch (btn.getId()) {
 
-            case R.id.arquiatras:
-                Intent atras = new Intent(this, arquitecturaActivity2.class);
+            case R.id.arqui3atras:
+                Intent atras = new Intent(this, arquitecturaActivity3.class);
                 startActivity(atras);
+                finish();
                 break;
 
-            case R.id.arquisiguiente2:
-                Intent inicio = new Intent(this, arquitecturaActivity4.class);
-                startActivity(inicio);
+            case R.id.arquifin:
+                Intent cat = new Intent(this, categoriasActivity.class);
+                startActivity(cat);
+                finish();
                 break;
         }
     }
