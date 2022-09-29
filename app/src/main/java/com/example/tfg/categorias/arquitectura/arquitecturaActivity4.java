@@ -30,10 +30,10 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura3);
+        setContentView(R.layout.activity_arquitectura4);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui3);
+        SliderView sliderView = findViewById(R.id.imageSliderArqui4);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -43,14 +43,14 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arqui3atras);
+        Button atrasBtn = findViewById(R.id.arqui4atras);
         atrasBtn.setOnClickListener(this);
 
         Button finBtn = findViewById(R.id.arquifin);
         finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui3);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui4);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -99,7 +99,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
         switch (btn.getId()) {
 
-            case R.id.arqui3atras:
+            case R.id.arqui4atras:
                 Intent atras = new Intent(this, arquitecturaActivity3.class);
                 startActivity(atras);
                 finish();

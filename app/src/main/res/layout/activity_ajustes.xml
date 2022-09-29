@@ -10,14 +10,16 @@
         android:id="@+id/scrollviewAjustes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarSize="10dp"
+        android:layout_marginBottom="80dp"
+        android:scrollbarSize="8dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="-35dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin">
 
             <TextView
                 android:id="@+id/textoajustes"
@@ -29,7 +31,7 @@
                 android:autoSizeMinTextSize="23sp"
                 android:autoSizeStepGranularity="2sp"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="@font/alatsi"
                 android:gravity="left"
                 android:text="@string/seleccione_un_idioma"
                 android:textAlignment="gravity"
@@ -60,7 +62,7 @@
                     android:autoSizeMinTextSize="15sp"
                     android:autoSizeStepGranularity="2sp"
                     android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/alatsi"
                     android:text="@string/castellano"
                     tools:targetApi="o" />
 
@@ -74,7 +76,7 @@
                     android:autoSizeMinTextSize="15sp"
                     android:autoSizeStepGranularity="2sp"
                     android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/alatsi"
                     android:text="@string/euskera"
                     tools:targetApi="o" />
 
@@ -88,7 +90,7 @@
                     android:autoSizeMinTextSize="15sp"
                     android:autoSizeStepGranularity="2sp"
                     android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/alatsi"
                     android:text="@string/ingles"
                     app:layout_constraintEnd_toStartOf="@+id/radio_castellano"
                     app:layout_constraintStart_toStartOf="parent"

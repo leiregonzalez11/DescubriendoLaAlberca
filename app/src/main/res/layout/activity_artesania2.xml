@@ -23,7 +23,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.arquitecturaActivity4">
+            tools:context=".categorias.artesania.artesaniaActivity2">
 
             <TextView
                 android:id="@+id/arquitext"
@@ -37,25 +37,9 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
-                android:text="@string/la_casa_albercana"
+                android:text="@string/el_bordado_serrano"
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/exttext"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:autoSizeMaxTextSize="20sp"
-                android:autoSizeMinTextSize="10sp"
-                android:autoSizeStepGranularity="2sp"
-                android:autoSizeTextType="uniform"
-                android:fontFamily="@font/alatsi"
-                android:gravity="left"
-                android:text="@string/_3_inscripciones"
-                />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -64,7 +48,7 @@
                 app:cardCornerRadius="15dp">
 
                 <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui4"
+                    android:id="@+id/imageSliderArte2"
                     android:layout_width="match_parent"
                     android:layout_height="232dp"
                     app:sliderAnimationDuration="600"
@@ -84,7 +68,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
-                android:id="@+id/layoutArqui32"
+                android:id="@+id/layoutArte22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/fab_margin"
@@ -92,8 +76,8 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arqui4atras"
-                    android:layout_width="120dp"
+                    android:id="@+id/arteatras2"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
@@ -103,11 +87,11 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/arquifin"
-                    android:layout_width="140dp"
+                    android:id="@+id/artesiguiente2"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/volver_a_categorias"
+                    android:text="@string/siguiente"
                     android:fontFamily="@font/alatsi"
                     android:layout_gravity="center">
 
@@ -120,7 +104,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui4"
+        android:id="@+id/navigationViewArte2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"

@@ -32,7 +32,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         setContentView(R.layout.activity_arquitectura);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui);
+        SliderView sliderView = findViewById(R.id.imageSliderArqui1);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -42,11 +42,11 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         //BOTON SIGUIENTE
 
-        Button sigBtn = findViewById(R.id.arquisiguiente);
+        Button sigBtn = findViewById(R.id.arquisiguiente1);
         sigBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui1);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -93,7 +93,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         Button btn = (Button) view;
 
-        if (btn.getId() == R.id.arquisiguiente) {
+        if (btn.getId() == R.id.arquisiguiente1) {
             Intent inicio = new Intent(this, arquitecturaActivity2.class);
             startActivity(inicio);
             finish();

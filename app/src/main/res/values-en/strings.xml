@@ -37,5 +37,17 @@
     <string name="ingles">English</string>
     <string name="artesania">Handicrafts</string>
     <string name="historia">History</string>
+    <string name="la_casa_albercana">LA ALBERCA HOUSES</string>
+    <string name="_3_inscripciones">3. Legends</string>
+    <string name="volver_a_categorias">Back to Categories</string>
+    <string name="atras">Back</string>
+    <string name="arquitecturamayus">ARCHITECTURE</string>
+    <string name="_2_aspecto_interior">2. Interior appearance</string>
+    <string name="_1_aspecto_exterior">1. Exterior appearance</string>
+    <string name="artesaniamayus">HANDICRAFTS</string>
+    <string name="el_bordado_serrano">THE SERRANO EMBROIDERY</string>
+    <string name="traje_serrano">THE SERRANO SUIT</string>
+    <string name="traje_mujer">1. Women\'s suit</string>
+    <string name="traje_hombre">2. Men\'s suit</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.tfg.categorias.arquitectura;
+package com.example.tfg.categorias.artesania;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.Button;
 
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
+import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
+import com.example.tfg.categorias.arquitectura.arquitecturaActivity3;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.inicio.SliderAdapter;
@@ -23,17 +25,17 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class arquitecturaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
+public class artesaniaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura2);
+        setContentView(R.layout.activity_artesania2);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui2);
+        SliderView sliderView = findViewById(R.id.imageSliderArte2);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -43,14 +45,14 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arquiatras2);
+        Button atrasBtn = findViewById(R.id.arteatras2);
         atrasBtn.setOnClickListener(this);
 
-        Button siguienteBtn = findViewById(R.id.arquisiguiente2);
+        Button siguienteBtn = findViewById(R.id.artesiguiente2);
         siguienteBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
+        bottomNavigationView = findViewById(R.id.navigationViewArte2);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -99,13 +101,13 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
 
         switch (btn.getId()){
 
-            case R.id.arquiatras2:
-                Intent atras = new Intent(this, ArquitecturaActivity.class);
+            case R.id.arteatras2:
+                Intent atras = new Intent(this, artesaniaActivity.class);
                 startActivity(atras);
                 break;
 
-            case R.id.arquisiguiente2:
-                Intent inicio = new Intent(this, arquitecturaActivity3.class);
+            case R.id.artesiguiente2:
+                Intent inicio = new Intent(this, artesaniaActivity3.class);
                 startActivity(inicio);
                 break;
         }

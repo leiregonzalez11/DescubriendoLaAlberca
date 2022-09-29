@@ -10,7 +10,8 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarSize="10dp"
+        android:layout_marginBottom="80dp"
+        android:scrollbarSize="8dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-75dp">
@@ -19,9 +20,10 @@
             android:id="@+id/layoutArqui21"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.arquitecturaActivity2">
+            tools:context=".categorias.arquitectura.arquitecturaActivity3">
 
             <TextView
                 android:id="@+id/arquitext"
@@ -35,7 +37,7 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
-                android:text="LA CASA ALBERCANA"
+                android:text="@string/la_casa_albercana"
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
 
@@ -52,7 +54,7 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alatsi"
                 android:gravity="left"
-                android:text="2. Aspecto Interior"
+                android:text="@string/_2_aspecto_interior"
                 />
 
             <com.google.android.material.card.MaterialCardView
@@ -62,7 +64,7 @@
                 app:cardCornerRadius="15dp">
 
                 <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui2"
+                    android:id="@+id/imageSliderArqui3"
                     android:layout_width="match_parent"
                     android:layout_height="232dp"
                     app:sliderAnimationDuration="600"
@@ -85,24 +87,27 @@
                 android:id="@+id/layoutArqui22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="@dimen/fab_margin"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arquiatras"
+                    android:id="@+id/arquiatras3"
                     android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
-                    android:text="Atrás">
+                    android:fontFamily="@font/alatsi"
+                    android:text="@string/atras">
 
                 </Button>
 
                 <Button
-                    android:id="@+id/arquisiguiente2"
+                    android:id="@+id/arquisiguiente3"
                     android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/alatsi"
                     android:text="@string/siguiente"
                     android:layout_gravity="center">
 
@@ -115,7 +120,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui2"
+        android:id="@+id/navigationViewArqui3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"

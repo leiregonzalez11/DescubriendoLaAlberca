@@ -4,12 +4,12 @@
     <string name="tituloprincipal">¡Bienvenidos a La Alberca!</string>
 
     <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
-        la Sierra de Francia, se encuentra La Alberca: "un pueblo para soñar", como
-        le gusta decir al poeta y catedrático Don José María Requejo.</string>
+        la Sierra de Francia, se encuentra La Alberca. Como
+        le gusta decir al poeta y catedrático Don José María Requejo, un pueblo para soñar.</string>
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         este precioso pueblo destaca por su entramado urbano, conservando como pocos la
-        arquitectura típica de la Sierra de Francia.</string>
+        arquitectura típica de la \n Sierra de Francia.</string>
 
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -37,5 +37,17 @@
     <string name="ingles">Ingles</string>
     <string name="artesania">Artesanía</string>
     <string name="historia">Historia</string>
+    <string name="la_casa_albercana">LA CASA ALBERCANA</string>
+    <string name="_3_inscripciones">3. Inscripciones</string>
+    <string name="volver_a_categorias">Volver a Categorias</string>
+    <string name="atras">Atrás</string>
+    <string name="arquitecturamayus">ARQUITECTURA</string>
+    <string name="_2_aspecto_interior">2. Aspecto Interior</string>
+    <string name="_1_aspecto_exterior">1. Aspecto Exterior</string>
+    <string name="artesaniamayus">ARTESANÍA</string>
+    <string name="el_bordado_serrano">EL BORDADO SERRANO</string>
+    <string name="traje_serrano">EL TRAJE SERRANO</string>
+    <string name="traje_mujer">1. El traje de mujer</string>
+    <string name="traje_hombre">2. El traje de hombre</string>
 
 </resources>

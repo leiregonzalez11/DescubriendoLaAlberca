@@ -37,5 +37,17 @@
     <string name="ingles">Ingelesa</string>
     <string name="artesania">Artisautza</string>
     <string name="historia">Historia</string>
+    <string name="la_casa_albercana">LA ALBERCAKO ETXEAK</string>
+    <string name="_3_inscripciones">3. Inskripzioak</string>
+    <string name="volver_a_categorias">Kategorietara itzuli</string>
+    <string name="atras">Atzera</string>
+    <string name="arquitecturamayus">ARKITEKTURA</string>
+    <string name="_2_aspecto_interior">"2.  Barruko itxura "</string>
+    <string name="_1_aspecto_exterior">1. Kanpoko itxura</string>
+    <string name="artesaniamayus">ARTISAUTZA</string>
+    <string name="el_bordado_serrano">SERRANO BRODATUA</string>
+    <string name="traje_serrano">SOINEKO SERRANOA</string>
+    <string name="traje_hombre">2. Gizonezko soinekoa</string>
+    <string name="traje_mujer">1. Emakumeko soinekoa</string>
 
 </resources>

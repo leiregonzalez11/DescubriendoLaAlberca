@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
+import com.example.tfg.categorias.artesania.artesaniaActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -19,7 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class categoriasActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    protected View btnTrad, btnArqui, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
+    protected Button btnhistoria, btnArte, btnTrad, btnArqui, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +37,34 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
     private void setBtnListeners() {
 
-        //btnTrad = (Button) findViewById(R.id.botontradiciones);
+        //btnhistoria = findViewById(R.id.botonhistoria);
+        //btnhistoria.setOnClickListener(this);
+
+        btnArte = findViewById(R.id.botonartesania);
+        btnArte.setOnClickListener(this);
+
+        //btnTrad = findViewById(R.id.botontradiciones);
         //btnTrad.setOnClickListener(this);
 
-        btnArqui = (Button) findViewById(R.id.botonarquitectura);
+        btnArqui = findViewById(R.id.botonarquitectura);
         btnArqui.setOnClickListener(this);
 
-        /*btnMonu = (Button) findViewById(R.id.botonmonumentos);
+        /*btnMonu = findViewById(R.id.botonmonumentos);
         btnMonu.setOnClickListener(this);
 
-        btnFiesta = (Button) findViewById(R.id.botonfiestas);
+        btnFiesta = findViewById(R.id.botonfiestas);
         btnFiesta.setOnClickListener(this);
 
-        btnGastro = (Button) findViewById(R.id.botongastronomia);
+        btnGastro = findViewById(R.id.botongastronomia);
         btnGastro.setOnClickListener(this);
 
-        btnAloj = (Button) findViewById(R.id.botonalojamientos);
+        btnAloj = findViewById(R.id.botonalojamientos);
         btnAloj.setOnClickListener(this);
 
-        btnRutas = (Button) findViewById(R.id.botonruta);
+        btnRutas = findViewById(R.id.botonruta);
         btnRutas.setOnClickListener(this);
 
-        btnOtros = (Button) findViewById(R.id.botonotros);
+        btnOtros = findViewById(R.id.botonotros);
         btnOtros.setOnClickListener(this);*/
 
     }
@@ -102,14 +109,19 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
             //case R.id.botonhistoria:
 
-            //case R.id.botonartesania:
+            case R.id.botonartesania:
+                Intent artesania = new Intent(this, artesaniaActivity.class);
+                startActivity(artesania);
+                finish();
+                break;
 
             //case R.id.botontradiciones:
 
             case R.id.botonarquitectura:
-                Intent inicio = new Intent(this, ArquitecturaActivity.class);
-                startActivity(inicio);
+                Intent arquitectura = new Intent(this, ArquitecturaActivity.class);
+                startActivity(arquitectura);
                 finish();
+                break;
 
             //case R.id.botonmonumentos:
 
@@ -121,7 +133,7 @@ public class categoriasActivity extends AppCompatActivity implements BottomNavig
 
             //case R.id.botonruta:
 
-            //ase R.id.botonotros:
+            //case R.id.botonotros:
 
         }
     }

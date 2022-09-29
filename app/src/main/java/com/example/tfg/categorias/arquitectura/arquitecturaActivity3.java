@@ -30,10 +30,10 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura2);
+        setContentView(R.layout.activity_arquitectura3);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui2);
+        SliderView sliderView = findViewById(R.id.imageSliderArqui3);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -43,14 +43,14 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arquiatras);
+        Button atrasBtn = findViewById(R.id.arquiatras3);
         atrasBtn.setOnClickListener(this);
 
-        Button siguienteBtn = findViewById(R.id.arquisiguiente2);
+        Button siguienteBtn = findViewById(R.id.arquisiguiente3);
         siguienteBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui3);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -99,12 +99,12 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         switch (btn.getId()){
 
-            case R.id.arquiatras:
+            case R.id.arquiatras3:
                 Intent atras = new Intent(this, arquitecturaActivity2.class);
                 startActivity(atras);
                 break;
 
-            case R.id.arquisiguiente2:
+            case R.id.arquisiguiente3:
                 Intent inicio = new Intent(this, arquitecturaActivity4.class);
                 startActivity(inicio);
                 break;
