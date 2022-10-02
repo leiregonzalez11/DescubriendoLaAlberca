@@ -46,11 +46,11 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
     public void onMapReady(GoogleMap googleMap) {
         GoogleMap mMap = googleMap;
         // Añadimos un marcador a la ubicación elegida y hacemos zoom
-        LatLng location = new LatLng(43.263609, -2.950702);
-        mMap.addMarker(new MarkerOptions()
+        LatLng location = new LatLng(40.48890, -6.11050);
+        /*mMap.addMarker(new MarkerOptions()
                 .position(location)
-                .title("QuizDAS S.L"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.0f));
+                .title("La Alberca"));*/
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.3f));
         //Tipo de mapa: Hibrido
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
