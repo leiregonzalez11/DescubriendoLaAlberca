@@ -12,10 +12,16 @@ import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MapsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class MapsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnMapReadyCallback {
 
     public BottomNavigationView bottomNavigationView;
 
@@ -24,11 +30,32 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        //MAPA
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapView);
+        mapFragment.getMapAsync((OnMapReadyCallback) this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewMaps);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_mapa);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        GoogleMap mMap = googleMap;
+        // Añadimos un marcador a la ubicación elegida y hacemos zoom
+        LatLng location = new LatLng(43.263609, -2.950702);
+        mMap.addMarker(new MarkerOptions()
+                .position(location)
+                .title("QuizDAS S.L"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.0f));
+        //Tipo de mapa: Hibrido
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+    }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
