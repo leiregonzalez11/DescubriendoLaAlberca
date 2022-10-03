@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
@@ -26,11 +28,29 @@ import com.smarteist.autoimageslider.SliderView;
 public class arquitecturaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
+    String idioma, categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura2);
+
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
+        categoria = extra.getString("categoria");
+
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz2", categoria);
+
+        TextView text1 = findViewById(R.id.arqui21);
+        text1.setText(datos[0]);
+
+        TextView text2 = findViewById(R.id.arqui22);
+        text2.setText(datos[1]);
+
+        TextView text3 = findViewById(R.id.arqui23);
+        text3.setText(datos[2]);
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArqui2);

@@ -37,7 +37,6 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         radioIng = findViewById(R.id.radio_ingles);
 
         TextView texto = findViewById(R.id.textoajustes);
-        System.out.println("TEXTOOOO " + texto.getText().toString());
 
         if (texto.getText().toString().contains("idioma:")){
             radioCas.setChecked(true);

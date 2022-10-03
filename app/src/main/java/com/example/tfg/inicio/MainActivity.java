@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
@@ -17,6 +20,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -30,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         /*Bundle datos = getIntent().getExtras();
         tour = datos.getString("tour");*/
+
+        /*Cargamos la BD...*/
+        GestorDB dbHelper =  new GestorDB(getApplicationContext());
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSlider);
@@ -89,4 +97,5 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     public void onBackPressed(){
         super.onBackPressed();
     }
+
 }

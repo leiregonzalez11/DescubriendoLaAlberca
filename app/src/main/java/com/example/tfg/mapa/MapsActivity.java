@@ -30,11 +30,21 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        //MAPA
+        //RUTA PREDETERMINADA
 
+        /*Bundle datos = getIntent().getExtras();
+        tour = datos.getString("ruta si");*/
+
+        /* if
+
+
+        */
+
+        //MAPA
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapView);
-        mapFragment.getMapAsync((OnMapReadyCallback) this);
+        mapFragment.getMapAsync(this);
+
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewMaps);

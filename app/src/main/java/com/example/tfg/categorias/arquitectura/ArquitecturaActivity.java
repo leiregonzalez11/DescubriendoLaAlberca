@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
@@ -22,14 +24,39 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.Locale;
+
 public class ArquitecturaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
+    String idioma = "";
+    String categoria = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura);
+
+        TextView texto = findViewById(R.id.arquititulo);
+        categoria = "arquitectura";
+
+        if (texto.getText().toString().toLowerCase().contains("arqui")){
+            idioma = "es";
+        } else if (texto.getText().toString().toLowerCase().contains("arki")){
+            idioma = "eu";
+        }else if (texto.getText().toString().toLowerCase().contains("archi")){
+            idioma="en";
+        }
+
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria);
+
+        TextView interfaz1 = findViewById(R.id.arqui11);
+        interfaz1.setText(datos[0]);
+
+        TextView interfaz2 = findViewById(R.id.arqui12);
+        interfaz2.setText(datos[1]);
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArqui1);
@@ -41,7 +68,6 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE
-
         Button sigBtn = findViewById(R.id.arquisiguiente1);
         sigBtn.setOnClickListener(this);
 
@@ -94,8 +120,10 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         Button btn = (Button) view;
 
         if (btn.getId() == R.id.arquisiguiente1) {
-            Intent inicio = new Intent(this, arquitecturaActivity2.class);
-            startActivity(inicio);
+            Intent arqui2 = new Intent(this, arquitecturaActivity2.class);
+            arqui2.putExtra("idioma", idioma);
+            arqui2.putExtra("categoria", categoria);
+            startActivity(arqui2);
             finish();
         }
     }

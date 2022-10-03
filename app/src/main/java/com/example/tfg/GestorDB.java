@@ -1,65 +1,49 @@
 package com.example.tfg;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class GestorDB extends SQLiteOpenHelper{
+public class GestorDB extends SQLiteOpenHelper {
 
-    @SuppressLint("StaticFieldLeak")
-    private static GestorDB sInstance;
-    @SuppressLint("StaticFieldLeak")
-    private static Context context;
-    private static final String DATABASE_NAME = "laAlbercaDB";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DB_NAME = "laAlbercaDB";
+    private static final int DB_VERSION = 1;
+    private Context context;
 
-
-    /**
-     * Constructor should be private to prevent direct instantiation.
-     */
-    private GestorDB(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        GestorDB.context = context;
-
-    }
-
-    public static synchronized GestorDB getInstance(Context context) {
-
-        // Use the application context, which will ensure that you
-        // don't accidentally leak an Activity's context.
-        if (sInstance == null) {
-            sInstance = new GestorDB(context.getApplicationContext());
-        }
-        return sInstance;
+    public GestorDB(@Nullable Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+        this.context = context;
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLitedatabase){
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+        if (sqLiteDatabase != null){
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
+        }
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
         try {
-            crearTablas(sqLitedatabase);
-            insertarDatos(sqLitedatabase);
+            cargarDatosArquitectura(sqLiteDatabase);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("NO CARGAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 
     }
 
-    public void crearTablas(SQLiteDatabase sqLiteDatabase) throws IOException{
+    private void cargarDatosArquitectura(SQLiteDatabase sqLiteDatabase) throws IOException {
 
         //Carga de datos desde un archivo .txt usando res/raw
-        InputStream file = context.getResources().openRawResource(R.raw.tablas);
+        InputStream file = context.getResources().openRawResource(R.raw.arquitectura);
         BufferedReader buffer = new BufferedReader((new InputStreamReader(file)));
         boolean seguir = true;
 
@@ -68,58 +52,34 @@ public class GestorDB extends SQLiteOpenHelper{
                 String query = buffer.readLine();
                 Log.d("Query: ", query);
                 sqLiteDatabase.execSQL(query);
-            }catch (Exception e){
+            } catch (Exception e){
                 seguir = false;
                 buffer.close();
             }
         }
-
     }
 
-    public void insertarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {
+    public String[] obtenerDatosInterfazSencilla(String idioma, String interfaz, String tabla){
 
-        //Carga de datos desde un archivo .txt usando res/raw
-        InputStream file = context.getResources().openRawResource(R.raw.datos);
-        BufferedReader buffer = new BufferedReader((new InputStreamReader(file)));
-        boolean seguir = true;
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        while (seguir){
-            try{
-                String query = buffer.readLine();
-                Log.d("Query: ", query);
-                sqLiteDatabase.execSQL(query);
-            }catch (Exception e){
-                seguir = false;
-                buffer.close();
-            }
-        }
-
-    }
-
-    public String [] obtenerdatosCategoria (String categoria){
-
-        SQLiteDatabase sqLiteDatabase = sInstance.getWritableDatabase();
-
-        //Obtenemos el número de filas de la categoria seleccionada
-        int numfilas = 0;
-        Cursor c1 = sqLiteDatabase.rawQuery("SELECT COUNT(id) FROM \'" + categoria + "\' );", null);
-        while (c1.moveToNext()) {
-            numfilas = c1.getInt(0);
-        }
-        c1.close();
-
-        String name = "";
+        String descrip = "";
         int i = 0;
-        String [] nombresCat = new String[numfilas];
+        String [] descr = new String[4];
 
-        Cursor c2 = sqLiteDatabase.rawQuery("SELECT nombre FROM  \'" + categoria + "\' ORDER BY nombre ASC;", null);
-        while (c2.moveToNext()){
-            name = c2.getString(0);
-            nombresCat[i] = name;
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE \'" + interfaz + "%\' AND idioma = \'" + idioma + "\';", null);
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr[i] = descrip;
             i++;
         }
 
-        return nombresCat;
+        return descr;
+
     }
 
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+
+    }
 }

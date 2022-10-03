@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862231089914",
+    "project_id": "laalberca-tfg",
+    "storage_bucket": "laalberca-tfg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862231089914:android:aaca3e91c42cb4e7832f43",
+        "android_client_info": {
+          "package_name": "com.example.tfg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862231089914-5o1rsh4nmf13e83nes3p76r1pe6gah0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAznGoV4H1oDnF8UKS5nbUwHz-xM-LyLbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862231089914-5o1rsh4nmf13e83nes3p76r1pe6gah0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
