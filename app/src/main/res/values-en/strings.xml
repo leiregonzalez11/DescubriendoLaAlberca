@@ -35,6 +35,10 @@
     <string name="castellano">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="ingles">English</string>
+    <string name="catalan">Catalan</string>
+    <string name="gallego">Galician</string>
+    <string name="frances">French</string>
+    <string name="aleman">Germany</string>
     <string name="artesania">Handicrafts</string>
     <string name="historia">History</string>
     <string name="la_casa_albercana">LA ALBERCA HOUSES</string>

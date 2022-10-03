@@ -35,6 +35,10 @@
     <string name="castellano">Gaztelania</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Ingelesa</string>
+    <string name="catalan">Katalana</string>
+    <string name="gallego">Galegoa</string>
+    <string name="frances">Frantsesa</string>
+    <string name="aleman">Alemana</string>
     <string name="artesania">Artisautza</string>
     <string name="historia">Historia</string>
     <string name="la_casa_albercana">LA ALBERCAKO ETXEAK</string>

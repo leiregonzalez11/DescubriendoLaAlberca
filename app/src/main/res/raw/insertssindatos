@@ -1,0 +1,8 @@
+INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz11','en', '');
+INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz12','en', '');
+INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz21','en', '');
+INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz22','en', '');
+INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz23','en', '');
+INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz11','en','');
+INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz12','en','');
+INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz13','en','');

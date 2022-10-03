@@ -24,7 +24,7 @@ import java.util.Locale;
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    RadioButton radioCas, radioEus, radioIng;
+    RadioButton radioCas, radioEus, radioIng, radioCat, radioFr, radioDe;
     String language;
 
     @Override
@@ -35,15 +35,24 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         radioCas = findViewById(R.id.radio_castellano);
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
+        radioCat = findViewById(R.id.radio_catalan);
+        radioFr = findViewById(R.id.radio_frances);
+        radioDe = findViewById(R.id.radio_aleman);
 
         TextView texto = findViewById(R.id.textoajustes);
 
-        if (texto.getText().toString().contains("idioma:")){
+        if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
         }else if (texto.getText().toString().contains("language:")){
             radioIng.setChecked(true);
+        }else if (texto.getText().toString().contains("Seleccioneu")){
+            radioCat.setChecked(true);
+        }else if (texto.getText().toString().contains("Wählen")){
+            radioDe.setChecked(true);
+        }else if (texto.getText().toString().contains("Sélectionnez")){
+            radioFr.setChecked(true);
         }
 
         //MENU
@@ -102,6 +111,27 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         radioIng.setOnClickListener(view -> {
             language="en";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
+        });
+
+        radioCat.setOnClickListener(view -> {
+            language="ca";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
+        });
+
+        radioDe.setOnClickListener(view -> {
+            language="de";
+            changeLanguage();
+            finish();
+            startActivity(getIntent());
+        });
+
+        radioFr.setOnClickListener(view -> {
+            language="fr";
             changeLanguage();
             finish();
             startActivity(getIntent());

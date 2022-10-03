@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">La Alberca</string>
+
+    <string name="tituloprincipal">Benvinguts a La Alberca!</string>
+
+    <string name="textoprincipal">Al sud de Salamanca, en la vessant nord dela Sierra de Francia, es troba La Alberca,
+        un poble per a somiar, com li agrada dir al poeta i catedràtic Don José María Requejo.</string>
+
+    <string name="textoprincipal2">Declarat Conjunt Històric Artístic en 1940,
+        aquest preciós poble destaca pel seu entramat urbà, conservant com pocs l\'arquitectura
+        típica de la Sierra de Francia.</string>
+
+    <string name="dialog_tour_titulo">Benvinguts a La Alberca!</string>
+    <string name="dialog_tour"> Ets nou? Vols fer un tour per l\'aplicació?</string>
+    <string name="button_tour">Si!</string>
+    <string name="button_notour">No, gràcies</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
+    <string name="dialog_tourSi">Aquesta és la pantalla inicial de l\'aplicació. Des d\'ella podreu accedir a tota la resta de seccions de l\'aplicació.</string>
+    <string name="seleccione_un_idioma">Seleccioneu un idioma:</string>
+    <string name="tradiciones">Tradicions</string>
+    <string name="arquitectura">Arquitectura</string>
+    <string name="monumentos">Monuments</string>
+    <string name="gastronomia">Gastronomia</string>
+    <string name="alojamiento">Allotjament</string>
+    <string name="arte">Art</string>
+    <string name="rutas">Rutes</string>
+    <string name="otros">Altres</string>
+    <string name="inicio">Inici</string>
+    <string name="ajustes">Ajustaments</string>
+    <string name="mapa">Mapa</string>
+    <string name="categorias">Categories</string>
+    <string name="fiestas">Fiestas</string>
+    <string name="castellano">Castellà</string>
+    <string name="euskera">Euskera</string>
+    <string name="ingles">Anglès</string>
+    <string name="catalan">Català</string>
+    <string name="gallego">Gallec</string>
+    <string name="frances">Francès</string>
+    <string name="aleman">Alemany</string>
+    <string name="artesania">Artesania</string>
+    <string name="historia">Història</string>
+    <string name="la_casa_albercana">LA CASA ALBERCANA</string>
+    <string name="_3_inscripciones">3. Inscripcions</string>
+    <string name="volver_a_categorias">Tornar a Categories</string>
+    <string name="atras">Enrere</string>
+    <string name="arquitecturamayus">L\'ARQUITECTURA</string>
+    <string name="_2_aspecto_interior">2. Aspecte Interior</string>
+    <string name="_1_aspecto_exterior">1. Aspecte Exterior</string>
+    <string name="artesaniamayus">ARTESANIA</string>
+    <string name="el_bordado_serrano">EL BORDAT SERRANO</string>
+    <string name="traje_serrano">EL VESTIT SERRANO</string>
+    <string name="traje_mujer">1. Els vestits de dona</string>
+    <string name="traje_hombre">2. El vestit home</string>
+
+</resources>

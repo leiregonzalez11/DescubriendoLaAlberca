@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">La Alberca</string>
+
+    <string name="tituloprincipal">Bienvenue à La Alberca !</string>
+
+    <string name="dialog_tour">" Vous êtes nouveau ? Vous voulez faire un tour de l'application ?"</string>
+    <string name="button_tour">Oui!</string>
+    <string name="button_notour">Non, merci.</string>
+    <string name="siguiente">Suivant</string>
+    <string name="dialog_toursi_titulo">Écran d\'accueil</string>
+    <string name="dialog_tourSi">Il s\'agit de l\'écran d\'accueil de l\'application. De là, vous pouvez accéder à toutes les autres sections de l\'application.</string>
+    <string name="seleccione_un_idioma">Sélectionnez une langue :</string>
+    <string name="tradiciones">Traditions</string>
+    <string name="arquitectura">Architecture</string>
+    <string name="monumentos">Monuments</string>
+    <string name="gastronomia">Gastronomie</string>
+    <string name="alojamiento">Hébergement</string>
+    <string name="arte">Art</string>
+    <string name="rutas">Routes</string>
+    <string name="otros">Autre</string>
+    <string name="inicio">Accueil</string>
+    <string name="ajustes">Réglages</string>
+    <string name="mapa">Carte</string>
+    <string name="categorias">Catégories</string>
+    <string name="fiestas">Parties</string>
+    <string name="castellano">Espagnol</string>
+    <string name="euskera">Basque</string>
+    <string name="ingles">Anglais</string>
+    <string name="catalan">Catalan</string>
+    <string name="gallego">Galicien</string>
+    <string name="frances">Français</string>
+    <string name="aleman">Allemand</string>
+    <string name="artesania">Artisanat</string>
+    <string name="historia">Histoire</string>
+    <string name="la_casa_albercana">LA ALBERCA\'S MAISON</string>
+    <string name="_3_inscripciones">3. Inscription</string>
+    <string name="volver_a_categorias">Retour aux catégories</string>
+    <string name="atras">Derrière</string>
+    <string name="arquitecturamayus">L\'ARCHITECTURE</string>
+    <string name="_2_aspecto_interior">2. Apparence intérieure</string>
+    <string name="_1_aspecto_exterior">1. Aspect extérieur</string>
+    <string name="artesaniamayus">ARTISANAT</string>
+    <string name="el_bordado_serrano">LA BRODERIE SERRANO</string>
+    <string name="traje_serrano">LE COSTUME SERRANO</string>
+    <string name="traje_mujer">1. Costumes pour femmes</string>
+    <string name="traje_hombre">2. Le costume homme</string>
+    <string name="dialog_tour_titulo">Bienvenue à La Alberca !</string>
+    <string name="textoprincipal">Au sud de Salamanque, sur le versant nord de la Sierra de Francia, se trouve La Alberca. Sierra de Francia, se trouve La Alberca. Comme aime à dire le poète et professeur Don José María Requejo, un village de rêve.</string>
+    <string name="textoprincipal2">Déclaré site historique-artistique en 1940, ce beau village se distingue par sa disposition urbaine, préservant comme peu d\'autres l\'architecture typique du      architecture typique de l Sierra de Francia.</string>
+
+</resources>

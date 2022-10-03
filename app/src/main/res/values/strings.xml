@@ -35,6 +35,10 @@
     <string name="castellano">Castellano</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Ingles</string>
+    <string name="catalan">Catalán</string>
+    <string name="gallego">Gallego</string>
+    <string name="frances">Francés</string>
+    <string name="aleman">Alemán</string>
     <string name="artesania">Artesanía</string>
     <string name="historia">Historia</string>
     <string name="la_casa_albercana">LA CASA ALBERCANA</string>

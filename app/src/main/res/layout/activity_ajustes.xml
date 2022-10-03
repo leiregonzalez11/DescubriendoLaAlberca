@@ -53,6 +53,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/textoajustes">
 
                 <RadioButton
+                    android:id="@+id/radio_aleman"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/alatsi"
+                    android:text="@string/aleman"
+                    tools:targetApi="o" />
+
+                <RadioButton
                     android:id="@+id/radio_castellano"
                     android:layout_width="186dp"
                     android:layout_height="wrap_content"
@@ -67,6 +81,20 @@
                     tools:targetApi="o" />
 
                 <RadioButton
+                    android:id="@+id/radio_catalan"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/alatsi"
+                    android:text="@string/catalan"
+                    tools:targetApi="o" />
+
+                <RadioButton
                     android:id="@+id/radio_euskera"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
@@ -78,6 +106,34 @@
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/alatsi"
                     android:text="@string/euskera"
+                    tools:targetApi="o" />
+
+                <RadioButton
+                    android:id="@+id/radio_frances"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/alatsi"
+                    android:text="@string/frances"
+                    tools:targetApi="o" />
+
+                <RadioButton
+                    android:id="@+id/radio_gallego"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/alatsi"
+                    android:text="@string/gallego"
                     tools:targetApi="o" />
 
                 <RadioButton
