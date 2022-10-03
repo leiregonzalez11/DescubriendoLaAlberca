@@ -28,11 +28,29 @@ import com.smarteist.autoimageslider.SliderView;
 public class artesaniaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
+    String idioma, categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania2);
+
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
+        categoria = extra.getString("categoria");
+
+        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz2", categoria);
+
+        TextView text1 = findViewById(R.id.arte21);
+        text1.setText(datos[0]);
+
+        TextView text2 = findViewById(R.id.arte22);
+        text2.setText(datos[1]);
+
+        TextView text3 = findViewById(R.id.arte23);
+        text3.setText(datos[2]);*/
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArte2);
@@ -107,8 +125,10 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
                 break;
 
             case R.id.artesiguiente2:
-                Intent inicio = new Intent(this, artesaniaActivity3.class);
-                startActivity(inicio);
+                Intent arte3 = new Intent(this, artesaniaActivity3.class);
+                arte3.putExtra("idioma", idioma);
+                arte3.putExtra("categoria", categoria);
+                startActivity(arte3);
                 break;
         }
     }

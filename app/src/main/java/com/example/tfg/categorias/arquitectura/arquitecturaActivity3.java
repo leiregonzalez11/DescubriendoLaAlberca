@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
@@ -26,11 +28,29 @@ import com.smarteist.autoimageslider.SliderView;
 public class arquitecturaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
+    String idioma, categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura3);
+
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
+        categoria = extra.getString("categoria");
+
+        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz3", categoria);
+
+        TextView text1 = findViewById(R.id.arqui31);
+        text1.setText(datos[0]);
+
+        TextView text2 = findViewById(R.id.arqui32);
+        text2.setText(datos[1]);
+
+        TextView text3 = findViewById(R.id.arqui33);
+        text3.setText(datos[2]);*/
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArqui3);
@@ -101,12 +121,16 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
             case R.id.arquiatras3:
                 Intent atras = new Intent(this, arquitecturaActivity2.class);
+                atras.putExtra("idioma", idioma);
+                atras.putExtra("categoria", categoria);
                 startActivity(atras);
                 break;
 
             case R.id.arquisiguiente3:
-                Intent inicio = new Intent(this, arquitecturaActivity4.class);
-                startActivity(inicio);
+                Intent arqui4 = new Intent(this, arquitecturaActivity4.class);
+                arqui4.putExtra("idioma", idioma);
+                arqui4.putExtra("categoria", categoria);
+                startActivity(arqui4);
                 break;
         }
     }

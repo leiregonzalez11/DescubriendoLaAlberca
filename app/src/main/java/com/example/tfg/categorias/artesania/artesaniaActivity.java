@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
@@ -26,11 +28,37 @@ import com.smarteist.autoimageslider.SliderView;
 public class artesaniaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
+    String idioma = "";
+    String categoria = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania);
+
+        TextView texto = findViewById(R.id.artetitulo);
+        categoria = "artesania";
+
+        if (texto.getText().toString().toLowerCase().contains("arte")){
+            idioma = "es";
+        } else if (texto.getText().toString().toLowerCase().contains("arti")){
+            idioma = "eu";
+        }else if (texto.getText().toString().toLowerCase().contains("handi")){
+            idioma="en";
+        }
+
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria);
+
+        TextView text1 = findViewById(R.id.arte11);
+        text1.setText(datos[0]);
+
+        TextView text2 = findViewById(R.id.arte12);
+        text2.setText(datos[1]);
+
+        TextView text3 = findViewById(R.id.arte13);
+        text3.setText(datos[2]);
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArte1);
@@ -95,8 +123,10 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         Button btn = (Button) view;
 
         if (btn.getId() == R.id.artesiguiente1) {
-            Intent inicio = new Intent(this, artesaniaActivity2.class);
-            startActivity(inicio);
+            Intent arte2 = new Intent(this, artesaniaActivity2.class);
+            arte2.putExtra("idioma", idioma);
+            arte2.putExtra("categoria", categoria);
+            startActivity(arte2);
             finish();
         }
     }

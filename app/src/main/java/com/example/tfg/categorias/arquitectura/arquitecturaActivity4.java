@@ -26,11 +26,30 @@ import com.smarteist.autoimageslider.SliderView;
 public class arquitecturaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
     BottomNavigationView bottomNavigationView;
+    String idioma, categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura4);
+
+        /*Obtenemos los datos agregados desde la actividad anterior...*/
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
+        categoria = extra.getString("categoria");
+
+        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz4", categoria);
+
+        TextView text1 = findViewById(R.id.arqui41);
+        text1.setText(datos[0]);
+
+        TextView text2 = findViewById(R.id.arqui42);
+        text2.setText(datos[1]);
+
+        TextView text3 = findViewById(R.id.arqui43);
+        text3.setText(datos[2]);*/
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArqui4);
@@ -42,7 +61,6 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE y ATRAS
-
         Button atrasBtn = findViewById(R.id.arqui4atras);
         atrasBtn.setOnClickListener(this);
 
@@ -101,6 +119,8 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
             case R.id.arqui4atras:
                 Intent atras = new Intent(this, arquitecturaActivity3.class);
+                atras.putExtra("idioma", idioma);
+                atras.putExtra("categoria", categoria);
                 startActivity(atras);
                 finish();
                 break;

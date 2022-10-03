@@ -17,7 +17,8 @@ public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laAlbercaDB";
     private static final int DB_VERSION = 1;
-    private Context context;
+    private final Context context;
+    private boolean seguir = true;
 
     public GestorDB(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -30,7 +31,8 @@ public class GestorDB extends SQLiteOpenHelper {
         if (sqLiteDatabase != null){
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
         }
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
+        assert sqLiteDatabase != null;
+        crearTablas(sqLiteDatabase);
         try {
             cargarDatosArquitectura(sqLiteDatabase);
         } catch (IOException e) {
@@ -40,12 +42,23 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
+    private void crearTablas(SQLiteDatabase sqLiteDatabase){
+
+        //TABLA ARQUITECTURA
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
+
+        //TABLA ARTESANIA
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
+    }
+
     private void cargarDatosArquitectura(SQLiteDatabase sqLiteDatabase) throws IOException {
 
         //Carga de datos desde un archivo .txt usando res/raw
-        InputStream file = context.getResources().openRawResource(R.raw.arquitectura);
+        assert context != null;
+        InputStream file = context.getResources().openRawResource(R.raw.datos);
         BufferedReader buffer = new BufferedReader((new InputStreamReader(file)));
-        boolean seguir = true;
 
         while (seguir){
             try{
@@ -54,8 +67,7 @@ public class GestorDB extends SQLiteOpenHelper {
                 sqLiteDatabase.execSQL(query);
             } catch (Exception e){
                 seguir = false;
-                buffer.close();
-            }
+                buffer.close();            }
         }
     }
 
@@ -63,19 +75,18 @@ public class GestorDB extends SQLiteOpenHelper {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        String descrip = "";
+        String descrip;
         int i = 0;
         String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE \'" + interfaz + "%\' AND idioma = \'" + idioma + "\';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE '" + interfaz + "%' AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
             i++;
         }
-
+        c.close();
         return descr;
-
     }
 
     @Override

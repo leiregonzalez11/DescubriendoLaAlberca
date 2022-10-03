@@ -125,8 +125,10 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
                 break;
 
             case R.id.arquisiguiente2:
-                Intent inicio = new Intent(this, arquitecturaActivity3.class);
-                startActivity(inicio);
+                Intent arqui3 = new Intent(this, arquitecturaActivity3.class);
+                arqui3.putExtra("idioma", idioma);
+                arqui3.putExtra("categoria", categoria);
+                startActivity(arqui3);
                 break;
         }
     }
