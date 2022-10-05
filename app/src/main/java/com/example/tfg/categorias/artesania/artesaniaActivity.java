@@ -36,23 +36,9 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania);
 
-        TextView texto = findViewById(R.id.artetitulo);
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
         categoria = "artesania";
-
-        if (texto.getText().toString().equals("ARTESANÍA")){
-            idioma = "es";
-        } else if (texto.getText().toString().toLowerCase().contains("artisautza")){
-            idioma = "eu";
-        }else if (texto.getText().toString().toLowerCase().contains("handi")){
-            idioma="en";
-        }else if (texto.getText().toString().equals("ARTESANIA")){
-            idioma="ca";
-        }
-        /*else if (texto.getText().toString().equals("ARTISANAT")){
-            idioma="fr";
-        }else if (texto.getText().toString().equals("HANDWERK")){
-            idioma="de";
-        }*/
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 

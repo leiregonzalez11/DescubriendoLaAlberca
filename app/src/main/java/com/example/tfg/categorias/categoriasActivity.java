@@ -23,11 +23,16 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
     BottomNavigationView bottomNavigationView;
     protected Button btnhistoria, btnArte, btnTrad, btnArqui, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
+    String idioma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
+
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
+
 
         setBtnListeners();
 
@@ -115,6 +120,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             case R.id.botonartesania:
                 Intent artesania = new Intent(this, artesaniaActivity.class);
+                artesania.putExtra("idioma", idioma);
                 startActivity(artesania);
                 finish();
                 break;
@@ -123,6 +129,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             case R.id.botonarquitectura:
                 Intent arquitectura = new Intent(this, ArquitecturaActivity.class);
+                arquitectura.putExtra("idioma", idioma);
                 startActivity(arquitectura);
                 finish();
                 break;

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -25,6 +26,7 @@ import com.smarteist.autoimageslider.SliderView;
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
+    String idioma;
     //String tour;
 
     @Override
@@ -34,6 +36,23 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         /*Bundle datos = getIntent().getExtras();
         tour = datos.getString("tour");*/
+
+        TextView texto = findViewById(R.id.bienvenidatext);
+
+        if (texto.getText().toString().contains("¡Bienvenid@s")){
+            idioma = "es";
+        } else if (texto.getText().toString().contains("Ongi")){
+            idioma = "eu";
+        }else if (texto.getText().toString().contains("Welcome")){
+            idioma="en";
+        }else if (texto.getText().toString().toLowerCase().contains("Benvinguts")){
+            idioma="ca";
+        }
+        /*else if (texto.getText().toString().contains("Bienvenue")){
+            idioma="fr";
+        } else if (texto.getText().toString().contains("Willkommen")){
+            idioma="de";
+        }*/
 
         /*Cargamos la BD...*/
         GestorDB dbHelper =  new GestorDB(getApplicationContext());
@@ -77,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
                 finish();
                 return true;

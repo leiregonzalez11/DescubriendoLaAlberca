@@ -37,23 +37,9 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura);
 
-        TextView texto = findViewById(R.id.arquititulo);
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
         categoria = "arquitectura";
-
-        if (texto.getText().toString().equalsIgnoreCase("arquitectura")){
-            idioma = "es";
-        } else if (texto.getText().toString().toLowerCase().contains("arki")){
-            idioma = "eu";
-        }else if (texto.getText().toString().equalsIgnoreCase("architecture")){
-            idioma="en";
-        }else if (texto.getText().toString().toLowerCase().contains("l'arquitectura")){
-            idioma="ca";
-        }
-        /*else if (texto.getText().toString().toLowerCase().contains("l'architecture")){
-            idioma="fr";
-        } else if (texto.getText().toString().equalsIgnoreCase("architektur")){
-            idioma="de";
-        }*/
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
