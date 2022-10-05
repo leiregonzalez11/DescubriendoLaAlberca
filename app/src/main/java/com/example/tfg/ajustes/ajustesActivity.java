@@ -27,6 +27,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
     RadioButton radioCas, radioEus, radioIng, radioCat, radioFr, radioDe;
     String language;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,16 +44,22 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
+            radioCas.setTextColor(R.color.purple_500);
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
+            radioEus.setTextColor(R.color.purple_500);
         }else if (texto.getText().toString().contains("language:")){
             radioIng.setChecked(true);
+            radioIng.setTextColor(R.color.purple_500);
         }else if (texto.getText().toString().contains("Seleccioneu")){
             radioCat.setChecked(true);
+            radioCat.setTextColor(R.color.purple_500);
         }/*else if (texto.getText().toString().contains("Wählen")){
             radioDe.setChecked(true);
+            radioDe.setTextColor(R.color.purple_500);
         }else if (texto.getText().toString().contains("Sélectionnez")){
             radioFr.setChecked(true);
+            radioFr.setTextColor(R.color.purple_500);
         }*/
 
         //MENU
