@@ -48,11 +48,12 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
             idioma="en";
         }else if (texto.getText().toString().toLowerCase().contains("l'arquitectura")){
             idioma="ca";
-        } else if (texto.getText().toString().toLowerCase().contains("l'architecture")){
+        }
+        /*else if (texto.getText().toString().toLowerCase().contains("l'architecture")){
             idioma="fr";
         } else if (texto.getText().toString().equalsIgnoreCase("architektur")){
             idioma="de";
-        }
+        }*/
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 

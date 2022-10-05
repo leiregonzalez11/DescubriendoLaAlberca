@@ -36,8 +36,8 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
         radioCat = findViewById(R.id.radio_catalan);
-        radioFr = findViewById(R.id.radio_frances);
-        radioDe = findViewById(R.id.radio_aleman);
+        //radioFr = findViewById(R.id.radio_frances);
+        //radioDe = findViewById(R.id.radio_aleman);
 
         TextView texto = findViewById(R.id.textoajustes);
 
@@ -49,11 +49,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             radioIng.setChecked(true);
         }else if (texto.getText().toString().contains("Seleccioneu")){
             radioCat.setChecked(true);
-        }else if (texto.getText().toString().contains("Wählen")){
+        }/*else if (texto.getText().toString().contains("Wählen")){
             radioDe.setChecked(true);
         }else if (texto.getText().toString().contains("Sélectionnez")){
             radioFr.setChecked(true);
-        }
+        }*/
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
@@ -123,7 +123,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             startActivity(getIntent());
         });
 
-        radioDe.setOnClickListener(view -> {
+        /*radioDe.setOnClickListener(view -> {
             language="de";
             changeLanguage();
             finish();
@@ -135,7 +135,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             changeLanguage();
             finish();
             startActivity(getIntent());
-        });
+        });*/
 
     }
 

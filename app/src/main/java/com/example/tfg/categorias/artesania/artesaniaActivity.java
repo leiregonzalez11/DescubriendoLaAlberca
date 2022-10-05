@@ -47,11 +47,12 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
             idioma="en";
         }else if (texto.getText().toString().equals("ARTESANIA")){
             idioma="ca";
-        }else if (texto.getText().toString().equals("ARTISANAT")){
+        }
+        /*else if (texto.getText().toString().equals("ARTISANAT")){
             idioma="fr";
         }else if (texto.getText().toString().equals("HANDWERK")){
             idioma="de";
-        }
+        }*/
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 

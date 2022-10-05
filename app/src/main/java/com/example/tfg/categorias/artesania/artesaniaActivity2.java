@@ -5,30 +5,35 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity3;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class artesaniaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
+    ImageView img1, img2, img3;
+    TextView text1, text2, text3, text4;
+    StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,27 +44,32 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
+
+        //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
         String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz2", categoria);
 
-        TextView text1 = findViewById(R.id.arte21);
+        text1 = findViewById(R.id.arte21);
         text1.setText(datos[0]);
 
-        TextView text2 = findViewById(R.id.arte22);
+        text2 = findViewById(R.id.arte22);
         text2.setText(datos[1]);
 
-        TextView text3 = findViewById(R.id.arte23);
-        text3.setText(datos[2]);*/
+        text3 = findViewById(R.id.arte23);
+        text3.setText(datos[2]);
 
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArte2);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
+        text4 = findViewById(R.id.arte24);
+        text4.setText(datos[3]);
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        img1 = findViewById(R.id.arte21img);
+        obtenerImagenFirebase("artesania/bordado1.jpg", img1);
+        img2 = findViewById(R.id.arte22img);
+        obtenerImagenFirebase("artesania/bordado2.jpg", img2);
+        img3 = findViewById(R.id.arte23img);
+        obtenerImagenFirebase("artesania/bordado3.jpg", img3);
 
         //BOTON SIGUIENTE y ATRAS
 
@@ -131,5 +141,16 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
                 startActivity(arte3);
                 break;
         }
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+            StorageReference pathReference = storageRef.child(path);
+            pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                        Glide.with(getApplicationContext()).load(uri).into(img);
+                }
+            });
     }
 }
