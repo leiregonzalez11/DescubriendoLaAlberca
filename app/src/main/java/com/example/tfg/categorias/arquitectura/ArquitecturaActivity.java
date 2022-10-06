@@ -71,6 +71,9 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
     }
 
+    @Override
+    public void onBackPressed() {}
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

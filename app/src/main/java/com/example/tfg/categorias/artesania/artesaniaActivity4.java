@@ -112,6 +112,9 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         }
     }
 
+    @Override
+    public void onBackPressed() {}
+
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí

@@ -108,6 +108,9 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         }
     }
 
+    @Override
+    public void onBackPressed() {}
+
     private void comprobarIdioma(){
 
         radioCas.setOnClickListener(view -> {

@@ -74,6 +74,9 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
     }
 
+    @Override
+    public void onBackPressed() {}
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

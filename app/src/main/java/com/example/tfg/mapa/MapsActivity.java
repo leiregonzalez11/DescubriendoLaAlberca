@@ -99,4 +99,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
         }
     }
 
+    @Override
+    public void onBackPressed() {}
+
 }

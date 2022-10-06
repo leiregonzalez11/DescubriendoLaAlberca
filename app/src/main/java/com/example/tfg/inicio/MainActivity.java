@@ -115,8 +115,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     }
 
     @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-    }
+    public void onBackPressed(){}
 
 }

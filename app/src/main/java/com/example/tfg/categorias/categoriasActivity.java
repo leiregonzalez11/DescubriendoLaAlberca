@@ -29,8 +29,7 @@ import com.google.firebase.storage.StorageReference;
 public class categoriasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    protected Button btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
-    ImageButton btnArte, btnArqui;
+    protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros, btnArte, btnArqui;
     String idioma, path;
     StorageReference storageRef;
 
@@ -53,41 +52,58 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
     }
 
+    @SuppressLint("WrongViewCast")
     private void setBtnListeners() {
 
-        //btnhistoria = findViewById(R.id.botonhistoria);
-        //btnhistoria.setOnClickListener(this);
+        btnhistoria = findViewById(R.id.botonhistoria);
+        path = "categorias/" + idioma + "/historia-" + idioma + ".jpg";
+        btnhistoria.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnhistoria);
 
         btnArte = findViewById(R.id.botonartesania);
         path = "categorias/" + idioma + "/artesania-" + idioma + ".jpg";
         btnArte.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArte);
 
-        //btnTrad = findViewById(R.id.botontradiciones);
-        //btnTrad.setOnClickListener(this);
+        btnTrad = findViewById(R.id.botontradiciones);
+        path = "categorias/" + idioma + "/tradicion-" + idioma + ".jpg";
+        btnTrad.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnTrad);
 
         btnArqui = findViewById(R.id.botonarquitectura);
         path = "categorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
         btnArqui.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArqui);
 
-        /*btnMonu = findViewById(R.id.botonmonumentos);
+        btnMonu = findViewById(R.id.botonmonumentos);
+        path = "categorias/" + idioma + "/monumentos-" + idioma + ".jpg";
         btnMonu.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnMonu);
 
         btnFiesta = findViewById(R.id.botonfiestas);
+        path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
         btnFiesta.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnFiesta);
 
         btnGastro = findViewById(R.id.botongastronomia);
+        path = "categorias/" + idioma + "/gastronomia-" + idioma + ".jpg";
         btnGastro.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnGastro);
 
         btnAloj = findViewById(R.id.botonalojamientos);
+        path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
         btnAloj.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnAloj);
 
         btnRutas = findViewById(R.id.botonruta);
+        path = "categorias/" + idioma + "/rutas-" + idioma + ".jpg";
         btnRutas.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnRutas);
 
         btnOtros = findViewById(R.id.botonotros);
-        btnOtros.setOnClickListener(this);*/
+        path = "categorias/" + idioma + "/otros-" + idioma + ".jpg";
+        btnOtros.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnOtros);
 
     }
 
@@ -164,6 +180,9 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
         }
     }
+
+    @Override
+    public void onBackPressed() {}
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageButton btn){

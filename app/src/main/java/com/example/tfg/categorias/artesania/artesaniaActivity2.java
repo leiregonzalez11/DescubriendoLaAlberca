@@ -145,6 +145,9 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
         }
     }
 
+    @Override
+    public void onBackPressed() {}
+
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageView img){
             StorageReference pathReference = storageRef.child(path);
