@@ -9,8 +9,13 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
@@ -19,13 +24,15 @@ import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    BottomNavigationView bottomNavigationView;
-    RadioButton radioCas, radioEus, radioIng, radioCat, radioFr, radioDe;
-    String language, idioma;
+    private BottomNavigationView bottomNavigationView;
+    private ListView listView, listView2;
+    private ArrayList<String> lista1, lista2;
+    String idioma, opc1, opc2;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -33,49 +40,50 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
-        radioCas = findViewById(R.id.radio_castellano);
-        radioEus = findViewById(R.id.radio_euskera);
-        radioIng = findViewById(R.id.radio_ingles);
-        radioCat = findViewById(R.id.radio_catalan);
-        //radioFr = findViewById(R.id.radio_frances);
-        //radioDe = findViewById(R.id.radio_aleman);
+        Bundle datos = getIntent().getExtras();
+        idioma = datos.getString("idioma");
 
-        TextView texto = findViewById(R.id.textoajustes);
+        listView = findViewById(R.id.listview);
+        listView2 = findViewById(R.id.listview2);
+        opc1 = getResources().getString(R.string.ajustes1);
+        opc2 = getResources().getString(R.string.ajustes2);
+        System.out.println("TEXTOOOOOO" + opc1);
 
-        if (texto.getText().toString().equals("Seleccione un idioma:")){
-            radioCas.setChecked(true);
-            radioCas.setTextColor(R.color.purple_500);
-            Bundle extra = getIntent().getExtras();
-            idioma = "es";
-        } else if (texto.getText().toString().contains("aukeratu:")){
-            radioEus.setChecked(true);
-            radioEus.setTextColor(R.color.purple_500);
-            idioma = "eu";
-        }else if (texto.getText().toString().contains("language:")){
-            radioIng.setChecked(true);
-            radioIng.setTextColor(R.color.purple_500);
-            idioma = "en";
-        }else if (texto.getText().toString().contains("Seleccioneu")){
-            radioCat.setChecked(true);
-            radioCat.setTextColor(R.color.purple_500);
-            idioma = "ca";
-        }/*else if (texto.getText().toString().contains("Wählen")){
-            radioDe.setChecked(true);
-            radioDe.setTextColor(R.color.purple_500);
-            idioma = "de";
-        }else if (texto.getText().toString().contains("Sélectionnez")){
-            radioFr.setChecked(true);
-            radioFr.setTextColor(R.color.purple_500);
-            idioma = "fr";
-        }*/
+        lista1 = new ArrayList<String>();
+        lista1.add(opc1);
+
+        AjustesAdapter myAdapter = new AjustesAdapter(this, R.layout.list_item, lista1);
+        listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lista2 = new ArrayList<String>();
+        lista2.add(opc2);
+
+        AjustesAdapter myAdapter2 = new AjustesAdapter(this, R.layout.list_item, lista2);
+        listView2.setAdapter(myAdapter2);
+
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
+                startActivity(inicio);
+                finish();
+            }
+        });
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 
-        comprobarIdioma();
     }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -110,74 +118,5 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
     @Override
     public void onBackPressed() {}
-
-    private void comprobarIdioma(){
-
-        radioCas.setOnClickListener(view -> {
-            language ="es";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-
-        });
-
-        radioEus.setOnClickListener(view -> {
-            language="eu";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });
-
-        radioIng.setOnClickListener(view -> {
-            language="en";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });
-
-        radioCat.setOnClickListener(view -> {
-            language="ca";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });
-
-        /*radioDe.setOnClickListener(view -> {
-            language="de";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });
-
-        radioFr.setOnClickListener(view -> {
-            language="fr";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });*/
-
-    }
-
-    private void changeLanguage(){
-
-        Locale nuevaloc = new Locale(language);
-        Locale.setDefault(nuevaloc);
-        Configuration configuration = getBaseContext().getResources().getConfiguration();
-        configuration.setLocale(nuevaloc);
-        configuration.setLayoutDirection(nuevaloc);
-
-        Context context = getBaseContext().createConfigurationContext(configuration);
-        getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
-
-    }
-
-    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putString("language",language );
-    }
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        language = savedInstanceState.getString("language");
-    }
 
 }

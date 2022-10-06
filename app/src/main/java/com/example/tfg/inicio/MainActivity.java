@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         GestorDB dbHelper =  new GestorDB(getApplicationContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSlider);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
@@ -103,8 +104,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent intent = new Intent(this, ajustesActivity.class);
-                startActivity(intent);
+                Intent ajustes = new Intent(this, ajustesActivity.class);
+                ajustes.putExtra("idioma", idioma);
+                startActivity(ajustes);
                 finish();
                 return true;
 

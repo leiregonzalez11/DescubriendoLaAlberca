@@ -52,5 +52,7 @@
     <string name="traje_serrano">EL VESTIT SERRANO</string>
     <string name="traje_mujer">1. Els vestits de dona</string>
     <string name="traje_hombre">2. El vestit home</string>
+    <string name="ajustes1">Com arribar-hi?</string>
+    <string name="ajustes2">Idioma de l\'aplicació</string>
 
 </resources>

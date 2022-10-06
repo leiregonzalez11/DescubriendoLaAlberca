@@ -49,5 +49,7 @@
     <string name="traje_mujer">1. Anzüge für Frauen</string>
     <string name="traje_hombre">2.  Anzug für Männer</string>
     <string name="button_tour">Wenn</string>
+    <string name="ajustes1">Wie kommt man?</string>
+    <string name="ajustes2">Anwendungssprache</string>
 
 </resources>

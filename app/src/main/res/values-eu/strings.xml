@@ -53,5 +53,7 @@
     <string name="traje_serrano">SOINEKO SERRANOA</string>
     <string name="traje_hombre">2. Gizonezko soinekoa</string>
     <string name="traje_mujer">1. Emakumeko soinekoak</string>
+    <string name="ajustes1">Nola iritsi?</string>
+    <string name="ajustes2">Aplikazioaren hizkuntza</string>
 
 </resources>

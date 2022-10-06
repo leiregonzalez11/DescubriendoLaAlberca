@@ -7,190 +7,75 @@
     tools:context=".ajustes.ajustesActivity">
 
     <ScrollView
-        android:id="@+id/scrollviewAjustes"
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="80dp"
         android:scrollbarSize="8dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-35dp">
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:layout_margin="15dp">
+            android:layout_margin="@dimen/fab_margin"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".inicio.MainActivity">
+
+            <TextView
+                android:id="@+id/bienvenidatext"
+                android:layout_width="323dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alatsi"
+                android:gravity="center"
+                android:text="Zona de usuarios"
+                android:textAlignment="gravity"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="30dp"
                 app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="15dp">
+                app:cardCornerRadius="15dp">
 
-                <LinearLayout
-                    android:id="@+id/layoutArte1"
+                <ListView
+                    android:id="@+id/listview"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:layout_marginTop="@dimen/fab_margin"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent" />
 
-                    <TextView
-                        android:id="@+id/textoajustes"
-                        android:layout_width="323dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
-                        android:autoSizeMaxTextSize="45sp"
-                        android:autoSizeMinTextSize="23sp"
-                        android:autoSizeStepGranularity="2sp"
-                        android:autoSizeTextType="uniform"
-                        android:fontFamily="@font/alatsi"
-                        android:gravity="left"
-                        android:text="@string/seleccione_un_idioma"
-                        android:textAlignment="gravity"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlHardcoded"
-                        tools:targetApi="o" />
-
-                    <RadioGroup
-                        android:id="@+id/opciones_idiomas"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="start"
-                        android:orientation="vertical"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textoajustes">
-
-                        <!--
-                        <RadioButton
-                            android:id="@+id/radio_aleman"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/aleman"
-                            tools:targetApi="o" />
-
-                            -->
-
-                        <RadioButton
-                            android:id="@+id/radio_castellano"
-                            android:layout_width="186dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/castellano"
-                            tools:targetApi="o" />
-
-                        <RadioButton
-                            android:id="@+id/radio_catalan"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/catalan"
-                            tools:targetApi="o" />
-
-                        <RadioButton
-                            android:id="@+id/radio_euskera"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/euskera"
-                            tools:targetApi="o" />
-
-                        <!--
-                        <RadioButton
-                            android:id="@+id/radio_frances"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/frances"
-                            tools:targetApi="o" />
-
-                        <RadioButton
-                            android:id="@+id/radio_gallego"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/gallego"
-                            tools:targetApi="o" /> -->
-
-                        <RadioButton
-                            android:id="@+id/radio_ingles"
-                            android:layout_width="190dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
-                            android:text="@string/ingles"
-                            app:layout_constraintEnd_toStartOf="@+id/radio_castellano"
-                            app:layout_constraintStart_toStartOf="parent"
-                            tools:targetApi="o" />
-
-                    </RadioGroup>
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"></Space>
-
-                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
 
+                <ListView
+                    android:id="@+id/listview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
 
     </ScrollView>
 

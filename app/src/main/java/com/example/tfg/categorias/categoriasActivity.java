@@ -129,8 +129,9 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent intent = new Intent(this, ajustesActivity.class);
-                startActivity(intent);
+                Intent ajustes = new Intent(this, ajustesActivity.class);
+                ajustes.putExtra("idioma", idioma);
+                startActivity(ajustes);
                 finish();
                 return true;
 
