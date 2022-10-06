@@ -88,12 +88,14 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();
                 return true;
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma",idioma);
                 startActivity(categorias);
                 finish();
                 return true;

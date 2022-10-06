@@ -5,25 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
 import com.example.tfg.categorias.artesania.artesaniaActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class categoriasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    protected Button btnhistoria, btnArte, btnTrad, btnArqui, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
-    String idioma;
+    protected Button btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros;
+    ImageButton btnArte, btnArqui;
+    String idioma, path;
+    StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +41,9 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
+        System.out.println("IDIOMAAAAA: " + idioma);
 
+        storageRef = FirebaseStorage.getInstance().getReference();
 
         setBtnListeners();
 
@@ -48,13 +59,17 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         //btnhistoria.setOnClickListener(this);
 
         btnArte = findViewById(R.id.botonartesania);
+        path = "categorias/" + idioma + "/artesania-" + idioma + ".jpg";
         btnArte.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnArte);
 
         //btnTrad = findViewById(R.id.botontradiciones);
         //btnTrad.setOnClickListener(this);
 
         btnArqui = findViewById(R.id.botonarquitectura);
+        path = "categorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
         btnArqui.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnArqui);
 
         /*btnMonu = findViewById(R.id.botonmonumentos);
         btnMonu.setOnClickListener(this);
@@ -89,6 +104,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
                 finish();
                 return true;
@@ -112,7 +128,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
 
         switch (btn.getId()){
 
@@ -147,6 +163,17 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
             //case R.id.botonotros:
 
         }
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageButton btn){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(getApplicationContext()).load(uri).into(btn);
+            }
+        });
     }
 
 }

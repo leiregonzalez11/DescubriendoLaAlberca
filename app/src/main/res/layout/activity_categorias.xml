@@ -42,6 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:targetApi="o" />
 
+            <!--
             <Button
                 android:id="@+id/botonartesania"
                 android:layout_width="162dp"
@@ -59,7 +60,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botonhistoria"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:targetApi="o" />
+                tools:targetApi="o" /> -->
+
+            <ImageButton
+                android:id="@+id/botonartesania"
+                android:layout_width="162dp"
+                android:layout_height="106dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/botonhistoria"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/botontradiciones"
@@ -80,24 +92,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/botonhistoria"
                 tools:targetApi="o" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/botonarquitectura"
                 android:layout_width="162dp"
                 android:layout_height="106dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
-                android:autoSizeMaxTextSize="13.5dp"
-                android:autoSizeMinTextSize="11sp"
-                android:autoSizeStepGranularity="1sp"
-                android:autoSizeTextType="uniform"
-                android:fontFamily="@font/alatsi"
-                android:text="@string/arquitectura"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botontradiciones"
-                app:layout_constraintTop_toBottomOf="@+id/botonartesania"
-                tools:targetApi="o" />
+                app:layout_constraintTop_toBottomOf="@+id/botonartesania"/>
 
 
             <Button

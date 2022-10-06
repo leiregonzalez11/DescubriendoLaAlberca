@@ -78,7 +78,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
+        switch (item.getItemId()){
             case R.id.navigation_inicio:
                 Intent inicio = new Intent(this, MainActivity.class);
                 startActivity(inicio);
@@ -87,12 +87,14 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();
                 return true;
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma",idioma);
                 startActivity(categorias);
                 finish();
                 return true;
@@ -127,6 +129,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
             case R.id.arquifin:
                 Intent cat = new Intent(this, categoriasActivity.class);
+                cat.putExtra("idioma", idioma);
                 startActivity(cat);
                 finish();
                 break;

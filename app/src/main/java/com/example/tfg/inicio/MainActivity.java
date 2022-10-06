@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
                 finish();
                 return true;

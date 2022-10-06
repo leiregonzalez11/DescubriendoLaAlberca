@@ -25,7 +25,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
     BottomNavigationView bottomNavigationView;
     RadioButton radioCas, radioEus, radioIng, radioCat, radioFr, radioDe;
-    String language;
+    String language, idioma;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -45,21 +45,28 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
             radioCas.setTextColor(R.color.purple_500);
+            Bundle extra = getIntent().getExtras();
+            idioma = "es";
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
             radioEus.setTextColor(R.color.purple_500);
+            idioma = "eu";
         }else if (texto.getText().toString().contains("language:")){
             radioIng.setChecked(true);
             radioIng.setTextColor(R.color.purple_500);
+            idioma = "en";
         }else if (texto.getText().toString().contains("Seleccioneu")){
             radioCat.setChecked(true);
             radioCat.setTextColor(R.color.purple_500);
+            idioma = "ca";
         }/*else if (texto.getText().toString().contains("Wählen")){
             radioDe.setChecked(true);
             radioDe.setTextColor(R.color.purple_500);
+            idioma = "de";
         }else if (texto.getText().toString().contains("Sélectionnez")){
             radioFr.setChecked(true);
             radioFr.setTextColor(R.color.purple_500);
+            idioma = "fr";
         }*/
 
         //MENU
@@ -82,11 +89,13 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
                 return true;
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
                 return true;
 

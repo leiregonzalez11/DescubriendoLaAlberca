@@ -79,7 +79,7 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
+        switch (item.getItemId()){
             case R.id.navigation_inicio:
                 Intent inicio = new Intent(this, MainActivity.class);
                 startActivity(inicio);
@@ -88,12 +88,14 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
             case R.id.navigation_mapa:
                 Intent mapa = new Intent(this, MapsActivity.class);
+                mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();
                 return true;
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma",idioma);
                 startActivity(categorias);
                 finish();
                 return true;
@@ -128,6 +130,7 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
             case R.id.artefin:
                 Intent cat = new Intent(this, categoriasActivity.class);
+                cat.putExtra("idioma", idioma);
                 startActivity(cat);
                 finish();
                 break;

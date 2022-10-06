@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MapsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnMapReadyCallback {
 
     public BottomNavigationView bottomNavigationView;
+    String idioma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,8 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
         /*Bundle datos = getIntent().getExtras();
         tour = datos.getString("ruta si");*/
 
-        /* if
-
-
-        */
+        Bundle extra = getIntent().getExtras();
+        idioma = extra.getString("idioma");
 
         //MAPA
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -83,6 +82,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
 
             case R.id.navigation_categoria:
                 Intent categorias = new Intent(this, categoriasActivity.class);
+                categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
                 finish();
                 return true;
