@@ -55,5 +55,9 @@
     <string name="traje_mujer">1. Emakumeko soinekoak</string>
     <string name="ajustes1">Nola iritsi?</string>
     <string name="ajustes2">Aplikazioaren hizkuntza</string>
+    <string name="ajustes3">Non jan?</string>
+    <string name="ajustes4">Non lo egin?</string>
+    <string name="zona_de_usuarios">Erabiltzaileen gunea</string>
+    <string name="masinfo">Informazio gehiago</string>
 
 </resources>

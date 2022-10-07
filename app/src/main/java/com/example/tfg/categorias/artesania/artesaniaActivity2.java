@@ -112,8 +112,9 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent intent = new Intent(this, ajustesActivity.class);
-                startActivity(intent);
+                Intent ajustes = new Intent(this, ajustesActivity.class);
+                ajustes.putExtra("idioma", idioma);
+                startActivity(ajustes);
                 finish();
                 return true;
 
@@ -133,6 +134,7 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
 
             case R.id.arteatras2:
                 Intent atras = new Intent(this, artesaniaActivity.class);
+                atras.putExtra("idioma", idioma);
                 startActivity(atras);
                 break;
 

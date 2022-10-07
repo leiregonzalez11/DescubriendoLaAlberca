@@ -51,5 +51,9 @@
     <string name="button_tour">Wenn</string>
     <string name="ajustes1">Wie kommt man?</string>
     <string name="ajustes2">Anwendungssprache</string>
+    <string name="ajustes3">Wo sollen wir essen?</string>
+    <string name="ajustes4">Wo schlafen?</string>
+    <string name="zona_de_usuarios">Benutzerzone</string>
+    <string name="masinfo">Weitere informationen</string>
 
 </resources>

@@ -64,7 +64,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         Button atrasBtn = findViewById(R.id.arqui4atras);
         atrasBtn.setOnClickListener(this);
 
-        Button finBtn = findViewById(R.id.arquifin);
+        Button finBtn = findViewById(R.id.arquisiguiente4);
         finBtn.setOnClickListener(this);
 
         //MENU
@@ -103,11 +103,11 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent intent = new Intent(this, ajustesActivity.class);
-                startActivity(intent);
+                Intent ajustes = new Intent(this, ajustesActivity.class);
+                ajustes.putExtra("idioma", idioma);
+                startActivity(ajustes);
                 finish();
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
 
@@ -130,10 +130,11 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
                 finish();
                 break;
 
-            case R.id.arquifin:
-                Intent cat = new Intent(this, categoriasActivity.class);
-                cat.putExtra("idioma", idioma);
-                startActivity(cat);
+            case R.id.arquisiguiente4:
+                Intent arqui5 = new Intent(this, arquitecturaActivity5.class);
+                arqui5.putExtra("idioma", idioma);
+                arqui5.putExtra("categoria", categoria);
+                startActivity(arqui5);
                 finish();
                 break;
         }

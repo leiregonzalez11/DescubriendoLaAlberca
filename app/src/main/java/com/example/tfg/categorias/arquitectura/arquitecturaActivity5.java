@@ -1,4 +1,4 @@
-package com.example.tfg.categorias.artesania;
+package com.example.tfg.categorias.arquitectura;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity3;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.inicio.SliderAdapter;
@@ -24,35 +22,36 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class artesaniaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
+public class arquitecturaActivity5 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    String idioma, categoria;
+    String categoria, idioma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_artesania4);
+        setContentView(R.layout.activity_arquitectura5);
 
+        /*Obtenemos los datos agregados desde la actividad anterior...*/
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz4", categoria);
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz5", categoria);
 
-        TextView text1 = findViewById(R.id.arte41);
+        TextView text1 = findViewById(R.id.arqui51);
         text1.setText(datos[0]);
 
-        TextView text2 = findViewById(R.id.arte42);
+        TextView text2 = findViewById(R.id.arqui52);
         text2.setText(datos[1]);
 
-        TextView text3 = findViewById(R.id.arte43);
+        TextView text3 = findViewById(R.id.arqui53);
         text3.setText(datos[2]);*/
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArte4);
+        SliderView sliderView = findViewById(R.id.imageSliderArqui5);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -60,20 +59,22 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
         sliderView.startAutoCycle();
 
-        //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arte4atras);
+        //BOTON SIGUIENTE y ATRAS
+        Button atrasBtn = findViewById(R.id.arqui5atras);
         atrasBtn.setOnClickListener(this);
 
-        Button finBtn = findViewById(R.id.artefin);
+        Button finBtn = findViewById(R.id.arquifin);
         finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArte4);
+        bottomNavigationView = findViewById(R.id.navigationViewArqui5);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
-
     }
+
+    @Override
+    public void onBackPressed() {}
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -106,15 +107,11 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
                 startActivity(ajustes);
                 finish();
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
 
         }
     }
-
-    @Override
-    public void onBackPressed() {}
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
@@ -124,18 +121,18 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
         switch (btn.getId()) {
 
-            case R.id.arte4atras:
-                Intent atras = new Intent(this, artesaniaActivity3.class);
+            case R.id.arqui5atras:
+                Intent atras = new Intent(this, arquitecturaActivity4.class);
                 atras.putExtra("idioma", idioma);
                 atras.putExtra("categoria", categoria);
                 startActivity(atras);
                 finish();
                 break;
 
-            case R.id.artefin:
-                Intent cat = new Intent(this, categoriasActivity.class);
-                cat.putExtra("idioma", idioma);
-                startActivity(cat);
+            case R.id.arquifin:
+                Intent arquifin = new Intent(this, categoriasActivity.class);
+                arquifin.putExtra("idioma", idioma);
+                startActivity(arquifin);
                 finish();
                 break;
         }

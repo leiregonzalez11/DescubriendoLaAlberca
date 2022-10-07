@@ -55,5 +55,9 @@
     <string name="traje_hombre">2. Men\'s suit</string>
     <string name="ajustes1">How to get?</string>
     <string name="ajustes2">Application\'s language</string>
+    <string name="ajustes3">Where to eat?</string>
+    <string name="ajustes4">Where to sleep?</string>
+    <string name="zona_de_usuarios">User area</string>
+    <string name="masinfo">Further information</string>
 
 </resources>

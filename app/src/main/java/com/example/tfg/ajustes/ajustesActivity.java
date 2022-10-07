@@ -30,9 +30,9 @@ import java.util.Locale;
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
-    private ListView listView, listView2;
-    private ArrayList<String> lista1, lista2;
-    String idioma, opc1, opc2;
+    private ListView listView, listView2, listView3, listView4;
+    private ArrayList<String> lista1, lista2, lista3, lista4;
+    String idioma, opc1, opc2, opc3, opc4;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -45,9 +45,18 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView = findViewById(R.id.listview);
         listView2 = findViewById(R.id.listview2);
+        listView3 = findViewById(R.id.listview3);
+        listView4 = findViewById(R.id.listview4);
+
         opc1 = getResources().getString(R.string.ajustes1);
         opc2 = getResources().getString(R.string.ajustes2);
+        opc3 = getResources().getString(R.string.ajustes3);
+        opc4 = getResources().getString(R.string.ajustes4);
+
         System.out.println("TEXTOOOOOO" + opc1);
+        System.out.println("TEXTOOOOOO" + opc2);
+        System.out.println("TEXTOOOOOO" + opc3);
+        System.out.println("TEXTOOOOOO" + opc4);
 
         lista1 = new ArrayList<String>();
         lista1.add(opc1);
@@ -74,6 +83,32 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
                 Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
                 startActivity(inicio);
                 finish();
+            }
+        });
+
+        lista3 = new ArrayList<String>();
+        lista3.add(opc3);
+
+        AjustesAdapter myAdapter3 = new AjustesAdapter(this, R.layout.list_item, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lista4 = new ArrayList<String>();
+        lista4.add(opc4);
+
+        AjustesAdapter myAdapter4 = new AjustesAdapter(this, R.layout.list_item, lista4);
+        listView4.setAdapter(myAdapter4);
+
+        listView4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
             }
         });
 

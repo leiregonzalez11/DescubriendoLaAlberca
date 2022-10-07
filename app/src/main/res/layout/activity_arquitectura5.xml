@@ -31,11 +31,11 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alata"
                 android:autoSizeMaxTextSize="45sp"
                 android:autoSizeMinTextSize="23sp"
                 android:autoSizeStepGranularity="2sp"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/alata"
                 android:gravity="center"
                 android:text="@string/la_casa_albercana"
                 android:textAlignment="gravity"
@@ -49,13 +49,13 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:fontFamily="@font/alatsi"
                 android:autoSizeMaxTextSize="20sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="2sp"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/alatsi"
                 android:gravity="left"
-                android:text="@string/_3_inscripciones"
+                android:text="@string/masinfo"
                 tools:targetApi="o" />
 
             <com.google.android.material.card.MaterialCardView
@@ -65,7 +65,7 @@
                 app:cardCornerRadius="15dp">
 
                 <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui4"
+                    android:id="@+id/imageSliderArqui5"
                     android:layout_width="match_parent"
                     android:layout_height="232dp"
                     app:sliderAnimationDuration="600"
@@ -84,8 +84,20 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <TextView
+                android:id="@+id/exttext1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/alatsi"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="TODO: AÑADIR INFO LA CASA DE SATUR Y JUANELA"/>
+
             <LinearLayout
-                android:id="@+id/layoutArqui32"
+                android:id="@+id/layoutArqui52"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/fab_margin"
@@ -93,7 +105,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arqui4atras"
+                    android:id="@+id/arqui5atras"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -104,11 +116,11 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/arquisiguiente4"
+                    android:id="@+id/arquifin"
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/siguiente"
+                    android:text="@string/volver_a_categorias"
                     android:fontFamily="@font/alatsi"
                     android:layout_gravity="center">
 
@@ -121,7 +133,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui4"
+        android:id="@+id/navigationViewArqui5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"

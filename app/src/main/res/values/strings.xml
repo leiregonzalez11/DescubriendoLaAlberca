@@ -13,7 +13,7 @@
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
     <string name="button_tour">¡Si!</string>
-    <string name="ajustes1"> ¿Como llegar?</string>
+    <string name="ajustes1"> ¿Cómo llegar?</string>
     <string name="ajustes2">Idioma de la aplicación</string>
     <string name="button_notour">No, gracias</string>
     <string name="siguiente">Siguiente</string>
@@ -54,5 +54,9 @@
     <string name="traje_serrano">EL TRAJE SERRANO</string>
     <string name="traje_mujer">1. Los trajes de mujer</string>
     <string name="traje_hombre">2. El traje de hombre</string>
+    <string name="ajustes3">¿Dónde comer?</string>
+    <string name="ajustes4">¿Dónde dormir?</string>
+    <string name="zona_de_usuarios">Zona de usuarios</string>
+    <string name="masinfo">Más información</string>
 
 </resources>

@@ -54,5 +54,9 @@
     <string name="traje_hombre">2. El vestit home</string>
     <string name="ajustes1">Com arribar-hi?</string>
     <string name="ajustes2">Idioma de l\'aplicació</string>
+    <string name="ajustes3">On menjar?</string>
+    <string name="ajustes4">On dormir?</string>
+    <string name="zona_de_usuarios">Zona d\'usuaris</string>
+    <string name="masinfo">Més informació</string>
 
 </resources>
