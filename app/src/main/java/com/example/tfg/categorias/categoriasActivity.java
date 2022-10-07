@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
 import com.example.tfg.categorias.artesania.artesaniaActivity;
+import com.example.tfg.categorias.historia.historiaActivity;
+import com.example.tfg.categorias.tradiciones.tradicionesActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -29,7 +31,7 @@ import com.google.firebase.storage.StorageReference;
 public class categoriasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnAloj, btnRutas, btnOtros, btnArte, btnArqui;
+    protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnPers, btnRutas, btnOtros, btnArte, btnArqui;
     String idioma, path;
     StorageReference storageRef;
 
@@ -90,10 +92,11 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         btnGastro.setOnClickListener(this);
         obtenerImagenFirebase(path, btnGastro);
 
-        btnAloj = findViewById(R.id.botonalojamientos);
+        btnPers = findViewById(R.id.botonpersonajes);
+        //TODO: Cambiar la ruta
         path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
-        btnAloj.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnAloj);
+        btnPers.setOnClickListener(this);
+        obtenerImagenFirebase(path, btnPers);
 
         btnRutas = findViewById(R.id.botonruta);
         path = "categorias/" + idioma + "/rutas-" + idioma + ".jpg";
@@ -149,7 +152,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
         switch (btn.getId()){
 
-            //case R.id.botonhistoria:
+            case R.id.botonhistoria:
+                Intent historia = new Intent(this, historiaActivity.class);
+                historia.putExtra("idioma", idioma);
+                startActivity(historia);
+                finish();
+                break;
 
             case R.id.botonartesania:
                 Intent artesania = new Intent(this, artesaniaActivity.class);
@@ -158,7 +166,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
                 finish();
                 break;
 
-            //case R.id.botontradiciones:
+            case R.id.botontradiciones:
+                Intent tradiciones = new Intent(this, tradicionesActivity.class);
+                tradiciones.putExtra("idioma", idioma);
+                startActivity(tradiciones);
+                finish();
+                break;
 
             case R.id.botonarquitectura:
                 Intent arquitectura = new Intent(this, ArquitecturaActivity.class);

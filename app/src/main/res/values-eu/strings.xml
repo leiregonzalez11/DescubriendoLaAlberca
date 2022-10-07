@@ -19,19 +19,17 @@
     <string name="dialog_tourSi">" Hau da aplikazioaren hasierako pantaila. Bertatik aplikazioaren gainerako atal
         guztietara sartu ahal izango zara. "</string>
     <string name="seleccione_un_idioma">Hizkuntza bat aukeratu:</string>
-    <string name="tradiciones">Tradizioak</string>
-    <string name="arquitectura">Arkitektura</string>
-    <string name="monumentos">Monumentuak</string>
-    <string name="gastronomia">Gastronomia</string>
-    <string name="alojamiento">Ostatuak</string>
-    <string name="arte">Arte</string>
-    <string name="rutas">Ibilbideak</string>
-    <string name="otros">Beste batzuk</string>
+    <string name="tradicionesmayus">TRADIZIOAK</string>
+    <string name="monumentosmayus">MONUMENTUAK</string>
+    <string name="gastronomiamayus">GASTRONOMIA</string>
+    <string name="alojamientomayus">OSTATUAK</string>
+    <string name="rutasmayus">IBILBIDEAK</string>
+    <string name="otrosmayus">BESTE BATZUK</string>
     <string name="inicio">Hasiera</string>
     <string name="categorias">Kategoriak</string>
     <string name="ajustes">Doikuntzak</string>
     <string name="mapa">Mapa</string>
-    <string name="fiestas">Festak</string>
+    <string name="fiestasmayus">FESTAK</string>
     <string name="castellano">Gaztelania</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Ingelesa</string>
@@ -39,8 +37,7 @@
     <string name="gallego">Galegoa</string>
     <string name="frances">Frantsesa</string>
     <string name="aleman">Alemana</string>
-    <string name="artesania">Artisautza</string>
-    <string name="historia">Historia</string>
+    <string name="historiamayus">HISTORIA</string>
     <string name="la_casa_albercana">LA ALBERCAKO ETXEAK</string>
     <string name="_3_inscripciones">3. Inskripzioak</string>
     <string name="volver_a_categorias">Kategorietara itzuli</string>

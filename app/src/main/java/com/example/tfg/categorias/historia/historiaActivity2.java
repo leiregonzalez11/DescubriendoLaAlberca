@@ -1,5 +1,4 @@
-package com.example.tfg.categorias.artesania;
-
+package com.example.tfg.categorias.historia;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +14,9 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
+import com.example.tfg.categorias.artesania.artesaniaActivity;
+import com.example.tfg.categorias.artesania.artesaniaActivity2;
+import com.example.tfg.categorias.artesania.artesaniaActivity3;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.inicio.SliderAdapter;
@@ -25,7 +27,7 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class artesaniaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+public class historiaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
@@ -33,13 +35,13 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_artesania);
+        setContentView(R.layout.activity_historia2);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
-        categoria = "artesania";
+        categoria = extra.getString("categoria");
 
-        GestorDB dbHelper = new GestorDB(getApplicationContext());
+        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
         String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria);
 
@@ -53,7 +55,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         text3.setText(datos[2]);
 
         //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArte1);
+        SliderView sliderView = findViewById(R.id.imageSliderHist2);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -61,13 +63,16 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
         sliderView.startAutoCycle();
 
-        //BOTON SIGUIENTE
+        //BOTON SIGUIENTE y ATRAS
 
-        Button sigBtn = findViewById(R.id.artesiguiente1);
-        sigBtn.setOnClickListener(this);
+        Button atrasBtn = findViewById(R.id.arteatras2);
+        atrasBtn.setOnClickListener(this);
+
+        Button siguienteBtn = findViewById(R.id.artesiguiente2);
+        siguienteBtn.setOnClickListener(this);*/
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArte1);
+        bottomNavigationView = findViewById(R.id.navigationViewHist2);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -114,18 +119,26 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
     @Override
     public void onBackPressed() {}
 
-    @SuppressLint("NonConstantResourceId")
+   @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+         /*Button btn = (Button) view;
 
-        if (btn.getId() == R.id.artesiguiente1) {
-            Intent arte2 = new Intent(this, artesaniaActivity2.class);
-            arte2.putExtra("idioma", idioma);
-            arte2.putExtra("categoria", categoria);
-            startActivity(arte2);
-            finish();
-        }
+        switch (btn.getId()){
+
+            case R.id.arteatras2:
+                Intent atras = new Intent(this, artesaniaActivity.class);
+                atras.putExtra("idioma", idioma);
+                startActivity(atras);
+                break;
+
+            case R.id.artesiguiente2:
+                Intent arte3 = new Intent(this, artesaniaActivity3.class);
+                arte3.putExtra("idioma", idioma);
+                arte3.putExtra("categoria", categoria);
+                startActivity(arte3);
+                break;
+        }*/
     }
 }
