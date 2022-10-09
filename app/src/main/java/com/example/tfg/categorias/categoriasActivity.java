@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
 import com.example.tfg.categorias.artesania.artesaniaActivity;
+import com.example.tfg.categorias.gastronomia.gastronomiaActivity;
 import com.example.tfg.categorias.historia.historiaActivity;
 import com.example.tfg.categorias.tradiciones.tradicionesActivity;
 import com.example.tfg.inicio.MainActivity;
@@ -184,7 +185,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             //case R.id.botonfiestas:
 
-            //case R.id.botongastronomia:
+            case R.id.botongastronomia:
+                Intent gastronomia = new Intent(this, gastronomiaActivity.class);
+                gastronomia.putExtra("idioma", idioma);
+                startActivity(gastronomia);
+                finish();
+                break;
 
             //case R.id.botonalojamientos:
 

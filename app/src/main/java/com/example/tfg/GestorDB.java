@@ -28,14 +28,11 @@ public class GestorDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        if (sqLiteDatabase != null){
-            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
-        }
         assert sqLiteDatabase != null;
         crearTablas(sqLiteDatabase);
         try {
             cargarDatos(sqLiteDatabase);
-            cargarDatosCatalanyFrances(sqLiteDatabase);
+            cargarDatosCatalan(sqLiteDatabase);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,6 +47,10 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //TABLA ARTESANIA
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
+
+        //TABLA GASTRONOMIA
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS gastronomia (idGastro INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "namePag TEXT NOT NULL, idioma TEXT NOT NULL, descr TEXT NOT NULL)");
     }
 
@@ -71,7 +72,7 @@ public class GestorDB extends SQLiteOpenHelper {
         }
     }
 
-    private void cargarDatosCatalanyFrances(SQLiteDatabase sqLiteDatabase) throws IOException {
+    private void cargarDatosCatalan(SQLiteDatabase sqLiteDatabase){
 
         sqLiteDatabase.execSQL("INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz11','ca', 'No hi ha una bona recta pels carrers de La Alberca. Es corben els camins, es trenquen les línies de les façanes i és fàcil perdre''s pels seus carrers, camins i carrerons que pugen, baixen o s''entrecreuen. De tant en tant, ofereixen la sorpresa d''una font on poder asseure''t, beure un bon glop d''aigua i admirar la bellesa de les cases que l''envolten.');");
         sqLiteDatabase.execSQL("INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz12','ca', 'Hi ha qui diu que la seva estructura urbana és la d''una jueria, pel laberíntic i secret dels seus carrers, però altres, en recórrer el poble, l''han associat amb els ravals de Damasc. No en va, els seus carrers empedrats i els seus edificis de fusta i pedra, li van servir per a convertir-se en el primer poble d''Espanya declarat Monument Historicoartístic Nacional l''any 1940.');");

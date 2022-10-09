@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tfg">
+
     <!-- Herramientas del teléfono utilizadas -->
     <uses-feature
         android:name="android.hardware.camera2.full"
-        android:required="true" /> <!-- Permisos dados -->
+        android:required="true" />
+
+    <!-- Permisos dados -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -23,6 +25,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trabajofingrado"
         tools:targetApi="31">
+        <activity
+            android:name=".categorias.gastronomia.gastronomiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".categorias.gastronomia.gastronomiaActivity2"
+            android:exported="false" />
         <activity
             android:name=".categorias.tradiciones.tradicionesActivity"
             android:exported="false" />

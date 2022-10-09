@@ -18,7 +18,7 @@
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
     <string name="dialog_tourSi">Aquesta és la pantalla inicial de l\'aplicació. Des d\'ella podreu accedir a tota la resta de seccions de l\'aplicació.</string>
     <string name="seleccione_un_idioma">Seleccioneu un idioma:</string>
-    <string name="tradicionesmayus">TRADICIONS</string>
+    <string name="tradicionesmayus">TRADICIONS I LLEGENDES</string>
     <string name="monumentosmayus">MONUMENTS</string>
     <string name="gastronomiamayus">GASTRONOMIA</string>
     <string name="alojamientomayus">ALLOTJAMENT</string>
