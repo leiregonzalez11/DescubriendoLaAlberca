@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laAlbercaDB";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private final Context context;
     private boolean seguir = true;
 
@@ -56,7 +56,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Esquema de la tabla gastronomia
         String query3 = "CREATE TABLE IF NOT EXISTS gastronomia (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)";
+                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
         Log.d("Tabla gastronomia", query3);
         sqLiteDatabase.execSQL(query3);
 
@@ -119,6 +119,10 @@ public class GestorDB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS artesania");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
+        onCreate(sqLiteDatabase);
 
     }
 }
