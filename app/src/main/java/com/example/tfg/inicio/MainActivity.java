@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         }*/
 
         /*Cargamos la BD...*/
-        //GestorDB dbHelper =  new GestorDB(getApplicationContext());
-        //SQLiteDatabase db = dbHelper.getWritableDatabase();
+        GestorDB dbHelper =  new GestorDB(getApplicationContext());
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSlider);

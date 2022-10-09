@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.inicio.SliderAdapter;
@@ -39,18 +38,18 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         idioma = extra.getString("idioma");
         categoria = "artesania";
 
-        GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(this);
 
         String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria, 3);
 
-        TextView text1 = findViewById(R.id.arte11);
-        text1.setText(datos[0]);
+        //TextView text1 = findViewById(R.id.arte11);
+        //text1.setText(datos[0]);
 
-        TextView text2 = findViewById(R.id.arte12);
-        text2.setText(datos[1]);
+        //TextView text2 = findViewById(R.id.arte12);
+        //text2.setText(datos[1]);
 
-        TextView text3 = findViewById(R.id.arte13);
-        text3.setText(datos[2]);
+        //TextView text3 = findViewById(R.id.arte13);
+        //text3.setText(datos[2]);
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArte1);

@@ -37,9 +37,8 @@ public class activity_splash_screen extends AppCompatActivity {
         // to send a message with a delayed time.
 
         /*Cargamos la BD...*/
-        GestorDB dbHelper =  new GestorDB(getApplicationContext());
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        dbHelper.onCreate(db);
+        //GestorDB dbHelper =  new GestorDB(getApplicationContext());
+        //SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         new Handler().postDelayed(() -> {
 
