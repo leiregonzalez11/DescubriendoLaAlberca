@@ -39,7 +39,8 @@
                 android:gravity="center"
                 android:text="@string/el_bordado_serrano"
                 android:textAlignment="gravity"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:targetApi="o" />
 
             <TextView
                 android:id="@+id/arte21"
@@ -123,15 +124,14 @@
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/alatsi"
                     android:text="@string/atras">
-
                 </Button>
 
                 <Button
-                    android:id="@+id/artesiguiente2"
-                    android:layout_width="115dp"
+                    android:id="@+id/artefin1"
+                    android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/siguiente"
+                    android:text="@string/volver_a_categorias"
                     android:fontFamily="@font/alatsi"
                     android:layout_gravity="center">
 

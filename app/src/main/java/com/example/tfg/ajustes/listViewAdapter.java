@@ -11,13 +11,13 @@ import com.example.tfg.R;
 
 import java.util.ArrayList;
 
-public class AjustesAdapter extends BaseAdapter {
+public class listViewAdapter extends BaseAdapter {
 
     private Context context;
     private int layout;
     private ArrayList<String> names;
 
-    public AjustesAdapter(Context context, int layout, ArrayList<String> names){
+    public listViewAdapter(Context context, int layout, ArrayList<String> names){
         this.context = context;
         this.layout = layout;
         this.names = names;

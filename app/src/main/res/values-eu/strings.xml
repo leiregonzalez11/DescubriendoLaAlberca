@@ -57,4 +57,12 @@
     <string name="zona_de_usuarios">Erabiltzaileen gunea</string>
     <string name="masinfo">Informazio gehiago</string>
 
+    <string-array name="trajes_serranos">
+        <item>Sayas soinekoa</item>
+        <item>Vistas soinekoa</item>
+        <item>Zagalejo soinekoa</item>
+        <item>Ventioseno soinekoa</item>
+        <item>Manteo soinekoa</item>
+    </string-array>
+
 </resources>

@@ -44,7 +44,7 @@
     <string name="el_bordado_serrano">DAS SERRANO STICKEREI</string>
     <string name="traje_serrano">DAS SERRANO KOSTÜM</string>
     <string name="traje_mujer">1. Anzüge für Frauen</string>
-    <string name="traje_hombre">2.  Anzug für Männer</string>
+    <string name="traje_hombre">2. Anzüge für Männer</string>
     <string name="button_tour">Wenn</string>
     <string name="ajustes1">Wie kommt man?</string>
     <string name="ajustes2">Anwendungssprache</string>
@@ -52,5 +52,13 @@
     <string name="ajustes4">Wo schlafen?</string>
     <string name="zona_de_usuarios">Benutzerzone</string>
     <string name="masinfo">Weitere informationen</string>
+
+    <string-array name="trajes_serranos">
+        <item>Sayas anzüge</item>
+        <item>Vistas anzüge</item>
+        <item>Zagalejo anzüge</item>
+        <item>Ventioseno anzüge</item>
+        <item>Manteo anzüge</item>
+    </string-array>
 
 </resources>

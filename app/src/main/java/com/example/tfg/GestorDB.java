@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 public class GestorDB extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "laAlbercaDatabase";
+    private static final String DB_NAME = "laAlbercaDB";
     private static final int DB_VERSION = 1;
     private final Context context;
     private boolean seguir = true;
@@ -41,17 +41,25 @@ public class GestorDB extends SQLiteOpenHelper {
 
     private void crearTablas(SQLiteDatabase sqLiteDatabase){
 
-        //TABLA ARQUITECTURA
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)");
 
-        //TABLA ARTESANIA
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "namePag VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE, nombreTraje VARCHAR )");
+        //Esquema de la tabla arquitectura
+        String query1 = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)";
+        Log.d("Tabla arquitectura", query1);
+        sqLiteDatabase.execSQL(query1);
 
-        //TABLA GASTRONOMIA
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS gastronomia (idGastro INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "namePag VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)");
+        //Esquema de la tabla artesania
+        String query2 = "CREATE TABLE IF NOT EXISTS artesania (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, nombreTraje VARCHAR, descr VARCHAR NOT NULL UNIQUE)";
+        Log.d("Tabla artesania", query2);
+        sqLiteDatabase.execSQL(query2);
+
+        //Esquema de la tabla gastronomia
+        String query3 = "CREATE TABLE IF NOT EXISTS gastronomia (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "namePag TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)";
+        Log.d("Tabla gastronomia", query3);
+        sqLiteDatabase.execSQL(query3);
+
     }
 
     private void cargarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {

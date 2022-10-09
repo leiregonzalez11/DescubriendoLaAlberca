@@ -51,4 +51,12 @@
     <string name="zona_de_usuarios">Zone utilisateur</string>
     <string name="masinfo">Plus d\'informations</string>
 
+    <string-array name="trajes_serranos">
+        <item>Sayas costume</item>
+        <item>Vistas costume</item>
+        <item>Zagalejo costume</item>
+        <item>Ventioseno costume</item>
+        <item>Manteo costume</item>
+    </string-array>
+
 </resources>

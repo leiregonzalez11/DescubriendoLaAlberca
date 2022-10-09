@@ -56,4 +56,12 @@
     <string name="zona_de_usuarios">Zona d\'usuaris</string>
     <string name="masinfo">Més informació</string>
 
+    <string-array name="trajes_serranos">
+        <item>El Sayas vestit</item>
+        <item>El Vistas vestit</item>
+        <item>El Zagalejo vestit</item>
+        <item>El Ventioseno vestit</item>
+        <item>El Manteo vestit</item>
+    </string-array>
+
 </resources>

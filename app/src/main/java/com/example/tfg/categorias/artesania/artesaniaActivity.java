@@ -123,7 +123,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         Button btn = (Button) view;
 
         if (btn.getId() == R.id.artesiguiente1) {
-            Intent arte2 = new Intent(this, artesaniaActivity2.class);
+            Intent arte2 = new Intent(this, artesaniaSelectorActivity.class);
             arte2.putExtra("idioma", idioma);
             arte2.putExtra("categoria", categoria);
             startActivity(arte2);

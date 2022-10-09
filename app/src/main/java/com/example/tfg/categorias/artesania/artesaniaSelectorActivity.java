@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes;
+package com.example.tfg.categorias.artesania;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.tfg.ajustes.listViewAdapter;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
@@ -21,36 +22,31 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class artesaniaSelectorActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     private BottomNavigationView bottomNavigationView;
-    private ListView listView, listView2, listView3, listView4;
-    private ArrayList<String> lista1, lista2, lista3, lista4;
-    String idioma, opc1, opc2, opc3, opc4;
+    private ListView listView, listView2;
+    private ArrayList<String> lista1, lista2;
+    String idioma, categoria, opc1, opc2;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajustes);
+        setContentView(R.layout.activity_artesania_selector);
 
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
+        categoria = datos.getString("categoria");
 
-        listView = findViewById(R.id.listview);
-        listView2 = findViewById(R.id.listview2);
-        listView3 = findViewById(R.id.listview3);
-        listView4 = findViewById(R.id.listview4);
+        listView = findViewById(R.id.listviewArte1);
+        listView2 = findViewById(R.id.listviewArte2);
 
-        opc1 = getResources().getString(R.string.ajustes1);
-        opc2 = getResources().getString(R.string.ajustes2);
-        opc3 = getResources().getString(R.string.ajustes3);
-        opc4 = getResources().getString(R.string.ajustes4);
+        opc1 = getResources().getString(R.string.el_bordado_serrano);
+        opc2 = getResources().getString(R.string.traje_serrano);
 
         System.out.println("TEXTOOOOOO" + opc1);
         System.out.println("TEXTOOOOOO" + opc2);
-        System.out.println("TEXTOOOOOO" + opc3);
-        System.out.println("TEXTOOOOOO" + opc4);
 
         lista1 = new ArrayList<String>();
         lista1.add(opc1);
@@ -61,7 +57,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+                Intent arte2 = new Intent(getApplicationContext(), artesaniaActivity2.class);
+                arte2.putExtra("idioma", idioma);
+                arte2.putExtra("categoria", categoria);
+                startActivity(arte2);
             }
         });
 
@@ -71,43 +70,23 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_item, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
-                startActivity(inicio);
-                finish();
-            }
+        listView2.setOnItemClickListener((adapterView, view, position, id) -> {
+            Intent arte3 = new Intent(getApplicationContext(), artesaniaActivity3.class);
+            arte3.putExtra("idioma", idioma);
+            arte3.putExtra("categoria", categoria);
+            startActivity(arte3);
         });
 
-        lista3 = new ArrayList<String>();
-        lista3.add(opc3);
+        //BOTON SIGUIENTE y ATRAS
 
-        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
-        listView3.setAdapter(myAdapter3);
+        Button atrasBtn = findViewById(R.id.arteatrass);
+        atrasBtn.setOnClickListener(this);
 
-        listView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
-            }
-        });
-
-        lista4 = new ArrayList<String>();
-        lista4.add(opc4);
-
-        listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
-        listView4.setAdapter(myAdapter4);
-
-        listView4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
-            }
-        });
+        Button finBtn = findViewById(R.id.artefin2);
+        finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewAjustes);
+        bottomNavigationView = findViewById(R.id.navigationViewSelector);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 
@@ -142,6 +121,30 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             default:
                 return super.onOptionsItemSelected(item);
 
+        }
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
+
+        Button btn = (Button) view;
+
+        switch (btn.getId()){
+
+            case R.id.arteatrass:
+                Intent atras = new Intent(this, artesaniaActivity.class);
+                atras.putExtra("idioma", idioma);
+                atras.putExtra("categoria", categoria);
+                startActivity(atras);
+                break;
+
+            case R.id.artefin2:
+                Intent cat = new Intent(this, categoriasActivity.class);
+                cat.putExtra("idioma", idioma);
+                startActivity(cat);
+                finish();
+                break;
         }
     }
 

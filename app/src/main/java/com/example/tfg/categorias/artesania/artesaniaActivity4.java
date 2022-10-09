@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.arquitectura.arquitecturaActivity3;
@@ -38,9 +40,9 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz4", categoria);
+        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz4", categoria, 4);
 
         TextView text1 = findViewById(R.id.arte41);
         text1.setText(datos[0]);
@@ -49,16 +51,11 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         text2.setText(datos[1]);
 
         TextView text3 = findViewById(R.id.arte43);
-        text3.setText(datos[2]);*/
+        text3.setText(datos[2]);
 
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArte4);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
+        TextView text4= findViewById(R.id.arte44);
+        text4.setText(datos[3]);
+
 
         //BOTON SIGUIENTE y ATRAS
 

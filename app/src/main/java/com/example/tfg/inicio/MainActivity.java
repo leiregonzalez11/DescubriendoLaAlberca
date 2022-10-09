@@ -1,5 +1,7 @@
 package com.example.tfg.inicio;
 
+import static android.os.SystemClock.sleep;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         /*Cargamos la BD...*/
         GestorDB dbHelper =  new GestorDB(getApplicationContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSlider);

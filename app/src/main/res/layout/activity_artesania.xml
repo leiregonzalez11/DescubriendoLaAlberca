@@ -19,7 +19,7 @@
         <LinearLayout
             android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
@@ -39,7 +39,8 @@
                 android:gravity="center"
                 android:text="@string/artesaniamayus"
                 android:textAlignment="gravity"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:targetApi="o" />
 
 
             <com.google.android.material.card.MaterialCardView
