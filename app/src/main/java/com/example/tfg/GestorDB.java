@@ -47,7 +47,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //TABLA ARTESANIA
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "namePag VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE)");
+                "namePag VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL UNIQUE, nombreTraje VARCHAR )");
 
         //TABLA GASTRONOMIA
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS gastronomia (idGastro INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -86,6 +86,9 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz22','ca','Cada animal representat té un significat, per exemple, l''àguila bicèfala representa el matrimoni; el lleó, la virilitat; l''ocell d''un cap, la dona; el cor del qual sali la flor, l''amor; l''arbre de la vida, la salut i la longevitat, etc.');");
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz23','ca','Altres trets del brodat serrà són l''absència de figures humanes i de motius geomètrics, deixant entreveure la influència de civilitzacions orientals antigues, renaixentistes i morisques. Una altra dada interessant és el llenguatge dels colors emprats: el blau s''emprava per a amortallar als difunts, mentre que els vermells es brodaven en la roba de llit dels jovençans. A mitjan segle XX, s''incorporen nous colors: malves, morats, verda herba, blau cobalt, salmó, entre altres.');");
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz24','ca','Els materials bàsics per als brodats eren el lli i la llana. Amb el pas dels anys, aquests van ser substituïts pel bri de seda, i més tard va arribar el cotó (l''anomenat moliné) que juntament amb la seda han arribat als nostres dies. Per a realitzar els teixits, fins al segle XIX s''empraven telers manuals, utilitzant la tècnica mixta, a fils comptats i a dibuix. Una vegada desapareguts, es van començar a usar teixits industrials amb altres fibres.');");
+        sqLiteDatabase.execSQL("INSERT INTO gastronomia (namePag, idioma, descr) VALUES ('interfaz11','ca','Puede decirse que la gastronomía de la Sierra de Francia, y por tanto de La Alberca, descansa en las carnes y embutidos, curados al aire serrano, así como en las muy famosas patatas meneás o el cabrito cuchifrito, sin olvidarnos de sus inigualables turrones o sus deliciosas almendras garrapiñadas.');");
+        sqLiteDatabase.execSQL("INSERT INTO gastronomia (namePag, idioma, descr) VALUES ('interfaz12','ca','Así mismo, son muy apreciados los hornazos, empanada a base de embutidos, o su limón serrano, hecho con limón, naranja, huevo duro y chorizo. Sus vinos, cosechas de la comarca y los dulces de extraordinaria calidad realizados con productos naturales, obleas, perrunillas, miel y polen tienen también mucho protagonismo en la gastronomía de este entrañable pueblo.');");
+
     }
 
     public String[] obtenerDatosInterfazSencilla(String idioma, String interfaz, String tabla, int numTV){

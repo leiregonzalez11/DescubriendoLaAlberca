@@ -39,7 +39,8 @@
                 android:gravity="center"
                 android:text="@string/traje_serrano"
                 android:textAlignment="gravity"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:targetApi="o" />
 
             <TextView
                 android:id="@+id/exttext"
@@ -55,31 +56,25 @@
                 android:fontFamily="@font/alatsi"
                 android:gravity="left"
                 android:text="@string/traje_mujer"
-                />
+                tools:targetApi="o" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-5dp"
+                app:cardElevation="10dp"
+                app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArte3"
+                <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:backgroundTint="@color/black" />
 
             </com.google.android.material.card.MaterialCardView>
 

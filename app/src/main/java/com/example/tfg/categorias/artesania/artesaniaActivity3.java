@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -24,7 +28,7 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
+public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener, AdapterView.OnItemSelectedListener{
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
@@ -33,6 +37,27 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania3);
+
+        //Spinner
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
+        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(new ArrayAdapter<String>(this, R.layout.dropdownitem, trajes));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(adapterView.getContext(), (String) adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                // vacio
+
+            }
+        });
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
@@ -50,15 +75,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
 
         TextView text3 = findViewById(R.id.arte33);
         text3.setText(datos[2]);*/
-
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArte3);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE y ATRAS
 
@@ -138,5 +154,15 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
                 startActivity(arte4);
                 break;
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
