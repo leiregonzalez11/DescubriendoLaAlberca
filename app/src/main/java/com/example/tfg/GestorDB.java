@@ -88,13 +88,13 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz24','ca','Els materials bàsics per als brodats eren el lli i la llana. Amb el pas dels anys, aquests van ser substituïts pel bri de seda, i més tard va arribar el cotó (l''anomenat moliné) que juntament amb la seda han arribat als nostres dies. Per a realitzar els teixits, fins al segle XIX s''empraven telers manuals, utilitzant la tècnica mixta, a fils comptats i a dibuix. Una vegada desapareguts, es van començar a usar teixits industrials amb altres fibres.');");
     }
 
-    public String[] obtenerDatosInterfazSencilla(String idioma, String interfaz, String tabla){
+    public String[] obtenerDatosInterfazSencilla(String idioma, String interfaz, String tabla, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         int i = 0;
-        String [] descr = new String[4];
+        String [] descr = new String[numTV];
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE '" + interfaz + "%' AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
