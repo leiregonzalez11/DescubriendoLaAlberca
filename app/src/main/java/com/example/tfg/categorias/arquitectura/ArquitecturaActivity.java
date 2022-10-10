@@ -24,8 +24,6 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-import java.util.Locale;
-
 public class ArquitecturaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
@@ -43,7 +41,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria, 2);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria, 2);
 
         TextView interfaz1 = findViewById(R.id.arqui11);
         interfaz1.setText(datos[0]);

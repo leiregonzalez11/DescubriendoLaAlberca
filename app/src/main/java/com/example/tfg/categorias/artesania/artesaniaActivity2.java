@@ -48,7 +48,7 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz2", categoria, 4);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz2", categoria, 4);
 
         text1 = findViewById(R.id.arte21);
         text1.setText(datos[0]);
@@ -130,7 +130,7 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
         switch (btn.getId()){
 
             case R.id.arteatras2:
-                Intent atras = new Intent(this, artesaniaActivity2.class);
+                Intent atras = new Intent(this, artesaniaSelectorActivity.class);
                 atras.putExtra("idioma", idioma);
                 atras.putExtra("categoria", categoria);
                 startActivity(atras);

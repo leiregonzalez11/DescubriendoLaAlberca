@@ -8,10 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -43,7 +40,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
 
         GestorDB dbHelper = new GestorDB(this);
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria, 3);
 
         TextView text1 = findViewById(R.id.arte11);
         text1.setText(datos[0]);

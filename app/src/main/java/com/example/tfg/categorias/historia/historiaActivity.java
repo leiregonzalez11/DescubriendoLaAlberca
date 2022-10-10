@@ -41,7 +41,7 @@ public class historiaActivity extends AppCompatActivity implements NavigationBar
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz1", categoria);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria);
 
         TextView text1 = findViewById(R.id.arte11);
         text1.setText(datos[0]);

@@ -15,16 +15,11 @@ import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity3;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
 
 public class artesaniaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
@@ -42,7 +37,7 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz4", categoria, 4);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz4", categoria, 4);
 
         TextView text1 = findViewById(R.id.arte41);
         text1.setText(datos[0]);

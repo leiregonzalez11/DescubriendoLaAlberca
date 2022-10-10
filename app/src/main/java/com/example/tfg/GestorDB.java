@@ -99,7 +99,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
-    public String[] obtenerDatosInterfazSencilla(String idioma, String interfaz, String tabla, int numTV){
+    public String[] obtenerDatosInterfaz(String idioma, String interfaz, String tabla, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -108,6 +108,25 @@ public class GestorDB extends SQLiteOpenHelper {
         String [] descr = new String[numTV];
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE '" + interfaz + "%' AND idioma = '" + idioma + "';", null);
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
+        }
+        c.close();
+        return descr;
+    }
+
+    public String[] obtenerDatosInterfazTrajes(String idioma, String interfaz, String tabla, int numTV, String nombreTraje){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        int i = 0;
+        String [] descr = new String[numTV];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE namePag LIKE '" + interfaz + "%' " +
+                "AND idioma = '" + idioma + "' AND nombreTraje = '" + nombreTraje + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;

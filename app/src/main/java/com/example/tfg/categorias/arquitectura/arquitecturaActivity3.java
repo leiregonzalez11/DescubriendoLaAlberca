@@ -41,7 +41,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz3", categoria);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz3", categoria);
 
         TextView text1 = findViewById(R.id.arqui31);
         text1.setText(datos[0]);

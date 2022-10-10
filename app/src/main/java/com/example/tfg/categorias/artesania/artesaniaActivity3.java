@@ -1,80 +1,96 @@
 package com.example.tfg.categorias.artesania;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity4;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
-public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener, AdapterView.OnItemSelectedListener{
+
+public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener, AdapterView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    String idioma, categoria;
+    String idioma, categoria, nombreTraje;
+    ImageView img1, img2, img3;
+    StorageReference storageRef;
+    ViewGroup.MarginLayoutParams marginParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania3);
 
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
+        TextView text1 = findViewById(R.id.arte31);
+        TextView text2 = findViewById(R.id.arte32);
+        TextView text3 = findViewById(R.id.arte33);
+        img1 = findViewById(R.id.arte31img);
+        img2 = findViewById(R.id.arte32img);
+        img3 = findViewById(R.id.arte33img);
+
         //Spinner
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<String>(this, R.layout.dropdownitem, trajes));
+        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+            @RequiresApi(api = Build.VERSION_CODES.Q)
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(adapterView.getContext(), (String) adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+
+                nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
+                System.out.println("TRAJEEEEE " + nombreTraje);
+
+                if (nombreTraje.equals("sayas")){
+                    Toast.makeText(adapterView.getContext(), (String) adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                } else{
+                    String [] datos = dbHelper.obtenerDatosInterfazTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
+                    text1.setText(datos[0]);
+                    text2.setText(datos[1]);
+                    text3.setText(datos[2]);
+                    obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
+                    obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
+                    obtenerImagenFirebase("artesania/" + nombreTraje + "3.jpg", img3);
+                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-                // vacio
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
-
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
-
-        String [] datos = dbHelper.obtenerDatosInterfazSencilla(idioma, "interfaz3", categoria);
-
-        TextView text1 = findViewById(R.id.arte31);
-        text1.setText(datos[0]);
-
-        TextView text2 = findViewById(R.id.arte32);
-        text2.setText(datos[1]);
-
-        TextView text3 = findViewById(R.id.arte33);
-        text3.setText(datos[2]);*/
 
         //BOTON SIGUIENTE y ATRAS
 
@@ -89,6 +105,24 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    private String determinarTraje(String idtraje) {
+
+        if(idtraje.substring(9,11).equalsIgnoreCase("sa")){
+            nombreTraje = "sayas";
+        } else if (idtraje.substring(9,11).equalsIgnoreCase("ve")){
+            nombreTraje = "ventioseno";
+        } else if (idtraje.substring(9,11).equalsIgnoreCase("vi")){
+            nombreTraje = "vistas";
+        } else if (idtraje.substring(9,11).equalsIgnoreCase("za")){
+            nombreTraje = "zagalejo";
+        } else if (idtraje.substring(9,11).equalsIgnoreCase("ma")){
+            nombreTraje = "manteo";
+        }
+
+        return nombreTraje;
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -129,8 +163,11 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         }
     }
 
-    @Override
-    public void onBackPressed() {}
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
+    }
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
@@ -157,12 +194,12 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {}
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    public void onNothingSelected(AdapterView<?> adapterView) {}
 
-    }
+    @Override
+    public void onBackPressed() {}
+
 }
