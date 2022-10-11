@@ -86,8 +86,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-
-
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");

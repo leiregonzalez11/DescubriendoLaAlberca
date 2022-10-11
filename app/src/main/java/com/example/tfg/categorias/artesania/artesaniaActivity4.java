@@ -10,8 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -20,10 +22,14 @@ import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class artesaniaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
     BottomNavigationView bottomNavigationView;
+    StorageReference storageRef;
+    ImageView img1, img2, img3;
     String idioma, categoria;
 
     @Override
@@ -34,6 +40,10 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
+
+        img1 = findViewById(R.id.arte41img);
+        img2 = findViewById(R.id.arte42img);
+        img3 = findViewById(R.id.arte43img);
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
@@ -51,6 +61,10 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         TextView text4= findViewById(R.id.arte44);
         text4.setText(datos[3]);
 
+        storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("artesania/hombre1.jpg", img1);
+        obtenerImagenFirebase("artesania/hombre2.jpg", img2);
+        obtenerImagenFirebase("artesania/hombre3.jpg", img3);
 
         //BOTON SIGUIENTE y ATRAS
 
@@ -107,6 +121,12 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
     @Override
     public void onBackPressed() {}
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
+    }
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {

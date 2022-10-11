@@ -83,8 +83,9 @@
                 android:id="@+id/arte31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/alata"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
@@ -92,16 +93,16 @@
             <ImageView
                 android:id="@+id/arte31img"
                 android:layout_width="wrap_content"
-                android:layout_height="500dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_height="450dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
             </ImageView>
 
             <TextView
                 android:id="@+id/arte32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:fontFamily="@font/alata"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
@@ -109,7 +110,7 @@
             <ImageView
                 android:id="@+id/arte32img"
                 android:layout_width="wrap_content"
-                android:layout_height="470dp"
+                android:layout_height="450dp"
                 android:layout_margin="10dp">
             </ImageView>
 
@@ -120,7 +121,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/alata"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
@@ -128,7 +129,7 @@
             <ImageView
                 android:id="@+id/arte33img"
                 android:layout_width="wrap_content"
-                android:layout_height="500dp"
+                android:layout_height="450dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
             </ImageView>

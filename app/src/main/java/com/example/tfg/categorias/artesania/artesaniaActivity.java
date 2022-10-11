@@ -53,7 +53,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArte1);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
+        int[] images = new int[]{R.drawable.arte1, R.drawable.arte2, R.drawable.arte3};
         SliderAdapter adapterSlider = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapterSlider);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
