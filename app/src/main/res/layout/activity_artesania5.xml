@@ -26,7 +26,7 @@
             tools:context=".categorias.artesania.artesaniaActivity2">
 
             <TextView
-                android:id="@+id/arquitext"
+                android:id="@+id/arte5text"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -37,13 +37,13 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
-                android:text="@string/el_bordado_serrano"
+                android:text="@string/alhajas"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
             <TextView
-                android:id="@+id/arte21"
+                android:id="@+id/arte51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -52,7 +52,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/arte21img"
+                android:id="@+id/arte51img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-120dp"
@@ -62,7 +62,7 @@
             </ImageView>
 
             <TextView
-                android:id="@+id/arte22"
+                android:id="@+id/arte52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -71,7 +71,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/arte22img"
+                android:id="@+id/arte52img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-180dp"
@@ -81,7 +81,7 @@
             </ImageView>
 
             <TextView
-                android:id="@+id/arte23"
+                android:id="@+id/arte53"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -89,27 +89,9 @@
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
 
-            <ImageView
-                android:id="@+id/arte23img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
-                android:layout_marginBottom="-180dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/arte24"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/alata"
-                android:gravity='center_horizontal'
-                android:textSize="18sp"/>
 
             <LinearLayout
-                android:id="@+id/layoutArte22"
+                android:id="@+id/layoutArte52"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/fab_margin"
@@ -117,11 +99,11 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arteatras2"
+                    android:id="@+id/arteatras5"
                     android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
-                    android:layout_margin="20dp"
+                    android:layout_marginLeft="20dp"
                     android:fontFamily="@font/alatsi"
                     android:text="@string/atras">
                 </Button>
@@ -134,7 +116,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArte2"
+        android:id="@+id/navigationViewArte5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"

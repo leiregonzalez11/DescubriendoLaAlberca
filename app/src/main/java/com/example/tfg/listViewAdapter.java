@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes;
+package com.example.tfg;
 
 import android.content.Context;
 import android.view.LayoutInflater;

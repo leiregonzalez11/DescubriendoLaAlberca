@@ -55,6 +55,8 @@
     <string name="ajustes4">On dormir?</string>
     <string name="zona_de_usuarios">Zona d\'usuaris</string>
     <string name="masinfo">Més informació</string>
+    <string name="alhajas">LES JOIES</string>
+    <string name="volver_a_artesania">Tornar a artesanía</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>
@@ -63,5 +65,6 @@
         <item>El Ventioseno vestit</item>
         <item>El Manteo vestit</item>
     </string-array>
+    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
 
 </resources>

@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.tfg.ajustes.listViewAdapter;
+import com.example.tfg.listViewAdapter;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
@@ -25,9 +25,9 @@ import java.util.ArrayList;
 public class artesaniaSelectorActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     private BottomNavigationView bottomNavigationView;
-    private ListView listView, listView2;
-    private ArrayList<String> lista1, lista2;
-    String idioma, categoria, opc1, opc2;
+    private ListView listView, listView2, listView3;
+    private ArrayList<String> lista1, lista2, lista3;
+    String idioma, categoria, opc1, opc2, opc3;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -41,12 +41,15 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
 
         listView = findViewById(R.id.listviewArte1);
         listView2 = findViewById(R.id.listviewArte2);
+        listView3 = findViewById(R.id.listviewArte3);
 
         opc1 = getResources().getString(R.string.el_bordado_serrano);
         opc2 = getResources().getString(R.string.traje_serrano);
+        opc3 = getString(R.string.alhajas);
 
         System.out.println("TEXTOOOOOO" + opc1);
         System.out.println("TEXTOOOOOO" + opc2);
+        System.out.println("TEXTOOOOOO" + opc3);
 
         lista1 = new ArrayList<String>();
         lista1.add(opc1);
@@ -75,6 +78,19 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
             arte3.putExtra("idioma", idioma);
             arte3.putExtra("categoria", categoria);
             startActivity(arte3);
+        });
+
+        lista3 = new ArrayList<String>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, view, position, id) -> {
+            Intent arte5 = new Intent(getApplicationContext(), artesaniaActivity5.class);
+            arte5.putExtra("idioma", idioma);
+            arte5.putExtra("categoria", categoria);
+            startActivity(arte5);
         });
 
         //BOTON SIGUIENTE y ATRAS

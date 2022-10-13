@@ -55,6 +55,9 @@
     <string name="ajustes4">¿Dónde dormir?</string>
     <string name="zona_de_usuarios">Zona de usuarios</string>
     <string name="masinfo">Más información</string>
+    <string name="alhajas">LAS ALHAJAS</string>
+    <string name="volver_a_artesania">Volver a artesanía</string>
+    <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra, la vivienda y el lugar de almacenamiento.</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

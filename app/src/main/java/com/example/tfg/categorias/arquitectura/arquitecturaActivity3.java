@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -19,8 +22,11 @@ import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -28,6 +34,9 @@ import com.smarteist.autoimageslider.SliderView;
 public class arquitecturaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
+    StorageReference storageRef;
+    ImageView img1, img2, img3, img4, img5;
+    TextView text1, text2, text3, text4, text5;
     String idioma, categoria;
 
     @Override
@@ -39,27 +48,34 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz3", categoria);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz3", categoria, 5);
 
-        TextView text1 = findViewById(R.id.arqui31);
+        text1 = findViewById(R.id.arqui31);
+        text2 = findViewById(R.id.arqui32);
+        text3 = findViewById(R.id.arqui33);
+        text4 = findViewById(R.id.arqui34);
+        text5 = findViewById(R.id.arqui35);
+
         text1.setText(datos[0]);
-
-        TextView text2 = findViewById(R.id.arqui32);
         text2.setText(datos[1]);
+        text3.setText(datos[2]);
+        text4.setText(datos[3]);
+        text5.setText(datos[4]);
 
-        TextView text3 = findViewById(R.id.arqui33);
-        text3.setText(datos[2]);*/
+        storageRef = FirebaseStorage.getInstance().getReference();
 
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui3);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
+        img1 = findViewById(R.id.arqui31img);
+        img2 = findViewById(R.id.arqui32img);
+        img3 = findViewById(R.id.arqui33img);
+        img4 = findViewById(R.id.arqui34img);
+        img5 = findViewById(R.id.arqui35img);
+        obtenerImagenFirebase("arquitectura/interior1.jpg", img1);
+        obtenerImagenFirebase("arquitectura/interior5.jpg", img2);
+        obtenerImagenFirebase("arquitectura/interior2.jpg", img3);
+        obtenerImagenFirebase("arquitectura/interior4.jpg", img4);
+        obtenerImagenFirebase("arquitectura/interior3.jpg", img5);
 
         //BOTON SIGUIENTE y ATRAS
 
@@ -112,6 +128,17 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(getApplicationContext()).load(uri).into(img);
+            }
+        });
     }
 
     @Override

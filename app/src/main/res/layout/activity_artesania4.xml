@@ -135,11 +135,11 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/artefin"
+                    android:id="@+id/artefintraje"
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/volver_a_categorias"
+                    android:text="@string/volver_a_artesania"
                     android:fontFamily="@font/alatsi"
                     android:layout_gravity="center">
 

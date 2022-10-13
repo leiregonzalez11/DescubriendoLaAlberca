@@ -18,6 +18,7 @@ import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
 import com.example.tfg.categorias.artesania.artesaniaActivity;
 import com.example.tfg.categorias.gastronomia.gastronomiaActivity;
 import com.example.tfg.categorias.historia.historiaActivity;
+import com.example.tfg.categorias.otros.otrosActivity;
 import com.example.tfg.categorias.tradiciones.tradicionesActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
@@ -196,7 +197,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             //case R.id.botonruta:
 
-            //case R.id.botonotros:
+            case R.id.botonotros:
+                Intent otros = new Intent(this, otrosActivity.class);
+                otros.putExtra("idioma", idioma);
+                startActivity(otros);
+                finish();
+                break;
 
         }
     }

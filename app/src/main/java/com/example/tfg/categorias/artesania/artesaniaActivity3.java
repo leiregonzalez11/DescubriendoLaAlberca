@@ -30,6 +30,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Locale;
+
 
 public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -37,7 +39,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
     String idioma, categoria, nombreTraje;
     ImageView img1, img2, img3;
     StorageReference storageRef;
-    ViewGroup.MarginLayoutParams marginParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,17 +109,19 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private String determinarTraje(String idtraje) {
 
-        if(idtraje.substring(9,11).equalsIgnoreCase("sa")){
+        if(idtraje.toLowerCase().contains("sayas")){
             nombreTraje = "sayas";
-        } else if (idtraje.substring(9,11).equalsIgnoreCase("ve")){
+        } else if (idtraje.toLowerCase().contains("ventioseno")){
             nombreTraje = "ventioseno";
-        } else if (idtraje.substring(9,11).equalsIgnoreCase("vi")){
+        } else if (idtraje.toLowerCase().contains("vistas")){
             nombreTraje = "vistas";
-        } else if (idtraje.substring(9,11).equalsIgnoreCase("za")){
+        } else if (idtraje.toLowerCase().contains("zagalejo")){
             nombreTraje = "zagalejo";
-        } else if (idtraje.substring(9,11).equalsIgnoreCase("ma")){
+        } else if (idtraje.toLowerCase().contains("manteo")){
             nombreTraje = "manteo";
         }
+
+
 
         return nombreTraje;
     }

@@ -56,6 +56,8 @@
     <string name="ajustes4">Non lo egin?</string>
     <string name="zona_de_usuarios">Erabiltzaileen gunea</string>
     <string name="masinfo">Informazio gehiago</string>
+    <string name="alhajas">ALHAJAK</string>
+    <string name="volver_a_artesania">Artisautzara itzuli</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -64,5 +66,6 @@
         <item>Ventioseno soinekoa</item>
         <item>Manteo soinekoa</item>
     </string-array>
+    <string name="interior_inicio">"La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. "</string>
 
 </resources>

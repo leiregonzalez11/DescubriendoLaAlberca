@@ -56,6 +56,8 @@
     <string name="ajustes4">Where to sleep?</string>
     <string name="zona_de_usuarios">User area</string>
     <string name="masinfo">Further information</string>
+    <string name="alhajas">JEWELLERY</string>
+    <string name="volver_a_artesania">Back to handicrafts</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -64,5 +66,6 @@
         <item>Ventioseno suit</item>
         <item>Manteo suit</item>
     </string-array>
+    <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.</string>
 
 </resources>

@@ -127,21 +127,11 @@ public class artesaniaActivity2 extends AppCompatActivity implements NavigationB
 
         Button btn = (Button) view;
 
-        switch (btn.getId()){
-
-            case R.id.arteatras2:
-                Intent atras = new Intent(this, artesaniaSelectorActivity.class);
-                atras.putExtra("idioma", idioma);
-                atras.putExtra("categoria", categoria);
-                startActivity(atras);
-                break;
-
-            case R.id.artefin1:
-                Intent cat = new Intent(this, categoriasActivity.class);
-                cat.putExtra("idioma", idioma);
-                startActivity(cat);
-                finish();
-                break;
+        if (btn.getId() == R.id.arteatras2) {
+            Intent atras = new Intent(this, artesaniaSelectorActivity.class);
+            atras.putExtra("idioma", idioma);
+            atras.putExtra("categoria", categoria);
+            startActivity(atras);
         }
     }
 

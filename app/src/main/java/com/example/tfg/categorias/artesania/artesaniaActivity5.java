@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,62 +21,59 @@ import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class artesaniaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
+public class artesaniaActivity5 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
-    StorageReference storageRef;
-    ImageView img1, img2, img3;
     String idioma, categoria;
+    ImageView img1, img2;
+    TextView text1, text2, text3;
+    StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_artesania4);
+        setContentView(R.layout.activity_artesania5);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        img1 = findViewById(R.id.arte41img);
-        img2 = findViewById(R.id.arte42img);
-        img3 = findViewById(R.id.arte43img);
-
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz4", categoria, 4);
+        //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        TextView text1 = findViewById(R.id.arte41);
+        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz5", categoria, 3);
+
+        text1 = findViewById(R.id.arte51);
         text1.setText(datos[0]);
 
-        TextView text2 = findViewById(R.id.arte42);
+        text2 = findViewById(R.id.arte52);
         text2.setText(datos[1]);
 
-        TextView text3 = findViewById(R.id.arte43);
+        text3 = findViewById(R.id.arte53);
         text3.setText(datos[2]);
 
-        TextView text4= findViewById(R.id.arte44);
-        text4.setText(datos[3]);
 
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("artesania/hombre1.jpg", img1);
-        obtenerImagenFirebase("artesania/hombre2.jpg", img2);
-        obtenerImagenFirebase("artesania/hombre3.jpg", img3);
+
+        img1 = findViewById(R.id.arte51img);
+        obtenerImagenFirebase("artesania/alhajas1.jpg", img1);
+        img2 = findViewById(R.id.arte52img);
+        obtenerImagenFirebase("artesania/alhajas2.jpg", img2);
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.arte4atras);
+        Button atrasBtn = findViewById(R.id.arteatras5);
         atrasBtn.setOnClickListener(this);
 
-        Button finBtn = findViewById(R.id.artefintraje);
-        finBtn.setOnClickListener(this);
-
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArte4);
+        bottomNavigationView = findViewById(R.id.navigationViewArte5);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -119,38 +117,35 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         }
     }
 
-    @Override
-    public void onBackPressed() {}
-
-    /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
-    }
-
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
         Button btn = (Button) view;
 
-        switch (btn.getId()) {
+        switch (btn.getId()){
 
-            case R.id.arte4atras:
-                Intent atras = new Intent(this, artesaniaActivity3.class);
+            case R.id.arteatras5:
+                Intent atras = new Intent(this, artesaniaSelectorActivity.class);
                 atras.putExtra("idioma", idioma);
                 atras.putExtra("categoria", categoria);
                 startActivity(atras);
-                finish();
                 break;
 
-            case R.id.artefintraje:
-                Intent atrasselector = new Intent(this, artesaniaSelectorActivity.class);
-                atrasselector.putExtra("idioma", idioma);
-                atrasselector.putExtra("categoria", categoria);
-                startActivity(atrasselector);
-                finish();
-                break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {}
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(getApplicationContext()).load(uri).into(img);
+            }
+        });
     }
 }
