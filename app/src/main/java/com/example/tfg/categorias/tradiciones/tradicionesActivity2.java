@@ -44,7 +44,7 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz2", categoria);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz2", categoria);
 
         TextView text1 = findViewById(R.id.trad11);
         text1.setText(datos[0]);

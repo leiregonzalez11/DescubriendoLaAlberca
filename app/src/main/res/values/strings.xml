@@ -67,4 +67,10 @@
         <item>Traje de Manteo</item>
     </string-array>
 
+    <string-array name="rutas">
+        <item>La Alberca --> Peña de Francia</item>
+        <item>Camino de Las Raíces</item>
+        <item>La Alberca --> La Torrita</item>
+    </string-array>
+
 </resources>

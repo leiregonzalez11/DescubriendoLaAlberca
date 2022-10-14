@@ -57,6 +57,7 @@
     <string name="masinfo">Més informació</string>
     <string name="alhajas">LES JOIES</string>
     <string name="volver_a_artesania">Tornar a artesanía</string>
+    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>
@@ -65,6 +66,16 @@
         <item>El Ventioseno vestit</item>
         <item>El Manteo vestit</item>
     </string-array>
-    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
+
+    <string-array name="rutas">
+        <item>La Alberca --> Peña de Francia</item>
+        <item>Camí de Las Raíces</item>
+        <item>La Alberca --> La Torrita</item>
+    </string-array>
+
+    <string name="distancia"><br>Distància: </br></string>
+    <string name="desnivel"><br>Desnivell: </br></string>
+    <string name="dificultad"><br>Dificultat tècnica: </br></string>
+    <string name="tiempo"><br>Temps: </br></string>
 
 </resources>

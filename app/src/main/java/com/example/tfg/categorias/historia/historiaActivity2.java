@@ -43,7 +43,7 @@ public class historiaActivity2 extends AppCompatActivity implements NavigationBa
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria);
 
         TextView text1 = findViewById(R.id.arte11);
         text1.setText(datos[0]);

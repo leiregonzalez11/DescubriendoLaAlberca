@@ -40,7 +40,7 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
 
         /*GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria);
 
         TextView text1 = findViewById(R.id.otrostext);
         text1.setText(datos[0]);*/

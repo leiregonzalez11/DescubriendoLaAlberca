@@ -20,16 +20,12 @@ import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
 
 public class arquitecturaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
@@ -50,7 +46,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz3", categoria, 5);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz3", categoria, 5);
 
         text1 = findViewById(R.id.arqui31);
         text2 = findViewById(R.id.arqui32);

@@ -58,6 +58,7 @@
     <string name="masinfo">Further information</string>
     <string name="alhajas">JEWELLERY</string>
     <string name="volver_a_artesania">Back to handicrafts</string>
+    <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -66,6 +67,11 @@
         <item>Ventioseno suit</item>
         <item>Manteo suit</item>
     </string-array>
-    <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.</string>
+
+    <string-array name="rutas">
+        <item>La Alberca --> Peña de Francia</item>
+        <item>Las Raíces pathway</item>
+        <item>La Alberca --> La Torrita</item>
+    </string-array>
 
 </resources>

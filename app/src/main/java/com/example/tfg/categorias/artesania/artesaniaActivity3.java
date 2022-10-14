@@ -71,7 +71,7 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
                 if (nombreTraje.equals("sayas")){
                     Toast.makeText(adapterView.getContext(), (String) adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
                 } else{
-                    String [] datos = dbHelper.obtenerDatosInterfazTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
+                    String [] datos = dbHelper.obtenerDescrInterfazTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
                     text1.setText(datos[0]);
                     text2.setText(datos[1]);
                     text3.setText(datos[2]);
@@ -120,8 +120,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         } else if (idtraje.toLowerCase().contains("manteo")){
             nombreTraje = "manteo";
         }
-
-
 
         return nombreTraje;
     }

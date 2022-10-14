@@ -66,6 +66,13 @@
         <item>Ventioseno soinekoa</item>
         <item>Manteo soinekoa</item>
     </string-array>
+
     <string name="interior_inicio">"La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. "</string>
+
+    <string-array name="rutas">
+        <item>La Alberca --> Peña de Francia</item>
+        <item>Las Raíces ibilbidea</item>
+        <item>La Alberca --> La Torrita</item>
+    </string-array>
 
 </resources>

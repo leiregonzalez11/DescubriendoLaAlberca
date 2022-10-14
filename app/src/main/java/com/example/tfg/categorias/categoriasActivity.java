@@ -19,6 +19,7 @@ import com.example.tfg.categorias.artesania.artesaniaActivity;
 import com.example.tfg.categorias.gastronomia.gastronomiaActivity;
 import com.example.tfg.categorias.historia.historiaActivity;
 import com.example.tfg.categorias.otros.otrosActivity;
+import com.example.tfg.categorias.rutas.rutasActivity;
 import com.example.tfg.categorias.tradiciones.tradicionesActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
@@ -195,7 +196,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             //case R.id.botonalojamientos:
 
-            //case R.id.botonruta:
+            case R.id.botonruta:
+                Intent rutas = new Intent(this, rutasActivity.class);
+                rutas.putExtra("idioma", idioma);
+                startActivity(rutas);
+                finish();
+                break;
 
             case R.id.botonotros:
                 Intent otros = new Intent(this, otrosActivity.class);
@@ -213,12 +219,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageButton btn){
         StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Glide.with(getApplicationContext()).load(uri).into(btn);
-            }
-        });
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(btn));
     }
 
 }

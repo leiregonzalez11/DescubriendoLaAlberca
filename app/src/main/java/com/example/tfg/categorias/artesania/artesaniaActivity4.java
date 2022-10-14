@@ -47,7 +47,7 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz4", categoria, 4);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz4", categoria, 4);
 
         TextView text1 = findViewById(R.id.arte41);
         text1.setText(datos[0]);

@@ -60,6 +60,21 @@ public class GestorDB extends SQLiteOpenHelper {
         Log.d("Tabla gastronomia", query3);
         sqLiteDatabase.execSQL(query3);
 
+        //Esquema de la tabla rutas
+        String query4 = "CREATE TABLE IF NOT EXISTS rutas (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "idioma VARCHAR(2) NOT NULL, nombreRuta TEXT NOT NULL, descRuta VARCHAR NOT NULL, " +
+                "distancia VARCHAR NOT NULL, desnivel VARCHAR NOT NULL, dificultad VARCHAR NOT NULL, " +
+                "tiempo VARCHAR NOT NULL)";
+        Log.d("Tabla rutas", query4);
+        sqLiteDatabase.execSQL(query4);
+
+        //Esquema de la tabla otros
+        String query5 = "CREATE TABLE IF NOT EXISTS otros (idOtros INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "idioma VARCHAR(2) NOT NULL, nombreOtro TEXT NOT NULL, descrOtro VARCHAR NOT NULL, " +
+                "latitud VARCHAR NOT NULL, longitud VARCHAR NOT NULL)";
+        Log.d("Tabla otros", query5);
+        sqLiteDatabase.execSQL(query5);
+
     }
 
     private void cargarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {
@@ -129,7 +144,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
-    public String[] obtenerDatosInterfaz(String idioma, String interfaz, String tabla, int numTV){
+    public String[] obtenerDescrInterfaz(String idioma, String interfaz, String tabla, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -147,7 +162,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosInterfazTrajes(String idioma, String interfaz, String tabla, int numTV, String nombreTraje){
+    public String[] obtenerDescrInterfazTrajes(String idioma, String interfaz, String tabla, int numTV, String nombreTraje){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -161,6 +176,28 @@ public class GestorDB extends SQLiteOpenHelper {
             descrip = c.getString(0);
             descr[i] = descrip;
             i++;
+        }
+        c.close();
+        return descr;
+    }
+
+    public String[] obtenerDatosInterfazRutas(String idioma, String nombreRuta, String tabla){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        int i = 0;
+        String [] descr = new String[5];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descRuta, distancia, desnivel, dificultad, tiempo FROM " + tabla + "" +
+                " WHERE idioma = '" + idioma + "' AND nombreRuta = '" + nombreRuta + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 5; j++){
+                descrip = c.getString(j);
+                System.out.println("DESCRIIIIIIIP" + descrip);
+                descr[i] = descrip;
+                i++;
+            }
         }
         c.close();
         return descr;

@@ -40,7 +40,7 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria, 2);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria, 2);
 
         TextView text1 = findViewById(R.id.gastro11);
         text1.setText(datos[0]);

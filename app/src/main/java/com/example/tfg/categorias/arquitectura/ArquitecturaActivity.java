@@ -41,7 +41,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz1", categoria, 2);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria, 2);
 
         TextView interfaz1 = findViewById(R.id.arqui11);
         interfaz1.setText(datos[0]);

@@ -48,7 +48,7 @@ public class artesaniaActivity5 extends AppCompatActivity implements NavigationB
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDatosInterfaz(idioma, "interfaz5", categoria, 3);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz5", categoria, 3);
 
         text1 = findViewById(R.id.arte51);
         text1.setText(datos[0]);
