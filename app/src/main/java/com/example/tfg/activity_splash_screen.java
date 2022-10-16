@@ -3,7 +3,6 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -35,10 +34,6 @@ public class activity_splash_screen extends AppCompatActivity {
 
         // we used the postDelayed(Runnable, time) method
         // to send a message with a delayed time.
-
-        /*Cargamos la BD...*/
-        //GestorDB dbHelper =  new GestorDB(getApplicationContext());
-        //SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         new Handler().postDelayed(() -> {
 

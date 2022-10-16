@@ -4,7 +4,8 @@
     <string name="tituloprincipal">¡Bienvenid@s a La Alberca!</string>
 
     <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
-        la Sierra de Francia, se encuentra La Alberca. Como le gusta decir al poeta y catedrático Don José María Requejo, un pueblo para soñar.</string>
+        la Sierra de Francia, se encuentra La Alberca. Como le gusta decir al poeta y catedrático Don José María
+        Requejo, un pueblo para soñar.</string>
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         éste precioso pueblo destaca por su entramado urbano, conservando como pocos la
@@ -18,14 +19,15 @@
     <string name="button_notour">No, gracias</string>
     <string name="siguiente">Siguiente</string>
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
-    <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo el resto de secciones de la aplicación.</string>
+    <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo
+        el resto de secciones de la aplicación.</string>
     <string name="seleccione_un_idioma">Seleccione un idioma:</string>
     <string name="tradicionesmayus">TRADICIONES Y LEYENDAS</string>
     <string name="monumentosmayus">MONUMENTOS</string>
     <string name="gastronomiamayus">GASTRONOMÍA</string>
     <string name="alojamientomayus">ALOJAMIENTO</string>
     <string name="rutasmayus">RUTAS SENDERISTAS</string>
-    <string name="otrosmayus">OTROS</string>
+    <string name="otrosmayus">OTROS SITIOS</string>
     <string name="inicio">Inicio</string>
     <string name="ajustes">Ajustes</string>
     <string name="mapa">Mapa</string>
@@ -57,7 +59,8 @@
     <string name="masinfo">Más información</string>
     <string name="alhajas">LAS ALHAJAS</string>
     <string name="volver_a_artesania">Volver a artesanía</string>
-    <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra, la vivienda y el lugar de almacenamiento.</string>
+    <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra,
+        la vivienda y el lugar de almacenamiento.</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>
@@ -68,9 +71,12 @@
     </string-array>
 
     <string-array name="rutas">
-        <item>La Alberca --> Peña de Francia</item>
+        <item>La Alberca - Peña de Francia</item>
         <item>Camino de Las Raíces</item>
-        <item>La Alberca --> La Torrita</item>
+        <item>La Alberca - La Torrita</item>
+        <item>La Alberca - San Martin del Castañar</item>
+        <item>La Alberca - Peña del Huevo</item>
+        <item>La Alberca - Mogarraz</item>
     </string-array>
 
 </resources>

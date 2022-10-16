@@ -24,7 +24,7 @@
     <string name="gastronomiamayus">GASTRONOMIA</string>
     <string name="alojamientomayus">OSTATUAK</string>
     <string name="rutasmayus">IBILBIDE SENDERISTAK</string>
-    <string name="otrosmayus">BESTE BATZUK</string>
+    <string name="otrosmayus">BESTE LEKUAK</string>
     <string name="inicio">Hasiera</string>
     <string name="categorias">Kategoriak</string>
     <string name="ajustes">Doikuntzak</string>
@@ -70,9 +70,12 @@
     <string name="interior_inicio">"La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. "</string>
 
     <string-array name="rutas">
-        <item>La Alberca --> Peña de Francia</item>
+        <item>La Alberca - Peña de Francia</item>
         <item>Las Raíces ibilbidea</item>
-        <item>La Alberca --> La Torrita</item>
+        <item>La Alberca - La Torrita</item>
+        <item>La Alberca - San Martin del Castañar</item>
+        <item>La Alberca - Peña del Huevo</item>
+        <item>La Alberca - Mogarraz</item>
     </string-array>
 
 </resources>

@@ -7,8 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,9 +22,6 @@ import java.util.ArrayList;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    private BottomNavigationView bottomNavigationView;
-    private ListView listView, listView2, listView3, listView4;
-    private ArrayList<String> lista1, lista2, lista3, lista4;
     String idioma, opc1, opc2, opc3, opc4;
 
     @SuppressLint("ResourceAsColor")
@@ -38,10 +33,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
 
-        listView = findViewById(R.id.listview);
-        listView2 = findViewById(R.id.listview2);
-        listView3 = findViewById(R.id.listview3);
-        listView4 = findViewById(R.id.listview4);
+        ListView listView = findViewById(R.id.listview);
+        ListView listView2 = findViewById(R.id.listview2);
+        ListView listView3 = findViewById(R.id.listview3);
+        ListView listView4 = findViewById(R.id.listview4);
 
         opc1 = getResources().getString(R.string.ajustes1);
         opc2 = getResources().getString(R.string.ajustes2);
@@ -53,62 +48,47 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         System.out.println("TEXTOOOOOO" + opc3);
         System.out.println("TEXTOOOOOO" + opc4);
 
-        lista1 = new ArrayList<String>();
+        ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-            }
-        });
+        listView.setOnItemClickListener((adapterView, view, position, id) ->
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show());
 
-        lista2 = new ArrayList<String>();
+        ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
         listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_item, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
-                startActivity(inicio);
-                finish();
-            }
+        listView2.setOnItemClickListener((adapterView, view, position, id) -> {
+            Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
+            startActivity(inicio);
+            finish();
         });
 
-        lista3 = new ArrayList<String>();
+        ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
 
         listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
         listView3.setAdapter(myAdapter3);
 
-        listView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
-            }
-        });
+        listView3.setOnItemClickListener((adapterView, view, position, id) ->
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show());
 
-        lista4 = new ArrayList<String>();
+        ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
 
         listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
-            }
-        });
+        listView4.setOnItemClickListener((adapterView, view, position, id) ->
+                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewAjustes);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewAjustes);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 

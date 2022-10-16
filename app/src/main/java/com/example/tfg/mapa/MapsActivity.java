@@ -17,7 +17,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -42,6 +41,7 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
         //MAPA
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapView);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
 
 
@@ -53,13 +53,9 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        GoogleMap mMap = googleMap;
         // Añadimos un marcador a la ubicación elegida y hacemos zoom
         LatLng location = new LatLng(40.48890, -6.11050);
-        /*mMap.addMarker(new MarkerOptions()
-                .position(location)
-                .title("La Alberca"));*/
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.3f));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.3f));
         //Tipo de mapa: Hibrido
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 

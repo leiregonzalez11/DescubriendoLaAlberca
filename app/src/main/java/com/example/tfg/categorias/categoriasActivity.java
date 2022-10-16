@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
@@ -25,7 +23,6 @@ import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.mapa.MapsActivity;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
@@ -147,7 +144,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         }
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "ShowToast"})
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
@@ -183,9 +180,11 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
                 finish();
                 break;
 
-            // case R.id.botonmonumentos:
+            case R.id.botonmonumentos:
+                Toast.makeText(categoriasActivity.this, "Has pulsado Monumentos", Toast.LENGTH_LONG);
 
-            //case R.id.botonfiestas:
+            case R.id.botonfiestas:
+                Toast.makeText(categoriasActivity.this, "Has pulsado Fiestas", Toast.LENGTH_LONG);
 
             case R.id.botongastronomia:
                 Intent gastronomia = new Intent(this, gastronomiaActivity.class);
@@ -194,7 +193,8 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
                 finish();
                 break;
 
-            //case R.id.botonalojamientos:
+            case R.id.botonpersonajes:
+                Toast.makeText(categoriasActivity.this, "Has pulsado TV y Prensa", Toast.LENGTH_LONG);
 
             case R.id.botonruta:
                 Intent rutas = new Intent(this, rutasActivity.class);

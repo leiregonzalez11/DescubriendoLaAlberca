@@ -13,8 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -30,11 +28,11 @@ import com.google.firebase.storage.StorageReference;
 
 public class rutasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, AdapterView.OnItemSelectedListener {
 
-    BottomNavigationView bottomNavigationView;
-    String idioma, categoria, nombreRuta;
-    ImageView img1, img2, img3;
-    TextView text1, text2, text3, text4, text5, text6;
-    StorageReference storageRef;
+    private GestorDB dbHelper;
+    private String idioma, categoria, nombreRuta;
+    private ImageView img1, img2, img3;
+    private TextView text2, text3, text4, text5, text6;
+    private StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +43,9 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
         idioma = extra.getString("idioma");
         categoria = "rutas";
 
-        GestorDB dbHelper = new GestorDB(getApplicationContext());
+        dbHelper = new GestorDB(getApplicationContext());
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        text1 = findViewById(R.id.rutas1);
         text2 = findViewById(R.id.rutas2);
         text3 = findViewById(R.id.rutas3);
         text4 = findViewById(R.id.rutas4);
@@ -59,59 +56,40 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
         img2 = findViewById(R.id.rutasimg2);
         img3 = findViewById(R.id.rutasimg7);
 
-
         Spinner spinner = findViewById(R.id.spinnerRutas);
         String [] trajes = getResources().getStringArray(R.array.rutas);
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-
-                nombreRuta = determinarRuta((String) adapterView.getItemAtPosition(position));
-                System.out.println("RUTAAAAA " + nombreRuta);
-                String[] datos = dbHelper.obtenerDatosInterfazRutas(idioma, nombreRuta, categoria);
-                for (int i = 0; i < datos.length; i++){
-                    System.out.println("RUTAAAAA " + i + datos[i]);
-                }
-                text1.setText(((String) adapterView.getItemAtPosition(position)).toUpperCase());
-                text2.setText(datos[0]);
-                text3.setText(datos[1]);
-                text4.setText(datos[2]);
-                text5.setText(datos[4]);
-                text6.setText(datos[3]);
-                obtenerImagenFirebase("rutas/" + nombreRuta + "1.jpg", img1);
-                obtenerImagenFirebase("rutas/" + nombreRuta + "2.jpg", img2);
-                obtenerImagenFirebase("rutas/" + nombreRuta + "3.jpg", img3);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
-        });
+        spinner.setOnItemSelectedListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewRutas);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewRutas);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
     }
 
+    /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
     private String determinarRuta(String idRuta) {
 
-        if(idRuta.toLowerCase().contains("peña")){
+        if(idRuta.toLowerCase().contains("francia")){
             nombreRuta = "peñadefrancia";
         } else if (idRuta.toLowerCase().contains("raíces")){
             nombreRuta = "raices";
         } else if (idRuta.toLowerCase().contains("torrita")){
             nombreRuta = "torrita";
+        }else if (idRuta.toLowerCase().contains("huevo")){
+            nombreRuta = "peñadelhuevo";
+        }else if (idRuta.toLowerCase().contains("mogarraz")){
+            nombreRuta = "mogarraz";
+        }else if (idRuta.toLowerCase().contains("martin")){
+            nombreRuta = "sanmartin";
         }
 
         return nombreRuta;
     }
 
-    /** Método utilizado para obtener la imagen de Firebase Storage */
+        /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageView img){
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
@@ -159,8 +137,25 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
     public void onBackPressed() {}
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
+        nombreRuta = determinarRuta((String) adapterView.getItemAtPosition(position));
+
+        String[] datos = dbHelper.obtenerDatosInterfazRutas(idioma, nombreRuta, categoria);
+
+        System.out.println("RUTAAAAA " + nombreRuta);
+        for (int i = 0; i < datos.length; i++){
+            System.out.println("RUTAAAAA " + i + datos[i]);
+        }
+
+        text2.setText(datos[0]);
+        text3.setText(datos[1]);
+        text4.setText(datos[2]);
+        text5.setText(datos[4]);
+        text6.setText(datos[3]);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "1.jpg", img1);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "2.jpg", img2);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "3.jpg", img3);
     }
 
     @Override

@@ -20,7 +20,7 @@
             android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_margin="15dp"
             android:gravity="center"
             android:orientation="vertical"
             tools:context=".categorias.rutas.rutasActivity">
@@ -41,6 +41,19 @@
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/rutas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/alata"
+                android:text="Todo pueblo de fantasía debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la naturaleza, de la fauna y del aire puro que nos ofrecen. "
+                android:textSize="17sp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -63,18 +76,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/rutas1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/alata"
-                android:gravity='center_horizontal'
-                android:textStyle="bold"
-                android:textSize="24sp"/>
-
             <ImageView
                 android:id="@+id/rutasimg1"
                 android:layout_width="wrap_content"
@@ -82,7 +83,8 @@
                 android:layout_marginTop="-100dp"
                 android:layout_marginBottom="-120dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
             <com.google.android.material.card.MaterialCardView
@@ -105,14 +107,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_gravity="left"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/rutasimg3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
-                            android:src="@drawable/arrow_right_foreground">
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
@@ -131,14 +135,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/rutasimg4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
-                            android:src="@drawable/arrow_right_foreground">
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
@@ -157,14 +163,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/rutasimg5"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
-                            android:src="@drawable/arrow_right_foreground">
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
@@ -183,7 +191,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/rutasimg6"
@@ -217,7 +226,8 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="-80dp"
-                android:layout_marginBottom="-100dp">
+                android:layout_marginBottom="-100dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
@@ -236,7 +246,8 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="-40dp"
-                android:layout_marginBottom="-20dp">
+                android:layout_marginBottom="-20dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
        </LinearLayout>

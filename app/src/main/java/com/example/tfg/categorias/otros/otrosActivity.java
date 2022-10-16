@@ -7,8 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,7 +24,7 @@ import java.util.ArrayList;
 public class otrosActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    String idioma, opc1, opc2, opc3, opc4, opc5, opc6, categoria;
+    String idioma, categoria;
     private ArrayList<String> lista1;
 
     @Override
@@ -62,12 +60,7 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(otrosActivity.this, "Has pulsado: "+ lista1.get(position).toString(), Toast.LENGTH_LONG).show();
-            }
-        });
+        listView.setOnItemClickListener((adapterView, view, position, id) -> Toast.makeText(otrosActivity.this, "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewOtros);

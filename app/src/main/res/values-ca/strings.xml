@@ -23,7 +23,7 @@
     <string name="gastronomiamayus">GASTRONOMIA</string>
     <string name="alojamientomayus">ALLOTJAMENT</string>
     <string name="rutasmayus">RUTES SENDERISTES</string>
-    <string name="otrosmayus">ALTRES</string>
+    <string name="otrosmayus">ALTRES LLOCS</string>
     <string name="inicio">Inici</string>
     <string name="ajustes">Ajustaments</string>
     <string name="mapa">Mapa</string>
@@ -68,14 +68,12 @@
     </string-array>
 
     <string-array name="rutas">
-        <item>La Alberca --> Peña de Francia</item>
+        <item>La Alberca - Peña de Francia</item>
         <item>Camí de Las Raíces</item>
-        <item>La Alberca --> La Torrita</item>
+        <item>La Alberca - La Torrita</item>
+        <item>La Alberca - San Martin del Castañar</item>
+        <item>La Alberca - Peña del Huevo</item>
+        <item>La Alberca - Mogarraz</item>
     </string-array>
-
-    <string name="distancia"><br>Distància: </br></string>
-    <string name="desnivel"><br>Desnivell: </br></string>
-    <string name="dificultad"><br>Dificultat tècnica: </br></string>
-    <string name="tiempo"><br>Temps: </br></string>
 
 </resources>

@@ -45,19 +45,13 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             idioma = "eu";
         }else if (texto.getText().toString().contains("Welcome")){
             idioma="en";
-        }else if (texto.getText().toString().toLowerCase().contains("Benvinguts")){
+        }else if (texto.getText().toString().contains("Benvinguts")){
             idioma="ca";
         }
-        /*else if (texto.getText().toString().contains("Bienvenue")){
-            idioma="fr";
-        } else if (texto.getText().toString().contains("Willkommen")){
-            idioma="de";
-        }*/
 
         /*Cargamos la BD...*/
         GestorDB dbHelper =  new GestorDB(getApplicationContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSlider);
