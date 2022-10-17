@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">"La Alberca "</string>
+    <string name="app_name">La Alberca Ezagutu</string>
 
     <string name="tituloprincipal">Ongi etorri La Albercara!</string>
 
@@ -85,5 +85,6 @@
     <string name="apart">Apartamentuak</string>
     <string name="hotel">Hotelak</string>
     <string name="casas">Rural Etxeak</string>
+    <string name="ubicacion">Kokapena</string>
 
 </resources>

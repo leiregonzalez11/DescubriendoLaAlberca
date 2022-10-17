@@ -2,22 +2,36 @@ package com.example.tfg.ajustes.aloj;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
+import com.example.tfg.ajustes.dondeDormirActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class alojamientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+import java.util.Locale;
+
+public class alojamientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
 
     BottomNavigationView bottomNavigationView;
+    GoogleMap mMap;
     String idioma, categoria, alojamiento;
 
     @Override
@@ -26,36 +40,73 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         setContentView(R.layout.activity_alojamiento);
 
         Bundle extra = getIntent().getExtras();
-        idioma = extra.getString("idioma");
-        alojamiento = extra.getString("alojamiento");
+        alojamiento = extra.getString("nombreAloj");
         categoria = "alojamiento";
+        determinarIdioma();
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        TextView text1 = findViewById(R.id.nombreAloj);
+        text1.setText(alojamiento);
 
-        String [] datos = dbHelper.obtenerDatosAloj(idioma, categoria, alojamiento);
+        //MAPA
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapViewAlojamiento);
+        assert mapFragment != null;
+        mapFragment.getMapAsync(this);
 
-        TextView text1 = findViewById(R.id.arte11);
-        text1.setText(datos[0]);
+        /*GestorDB dbHelper = new GestorDB(getContext());
 
-        TextView text2 = findViewById(R.id.arte12);
-        text2.setText(datos[1]);
+        String [] datos = dbHelper.obtenerDatosAloj(idioma, categoria, nombreAloj);
 
-        TextView text3 = findViewById(R.id.arte13);
-        text3.setText(datos[2]);
+        TextView text1 = (TextView) requireView().findViewById(R.id.nombreAloj);
+        text1.setText(nombreAloj);
+
+        lat = Double.parseDouble(datos [1]);
+        lon = Double.parseDouble(datos[2]);*/
 
         //BOTON ATRAS
 
-        Button atrasBtn = findViewById(R.id.arteatras2);
+        Button atrasBtn = findViewById(R.id.alojAtras);
         atrasBtn.setOnClickListener(this);
-
-        Button siguienteBtn = findViewById(R.id.artesiguiente2);
-        siguienteBtn.setOnClickListener(this);*/
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAloj);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
         bottomNavigationView.setOnItemSelectedListener(this);
 
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        mMap = googleMap;
+        // Añadimos un marcador a la ubicación elegida y hacemos zoom
+        //LatLng location = new LatLng(lat, lon);
+        LatLng location = new LatLng(40.48890, -6.11050);
+        mMap.addMarker(new MarkerOptions()
+                .position(location)
+                .title("La Alberca"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16f));
+        //Tipo de mapa: Hibrido
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+    }
+
+    private String determinarIdioma() {
+
+        TextView ubitv = findViewById(R.id.ubi);
+        String ubi = ubitv.getText().toString();
+
+        if (ubi.equalsIgnoreCase("ubicación")){
+            idioma = "es";
+        } else if (ubi.equalsIgnoreCase("location")){
+            idioma = "en";
+        } else if (ubi.equalsIgnoreCase("kokapena")){
+            idioma = "eu";
+        } else if (ubi.equalsIgnoreCase("ubicació")){
+            idioma = "ca";
+        }
+
+        return idioma;
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -96,6 +147,7 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         }
     }
 
+
     @Override
     public void onBackPressed() {}
 
@@ -103,15 +155,15 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-         /*Button btn = (Button) view;
+        Button btn = (Button) view;
 
         switch (btn.getId()){
 
-            case R.id.alojatras:
-                Intent atras = new Intent(this, artesaniaActivity.class);
+            case R.id.alojAtras:
+                Intent atras = new Intent(this, dondeDormirActivity.class);
                 atras.putExtra("idioma", idioma);
                 startActivity(atras);
                 break;
-        }*/
+        }
     }
 }

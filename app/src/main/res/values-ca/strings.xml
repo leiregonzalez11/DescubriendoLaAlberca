@@ -81,5 +81,6 @@
     <string name="apart">Apartaments</string>
     <string name="hotel">Hotels</string>
     <string name="casas">Cases Rurals</string>
+    <string name="ubicacion">Ubicació</string>
 
 </resources>

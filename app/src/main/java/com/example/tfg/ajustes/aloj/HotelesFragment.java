@@ -1,5 +1,6 @@
 package com.example.tfg.ajustes.aloj;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 public class HotelesFragment extends Fragment {
 
     ArrayList lista1;
+    String idioma, nombreAloj;
 
     public HotelesFragment() {
         // Required empty public constructor
@@ -33,6 +35,7 @@ public class HotelesFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
+
         ListView listView = (ListView) getView().findViewById(R.id.listviewHoteles);
 
         lista1 = new ArrayList<>();
@@ -50,7 +53,16 @@ public class HotelesFragment extends Fragment {
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
+        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show()
+
+            nombreAloj = lista1.get(position).toString();
+
+            Intent aloj = new Intent(getContext(), alojamientoActivity.class);
+            aloj.putExtra("nombreAloj", nombreAloj);
+            startActivity(aloj);
+
+        });
 
     }
 

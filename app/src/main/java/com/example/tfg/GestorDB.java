@@ -203,11 +203,35 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    public String[] obtenerDatosAloj(String idioma, String tabla, String nombreAloj){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        int i = 0;
+        String [] descr = new String[5];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT lat, long, ubi FROM " + tabla + "" +
+                " WHERE idioma = '" + idioma + "' AND nombreAloj = '" + nombreAloj + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 3; j++){
+                descrip = c.getString(j);
+                System.out.println("DESCRIIIIIIIP" + descrip);
+                descr[i] = descrip;
+                i++;
+            }
+        }
+        c.close();
+        return descr;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS artesania");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otros");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
         onCreate(sqLiteDatabase);
 
     }

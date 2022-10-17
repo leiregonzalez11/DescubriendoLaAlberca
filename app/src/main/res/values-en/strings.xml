@@ -67,6 +67,7 @@
     <string name="apart">Apartments</string>
     <string name="hotel">Hotels</string>
     <string name="casas">Rural Houses</string>
+    <string name="ubicacion">Location</string>
 
 
     <string-array name="trajes_serranos">

@@ -24,7 +24,7 @@ import java.util.Locale;
 public class idiomasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    RadioButton radioCas, radioEus, radioIng, radioCat, radioFr, radioDe;
+    RadioButton radioCas, radioEus, radioIng, radioCat;
     String language, idioma;
 
     @SuppressLint("ResourceAsColor")
@@ -136,6 +136,8 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
         });
 
     }
+
+    public String getIdioma (){ return idioma;}
 
     private void changeLanguage(){
 

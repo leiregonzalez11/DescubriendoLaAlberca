@@ -10,20 +10,81 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"
         android:scrollbarSize="8dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-75dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="79dp">
 
         <LinearLayout
-            android:id="@+id/layoutHist1"
+            android:id="@+id/layoutAloj1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
             tools:context=".ajustes.aloj.alojamientoActivity">
+
+            <TextView
+                android:id="@+id/nombreAloj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:hint="NOMBRE ALOJAMIENTO"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/fotoAloj"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="-40dp"
+                android:src="@drawable/laalberca2" />
+
+            <TextView
+                android:id="@+id/ubi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:hint="@string/ubicacion"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="20sp" />
+
+            <fragment
+                android:id="@+id/mapViewAlojamiento"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.697"
+                tools:context=".ajustes.aloj.alojamientoActivity" />
+
+            <Button
+                android:id="@+id/alojAtras"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alatsi"
+                android:text="@string/atras" />
 
         </LinearLayout>
 

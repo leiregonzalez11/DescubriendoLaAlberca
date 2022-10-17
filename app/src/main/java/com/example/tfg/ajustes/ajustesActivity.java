@@ -87,6 +87,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView4.setOnItemClickListener((adapterView, view, position, id) -> {
                     //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
                     Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
+                    aloj.putExtra("idioma", idioma);
                     startActivity(aloj);
                     finish();
         });

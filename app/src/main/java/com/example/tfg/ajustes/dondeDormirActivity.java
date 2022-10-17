@@ -21,14 +21,17 @@ import com.google.android.material.tabs.TabLayout;
 public class dondeDormirActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    String idioma, categoria;
+    String idioma;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donde_dormir);
-        categoria = "alojamiento";
+
+
+        Bundle datos = getIntent().getExtras();
+        idioma = datos.getString("idioma");
 
         String text1 = getResources().getString(R.string.apart);
         String text2 = getResources().getString(R.string.hotel);
@@ -43,7 +46,9 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapter myadapter = new tabAdapter (getSupportFragmentManager(), getLifecycle());
+
         viewPager.setAdapter(myadapter);
+        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -56,17 +61,18 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                assert tab.parent != null;
+                viewPager.setCurrentItem(tab.parent.getSelectedTabPosition());
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                //viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                //viewPager.setCurrentItem(tab.getPosition());
 
             }
         });
