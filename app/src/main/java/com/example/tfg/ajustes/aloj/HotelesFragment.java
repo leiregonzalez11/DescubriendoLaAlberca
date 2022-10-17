@@ -40,14 +40,15 @@ public class HotelesFragment extends Fragment {
 
         lista1 = new ArrayList<>();
 
-        lista1.add("Hotel Termal Abadía de los Templarios");
-        lista1.add("Hotel Antiguas Eras La Alberca");
-        lista1.add("Hostal San Blas");
-        lista1.add("Hotel Las Batuecas");
-        lista1.add("Hotel Doña Teresa");
+        lista1.add("Camping Al-Bereka");
+        lista1.add("Hostal El Castillo");
         lista1.add("Hostal La Alberca");
         lista1.add("Hostal La Balsá");
-        lista1.add("Camping Al-Bereka");
+        lista1.add("Hostal San Blas");
+        lista1.add("Hotel Antiguas Eras La Alberca");
+        lista1.add("Hotel Doña Teresa");
+        lista1.add("Hotel Las Batuecas");
+        lista1.add("Hotel Termal Abadía de los Templarios");
 
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);

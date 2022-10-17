@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -27,6 +28,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 
 public class alojamientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
@@ -35,6 +38,7 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
     GoogleMap mMap;
     String idioma, categoria, alojamiento;
     double lat, lon;
+    private StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,8 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         determinarIdioma();
 
         TextView text1 = findViewById(R.id.nombreAloj);
+        TextView text2 = findViewById(R.id.ubi2);
+
         text1.setText(alojamiento);
 
         //MAPA
@@ -63,8 +69,12 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         System.out.println("DESCRIIIIIIIP" + lat);
         lon = Double.parseDouble(datos[1]);
         System.out.println("DESCRIIIIIIIP" + lon);
+        text2.setText(datos[2]);
+        System.out.println("DESCRIIIIIIIP" + datos[2]);
 
-        /*ImageView img = findViewById(R.id.fotoAloj);*/
+        storageRef = FirebaseStorage.getInstance().getReference();
+        ImageView img = findViewById(R.id.fotoAloj);
+        //obtenerImagenFirebase("/" + alojamiento.toLowerCase().replaceAll(" ", "") + ".jpg", img);
 
 
         //BOTON ATRAS
@@ -89,7 +99,7 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         mMap.addMarker(new MarkerOptions()
                 .position(location)
                 .title(alojamiento));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16f));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 17f));
         //Tipo de mapa: Hibrido
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
@@ -111,6 +121,11 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         }
 
         return idioma;
+    }
+
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
     }
 
     @SuppressLint("NonConstantResourceId")

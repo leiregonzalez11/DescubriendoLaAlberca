@@ -24,68 +24,104 @@
             android:orientation="vertical"
             tools:context=".ajustes.aloj.alojamientoActivity">
 
-            <TextView
-                android:id="@+id/nombreAloj"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="7dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/alata"
-                android:gravity='center'
-                android:hint="NOMBRE ALOJAMIENTO"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
-                android:textSize="22sp" />
-
-            <ImageView
-                android:id="@+id/fotoAloj"
-                android:layout_width="350dp"
-                android:layout_height="350dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="-40dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="-40dp"
-                android:src="@drawable/laalberca2" />
-
-            <TextView
-                android:id="@+id/ubi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/alata"
-                android:gravity='center'
-                android:hint="@string/ubicacion"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
-                android:textSize="20sp" />
-
-            <fragment
-                android:id="@+id/mapViewAlojamiento"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="350dp"
-                android:layout_height="250dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.697"
-                tools:context=".ajustes.aloj.alojamientoActivity" />
-
-            <Button
-                android:id="@+id/alojAtras"
-                android:layout_width="115dp"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:fontFamily="@font/alatsi"
-                android:text="@string/atras" />
+                android:layout_margin="10dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="15dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutAloj2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:context=".ajustes.aloj.alojamientoActivity">
+
+                    <TextView
+                        android:id="@+id/nombreAloj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/alata"
+                        android:gravity='center'
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/fotoAloj"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="-7dp"
+                        android:src="@drawable/laalberca2"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/ubi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/alata"
+                        android:gravity='center'
+                        android:hint="@string/ubicacion"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:id="@+id/ubi2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/alata"
+                        android:gravity='center'
+                        android:hint="@string/ubicacion"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="18sp" />
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/mapViewAlojamiento"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.697"
+                        tools:context=".ajustes.aloj.alojamientoActivity" />
+
+                    <Button
+                        android:id="@+id/alojAtras"
+                        android:layout_width="115dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/alatsi"
+                        android:text="@string/atras" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

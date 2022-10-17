@@ -40,10 +40,13 @@ public class ApartFragment extends Fragment{
         ListView listView = (ListView) requireView().findViewById(R.id.listviewApart);
 
         lista1 = new ArrayList<>();
-        lista1.add("Apartamentos Anita");
-        lista1.add("Apartamento La Campanina");
+        lista1.add("El Palaero");
         lista1.add("Villadolores");
+        lista1.add("Apartamentos Anita");
+        lista1.add("Apartamentos Casa del Herrero");
+        lista1.add("Apartamento La Campanina");
         lista1.add("Apartamentos Rurality Home");
+
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);

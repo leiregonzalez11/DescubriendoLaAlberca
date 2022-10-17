@@ -38,14 +38,15 @@ public class CasasFragment extends Fragment {
         ListView listView = (ListView) getView().findViewById(R.id.listviewCasas);
 
         lista1 = new ArrayList<>();
-        lista1.add("El Palaero");
-        lista1.add("Casitas del Huerto");
-        lista1.add("El Aserradero");
         lista1.add("Casa del tablao");
         lista1.add("Casa La Tía Bruja");
         lista1.add("Casa Rural Espeñitas");
-        lista1.add("La Esquina de Ánimas");
+        lista1.add("Casitas del Huerto");
         lista1.add("Castillo Alto");
+        lista1.add("El Abuelo Felix");
+        lista1.add("El Aserradero");
+        lista1.add("La Casa del Burro");
+        lista1.add("La Esquina de Ánimas");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);

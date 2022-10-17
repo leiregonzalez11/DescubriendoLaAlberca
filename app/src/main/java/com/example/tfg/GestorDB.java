@@ -77,7 +77,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Esquema de la tabla otros
         String query6 = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " nombreAloj TEXT NOT NULL, lat VARCHAR NOT NULL, lon VARCHAR NOT NULL)";
+                " nombreAloj TEXT NOT NULL, ubi VARCHAR NOT NULL, lat VARCHAR NOT NULL, lon VARCHAR NOT NULL)";
         Log.d("Tabla otros", query6);
         sqLiteDatabase.execSQL(query6);
 
@@ -215,12 +215,12 @@ public class GestorDB extends SQLiteOpenHelper {
 
         String descrip;
         int i = 0;
-        String [] descr = new String[5];
+        String [] descr = new String[3];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT lat, lon FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT lat, lon, ubi FROM " + tabla + "" +
                 " WHERE nombreAloj = '" + nombreAloj + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 2; j++){
+            for (int j = 0; j < 3; j++){
                 descrip = c.getString(j);
                 System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[i] = descrip;
