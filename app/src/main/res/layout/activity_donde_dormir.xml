@@ -49,9 +49,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
                 android:textSize="16dp"
-                android:text="Si deseas pasar más de un día en La Alberca para poder conocer todos sus secretos, existen muchas opciones de alojamiento:  "
+                android:text="@string/alojamiento_inicio"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
                 android:textAlignment="gravity"
@@ -60,8 +60,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_height="480dp"
+                android:layout_margin="10dp"
                 app:cardElevation="10dp">
 
                 <com.google.android.material.tabs.TabLayout
@@ -74,7 +74,7 @@
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp"/>
+                    android:layout_marginTop="70dp" />
 
             </com.google.android.material.card.MaterialCardView>
 

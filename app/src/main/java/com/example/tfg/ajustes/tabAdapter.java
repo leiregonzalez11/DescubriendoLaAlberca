@@ -1,5 +1,4 @@
-package com.example.tfg.categorias.otros;
-import android.content.Context;
+package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -7,11 +6,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class tabAdapter extends FragmentStateAdapter {
+import com.example.tfg.ajustes.aloj.ApartFragment;
+import com.example.tfg.ajustes.aloj.CasasFragment;
+import com.example.tfg.ajustes.aloj.HotelesFragment;
 
-    private Context myContext;
-    private int NUM_TABS = 3;
-    int totalTabs;
+public class tabAdapter extends FragmentStateAdapter {
 
     public tabAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
@@ -23,16 +22,16 @@ public class tabAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                ApartFragment apartFragment = new ApartFragment();
-                return apartFragment;
+                return new ApartFragment();
+            case 2:
+                return new CasasFragment();
             default:
-                HotelesFragment hotelFragment = new HotelesFragment();
-                return hotelFragment;
+                return new HotelesFragment();
         }
     }
 
     @Override
     public int getItemCount() {
-        return NUM_TABS;
+        return 3;
     }
 }

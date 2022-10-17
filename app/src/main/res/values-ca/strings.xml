@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">La Alberca</string>
+    <string name="app_name">Descobreix La Alberca</string>
 
     <string name="tituloprincipal">Benvinguts a La Alberca!</string>
 
@@ -18,12 +18,12 @@
     <string name="dialog_toursi_titulo">Pantalla de Inicio</string>
     <string name="dialog_tourSi">Aquesta és la pantalla inicial de l\'aplicació. Des d\'ella podreu accedir a tota la resta de seccions de l\'aplicació.</string>
     <string name="seleccione_un_idioma">Seleccioneu un idioma:</string>
-    <string name="tradicionesmayus">TRADICIONS I LLEGENDES</string>
-    <string name="monumentosmayus">MONUMENTS</string>
-    <string name="gastronomiamayus">GASTRONOMIA</string>
-    <string name="alojamientomayus">ALLOTJAMENT</string>
-    <string name="rutasmayus">RUTES SENDERISTES</string>
-    <string name="otrosmayus">ALTRES LLOCS</string>
+    <string name="tradicionesmayus">Tradicions i Llegendes</string>
+    <string name="monumentosmayus">Monuments</string>
+    <string name="gastronomiamayus">Gastronomia</string>
+    <string name="alojamientomayus">Allotjament</string>
+    <string name="rutasmayus">Rutes Senderistes</string>
+    <string name="otrosmayus">Altres Llocs</string>
     <string name="inicio">Inici</string>
     <string name="ajustes">Ajustaments</string>
     <string name="mapa">Mapa</string>
@@ -36,17 +36,17 @@
     <string name="gallego">Gallec</string>
     <string name="frances">Francès</string>
     <string name="aleman">Alemany</string>
-    <string name="historiamayus">HISTÒRIA</string>
-    <string name="la_casa_albercana">LA CASA ALBERCANA</string>
+    <string name="historiamayus">Història</string>
+    <string name="la_casa_albercana">La Casa Albercana</string>
     <string name="_3_inscripciones">3. Inscripcions</string>
     <string name="volver_a_categorias">Tornar a Categories</string>
     <string name="atras">Enrere</string>
-    <string name="arquitecturamayus">L\'ARQUITECTURA</string>
+    <string name="arquitecturamayus">L\'Arquitectura</string>
     <string name="_2_aspecto_interior">2. Aspecte Interior</string>
     <string name="_1_aspecto_exterior">1. Aspecte Exterior</string>
-    <string name="artesaniamayus">ARTESANIA</string>
-    <string name="el_bordado_serrano">EL BORDAT SERRANO</string>
-    <string name="traje_serrano">EL VESTIT SERRANO</string>
+    <string name="artesaniamayus">Artesania</string>
+    <string name="el_bordado_serrano">El Bordat Serrano</string>
+    <string name="traje_serrano">El Vestit Serrano</string>
     <string name="traje_mujer">1. Els vestits de dona</string>
     <string name="traje_hombre">2. El vestit home</string>
     <string name="ajustes1">Com arribar-hi?</string>
@@ -55,12 +55,11 @@
     <string name="ajustes4">On dormir?</string>
     <string name="zona_de_usuarios">Zona d\'usuaris</string>
     <string name="masinfo">Més informació</string>
-    <string name="alhajas">LES JOIES</string>
+    <string name="alhajas">Les Joies</string>
     <string name="volver_a_artesania">Tornar a artesanía</string>
     <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
-    <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i El Safareig no anava a ser menys. Boscos de
-        pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la
-        naturalesa, de la fauna i de l\'aire pur que ens ofereixen.</string>
+    <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i La Alberca no anava a ser menys. Boscos de         pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la         naturalesa, de la fauna i de l\'aire pur que ens ofereixen.</string>
+    <string name="alojamiento_inicio">Si desitges passar més d\'un dia en La Alberca per a poder conèixer tots els seus secrets, existeixen moltes opcions d\'allotjament:</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>
@@ -78,5 +77,9 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
+
+    <string name="apart">Apartaments</string>
+    <string name="hotel">Hotels</string>
+    <string name="casas">Cases Rurals</string>
 
 </resources>

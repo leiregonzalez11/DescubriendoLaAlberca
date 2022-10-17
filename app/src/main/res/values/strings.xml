@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">La Alberca</string>
+    <string name="app_name">Descubre La Alberca</string>
 
     <string name="tituloprincipal">¡Bienvenid@s a La Alberca!</string>
 
@@ -22,12 +22,12 @@
     <string name="dialog_tourSi">Esta es la pantalla de inicio de la aplicación. Desde ella podrás acceder a todo
         el resto de secciones de la aplicación.</string>
     <string name="seleccione_un_idioma">Seleccione un idioma:</string>
-    <string name="tradicionesmayus">TRADICIONES Y LEYENDAS</string>
-    <string name="monumentosmayus">MONUMENTOS</string>
-    <string name="gastronomiamayus">GASTRONOMÍA</string>
-    <string name="alojamientomayus">ALOJAMIENTO</string>
-    <string name="rutasmayus">RUTAS SENDERISTAS</string>
-    <string name="otrosmayus">OTROS SITIOS</string>
+    <string name="tradicionesmayus">Tradiciones y Leyendas</string>
+    <string name="monumentosmayus">Monumentos</string>
+    <string name="gastronomiamayus">Gastronomía</string>
+    <string name="alojamientomayus">Alojamiento</string>
+    <string name="rutasmayus">Rutas Senderistas</string>
+    <string name="otrosmayus">Otros Lugares</string>
     <string name="inicio">Inicio</string>
     <string name="ajustes">Ajustes</string>
     <string name="mapa">Mapa</string>
@@ -40,24 +40,24 @@
     <string name="gallego">Gallego</string>
     <string name="frances">Francés</string>
     <string name="aleman">Alemán</string>
-    <string name="historiamayus">HISTORIA</string>
+    <string name="historiamayus">Historia</string>
     <string name="volver_a_categorias">Volver a Categorias</string>
     <string name="atras">Atrás</string>
-    <string name="arquitecturamayus">ARQUITECTURA</string>
-    <string name="la_casa_albercana">LA CASA ALBERCANA</string>
+    <string name="arquitecturamayus">Arquitectura</string>
+    <string name="la_casa_albercana">La Casa Albercana</string>
     <string name="_2_aspecto_interior">2. Aspecto Interior</string>
     <string name="_1_aspecto_exterior">1. Aspecto Exterior</string>
     <string name="_3_inscripciones">3. Inscripciones</string>
-    <string name="artesaniamayus">ARTESANÍA</string>
-    <string name="el_bordado_serrano">EL BORDADO SERRANO</string>
-    <string name="traje_serrano">EL TRAJE SERRANO</string>
+    <string name="artesaniamayus">Artesanía</string>
+    <string name="el_bordado_serrano">El Bordado Serrano</string>
+    <string name="traje_serrano">El Traje Serrano</string>
     <string name="traje_mujer">1. Los trajes de mujer</string>
     <string name="traje_hombre">2. El traje de hombre</string>
     <string name="ajustes3">¿Dónde comer?</string>
     <string name="ajustes4">¿Dónde dormir?</string>
     <string name="zona_de_usuarios">Zona de usuarios</string>
     <string name="masinfo">Más información</string>
-    <string name="alhajas">LAS ALHAJAS</string>
+    <string name="alhajas">Las Alhajas</string>
     <string name="volver_a_artesania">Volver a artesanía</string>
     <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra,
         la vivienda y el lugar de almacenamiento.</string>
@@ -81,7 +81,11 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="alojamiento_inicio">Si deseas pasar más de un día en La Alberca para poder conocer todos sus secretos, existen muchas opciones de alojamiento:</string>
+
+    <string name="apart">Apartamentos</string>
+    <string name="hotel">Hoteles</string>
+    <string name="casas">Casas Rurales</string>
 
 </resources>

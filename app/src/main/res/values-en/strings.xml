@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">La Alberca</string>
+    <string name="app_name">Discover La Alberca</string>
     <string name="tituloprincipal">Welcome to La Alberca!</string>
 
     <string name="textoprincipal">To the south of Salamanca, on the northern slopes of
@@ -19,12 +19,12 @@
     <string name="dialog_tourSi">This is the home screen of the application. You will be
         able to access all the other sections of the application from here.</string>
     <string name="seleccione_un_idioma">Choose a language:</string>
-    <string name="tradicionesmayus">TRADITIONS AND LEGENDS</string>
-    <string name="monumentosmayus">MONUMENTS</string>
-    <string name="gastronomiamayus">GASTRONOMY</string>
-    <string name="alojamientomayus">ACCOMMODATION</string>
-    <string name="rutasmayus">HIKING TRAILS</string>
-    <string name="otrosmayus">OTHER PLACES</string>
+    <string name="tradicionesmayus">Traditions and Legends</string>
+    <string name="monumentosmayus">Monuments</string>
+    <string name="gastronomiamayus">Gastronomy</string>
+    <string name="alojamientomayus">Accommodation</string>
+    <string name="rutasmayus">Hiking Trails</string>
+    <string name="otrosmayus">Other Places</string>
     <string name="inicio">Home</string>
     <string name="categorias">Categories</string>
     <string name="ajustes">Settings</string>
@@ -37,17 +37,17 @@
     <string name="gallego">Galician</string>
     <string name="frances">French</string>
     <string name="aleman">Germany</string>
-    <string name="historiamayus">HISTORY</string>
-    <string name="la_casa_albercana">LA ALBERCA HOUSES</string>
+    <string name="historiamayus">History</string>
+    <string name="la_casa_albercana">La Alberca Houses</string>
     <string name="_3_inscripciones">3. Legends</string>
     <string name="volver_a_categorias">Back to Categories</string>
     <string name="atras">Back</string>
-    <string name="arquitecturamayus">ARCHITECTURE</string>
+    <string name="arquitecturamayus">Architecture</string>
     <string name="_2_aspecto_interior">2. Interior appearance</string>
     <string name="_1_aspecto_exterior">1. Exterior appearance</string>
-    <string name="artesaniamayus">HANDICRAFTS</string>
-    <string name="el_bordado_serrano">THE SERRANO EMBROIDERY</string>
-    <string name="traje_serrano">THE SERRANO SUIT</string>
+    <string name="artesaniamayus">Handicrafts</string>
+    <string name="el_bordado_serrano">The Serrano Embroidery</string>
+    <string name="traje_serrano">The Serrano Suit</string>
     <string name="traje_mujer">1. Women\'s suits</string>
     <string name="traje_hombre">2. Men\'s suit</string>
     <string name="ajustes1">How to get?</string>
@@ -56,12 +56,18 @@
     <string name="ajustes4">Where to sleep?</string>
     <string name="zona_de_usuarios">User area</string>
     <string name="masinfo">Further information</string>
-    <string name="alhajas">JEWELLERY</string>
+    <string name="alhajas">Jewellery</string>
     <string name="volver_a_artesania">Back to handicrafts</string>
     <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.</string>
     <string name="rutas_inicio">Every fairytale village must have a dream setting, and La Alberca is no exception. Forests of pine,
         oak and chestnut woods give life to the surroundings of this village, with all kinds of routes where you can enjoy nature,
         the fauna and the pure air they offer us.</string>
+    <string name="alojamiento_inicio">"If you want to spend more than one day in La Alberca to discover all its secrets, there are many accommodation options:  "</string>
+
+    <string name="apart">Apartments</string>
+    <string name="hotel">Hotels</string>
+    <string name="casas">Rural Houses</string>
+
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -79,5 +85,7 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
+
+
 
 </resources>

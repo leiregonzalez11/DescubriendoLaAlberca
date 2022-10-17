@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">La Alberca</string>
+    <string name="app_name">"La Alberca "</string>
 
     <string name="tituloprincipal">Ongi etorri La Albercara!</string>
 
@@ -19,12 +19,12 @@
     <string name="dialog_tourSi">" Hau da aplikazioaren hasierako pantaila. Bertatik aplikazioaren gainerako atal
         guztietara sartu ahal izango zara. "</string>
     <string name="seleccione_un_idioma">Hizkuntza bat aukeratu:</string>
-    <string name="tradicionesmayus">TRADIZIOAK ETA ELEZAHARRAK</string>
-    <string name="monumentosmayus">MONUMENTUAK</string>
-    <string name="gastronomiamayus">GASTRONOMIA</string>
-    <string name="alojamientomayus">OSTATUAK</string>
-    <string name="rutasmayus">IBILBIDE SENDERISTAK</string>
-    <string name="otrosmayus">BESTE LEKUAK</string>
+    <string name="tradicionesmayus">Tradizioak eta Elezaharrak</string>
+    <string name="monumentosmayus">Monumentuak</string>
+    <string name="gastronomiamayus">Gastronomia</string>
+    <string name="alojamientomayus">Ostatuak</string>
+    <string name="rutasmayus">Ibilbide Senderistak</string>
+    <string name="otrosmayus">Beste Lekuak</string>
     <string name="inicio">Hasiera</string>
     <string name="categorias">Kategoriak</string>
     <string name="ajustes">Doikuntzak</string>
@@ -37,17 +37,17 @@
     <string name="gallego">Galegoa</string>
     <string name="frances">Frantsesa</string>
     <string name="aleman">Alemana</string>
-    <string name="historiamayus">HISTORIA</string>
-    <string name="la_casa_albercana">LA ALBERCAKO ETXEAK</string>
+    <string name="historiamayus">Historia</string>
+    <string name="la_casa_albercana">La Albercako Etxeak</string>
     <string name="_3_inscripciones">3. Inskripzioak</string>
     <string name="volver_a_categorias">Kategorietara itzuli</string>
     <string name="atras">Atzera</string>
-    <string name="arquitecturamayus">ARKITEKTURA</string>
+    <string name="arquitecturamayus">Arkitektura</string>
     <string name="_2_aspecto_interior">"2.  Barruko itxura "</string>
     <string name="_1_aspecto_exterior">1. Kanpoko itxura</string>
-    <string name="artesaniamayus">ARTISAUTZA</string>
-    <string name="el_bordado_serrano">SERRANO BRODATUA</string>
-    <string name="traje_serrano">SOINEKO SERRANOA</string>
+    <string name="artesaniamayus">Artisautza</string>
+    <string name="el_bordado_serrano">Serrano Brodatua</string>
+    <string name="traje_serrano">Soineko Serranoa</string>
     <string name="traje_hombre">2. Gizonezko soinekoa</string>
     <string name="traje_mujer">1. Emakumeko soinekoak</string>
     <string name="ajustes1">Nola iritsi?</string>
@@ -56,7 +56,7 @@
     <string name="ajustes4">Non lo egin?</string>
     <string name="zona_de_usuarios">Erabiltzaileen gunea</string>
     <string name="masinfo">Informazio gehiago</string>
-    <string name="alhajas">ALHAJAK</string>
+    <string name="alhajas">Alhajak</string>
     <string name="volver_a_artesania">Artisautzara itzuli</string>
 
     <string-array name="trajes_serranos">
@@ -71,6 +71,7 @@
     <string name="rutas_inicio">Ipuin-herri orok ametsezko ingurunea izan behar du, eta La Alberca ez zen gutxiago izango.
         Pinu, harizti eta gaztainondo basoek herri honen inguruari bizia ematen diote, naturaz, faunaz eta eskaintzen diguten
         aire garbiaz gozatzeko era guztietako ibilbideekin. </string>
+    <string name="alojamiento_inicio">Egun bat baino gehiago igaro nahi baduzu La Albercan bere sekretu guztiak ezagutzeko, ostatu hartzeko aukera asko daude:</string>
 
     <string-array name="rutas">
         <item>La Alberca - Peña de Francia</item>
@@ -80,5 +81,9 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
+
+    <string name="apart">Apartamentuak</string>
+    <string name="hotel">Hotelak</string>
+    <string name="casas">Rural Etxeak</string>
 
 </resources>

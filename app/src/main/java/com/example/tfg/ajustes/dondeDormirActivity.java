@@ -2,16 +2,13 @@ package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.tfg.categorias.otros.tabAdapter;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
@@ -20,12 +17,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
 
 public class dondeDormirActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    ArrayList lista1, lista2;
     String idioma, categoria;
 
     @SuppressLint("ResourceAsColor")
@@ -35,11 +30,16 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
         setContentView(R.layout.activity_donde_dormir);
         categoria = "alojamiento";
 
+        String text1 = getResources().getString(R.string.apart);
+        String text2 = getResources().getString(R.string.hotel);
+        String text3 = getResources().getString(R.string.casas);
+
         ViewPager2 viewPager = findViewById(R.id.viewPager);
 
         TabLayout tabLayout  = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Hoteles"));
-        tabLayout.addTab(tabLayout.newTab().setText("Apartamentos"));
+        tabLayout.addTab(tabLayout.newTab().setText(text2));
+        tabLayout.addTab(tabLayout.newTab().setText(text1));
+        tabLayout.addTab(tabLayout.newTab().setText(text3));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapter myadapter = new tabAdapter (getSupportFragmentManager(), getLifecycle());

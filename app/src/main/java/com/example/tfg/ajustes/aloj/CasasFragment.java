@@ -1,4 +1,4 @@
-package com.example.tfg.categorias.otros;
+package com.example.tfg.ajustes.aloj;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,38 +14,35 @@ import com.example.tfg.listViewAdapter;
 
 import java.util.ArrayList;
 
-public class HotelesFragment extends Fragment {
+public class CasasFragment extends Fragment {
 
     ArrayList lista1;
 
-    public HotelesFragment() {
+    public CasasFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hoteles, container, false);
+        return inflater.inflate(R.layout.fragment_casas, container, false);
     }
 
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-        ListView listView = (ListView) getView().findViewById(R.id.listviewHoteles);
+        ListView listView = (ListView) getView().findViewById(R.id.listviewCasas);
 
         lista1 = new ArrayList<>();
-        lista1.add("Cepeda");
-        lista1.add("Herguijuela de la Sierra");
-        lista1.add("Mogarraz");
-        lista1.add("Madroñal");
-        lista1.add("Miranda del Castañar");
-        lista1.add("San Esteban de la Sierra ");
-        lista1.add("San Martin del Castañar ");
-        lista1.add("Sequeros");
-        lista1.add("Sotoserrano");
-
+        lista1.add("El Palaero");
+        lista1.add("Casitas del Huerto");
+        lista1.add("El Aserradero");
+        lista1.add("Casa del tablao");
+        lista1.add("Casa La Tía Bruja");
+        lista1.add("Casa Rural Espeñitas");
+        lista1.add("La Esquina de Ánimas");
+        lista1.add("Castillo Alto");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
