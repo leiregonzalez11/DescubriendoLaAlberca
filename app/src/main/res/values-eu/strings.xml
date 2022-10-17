@@ -68,6 +68,9 @@
     </string-array>
 
     <string name="interior_inicio">"La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. "</string>
+    <string name="rutas_inicio">Ipuin-herri orok ametsezko ingurunea izan behar du, eta La Alberca ez zen gutxiago izango.
+        Pinu, harizti eta gaztainondo basoek herri honen inguruari bizia ematen diote, naturaz, faunaz eta eskaintzen diguten
+        aire garbiaz gozatzeko era guztietako ibilbideekin. </string>
 
     <string-array name="rutas">
         <item>La Alberca - Peña de Francia</item>

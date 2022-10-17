@@ -84,8 +84,13 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener((adapterView, view, position, id) ->
-                Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
+        listView4.setOnItemClickListener((adapterView, view, position, id) -> {
+                    //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
+                    Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
+                    startActivity(aloj);
+                    finish();
+        });
+
 
         //MENU
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewAjustes);

@@ -52,7 +52,7 @@
                 android:layout_marginBottom="12dp"
                 android:gravity="center_horizontal"
                 android:fontFamily="@font/alata"
-                android:text="Todo pueblo de fantasía debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la naturaleza, de la fauna y del aire puro que nos ofrecen. "
+                android:text="@string/rutas_inicio"
                 android:textSize="17sp"/>
 
             <com.google.android.material.card.MaterialCardView

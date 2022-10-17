@@ -24,6 +24,9 @@
         android:theme="@style/Theme.Trabajofingrado"
         tools:targetApi="31">
         <activity
+            android:name=".ajustes.dondeDormirActivity"
+            android:exported="false" />
+        <activity
             android:name=".categorias.rutas.rutasActivity"
             android:exported="false" />
         <activity

@@ -58,6 +58,9 @@
     <string name="alhajas">LES JOIES</string>
     <string name="volver_a_artesania">Tornar a artesanía</string>
     <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
+    <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i El Safareig no anava a ser menys. Boscos de
+        pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la
+        naturalesa, de la fauna i de l\'aire pur que ens ofereixen.</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>

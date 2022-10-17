@@ -61,6 +61,9 @@
     <string name="volver_a_artesania">Volver a artesanía</string>
     <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra,
         la vivienda y el lugar de almacenamiento.</string>
+    <string name="rutas_inicio">Todo pueblo de cuento debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de
+        pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la
+        naturaleza, de la fauna y del aire puro que nos ofrecen.</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>
@@ -78,5 +81,7 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
