@@ -41,8 +41,8 @@
 
             <ImageView
                 android:id="@+id/fotoAloj"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="-40dp"
                 android:layout_marginRight="15dp"
@@ -67,8 +67,9 @@
             <fragment
                 android:id="@+id/mapViewAlojamiento"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
+                android:layout_width="350dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

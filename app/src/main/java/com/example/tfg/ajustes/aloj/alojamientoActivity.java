@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.ajustes.dondeDormirActivity;
@@ -26,13 +28,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.util.Locale;
 
 public class alojamientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
 
     BottomNavigationView bottomNavigationView;
     GoogleMap mMap;
     String idioma, categoria, alojamiento;
+    double lat, lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +55,17 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
 
-        /*GestorDB dbHelper = new GestorDB(getContext());
+        GestorDB dbHelper = new GestorDB(this);
 
-        String [] datos = dbHelper.obtenerDatosAloj(idioma, categoria, nombreAloj);
+        String [] datos = dbHelper.obtenerDatosAloj(categoria, alojamiento);
 
-        TextView text1 = (TextView) requireView().findViewById(R.id.nombreAloj);
-        text1.setText(nombreAloj);
+        lat = Double.parseDouble(datos[0]);
+        System.out.println("DESCRIIIIIIIP" + lat);
+        lon = Double.parseDouble(datos[1]);
+        System.out.println("DESCRIIIIIIIP" + lon);
 
-        lat = Double.parseDouble(datos [1]);
-        lon = Double.parseDouble(datos[2]);*/
+        /*ImageView img = findViewById(R.id.fotoAloj);*/
+
 
         //BOTON ATRAS
 
@@ -80,11 +84,11 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
 
         mMap = googleMap;
         // Añadimos un marcador a la ubicación elegida y hacemos zoom
-        //LatLng location = new LatLng(lat, lon);
-        LatLng location = new LatLng(40.48890, -6.11050);
+        LatLng location = new LatLng(lat, lon);
+        //LatLng location = new LatLng(40.499432367526026, -6.115758261002924);
         mMap.addMarker(new MarkerOptions()
                 .position(location)
-                .title("La Alberca"));
+                .title(alojamiento));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16f));
         //Tipo de mapa: Hibrido
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
@@ -146,7 +150,6 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
 
         }
     }
-
 
     @Override
     public void onBackPressed() {}

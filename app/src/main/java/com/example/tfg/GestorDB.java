@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laAlbercaDB";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
     private final Context context;
     private boolean seguir = true;
 
@@ -75,6 +75,12 @@ public class GestorDB extends SQLiteOpenHelper {
         Log.d("Tabla otros", query5);
         sqLiteDatabase.execSQL(query5);
 
+        //Esquema de la tabla otros
+        String query6 = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " nombreAloj TEXT NOT NULL, lat VARCHAR NOT NULL, lon VARCHAR NOT NULL)";
+        Log.d("Tabla otros", query6);
+        sqLiteDatabase.execSQL(query6);
+
     }
 
     private void cargarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {
@@ -99,7 +105,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','en','vistas','The vistas suit is perhaps the most interesting and richest in Spain, as well as being the oldest. It is difficult to determine the date of its origin, as even in the village there is no one who knows its origins, although some old women claim that it is of Jewish origin. It is of absolute chastity, as it hides the woman''s anatomy and conceals her forms. It was originally a wedding dress, but over time it has lost its bridal character to become a festive garment linked to the celebration of processions and offertories.');");
         sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','en','vistas','This suit from La Alberca has inspired artists, painters such as Sorolla, sculptors and photographers such as Ortiz Echagüe, who portrays the women of La Alberca in all their splendour. The great masters such as Givenchy and Galiano have also drunk from this source of the mountain village, because the richness of its forms, the superimposition of fabrics and jewels and the singular way in which it sits on the woman''s body suggest a multitude of ideas.');");
-
+        sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','en','manteo','The Albercan suit of manteo or mantita is reminiscent of Candelario''s suit, although the Albercan suit is more majestic and typical. Its main garments are: the doublet, made of black or coloured velvet; a skirt, called refajo, cut in the shape of a manteo, open at the back and then another one over it in dark colours. The skirt has a strip of carved velvet, which is known in La Alberca as \"tirana\" and ends with an openwork scallop. The embroidery is based on mustacilla or braid.');");
 
         sqLiteDatabase.execSQL("INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz11','ca', 'No hi ha una bona recta pels carrers de La Alberca. Es corben els camins, es trenquen les línies de les façanes i és fàcil perdre''s pels seus carrers, camins i carrerons que pugen, baixen o s''entrecreuen. De tant en tant, ofereixen la sorpresa d''una font on poder asseure''t, beure un bon glop d''aigua i admirar la bellesa de les cases que l''envolten.');");
         sqLiteDatabase.execSQL("INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz12','ca', 'Hi ha qui diu que la seva estructura urbana és la d''una jueria, pel laberíntic i secret dels seus carrers, però altres, en recórrer el poble, l''han associat amb els ravals de Damasc. No en va, els seus carrers empedrats i els seus edificis de fusta i pedra, li van servir per a convertir-se en el primer poble d''Espanya declarat Monument Historicoartístic Nacional l''any 1940.');");
@@ -203,7 +209,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosAloj(String idioma, String tabla, String nombreAloj){
+    public String[] obtenerDatosAloj(String tabla, String nombreAloj){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -211,10 +217,10 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[5];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT lat, long, ubi FROM " + tabla + "" +
-                " WHERE idioma = '" + idioma + "' AND nombreAloj = '" + nombreAloj + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT lat, lon FROM " + tabla + "" +
+                " WHERE nombreAloj = '" + nombreAloj + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 3; j++){
+            for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
                 System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[i] = descrip;
@@ -232,6 +238,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otros");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
         onCreate(sqLiteDatabase);
 
     }
