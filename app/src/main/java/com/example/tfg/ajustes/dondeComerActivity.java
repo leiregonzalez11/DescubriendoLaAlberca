@@ -8,26 +8,21 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.tfg.categorias.otros.otrosActivity;
+import com.example.tfg.ajustes.aloj.tabAdapter;
+import com.example.tfg.ajustes.rest.tabAdapterComer;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
-import com.example.tfg.listViewAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
 
 public class dondeComerActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    ArrayList lista1;
     String idioma;
 
     @SuppressLint("ResourceAsColor")
@@ -39,36 +34,47 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
 
-        ListView listView = findViewById(R.id.listviewComer);
+        String text1 = getResources().getString(R.string.bares);
+        String text2 = getResources().getString(R.string.rest);
 
-        lista1 = new ArrayList<>();
-        lista1.add("Bar El Porrón");
-        lista1.add("Bar El Rincón de Lola");
-        lista1.add("Bar La Peña");
-        lista1.add("Bar Marcos");
-        lista1.add("Bar La Balsá");
-        lista1.add("Bar La Nogal");
-        lista1.add("El Balcón de la Plaza");
-        lista1.add("La Barrera");
-        lista1.add("Restaurante La Catedral");
-        lista1.add("Restaurante La Taberna");
-        lista1.add("Restaurante Ibéricos de la Alberca Doña Consuelo");
-        lista1.add("Restaurante El Soportal");
-        lista1.add("Restaurante El Encuentro");
-        lista1.add("¡Oh! Espacio del Jamón");
-        lista1.add("Mesón La Colmena");
-        lista1.add("Restaurante La Cantina de Elías");
-        lista1.add("La Parrilla");
-        lista1.add("Bar Restaurante 1830");
-        lista1.add("Tetería Singular");
+        ViewPager2 viewPager = findViewById(R.id.viewPagerComer);
 
+        TabLayout tabLayout  = findViewById(R.id.tab_layoutComer);
+        tabLayout.addTab(tabLayout.newTab().setText(text1));
+        tabLayout.addTab(tabLayout.newTab().setText(text2));
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
-        listView.setAdapter(myAdapter);
+        tabAdapterComer myadapter = new tabAdapterComer(getSupportFragmentManager(), getLifecycle());
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> Toast.makeText(dondeComerActivity.this, "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
+        viewPager.setAdapter(myadapter);
+        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+            }
+        });
 
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                assert tab.parent != null;
+                viewPager.setCurrentItem(tab.parent.getSelectedTabPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                //viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                //viewPager.setCurrentItem(tab.getPosition());
+
+            }
+        });
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewdondeComer);

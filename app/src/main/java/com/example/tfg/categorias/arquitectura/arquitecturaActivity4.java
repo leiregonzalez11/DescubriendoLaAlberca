@@ -10,18 +10,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
+
 
 public class arquitecturaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
@@ -38,9 +37,9 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz4", categoria);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz4", categoria, 3);
 
         TextView text1 = findViewById(R.id.arqui41);
         text1.setText(datos[0]);
@@ -49,19 +48,11 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         text2.setText(datos[1]);
 
         TextView text3 = findViewById(R.id.arqui43);
-        text3.setText(datos[2]);*/
+        text3.setText(datos[2]);
 
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui4);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE y ATRAS
-        Button atrasBtn = findViewById(R.id.arqui4atras);
+        Button atrasBtn = findViewById(R.id.arquiatras4);
         atrasBtn.setOnClickListener(this);
 
         Button finBtn = findViewById(R.id.arquisiguiente4);
@@ -122,7 +113,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
         switch (btn.getId()) {
 
-            case R.id.arqui4atras:
+            case R.id.arquiatras4:
                 Intent atras = new Intent(this, arquitecturaActivity3.class);
                 atras.putExtra("idioma", idioma);
                 atras.putExtra("categoria", categoria);

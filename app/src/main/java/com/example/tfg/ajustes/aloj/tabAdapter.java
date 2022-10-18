@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes;
+package com.example.tfg.ajustes.aloj;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +16,6 @@ import java.util.List;
 
 public class tabAdapter extends FragmentStateAdapter {
 
-    private final List<String> fragmentTitle = new ArrayList<>();
 
     public tabAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);

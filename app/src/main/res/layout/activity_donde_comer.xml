@@ -17,16 +17,16 @@
         tools:layout_editor_absoluteY="-75dp">
 
         <LinearLayout
-            android:id="@+id/layoutComer1"
+            android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".ajustes.dondeComerActivity">
+            tools:context=".categorias.otros.otrosActivity">
 
             <TextView
-                android:id="@+id/otrostitulo"
+                android:id="@+id/comertitulo"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -50,7 +50,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="25dp"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:text="@string/alojamiento_inicio"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
@@ -60,14 +60,21 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="530dp"
+                android:layout_height="480dp"
                 android:layout_margin="10dp"
                 app:cardElevation="10dp">
 
-                <ListView
-                    android:id="@+id/listviewComer"
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layoutComer"
                     android:layout_width="match_parent"
-                    android:layout_height="530dp" />
+                    android:layout_height="wrap_content"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/viewPagerComer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp" />
 
             </com.google.android.material.card.MaterialCardView>
 

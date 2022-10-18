@@ -17,9 +17,9 @@
         tools:layout_editor_absoluteY="-75dp">
 
         <LinearLayout
-            android:id="@+id/layoutArqui21"
+            android:id="@+id/layoutArqui41"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
@@ -58,34 +58,64 @@
                 android:text="@string/_3_inscripciones"
                 tools:targetApi="o" />
 
-            <com.google.android.material.card.MaterialCardView
+            <TextView
+                android:id="@+id/arqui41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="15dp">
+                android:layout_margin="9dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:textSize="17sp"/>
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui4"
-                    android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
+            <ImageView
+                android:id="@+id/arqui41img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
 
-            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/arqui42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:textSize="17sp"/>
+
+            <ImageView
+                android:id="@+id/arqui42img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/arqui43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:textSize="17sp"/>
+
+            <ImageView
+                android:id="@+id/arqui43img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
 
             <LinearLayout
-                android:id="@+id/layoutArqui32"
+                android:id="@+id/layoutArqui22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/fab_margin"
@@ -93,24 +123,26 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/arqui4atras"
-                    android:layout_width="120dp"
+                    android:id="@+id/arquiatras4"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/alatsi"
-                    android:text="@string/atras">
+                    android:text="@string/atras"
+                    tools:ignore="ButtonStyle">
 
                 </Button>
 
                 <Button
                     android:id="@+id/arquisiguiente4"
-                    android:layout_width="140dp"
+                    android:layout_width="115dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/siguiente"
                     android:fontFamily="@font/alatsi"
-                    android:layout_gravity="center">
+                    android:text="@string/siguiente"
+                    android:layout_gravity="center"
+                    tools:ignore="ButtonStyle">
 
                 </Button>
 

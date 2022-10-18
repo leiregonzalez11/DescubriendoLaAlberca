@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginRight="7dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/alata"
@@ -59,12 +59,12 @@
 
                     <ImageView
                         android:id="@+id/fotoAloj"
-                        android:layout_width="350dp"
-                        android:layout_height="250dp"
+                        android:layout_width="330dp"
+                        android:layout_height="200dp"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="-10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginRight="15dp"
-                        android:layout_marginBottom="-7dp"
+                        android:layout_marginBottom="5dp"
                         android:src="@drawable/laalberca2"
                         tools:ignore="ContentDescription" />
 
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
                         android:layout_marginRight="7dp"
                         android:layout_marginBottom="1dp"
                         android:fontFamily="@font/alata"
@@ -100,8 +100,8 @@
                     <androidx.fragment.app.FragmentContainerView
                         android:id="@+id/mapViewAlojamiento"
                         android:name="com.google.android.gms.maps.SupportMapFragment"
-                        android:layout_width="350dp"
-                        android:layout_height="250dp"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"

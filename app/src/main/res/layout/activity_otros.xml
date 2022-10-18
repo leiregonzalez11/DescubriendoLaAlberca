@@ -44,17 +44,17 @@
 
             <TextView
                 android:id="@+id/otrostext"
-                android:layout_width="323dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:autoSizeMaxTextSize="45sp"
-                android:autoSizeMinTextSize="23sp"
-                android:autoSizeStepGranularity="2sp"
-                android:autoSizeTextType="uniform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
+                android:text="En la Sierra de Francia, aparte de La Alberca, existen muchos otros preciosos pueblos y lugares que descubrir:"
                 android:textAlignment="gravity"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Descubre \n La Alberca</string>
+    <string name="app_name">Descubriendo La Alberca</string>
 
     <string name="tituloprincipal">¡Bienvenid@s a La Alberca!</string>
 
@@ -90,5 +90,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ubicacion">Ubicación</string>
+    <string name="bares">Bares</string>
+    <string name="rest">Restaurantes</string>
+    <string name="contacto">Contacto</string>
 
 </resources>

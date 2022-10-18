@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Descubre \n La Alberca</string>
+    <string name="app_name">Descubriendo La Alberca</string>
     <string name="tituloprincipal">Welcome to La Alberca!</string>
 
     <string name="textoprincipal">To the south of Salamanca, on the northern slopes of
@@ -68,6 +68,9 @@
     <string name="hotel">Hotels</string>
     <string name="casas">Rural Houses</string>
     <string name="ubicacion">Location</string>
+    <string name="bares">Bar</string>
+    <string name="rest">Restaurants</string>
+    <string name="contacto">Contact</string>
 
 
     <string-array name="trajes_serranos">

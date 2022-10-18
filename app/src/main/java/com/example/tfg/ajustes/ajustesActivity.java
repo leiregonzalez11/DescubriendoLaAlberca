@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    String idioma, opc1, opc2, opc3, opc4;
+    String idioma, opc1, opc2, opc3, opc4, opc5;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -37,11 +37,13 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ListView listView2 = findViewById(R.id.listview2);
         ListView listView3 = findViewById(R.id.listview3);
         ListView listView4 = findViewById(R.id.listview4);
+        ListView listView5 = findViewById(R.id.listview5);
 
         opc1 = getResources().getString(R.string.ajustes1);
         opc2 = getResources().getString(R.string.ajustes2);
         opc3 = getResources().getString(R.string.ajustes3);
         opc4 = getResources().getString(R.string.ajustes4);
+        opc5 = getResources().getString(R.string.contacto);
 
         System.out.println("TEXTOOOOOO" + opc1);
         System.out.println("TEXTOOOOOO" + opc2);
@@ -95,6 +97,20 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
                     aloj.putExtra("idioma", idioma);
                     startActivity(aloj);
                     finish();
+        });
+
+        ArrayList<String> lista5 = new ArrayList<>();
+        lista5.add(opc5);
+
+        listViewAdapter myAdapter5 = new listViewAdapter(this, R.layout.list_item, lista5);
+        listView5.setAdapter(myAdapter5);
+
+        listView5.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+            /*Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
+            aloj.putExtra("idioma", idioma);
+            startActivity(aloj);
+            finish();*/
         });
 
 

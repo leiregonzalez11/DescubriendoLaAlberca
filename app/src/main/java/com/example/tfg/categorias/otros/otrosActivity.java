@@ -47,14 +47,19 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
 
         lista1 = new ArrayList<>();
         lista1.add("Cepeda");
+        lista1.add("Garcibuey");
         lista1.add("Herguijuela de la Sierra");
-        lista1.add("Mogarraz");
+        lista1.add("Las Casas del Conde");
         lista1.add("Madroñal");
         lista1.add("Miranda del Castañar");
-        lista1.add("San Esteban de la Sierra ");
+        lista1.add("Mogarraz");
+        lista1.add("Monforte de la Sierra ");
         lista1.add("San Martin del Castañar ");
+        lista1.add("San Miguel de Robledo");
         lista1.add("Sequeros");
         lista1.add("Sotoserrano");
+        lista1.add("Valero");
+        lista1.add("Villanueva del Conde");
 
 
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);

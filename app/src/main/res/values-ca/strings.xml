@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Descubre \n La Alberca</string>
+    <string name="app_name">Descubriendo La Alberca</string>
 
     <string name="tituloprincipal">Benvinguts a La Alberca!</string>
 
@@ -82,5 +82,8 @@
     <string name="hotel">Hotels</string>
     <string name="casas">Cases Rurals</string>
     <string name="ubicacion">Ubicació</string>
+    <string name="bares">Bars</string>
+    <string name="rest">Restaurants</string>
+    <string name="contacto">Contacte</string>
 
 </resources>
