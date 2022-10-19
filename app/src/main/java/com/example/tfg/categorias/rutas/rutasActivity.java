@@ -141,7 +141,7 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
 
         nombreRuta = determinarRuta((String) adapterView.getItemAtPosition(position));
 
-        String[] datos = dbHelper.obtenerDatosInterfazRutas(idioma, nombreRuta, categoria);
+        String[] datos = dbHelper.obtenerDatosRutas(idioma, nombreRuta, categoria);
 
         System.out.println("RUTAAAAA " + nombreRuta);
         for (int i = 0; i < datos.length; i++){

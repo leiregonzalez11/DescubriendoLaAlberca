@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.listViewAdapter;
 
@@ -35,18 +36,11 @@ public class CasasFragment extends Fragment {
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        ListView listView = (ListView) getView().findViewById(R.id.listviewCasas);
+        ListView listView = getView().findViewById(R.id.listviewCasas);
 
-        lista1 = new ArrayList<>();
-        lista1.add("Casa del tablao");
-        lista1.add("Casa La Tía Bruja");
-        lista1.add("Casa Rural Espeñitas");
-        lista1.add("Casitas del Huerto");
-        lista1.add("Castillo Alto");
-        lista1.add("El Abuelo Felix");
-        lista1.add("El Aserradero");
-        lista1.add("La Casa del Burro");
-        lista1.add("La Esquina de Ánimas");
+        GestorDB dbHelper = new GestorDB(getContext());
+
+        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "casarural");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);

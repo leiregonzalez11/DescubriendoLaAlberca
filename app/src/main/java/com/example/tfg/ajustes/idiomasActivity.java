@@ -36,7 +36,7 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
         radioCas = findViewById(R.id.radio_castellano);
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
-        radioCat = findViewById(R.id.radio_catalan);
+        //radioCat = findViewById(R.id.radio_catalan);
 
         TextView texto = findViewById(R.id.textoajustes);
 
@@ -53,11 +53,11 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
             radioIng.setChecked(true);
             radioIng.setTextColor(R.color.purple_500);
             idioma = "en";
-        }else if (texto.getText().toString().contains("Seleccioneu")){
+        } /*else if (texto.getText().toString().contains("Seleccioneu")){
             radioCat.setChecked(true);
             radioCat.setTextColor(R.color.purple_500);
             idioma = "ca";
-        }
+        }*/
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
@@ -128,12 +128,12 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
             startActivity(getIntent());
         });
 
-        radioCat.setOnClickListener(view -> {
+        /*radioCat.setOnClickListener(view -> {
             language="ca";
             changeLanguage();
             finish();
             startActivity(getIntent());
-        });
+        });*/
 
     }
 

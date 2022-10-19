@@ -16,7 +16,7 @@ public class listViewAdapter extends BaseAdapter {
     private final int layout;
     private final ArrayList<String> names;
 
-    public listViewAdapter(Context context, int layout, ArrayList<String> names){
+    public listViewAdapter(Context context, int layout, ArrayList names){
         this.context = context;
         this.layout = layout;
         this.names = names;

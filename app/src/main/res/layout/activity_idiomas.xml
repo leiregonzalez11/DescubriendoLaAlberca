@@ -49,10 +49,7 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="20dp"
-                        android:autoSizeMaxTextSize="45sp"
-                        android:autoSizeMinTextSize="23sp"
-                        android:autoSizeStepGranularity="2sp"
-                        android:autoSizeTextType="uniform"
+                        android:textSize="25dp"
                         android:fontFamily="@font/alatsi"
                         android:gravity="left"
                         android:text="@string/seleccione_un_idioma"
@@ -97,13 +94,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
+                            android:textSize="23dp"
+                            android:fontFamily="@font/alata"
                             android:text="@string/castellano"
                             tools:targetApi="o" />
+
+                        <!--
 
                         <RadioButton
                             android:id="@+id/radio_catalan"
@@ -119,17 +115,16 @@
                             android:text="@string/catalan"
                             tools:targetApi="o" />
 
+                            -->
+
                         <RadioButton
                             android:id="@+id/radio_euskera"
                             android:layout_width="190dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
+                            android:textSize="23dp"
+                            android:fontFamily="@font/alata"
                             android:text="@string/euskera"
                             tools:targetApi="o" />
 
@@ -168,11 +163,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="16dp"
-                            android:autoSizeMaxTextSize="25sp"
-                            android:autoSizeMinTextSize="15sp"
-                            android:autoSizeStepGranularity="2sp"
-                            android:autoSizeTextType="uniform"
-                            android:fontFamily="@font/alatsi"
+                            android:textSize="23dp"
+                            android:fontFamily="@font/alata"
                             android:text="@string/ingles"
                             app:layout_constraintEnd_toStartOf="@+id/radio_castellano"
                             app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +175,7 @@
                     <Space
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"></Space>
+                        android:layout_marginBottom="15dp" />
 
                 </LinearLayout>
 

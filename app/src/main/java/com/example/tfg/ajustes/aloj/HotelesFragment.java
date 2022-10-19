@@ -10,10 +10,12 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HotelesFragment extends Fragment {
 
@@ -36,19 +38,11 @@ public class HotelesFragment extends Fragment {
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        ListView listView = (ListView) getView().findViewById(R.id.listviewHoteles);
+        ListView listView = requireView().findViewById(R.id.listviewHoteles);
 
-        lista1 = new ArrayList<>();
+        GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1.add("Camping Al-Bereka");
-        lista1.add("Hostal El Castillo");
-        lista1.add("Hostal La Alberca");
-        lista1.add("Hostal La Balsá");
-        lista1.add("Hostal San Blas");
-        lista1.add("Hotel Antiguas Eras La Alberca");
-        lista1.add("Hotel Doña Teresa");
-        lista1.add("Hotel Las Batuecas");
-        lista1.add("Hotel Termal Abadía de los Templarios");
+        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "hotel");
 
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
