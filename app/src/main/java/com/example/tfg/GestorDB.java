@@ -72,7 +72,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Esquema de la tabla otros lugares
         String query5 = "CREATE TABLE IF NOT EXISTS otroslugares (idOtros INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "idioma VARCHAR(2) NOT NULL, nombreOtro VARCHAR NOT NULL, descrOtro VARCHAR NOT NULL, " +
+                "categoriaOtros VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, nombreOtro VARCHAR NOT NULL, descrOtro VARCHAR NOT NULL, " +
                 "kmdesdeLa VARCHAR NOT NULL, fiestamayor VARCHAR, latLugar VARCHAR, lonLugar VARCHAR)";
         Log.d("Tabla otros lugares", query5);
         sqLiteDatabase.execSQL(query5);

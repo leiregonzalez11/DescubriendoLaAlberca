@@ -1,4 +1,5 @@
 //DATOS PARA LAS INTERFACES
+//
 //--------------------------------------------------------------
 //                   ----ARQUITECTURA----                      |
 //--------------------------------------------------------------
@@ -50,6 +51,7 @@ INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz35','en', 'Fi
 INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz41','en', 'On the lintel of the entrance of some houses we can find engravings with the date of construction of the house (mainly XVII-XVIII), accompanied by invocations to the Virgin Mary, crosses, some pontifical coats of arms or religious orders, and even the palm and sword of the old Holy Inquisition.');
 INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz42','en', 'La Alberca served as a refuge for Jewish converts, who, in order to avoid reprisals against them and their families, engraved the lintels of their houses, demonstrating the authenticity of their conversion to the community and the Inquisitorial vigilance.');
 INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz43','en', 'As a curiosity, next to the Plaza Mayor, in Calle del Tablado, is the lintel with the oldest date in the whole complex: 1613. Next to it are the initials JHS (Jesus, Man, Saviour).');
+//
 //--------------------------------------------------------------
 //                      ----ARTESANÍA----                      |
 //--------------------------------------------------------------
@@ -105,10 +107,10 @@ INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33'
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','eu','zagalejo','Zagalejozko jantzia manteozko jantziaren modalitate bat da. Belus beltzezko juboiak osatzen du, ukabiletan abalorioak dituena; oihal zuri brodatuzko gorbata eta oihal gorrizko gona, abalorioz eta lentejuelaz brodatua eta barraskiloz eta gainjantziz apaindua.');
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','eu','zagalejo','Aho-zapia bularraren gainean jartzen da, eta, haren gainean, familiak, ahal duen neurrian, dituen urrezko hari edo lepokoak. Gurpil edo olibatxoen kontu txikiek osatzen dituzte, eta horietatik apoarmatuak, gurutzeak... zintzilikatzen dira.');
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','eu','zagalejo','Gonaren gainean honako hau jartzen da: aurrealdean mantala, belusezko farrakoa ia estaltzen duen oihal beltzekoa, eta, atzealdean, belus beltz eta brodatuzko atzeko zinta handia. Manteoan ez bezala, zagalejoak ez darama mantillarik, eta bai, ordea, motots-zinta bat, jantzi honen berezko orrazkera den erroitzaren gainean jartzen dena.');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','eu','sayas','POR HACER');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','eu','sayas','POR HACER 2');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','eu','sayas','POR HACER 3');
-INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz41','eu', 'Jantzi maskulinoa eta emakumearena guztiz desberdinak dira. Alberkanoek janzten duten lehenengo gauza, mihise zuriko kamisoi zabal bat da. Kamisoiaren lepo altuak gurutze-puntuan markatutako marrazki bat du. Laborariek ojito horia deitzen diote, eta aurretik ixten dute urrezko bi botoi mardulez osatutako biki batekin.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','eu','sayas','Serrano jantziak Manteo jantziaren eboluzio txikiagoa dela omen dira. Sayas jantzia La Albercako jantzien artean sinpleena da. Kolore bizi, borobil, arrosa, hori eta berde sayak dira jantzi honen oinarria. Maskor, labe, ale eta kolore askotako lentejuelez apainduak daude, koloretsuagoak izan daitezen.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','eu','sayas','Mantalak, bordatua eta kolore bizikoa, zaku-oihala estaltzen du. Goiko aldean, alkandora bat darama, saia barruan sartu eta manilazko xalak estaltzen duena, eta horrek erakargarritasun handiagoa ematen dio saia jantziari. Manilazko txala, jatorriz bertakoa ez izan arren, mendietako jantzi gehienen zati oso garrantzitsua da, non oso diseinu ezberdinekin eta kolore ugarirekin aurki ditzakegun.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','eu','sayas','Azkenik, manilazko txalaren ondoren, urrezko hariak jartzen dira, gurutzeekin eta apoekin. Hauek xalaren gainean doaz eta lepoaren inguruan lotzen dira koloretako xingolekin, jantzi honi azken ukitua ematen diotenak.');
+INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz41','eu', 'Jantzi maskulinoa eta emakumearena guztiz desberdinak dira. Albercanoek janzten duten lehenengo gauza, mihise zuriko kamisoi zabal bat da. Kamisoiaren lepo altuak gurutze-puntuan markatutako marrazki bat du. Laborariek ojito horia deitzen diote, eta aurretik ixten dute urrezko bi botoi mardulez osatutako biki batekin.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz42','eu', 'Galtzontzilo luzeen gainean, horiek ere lihoz eginak, belus urdinezko edo beltzezko galtzak daude. Gerrian ixten da, aurretik, zilarrezko botoi bati eusten dion arzapiarekin, eta giltzurrunetatik abiatzen den ahuntz-larruzko uhal mehe batekin, zilborrean lotzen da. Prakak zangoak estutzen ditu behean, eta belaunen azpian zilarrezko botoiaz estutu edo zabalik gera daiteke, zilarrezko botoiak eta zintzilikarioak, hostoak izenekoak, aske utziz, ibiltzean txilin-hotsa entzun dezan. Bada beste galtza mota bat, bonbatxo izenekoa, belaunetan estutzen ez dena, beti irekita dagoena eta bota altuekin eramaten dena.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz43','eu', 'Hankak estaltzeko, kaltzetak erabiltzen dituzte. Hari zurikoak izaten dira, oinik gabeak. Zapaten gainean oihal gordinezko polainak daude. Ezin da falta txalekoa, belusezkoa (urdina edo beltza), zilarrezko botoien ilara bikoitzarekin, bata bularra ixteko, erdiraino bakarrik lotzen den arren, eta bestea apaintzeko. Txaketa, kizkur edo belusezkoa, txalekoaren gainean doa, zilarrezko brotxekin.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz44','eu', 'Azkenik, burua zetazko musuzapi batekin lotzen da, mairu estilokoa, eta kapela bat erants diezaioke gainean. Eta gerria, aurretik erortzen diren geziz amaitutako gerriko gorri batekin.');
@@ -133,15 +135,16 @@ INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33'
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','en','zagalejo','The zagalejo suit is a variant of the manteo suit. It consists of a black velvet doublet with beads on the cuffs, an embroidered white cloth tie and a red cloth skirt, embroidered with beads and sequins and decorated with shells and overlays.');
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','en','zagalejo','The shawl scarf is draped over the chest, and on it, the gold threads or necklaces that the family, within its means, possesses. They are made up of small beads of strawberry trees or olives, from which hang galapagos, crosses...');
 INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','en','zagalejo','Over the skirt is worn: on the front, the mandila, made of black cloth that practically covers the velvet farraco, and, on the back, the so-called large embroidered black velvet back ribbon. Unlike the manteo, the zagalejo does not wear a mantilla, but instead wears a bun ribbon that is placed over the bun, a characteristic hairstyle of this suit.');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','en','sayas','POR HACER 4');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','en','sayas','POR HACER 5');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','en','sayas','POR HACER 6');
-INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz41','en', 'The men suit is completely different from the women. The first thing the albercanos wear is a wide, white linen nightdress.  The first thing the albercanos wear is a wide white linen nightdress. The high collar of the nightdress is marked with a cross-stitch pattern, which the "labreras" call "ojito amarillo" (little yellow eye), and is closed at the front with a cufflink made of two large gold buttons.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz31','en','sayas','It is said that the serrano suits are a lesser evolution of the "traje de manteo". The "sayas" costume is possibly the simplest of the La Alberca costumes. The wide, round, brightly coloured, pink, yellow and green "sayas" are the basis of this costume. They are adorned with shells, overlays, beads and sequins of many colours, to make them more colourful.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz32','en','sayas','The apron, embroidered and brightly coloured, covers the sackcloth. On the upper part, a shirt is worn that goes inside the saya and is covered with the manila shawl, giving the saya costume a greater attraction. The manila shawl, although not originally from the area, is a very important part of most of the costumes from the mountains, where we can find them with very different designs and in an infinite number of colours.');
+INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('interfaz33','en','sayas','Finally, after the manila shawl, the gold threads with crosses and galapagos are placed. These go on top of the shawl and are tied around the neck with coloured ribbons that give the final touch to this costume.');
+INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz41','en', 'The men suit is completely different from the women. The first thing the albercan men wear is a wide, white linen nightdress. The high collar of the nightdress is marked with a cross-stitch pattern, which the "labreras" call "ojito amarillo" (little yellow eye), and is closed at the front with a cufflink made of two large gold buttons.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz42','en', 'Over the long breeches, also made of linen, goes the blue or black velvet breeches. It is fastened at the waist, at the front, with a silver button, and a thin goatskin strap, which starts at the kidneys, is knotted at the navel. The breeches are narrowed at the bottom of the legs, and can be tightened below the knees with silver buttons or left open, leaving the silver buttons and pendants, called follajes, loose, so that they can chime as they walk. There is another type of breeches, called bombacho, which does not narrow at the knees, but is always open and is worn with high boots.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz43','en', 'To cover the legs, they wear socks, which are usually made of white thread, without feet. Ecru cloth leggings are worn over the shoes. The waistcoat, which is made of velvet (blue or black) with a double row of silver buttons, one to close the chest, although it is only buttoned halfway, and the other for decoration, is a must. The jacket, made of short terry cloth or velvet, is worn over the waistcoat, with silver buttons.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz44','en', 'Finally, the head is wrapped with a silk scarf, in Moorish style, and a hat can be added on top of it. And the waist, with a red sash ending in fringes that fall in front.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz51','en','The 18th century was the historical period of greatest splendour in La Alberca, and this is demonstrated by the rich jewellery that accompanies the traditional costumes that are still preserved and are exhibited on the days of festivals and celebrations. They are made of fine materials, gold and silver, and bear iconographic engravings, with plant, animal and geometric motifs, and even reliquaries with holy cards of virgins and saints, photos of family members, etc.');
 INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz52','en','The jewellery consists of gold threads with beads that can be round or oval and of different sizes. Earrings can be hoop earrings, pear-shaped earrings. Galapagos, diamond crosses, gold crystals, scallops and rings are also part of the gold and silver work of La Alberca.');
+//
 //--------------------------------------------------------------
 //                    ----GASTRONOMIA----                      |
 //--------------------------------------------------------------
@@ -160,6 +163,7 @@ INSERT INTO gastronomia (namePag, idioma, descr) VALUES ('interfaz12','eu','Era 
 //
 INSERT INTO gastronomia (namePag, idioma, descr) VALUES ('interfaz11','en','It can be said that the gastronomy of the Sierra de Francia, and therefore of La Alberca, is based on meats and cold meats, cured in the Serrano air, as well as on the very famous patatas meneás or the cabrito cuchifrito, without forgetting its incomparable nougat or its delicious sugared almonds.');
 INSERT INTO gastronomia (namePag, idioma, descr) VALUES ('interfaz12','en','Likewise, the hornazos, a pie made with cold meats, or the limón serrano, made with lemon, orange, hard-boiled egg and chorizo, are also very popular. Its wines, local vintages and sweets of extraordinary quality made with natural products, wafers, perrunillas, honey and pollen are also very important in the gastronomy of this charming village.');
+//
 //--------------------------------------------------------------
 //                       ----RUTAS----                         |
 //--------------------------------------------------------------
@@ -190,9 +194,11 @@ INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('en', 'sanmartin', 'The La Alberca - San Martín del Castañar route, signposted in white, red and yellow, starts on the road leading to the local cemetery. This route will allow us to discover in more depth the most unknown part of the Sierra de Francia, crossing the Arrolhuevo stream and the Francia river and passing through Los Lanchares, a remarkable area of the sierra for its sparse tree vegetation and the presence of rock launches, before arriving at the final destination of the route, San Martín del Castañar.', 'Distance: 16,5 km (Roundtrip)', 'Unevenness: 526 meters', 'Technical Difficulty: Moderate', 'Time: 4-5 hours (Approx.)');
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('en', 'peñadelhuevo', 'Peña del Huevo is a rocky promontory rounded by erosion, giving it the curious shape of an egg. Access is simple: following a forest track that runs through a coniferous forest, we reach the Peña Carbonera, the highest point on our route, where we will find a refuge, a fire lookout point and a viewpoint with spectacular views. From the summit of Peña Carbonera we descend to our destination, Peña del Huevo. Access to the summit is not very difficult, although due to its height it should only be undertaken by people with climbing skills. After reaching the summit, we continue descending in the direction of La Alberca, crossing cliffs to see the Dedo de Dios, a rock formation that simulates a finger pointing towards Las Batuecas, and the Portillo, a viewpoint.', 'Distance: 13,55 km (Roundtrip)', 'Unevenness: 441 meters', 'Technical Difficulty: Easy', 'Time: 3-4 hours (Approx.)');
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('en', 'mogarraz', 'This route mixes unmarked paths with parts of the route El Camino de Las Raíces, from La Alberca, and with parts of the route El Camino del Agua, a circular route between Mogarraz and Monforte de la Sierra. During the route we can enjoy places such as the lagoon and hermitage in ruins of San Marcos, the hermitage of Majadas Viejas, the Serena work of Virginia Calvo or the old quarter of the picturesque village of Monforte de la Sierra. In addition to all this, you can breathe the fresh air of the Sierra de Francia, as well as enjoy the views, fauna and flora along the way.', 'Distance: 21 km (Roundtrip)', 'Unevenness: 476 meters', 'Technical Difficulty: Moderate', 'Time: 7 hours (Approx.)');
+//
 //--------------------------------------------------------------
 //                    ----ALOJAMIENTOS----                     |
 //--------------------------------------------------------------
+//
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('hotel', 'Camping Al-Bereka', 'Carretera Salamanca - La Alberca, Km 75', '40.509142934092466', '-6.12263033451697');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('hotel', 'Hostal El Castillo','Carretera de Mogarraz, 5','40.488839','-6.107672');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('hotel', 'Hostal La Balsá', 'Calle  Balsada 2', '40.489275858851585', '-6.11009941834908');
@@ -217,18 +223,37 @@ INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) V
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('casarural', 'El Aserradero','Carretera de Mogarraz, 4','40.4906561','-6.1106599');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('casarural', 'La Casa del Burro','Plaza de la Iglesia, 19','40.4883885','-6.1097674');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj) VALUES ('casarural', 'La Esquina de Ánimas','Plaza de la Iglesia, 9','40.4886357','-6.1098896');
+//
 //--------------------------------------------------------------
 //                    ----RESTAURANTES----                     |
 //--------------------------------------------------------------
+//
 //INSERT INTO restaurante (idioma, categoriaRest, nombreRest, descRest, ubiRest, latRest, lonRest) VALUES ('bar','','','','','');
 //INSERT INTO restaurante (idioma, categoriaRest, nombreRest, descRest, ubiRest, latRest, lonRest) VALUES ('restaurante','','','','','');
+//
 //--------------------------------------------------------------
 //                      ----COMERCIO----                       |
 //--------------------------------------------------------------
+//
 //INSERT INTO comercio (categoriaCom, nombreCom, ubiCom, latCom, lonCom) VALUES ('comida','','','','');
 //INSERT INTO comercio (categoriaCom, nombreCom, ubiCom, latCom, lonCom) VALUES ('artesania','','','','');
+//
 //--------------------------------------------------------------
 //                    ----OTROS LUGARES----                    |
 //--------------------------------------------------------------
-//Pueblos
-//INSERT INTO otroslugares (idioma, nombreOtro, descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar) VALUES ('','','','','','','');
+//
+//Pueblos de la sierra
+//
+//INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar) VALUES ('pueblo','','','','','','','');
+//
+//Batuecas
+//
+//INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro, kmdesdeLa, latLugar, lonLugar) VALUES ('batuecas','','','','','','');
+//
+//Las Hurdes
+//
+//INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro, latLugar, lonLugar) VALUES ('hurdes','','','','');
+//
+//El campo charro
+//
+//INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro) VALUES ('campocharro','','','');
