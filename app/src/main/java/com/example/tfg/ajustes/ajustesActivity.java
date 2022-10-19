@@ -106,11 +106,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView5.setAdapter(myAdapter5);
 
         listView5.setOnItemClickListener((adapterView, view, position, id) -> {
-            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
-            /*Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
-            aloj.putExtra("idioma", idioma);
-            startActivity(aloj);
-            finish();*/
+            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+            Intent contacto = new Intent(getApplicationContext(), contactoActivity.class);
+            contacto.putExtra("idioma", idioma);
+            startActivity(contacto);
+            finish();
         });
 
 

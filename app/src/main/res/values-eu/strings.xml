@@ -89,5 +89,17 @@
     <string name="bares">Tabernak</string>
     <string name="rest">Jatetxeak</string>
     <string name="contacto">Kontaktua</string>
+    <string name="email">Helbide elektronikoa</string>
+    <string name="asunto_del_mensaje">Mezuaren gaia</string>
+    <string name="emailet">Sartu hemen zure helbide elektronikoa</string>
+    <string name="mensajeet">Zer kontatu nahi diguzu?</string>
+    <string name="mensaje">Mezua</string>
+    <string name="asuntoet">Zein da zure mezuaren arrazoia?</string>
+    <string name="emailVacio" />
+    <string name="emailNoValido">El email introducido no es válido</string>
+    <string name="asuntoVacio">Mezuaren gaia ezin da hutsik egon</string>
+    <string name="formulario_de_contacto">Harremanetarako formularioa</string>
+    <string name="enviar">Bidali</string>
+    <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
 
 </resources>

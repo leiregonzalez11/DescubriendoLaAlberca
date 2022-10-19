@@ -87,11 +87,21 @@
     <string name="apart">Apartamentos</string>
     <string name="hotel">Hoteles</string>
     <string name="casas">Casas Rurales</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ubicacion">Ubicación</string>
     <string name="bares">Bares</string>
     <string name="rest">Restaurantes</string>
     <string name="contacto">Contacto</string>
+    <string name="email">Email</string>
+    <string name="asunto_del_mensaje">Asunto del mensaje</string>
+    <string name="emailet">Introduce aquí tu email</string>
+    <string name="mensajeet">¿Qué deseas comentarnos?</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="asuntoet">¿Cuál es el motivo de tu mensaje?</string>
+    <string name="emailVacio"> El email no puede estar vacío.</string>
+    <string name="emailNoValido">El email introducido no es válido.</string>
+    <string name="asuntoVacio">El asunto del mensaje no puede estar vacío</string>
+    <string name="formulario_de_contacto">Formulario de contacto</string>
+    <string name="enviar">Enviar</string>
+    <string name="mensajeVacio">El mensaje no puede estar vacío</string>
 
 </resources>

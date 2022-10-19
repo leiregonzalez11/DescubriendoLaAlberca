@@ -71,6 +71,15 @@
     <string name="bares">Bar</string>
     <string name="rest">Restaurants</string>
     <string name="contacto">Contact</string>
+    <string name="email">Email</string>
+    <string name="asunto_del_mensaje">Message subject</string>
+    <string name="emailet">Enter your email here</string>
+    <string name="mensajeet">What do you want to tell us?</string>
+    <string name="mensaje">Message</string>
+    <string name="asuntoet">What is the reason for your message?</string>
+    <string name="emailVacio" />
+    <string name="emailNoValido">El email introducido no es válido</string>
+    <string name="asuntoVacio">The subject of the message cannot be empty</string>
 
 
     <string-array name="trajes_serranos">
@@ -89,7 +98,9 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
-
+    <string name="formulario_de_contacto">Contact Form</string>
+    <string name="enviar">Send</string>
+    <string name="mensajeVacio">The message cannot be empty</string>
 
 
 </resources>

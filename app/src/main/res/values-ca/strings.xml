@@ -85,5 +85,17 @@
     <string name="bares">Bars</string>
     <string name="rest">Restaurants</string>
     <string name="contacto">Contacte</string>
+    <string name="email">Email</string>
+    <string name="asunto_del_mensaje">Assumpte del missatge</string>
+    <string name="emailet">Introdueix aquí el teu email</string>
+    <string name="mensajeet">Què ens vols comentar?</string>
+    <string name="mensaje">Missatge</string>
+    <string name="asuntoet">Quin és el motiu del teu missatge?</string>
+    <string name="emailVacio" />
+    <string name="emailNoValido">El email introducido no es válido</string>
+    <string name="asuntoVacio">El tema del missatge no pot estar buit</string>
+    <string name="formulario_de_contacto">Formulari de contacte</string>
+    <string name="enviar">Enviar</string>
+    <string name="mensajeVacio">El missatge no pot estar buit</string>
 
 </resources>
