@@ -103,5 +103,6 @@
     <string name="formulario_de_contacto">Formulario de contacto</string>
     <string name="enviar">Enviar</string>
     <string name="mensajeVacio">El mensaje no puede estar vacío</string>
+    <string name="ajustes6">Comercio</string>
 
 </resources>

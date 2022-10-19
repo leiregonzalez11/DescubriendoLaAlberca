@@ -97,5 +97,6 @@
     <string name="formulario_de_contacto">Formulari de contacte</string>
     <string name="enviar">Enviar</string>
     <string name="mensajeVacio">El missatge no pot estar buit</string>
+    <string name="ajustes6">Comerç</string>
 
 </resources>

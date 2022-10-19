@@ -69,22 +69,6 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listview2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:ignore="NestedScrolling" />
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="15dp">
-
-                <ListView
                     android:id="@+id/listview3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -117,11 +101,40 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
+                    android:id="@+id/listview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
                     android:id="@+id/listview5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />
 
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
 
             </com.google.android.material.card.MaterialCardView>
 

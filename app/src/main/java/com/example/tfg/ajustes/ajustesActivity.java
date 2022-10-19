@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    String idioma, opc1, opc2, opc3, opc4, opc5;
+    String idioma, opc1, opc2, opc3, opc4, opc5, opc6;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -38,17 +38,14 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ListView listView3 = findViewById(R.id.listview3);
         ListView listView4 = findViewById(R.id.listview4);
         ListView listView5 = findViewById(R.id.listview5);
+        ListView listView6 = findViewById(R.id.listview6);
 
         opc1 = getResources().getString(R.string.ajustes1);
         opc2 = getResources().getString(R.string.ajustes2);
         opc3 = getResources().getString(R.string.ajustes3);
         opc4 = getResources().getString(R.string.ajustes4);
         opc5 = getResources().getString(R.string.contacto);
-
-        System.out.println("TEXTOOOOOO" + opc1);
-        System.out.println("TEXTOOOOOO" + opc2);
-        System.out.println("TEXTOOOOOO" + opc3);
-        System.out.println("TEXTOOOOOO" + opc4);
+        opc6 = getResources().getString(R.string.ajustes6);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -111,6 +108,20 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             contacto.putExtra("idioma", idioma);
             startActivity(contacto);
             finish();
+        });
+
+        ArrayList<String> lista6 = new ArrayList<>();
+        lista6.add(opc6);
+
+        listViewAdapter myAdapter6 = new listViewAdapter(this, R.layout.list_item, lista6);
+        listView6.setAdapter(myAdapter6);
+
+        listView6.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc6, Toast.LENGTH_LONG).show();
+            /*Intent comercio = new Intent(getApplicationContext(), comercioActivity.class);
+            comercio.putExtra("idioma", idioma);
+            startActivity(comercio);
+            finish();*/
         });
 
 

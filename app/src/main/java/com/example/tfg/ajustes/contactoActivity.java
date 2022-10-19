@@ -61,7 +61,7 @@ public class contactoActivity extends AppCompatActivity implements NavigationBar
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewCont);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
         bottomNavigationView.setOnItemSelectedListener(this);
 
     }

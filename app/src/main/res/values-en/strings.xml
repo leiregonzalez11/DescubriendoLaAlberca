@@ -101,6 +101,7 @@
     <string name="formulario_de_contacto">Contact Form</string>
     <string name="enviar">Send</string>
     <string name="mensajeVacio">The message cannot be empty</string>
+    <string name="ajustes6">Commerce</string>
 
 
 </resources>
