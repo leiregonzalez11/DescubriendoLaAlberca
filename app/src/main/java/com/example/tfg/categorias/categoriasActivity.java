@@ -79,12 +79,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
         btnMonu = findViewById(R.id.botonmonumentos);
         path = "categorias/" + idioma + "/monumentos-" + idioma + ".jpg";
-        btnMonu.setOnClickListener(this);
+        //btnMonu.setOnClickListener(this);
         obtenerImagenFirebase(path, btnMonu);
 
         btnFiesta = findViewById(R.id.botonfiestas);
         path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
-        btnFiesta.setOnClickListener(this);
+        //btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
 
         btnGastro = findViewById(R.id.botongastronomia);
@@ -95,7 +95,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         btnPers = findViewById(R.id.botonpersonajes);
         //TODO: Cambiar la ruta
         path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
-        btnPers.setOnClickListener(this);
+        //btnPers.setOnClickListener(this);
         obtenerImagenFirebase(path, btnPers);
 
         btnRutas = findViewById(R.id.botonruta);

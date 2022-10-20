@@ -24,6 +24,9 @@
         android:theme="@style/Theme.Trabajofingrado"
         tools:targetApi="31">
         <activity
+            android:name=".ajustes.comoLlegarActivity"
+            android:exported="false" />
+        <activity
             android:name=".ajustes.contactoActivity"
             android:exported="false" />
         <activity

@@ -39,15 +39,15 @@ public class RestaurantesFragment extends Fragment {
 
         lista1 = new ArrayList<>();
         lista1.add("El Balcón de la Plaza");
+        lista1.add("El Encuentro");
+        lista1.add("El Soportal");
+        lista1.add("Ibéricos de la Alberca Doña Consuelo");
+        lista1.add("La Cantina de Elías");
+        lista1.add("La Catedral");
+        lista1.add("La Colmena");
         lista1.add("La Parrilla");
-        lista1.add("Mesón La Colmena");
+        lista1.add("La Taberna");
         lista1.add("¡Oh! Espacio del Jamón");
-        lista1.add("Restaurante El Encuentro");
-        lista1.add("Restaurante El Soportal");
-        lista1.add("Restaurante Ibéricos de la Alberca Doña Consuelo");
-        lista1.add("Restaurante La Cantina de Elías");
-        lista1.add("Restaurante La Catedral");
-        lista1.add("Restaurante La Taberna");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);

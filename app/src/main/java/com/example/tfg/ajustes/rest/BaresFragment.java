@@ -39,15 +39,16 @@ public class BaresFragment extends Fragment {
         ListView listView = (ListView) getView().findViewById(R.id.listviewBares);
 
         lista1 = new ArrayList<>();
-        lista1.add("Bar El Porrón");
-        lista1.add("Bar El Rincón de Lola");
-        lista1.add("Bar La Peña");
+        lista1.add("1830");
         lista1.add("Bar Marcos");
-        lista1.add("Bar La Balsá");
-        lista1.add("Bar La Nogal");
+        lista1.add("El Porrón");
+        lista1.add("El Rincón de Lola");
+        lista1.add("La Balsá");
         lista1.add("La Barrera");
-        lista1.add("Bar Restaurante 1830");
+        lista1.add("La Nogal");
+        lista1.add("La Peña");
         lista1.add("Tetería Singular");
+        lista1.add("San Blás");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);

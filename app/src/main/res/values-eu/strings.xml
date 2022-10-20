@@ -58,30 +58,11 @@
     <string name="masinfo">Informazio gehiago</string>
     <string name="alhajas">Urregintza</string>
     <string name="volver_a_artesania">Artisautzara itzuli</string>
-
-    <string-array name="trajes_serranos">
-        <item>Sayas soinekoa</item>
-        <item>Vistas soinekoa</item>
-        <item>Zagalejo soinekoa</item>
-        <item>Ventioseno soinekoa</item>
-        <item>Manteo soinekoa</item>
-    </string-array>
-
     <string name="interior_inicio">"La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. "</string>
     <string name="rutas_inicio">Ipuin-herri orok ametsezko ingurunea izan behar du, eta La Alberca ez zen gutxiago izango.
         Pinu, harizti eta gaztainondo basoek herri honen inguruari bizia ematen diote, naturaz, faunaz eta eskaintzen diguten
         aire garbiaz gozatzeko era guztietako ibilbideekin. </string>
     <string name="alojamiento_inicio">Egun bat baino gehiago igaro nahi baduzu La Albercan bere sekretu guztiak ezagutzeko, ostatu hartzeko aukera asko daude:</string>
-
-    <string-array name="rutas">
-        <item>La Alberca - Peña de Francia</item>
-        <item>Las Raíces ibilbidea</item>
-        <item>La Alberca - La Torrita</item>
-        <item>La Alberca - San Martin del Castañar</item>
-        <item>La Alberca - Peña del Huevo</item>
-        <item>La Alberca - Mogarraz</item>
-    </string-array>
-
     <string name="apart">Apartamentuak</string>
     <string name="hotel">Hotelak</string>
     <string name="casas">Rural Etxeak</string>
@@ -102,5 +83,29 @@
     <string name="enviar">Bidali</string>
     <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
     <string name="ajustes6">Dendak</string>
+    <string name="comoLlegar2">Nola iritsi La Albercara?</string>
+
+    <string-array name="trajes_serranos">
+        <item>Sayas soinekoa</item>
+        <item>Vistas soinekoa</item>
+        <item>Zagalejo soinekoa</item>
+        <item>Ventioseno soinekoa</item>
+        <item>Manteo soinekoa</item>
+    </string-array>
+
+    <string-array name="rutas">
+        <item>La Alberca - Peña de Francia</item>
+        <item>Las Raíces ibilbidea</item>
+        <item>La Alberca - La Torrita</item>
+        <item>La Alberca - San Martin del Castañar</item>
+        <item>La Alberca - Peña del Huevo</item>
+        <item>La Alberca - Mogarraz</item>
+    </string-array>
+
+    <string-array name="bus">
+        <item>La Alberca - Salamanca</item>
+        <item>La Alberca - Béjar</item>
+        <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
 
 </resources>

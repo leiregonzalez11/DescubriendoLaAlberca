@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Descubriendo La Alberca</string>
 
     <string name="tituloprincipal">¡Bienvenid@s a La Alberca!</string>
@@ -64,26 +64,7 @@
     <string name="rutas_inicio">Todo pueblo de cuento debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de
         pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la
         naturaleza, de la fauna y del aire puro que nos ofrecen.</string>
-
-    <string-array name="trajes_serranos">
-        <item>Traje de Sayas</item>
-        <item>Traje de Vistas</item>
-        <item>Traje de Zagalejo</item>
-        <item>Traje de Ventioseno</item>
-        <item>Traje de Manteo</item>
-    </string-array>
-
-    <string-array name="rutas">
-        <item>La Alberca - Peña de Francia</item>
-        <item>Camino de Las Raíces</item>
-        <item>La Alberca - La Torrita</item>
-        <item>La Alberca - San Martin del Castañar</item>
-        <item>La Alberca - Peña del Huevo</item>
-        <item>La Alberca - Mogarraz</item>
-    </string-array>
-
     <string name="alojamiento_inicio">Si deseas pasar más de un día en La Alberca para poder conocer todos sus secretos, existen muchas opciones de alojamiento:</string>
-
     <string name="apart">Apartamentos</string>
     <string name="hotel">Hoteles</string>
     <string name="casas">Casas Rurales</string>
@@ -104,5 +85,35 @@
     <string name="enviar">Enviar</string>
     <string name="mensajeVacio">El mensaje no puede estar vacío</string>
     <string name="ajustes6">Comercio</string>
+    <string name="comoLlegar2">¿Cómo llegar hasta La Alberca?</string>
+    <string name="comoLlegarCoche">La manera más fácil de llegar a La Alberca desde la capital de la provincia es mediante la carretera SA-215, hasta el pueblo de Tamames, donde tomaremos el desvío a la SA-201, que nos llevará hasta nuestro destino tras recorrer los 76 km que separan Salamanca de La Alberca.</string>
+    <string name="en_coche">En Coche</string>
+    <string name="introComoLlegar">La Alberca se encuentra al sur de la provincia de Salamanca, haciendo frontera con la provincia de Cáceres. Debido a su localización limítrofe, históricamente, se conocía a La Alberca como la puerta de Las Hurdes.</string>
+    <string name="en_bus">En Bus</string>
+    <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús, existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo:</string>
+
+    <string-array name="trajes_serranos">
+        <item>Traje de Sayas</item>
+        <item>Traje de Vistas</item>
+        <item>Traje de Zagalejo</item>
+        <item>Traje de Ventioseno</item>
+        <item>Traje de Manteo</item>
+    </string-array>
+
+    <string-array name="rutas">
+        <item>La Alberca - Peña de Francia</item>
+        <item>Camino de Las Raíces</item>
+        <item>La Alberca - La Torrita</item>
+        <item>La Alberca - San Martin del Castañar</item>
+        <item>La Alberca - Peña del Huevo</item>
+        <item>La Alberca - Mogarraz</item>
+    </string-array>
+
+    <string-array name="bus">
+        <item>La Alberca - Salamanca</item>
+        <item>La Alberca - Béjar</item>
+        <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
+
 
 </resources>

@@ -63,7 +63,6 @@
         oak and chestnut woods give life to the surroundings of this village, with all kinds of routes where you can enjoy nature,
         the fauna and the pure air they offer us.</string>
     <string name="alojamiento_inicio">"If you want to spend more than one day in La Alberca to discover all its secrets, there are many accommodation options:  "</string>
-
     <string name="apart">Apartments</string>
     <string name="hotel">Hotels</string>
     <string name="casas">Rural Houses</string>
@@ -80,6 +79,11 @@
     <string name="emailVacio" />
     <string name="emailNoValido">El email introducido no es válido</string>
     <string name="asuntoVacio">The subject of the message cannot be empty</string>
+    <string name="formulario_de_contacto">Contact Form</string>
+    <string name="enviar">Send</string>
+    <string name="mensajeVacio">The message cannot be empty</string>
+    <string name="ajustes6">Commerce</string>
+    <string name="comoLlegar2">How to get to La Alberca?</string>
 
 
     <string-array name="trajes_serranos">
@@ -98,10 +102,11 @@
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
     </string-array>
-    <string name="formulario_de_contacto">Contact Form</string>
-    <string name="enviar">Send</string>
-    <string name="mensajeVacio">The message cannot be empty</string>
-    <string name="ajustes6">Commerce</string>
 
+    <string-array name="bus">
+        <item>La Alberca - Salamanca</item>
+        <item>La Alberca - Béjar</item>
+        <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
 
 </resources>
