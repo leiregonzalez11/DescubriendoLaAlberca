@@ -2,6 +2,7 @@ package com.example.tfg.categorias.artesania;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -25,6 +26,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
+
 public class artesaniaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
     BottomNavigationView bottomNavigationView;
@@ -32,10 +35,16 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
     ImageView img1, img2, img3;
     String idioma, categoria;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania4);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");

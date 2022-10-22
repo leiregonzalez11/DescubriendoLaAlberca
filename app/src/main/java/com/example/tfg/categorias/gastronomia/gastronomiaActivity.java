@@ -2,6 +2,7 @@ package com.example.tfg.categorias.gastronomia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -24,6 +25,8 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.Objects;
+
 public class gastronomiaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
@@ -33,6 +36,11 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gastronomia);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");

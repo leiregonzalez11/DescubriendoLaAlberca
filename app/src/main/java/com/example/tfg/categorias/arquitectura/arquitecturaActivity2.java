@@ -2,6 +2,7 @@ package com.example.tfg.categorias.arquitectura;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -39,6 +40,11 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura2);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");

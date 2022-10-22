@@ -2,6 +2,7 @@ package com.example.tfg.categorias.otros;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class otrosActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -27,10 +29,16 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
     String idioma, categoria;
     private ArrayList<String> lista1;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otros);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");

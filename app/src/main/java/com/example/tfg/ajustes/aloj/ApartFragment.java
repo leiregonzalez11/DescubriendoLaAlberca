@@ -1,5 +1,6 @@
 package com.example.tfg.ajustes.aloj;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,6 +35,7 @@ public class ApartFragment extends Fragment{
         return inflater.inflate(R.layout.fragment_apart, container, false);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
@@ -57,6 +59,10 @@ public class ApartFragment extends Fragment{
             aloj.putExtra("nombreAloj", nombreAloj);
             startActivity(aloj);
         });
+
+
     }
+
+
 
 }

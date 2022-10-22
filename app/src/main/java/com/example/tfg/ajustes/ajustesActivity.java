@@ -2,6 +2,7 @@ package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -29,6 +30,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");

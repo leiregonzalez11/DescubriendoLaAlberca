@@ -84,6 +84,7 @@
     <string name="mensajeVacio">The message cannot be empty</string>
     <string name="ajustes6">Commerce</string>
     <string name="comoLlegar2">How to get to La Alberca?</string>
+    <string name="telefono">Teléfono:</string>
 
 
     <string-array name="trajes_serranos">

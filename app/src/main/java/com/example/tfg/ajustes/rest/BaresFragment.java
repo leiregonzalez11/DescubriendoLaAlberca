@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.aloj.alojamientoActivity;
 import com.example.tfg.listViewAdapter;
@@ -38,28 +39,20 @@ public class BaresFragment extends Fragment {
 
         ListView listView = (ListView) getView().findViewById(R.id.listviewBares);
 
-        lista1 = new ArrayList<>();
-        lista1.add("1830");
-        lista1.add("Bar Marcos");
-        lista1.add("El Porrón");
-        lista1.add("El Rincón de Lola");
-        lista1.add("La Balsá");
-        lista1.add("La Barrera");
-        lista1.add("La Nogal");
-        lista1.add("La Peña");
-        lista1.add("Tetería Singular");
-        lista1.add("San Blás");
+        GestorDB dbHelper = new GestorDB(getContext());
+
+        lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "bar");
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
-            Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
             nombreRest = lista1.get(position).toString();
 
-            /*Intent est = new Intent(getContext(), establecimientoActivity.class);
-            est.putExtra("nombreRest", nombreRest);
-            startActivity(rest);*/
+            Intent rest = new Intent(getContext(), establecimientoActivity.class);
+            rest.putExtra("nombreRest", nombreRest);
+            startActivity(rest);
         });
     }
 

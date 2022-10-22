@@ -20,7 +20,6 @@ public class GestorDB extends SQLiteOpenHelper {
     private static final int DB_VERSION = 4;
     private final Context context;
     private boolean seguir = true;
-    int numAloj;
 
     public GestorDB(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -38,6 +37,19 @@ public class GestorDB extends SQLiteOpenHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS artesania");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otroslugares");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS restaurante");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
+        onCreate(sqLiteDatabase);
 
     }
 
@@ -79,15 +91,15 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Esquema de la tabla alojamiento
         String query6 = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL, ubiAloj VARCHAR NOT NULL, " +
+                "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
                 "latAloj VARCHAR NOT NULL, lonAloj VARCHAR NOT NULL)";
         Log.d("Tabla alojamiento", query6);
         sqLiteDatabase.execSQL(query6);
 
         //Esquema de la tabla restaurantes
         String query7 = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "idioma VARCHAR NOT NULL, categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR NOT NULL, descRest VARCHAR NOT NULL, " +
-                "ubiRest VARCHAR NOT NULL, latRest VARCHAR NOT NULL, lonRest VARCHAR NOT NULL)";
+                "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
+                "ubiRest VARCHAR NOT NULL, latRest VARCHAR NOT NULL, lonRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
         Log.d("Tabla Restaurantes", query7);
         sqLiteDatabase.execSQL(query7);
 
@@ -110,8 +122,10 @@ public class GestorDB extends SQLiteOpenHelper {
         while (seguir){
             try{
                 String query = buffer.readLine();
+                //System.out.println("Query: " + query);
                 Log.d("Query: ", query);
-                if (!query.contains("/")) {
+
+                if (!query.contains("//")) {
                     sqLiteDatabase.execSQL(query);
                 }
             } catch (Exception e){
@@ -224,17 +238,57 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    public ArrayList obtenerlistaRestaurantes(String tabla, String categoriaRest) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
+        String descrip;
+        ArrayList<String> descr = new ArrayList<>();
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS artesania");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otroslugares");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
-        onCreate(sqLiteDatabase);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreRest FROM " + tabla + "" +
+                " WHERE categoriaRest = '" + categoriaRest+ "';", null);
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            System.out.println("DESCRIIIIIIIP" + descrip);
+            descr.add(descrip);
+        }
+        c.close();
+        return descr;
+    }
 
+    public String[] obtenerDatosRest(String tabla, String nombreRest) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[4];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest, latRest, lonRest FROM " + tabla + "" +
+                " WHERE nombreRest = '" + nombreRest + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 4; j++){
+                descrip = c.getString(j);
+                System.out.println("DESCRIIIIIIIP" + descrip);
+                descr[j] = descrip;
+            }
+        }
+        c.close();
+        return descr;
+    }
+
+    public double obtenerPuntRest(String tabla, String nombreRest) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        double punt = 0;
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM " + tabla + "" +
+                " WHERE nombreRest = '" + nombreRest + "';", null);
+        while (c.moveToNext()){
+            punt = c.getDouble(0);
+            System.out.println("DESCRIIIIIIIP" + punt);
+
+        }
+        c.close();
+        return punt;
     }
 }

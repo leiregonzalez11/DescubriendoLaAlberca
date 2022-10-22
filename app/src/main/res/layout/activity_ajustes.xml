@@ -6,11 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ajustes.ajustesActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#880E4F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alatsi"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="70dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,8 +43,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/layout1"
@@ -39,8 +63,9 @@
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
                 android:text="@string/zona_de_usuarios"
+                android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="35sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
@@ -48,6 +73,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -64,6 +90,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -80,6 +107,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -96,6 +124,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -111,6 +140,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -126,6 +156,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
@@ -144,13 +175,16 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationViewAjustes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#880E4F"
         app:itemIconSize="65dip"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

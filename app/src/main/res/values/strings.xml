@@ -9,7 +9,7 @@
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         éste precioso pueblo destaca por su entramado urbano, conservando como pocos la
-        arquitectura típica de la \n Sierra de Francia.</string>
+        arquitectura típica de la Sierra de Francia.</string>
 
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -91,6 +91,8 @@
     <string name="introComoLlegar">La Alberca se encuentra al sur de la provincia de Salamanca, haciendo frontera con la provincia de Cáceres. Debido a su localización limítrofe, históricamente, se conocía a La Alberca como la puerta de Las Hurdes.</string>
     <string name="en_bus">En Bus</string>
     <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús, existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo:</string>
+    <string name="puntuacion">Puntuación:</string>
+    <string name="telefono">Teléfono:</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

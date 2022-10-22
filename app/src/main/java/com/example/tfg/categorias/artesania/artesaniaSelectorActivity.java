@@ -2,6 +2,7 @@ package com.example.tfg.categorias.artesania;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -24,9 +25,6 @@ import java.util.ArrayList;
 
 public class artesaniaSelectorActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
-    private BottomNavigationView bottomNavigationView;
-    private ListView listView, listView2, listView3;
-    private ArrayList<String> lista1, lista2, lista3;
     String idioma, categoria, opc1, opc2, opc3;
 
     @SuppressLint("ResourceAsColor")
@@ -35,13 +33,18 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania_selector);
 
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
+
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
         categoria = datos.getString("categoria");
 
-        listView = findViewById(R.id.listviewArte1);
-        listView2 = findViewById(R.id.listviewArte2);
-        listView3 = findViewById(R.id.listviewArte3);
+        ListView listView = findViewById(R.id.listviewArte1);
+        ListView listView2 = findViewById(R.id.listviewArte2);
+        ListView listView3 = findViewById(R.id.listviewArte3);
 
         opc1 = getResources().getString(R.string.el_bordado_serrano);
         opc2 = getResources().getString(R.string.traje_serrano);
@@ -51,7 +54,7 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
         System.out.println("TEXTOOOOOO" + opc2);
         System.out.println("TEXTOOOOOO" + opc3);
 
-        lista1 = new ArrayList<String>();
+        ArrayList<String> lista1 = new ArrayList<String>();
         lista1.add(opc1);
 
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
@@ -67,7 +70,7 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
             }
         });
 
-        lista2 = new ArrayList<String>();
+        ArrayList<String> lista2 = new ArrayList<String>();
         lista2.add(opc2);
 
         listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_item, lista2);
@@ -80,7 +83,7 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
             startActivity(arte3);
         });
 
-        lista3 = new ArrayList<String>();
+        ArrayList<String> lista3 = new ArrayList<String>();
         lista3.add(opc3);
 
         listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
@@ -102,7 +105,7 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
         finBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewSelector);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewArteSelector);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 

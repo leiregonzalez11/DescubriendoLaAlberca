@@ -2,6 +2,7 @@ package com.example.tfg.categorias.artesania;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class artesaniaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener, AdapterView.OnItemSelectedListener {
@@ -40,10 +42,16 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
     ImageView img1, img2, img3;
     StorageReference storageRef;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesania3);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
         TextView text1 = findViewById(R.id.arte31);
@@ -68,17 +76,14 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
                 nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
                 System.out.println("TRAJEEEEE " + nombreTraje);
 
-                if (nombreTraje.equals("sayas")){
-                    Toast.makeText(adapterView.getContext(), (String) adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
-                } else{
-                    String [] datos = dbHelper.obtenerDatosTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
-                    text1.setText(datos[0]);
-                    text2.setText(datos[1]);
-                    text3.setText(datos[2]);
-                    obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
-                    obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
-                    obtenerImagenFirebase("artesania/" + nombreTraje + "3.jpg", img3);
-                }
+                String [] datos = dbHelper.obtenerDatosTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
+                text1.setText(datos[0]);
+                text2.setText(datos[1]);
+                text3.setText(datos[2]);
+                obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
+                obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
+                obtenerImagenFirebase("artesania/" + nombreTraje + "3.jpg", img3);
+
             }
 
             @Override

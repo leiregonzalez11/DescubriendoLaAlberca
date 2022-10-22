@@ -2,6 +2,7 @@ package com.example.tfg.categorias.arquitectura;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,15 +23,23 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.Objects;
+
 public class arquitecturaActivity5 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String categoria, idioma;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura5);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         /*Obtenemos los datos agregados desde la actividad anterior...*/
         Bundle extra = getIntent().getExtras();

@@ -2,12 +2,17 @@ package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
 
 import com.example.tfg.ajustes.aloj.tabAdapter;
 import com.example.tfg.inicio.MainActivity;
@@ -19,17 +24,21 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 
 
-public class dondeDormirActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class dondeDormirActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma;
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donde_dormir);
 
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
@@ -44,12 +53,12 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
         tabLayout.addTab(tabLayout.newTab().setText(text2));
         tabLayout.addTab(tabLayout.newTab().setText(text1));
         tabLayout.addTab(tabLayout.newTab().setText(text3));
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        //tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapter myadapter = new tabAdapter (getSupportFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
-        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
+        viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -57,7 +66,6 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
                 super.onPageSelected(position);
             }
         });
-
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -77,6 +85,12 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
 
             }
         });
+
+
+        //BOTON ATRAS
+
+        ImageButton sigBtn = findViewById(R.id.btnAtras);
+        sigBtn.setOnClickListener(this);
 
             //MENU
         bottomNavigationView = findViewById(R.id.navigationViewdondeDormir);
@@ -121,5 +135,19 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
 
     @Override
     public void onBackPressed() {
+    }
+
+    @Override
+    public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
+
+        ImageButton btn = (ImageButton) view;
+
+        if (btn.getId() == R.id.btnAtras) {
+            Intent arte2 = new Intent(this, ajustesActivity.class);
+            arte2.putExtra("idioma", idioma);
+            startActivity(arte2);
+            finish();
+        }
     }
 }

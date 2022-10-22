@@ -2,6 +2,7 @@ package com.example.tfg.ajustes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -33,6 +34,11 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idiomas);
 
+        Toolbar myToolbar = findViewById(R.id.toolbarId);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
+
         radioCas = findViewById(R.id.radio_castellano);
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
@@ -43,7 +49,6 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
         if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
             radioCas.setTextColor(R.color.purple_500);
-            Bundle extra = getIntent().getExtras();
             idioma = "es";
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
@@ -106,26 +111,31 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
 
     private void comprobarIdioma(){
 
+        Intent ajustes = new Intent(this, ajustesActivity.class);
+
         radioCas.setOnClickListener(view -> {
             language ="es";
+            ajustes.putExtra("idioma", language);
             changeLanguage();
             finish();
-            startActivity(getIntent());
+            startActivity(ajustes);
 
         });
 
         radioEus.setOnClickListener(view -> {
             language="eu";
+            ajustes.putExtra("idioma", language);
             changeLanguage();
             finish();
-            startActivity(getIntent());
+            startActivity(ajustes);
         });
 
         radioIng.setOnClickListener(view -> {
             language="en";
+            ajustes.putExtra("idioma", language);
             changeLanguage();
             finish();
-            startActivity(getIntent());
+            startActivity(ajustes);
         });
 
         /*radioCat.setOnClickListener(view -> {

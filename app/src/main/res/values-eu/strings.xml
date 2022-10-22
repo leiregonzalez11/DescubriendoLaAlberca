@@ -84,6 +84,7 @@
     <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
     <string name="ajustes6">Dendak</string>
     <string name="comoLlegar2">Nola iritsi La Albercara?</string>
+    <string name="telefono">Teléfono:</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

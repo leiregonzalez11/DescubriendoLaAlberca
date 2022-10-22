@@ -1,8 +1,10 @@
 package com.example.tfg.ajustes.aloj;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -34,6 +36,7 @@ public class HotelesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_hoteles, container, false);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);

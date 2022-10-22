@@ -2,6 +2,7 @@ package com.example.tfg.categorias.arquitectura;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -21,16 +22,24 @@ import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.Objects;
+
 
 public class arquitecturaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arquitectura4);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         /*Obtenemos los datos agregados desde la actividad anterior...*/
         Bundle extra = getIntent().getExtras();
