@@ -92,9 +92,12 @@
             <ImageView
                 android:id="@+id/arte51img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
@@ -110,46 +113,25 @@
             <ImageView
                 android:id="@+id/arte52img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
-                android:id="@+id/arte53"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/arteatras5"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:background="#880E4F"
                 android:fontFamily="@font/alata"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:gravity='center_horizontal' />
+                android:layout_margin="18sp"
+                android:text="@string/atras">
 
-
-            <LinearLayout
-                android:id="@+id/layoutArte52"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/arteatras5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/alata"
-                    android:layout_margin="18sp"
-                    android:text="@string/atras">
-
-                </Button>
-
-
-            </LinearLayout>
+            </Button>
 
         </LinearLayout>
 

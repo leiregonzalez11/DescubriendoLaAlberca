@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="63dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +54,7 @@
             <ImageButton
                 android:id="@+id/botonhistoria"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:background="@color/white"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="10dp"
@@ -68,7 +68,7 @@
             <ImageButton
                 android:id="@+id/botonartesania"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="70dp"
@@ -81,7 +81,7 @@
             <ImageButton
                 android:id="@+id/botontradiciones"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
@@ -94,7 +94,7 @@
             <ImageButton
                 android:id="@+id/botonarquitectura"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:background="@color/white"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
@@ -108,7 +108,7 @@
             <ImageButton
                 android:id="@+id/botonmonumentos"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
@@ -122,7 +122,7 @@
             <ImageButton
                 android:id="@+id/botonfiestas"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
@@ -136,7 +136,7 @@
             <ImageButton
                 android:id="@+id/botongastronomia"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
@@ -149,7 +149,7 @@
             <ImageButton
                 android:id="@+id/botonpersonajes"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
@@ -162,7 +162,7 @@
             <ImageButton
                 android:id="@+id/botonruta"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
@@ -175,7 +175,7 @@
             <ImageButton
                 android:id="@+id/botonotros"
                 android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"

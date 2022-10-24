@@ -65,16 +65,12 @@ public class artesaniaActivity5 extends AppCompatActivity implements NavigationB
         text2 = findViewById(R.id.arte52);
         text2.setText(datos[1]);
 
-        text3 = findViewById(R.id.arte53);
-        text3.setText(datos[2]);
-
-
         storageRef = FirebaseStorage.getInstance().getReference();
 
         img1 = findViewById(R.id.arte51img);
-        obtenerImagenFirebase("artesania/alhajas1.jpg", img1);
+        obtenerImagenFirebase("artesania/orfebreria2.jpg", img1);
         img2 = findViewById(R.id.arte52img);
-        obtenerImagenFirebase("artesania/alhajas2.jpg", img2);
+        obtenerImagenFirebase("artesania/orfebreria1.jpeg", img2);
 
         //BOTON SIGUIENTE y ATRAS
 

@@ -59,7 +59,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         TextView text3 = findViewById(R.id.arte33);
         img1 = findViewById(R.id.arte31img);
         img2 = findViewById(R.id.arte32img);
-        img3 = findViewById(R.id.arte33img);
 
         //Spinner
 
@@ -82,7 +81,6 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
                 text3.setText(datos[2]);
                 obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
                 obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
-                obtenerImagenFirebase("artesania/" + nombreTraje + "3.jpg", img3);
 
             }
 

@@ -130,7 +130,7 @@
             <ImageView
                 android:id="@+id/arte31img"
                 android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_height="400dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
             </ImageView>
@@ -165,19 +165,11 @@
                 android:gravity='center_horizontal'
                 android:textSize="17sp"/>
 
-            <ImageView
-                android:id="@+id/arte33img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
-            </ImageView>
-
             <LinearLayout
                 android:id="@+id/layoutArte32"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
+                android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
