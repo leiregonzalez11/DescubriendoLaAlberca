@@ -42,7 +42,7 @@
     <string name="aleman">Alemán</string>
     <string name="historiamayus">Historia</string>
     <string name="volver_a_categorias">Volver a Categorias</string>
-    <string name="atras">Atrás</string>
+    <string name="atras">Anterior</string>
     <string name="arquitecturamayus">Arquitectura</string>
     <string name="la_casa_albercana">La Casa Albercana</string>
     <string name="_2_aspecto_interior">2. Aspecto Interior</string>
@@ -115,6 +115,11 @@
         <item>La Alberca - Salamanca</item>
         <item>La Alberca - Béjar</item>
         <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
+
+    <string-array name="platos">
+        <item>Plato 1</item>
+        <item>Plato 2</item>
     </string-array>
 
 

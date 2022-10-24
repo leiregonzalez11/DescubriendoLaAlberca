@@ -80,6 +80,9 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         Button atrasBtn = findViewById(R.id.arte4atras);
         atrasBtn.setOnClickListener(this);
 
+        Button atrasBtn2 = findViewById(R.id.arteAtras4);
+        atrasBtn2.setOnClickListener(this);
+
         Button finBtn = findViewById(R.id.artefintraje);
         finBtn.setOnClickListener(this);
 
@@ -158,6 +161,13 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
                 atrasselector.putExtra("idioma", idioma);
                 atrasselector.putExtra("categoria", categoria);
                 startActivity(atrasselector);
+                finish();
+                break;
+
+            case R.id.arteAtras4:
+                Intent arquifin = new Intent(this, categoriasActivity.class);
+                arquifin.putExtra("idioma", idioma);
+                startActivity(arquifin);
                 finish();
                 break;
         }

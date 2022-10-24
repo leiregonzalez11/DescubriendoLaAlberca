@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -25,12 +26,15 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.Objects;
+
 public class ArquitecturaActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma = "";
     String categoria = "";
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +42,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
@@ -67,6 +71,9 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         //BOTON SIGUIENTE
         Button sigBtn = findViewById(R.id.arquisiguiente1);
         sigBtn.setOnClickListener(this);
+
+        Button finBtn = findViewById(R.id.arquiAtras1);
+        finBtn.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewArqui1);
@@ -122,12 +129,22 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         Button btn = (Button) view;
 
-        if (btn.getId() == R.id.arquisiguiente1) {
-            Intent arqui2 = new Intent(this, arquitecturaActivity2.class);
-            arqui2.putExtra("idioma", idioma);
-            arqui2.putExtra("categoria", categoria);
-            startActivity(arqui2);
-            finish();
+        switch (btn.getId()){
+            case R.id.arquisiguiente1:
+                Intent arqui2 = new Intent(this, arquitecturaActivity2.class);
+                arqui2.putExtra("idioma", idioma);
+                arqui2.putExtra("categoria", categoria);
+                startActivity(arqui2);
+                finish();
+                break;
+
+            case R.id.arquiAtras1:
+                Intent mapa = new Intent(this, categoriasActivity.class);
+                mapa.putExtra("idioma",idioma);
+                startActivity(mapa);
+                finish();
+                break;
+
         }
     }
 }

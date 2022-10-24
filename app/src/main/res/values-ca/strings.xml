@@ -40,7 +40,7 @@
     <string name="la_casa_albercana">La Casa Albercana</string>
     <string name="_3_inscripciones">3. Inscripcions</string>
     <string name="volver_a_categorias">Tornar a Categories</string>
-    <string name="atras">Enrere</string>
+    <string name="atras">Anterior</string>
     <string name="arquitecturamayus">L\'Arquitectura</string>
     <string name="_2_aspecto_interior">2. Aspecte Interior</string>
     <string name="_1_aspecto_exterior">1. Aspecte Exterior</string>
@@ -99,13 +99,14 @@
     <string name="mensajeVacio">El missatge no pot estar buit</string>
     <string name="ajustes6">Comerç</string>
 
-    <string name="comoLlegar2">¿Cómo llegar hasta La Alberca?</string>
-    <string name="comoLlegarCoche">La manera más fácil de llegar a La Alberca desde la capital de la provincia es mediante la carretera SA-215, hasta el pueblo de Tamames, donde tomaremos el desvío a la SA-201, que nos llevará hasta nuestro destino tras recorrer los 76 km que separan Salamanca de La Alberca.</string>
-    <string name="en_coche">En Coche</string>
-    <string name="introComoLlegar">La Alberca se encuentra al sur de la provincia de Salamanca, haciendo frontera con la provincia de Cáceres. Debido a su localización limítrofe, históricamente, se conocía a La Alberca como la puerta de Las Hurdes.</string>
-    <string name="en_bus">En Bus</string>
-    <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús, existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo:</string>
-    <string name="telefono">Teléfono:</string>
+    <string name="comoLlegar2">Com arribar fins a La Alberca?</string>
+    <string name="comoLlegarCoche">La manera més fàcil d\'arribar a l\'Alberca des de la capital de la província és mitjançant la carretera SA-215, fins al poble de Tamames, on agafarem el trencall a la SA-201, que ens portarà fins a la nostra destinació després de recórrer els 76 km que separen Salamanca de l\'Alberca.</string>
+    <string name="en_coche">Amb Cotxe</string>
+    <string name="introComoLlegar">L\'Alberca es troba al sud de la província de Salamanca, fent frontera amb la província de Càceres. A causa de la seva localització limítrofa, històricament, es coneixia a l\'Alberca com la porta de Las Hurdes.</string>
+    <string name="en_bus">A Bus</string>
+    <string name="comoLlegarBus">Si no disposeu de vehicle propi per poder venir fins a l\'Alberca o simplement voleu venir amb autobús, hi ha línies d\'autobusos amb diferents horaris d\'anada i tornada per poder visitar el poble:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="puntuacion">Puntuació:</string>
 
 
 </resources>

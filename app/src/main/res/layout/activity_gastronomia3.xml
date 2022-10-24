@@ -17,7 +17,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <Button
-            android:id="@+id/arquiAtras5"
+            android:id="@+id/gastroAtras3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_margin="18sp"
@@ -56,114 +56,97 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/layoutArqui21"
+            android:id="@+id/layoutGastro"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.arquitecturaActivity5">
+            tools:context=".categorias.artesania.artesaniaActivity2">
 
             <TextView
-                android:id="@+id/arquitext"
+                android:id="@+id/gastrotext"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alatsi"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/alatsi"
                 android:gravity="center"
-                android:text="@string/la_casa_albercana"
+                android:text="Las Turroneras"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
             <TextView
-                android:id="@+id/exttext"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/alatsi"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:gravity="left"
-                android:text="@string/masinfo"
-                tools:targetApi="o" />
-
-            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/gastro31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="15dp">
+                android:layout_margin="9dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="16sp"/>
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui5"
-                    android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
-
-            </com.google.android.material.card.MaterialCardView>
+            <ImageView
+                android:id="@+id/gastro31img"
+                android:layout_width="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+            </ImageView>
 
             <TextView
-                android:id="@+id/exttext1"
+                android:id="@+id/gastro32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/alatsi"
-                android:textSize="20sp"
+                android:layout_margin="9dp"
+                android:fontFamily="@font/alata"
                 android:textColor="@color/black"
-                android:gravity="left"
-                android:text="TODO: AÑADIR INFO LA CASA DE SATUR Y JUANELA"/>
+                android:gravity='center_horizontal'
+                android:textSize="16sp"/>
 
-            <LinearLayout
-                android:id="@+id/layoutArqui52"
+            <ImageView
+                android:id="@+id/gastro32img"
+                android:layout_width="340dp"
+                android:layout_margin="11dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/gastro33"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/arqui5atras"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:layout_margin="18sp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/alata"
-                    android:text="@string/atras">
-
-                </Button>
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="16sp"/>
 
 
-            </LinearLayout>
+            <Button
+                android:id="@+id/gastroatras3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="18sp"
+                android:textColor="@color/white"
+                android:background="#880E4F"
+                android:fontFamily="@font/alata"
+                android:text="@string/atras">
+            </Button>
+
 
         </LinearLayout>
 
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui5"
+        android:id="@+id/navigationViewGastro3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#880E4F"

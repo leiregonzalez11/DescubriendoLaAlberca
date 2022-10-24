@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <Button
+            android:id="@+id/arteAtras1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:background="#880E4F"
+            android:drawableLeft="@drawable/arrow_back"
+            android:gravity="left">
+        </Button>
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"

@@ -81,6 +81,9 @@ public class artesaniaActivity5 extends AppCompatActivity implements NavigationB
         Button atrasBtn = findViewById(R.id.arteatras5);
         atrasBtn.setOnClickListener(this);
 
+        Button atrasBtn2 = findViewById(R.id.arteAtras5);
+        atrasBtn2.setOnClickListener(this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewArte5);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
@@ -133,6 +136,13 @@ public class artesaniaActivity5 extends AppCompatActivity implements NavigationB
         Button btn = (Button) view;
 
         switch (btn.getId()){
+
+            case R.id.arteAtras5:
+                Intent arquifin = new Intent(this, categoriasActivity.class);
+                arquifin.putExtra("idioma", idioma);
+                startActivity(arquifin);
+                finish();
+                break;
 
             case R.id.arteatras5:
                 Intent atras = new Intent(this, artesaniaSelectorActivity.class);

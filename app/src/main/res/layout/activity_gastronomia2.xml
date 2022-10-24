@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <Button
+            android:id="@+id/gastroAtras2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:background="#880E4F"
+            android:drawableLeft="@drawable/arrow_back"
+            android:gravity="left">
+        </Button>
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -53,6 +63,73 @@
             android:gravity="center"
             android:orientation="vertical"
             tools:context=".categorias.gastronomia.gastronomiaActivity2">
+
+            <TextView
+                android:id="@+id/arteselectortext"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alatsi"
+                android:gravity="center"
+                android:text="@string/gastronomiamayus"
+                android:textAlignment="gravity"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewGastro1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewGastro2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+                <Button
+                    android:id="@+id/gastroatrass"
+                    android:layout_width="115dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/atras">
+                </Button>
 
         </LinearLayout>
 

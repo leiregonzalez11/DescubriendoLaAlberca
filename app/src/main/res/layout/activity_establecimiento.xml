@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <ImageButton
+            android:id="@+id/restAtras"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:textColor="@color/white"
+            android:background="#880E4F"
+            android:fontFamily="@font/alata"
+            android:src="@drawable/arrow_back"
+            tools:ignore="ContentDescription" />
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -246,17 +257,6 @@
                         app:layout_constraintVertical_bias="0.697"
                         tools:context=".ajustes.rest.establecimientoActivity" />
 
-                    <Button
-                        android:id="@+id/restAtras"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_gravity="center"
-                        android:textColor="@color/white"
-                        android:background="#880E4F"
-                        android:fontFamily="@font/alata"
-                        android:text="@string/atras" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

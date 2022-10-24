@@ -41,7 +41,7 @@
     <string name="la_casa_albercana">La Alberca Houses</string>
     <string name="_3_inscripciones">3. Legends</string>
     <string name="volver_a_categorias">Back to Categories</string>
-    <string name="atras">Back</string>
+    <string name="atras">Previous</string>
     <string name="arquitecturamayus">Architecture</string>
     <string name="_2_aspecto_interior">2. Interior appearance</string>
     <string name="_1_aspecto_exterior">1. Exterior appearance</string>
@@ -84,8 +84,13 @@
     <string name="mensajeVacio">The message cannot be empty</string>
     <string name="ajustes6">Commerce</string>
     <string name="comoLlegar2">How to get to La Alberca?</string>
-    <string name="telefono">Teléfono:</string>
-
+    <string name="telefono">Telephone:</string>
+    <string name="en_coche">By Car</string>
+    <string name="en_bus">By Bus</string>
+    <string name="comoLlegarCoche">The easiest way to get to La Alberca from the capital of the province is through the SA-215 highway, to the town of Tamames, where we will take the detour to the SA-201, which will take us to our destination after traveling 76 km. that separate Salamanca from La Alberca.</string>
+    <string name="comoLlegarBus">If you do not have your own vehicle to come to La Alberca or simply want to come by bus, there are bus lines with different round-trip schedules to visit the town:</string>
+    <string name="introComoLlegar">La Alberca is located south of the province of Salamanca, bordering the province of Cáceres. Due to its bordering location, historically, La Alberca was known as the gate of Las Hurdes.</string>
+    <string name="puntuacion">Score:</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -108,6 +113,11 @@
         <item>La Alberca - Salamanca</item>
         <item>La Alberca - Béjar</item>
         <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
+
+    <string-array name="platos">
+        <item>Plato 1</item>
+        <item>Plato 2</item>
     </string-array>
 
 </resources>

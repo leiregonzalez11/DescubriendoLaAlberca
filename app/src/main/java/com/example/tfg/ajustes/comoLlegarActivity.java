@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -53,7 +54,7 @@ public class comoLlegarActivity extends AppCompatActivity implements NavigationB
 
         //BOTON ATRAS
 
-        Button atrasBtn = findViewById(R.id.atrasBtn);
+        ImageButton atrasBtn = findViewById(R.id.atrasBtn);
         atrasBtn.setOnClickListener(this);
 
         //Spinner
@@ -133,7 +134,7 @@ public class comoLlegarActivity extends AppCompatActivity implements NavigationB
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-         Button btn = (Button) view;
+         ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.atrasBtn) {
             Intent atras = new Intent(this, ajustesActivity.class);

@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -21,11 +24,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.Locale;
+import java.util.Objects;
 
-public class idiomasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class idiomasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    RadioButton radioCas, radioEus, radioIng, radioCat;
+    RadioButton radioCas, radioEus, radioIng;
     String language, idioma;
 
     @SuppressLint("ResourceAsColor")
@@ -36,13 +40,12 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
 
         Toolbar myToolbar = findViewById(R.id.toolbarId);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
         radioCas = findViewById(R.id.radio_castellano);
         radioEus = findViewById(R.id.radio_euskera);
         radioIng = findViewById(R.id.radio_ingles);
-        //radioCat = findViewById(R.id.radio_catalan);
 
         TextView texto = findViewById(R.id.textoajustes);
 
@@ -58,11 +61,11 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
             radioIng.setChecked(true);
             radioIng.setTextColor(R.color.purple_500);
             idioma = "en";
-        } /*else if (texto.getText().toString().contains("Seleccioneu")){
-            radioCat.setChecked(true);
-            radioCat.setTextColor(R.color.purple_500);
-            idioma = "ca";
-        }*/
+        }
+
+        //Botón atras
+        ImageButton atrasBtn = findViewById(R.id.idiomasAtras);
+        atrasBtn.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewAjustes);
@@ -109,6 +112,20 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
     @Override
     public void onBackPressed() {}
 
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
+
+        ImageButton btn = (ImageButton) view;
+
+        if (btn.getId() == R.id.idiomasAtras){
+            Intent intent = new Intent(this, ajustesActivity.class);
+            intent.putExtra("idioma", idioma);
+            startActivity(intent);
+            finish();
+        }
+    }
+
     private void comprobarIdioma(){
 
         Intent ajustes = new Intent(this, ajustesActivity.class);
@@ -137,13 +154,6 @@ public class idiomasActivity extends AppCompatActivity implements NavigationBarV
             finish();
             startActivity(ajustes);
         });
-
-        /*radioCat.setOnClickListener(view -> {
-            language="ca";
-            changeLanguage();
-            finish();
-            startActivity(getIntent());
-        });*/
 
     }
 

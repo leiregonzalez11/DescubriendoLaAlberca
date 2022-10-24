@@ -32,6 +32,7 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,7 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria, 2);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "inicio", categoria, 2);
 
         TextView text1 = findViewById(R.id.gastro11);
         text1.setText(datos[0]);
@@ -69,6 +70,9 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
 
         Button sigBtn = findViewById(R.id.gastrosiguiente1);
         sigBtn.setOnClickListener(this);
+
+        Button atrasBtn = findViewById(R.id.gastroAtras1);
+        atrasBtn.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewGastro1);
@@ -129,6 +133,11 @@ public class gastronomiaActivity extends AppCompatActivity implements Navigation
             gastro2.putExtra("idioma", idioma);
             gastro2.putExtra("categoria", categoria);
             startActivity(gastro2);
+            finish();
+        } else if (btn.getId() == R.id.gastroAtras1) {
+            Intent arteCat = new Intent(this, categoriasActivity.class);
+            arteCat.putExtra("idioma", idioma);
+            startActivity(arteCat);
             finish();
         }
     }

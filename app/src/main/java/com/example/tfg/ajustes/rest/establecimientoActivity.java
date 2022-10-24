@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -95,7 +96,7 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
 
         //BOTON ATRAS
 
-        Button atrasBtn = findViewById(R.id.restAtras);
+        ImageButton atrasBtn = findViewById(R.id.restAtras);
         atrasBtn.setOnClickListener(this);
 
         //MENU
@@ -188,7 +189,7 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
 
         switch (btn.getId()){
 

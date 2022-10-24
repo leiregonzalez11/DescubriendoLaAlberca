@@ -1,4 +1,4 @@
-package com.example.tfg.categorias.tradiciones;
+package com.example.tfg.categorias.gastronomia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,41 +6,44 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
-import com.example.tfg.categorias.artesania.artesaniaActivity;
-import com.example.tfg.categorias.artesania.artesaniaActivity2;
-import com.example.tfg.categorias.artesania.artesaniaActivity3;
+import com.example.tfg.categorias.artesania.artesaniaSelectorActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
-public class tradicionesActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+public class gastronomiaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
+    ImageView img1, img2, img3;
+    TextView text1, text2, text3, text4;
+    StorageReference storageRef;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tradiciones2);
+        setContentView(R.layout.activity_gastronomia3);
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -51,29 +54,38 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz2", categoria);
+        //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        TextView text1 = findViewById(R.id.trad11);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "turroneras", categoria, 3);
+
+        text1 = findViewById(R.id.gastro31);
         text1.setText(datos[0]);
 
-        TextView text2 = findViewById(R.id.trad12);
+        text2 = findViewById(R.id.gastro32);
         text2.setText(datos[1]);
 
-        TextView text3 = findViewById(R.id.trad13);
+        text3 = findViewById(R.id.gastro33);
         text3.setText(datos[2]);
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        img1 = findViewById(R.id.gastro31img);
+        obtenerImagenFirebase("gastronomia/turroneras1.jpg", img1);
+        img2 = findViewById(R.id.gastro32img);
+        obtenerImagenFirebase("gastronomia/turroneras2.jpg", img2);
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = findViewById(R.id.tradatras2);
+        Button atrasBtn = findViewById(R.id.gastroatras3);
         atrasBtn.setOnClickListener(this);
 
-        Button siguienteBtn = findViewById(R.id.tradsiguiente2);
-        siguienteBtn.setOnClickListener(this);*/
+        Button atrasBtn2 = findViewById(R.id.gastroAtras3);
+        atrasBtn2.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewTrad2);
+        bottomNavigationView = findViewById(R.id.navigationViewGastro3);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -117,29 +129,37 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
         }
     }
 
-    @Override
-    public void onBackPressed() {}
-
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-         /*Button btn = (Button) view;
+        Button btn = (Button) view;
 
-        switch (btn.getId()){
+        if (btn.getId() == R.id.gastroatras3) {
+            Intent atras = new Intent(this, gastronomiaActivity2.class);
+            atras.putExtra("idioma", idioma);
+            atras.putExtra("categoria", categoria);
+            startActivity(atras);
+            finish();
+        } else if (btn.getId() == R.id.gastroAtras3){
+            Intent cat = new Intent(this, categoriasActivity.class);
+            cat.putExtra("idioma",idioma);
+            startActivity(cat);
+            finish();
+        }
+    }
 
-            case R.id.tradatras2:
-                Intent atras = new Intent(this, tradicionesActivity.class);
-                atras.putExtra("idioma", idioma);
-                startActivity(atras);
-                break;
+    @Override
+    public void onBackPressed() {}
 
-            case R.id.tradsiguiente2:
-                Intent arte3 = new Intent(this, tradicionesActivity3.class);
-                arte3.putExtra("idioma", idioma);
-                arte3.putExtra("categoria", categoria);
-                startActivity(arte3);
-                break;
-        }*/
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(getApplicationContext()).load(uri).into(img);
+            }
+        });
     }
 }

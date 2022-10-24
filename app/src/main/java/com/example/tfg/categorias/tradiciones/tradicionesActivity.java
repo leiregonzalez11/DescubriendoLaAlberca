@@ -63,19 +63,8 @@ public class tradicionesActivity extends AppCompatActivity implements Navigation
         TextView text3 = findViewById(R.id.arte13);
         text3.setText(datos[2]);*/
 
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderTrad1);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
-
-        //BOTON SIGUIENTE
-
-        Button sigBtn = findViewById(R.id.tradsiguiente1);
-        sigBtn.setOnClickListener(this);
+        Button btnAtras = findViewById(R.id.tradAtras1);
+        btnAtras.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewTrad1);
@@ -131,10 +120,9 @@ public class tradicionesActivity extends AppCompatActivity implements Navigation
 
         Button btn = (Button) view;
 
-        if (btn.getId() == R.id.tradsiguiente1) {
-            Intent trad2 = new Intent(this,tradicionesActivity2.class);
+        if (btn.getId() == R.id.tradAtras1) {
+            Intent trad2 = new Intent(this,categoriasActivity.class);
             trad2.putExtra("idioma", idioma);
-            trad2.putExtra("categoria", categoria);
             startActivity(trad2);
             finish();
         }

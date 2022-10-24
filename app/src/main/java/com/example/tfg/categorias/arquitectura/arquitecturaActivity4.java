@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -61,6 +62,9 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
 
         //BOTON SIGUIENTE y ATRAS
+        Button atrasBtnCat = findViewById(R.id.arquiAtras4);
+        atrasBtnCat.setOnClickListener(this);
+
         Button atrasBtn = findViewById(R.id.arquiatras4);
         atrasBtn.setOnClickListener(this);
 
@@ -120,6 +124,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
         Button btn = (Button) view;
 
+
         switch (btn.getId()) {
 
             case R.id.arquiatras4:
@@ -135,6 +140,13 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
                 arqui5.putExtra("idioma", idioma);
                 arqui5.putExtra("categoria", categoria);
                 startActivity(arqui5);
+                finish();
+                break;
+
+            case R.id.arquiAtras4:
+                Intent arquifin = new Intent(this, categoriasActivity.class);
+                arquifin.putExtra("idioma", idioma);
+                startActivity(arquifin);
                 finish();
                 break;
         }

@@ -8,6 +8,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,7 +25,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class otrosActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class otrosActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
@@ -75,6 +77,10 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> Toast.makeText(otrosActivity.this, "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
 
+        //Boton Atras
+        Button btnAtras = findViewById(R.id.otrosAtras1);
+        btnAtras.setOnClickListener(this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewOtros);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
@@ -122,5 +128,19 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
 
     @Override
     public void onBackPressed() {}
+
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
+
+        Button btn = (Button) view;
+
+        if (btn.getId() == R.id.otrosAtras1) {
+            Intent arteCat = new Intent(this, categoriasActivity.class);
+            arteCat.putExtra("idioma", idioma);
+            startActivity(arteCat);
+            finish();
+        }
+    }
 
 }

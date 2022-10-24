@@ -41,7 +41,6 @@
     <string name="la_casa_albercana">La Albercako Etxeak</string>
     <string name="_3_inscripciones">3. Inskripzioak</string>
     <string name="volver_a_categorias">Kategorietara itzuli</string>
-    <string name="atras">Atzera</string>
     <string name="arquitecturamayus">Arkitektura</string>
     <string name="_2_aspecto_interior">"2.  Barruko itxura "</string>
     <string name="_1_aspecto_exterior">1. Kanpoko itxura</string>
@@ -84,7 +83,14 @@
     <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
     <string name="ajustes6">Dendak</string>
     <string name="comoLlegar2">Nola iritsi La Albercara?</string>
-    <string name="telefono">Teléfono:</string>
+    <string name="telefono">Telefonoa:</string>
+    <string name="atras">Aurrekoa</string>
+    <string name="en_coche">Autoz</string>
+    <string name="comoLlegarCoche">Probintziako hiriburutik La Albercara iristeko modurik errazena SA-215 errepidetik da, Tamames herrira, eta han SA-201 errepiderako saihesbidea hartuko dugu, 76 bidaia egin ondoren gure helmugara eramango gaituena. Salamanca eta La Alberca bereizten dituen km.</string>
+    <string name="introComoLlegar">La Alberca Salamanca probintziaren hegoaldean dago, Cáceres probintziarekin muga egiten du. Bere muga-kokapenagatik, historikoki, La Alberca Las Hurdesen atea bezala ezagutzen zen.</string>
+    <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:</string>
+    <string name="puntuacion">Puntuazioa:</string>
+    <string name="en_bus">Autobusez</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -107,6 +113,11 @@
         <item>La Alberca - Salamanca</item>
         <item>La Alberca - Béjar</item>
         <item>La Alberca - Ciudad Rodrigo</item>
+    </string-array>
+
+    <string-array name="platos">
+        <item>Plato 1</item>
+        <item>Plato 2</item>
     </string-array>
 
 </resources>

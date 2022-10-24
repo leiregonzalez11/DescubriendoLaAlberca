@@ -73,6 +73,9 @@ public class historiaActivity extends AppCompatActivity implements NavigationBar
         Button sigBtn = findViewById(R.id.histsiguiente1);
         sigBtn.setOnClickListener(this);
 
+        Button atrasBtn = findViewById(R.id.histAtras1);
+        atrasBtn.setOnClickListener(this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewHist1);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
@@ -132,6 +135,11 @@ public class historiaActivity extends AppCompatActivity implements NavigationBar
             arte2.putExtra("idioma", idioma);
             arte2.putExtra("categoria", categoria);
             startActivity(arte2);
+            finish();
+        } else if (btn.getId() == R.id.histAtras1) {
+            Intent arteCat = new Intent(this, categoriasActivity.class);
+            arteCat.putExtra("idioma", idioma);
+            startActivity(arteCat);
             finish();
         }
     }

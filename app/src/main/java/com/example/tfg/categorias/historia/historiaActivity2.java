@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
@@ -68,6 +70,9 @@ public class historiaActivity2 extends AppCompatActivity implements NavigationBa
         Button siguienteBtn = findViewById(R.id.artesiguiente2);
         siguienteBtn.setOnClickListener(this);*/
 
+        Button atrasBtn2 = findViewById(R.id.histAtras2);
+        atrasBtn2.setOnClickListener(this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewHist2);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
@@ -120,11 +125,18 @@ public class historiaActivity2 extends AppCompatActivity implements NavigationBa
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-         /*Button btn = (Button) view;
+         Button btn = (Button) view;
 
         switch (btn.getId()){
 
-            case R.id.arteatras2:
+            case R.id.histAtras2:
+                Intent atras2 = new Intent(this, categoriasActivity.class);
+                atras2.putExtra("idioma", idioma);
+                startActivity(atras2);
+                finish();
+                break;
+
+            /*case R.id.arteatras2:
                 Intent atras = new Intent(this, artesaniaActivity.class);
                 atras.putExtra("idioma", idioma);
                 startActivity(atras);
@@ -135,7 +147,7 @@ public class historiaActivity2 extends AppCompatActivity implements NavigationBa
                 arte3.putExtra("idioma", idioma);
                 arte3.putExtra("categoria", categoria);
                 startActivity(arte3);
-                break;
-        }*/
+                break;*/
+        }
     }
 }

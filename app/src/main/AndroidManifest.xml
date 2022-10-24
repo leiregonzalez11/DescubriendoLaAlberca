@@ -24,6 +24,12 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".categorias.gastronomia.gastronomiaActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".categorias.gastronomia.gastronomiaActivity3"
+            android:exported="false" />
+        <activity
             android:name=".ajustes.comoLlegarActivity"
             android:exported="false" />
         <activity
@@ -61,9 +67,6 @@
             android:exported="false" />
         <activity
             android:name=".categorias.tradiciones.tradicionesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".categorias.tradiciones.tradicionesActivity2"
             android:exported="false" />
         <activity
             android:name=".categorias.historia.historiaActivity2"

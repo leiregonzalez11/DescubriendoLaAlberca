@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -88,7 +89,7 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
 
         //BOTON ATRAS
 
-        Button atrasBtn = findViewById(R.id.alojAtras);
+        ImageButton atrasBtn = findViewById(R.id.alojAtras);
         atrasBtn.setOnClickListener(this);
 
         //MENU
@@ -182,15 +183,12 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
 
-        switch (btn.getId()){
-
-            case R.id.alojAtras:
-                Intent atras = new Intent(this, dondeDormirActivity.class);
-                atras.putExtra("idioma", idioma);
-                startActivity(atras);
-                break;
+        if (btn.getId() == R.id.alojAtras) {
+            Intent atras = new Intent(this, dondeDormirActivity.class);
+            atras.putExtra("idioma", idioma);
+            startActivity(atras);
         }
     }
 }

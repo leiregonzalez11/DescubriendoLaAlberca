@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <Button
+            android:id="@+id/arteAtras5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:background="#880E4F"
+            android:drawableLeft="@drawable/arrow_back"
+            android:gravity="left">
+        </Button>
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -83,8 +93,6 @@
                 android:id="@+id/arte51img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-120dp"
-                android:layout_marginBottom="-120dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
             </ImageView>
@@ -103,8 +111,6 @@
                 android:id="@+id/arte52img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
-                android:layout_marginBottom="-180dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
             </ImageView>
@@ -124,7 +130,7 @@
                 android:id="@+id/layoutArte52"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
+                android:layout_margin="5dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -132,10 +138,14 @@
                     android:id="@+id/arteatras5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="@font/alatsi"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/white"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/alata"
+                    android:layout_margin="18sp"
                     android:text="@string/atras">
+
                 </Button>
 
 

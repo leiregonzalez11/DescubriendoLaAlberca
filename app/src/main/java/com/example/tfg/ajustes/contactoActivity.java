@@ -67,6 +67,9 @@ public class contactoActivity extends AppCompatActivity implements NavigationBar
         Button siguienteBtn = findViewById(R.id.btnEnviar);
         siguienteBtn.setOnClickListener(this);
 
+        Button atrasBtn = findViewById(R.id.btnAtrasContacto);
+        atrasBtn.setOnClickListener(this);
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewCont);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
@@ -131,8 +134,11 @@ public class contactoActivity extends AppCompatActivity implements NavigationBar
                 }
 
             }
-        } else {
-            throw new IllegalStateException("Unexpected value: " + btn.getId());
+        } else if (btn.getId() == R.id.btnAtrasContacto){
+            Intent intent = new Intent(this, ajustesActivity.class);
+            intent.putExtra("idioma", idioma);
+            startActivity(intent);
+            finish();
         }
     }
 

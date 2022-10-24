@@ -1,4 +1,4 @@
-package com.example.tfg.categorias.arquitectura;
+package com.example.tfg.categorias.gastronomia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,15 +6,15 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
@@ -23,7 +23,6 @@ import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
@@ -31,19 +30,20 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
-public class arquitecturaActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
-    BottomNavigationView bottomNavigationView;
-    ImageView img1, img2, img3;
-    TextView text1, text2, text3;
-    StorageReference storageRef;
-    String idioma, categoria;
+public class gastronomiaActivity4 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, AdapterView.OnItemSelectedListener, View.OnClickListener {
+
+    private GestorDB dbHelper;
+    private String idioma, categoria, nombrePlato;
+    //private ImageView img1, img2, img3;
+    //private TextView text2, text3, text4, text5, text6;
+    private StorageReference storageRef;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arquitectura2);
+        setContentView(R.layout.activity_gastronomia4);
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -52,57 +52,45 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
 
         Bundle extra = getIntent().getExtras();
         idioma = extra.getString("idioma");
-        categoria = extra.getString("categoria");
+        categoria = "rutas";
 
-        GestorDB dbHelper = new GestorDB(getApplicationContext());
-
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz2", categoria, 3);
-
-        text1 = findViewById(R.id.arqui21);
-        text2 = findViewById(R.id.arqui22);
-        text3 = findViewById(R.id.arqui23);
-
-        text1.setText(datos[0]);
-        text2.setText(datos[1]);
-        text3.setText(datos[2]);
-
+        dbHelper = new GestorDB(getApplicationContext());
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = findViewById(R.id.arqui21img);
-        img2 = findViewById(R.id.arqui22img);
-        img3 = findViewById(R.id.arqui23img);
-        obtenerImagenFirebase("arquitectura/exterior1.jpg", img1);
-        //TODO: Cambiar la foto
-        obtenerImagenFirebase("arquitectura/exterior3.jpeg", img2);
-        obtenerImagenFirebase("arquitectura/exterior2.jpg", img3);
 
-        //BOTON SIGUIENTE y ATRAS
+        Spinner spinner = findViewById(R.id.spinnerGastro);
+        String [] trajes = getResources().getStringArray(R.array.platos);
+        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
+        spinner.setOnItemSelectedListener(this);
 
-        Button atrasBtn = findViewById(R.id.arquiatras2);
-        atrasBtn.setOnClickListener(this);
-
-        Button siguienteBtn = findViewById(R.id.arquisiguiente2);
-        siguienteBtn.setOnClickListener(this);
-
-        Button finBtn = findViewById(R.id.arquiAtras2);
-        finBtn.setOnClickListener(this);
+        //Boton Atras
+        Button btnAtras = findViewById(R.id.gastroAtras4);
+        btnAtras.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewArqui2);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewGastro4);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
 
     }
 
+    /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
+    private String determinarPlato(String idRuta) {
+
+        if(idRuta.toLowerCase().contains("francia")){
+            nombrePlato = "plato 1";
+        } else if (idRuta.toLowerCase().contains("raíces")){
+            nombrePlato = "plato 2";
+        }
+
+        return nombrePlato;
+    }
+
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageView img){
         StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Glide.with(getApplicationContext()).load(uri).into(img);
-            }
-        });
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -146,33 +134,44 @@ public class arquitecturaActivity2 extends AppCompatActivity implements Navigati
     @Override
     public void onBackPressed() {}
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+        //nombrePlato = determinarPlato((String) adapterView.getItemAtPosition(position));
+
+        //String[] datos = dbHelper.obtenerDatosRutas(idioma, nombrePlato, categoria);
+
+        System.out.println("PLATOOOO " + adapterView.getItemAtPosition(position));
+        Toast.makeText(gastronomiaActivity4.this, "Has pulsado: "+ adapterView.getItemAtPosition(position), Toast.LENGTH_LONG).show();
+        //System.out.println("RUTAAAAA " + nombrePlato);
+        /*for (int i = 0; i < datos.length; i++){
+            System.out.println("RUTAAAAA " + i + datos[i]);
+        }
+
+        text2.setText(datos[0]);
+        text3.setText(datos[1]);
+        text4.setText(datos[2]);
+        text5.setText(datos[4]);
+        text6.setText(datos[3]);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "1.jpg", img1);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "2.jpg", img2);
+        obtenerImagenFirebase("rutas/" + nombreRuta + "3.jpg", img3);*/
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {}
+
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
         Button btn = (Button) view;
 
-        switch (btn.getId()){
-
-            case R.id.arquiatras2:
-                Intent atras = new Intent(this, ArquitecturaActivity.class);
-                atras.putExtra("idioma", idioma);
-                startActivity(atras);
-                break;
-
-            case R.id.arquisiguiente2:
-                Intent arqui3 = new Intent(this, arquitecturaActivity3.class);
-                arqui3.putExtra("idioma", idioma);
-                arqui3.putExtra("categoria", categoria);
-                startActivity(arqui3);
-                break;
-
-            case R.id.arquiAtras2:
-                Intent arquifin = new Intent(this, categoriasActivity.class);
-                arquifin.putExtra("idioma", idioma);
-                startActivity(arquifin);
-                finish();
-                break;
+        if (btn.getId() == R.id.gastroAtras4) {
+            Intent arteCat = new Intent(this, categoriasActivity.class);
+            arteCat.putExtra("idioma", idioma);
+            startActivity(arteCat);
+            finish();
         }
     }
 }

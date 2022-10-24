@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
+
 public class arquitecturaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
 
     BottomNavigationView bottomNavigationView;
@@ -36,6 +39,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
     TextView text1, text2, text3, text4, text5;
     String idioma, categoria;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
@@ -86,6 +90,9 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         Button siguienteBtn = findViewById(R.id.arquisiguiente3);
         siguienteBtn.setOnClickListener(this);
+
+        Button finBtn = findViewById(R.id.arquiAtras3);
+        finBtn.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewArqui3);
@@ -167,6 +174,14 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
                 arqui4.putExtra("categoria", categoria);
                 startActivity(arqui4);
                 break;
+
+            case R.id.arquiAtras3:
+                Intent arquifin = new Intent(this, categoriasActivity.class);
+                arquifin.putExtra("idioma", idioma);
+                startActivity(arquifin);
+                finish();
+                break;
         }
+
     }
 }

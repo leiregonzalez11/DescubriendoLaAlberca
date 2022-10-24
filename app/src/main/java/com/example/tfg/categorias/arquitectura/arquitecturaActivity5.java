@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
@@ -73,7 +74,7 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
         Button atrasBtn = findViewById(R.id.arqui5atras);
         atrasBtn.setOnClickListener(this);
 
-        Button finBtn = findViewById(R.id.arquifin);
+        Button finBtn = findViewById(R.id.arquiAtras5);
         finBtn.setOnClickListener(this);
 
         //MENU
@@ -136,9 +137,8 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
                 atras.putExtra("categoria", categoria);
                 startActivity(atras);
                 finish();
-                break;
 
-            case R.id.arquifin:
+            case R.id.arquiAtras5:
                 Intent arquifin = new Intent(this, categoriasActivity.class);
                 arquifin.putExtra("idioma", idioma);
                 startActivity(arquifin);

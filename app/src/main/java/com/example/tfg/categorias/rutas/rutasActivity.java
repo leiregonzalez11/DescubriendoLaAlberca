@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
+import com.example.tfg.categorias.gastronomia.gastronomiaActivity2;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,7 +31,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Objects;
 
 
-public class rutasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, AdapterView.OnItemSelectedListener {
+public class rutasActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     private GestorDB dbHelper;
     private String idioma, categoria, nombreRuta;
@@ -70,6 +72,10 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
         spinner.setOnItemSelectedListener(this);
+
+        //Boton Atras
+        Button btnAtras = findViewById(R.id.rutasAtras1);
+        btnAtras.setOnClickListener(this);
 
         //MENU
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewRutas);
@@ -168,7 +174,19 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    public void onNothingSelected(AdapterView<?> adapterView) {}
 
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
+
+        Button btn = (Button) view;
+
+        if (btn.getId() == R.id.rutasAtras1) {
+            Intent arteCat = new Intent(this, categoriasActivity.class);
+            arteCat.putExtra("idioma", idioma);
+            startActivity(arteCat);
+            finish();
+        }
     }
 }
