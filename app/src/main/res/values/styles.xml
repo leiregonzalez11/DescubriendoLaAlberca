@@ -10,5 +10,25 @@
         <item name="colorAccent">#FF4081</item>
     </style>
 
+    <style name="AppTheme.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:fontFamily">@font/alata</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="popupTheme">@style/PopupTheme</item>
+        <item name="android:tint">@color/white</item>
+        <!--<item name="navigationIcon">?attr/homeAsUpIndicator</item>-->
+    </style>
+
+    <style name="PopupTheme" parent="Theme.AppCompat.Light">
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <!--https://github.com/danielme-com/-Android-popup-menu- -Support-library/blob/master/res/values/styles.xml-->
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:dropDownVerticalOffset">-20dp</item>
+        <item name="overlapAnchor">false</item>
+    </style>
+
 
 </resources>

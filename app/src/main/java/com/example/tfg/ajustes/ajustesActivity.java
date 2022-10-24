@@ -3,12 +3,21 @@ package com.example.tfg.ajustes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.tfg.inicio.MainActivity;
@@ -25,6 +34,7 @@ import java.util.Objects;
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     String idioma, opc1, opc2, opc3, opc4, opc5, opc6;
+    private Button btnMenu;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -44,15 +54,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ListView listView2 = findViewById(R.id.listview2);
         ListView listView3 = findViewById(R.id.listview3);
         ListView listView4 = findViewById(R.id.listview4);
-        ListView listView5 = findViewById(R.id.listview5);
-        ListView listView6 = findViewById(R.id.listview6);
 
-        opc1 = getResources().getString(R.string.ajustes1);
-        opc2 = getResources().getString(R.string.ajustes2);
+        opc1 = getResources().getString(R.string.ajustes6);
+        opc2 = getResources().getString(R.string.ajustes1);
         opc3 = getResources().getString(R.string.ajustes3);
         opc4 = getResources().getString(R.string.ajustes4);
-        opc5 = getResources().getString(R.string.contacto);
-        opc6 = getResources().getString(R.string.ajustes6);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -61,11 +67,12 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
-            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show());
-            Intent comoLlegar = new Intent(getApplicationContext(), comoLlegarActivity.class);
-            comoLlegar.putExtra("idioma", idioma);
-            startActivity(comoLlegar);
-                finish();
+            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            /*Intent comercio = new Intent(getApplicationContext(), comercioActivity.class);
+            comercio.putExtra("idioma", idioma);
+            startActivity(comercio);
+            finish();*/
+
         });
 
         ArrayList<String> lista2 = new ArrayList<>();
@@ -75,8 +82,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, view, position, id) -> {
-            Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
-            startActivity(inicio);
+            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show());
+            Intent comoLlegar = new Intent(getApplicationContext(), comoLlegarActivity.class);
+            comoLlegar.putExtra("idioma", idioma);
+            startActivity(comoLlegar);
             finish();
         });
 
@@ -101,41 +110,12 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, view, position, id) -> {
-                    //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
-                    Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
-                    aloj.putExtra("idioma", idioma);
-                    startActivity(aloj);
-                    finish();
-        });
-
-        ArrayList<String> lista5 = new ArrayList<>();
-        lista5.add(opc5);
-
-        listViewAdapter myAdapter5 = new listViewAdapter(this, R.layout.list_item, lista5);
-        listView5.setAdapter(myAdapter5);
-
-        listView5.setOnItemClickListener((adapterView, view, position, id) -> {
-            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
-            Intent contacto = new Intent(getApplicationContext(), contactoActivity.class);
-            contacto.putExtra("idioma", idioma);
-            startActivity(contacto);
+            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
+            Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
+            aloj.putExtra("idioma", idioma);
+            startActivity(aloj);
             finish();
         });
-
-        ArrayList<String> lista6 = new ArrayList<>();
-        lista6.add(opc6);
-
-        listViewAdapter myAdapter6 = new listViewAdapter(this, R.layout.list_item, lista6);
-        listView6.setAdapter(myAdapter6);
-
-        listView6.setOnItemClickListener((adapterView, view, position, id) -> {
-            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc6, Toast.LENGTH_LONG).show();
-            /*Intent comercio = new Intent(getApplicationContext(), comercioActivity.class);
-            comercio.putExtra("idioma", idioma);
-            startActivity(comercio);
-            finish();*/
-        });
-
 
         //MENU
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewAjustes);
@@ -179,4 +159,31 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
     @Override
     public void onBackPressed() {}
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menuusuario, menu);
+        return true;
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.menu_contacto:
+                Intent contacto = new Intent(getApplicationContext(), contactoActivity.class);
+                contacto.putExtra("idioma", idioma);
+                startActivity(contacto);
+                finish();
+                return true;
+            case R.id.menu_idioma:
+                Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
+                startActivity(inicio);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
+    }
 }
