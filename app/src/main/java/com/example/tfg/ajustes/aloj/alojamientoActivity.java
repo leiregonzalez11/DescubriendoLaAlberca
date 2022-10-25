@@ -84,7 +84,7 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
 
         storageRef = FirebaseStorage.getInstance().getReference();
         ImageView img = findViewById(R.id.fotoAloj);
-        obtenerImagenFirebase("/alojamiento/" + alojamiento.toLowerCase().replaceAll(" ", "") + ".jpg", img);
+        obtenerImagenFirebase("/ajustes/" + alojamiento.toLowerCase().replaceAll(" ", "") + ".jpg", img);
 
 
         //BOTON ATRAS

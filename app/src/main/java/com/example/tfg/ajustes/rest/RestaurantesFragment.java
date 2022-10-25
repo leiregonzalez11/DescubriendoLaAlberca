@@ -42,7 +42,7 @@ public class RestaurantesFragment extends Fragment {
 
         lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "restaurante");
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_rest, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {

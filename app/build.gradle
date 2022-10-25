@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.github.jitpack:gradle-simple:1.0'
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
     implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.github.bluejamesbond:textjustify-android:2.1.6'
 
 
 }

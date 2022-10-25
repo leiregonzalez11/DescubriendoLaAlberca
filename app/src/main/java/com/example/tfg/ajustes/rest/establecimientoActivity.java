@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -86,7 +90,19 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
         lat = Double.parseDouble(datos[2]);
         lon = Double.parseDouble(datos[3]);
 
-        tel.setText(telefono);
+        SpannableString telsubrayado = new SpannableString(telefono);
+        telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
+
+        tel.setText(telsubrayado);
+        tel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el numero de telefono
+                Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
+                startActivity(dial); // Ejecutamos el Intent
+            }
+        });
+
         ubi.setText(ubicacion);
 
         storageRef = FirebaseStorage.getInstance().getReference();

@@ -4,11 +4,11 @@
 
     <string name="textoprincipal">To the south of Salamanca, on the northern slopes of
         the Sierra de Francia, lies La Alberca, "a village for dreaming", as the poet and
-        professor Don José María Requejo likes to say.</string>
+        professor Don José María Requejo likes to say. \n</string>
 
     <string name="textoprincipal2">Declared a Historic-Artistic Site in 1940, this beautiful
         village stands out for its urban layout, preserving like few others the typical
-        architecture of the typical architecture of the Sierra de Francia.</string>
+        architecture of the typical architecture of the Sierra de Francia. \n</string>
 
     <string name="dialog_tour_titulo">Welcome to La Alberca!</string>
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app?</string>
@@ -54,7 +54,7 @@
     <string name="ajustes2">Application\'s language</string>
     <string name="ajustes3">Where to eat?</string>
     <string name="ajustes4">Where to sleep?</string>
-    <string name="zona_de_usuarios">User area</string>
+    <string name="zona_de_usuarios">Traveler Space</string>
     <string name="masinfo">Further information</string>
     <string name="alhajas">Goldsmithing</string>
     <string name="volver_a_artesania">Back to handicrafts</string>
@@ -82,7 +82,7 @@
     <string name="formulario_de_contacto">Contact Form</string>
     <string name="enviar">Send</string>
     <string name="mensajeVacio">The message cannot be empty</string>
-    <string name="ajustes6">Commerce</string>
+    <string name="ajustes6">Local Commerce</string>
     <string name="comoLlegar2">How to get to La Alberca?</string>
     <string name="telefono">Telephone:</string>
     <string name="en_coche">By Car</string>

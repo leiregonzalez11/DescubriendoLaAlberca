@@ -48,7 +48,7 @@ public class HotelesFragment extends Fragment {
         lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "hotel");
 
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_hotel, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {

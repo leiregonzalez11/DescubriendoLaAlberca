@@ -1,11 +1,15 @@
 package com.example.tfg.categorias.artesania;
 
+import static android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +36,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,12 +3,12 @@
 
     <string name="tituloprincipal">Ongi etorri La Albercara!</string>
 
-    <string name="textoprincipal">Salamancako hegoaldean, Frantziako mendilerroaren iparraldeko isurialdean,
-        La Alberca dago, Don Jose Maria Requejo poeta eta katedradunari esatea gustatzen zaion bezala,
-        "amets egiteko herria".</string>
+    <string name="textoprincipal">Salamancako hegoaldean, Frantziako mendilerroaren
+        iparraldeko isurialdean, La Alberca dago, Don Jose Maria Requejo poeta eta
+        katedradunari esatea gustatzen zaion bezala, amets egiteko herria. \n</string>
 
     <string name="textoprincipal2">Multzo Historiko Artistiko izendatu zuten 1940an, eta herri eder hau bere
-        hiri-egituragatik nabarmentzen da, Sierra de Franciako arkitektura tipikoa gutxik bezala kontserbatuz. </string>
+        hiri-egituragatik nabarmentzen da, Sierra de Franciako arkitektura tipikoa gutxik bezala kontserbatuz. \n</string>
 
     <string name="dialog_tour_titulo">Ongi etorri La Albercara!</string>
     <string name="dialog_tour"> Berria zara hemendik? Dohain tour bar egin nahi duzu aplikaziotik?</string>
@@ -53,7 +53,7 @@
     <string name="ajustes2">Aplikazioaren hizkuntza</string>
     <string name="ajustes3">Non jan?</string>
     <string name="ajustes4">Non lo egin?</string>
-    <string name="zona_de_usuarios">Erabiltzaileen gunea</string>
+    <string name="zona_de_usuarios">Bidaiariaren Gunea</string>
     <string name="masinfo">Informazio gehiago</string>
     <string name="alhajas">Urregintza</string>
     <string name="volver_a_artesania">Artisautzara itzuli</string>
@@ -81,7 +81,7 @@
     <string name="formulario_de_contacto">Harremanetarako formularioa</string>
     <string name="enviar">Bidali</string>
     <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
-    <string name="ajustes6">Dendak</string>
+    <string name="ajustes6">Herriko dendak</string>
     <string name="comoLlegar2">Nola iritsi La Albercara?</string>
     <string name="telefono">Telefonoa:</string>
     <string name="atras">Aurrekoa</string>

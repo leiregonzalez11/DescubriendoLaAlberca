@@ -63,7 +63,9 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
-        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_comercio, lista1);
+
+
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
@@ -78,7 +80,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
-        listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_item, lista2);
+        listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_direccion, lista2);
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, view, position, id) -> {
@@ -92,7 +94,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
 
-        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
+        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_comer, lista3);
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, view, position, id) -> {
@@ -106,7 +108,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
 
-        listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
+        listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_dormir, lista4);
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, view, position, id) -> {

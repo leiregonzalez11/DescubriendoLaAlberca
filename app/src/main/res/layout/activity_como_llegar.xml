@@ -231,8 +231,10 @@
                     <ImageView
                         android:id="@+id/comollegar3"
                         android:layout_width="wrap_content"
-                        android:layout_height="100dp"
+                        android:layout_height="120dp"
                         android:layout_margin="15dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_gravity="center"
                         android:layout_marginBottom="15dp"
                         tools:ignore="ContentDescription" />
 

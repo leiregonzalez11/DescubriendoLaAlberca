@@ -5,11 +5,11 @@
 
     <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
         la Sierra de Francia, se encuentra La Alberca. Como le gusta decir al poeta y catedrático Don José María
-        Requejo, un pueblo para soñar.</string>
+        Requejo, un pueblo para soñar. \n</string>
 
     <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
         éste precioso pueblo destaca por su entramado urbano, conservando como pocos la
-        arquitectura típica de la Sierra de Francia.</string>
+        arquitectura típica de la Sierra de Francia. \n</string>
 
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -63,8 +63,8 @@
         la vivienda y el lugar de almacenamiento.</string>
     <string name="rutas_inicio">Todo pueblo de cuento debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de
         pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la
-        naturaleza, de la fauna y del aire puro que nos ofrecen.</string>
-    <string name="alojamiento_inicio">Si deseas pasar más de un día en La Alberca para poder conocer todos sus secretos, existen muchas opciones de alojamiento:</string>
+        naturaleza, de la fauna y del aire puro que nos ofrecen. \n</string>
+    <string name="alojamiento_inicio">Si deseas pasar más de un día en La Alberca para poder conocer todos sus secretos, existen muchas opciones de alojamiento: \n</string>
     <string name="apart">Apartamentos</string>
     <string name="hotel">Hoteles</string>
     <string name="casas">Casas Rurales</string>
@@ -84,13 +84,13 @@
     <string name="formulario_de_contacto">Formulario de contacto</string>
     <string name="enviar">Enviar</string>
     <string name="mensajeVacio">El mensaje no puede estar vacío</string>
-    <string name="ajustes6">Comercio</string>
+    <string name="ajustes6">Comercio local</string>
     <string name="comoLlegar2">¿Cómo llegar hasta La Alberca?</string>
-    <string name="comoLlegarCoche">La manera más fácil de llegar a La Alberca desde la capital de la provincia es mediante la carretera SA-215, hasta el pueblo de Tamames, donde tomaremos el desvío a la SA-201, que nos llevará hasta nuestro destino tras recorrer los 76 km que separan Salamanca de La Alberca.</string>
+    <string name="comoLlegarCoche">La manera más fácil de llegar a La Alberca desde la capital de la provincia es mediante la carretera SA-215, hasta el pueblo de Tamames, donde tomaremos el desvío a la SA-201, que nos llevará hasta nuestro destino tras recorrer los 76 km que separan Salamanca de La Alberca. \n</string>
     <string name="en_coche">En Coche</string>
-    <string name="introComoLlegar">La Alberca se encuentra al sur de la provincia de Salamanca, haciendo frontera con la provincia de Cáceres. Debido a su localización limítrofe, históricamente, se conocía a La Alberca como la puerta de Las Hurdes.</string>
+    <string name="introComoLlegar">La Alberca se encuentra al sur de la provincia de Salamanca, haciendo frontera con la provincia de Cáceres. Debido a su localización limítrofe, históricamente, se conocía a La Alberca como la puerta de Las Hurdes.\n </string>
     <string name="en_bus">En Bus</string>
-    <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús, existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo:</string>
+    <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús, existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo: \n</string>
     <string name="puntuacion">Puntuación:</string>
     <string name="telefono">Teléfono:</string>
 

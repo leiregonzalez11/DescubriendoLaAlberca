@@ -46,7 +46,7 @@ public class listViewAdapter extends BaseAdapter {
 
         //Inflamos la vista con el layout que querramos utilizar
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
-        view = layoutInflater.inflate(R.layout.list_item, null);
+        view = layoutInflater.inflate(this.layout, null);
 
         // Valor actual según la posición
         String currentName  = names.get(position);
