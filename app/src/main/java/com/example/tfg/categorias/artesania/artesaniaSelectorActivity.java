@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.tfg.listViewAdapter;
+import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;

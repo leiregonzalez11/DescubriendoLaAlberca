@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.listViewAdapter;
+import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;

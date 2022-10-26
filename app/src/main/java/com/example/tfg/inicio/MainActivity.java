@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.adapters.SliderAdapter;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.mapa.MapsActivity;

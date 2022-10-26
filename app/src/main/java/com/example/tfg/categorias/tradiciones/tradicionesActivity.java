@@ -10,23 +10,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
-import com.example.tfg.categorias.arquitectura.arquitecturaActivity2;
-import com.example.tfg.categorias.artesania.artesaniaActivity2;
 import com.example.tfg.categorias.categoriasActivity;
-import com.example.tfg.categorias.historia.historiaActivity2;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
 
 import java.util.Objects;
 

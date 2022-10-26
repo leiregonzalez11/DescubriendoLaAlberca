@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

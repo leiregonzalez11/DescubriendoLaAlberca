@@ -18,6 +18,8 @@ import android.widget.Spinner;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.R;
+import com.example.tfg.adapters.SpinnerAdapter;
+import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
@@ -61,7 +63,8 @@ public class comoLlegarActivity extends AppCompatActivity implements NavigationB
         Spinner spinner = findViewById(R.id.spinnerBus);
         String [] bus = getResources().getStringArray(R.array.bus);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, bus));
+        spinner.setAdapter(new SpinnerAdapter(this, R.layout.dropdownitenbus, bus));
+        //spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitenbus, bus));
         spinner.setOnItemSelectedListener(this);
 
         //MENU

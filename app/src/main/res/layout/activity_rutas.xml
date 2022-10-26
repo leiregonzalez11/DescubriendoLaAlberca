@@ -79,7 +79,7 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rutas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -269,7 +269,7 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rutas2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

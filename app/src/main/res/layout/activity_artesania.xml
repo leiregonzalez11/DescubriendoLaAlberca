@@ -107,7 +107,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte11"
                 android:layout_width="345dp"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                 android:gravity='center'
                 android:textSize="17sp"/>
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte12"
                 android:layout_width="345dp"
                 android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                 android:gravity='center'
                 android:textSize="17sp"/>
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte13"
                 android:layout_width="345dp"
                 android:layout_height="wrap_content"

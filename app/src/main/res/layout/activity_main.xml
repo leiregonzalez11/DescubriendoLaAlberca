@@ -101,7 +101,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                 android:text="@string/textoprincipal"
                 android:textSize="21sp" />
 
-            <com.example.tfg.JustifyTextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

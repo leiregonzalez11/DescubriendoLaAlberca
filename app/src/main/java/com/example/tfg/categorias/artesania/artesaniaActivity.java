@@ -1,7 +1,5 @@
 package com.example.tfg.categorias.artesania;
 
-import static android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,7 @@ import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
-import com.example.tfg.inicio.SliderAdapter;
+import com.example.tfg.adapters.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;

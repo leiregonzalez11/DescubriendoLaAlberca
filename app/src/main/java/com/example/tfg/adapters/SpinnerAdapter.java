@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,15 +8,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.tfg.R;
+
 import java.util.ArrayList;
 
-public class listViewAdapter extends BaseAdapter {
+public class SpinnerAdapter extends BaseAdapter {
 
     private final Context context;
     private final int layout;
-    private final ArrayList<String> names;
+    private final String[] names;
 
-    public listViewAdapter(Context context, int layout, ArrayList names){
+    public SpinnerAdapter(Context context, int layout, String [] names){
         this.context = context;
         this.layout = layout;
         this.names = names;
@@ -24,12 +26,12 @@ public class listViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return this.names.size();
+        return this.names.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return this.names.get(position);
+        return this.names[position];
     }
 
     @Override
@@ -49,7 +51,7 @@ public class listViewAdapter extends BaseAdapter {
         view = layoutInflater.inflate(this.layout, null);
 
         // Valor actual según la posición
-        String currentName  = names.get(position);
+        String currentName  = names[position];
 
         // Referenciamos el elemento a modificar y lo rellenamos
         TextView textView = view.findViewById(R.id.textView);

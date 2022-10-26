@@ -1,4 +1,5 @@
-package com.example.tfg.ajustes.rest;
+package com.example.tfg.adapters;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,13 +11,15 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.tfg.ajustes.aloj.ApartFragment;
 import com.example.tfg.ajustes.aloj.CasasFragment;
 import com.example.tfg.ajustes.aloj.HotelesFragment;
+import com.example.tfg.ajustes.rest.BaresFragment;
+import com.example.tfg.ajustes.rest.RestaurantesFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class tabAdapterComer extends FragmentStateAdapter {
+public class tabAdapterComercio extends FragmentStateAdapter {
 
-    public tabAdapterComer(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public tabAdapterComercio(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
@@ -24,17 +27,21 @@ public class tabAdapterComer extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position) {
+        /*switch (position) {
             case 1:
-                return new RestaurantesFragment();
+                return new OtrosFragment();
+            case 2:
+                return new ArtesaniaFragment();
             default:
-                return new BaresFragment();
-        }
+                return new SuperFragment();
+        }*/
+        //TODO:ELIMINAR
+        return new BaresFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 
 }

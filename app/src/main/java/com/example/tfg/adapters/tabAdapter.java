@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes.aloj;
+package com.example.tfg.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
