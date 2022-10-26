@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustes.comercioLocalActivity;
+import com.example.tfg.ajustes.comoLlegarActivity;
+import com.example.tfg.ajustes.dondeComerActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
@@ -28,8 +31,7 @@ import java.util.Objects;
 public class otrosActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    String idioma, categoria;
-    private ArrayList<String> lista1;
+    String idioma, categoria, opc1, opc2, opc3, opc4;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -46,36 +48,74 @@ public class otrosActivity extends AppCompatActivity implements NavigationBarVie
         idioma = extra.getString("idioma");
         categoria = "otros";
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        ListView listView = findViewById(R.id.listviewhurdes);
+        ListView listView2 = findViewById(R.id.listviewpeñafrancia);
+        ListView listView3 = findViewById(R.id.listviewpueblos);
+        ListView listView4 = findViewById(R.id.listviewbatuecas);
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria);
+        opc1 = "Las Hurdes";
+        opc2 = "Peña de Francia";
+        opc3 = "Pueblos de la Sierra";
+        opc4 = "Valle de Las Batuecas";
 
-        TextView text1 = findViewById(R.id.otrostext);
-        text1.setText(datos[0]);*/
+        ArrayList<String> lista1 = new ArrayList<>();
+        lista1.add(opc1);
 
-        ListView listView = findViewById(R.id.listviewOtros);
+        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_bosque, lista1);
 
-        lista1 = new ArrayList<>();
-        lista1.add("Cepeda");
-        lista1.add("Garcibuey");
-        lista1.add("Herguijuela de la Sierra");
-        lista1.add("Las Casas del Conde");
-        lista1.add("Madroñal");
-        lista1.add("Miranda del Castañar");
-        lista1.add("Mogarraz");
-        lista1.add("Monforte de la Sierra ");
-        lista1.add("San Martin del Castañar ");
-        lista1.add("San Miguel de Robledo");
-        lista1.add("Sequeros");
-        lista1.add("Sotoserrano");
-        lista1.add("Valero");
-        lista1.add("Villanueva del Conde");
-
-
-        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> Toast.makeText(otrosActivity.this, "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
+        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(otrosActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+
+        });
+
+        ArrayList<String> lista2 = new ArrayList<>();
+        lista2.add(opc2);
+
+        listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_monte, lista2);
+        listView2.setAdapter(myAdapter2);
+
+        listView2.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(otrosActivity.this, "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
+
+        ArrayList<String> lista3 = new ArrayList<>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_pueblo, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(otrosActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
+
+        ArrayList<String> lista4 = new ArrayList<>();
+        lista4
+                .add(opc4);
+
+        listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_bosque, lista4);
+        listView4.setAdapter(myAdapter4);
+
+        listView4.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(otrosActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
 
         //Boton Atras
         Button btnAtras = findViewById(R.id.otrosAtras1);

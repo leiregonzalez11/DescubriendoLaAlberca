@@ -75,8 +75,6 @@
     <string name="mensajeet">Zer kontatu nahi diguzu?</string>
     <string name="mensaje">Mezua</string>
     <string name="asuntoet">Zein da zure mezuaren arrazoia?</string>
-    <string name="emailVacio" />
-    <string name="emailNoValido">El email introducido no es válido</string>
     <string name="asuntoVacio">Mezuaren gaia ezin da hutsik egon</string>
     <string name="formulario_de_contacto">Harremanetarako formularioa</string>
     <string name="enviar">Bidali</string>
@@ -119,5 +117,6 @@
         <item>Plato 1</item>
         <item>Plato 2</item>
     </string-array>
+    <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \\n</string>
 
 </resources>

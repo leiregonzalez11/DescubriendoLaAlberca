@@ -91,8 +91,6 @@
     <string name="mensajeet">Què ens vols comentar?</string>
     <string name="mensaje">Missatge</string>
     <string name="asuntoet">Quin és el motiu del teu missatge?</string>
-    <string name="emailVacio" />
-    <string name="emailNoValido">El email introducido no es válido</string>
     <string name="asuntoVacio">El tema del missatge no pot estar buit</string>
     <string name="formulario_de_contacto">Formulari de contacte</string>
     <string name="enviar">Enviar</string>
@@ -107,6 +105,7 @@
     <string name="comoLlegarBus">Si no disposeu de vehicle propi per poder venir fins a l\'Alberca o simplement voleu venir amb autobús, hi ha línies d\'autobusos amb diferents horaris d\'anada i tornada per poder visitar el poble:</string>
     <string name="telefono">Telefono:</string>
     <string name="puntuacion">Puntuació:</string>
+    <string name="otros_lugares">Als voltants de La Alberca hi ha molts altres preciosos pobles i llocs per descobrir. Aquí en van uns quants: \\n</string>
 
 
 </resources>

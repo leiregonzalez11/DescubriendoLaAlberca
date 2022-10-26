@@ -76,8 +76,6 @@
     <string name="mensajeet">What do you want to tell us?</string>
     <string name="mensaje">Message</string>
     <string name="asuntoet">What is the reason for your message?</string>
-    <string name="emailVacio" />
-    <string name="emailNoValido">El email introducido no es válido</string>
     <string name="asuntoVacio">The subject of the message cannot be empty</string>
     <string name="formulario_de_contacto">Contact Form</string>
     <string name="enviar">Send</string>
@@ -119,5 +117,6 @@
         <item>Plato 1</item>
         <item>Plato 2</item>
     </string-array>
+    <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful towns and places to discover. Here are a few: \\n</string>
 
 </resources>
