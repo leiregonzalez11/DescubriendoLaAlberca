@@ -115,12 +115,12 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:layout_marginRight="9dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
@@ -130,16 +130,18 @@
             <ImageView
                 android:id="@+id/arte31img"
                 android:layout_width="wrap_content"
-                android:layout_height="400dp"
+                android:layout_height="450dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                tools:ignore="ContentDescription" >
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center_horizontal'
@@ -149,16 +151,16 @@
                 android:id="@+id/arte32img"
                 android:layout_width="wrap_content"
                 android:layout_height="450dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="9dp"
                 android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
@@ -169,7 +171,8 @@
                 android:id="@+id/layoutArte32"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -182,7 +185,8 @@
                     android:textColor="@color/white"
                     android:background="#880E4F"
                     android:fontFamily="@font/alata"
-                    android:text="@string/atras">
+                    android:text="@string/atras"
+                    tools:ignore="ButtonStyle">
                 </Button>
 
                 <Button
@@ -194,7 +198,8 @@
                     android:background="#880E4F"
                     android:fontFamily="@font/alata"
                     android:text="@string/siguiente"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    tools:ignore="ButtonStyle">
 
                 </Button>
 

@@ -67,27 +67,27 @@
             <TextView
                 android:id="@+id/arte5text"
                 android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
                 android:text="@string/alhajas"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
-                android:textSize="17sp"
-                android:gravity='center_horizontal' />
+                android:textSize="17sp" />
 
             <ImageView
                 android:id="@+id/arte51img"
@@ -100,15 +100,15 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
-                android:textSize="17sp"
-                android:gravity='center_horizontal' />
+                android:textSize="17sp" />
 
             <ImageView
                 android:id="@+id/arte52img"
@@ -124,6 +124,8 @@
                 android:id="@+id/arteatras5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:background="#880E4F"

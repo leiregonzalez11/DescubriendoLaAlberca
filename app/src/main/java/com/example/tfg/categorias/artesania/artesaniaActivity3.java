@@ -15,12 +15,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
@@ -63,7 +66,7 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitemrutas, trajes));
+        spinner.setAdapter(new SpinnerAdapter(this, R.layout.dropdownitemartesania, trajes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -74,9 +77,20 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
                 System.out.println("TRAJEEEEE " + nombreTraje);
 
                 String [] datos = dbHelper.obtenerDatosTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
-                text1.setText(datos[0]);
-                text2.setText(datos[1]);
-                text3.setText(datos[2]);
+
+                if (nombreTraje.equalsIgnoreCase("vistas") & idioma.equalsIgnoreCase("en")){
+                    text1.setText(datos[1]);
+                    text2.setText(datos[0]);
+                    text3.setText(datos[2]);
+                } else if (nombreTraje.equalsIgnoreCase("manteo") & idioma.equalsIgnoreCase("en")){
+                    text1.setText(datos[2]);
+                    text2.setText(datos[0]);
+                    text3.setText(datos[1]);
+                } else{
+                    text1.setText(datos[0]);
+                    text2.setText(datos[1]);
+                    text3.setText(datos[2]);
+                }
                 obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
                 obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
 
@@ -115,14 +129,61 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
 
         if(idtraje.toLowerCase().contains("sayas")){
             nombreTraje = "sayas";
+
+            //Ajustamos las imagenes al texto
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
+            lp.topMargin = -180;
+            lp.rightMargin = 40;
+            lp.leftMargin = 40;
+            lp.bottomMargin = -180;
+            img1.setLayoutParams(lp);
+
+
         } else if (idtraje.toLowerCase().contains("ventioseno")){
-            nombreTraje = "ventioseno";
+            nombreTraje = "ventioseno";//Ajustamos las imagenes al texto
+
+            //Ajustamos las imagenes al texto
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
+            lp.topMargin = 0;
+            lp.rightMargin = 40;
+            lp.leftMargin = 40;
+            lp.bottomMargin = 0;
+            img1.setLayoutParams(lp);
+
         } else if (idtraje.toLowerCase().contains("vistas")){
             nombreTraje = "vistas";
+
+            //Ajustamos las imagenes al texto
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
+            lp.topMargin = 0;
+            lp.rightMargin = 40;
+            lp.leftMargin = 40;
+            lp.bottomMargin = 0;
+            img1.setLayoutParams(lp);
+
         } else if (idtraje.toLowerCase().contains("zagalejo")){
             nombreTraje = "zagalejo";
+
+            //Ajustamos las imagenes al texto
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
+            lp.topMargin = 0;
+            lp.rightMargin = 40;
+            lp.leftMargin = 40;
+            lp.bottomMargin = 0;
+            img1.setLayoutParams(lp);
+
+
         } else if (idtraje.toLowerCase().contains("manteo")){
             nombreTraje = "manteo";
+
+            //Ajustamos las imagenes al texto
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
+            lp.topMargin = 0;
+            lp.rightMargin = 40;
+            lp.leftMargin = 40;
+            lp.bottomMargin = 0;
+            img1.setLayoutParams(lp);
+
         }
 
         return nombreTraje;

@@ -7,19 +7,22 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_vertical"
-        android:layout_margin="15dp"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:layout_marginRight="-10dp"
+        app:srcCompat="@drawable/arrow_right_foreground" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="-2dp"
+        android:text="Text"
         android:fontFamily="@font/alata"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="23sp"
+        android:textStyle="bold"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

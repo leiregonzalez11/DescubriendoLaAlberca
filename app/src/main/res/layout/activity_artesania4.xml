@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:textSize="20sp"
                 android:textColor="@color/black"
@@ -93,11 +93,12 @@
                 android:text="@string/traje_hombre"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -107,14 +108,16 @@
                 android:id="@+id/arte41img"
                 android:layout_width="wrap_content"
                 android:layout_height="450dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -124,14 +127,16 @@
                 android:id="@+id/arte42img"
                 android:layout_width="wrap_content"
                 android:layout_height="450dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -141,14 +146,16 @@
                 android:id="@+id/arte43img"
                 android:layout_width="wrap_content"
                 android:layout_height="450dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte44"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:textSize="17sp"
