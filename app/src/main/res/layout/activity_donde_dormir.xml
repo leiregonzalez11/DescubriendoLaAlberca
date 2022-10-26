@@ -61,25 +61,25 @@
             <TextView
                 android:id="@+id/otrostitulo"
                 android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/black"
-                android:textSize="25sp"
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
                 android:text="@string/ajustes4"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/otrostext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="25dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -94,7 +94,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="480dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="10dp"
                 app:cardElevation="10dp">
 
                 <com.google.android.material.tabs.TabLayout

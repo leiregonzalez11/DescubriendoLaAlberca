@@ -24,6 +24,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ajustes.comercioLocalActivity"
+            android:exported="false" />
+        <activity
             android:name=".categorias.gastronomia.gastronomiaActivity4"
             android:exported="false" />
         <activity

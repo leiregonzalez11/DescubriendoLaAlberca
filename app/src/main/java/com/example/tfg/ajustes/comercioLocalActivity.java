@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.tfg.adapters.tabAdapterComer;
+import com.example.tfg.adapters.tabAdapterComercio;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
 import com.example.tfg.categorias.categoriasActivity;
@@ -24,7 +24,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.Objects;
 
 
-public class dondeComerActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+public class comercioLocalActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma;
@@ -33,7 +33,7 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donde_comer);
+        setContentView(R.layout.activity_comercio_local);
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -43,17 +43,19 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
 
-        String text1 = getResources().getString(R.string.bares);
-        String text2 = getResources().getString(R.string.rest);
+        String text1 = "Alimentación";
+        String text2 = getResources().getString(R.string.artesaniamayus);
+        String text3 = "Otros comercios";
 
-        ViewPager2 viewPager = findViewById(R.id.viewPagerComer);
+        ViewPager2 viewPager = findViewById(R.id.viewPagerComercio);
 
-        TabLayout tabLayout  = findViewById(R.id.tab_layoutComer);
+        TabLayout tabLayout  = findViewById(R.id.tab_layoutComercio);
         tabLayout.addTab(tabLayout.newTab().setText(text1));
         tabLayout.addTab(tabLayout.newTab().setText(text2));
+        tabLayout.addTab(tabLayout.newTab().setText(text3));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-        tabAdapterComer myadapter = new tabAdapterComer(getSupportFragmentManager(), getLifecycle());
+        tabAdapterComercio myadapter = new tabAdapterComercio(getSupportFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
         //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
@@ -87,11 +89,11 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
 
         //BOTON ATRAS
 
-        ImageButton sigBtn = findViewById(R.id.btnAtrasComer);
+        ImageButton sigBtn = findViewById(R.id.btnAtrasComercio);
         sigBtn.setOnClickListener(this);
 
         //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewdondeComer);
+        bottomNavigationView = findViewById(R.id.navigationViewComercio);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
         bottomNavigationView.setOnItemSelectedListener(this);
 
@@ -141,7 +143,7 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
 
         ImageButton btn = (ImageButton) view;
 
-        if (btn.getId() == R.id.btnAtrasComer) {
+        if (btn.getId() == R.id.btnAtrasComercio) {
             Intent arte2 = new Intent(this, ajustesActivity.class);
             arte2.putExtra("idioma", idioma);
             startActivity(arte2);

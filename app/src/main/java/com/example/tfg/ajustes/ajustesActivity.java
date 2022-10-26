@@ -12,7 +12,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
@@ -27,8 +26,7 @@ import java.util.Objects;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    String idioma, opc1, opc2, opc3, opc4, opc5, opc6;
-    private Button btnMenu;
+    String idioma, opc1, opc2, opc3, opc4;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -63,11 +61,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
-            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-            /*Intent comercio = new Intent(getApplicationContext(), comercioActivity.class);
+            //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            Intent comercio = new Intent(getApplicationContext(), comercioLocalActivity.class);
             comercio.putExtra("idioma", idioma);
             startActivity(comercio);
-            finish();*/
+            finish();
 
         });
 
@@ -164,6 +162,7 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:

@@ -79,18 +79,18 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/otrostext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:gravity="center"
-                android:text="En la Sierra de Francia, aparte de La Alberca, existen muchos otros preciosos pueblos y lugares que descubrir:"
+                android:text="@string/otros_lugares"
                 android:textAlignment="gravity"
                 android:textSize="17sp"
                 android:textStyle="bold"
@@ -100,7 +100,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="30dp"
                 app:cardElevation="10dp">
 
                 <ListView

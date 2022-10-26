@@ -40,7 +40,7 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria, nombreTraje;
-    ImageView img1, img2, img3;
+    ImageView img1, img2;
     StorageReference storageRef;
 
     @SuppressLint("ResourceAsColor")
