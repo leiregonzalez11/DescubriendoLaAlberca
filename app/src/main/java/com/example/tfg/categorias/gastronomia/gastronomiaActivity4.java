@@ -61,7 +61,7 @@ public class gastronomiaActivity4 extends AppCompatActivity implements Navigatio
         Spinner spinner = findViewById(R.id.spinnerGastro);
         String [] trajes = getResources().getStringArray(R.array.platos);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
+        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitemrutas, trajes));
         spinner.setOnItemSelectedListener(this);
 
         //Boton Atras

@@ -11,14 +11,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -31,7 +30,6 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.Locale;
 import java.util.Objects;
 
 
@@ -65,7 +63,7 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
+        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitemrutas, trajes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.Q)

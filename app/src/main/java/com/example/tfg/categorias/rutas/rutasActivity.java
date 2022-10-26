@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -18,9 +17,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
-import com.example.tfg.categorias.gastronomia.gastronomiaActivity2;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -68,9 +67,9 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
         img3 = findViewById(R.id.rutasimg7);
 
         Spinner spinner = findViewById(R.id.spinnerRutas);
-        String [] trajes = getResources().getStringArray(R.array.rutas);
+        String [] rutas = getResources().getStringArray(R.array.rutas);
         spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitem, trajes));
+        spinner.setAdapter(new SpinnerAdapter(this, R.layout.dropdownitemrutas, rutas));
         spinner.setOnItemSelectedListener(this);
 
         //Boton Atras
