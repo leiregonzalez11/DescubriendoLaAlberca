@@ -17,6 +17,12 @@ import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.adapters.SliderAdapter;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -25,7 +31,7 @@ import com.smarteist.autoimageslider.SliderView;
 
 import java.util.Objects;
 
-public class arquitecturaActivity5 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+public class arquitecturaActivity5 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
 
     BottomNavigationView bottomNavigationView;
     String categoria, idioma;
@@ -46,27 +52,11 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
-
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz5", categoria);
-
-        TextView text1 = findViewById(R.id.arqui51);
-        text1.setText(datos[0]);
-
-        TextView text2 = findViewById(R.id.arqui52);
-        text2.setText(datos[1]);
-
-        TextView text3 = findViewById(R.id.arqui53);
-        text3.setText(datos[2]);*/
-
-        //SLIDER
-        SliderView sliderView = findViewById(R.id.imageSliderArqui5);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
+        //MAPA
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapViewSatur);
+        assert mapFragment != null;
+        mapFragment.getMapAsync(this);
 
 
         //BOTON SIGUIENTE y ATRAS
@@ -136,6 +126,7 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
                 atras.putExtra("categoria", categoria);
                 startActivity(atras);
                 finish();
+                break;
 
             case R.id.arquiAtras5:
                 Intent arquifin = new Intent(this, categoriasActivity.class);
@@ -144,5 +135,18 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        GoogleMap mMap = googleMap;
+        // Añadimos un marcador a la ubicación elegida y hacemos zoom
+        LatLng location = new LatLng(40.488984, -6.109707);
+        mMap.addMarker(new MarkerOptions()
+                .position(location)
+                .title("Casa Museo Satur y Juanela"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 17.5f));
+        //Tipo de mapa: Hibrido
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     }
 }

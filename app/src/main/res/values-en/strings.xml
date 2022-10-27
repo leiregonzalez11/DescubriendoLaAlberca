@@ -58,7 +58,7 @@
     <string name="masinfo">Further information</string>
     <string name="alhajas">Goldsmithing</string>
     <string name="volver_a_artesania">Back to handicrafts</string>
-    <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.</string>
+    <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.\\n</string>
     <string name="rutas_inicio">Every fairytale village must have a dream setting, and La Alberca is no exception. Forests of pine,
         oak and chestnut woods give life to the surroundings of this village, with all kinds of routes where you can enjoy nature,
         the fauna and the pure air they offer us.</string>
@@ -118,5 +118,6 @@
         <item>Plato 2</item>
     </string-array>
     <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful towns and places to discover. Here are a few: \\n</string>
+    <string name="textoprincipal3">"Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es Un pueblo para soñar "</string>
 
 </resources>

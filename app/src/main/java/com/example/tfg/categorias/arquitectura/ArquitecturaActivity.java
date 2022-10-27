@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +34,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
     String idioma = "";
     String categoria = "";
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +54,10 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
         String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria, 2);
 
         TextView interfaz1 = findViewById(R.id.arqui11);
-        interfaz1.setText(datos[0]);
+        interfaz1.setText(datos[0] + Html.fromHtml("<br>"));
 
         TextView interfaz2 = findViewById(R.id.arqui12);
-        interfaz2.setText(datos[1]);
+        interfaz2.setText(datos[1] + Html.fromHtml("<br>"));
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArqui1);

@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
     String idioma, categoria;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +56,12 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz1", categoria, 3);
 
         TextView text1 = findViewById(R.id.arte11);
-        text1.setText(datos[0]);
-
         TextView text2 = findViewById(R.id.arte12);
-        text2.setText(datos[1]);
-
         TextView text3 = findViewById(R.id.arte13);
-        text3.setText(datos[2]);
+
+        text1.setText(datos[0] + Html.fromHtml("<br>"));
+        text2.setText(datos[1] + Html.fromHtml("<br>"));
+        text3.setText(datos[2] + Html.fromHtml("<br>"));
 
         //SLIDER
         SliderView sliderView = findViewById(R.id.imageSliderArte1);

@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +36,7 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
     ImageView img1, img2, img3;
     String idioma, categoria;
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,16 +60,14 @@ public class artesaniaActivity4 extends AppCompatActivity implements NavigationB
         String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz4", categoria, 4);
 
         TextView text1 = findViewById(R.id.arte41);
-        text1.setText(datos[0]);
-
         TextView text2 = findViewById(R.id.arte42);
-        text2.setText(datos[1]);
-
         TextView text3 = findViewById(R.id.arte43);
-        text3.setText(datos[2]);
-
         TextView text4= findViewById(R.id.arte44);
-        text4.setText(datos[3]);
+
+        text1.setText(datos[0] + Html.fromHtml("<br>"));
+        text2.setText(datos[1] + Html.fromHtml("<br>"));
+        text3.setText(datos[2] + Html.fromHtml("<br>"));
+        text4.setText(datos[3] + Html.fromHtml("<br>"));
 
         storageRef = FirebaseStorage.getInstance().getReference();
         obtenerImagenFirebase("artesania/hombre1.jpg", img1);

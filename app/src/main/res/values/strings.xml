@@ -3,13 +3,19 @@
 
     <string name="tituloprincipal">¡Bienvenid@s a La Alberca!</string>
 
-    <string name="textoprincipal">Al sur de Salamanca, en la vertiente norte de
-        la Sierra de Francia, se encuentra La Alberca. Como le gusta decir al poeta y catedrático Don José María
-        Requejo, un pueblo para soñar. \n</string>
+    <string name="textoprincipal">Al sur de la provincia de Salamanca, en el corazón de la
+        Sierra de Francia, se encuentra La Alberca, rodeada de extensos bosques repletos de robles y castaños. Cada rincón
+        de La Alberca tiene un encanto especial: sus calles empedradas, sus casas construídas de piedra y madera y los tejados
+        que se van juntando en el aire forman un conjunto arquitectónico en el cual perderse y disfrutar. \n
+    </string>
 
-    <string name="textoprincipal2">Declarado Conjunto Histórico Artístico en 1940,
-        éste precioso pueblo destaca por su entramado urbano, conservando como pocos la
-        arquitectura típica de la Sierra de Francia. \n</string>
+    <string name="textoprincipal2">La Alberca, escenario mágico, puede presumir de ser el primer pueblo en ser declarado
+        Conjunto Histórico Artístico en España, concretamente en 1940. Sus fiestas, sus tradiciones, como la Moza de Ánimas o
+        el Marrano de San Antón, su gastronomía… tantas y tantas razones que harán de su visita una experiencia inigualable. \n</string>
+
+    <string name="textoprincipal3">Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es… \n</string>
+
+    <string name="textoprincipal4">Un Pueblo Para Soñar</string>
 
     <string name="dialog_tour_titulo">¡Bienvenid@ a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -60,7 +66,7 @@
     <string name="alhajas">Orfebrería</string>
     <string name="volver_a_artesania">Volver a artesanía</string>
     <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra,
-        la vivienda y el lugar de almacenamiento.</string>
+        la vivienda y el lugar de almacenamiento. \n</string>
     <string name="rutas_inicio">Todo pueblo de cuento debe de tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de
         pinos, robledales y castaños dan vida a los alrededores de este pueblo, con rutas de todo tipo en los que poder disfrutar de la
         naturaleza, de la fauna y del aire puro que nos ofrecen. \n</string>
@@ -92,6 +98,7 @@
     <string name="puntuacion">Puntuación:</string>
     <string name="telefono">Teléfono:</string>
     <string name="otros_lugares">En los alrededores de La Alberca existen muchos otros preciosos pueblos y lugares que descubrir. Aquí van unos cuantos: \n</string>
+    <string name="turroneras" translatable="false">Las Turroneras</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

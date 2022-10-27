@@ -93,11 +93,14 @@
                 android:text="@string/_3_inscripciones"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -105,19 +108,22 @@
 
             <ImageView
                 android:id="@+id/arqui41img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="450dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
@@ -125,38 +131,31 @@
 
             <ImageView
                 android:id="@+id/arqui42img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-25dp"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
                 android:textSize="17sp"/>
-
-            <ImageView
-                android:id="@+id/arqui43img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
 
             <LinearLayout
                 android:id="@+id/layoutArqui22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 

@@ -51,24 +51,17 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
         opc2 = getResources().getString(R.string.traje_serrano);
         opc3 = getString(R.string.alhajas);
 
-        System.out.println("TEXTOOOOOO" + opc1);
-        System.out.println("TEXTOOOOOO" + opc2);
-        System.out.println("TEXTOOOOOO" + opc3);
-
         ArrayList<String> lista1 = new ArrayList<String>();
         lista1.add(opc1);
 
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent arte2 = new Intent(getApplicationContext(), artesaniaActivity2.class);
-                arte2.putExtra("idioma", idioma);
-                arte2.putExtra("categoria", categoria);
-                startActivity(arte2);
-            }
+        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+            Intent arte2 = new Intent(getApplicationContext(), artesaniaActivity2.class);
+            arte2.putExtra("idioma", idioma);
+            arte2.putExtra("categoria", categoria);
+            startActivity(arte2);
         });
 
         ArrayList<String> lista2 = new ArrayList<String>();

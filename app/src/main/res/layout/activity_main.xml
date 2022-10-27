@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alatsi"
+                android:fontFamily="@font/aref_ruqaa"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="@string/tituloprincipal"
@@ -72,20 +72,25 @@
                 tools:targetApi="o" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
                 android:layout_margin="15dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardCornerRadius="15dp">
+                android:theme="@style/Theme.MaterialComponents.Light">
 
                 <!--android:layout_marginTop="50dp"
                 -->
 
+                <ImageSwitcher
+                    android:id="@+id/imageSwitcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                </ImageSwitcher>
+
                 <com.smarteist.autoimageslider.SliderView
                     android:id="@+id/imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    app:sliderAnimationDuration="1100"
                     app:sliderAutoCycleDirection="right"
                     app:sliderAutoCycleEnabled="true"
                     app:sliderIndicatorAnimationDuration="600"
@@ -111,20 +116,46 @@
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:text="@string/textoprincipal"
-                android:textSize="21sp" />
+                android:textSize="17sp" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="-5dp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center_horizontal'
                 android:text="@string/textoprincipal2"
-                android:textSize="21sp" />
+                android:textSize="17sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/textoprincipal3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alata"
+                android:gravity='center_horizontal'
+                android:text="@string/textoprincipal3"
+                android:textSize="17sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/textoprincipal4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/aref_ruqaa"
+                android:textStyle="italic"
+                android:gravity='center_horizontal'
+                android:text="@string/textoprincipal4"
+                android:textSize="25sp" />
 
         </LinearLayout>
 

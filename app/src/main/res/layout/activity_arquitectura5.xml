@@ -62,7 +62,8 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.arquitecturaActivity5">
+            tools:context=".categorias.arquitectura.arquitecturaActivity5"
+            tools:ignore="ScrollViewSize">
 
             <TextView
                 android:id="@+id/arquitext"
@@ -93,70 +94,326 @@
                 android:text="@string/masinfo"
                 tools:targetApi="o" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/nombreRest"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="15dp"
+                android:text="Casa Museo Satur y Juanela"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/fotoRest"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="360dp"
+                android:layout_height="210dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderArqui5"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="#00FFFFFF"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/horario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="Horario:"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/horario2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="Sábados: 11:30-13:30 / 16:00-19:00 \nDomingos: 11:30 - 13:30"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-1dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/telrest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="@string/telefono"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:id="@+id/telrest2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/alata"
+                            android:text="625 75 58 19"
+                            android:gravity='left'
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+
+                        android:background="#00FFFFFF"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/precio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="Precio:"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/precio2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="-10dp"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="General: 2,5€ / Grupos: 2€"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+
+                        android:background="#00FFFFFF"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/web"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="Web:"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/web2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="-10dp"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="www.casamuseosaturjuanela.com/"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="left"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/arrow_right_foreground"
+                            tools:ignore="ContentDescription">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/puntrest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:gravity='left'
+                            android:text="@string/puntuacion"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"/>
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-12dp"
+                            android:layout_marginLeft="-50dp"
+                            android:layout_marginRight="-25dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="4.5"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5"
+                            android:stepSize="0.5"
+                            android:progressTint="#FFB300"
+                            android:progressBackgroundTint="#B4000000"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
+
             <TextView
-                android:id="@+id/exttext1"
-                android:layout_width="match_parent"
+                android:id="@+id/ubirest"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/alatsi"
-                android:textSize="20sp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/alata"
+                android:gravity='center'
+                android:text="@string/ubicacion"
                 android:textColor="@color/black"
-                android:gravity="left"
-                android:text="TODO: AÑADIR INFO LA CASA DE SATUR Y JUANELA"/>
+                android:textSize="20sp" />
 
-            <LinearLayout
-                android:id="@+id/layoutArqui52"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/arqui5atras"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:layout_margin="18sp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/alata"
-                    android:text="@string/atras">
-
-                </Button>
+            <TextView
+                android:id="@+id/ubirest2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/alata"
+                android:text="Calle Mesón, 7"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tools:ignore="HardcodedText" />
 
 
-            </LinearLayout>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapViewSatur"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.697"
+                tools:context=".ajustes.rest.establecimientoActivity" />
+
+
+            <Button
+                android:id="@+id/arqui5atras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_margin="18sp"
+                android:textColor="@color/white"
+                android:background="#880E4F"
+                android:fontFamily="@font/alata"
+                android:text="@string/atras">
+
+            </Button>
 
         </LinearLayout>
 

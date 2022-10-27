@@ -107,21 +107,25 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/gastro11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
                 android:textSize="17sp"/>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/gastro12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'

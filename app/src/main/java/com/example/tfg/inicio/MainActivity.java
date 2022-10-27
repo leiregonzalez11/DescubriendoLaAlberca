@@ -10,7 +10,13 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -25,12 +31,26 @@ import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
     String idioma;
+
+    private ImageSwitcher imageSwitcher;
+
+    private int[] gallery = { R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
+
+    private int position;
+
+    private static final Integer DURATION = 2500;
+
+    private Timer timer = null;
+
+
     //String tour;
 
     @SuppressLint("ResourceAsColor")
@@ -43,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         setSupportActionBar(myToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
-
 
         /*Bundle datos = getIntent().getExtras();
         tour = datos.getString("tour");*/
@@ -69,8 +88,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
+        sliderView.setSliderTransformAnimation(SliderAnimations.FADETRANSFORMATION);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.SCALE_DOWN);
+        sliderView.setScrollTimeInSec(3);
         sliderView.startAutoCycle();
 
         //MENU

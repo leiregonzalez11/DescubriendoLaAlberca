@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -58,6 +59,7 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         TextView text1 = findViewById(R.id.arte31);
         TextView text2 = findViewById(R.id.arte32);
         TextView text3 = findViewById(R.id.arte33);
+
         img1 = findViewById(R.id.arte31img);
         img2 = findViewById(R.id.arte32img);
 
@@ -69,27 +71,27 @@ public class artesaniaActivity3 extends AppCompatActivity implements NavigationB
         spinner.setAdapter(new SpinnerAdapter(this, R.layout.dropdownitemartesania, trajes));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+            @SuppressLint("SetTextI18n")
             @RequiresApi(api = Build.VERSION_CODES.Q)
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
 
                 nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
-                System.out.println("TRAJEEEEE " + nombreTraje);
 
                 String [] datos = dbHelper.obtenerDatosTrajes(idioma, "interfaz3", categoria, 3, nombreTraje);
 
                 if (nombreTraje.equalsIgnoreCase("vistas") & idioma.equalsIgnoreCase("en")){
-                    text1.setText(datos[1]);
-                    text2.setText(datos[0]);
+                    text1.setText(datos[1] + Html.fromHtml("<br>"));
+                    text2.setText(datos[0] + Html.fromHtml("<br>"));
                     text3.setText(datos[2]);
                 } else if (nombreTraje.equalsIgnoreCase("manteo") & idioma.equalsIgnoreCase("en")){
-                    text1.setText(datos[2]);
-                    text2.setText(datos[0]);
-                    text3.setText(datos[1]);
+                    text1.setText(datos[2] + Html.fromHtml("<br>"));
+                    text2.setText(datos[0] + Html.fromHtml("<br>"));
+                    text3.setText(datos[1] + Html.fromHtml("<br>"));
                 } else{
-                    text1.setText(datos[0]);
-                    text2.setText(datos[1]);
-                    text3.setText(datos[2]);
+                    text1.setText(datos[0] + Html.fromHtml("<br>"));
+                    text2.setText(datos[1] + Html.fromHtml("<br>"));
+                    text3.setText(datos[2] + Html.fromHtml("<br>"));
                 }
                 obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
                 obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);

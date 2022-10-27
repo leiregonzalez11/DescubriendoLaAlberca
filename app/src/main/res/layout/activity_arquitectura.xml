@@ -67,15 +67,15 @@
             <TextView
                 android:id="@+id/arquititulo"
                 android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="25sp"
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:text="@string/arquitecturamayus"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="35sp"
                 android:textStyle="bold" />
 
 
@@ -107,21 +107,25 @@
             </com.google.android.material.card.MaterialCardView>
 
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
                 android:textSize="17sp"/>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
@@ -133,7 +137,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginRight="40dp"
-                android:layout_margin="18sp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="50sp"
                 android:textColor="@color/white"
                 android:background="#880E4F"
                 android:fontFamily="@font/alata"

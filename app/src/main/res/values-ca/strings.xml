@@ -57,7 +57,7 @@
     <string name="masinfo">Més informació</string>
     <string name="alhajas">Orfebreria</string>
     <string name="volver_a_artesania">Tornar a artesanía</string>
-    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge.</string>
+    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge. \\n</string>
     <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i La Alberca no anava a ser menys. Boscos de         pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la         naturalesa, de la fauna i de l\'aire pur que ens ofereixen.</string>
     <string name="alojamiento_inicio">Si desitges passar més d\'un dia en La Alberca per a poder conèixer tots els seus secrets, existeixen moltes opcions d\'allotjament:</string>
 
@@ -106,6 +106,7 @@
     <string name="telefono">Telefono:</string>
     <string name="puntuacion">Puntuació:</string>
     <string name="otros_lugares">Als voltants de La Alberca hi ha molts altres preciosos pobles i llocs per descobrir. Aquí en van uns quants: \\n</string>
+    <string name="textoprincipal3">"Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es Un pueblo para soñar "</string>
 
 
 </resources>

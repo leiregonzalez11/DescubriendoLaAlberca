@@ -74,16 +74,18 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
-                android:text="Las Turroneras"
+                android:text="@string/turroneras"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/gastro31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -95,14 +97,17 @@
                 android:layout_margin="12dp"
                 android:layout_height="250dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/gastro32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -114,19 +119,21 @@
                 android:layout_margin="11dp"
                 android:layout_height="250dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/gastro33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="16sp"/>
-
 
             <Button
                 android:id="@+id/gastroatras3"

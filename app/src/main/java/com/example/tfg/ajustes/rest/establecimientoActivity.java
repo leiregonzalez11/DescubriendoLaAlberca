@@ -39,6 +39,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
+
 
 public class establecimientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
 
@@ -56,7 +58,7 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
         Bundle extra = getIntent().getExtras();
@@ -73,6 +75,8 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
                 .findFragmentById(R.id.mapViewRestaurante);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
+
+        //Datos de la interfaz
 
         GestorDB dbHelper = new GestorDB(this);
 

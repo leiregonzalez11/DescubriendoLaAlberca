@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -150,6 +151,7 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
     @Override
     public void onBackPressed() {}
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
@@ -162,7 +164,7 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
             System.out.println("RUTAAAAA " + i + datos[i]);
         }
 
-        text2.setText(datos[0]);
+        text2.setText(datos[0] + Html.fromHtml("<br>"));
         text3.setText(datos[1]);
         text4.setText(datos[2]);
         text5.setText(datos[4]);

@@ -67,15 +67,15 @@
             <TextView
                 android:id="@+id/arquitext"
                 android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/alatsi"
                 android:gravity="center"
                 android:text="@string/la_casa_albercana"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
@@ -85,18 +85,20 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alatsi"
                 android:gravity="left"
                 android:text="@string/_1_aspecto_exterior"
                 tools:targetApi="o" />
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
@@ -106,17 +108,20 @@
                 android:id="@+id/arqui21img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
+                android:layout_marginTop="-200dp"
                 android:layout_marginBottom="-200dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
@@ -126,17 +131,20 @@
                 android:id="@+id/arqui22img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
+                android:layout_marginTop="-200dp"
                 android:layout_marginBottom="-190dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
-            <TextView
+            <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alata"
                 android:gravity='center'
@@ -146,10 +154,11 @@
                 android:id="@+id/arqui23img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
+                android:layout_marginTop="-200dp"
                 android:layout_marginBottom="-180dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
             </ImageView>
 
             <LinearLayout
@@ -169,7 +178,8 @@
                     android:background="#880E4F"
                     android:fontFamily="@font/alata"
                     android:layout_gravity="center"
-                    android:text="@string/atras">
+                    android:text="@string/atras"
+                    tools:ignore="ButtonStyle">
 
                 </Button>
 
@@ -183,7 +193,8 @@
                     android:fontFamily="@font/alata"
                     android:layout_marginLeft="20dp"
                     android:text="@string/siguiente"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    tools:ignore="ButtonStyle">
 
                 </Button>
 

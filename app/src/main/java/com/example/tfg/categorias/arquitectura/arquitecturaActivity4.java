@@ -6,22 +6,29 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustes.ajustesActivity;
 import com.example.tfg.categorias.categoriasActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
@@ -30,8 +37,10 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
+    private StorageReference storageRef;
+    private ImageView img1, img2;
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,13 +61,20 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz4", categoria, 3);
 
         TextView text1 = findViewById(R.id.arqui41);
-        text1.setText(datos[0]);
-
         TextView text2 = findViewById(R.id.arqui42);
-        text2.setText(datos[1]);
-
         TextView text3 = findViewById(R.id.arqui43);
-        text3.setText(datos[2]);
+
+        text1.setText(datos[0] + Html.fromHtml("<br>"));
+        text2.setText(datos[1] + Html.fromHtml("<br>"));
+        text3.setText(datos[2] + Html.fromHtml("<br>"));
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        img1 = findViewById(R.id.arqui41img);
+        img2 = findViewById(R.id.arqui42img);
+
+        obtenerImagenFirebase("arquitectura/inscripciones2.jpg", img1);
+        obtenerImagenFirebase("arquitectura/inscripciones3.jpg", img2);
 
 
         //BOTON SIGUIENTE y ATRAS
@@ -71,6 +87,7 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
         Button finBtn = findViewById(R.id.arquisiguiente4);
         finBtn.setOnClickListener(this);
 
+
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewArqui4);
         bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
@@ -80,6 +97,17 @@ public class arquitecturaActivity4 extends AppCompatActivity implements Navigati
 
     @Override
     public void onBackPressed() {}
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(getApplicationContext()).load(uri).into(img);
+            }
+        });
+    }
 
     @SuppressLint("NonConstantResourceId")
     @Override
