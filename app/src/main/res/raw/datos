@@ -289,3 +289,23 @@ INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, latRest, lo
 //
 //INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro) VALUES ('campocharro','','','');
 //
+//Peña de Francia
+//
+//INSERT INTO otroslugares (categoriaOtro, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','','','');
+//
+//--------------------------------------------------------------
+//                    ----TRADICIONES----                      |
+//--------------------------------------------------------------
+//
+//Idioma: Castellano
+//
+INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('inicio','es', 'La Alberca es un pueblo donde siguen vivas sus costumbres y tradiciones y que tienen mucho que ver con la superstición y el misterio. La muerte está muy presente, y un claro ejemplo es La Moza de Ánimas, que sale todas las tardes recorriendo el pueblo con su esquila y rezando por las Animas Benditas. Por esto y mucho más, visitar La Alberca es realizar un viaje mágico compartido por todas sus gentes.');
+//
+//Idioma: Euskera
+//
+INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('inicio','eu', 'La Alberca herri bat da non ohiturak eta tradizioak oraindik bizirik dauden eta sineskeria eta misterioarekin zerikusi handia dutenak. Heriotza oso presente dago, eta horren adibide garbia La Moza de Ánimas da, arratsaldero irteten baita herriko kaletik, Animas Benditas-en alde otoitz egitera. Horregatik eta askoz gehiagorengatik, La Albercara joatea bidaia magikoa da.');
+//
+//Idioma: Inglés
+//
+INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('inicio','en', 'La Alberca is a village where customs and traditions are still alive and have a lot to do with superstition and mystery. Death is very present, and a clear example of this is La Moza de Ánimas, who goes out every afternoon touring the village with her shearing and praying for the blessed souls. For this reason and much more, a visit to La Alberca is a magical journey shared by all its people.');
+//

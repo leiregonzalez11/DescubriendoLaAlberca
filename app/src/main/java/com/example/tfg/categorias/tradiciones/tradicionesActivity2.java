@@ -9,15 +9,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.tfg.R;
+import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.ajustes.ajustesActivity;
+import com.example.tfg.categorias.artesania.artesaniaActivity2;
+import com.example.tfg.categorias.artesania.artesaniaActivity3;
+import com.example.tfg.categorias.artesania.artesaniaActivity5;
 import com.example.tfg.categorias.categoriasActivity;
+import com.example.tfg.categorias.otros.otrosActivity;
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class tradicionesActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
@@ -40,26 +49,82 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
         idioma = extra.getString("idioma");
         categoria = extra.getString("categoria");
 
-        /*GestorDB dbHelper = new GestorDB(getApplicationContext());
+        ListView listView = findViewById(R.id.listviewtrad1);
+        ListView listView2 = findViewById(R.id.listviewtrad2);
+        ListView listView3 = findViewById(R.id.listviewtrad3);
+        ListView listView4 = findViewById(R.id.listviewtrad4);
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz2", categoria);
+        String opc1 = "La Moza de Ánimas";
+        String opc2 = "Tradición 2";
+        String opc3 = "Tradición 3";
+        String opc4 = "Tradición 4";
 
-        TextView text1 = findViewById(R.id.trad11);
-        text1.setText(datos[0]);
+        ArrayList<String> lista1 = new ArrayList<>();
+        lista1.add(opc1);
 
-        TextView text2 = findViewById(R.id.trad12);
-        text2.setText(datos[1]);
+        listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_item, lista1);
 
-        TextView text3 = findViewById(R.id.trad13);
-        text3.setText(datos[2]);
+        listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(tradicionesActivity2.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+
+        });
+
+        ArrayList<String> lista2 = new ArrayList<>();
+        lista2.add(opc2);
+
+        listViewAdapter myAdapter2 = new listViewAdapter(this, R.layout.list_item, lista2);
+        listView2.setAdapter(myAdapter2);
+
+        listView2.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(tradicionesActivity2.this, "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
+
+        ArrayList<String> lista3 = new ArrayList<>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(this, R.layout.list_item, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(tradicionesActivity2.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
+
+        ArrayList<String> lista4 = new ArrayList<>();
+        lista4
+                .add(opc4);
+
+        listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
+        listView4.setAdapter(myAdapter4);
+
+        listView4.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(tradicionesActivity2.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
 
         //BOTON SIGUIENTE y ATRAS
 
         Button atrasBtn = findViewById(R.id.tradatras2);
         atrasBtn.setOnClickListener(this);
 
-        Button siguienteBtn = findViewById(R.id.tradsiguiente2);
-        siguienteBtn.setOnClickListener(this);*/
+        Button atrasBtn2 = findViewById(R.id.tradAtras2);
+        atrasBtn.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewTrad2);
@@ -113,7 +178,7 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-         /*Button btn = (Button) view;
+         Button btn = (Button) view;
 
         switch (btn.getId()){
 
@@ -123,12 +188,12 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
                 startActivity(atras);
                 break;
 
-            case R.id.tradsiguiente2:
-                Intent arte3 = new Intent(this, tradicionesActivity3.class);
-                arte3.putExtra("idioma", idioma);
-                arte3.putExtra("categoria", categoria);
-                startActivity(arte3);
+            case R.id.tradAtras2:
+                Intent atras2 = new Intent(this, categoriasActivity.class);
+                atras2.putExtra("idioma", idioma);
+                startActivity(atras2);
                 break;
-        }*/
+
+        }
     }
 }

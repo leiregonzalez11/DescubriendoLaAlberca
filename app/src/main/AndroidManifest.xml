@@ -72,6 +72,9 @@
             android:name=".categorias.tradiciones.tradicionesActivity"
             android:exported="false" />
         <activity
+            android:name=".categorias.tradiciones.tradicionesActivity2"
+            android:exported="false" />
+        <activity
             android:name=".categorias.historia.historiaActivity2"
             android:exported="false" />
         <activity

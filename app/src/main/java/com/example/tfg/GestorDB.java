@@ -47,6 +47,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otroslugares");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS restaurante");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tradiciones");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
         onCreate(sqLiteDatabase);
@@ -109,6 +110,12 @@ public class GestorDB extends SQLiteOpenHelper {
                 "ubiCom VARCHAR NOT NULL, latCom VARCHAR NOT NULL, lonCom VARCHAR NOT NULL)";
         Log.d("Tabla Comercio", query8);
         sqLiteDatabase.execSQL(query8);
+
+        //Esquema de la tabla tradiciones
+        String query9 = "CREATE TABLE IF NOT EXISTS tradiciones (idTrad INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nombreTrad TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
+        Log.d("Tabla arquitectura", query9);
+        sqLiteDatabase.execSQL(query9);
 
     }
 
@@ -291,4 +298,23 @@ public class GestorDB extends SQLiteOpenHelper {
         c.close();
         return punt;
     }
+
+    public String[] obtenerInfoTrad(String idioma, String interfaz, String tabla, int numTV){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        int i = 0;
+        String [] descr = new String[numTV];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE nombreTrad LIKE '" + interfaz + "%' AND idioma = '" + idioma + "';", null);
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
+        }
+        c.close();
+        return descr;
+    }
+
 }

@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <Button
+            android:id="@+id/tradAtras2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:background="#880E4F"
+            android:drawableLeft="@drawable/arrow_back"
+            android:gravity="left">
+        </Button>
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -53,6 +63,100 @@
             android:gravity="center"
             android:orientation="vertical"
             tools:context=".categorias.tradiciones.tradicionesActivity2">
+
+            <TextView
+                android:id="@+id/otrostitulo"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alatsi"
+                android:gravity="center"
+                android:text="@string/tradicionesmayus"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewtrad1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewtrad2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewtrad3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewtrad4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <Button
+                android:id="@+id/tradatras2"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:background="#880E4F"
+                android:fontFamily="@font/alata"
+                android:text="@string/atras">
+            </Button>
 
         </LinearLayout>
 
