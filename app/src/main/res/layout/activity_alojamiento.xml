@@ -79,7 +79,7 @@
                     android:id="@+id/layoutAloj2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_margin="15dp"
                     android:gravity="center"
                     android:orientation="vertical"
                     tools:context=".ajustes.aloj.alojamientoActivity">
@@ -104,9 +104,113 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="15dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="-30dp"
                         android:src="@drawable/laalberca2"
                         tools:ignore="ContentDescription" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginTop="65dp"
+                        app:cardElevation="10dp"
+                        app:strokeColor="@color/black"
+                        app:cardCornerRadius="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="left"
+                                android:orientation="horizontal"
+                                tools:ignore="UseCompoundDrawables">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/arrow_right_foreground"
+                                    tools:ignore="ContentDescription">
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/telaloj"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:gravity='left'
+                                    android:text="@string/telefono"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp"/>
+
+                                <TextView
+                                    android:id="@+id/telaloj2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:fontFamily="@font/alata"
+                                    android:gravity='left'
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_gravity="left"
+                                android:orientation="horizontal"
+                                tools:ignore="UseCompoundDrawables">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/arrow_right_foreground"
+                                    tools:ignore="ContentDescription">
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/puntaloj"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alata"
+                                    android:gravity='left'
+                                    android:text="@string/puntuacion"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp"/>
+
+                                <RatingBar
+                                    android:id="@+id/ratingBarAloj"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-12dp"
+                                    android:layout_marginLeft="-50dp"
+                                    android:layout_marginRight="-25dp"
+                                    android:isIndicator="true"
+                                    android:numStars="5"
+                                    android:scaleX="0.5"
+                                    android:scaleY="0.5"
+                                    android:stepSize="0.5"
+                                    android:progressTint="#FFB300"
+                                    android:progressBackgroundTint="#B4000000"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
 
                     <TextView
                         android:id="@+id/ubi"

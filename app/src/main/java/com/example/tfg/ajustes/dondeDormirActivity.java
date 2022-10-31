@@ -22,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Locale;
 import java.util.Objects;
 
 
@@ -51,9 +52,9 @@ public class dondeDormirActivity extends AppCompatActivity implements Navigation
         ViewPager2 viewPager = findViewById(R.id.viewPager);
 
         TabLayout tabLayout  = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText(text2));
-        tabLayout.addTab(tabLayout.newTab().setText(text1));
-        tabLayout.addTab(tabLayout.newTab().setText(text3));
+        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
         //tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapter myadapter = new tabAdapter (getSupportFragmentManager(), getLifecycle());

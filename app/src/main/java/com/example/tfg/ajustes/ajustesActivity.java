@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.tfg.inicio.MainActivity;
 import com.example.tfg.R;
@@ -26,7 +27,7 @@ import java.util.Objects;
 
 public class ajustesActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    String idioma, opc1, opc2, opc3, opc4;
+    String idioma, opc1, opc2, opc3, opc4, opc5;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -46,17 +47,18 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         ListView listView2 = findViewById(R.id.listview2);
         ListView listView3 = findViewById(R.id.listview3);
         ListView listView4 = findViewById(R.id.listview4);
+        ListView listView5 = findViewById(R.id.listview5);
 
         opc1 = getResources().getString(R.string.ajustes6);
         opc2 = getResources().getString(R.string.ajustes1);
         opc3 = getResources().getString(R.string.ajustes3);
         opc4 = getResources().getString(R.string.ajustes4);
+        opc5 = "Servicios";
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
         listViewAdapter myAdapter = new listViewAdapter(this, R.layout.list_comercio, lista1);
-
 
         listView.setAdapter(myAdapter);
 
@@ -109,6 +111,20 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
             aloj.putExtra("idioma", idioma);
             startActivity(aloj);
             finish();
+        });
+
+        ArrayList<String> lista5 = new ArrayList<>();
+        lista5.add(opc5);
+
+        listViewAdapter myAdapter5 = new listViewAdapter(this, R.layout.list_servicios, lista5);
+        listView5.setAdapter(myAdapter5);
+
+        listView5.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+            //Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
+            //aloj.putExtra("idioma", idioma);
+            //startActivity(aloj);
+            //finish();
         });
 
         //MENU

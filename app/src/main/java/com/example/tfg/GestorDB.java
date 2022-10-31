@@ -93,7 +93,7 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla alojamiento
         String query6 = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
-                "latAloj VARCHAR NOT NULL, lonAloj VARCHAR NOT NULL)";
+                "latAloj VARCHAR NOT NULL, lonAloj VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
         Log.d("Tabla alojamiento", query6);
         sqLiteDatabase.execSQL(query6);
 
@@ -230,12 +230,12 @@ public class GestorDB extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
-        String [] descr = new String[3];
+        String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT latAloj, lonAloj, ubiAloj FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, latAloj, lonAloj, ubiAloj FROM " + tabla + "" +
                 " WHERE nombreAloj = '" + nombreAloj + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 3; j++){
+            for (int j = 0; j < 4; j++){
                 descrip = c.getString(j);
                 System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[j] = descrip;
@@ -243,6 +243,23 @@ public class GestorDB extends SQLiteOpenHelper {
         }
         c.close();
         return descr;
+    }
+
+    public double obtenerPuntAloj(String tabla, String nombreAloj) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        double punt = 0;
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM " + tabla + "" +
+                " WHERE nombreAloj = '" + nombreAloj + "';", null);
+        while (c.moveToNext()){
+            punt = c.getDouble(0);
+            System.out.println("DESCRIIIIIIIP" + punt);
+
+        }
+        c.close();
+        return punt;
     }
 
     public ArrayList obtenerlistaRestaurantes(String tabla, String categoriaRest) {

@@ -38,6 +38,17 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
 
+        <ImageButton
+            android:id="@+id/btnFiltrosComer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="15sp"
+            android:textColor="@color/white"
+            android:layout_gravity="right"
+            android:background="#880E4F"
+            android:fontFamily="@font/alata"
+            android:src="@drawable/filter"/>
+
     </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
@@ -102,6 +113,10 @@
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
+                    app:tabIndicatorColor="#880E4F"
+                    app:tabTextColor="@color/black"
+                    app:tabSelectedTextColor="#880E4F"
+                    app:tabTextAppearance="@style/tab_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:tabMode="scrollable"/>

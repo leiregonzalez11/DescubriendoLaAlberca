@@ -131,6 +131,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewtrad4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
@@ -139,7 +155,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listviewtrad4"
+                    android:id="@+id/listviewtrad5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />

@@ -38,6 +38,18 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
 
+        <Button
+            android:id="@+id/btnFiltrosComer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="15sp"
+            android:textColor="@color/white"
+            android:layout_gravity="right"
+            android:background="#880E4F"
+            android:fontFamily="@font/alata"
+            android:drawableRight="@drawable/filter"
+            android:src="@drawable/filter"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -55,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0"
-        tools:context=".ajustes.dondeComercioActivity">
+        tools:context=".ajustes.dondeComerActivity">
 
         <TextView
             android:id="@+id/Comertitulo"
@@ -101,6 +113,10 @@
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layoutComer"
                     android:layout_width="match_parent"
+                    app:tabIndicatorColor="#880E4F"
+                    app:tabTextColor="@color/black"
+                    app:tabSelectedTextColor="#880E4F"
+                    app:tabTextAppearance="@style/tab_text"
                     android:layout_height="wrap_content"/>
 
                 <androidx.viewpager2.widget.ViewPager2

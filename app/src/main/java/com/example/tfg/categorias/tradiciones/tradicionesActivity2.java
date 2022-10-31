@@ -53,11 +53,13 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
         ListView listView2 = findViewById(R.id.listviewtrad2);
         ListView listView3 = findViewById(R.id.listviewtrad3);
         ListView listView4 = findViewById(R.id.listviewtrad4);
+        ListView listView5 = findViewById(R.id.listviewtrad5);
 
-        String opc1 = "La Moza de Ánimas";
-        String opc2 = "Tradición 2";
-        String opc3 = "Tradición 3";
-        String opc4 = "Tradición 4";
+        String opc1 = "Día del Pendón";
+        String opc2 = "La Loa";
+        String opc3 = "La Moza de Ánimas";
+        String opc4 = "Majadas Viejas";
+        String opc5 = "Otras tradiciones";
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -104,8 +106,7 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
         });
 
         ArrayList<String> lista4 = new ArrayList<>();
-        lista4
-                .add(opc4);
+        lista4.add(opc4);
 
         listViewAdapter myAdapter4 = new listViewAdapter(this, R.layout.list_item, lista4);
         listView4.setAdapter(myAdapter4);
@@ -118,13 +119,27 @@ public class tradicionesActivity2 extends AppCompatActivity implements Navigatio
             finish();*/
         });
 
+        ArrayList<String> lista5 = new ArrayList<>();
+        lista5.add(opc5);
+
+        listViewAdapter myAdapter5 = new listViewAdapter(this, R.layout.list_item, lista5);
+        listView5.setAdapter(myAdapter5);
+
+        listView5.setOnItemClickListener((adapterView, view, position, id) -> {
+            Toast.makeText(tradicionesActivity2.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+            /*Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
+            finish();*/
+        });
+
         //BOTON SIGUIENTE y ATRAS
 
         Button atrasBtn = findViewById(R.id.tradatras2);
         atrasBtn.setOnClickListener(this);
 
         Button atrasBtn2 = findViewById(R.id.tradAtras2);
-        atrasBtn.setOnClickListener(this);
+        atrasBtn2.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewTrad2);

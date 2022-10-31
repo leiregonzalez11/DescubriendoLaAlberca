@@ -6,12 +6,16 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -60,8 +64,11 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         categoria = "alojamiento";
         determinarIdioma();
 
+        GestorDB dbHelper = new GestorDB(this);
+
         TextView text1 = findViewById(R.id.nombreAloj);
-        TextView text2 = findViewById(R.id.ubi2);
+        TextView ubi = findViewById(R.id.ubi2);
+        TextView tel = findViewById(R.id.telaloj2);
 
         text1.setText(alojamiento);
 
@@ -71,16 +78,33 @@ public class alojamientoActivity extends AppCompatActivity implements Navigation
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
 
-        GestorDB dbHelper = new GestorDB(this);
+        //Datos de la interfaz
 
         String [] datos = dbHelper.obtenerDatosAloj(categoria, alojamiento);
 
-        lat = Double.parseDouble(datos[0]);
-        System.out.println("DESCRIIIIIIIP" + lat);
-        lon = Double.parseDouble(datos[1]);
-        System.out.println("DESCRIIIIIIIP" + lon);
-        text2.setText(datos[2]);
-        System.out.println("DESCRIIIIIIIP" + datos[2]);
+        String telefono = datos[0];
+        lat = Double.parseDouble(datos[1]);
+        lon = Double.parseDouble(datos[2]);
+        ubi.setText(datos[3]);
+
+        SpannableString telsubrayado = new SpannableString(telefono);
+        telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
+
+        tel.setText(telsubrayado);
+        tel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el numero de telefono
+                Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
+                startActivity(dial); // Ejecutamos el Intent
+            }
+        });
+
+        //RATING BAR
+
+        RatingBar ratingBar = findViewById(R.id.ratingBarAloj);
+        double punt = dbHelper.obtenerPuntAloj(categoria, alojamiento);
+        ratingBar.setRating((float) punt);
 
         storageRef = FirebaseStorage.getInstance().getReference();
         ImageView img = findViewById(R.id.fotoAloj);

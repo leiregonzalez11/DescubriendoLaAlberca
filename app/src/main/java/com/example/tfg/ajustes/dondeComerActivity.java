@@ -10,7 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.tfg.adapters.tabAdapterComer;
 import com.example.tfg.inicio.MainActivity;
@@ -29,7 +32,7 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
     BottomNavigationView bottomNavigationView;
     String idioma;
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,21 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
+        Button btn = findViewById(R.id.btnFiltrosComer);
+        btn.setOnClickListener(view -> {
+            //Creating the instance of PopupMenu
+            PopupMenu popup = new PopupMenu(dondeComerActivity.this, btn);
+            //Inflating the Popup using xml file
+            popup.getMenuInflater().inflate(R.menu.ajustes_menu, popup.getMenu());
+
+            //registering popup with OnMenuItemClickListener
+            popup.setOnMenuItemClickListener(item -> {
+                //Toast.makeText(dondeComerActivity.this,"You Clicked : filtros", Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            popup.show();
+        });
+
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
 
@@ -49,8 +67,8 @@ public class dondeComerActivity extends AppCompatActivity implements NavigationB
         ViewPager2 viewPager = findViewById(R.id.viewPagerComer);
 
         TabLayout tabLayout  = findViewById(R.id.tab_layoutComer);
-        tabLayout.addTab(tabLayout.newTab().setText(text1));
-        tabLayout.addTab(tabLayout.newTab().setText(text2));
+        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapterComer myadapter = new tabAdapterComer(getSupportFragmentManager(), getLifecycle());

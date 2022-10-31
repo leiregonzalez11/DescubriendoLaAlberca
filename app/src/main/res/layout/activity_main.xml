@@ -80,17 +80,11 @@
                 <!--android:layout_marginTop="50dp"
                 -->
 
-                <ImageSwitcher
-                    android:id="@+id/imageSwitcher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-                </ImageSwitcher>
-
                 <com.smarteist.autoimageslider.SliderView
                     android:id="@+id/imageSlider"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    app:sliderAnimationDuration="1100"
+                    app:sliderAnimationDuration="600"
                     app:sliderAutoCycleDirection="right"
                     app:sliderAutoCycleEnabled="true"
                     app:sliderIndicatorAnimationDuration="600"
@@ -135,20 +129,7 @@
                 android:id="@+id/textoprincipal3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alata"
-                android:gravity='center_horizontal'
-                android:text="@string/textoprincipal3"
-                android:textSize="17sp" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/textoprincipal4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_marginTop="-10dp"
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/aref_ruqaa"

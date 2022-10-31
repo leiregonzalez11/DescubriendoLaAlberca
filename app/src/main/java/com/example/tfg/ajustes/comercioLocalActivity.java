@@ -43,16 +43,16 @@ public class comercioLocalActivity extends AppCompatActivity implements Navigati
         Bundle datos = getIntent().getExtras();
         idioma = datos.getString("idioma");
 
-        String text1 = "Alimentación";
+        String text1 = getResources().getString(R.string.alimentacion);
         String text2 = getResources().getString(R.string.artesaniamayus);
-        String text3 = "Otros comercios";
+        String text3 = getResources().getString(R.string.otras_tiendas);
 
         ViewPager2 viewPager = findViewById(R.id.viewPagerComercio);
 
         TabLayout tabLayout  = findViewById(R.id.tab_layoutComercio);
-        tabLayout.addTab(tabLayout.newTab().setText(text1));
-        tabLayout.addTab(tabLayout.newTab().setText(text2));
-        tabLayout.addTab(tabLayout.newTab().setText(text3));
+        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapterComercio myadapter = new tabAdapterComercio(getSupportFragmentManager(), getLifecycle());

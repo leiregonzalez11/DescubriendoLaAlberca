@@ -100,8 +100,8 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
 
         //MENU
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationViewArteSelector);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_categoria);
         bottomNavigationView.setOnItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
 
     }
 

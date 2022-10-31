@@ -34,7 +34,7 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_comercio_local.xml" value="0.2558876811594203" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_como_llegar.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_contacto.xml" value="0.264" />
-        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_donde_comer.xml" value="0.2" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_donde_comer.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_donde_dormir.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_establecimiento.xml" value="0.176" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/activity_gastronomia.xml" value="0.2128623188405797" />
@@ -92,8 +92,10 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/list_otherstores.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/list_pueblo.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/list_rest.xml" value="0.13297872340425532" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/list_servicios.xml" value="0.13297872340425532" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/slider_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/slider_layout.xml" value="0.1" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/menu/ajustes_menu.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/menu/menu_arquitectura.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/menu/menuusuario.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/menu/navigation.xml" value="0.264" />

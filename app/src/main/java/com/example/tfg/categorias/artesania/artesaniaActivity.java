@@ -68,8 +68,9 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         int[] images = new int[]{R.drawable.arte1, R.drawable.arte2, R.drawable.arte3};
         SliderAdapter adapterSlider = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapterSlider);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.DROP);
+        sliderView.setScrollTimeInSec(3);
         sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE
@@ -77,7 +78,7 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
         Button atrasBtn = findViewById(R.id.arteAtras1);
         atrasBtn.setOnClickListener(this);
 
-        Button sigBtn = findViewById(R.id.artesiguiente1);
+        Button sigBtn = findViewById(R.id.arteSiguiente1);
         sigBtn.setOnClickListener(this);
 
         //MENU
@@ -134,17 +135,24 @@ public class artesaniaActivity extends AppCompatActivity implements NavigationBa
 
         Button btn = (Button) view;
 
-        if (btn.getId() == R.id.artesiguiente1) {
-            Intent arte2 = new Intent(this, artesaniaSelectorActivity.class);
-            arte2.putExtra("idioma", idioma);
-            arte2.putExtra("categoria", categoria);
-            startActivity(arte2);
-            finish();
-        } else if (btn.getId() == R.id.arteAtras1) {
-            Intent arteCat = new Intent(this, categoriasActivity.class);
-            arteCat.putExtra("idioma", idioma);
-            startActivity(arteCat);
-            finish();
+        switch (btn.getId()) {
+
+            case R.id.arteAtras1:
+                Intent arteCat = new Intent(this, categoriasActivity.class);
+                arteCat.putExtra("idioma", idioma);
+                startActivity(arteCat);
+                finish();
+                break;
+
+            case R.id.arteSiguiente1:
+                Intent arte2 = new Intent(this, artesaniaSelectorActivity.class);
+                arte2.putExtra("idioma", idioma);
+                arte2.putExtra("categoria", categoria);
+                startActivity(arte2);
+                finish();
+                break;
+
+
         }
     }
 
