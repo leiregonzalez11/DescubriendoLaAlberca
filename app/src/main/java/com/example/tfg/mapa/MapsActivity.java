@@ -106,6 +106,11 @@ public class MapsActivity extends AppCompatActivity implements NavigationBarView
     }
 
     @Override
-    public void onBackPressed() {}
+    public void onBackPressed() {
+        finish();
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+
+    }
 
 }

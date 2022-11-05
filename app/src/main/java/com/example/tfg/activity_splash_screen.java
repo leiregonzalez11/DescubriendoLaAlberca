@@ -43,7 +43,8 @@ public class activity_splash_screen extends AppCompatActivity {
                 tourFragment.show(getSupportFragmentManager(),"tour_dialog"); */
 
                 /* INTERFAZ PRINCIPAL*/
-                Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
+                //Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
+                Intent intent = new Intent(activity_splash_screen.this, MainActivity2.class);
                 startActivity(intent);
                 finish();
 
@@ -51,18 +52,7 @@ public class activity_splash_screen extends AppCompatActivity {
 
     }
 
-    private static final int INTERVALO = 2000; //2 segundos para salir
-    private long tiempoPrimerClick;
-
     @Override
-    public void onBackPressed(){
-        if (tiempoPrimerClick + INTERVALO > System.currentTimeMillis()){
-            super.onBackPressed();
-            return;
-        }else {
-            Toast.makeText(this, "Vuelve a presionar para salir", Toast.LENGTH_SHORT).show();
-        }
-        tiempoPrimerClick = System.currentTimeMillis();
-    }
+    public void onBackPressed(){}
 
 }

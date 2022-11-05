@@ -4,6 +4,7 @@ package com.example.tfg.inicio;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -115,24 +116,24 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 return true;
 
             case R.id.navigation_mapa:
+                finish();
                 Intent mapa = new Intent(this, MapsActivity.class);
                 mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
-                finish();
                 return true;
 
             case R.id.navigation_categoria:
+                finish();
                 Intent categorias = new Intent(this, categoriasActivity.class);
                 categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
-                finish();
                 return true;
 
             case R.id.navigation_ajustes:
+                finish();
                 Intent ajustes = new Intent(this, ajustesActivity.class);
                 ajustes.putExtra("idioma", idioma);
                 startActivity(ajustes);
-                finish();
                 return true;
 
             default:
@@ -142,6 +143,10 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     }
 
     @Override
-    public void onBackPressed(){}
+    public void onBackPressed(){
+        DialogFragment tourSiFragment = new ExitFragment();
+        tourSiFragment.setCancelable(false);
+        tourSiFragment.show(getSupportFragmentManager(),"exit_fragment");
+    }
 
 }

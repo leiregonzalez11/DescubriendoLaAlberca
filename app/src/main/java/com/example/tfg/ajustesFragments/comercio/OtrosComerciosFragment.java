@@ -1,12 +1,9 @@
-package com.example.tfg.ajustes.comercio;
+package com.example.tfg.ajustesFragments.comercio;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,17 +12,15 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustes.rest.establecimientoActivity;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class AlimentacionFragment extends Fragment {
+public class OtrosComerciosFragment extends Fragment {
 
     ArrayList lista1;
     String nombreRest;
 
-    public AlimentacionFragment() {
+    public OtrosComerciosFragment() {
         // Required empty public constructor
     }
 
@@ -33,20 +28,20 @@ public class AlimentacionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alimentacion, container, false);
+        return inflater.inflate(R.layout.fragment_otros_comercios, container, false);
     }
 
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        ListView listView = (ListView) requireView().findViewById(R.id.listviewAlimentacion);
+        ListView listView = (ListView) requireView().findViewById(R.id.listviewOtrosComercios);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
         lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "bar");
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_alim, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_otherstores, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {

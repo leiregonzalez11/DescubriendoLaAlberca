@@ -64,10 +64,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
             //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            finish();
             Intent comercio = new Intent(getApplicationContext(), comercioLocalActivity.class);
             comercio.putExtra("idioma", idioma);
             startActivity(comercio);
-            finish();
 
         });
 
@@ -79,10 +79,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView2.setOnItemClickListener((adapterView, view, position, id) -> {
             //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show());
+            finish();
             Intent comoLlegar = new Intent(getApplicationContext(), comoLlegarActivity.class);
             comoLlegar.putExtra("idioma", idioma);
             startActivity(comoLlegar);
-            finish();
         });
 
         ArrayList<String> lista3 = new ArrayList<>();
@@ -93,10 +93,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView3.setOnItemClickListener((adapterView, view, position, id) -> {
                 //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show());
-                Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
-                rest.putExtra("idioma", idioma);
-                startActivity(rest);
-                finish();
+            finish();
+            Intent rest = new Intent(getApplicationContext(), dondeComerActivity.class);
+            rest.putExtra("idioma", idioma);
+            startActivity(rest);
         });
 
         ArrayList<String> lista4 = new ArrayList<>();
@@ -107,10 +107,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView4.setOnItemClickListener((adapterView, view, position, id) -> {
             //Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
+            finish();
             Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
             aloj.putExtra("idioma", idioma);
             startActivity(aloj);
-            finish();
         });
 
         ArrayList<String> lista5 = new ArrayList<>();
@@ -121,10 +121,10 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         listView5.setOnItemClickListener((adapterView, view, position, id) -> {
             Toast.makeText(ajustesActivity.this, "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+            //finish();
             //Intent aloj = new Intent(getApplicationContext(), dondeDormirActivity.class);
             //aloj.putExtra("idioma", idioma);
             //startActivity(aloj);
-            //finish();
         });
 
         //MENU
@@ -141,17 +141,20 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
 
         switch (item.getItemId()){
             case R.id.navigation_inicio:
+                finish();
                 Intent inicio = new Intent(this, MainActivity.class);
                 startActivity(inicio);
                 return true;
 
             case R.id.navigation_mapa:
+                finish();
                 Intent mapa = new Intent(this, MapsActivity.class);
                 mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
                 return true;
 
             case R.id.navigation_categoria:
+                finish();
                 Intent categorias = new Intent(this, categoriasActivity.class);
                 categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
@@ -167,7 +170,11 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
     }
 
     @Override
-    public void onBackPressed() {}
+    public void onBackPressed() {
+        Intent inicio = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(inicio);
+    }
 
 
     @Override
@@ -177,20 +184,19 @@ public class ajustesActivity extends AppCompatActivity implements NavigationBarV
         return true;
     }
 
-
     @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
+                finish();
                 Intent contacto = new Intent(getApplicationContext(), contactoActivity.class);
                 contacto.putExtra("idioma", idioma);
                 startActivity(contacto);
-                finish();
                 return true;
             case R.id.menu_idioma:
+                finish();
                 Intent inicio = new Intent(getApplicationContext(), idiomasActivity.class);
                 startActivity(inicio);
-                finish();
                 return true;
 
             default:

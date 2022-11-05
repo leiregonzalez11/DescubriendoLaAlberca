@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes.aloj;
+package com.example.tfg.ajustesFragments.alojamiento;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,23 +13,25 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustes.aloj.alojamientoActivity;
 
 import java.util.ArrayList;
 
-public class ApartFragment extends Fragment{
+public class HotelesFragment extends Fragment {
 
     ArrayList lista1;
     String idioma, nombreAloj;
 
-    public ApartFragment() {
+    public HotelesFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apart, container, false);
+        return inflater.inflate(R.layout.fragment_hoteles, container, false);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -37,29 +39,27 @@ public class ApartFragment extends Fragment{
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-
-        ListView listView = requireView().findViewById(R.id.listviewApart);
+        ListView listView = requireView().findViewById(R.id.listviewHoteles);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
+        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "hotel");
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, lista1);
+
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_hotel, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> {
-            //Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show()
 
             nombreAloj = lista1.get(position).toString();
 
             Intent aloj = new Intent(getContext(), alojamientoActivity.class);
             aloj.putExtra("nombreAloj", nombreAloj);
             startActivity(aloj);
+
         });
 
-
     }
-
-
 
 }

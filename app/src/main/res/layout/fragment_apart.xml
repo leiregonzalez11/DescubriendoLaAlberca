@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustes.aloj.ApartFragment">
+    tools:context=".ajustesFragments.alojamiento.ApartFragment">
 
     <ListView
         android:id="@+id/listviewApart"

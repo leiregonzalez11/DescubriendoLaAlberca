@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes.aloj;
+package com.example.tfg.ajustesFragments.alojamiento;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustes.aloj.alojamientoActivity;
 
 import java.util.ArrayList;
 

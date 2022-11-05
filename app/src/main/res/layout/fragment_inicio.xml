@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.tfg.MainActivity2">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".inicio.MainActivity">
+
+            <TextView
+                android:id="@+id/bienvenidatextPrueba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aref_ruqaa"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@string/tituloprincipal"
+                android:textAlignment="gravity"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:theme="@style/Theme.MaterialComponents.Light">
+
+                <!--android:layout_marginTop="50dp"
+                -->
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSliderPrueba"
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="right"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="2"
+                    app:sliderStartAutoCycle="true" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/textoprincipal1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/black"
+                android:text="@string/textoprincipal"
+                android:textSize="17sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/textoprincipal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alata"
+                android:gravity='center_horizontal'
+                android:text="@string/textoprincipal2"
+                android:textSize="17sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/textoprincipal3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/aref_ruqaa"
+                android:textStyle="italic"
+                android:gravity='center_horizontal'
+                android:text="@string/textoprincipal4"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

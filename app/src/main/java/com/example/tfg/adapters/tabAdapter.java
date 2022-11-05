@@ -1,18 +1,14 @@
 package com.example.tfg.adapters;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tfg.ajustes.aloj.ApartFragment;
-import com.example.tfg.ajustes.aloj.CasasFragment;
-import com.example.tfg.ajustes.aloj.HotelesFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.tfg.ajustesFragments.alojamiento.ApartFragment;
+import com.example.tfg.ajustesFragments.alojamiento.CasasFragment;
+import com.example.tfg.ajustesFragments.alojamiento.HotelesFragment;
 
 public class tabAdapter extends FragmentStateAdapter {
 

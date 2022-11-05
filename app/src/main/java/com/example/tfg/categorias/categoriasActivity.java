@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
 import com.example.tfg.categorias.artesania.artesaniaActivity;
 import com.example.tfg.categorias.gastronomia.gastronomiaActivity;
-import com.example.tfg.categorias.historia.historiaActivity;
 import com.example.tfg.categorias.otros.otrosActivity;
 import com.example.tfg.categorias.rutas.rutasActivity;
 import com.example.tfg.categorias.tradiciones.tradicionesActivity;
@@ -88,12 +87,12 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
         btnMonu = findViewById(R.id.botonmonumentos);
         path = "categorias/" + idioma + "/monumentos-" + idioma + ".jpg";
-        //btnMonu.setOnClickListener(this);
+        btnMonu.setOnClickListener(this);
         obtenerImagenFirebase(path, btnMonu);
 
         btnFiesta = findViewById(R.id.botonfiestas);
         path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
-        //btnFiesta.setOnClickListener(this);
+        btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
 
         btnGastro = findViewById(R.id.botongastronomia);
@@ -104,7 +103,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         btnPers = findViewById(R.id.botonpersonajes);
         //TODO: Cambiar la ruta
         path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
-        //btnPers.setOnClickListener(this);
+        btnPers.setOnClickListener(this);
         obtenerImagenFirebase(path, btnPers);
 
         btnRutas = findViewById(R.id.botonruta);
@@ -162,10 +161,7 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
         switch (btn.getId()){
 
             case R.id.botonhistoria:
-                Intent historia = new Intent(this, historiaActivity.class);
-                historia.putExtra("idioma", idioma);
-                startActivity(historia);
-                finish();
+                Toast.makeText(categoriasActivity.this, "Has pulsado Historia", Toast.LENGTH_LONG);
                 break;
 
             case R.id.botonartesania:
@@ -191,9 +187,11 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
 
             case R.id.botonmonumentos:
                 Toast.makeText(categoriasActivity.this, "Has pulsado Monumentos", Toast.LENGTH_LONG);
+                break;
 
             case R.id.botonfiestas:
                 Toast.makeText(categoriasActivity.this, "Has pulsado Fiestas", Toast.LENGTH_LONG);
+                break;
 
             case R.id.botongastronomia:
                 Intent gastronomia = new Intent(this, gastronomiaActivity.class);
@@ -203,7 +201,8 @@ public class categoriasActivity extends AppCompatActivity implements NavigationB
                 break;
 
             case R.id.botonpersonajes:
-                Toast.makeText(categoriasActivity.this, "Has pulsado TV y Prensa", Toast.LENGTH_LONG);
+                Toast.makeText(categoriasActivity.this, "Has pulsado Cultura", Toast.LENGTH_LONG);
+                break;
 
             case R.id.botonruta:
                 Intent rutas = new Intent(this, rutasActivity.class);

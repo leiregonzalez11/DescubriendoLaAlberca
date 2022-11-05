@@ -7,9 +7,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tfg.ajustes.comercio.AlimentacionFragment;
-import com.example.tfg.ajustes.comercio.ArtesaniaFragment;
-import com.example.tfg.ajustes.comercio.OtrosComerciosFragment;
+import com.example.tfg.ajustesFragments.comercio.AlimentacionFragment;
+import com.example.tfg.ajustesFragments.comercio.ArtesaniaFragment;
+import com.example.tfg.ajustesFragments.comercio.OtrosComerciosFragment;
 
 public class tabAdapterComercio extends FragmentStateAdapter {
 

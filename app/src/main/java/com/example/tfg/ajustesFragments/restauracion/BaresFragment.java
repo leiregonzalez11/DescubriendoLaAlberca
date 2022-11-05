@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes.rest;
+package com.example.tfg.ajustesFragments.restauracion;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustes.rest.establecimientoActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
