@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.ArquitecturaActivity">
+            tools:context=".anterior.categorias.arquitectura.ArquitecturaActivity">
 
             <TextView
                 android:id="@+id/arquititulo"

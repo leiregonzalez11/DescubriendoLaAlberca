@@ -6,11 +6,9 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.tfg.inicio.ExitFragment;
 import com.example.tfg.navigationmenu.FragmentAjustes;
 import com.example.tfg.navigationmenu.FragmentCategorias;
 import com.example.tfg.navigationmenu.FragmentInicio;
@@ -18,13 +16,9 @@ import com.example.tfg.navigationmenu.FragmentMapa;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.util.Objects;
-
-
 public class MainActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
-    String idioma;
     FragmentInicio inicio;
     //String tour;
 
@@ -34,17 +28,12 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Toolbar myToolbar = findViewById(R.id.toolbarPrueba);
-        setSupportActionBar(myToolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
-
         inicio = new FragmentInicio();
+        loadFragment(inicio);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewPrueba);
         bottomNavigationView.setOnItemSelectedListener(this);
-        loadFragment(inicio);
 
     }
 
@@ -73,11 +62,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         }
 
         if (fragment != null) {
-            Bundle args = new Bundle();
-            idioma = inicio.determinarIdioma();
-            System.out.println("IDIOMAAAA " + idioma);
-            args.putString("idioma", idioma);
-            fragment.setArguments(args);
             loadFragment(fragment);
         }
         return true;

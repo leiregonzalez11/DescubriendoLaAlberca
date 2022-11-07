@@ -6,10 +6,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.tfg.MainActivity2">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#880E4F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.Toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alex_brush"
+            android:layout_marginTop="18dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical">
 
@@ -17,30 +43,31 @@
             android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:gravity="center"
+            android:padding="15dp"
             android:orientation="vertical"
-            tools:context=".inicio.MainActivity">
+            tools:context=".anterior.inicio.MainActivity">
 
             <TextView
                 android:id="@+id/bienvenidatextPrueba"
-                android:layout_width="wrap_content"
+                android:layout_width="370dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="@font/alex_brush"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:text="@string/tituloprincipal"
                 android:textAlignment="gravity"
-                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:textSize="39sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="320dp"
                 android:layout_height="200dp"
-                android:layout_margin="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
                 android:theme="@style/Theme.MaterialComponents.Light">
 
                 <!--android:layout_marginTop="50dp"
@@ -68,41 +95,40 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal1"
-                android:layout_width="wrap_content"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/alata"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/amiri"
                 android:text="@string/textoprincipal"
-                android:textSize="17sp" />
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal2"
-                android:layout_width="wrap_content"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-25dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alata"
-                android:gravity='center_horizontal'
+                android:fontFamily="@font/amiri"
                 android:text="@string/textoprincipal2"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="-35dp"
+                android:layout_marginBottom="35dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/aref_ruqaa"
-                android:textStyle="italic"
+                android:fontFamily="@font/alex_brush"
+                android:textStyle="italic|bold"
                 android:gravity='center_horizontal'
                 android:text="@string/textoprincipal4"
-                android:textSize="25sp" />
+                android:textSize="35sp" />
 
         </LinearLayout>
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="80dp"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/imageView"
@@ -11,17 +13,17 @@
         android:layout_height="30dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="15dp"
-        app:srcCompat="@drawable/hotel" />
+        app:srcCompat="@drawable/hotel"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="-1dp"
-        android:layout_marginLeft="-7dp"
-        android:fontFamily="@font/alata"
+        android:fontFamily="@font/amiri"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

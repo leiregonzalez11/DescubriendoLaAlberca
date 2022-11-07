@@ -62,7 +62,7 @@
             android:layout_margin="15dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.rutas.rutasActivity">
+            tools:context=".anterior.categorias.rutas.rutasActivity">
 
             <TextView
                 android:id="@+id/otrostitulo"

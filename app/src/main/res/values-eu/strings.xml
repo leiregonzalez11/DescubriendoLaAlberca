@@ -57,11 +57,11 @@
     <string name="masinfo">Informazio gehiago</string>
     <string name="alhajas">Urregintza</string>
     <string name="volver_a_artesania">Artisautzara itzuli</string>
-    <string name="interior_inicio">La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. \\n</string>
+    <string name="interior_inicio">La Albercako etxeak hiru zati nagusi zituen: ukuilua, etxebizitza eta biltegia. \n</string>
     <string name="rutas_inicio">Ipuin-herri orok ametsezko ingurunea izan behar du, eta La Alberca ez zen gutxiago izango.
         Pinu, harizti eta gaztainondo basoek herri honen inguruari bizia ematen diote, naturaz, faunaz eta eskaintzen diguten
-        aire garbiaz gozatzeko era guztietako ibilbideekin. </string>
-    <string name="alojamiento_inicio">Egun bat baino gehiago igaro nahi baduzu La Albercan bere sekretu guztiak ezagutzeko, ostatu hartzeko aukera asko daude:</string>
+        aire garbiaz gozatzeko era guztietako ibilbideekin.\n </string>
+    <string name="alojamiento_inicio">Egun bat baino gehiago igaro nahi baduzu La Albercan bere sekretu guztiak ezagutzeko, ostatu hartzeko aukera asko daude:\n</string>
     <string name="apart">Apartamentuak</string>
     <string name="hotel">Hotelak</string>
     <string name="casas">Rural Etxeak</string>
@@ -84,9 +84,9 @@
     <string name="telefono">Telefonoa:</string>
     <string name="atras">Aurrekoa</string>
     <string name="en_coche">Autoz</string>
-    <string name="comoLlegarCoche">Probintziako hiriburutik La Albercara iristeko modurik errazena SA-215 errepidetik da, Tamames herrira, eta han SA-201 errepiderako saihesbidea hartuko dugu, 76 bidaia egin ondoren gure helmugara eramango gaituena. Salamanca eta La Alberca bereizten dituen km.</string>
-    <string name="introComoLlegar">La Alberca Salamanca probintziaren hegoaldean dago, Cáceres probintziarekin muga egiten du. Bere muga-kokapenagatik, historikoki, La Alberca Las Hurdesen atea bezala ezagutzen zen.</string>
-    <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:</string>
+    <string name="comoLlegarCoche">Probintziako hiriburutik La Albercara iristeko modurik errazena SA-215 errepidetik da, Tamames herrira, eta han SA-201 errepiderako saihesbidea hartuko dugu, Salamanca eta La Alberca bereizten dituen 76km ko bidaia egin ondoren gure helmugara eramango gaituena.\n</string>
+    <string name="introComoLlegar">La Alberca Salamanca probintziaren hegoaldean dago, Cáceres probintziarekin muga egiten du. Bere muga-kokapenagatik, historikoki, La Alberca Las Hurdesen atea bezala ezagutzen zen.\n</string>
+    <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:\n</string>
     <string name="puntuacion">Puntuazioa:</string>
     <string name="en_bus">Autobusez</string>
 
@@ -117,7 +117,7 @@
         <item>Plato 1</item>
         <item>Plato 2</item>
     </string-array>
-    <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \\n</string>
-    <string name="textoprincipal3">"Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es Un pueblo para soñar "</string>
+    <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \n</string>
+    <string name="idioma_validator">hizkuntza</string>
 
 </resources>

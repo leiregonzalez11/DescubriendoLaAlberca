@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ajustesFragments.formFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#880E4F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.Toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <Button
+            android:id="@+id/btnAtrasForm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:background="#00880E4F"
+            android:drawableLeft="@drawable/arrow_back"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alex_brush"
+            android:layout_marginTop="15dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/layoutHist1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".anterior.ajustes.comoLlegarActivity">
+
+            <TextView
+                android:id="@+id/ajustestext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text="@string/formulario_de_contacto"
+                android:textColor="@color/black"
+                android:textAlignment="gravity"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/asuntoText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="-25dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/amiri"
+                        android:gravity="left"
+                        android:text="@string/asunto_del_mensaje"
+                        android:textAlignment="gravity"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        tools:targetApi="o" />
+
+                    <EditText
+                        android:id="@+id/asunto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="-30dp"
+                        android:ems="10"
+                        android:fontFamily="@font/amiri"
+                        android:hint="@string/asuntoet"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:textSize="17sp"
+                        android:padding="15dp"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/mensajeText"
+                        android:layout_width="323dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="-7dp"
+                        android:fontFamily="@font/amiri"
+                        android:textColor="@color/black"
+                        android:gravity="left"
+                        android:text="@string/mensaje"
+                        android:textAlignment="gravity"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        tools:targetApi="o" />
+
+                    <TextView
+                        android:id="@+id/mensajeText2"
+                        android:layout_width="323dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="-10dp"
+                        android:gravity="left"
+                        android:fontFamily="@font/amiri"
+                        android:text="@string/mensajeet"
+                        android:textAlignment="gravity"
+                        android:textColor="#66000000"
+                        android:textSize="18sp"
+                        tools:targetApi="o" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mensajeET"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/white">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mensaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="#00FFFFFF"
+                            android:fontFamily="@font/amiri"
+                            android:imeOptions="actionDone"
+                            android:textSize="17sp"
+                            android:paddingTop="15dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="18sp"
+                android:textColor="@color/white"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:text="@string/enviar" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

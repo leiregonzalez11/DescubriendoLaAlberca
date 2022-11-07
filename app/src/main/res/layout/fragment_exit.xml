@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicio.ExitFragment">
+    tools:context=".ExitFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,52 +20,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/alatsi"
+            android:layout_marginBottom="-4dp"
+            android:fontFamily="@font/amiri"
             android:hint="¿Seguro que quieres salir?"
             android:textAlignment="gravity"
             android:textColorHint="#000000"
-            android:textSize="20sp" />
+            android:textStyle="bold"
+            android:textSize="23sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSi"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal"
-                android:gravity="right">
+                android:layout_gravity="center"
+                android:layout_marginTop="-10dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="@string/button_tour"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
 
-                <Button
-                    android:id="@+id/buttonSi"
-                    android:layout_width="40dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:background="#00FFFFFF"
-                    android:fontFamily="@font/alatsi"
-                    android:text="@string/button_tour"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    tools:ignore="ButtonStyle" />
-
-                <Button
-                    android:id="@+id/buttonNo"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="0dp"
-                    android:textColor="@color/black"
-                    android:background="#00FFFFFF"
-                    android:fontFamily="@font/alatsi"
-                    android:text="Volver"
-                    android:textSize="15sp"
-                    android:layout_gravity="center"
-                    tools:ignore="ButtonStyle">
-                </Button>
+            <Button
+                android:id="@+id/buttonNo"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-10dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="Volver"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="ButtonStyle" />
 
 
-            </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

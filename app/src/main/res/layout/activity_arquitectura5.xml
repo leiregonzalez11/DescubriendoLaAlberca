@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.arquitectura.arquitecturaActivity5"
+            tools:context=".anterior.categorias.arquitectura.arquitecturaActivity5"
             tools:ignore="ScrollViewSize">
 
             <TextView
@@ -398,7 +398,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.697"
-                tools:context=".ajustes.rest.establecimientoActivity" />
+                tools:context=".anterior.ajustes.rest.establecimientoActivity" />
 
 
             <Button

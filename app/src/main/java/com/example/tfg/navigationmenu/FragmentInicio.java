@@ -1,11 +1,14 @@
 package com.example.tfg.navigationmenu;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.tfg.R;
@@ -14,10 +17,13 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.Objects;
+
 
 public class FragmentInicio extends Fragment {
 
     TextView texto;
+    String idioma, text = null;
 
     public FragmentInicio() {
         // Required empty public constructor
@@ -26,15 +32,21 @@ public class FragmentInicio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inicio, container, false);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        texto = requireView().findViewById(R.id.bienvenidatextPrueba);
+        //Toolbar
+        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
+        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
         //SLIDER
         SliderView sliderView = requireView().findViewById(R.id.imageSliderPrueba);
@@ -47,24 +59,5 @@ public class FragmentInicio extends Fragment {
         sliderView.startAutoCycle();
 
     }
-
-    public String determinarIdioma() {
-
-        String idioma = null;
-        String text = texto.getText().toString();
-
-        if (text.contains("¡Bienvenid@s")){
-            idioma = "es";
-        } else if (text.contains("Ongi")){
-            idioma = "eu";
-        }else if (text.contains("Welcome")){
-            idioma="en";
-        }else if (text.contains("Benvinguts")){
-            idioma="ca";
-        }
-
-        return idioma;
-    }
-
 
 }

@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.otros.otrosActivity">
+            tools:context=".anterior.categorias.otros.otrosActivity">
 
             <TextView
                 android:id="@+id/otrostitulo"

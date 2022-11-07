@@ -64,7 +64,7 @@
             android:paddingBottom="15dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".ajustes.comoLlegarActivity">
+            tools:context=".anterior.ajustes.comoLlegarActivity">
 
             <TextView
                 android:id="@+id/ajustestext"

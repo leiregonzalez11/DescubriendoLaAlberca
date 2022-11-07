@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.historia.historiaActivity2">
+            tools:context=".anterior.categorias.historia.historiaActivity2">
 
         </LinearLayout>
 

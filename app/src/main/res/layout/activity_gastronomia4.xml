@@ -62,7 +62,7 @@
             android:layout_margin="15dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.gastronomia.gastronomiaActivity4">
+            tools:context=".anterior.categorias.gastronomia.gastronomiaActivity4">
 
             <TextView
                 android:id="@+id/otrostitulo"

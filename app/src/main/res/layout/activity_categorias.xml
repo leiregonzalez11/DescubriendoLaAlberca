@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:padding="13sp"
-            tools:context=".categorias.categoriasActivity">
+            tools:context=".anterior.categorias.categoriasActivity">
 
             <ImageButton
                 android:id="@+id/botonhistoria"

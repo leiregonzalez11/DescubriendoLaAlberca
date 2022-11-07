@@ -12,10 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustes.rest.establecimientoActivity;
+import com.example.tfg.anterior.ajustes.rest.establecimientoActivity;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class BaresFragment extends Fragment {
 

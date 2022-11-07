@@ -13,10 +13,12 @@
     <style name="AppTheme.Toolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:fontFamily">@font/alata</item>
+        <item name="android:fontFamily">@font/amiri</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="popupTheme">@style/PopupTheme</item>
-        <item name="android:tint">@color/white</item>
+        <item name="android:tint">#FFFFFF</item>
         <!--<item name="navigationIcon">?attr/homeAsUpIndicator</item>-->
     </style>
 
@@ -27,13 +29,14 @@
 
     <style name="OverflowMenu" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
         <item name="android:dropDownVerticalOffset">-20dp</item>
-        <item name="android:fontFamily">@font/alata</item>
+        <item name="android:fontFamily">@font/amiri</item>
         <item name="overlapAnchor">false</item>
     </style>
 
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item name="android:fontFamily">@font/alata</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/amiri</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13dp</item>
     </style>
 
 

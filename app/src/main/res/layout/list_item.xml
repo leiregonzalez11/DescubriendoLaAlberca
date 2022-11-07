@@ -20,9 +20,9 @@
         android:layout_weight="1"
         android:layout_marginTop="-2dp"
         android:text="Text"
-        android:fontFamily="@font/alata"
+        android:fontFamily="@font/amiri"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

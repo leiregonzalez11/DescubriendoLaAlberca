@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.artesania.artesaniaActivity4">
+            tools:context=".anterior.categorias.artesania.artesaniaActivity4">
 
             <TextView
                 android:id="@+id/artetext"

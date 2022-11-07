@@ -62,7 +62,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.gastronomia.gastronomiaActivity2">
+            tools:context=".anterior.categorias.gastronomia.gastronomiaActivity2">
 
             <TextView
                 android:id="@+id/arteselectortext"

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustes.aloj.alojamientoActivity;
+import com.example.tfg.anterior.ajustes.aloj.alojamientoActivity;
 
 import java.util.ArrayList;
 

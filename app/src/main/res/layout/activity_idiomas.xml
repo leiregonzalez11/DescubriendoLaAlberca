@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustes.idiomasActivity">
+    tools:context=".anterior.ajustes.idiomasActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarId"
@@ -24,7 +24,8 @@
             android:textColor="@color/white"
             android:background="#880E4F"
             android:fontFamily="@font/alata"
-            android:src="@drawable/arrow_back"/>
+            android:src="@drawable/arrow_back"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/name"

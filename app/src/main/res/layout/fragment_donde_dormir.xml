@@ -6,12 +6,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ajustesFragments.dondeDormirFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#880E4F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.Toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageButton
+            android:id="@+id/atrasBtnDormir"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="18sp"
+            android:textColor="@color/white"
+            android:background="#880E4F"
+            android:fontFamily="@font/alata"
+            android:src="@drawable/arrow_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alex_brush"
+            android:layout_marginTop="15dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:id="@+id/layoutHist1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        android:gravity="center"
+        android:layout_marginTop="55dp"
+        android:padding="15dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,32 +63,29 @@
             android:id="@+id/otrostitulo"
             android:layout_width="323dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/alatsi"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/alex_brush"
             android:gravity="center"
             android:text="@string/ajustes4"
             android:textAlignment="gravity"
             android:textColor="@color/black"
-            android:textSize="35sp"
+            android:textSize="45sp"
             android:textStyle="bold"
             tools:targetApi="o" />
 
         <com.example.tfg.adapters.JustifyTextView
             android:id="@+id/otrostext"
-            android:layout_width="wrap_content"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginBottom="25dp"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:text="@string/alojamiento_inicio"
-            android:fontFamily="@font/alata"
+            android:fontFamily="@font/amiri"
             android:gravity="center"
             android:textAlignment="gravity"
-            android:textStyle="bold"
             tools:targetApi="o" />
 
         <com.google.android.material.card.MaterialCardView
@@ -60,7 +94,7 @@
             android:theme="@style/Theme.MaterialComponents.Light"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="-20dp"
+            android:layout_marginTop="-50dp"
             android:layout_marginBottom="40dp"
             app:cardElevation="10dp">
 

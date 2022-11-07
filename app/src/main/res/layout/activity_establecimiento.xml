@@ -63,7 +63,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".ajustes.rest.establecimientoActivity">
+            tools:context=".anterior.ajustes.rest.establecimientoActivity">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                     android:layout_margin="@dimen/fab_margin"
                     android:gravity="center"
                     android:orientation="vertical"
-                    tools:context=".ajustes.rest.establecimientoActivity">
+                    tools:context=".anterior.ajustes.rest.establecimientoActivity">
 
                     <TextView
                         android:id="@+id/nombreRest"
@@ -255,7 +255,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.697"
-                        tools:context=".ajustes.rest.establecimientoActivity" />
+                        tools:context=".anterior.ajustes.rest.establecimientoActivity" />
 
                 </LinearLayout>
 

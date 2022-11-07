@@ -1,25 +1,20 @@
 package com.example.tfg.navigationmenu;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.R;
-import com.example.tfg.categorias.arquitectura.ArquitecturaActivity;
-import com.example.tfg.categorias.artesania.artesaniaActivity;
-import com.example.tfg.categorias.categoriasActivity;
-import com.example.tfg.categorias.gastronomia.gastronomiaActivity;
-import com.example.tfg.categorias.otros.otrosActivity;
-import com.example.tfg.categorias.rutas.rutasActivity;
-import com.example.tfg.categorias.tradiciones.tradicionesActivity;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -40,18 +35,24 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        idioma = requireArguments().getString("idioma");
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_categorias, container, false);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        storageRef = FirebaseStorage.getInstance().getReference();
+        //Toolbar
+        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
+        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
 
+        idioma = determinarIdioma();
+
+        storageRef = FirebaseStorage.getInstance().getReference();
         setBtnListeners();
 
     }
@@ -165,8 +166,29 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageButton btn){
+        System.out.println(path);
         StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getContext()).load(uri).into(btn));
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(btn));
+    }
+
+    public String determinarIdioma() {
+
+        String idioma = null;
+        TextView texto = requireView().findViewById(R.id.textidioma);
+        String text = texto.getText().toString();
+        System.out.println("TEXTO 2 DETERMINAR IDIOMA: " + text);
+
+        if (text.equals("idioma")){
+            idioma = "es";
+        } else if (text.equals("hizkuntza")){
+            idioma = "eu";
+        }else if (text.equals("language")){
+            idioma="en";
+        }/*else if (text.equals("idiomaca")){
+            idioma="ca";
+        }*/
+
+        return idioma;
     }
 
 

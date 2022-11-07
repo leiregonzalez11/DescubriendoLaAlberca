@@ -4,11 +4,11 @@
     <string name="tituloprincipal">Benvinguts a La Alberca!</string>
 
     <string name="textoprincipal">Al sud de Salamanca, en la vessant nord dela Sierra de Francia, es troba La Alberca,
-        un poble per a somiar, com li agrada dir al poeta i catedràtic Don José María Requejo.</string>
+        un poble per a somiar, com li agrada dir al poeta i catedràtic Don José María Requejo.\n</string>
 
     <string name="textoprincipal2">Declarat Conjunt Històric Artístic en 1940,
         aquest preciós poble destaca pel seu entramat urbà, conservant com pocs l\'arquitectura
-        típica de la Sierra de Francia.</string>
+        típica de la Sierra de Francia.\n</string>
 
     <string name="dialog_tour_titulo">Benvinguts a La Alberca!</string>
     <string name="dialog_tour"> Ets nou? Vols fer un tour per l\'aplicació?</string>
@@ -57,9 +57,9 @@
     <string name="masinfo">Més informació</string>
     <string name="alhajas">Orfebreria</string>
     <string name="volver_a_artesania">Tornar a artesanía</string>
-    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge. \\n</string>
-    <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i La Alberca no anava a ser menys. Boscos de         pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la         naturalesa, de la fauna i de l\'aire pur que ens ofereixen.</string>
-    <string name="alojamiento_inicio">Si desitges passar més d\'un dia en La Alberca per a poder conèixer tots els seus secrets, existeixen moltes opcions d\'allotjament:</string>
+    <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge. \n</string>
+    <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i La Alberca no anava a ser menys. Boscos de         pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la naturalesa, de la fauna i de l\'aire pur que ens ofereixen.\n</string>
+    <string name="alojamiento_inicio">Si desitges passar més d\'un dia en La Alberca per a poder conèixer tots els seus secrets, existeixen moltes opcions d\'allotjament:\n</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>
@@ -98,15 +98,14 @@
     <string name="ajustes6">Comerç</string>
 
     <string name="comoLlegar2">Com arribar fins a La Alberca?</string>
-    <string name="comoLlegarCoche">La manera més fàcil d\'arribar a l\'Alberca des de la capital de la província és mitjançant la carretera SA-215, fins al poble de Tamames, on agafarem el trencall a la SA-201, que ens portarà fins a la nostra destinació després de recórrer els 76 km que separen Salamanca de l\'Alberca.</string>
+    <string name="comoLlegarCoche">La manera més fàcil d\'arribar a l\'Alberca des de la capital de la província és mitjançant la carretera SA-215, fins al poble de Tamames, on agafarem el trencall a la SA-201, que ens portarà fins a la nostra destinació després de recórrer els 76 km que separen Salamanca de l\'Alberca.\n</string>
     <string name="en_coche">Amb Cotxe</string>
-    <string name="introComoLlegar">L\'Alberca es troba al sud de la província de Salamanca, fent frontera amb la província de Càceres. A causa de la seva localització limítrofa, històricament, es coneixia a l\'Alberca com la porta de Las Hurdes.</string>
+    <string name="introComoLlegar">L\'Alberca es troba al sud de la província de Salamanca, fent frontera amb la província de Càceres. A causa de la seva localització limítrofa, històricament, es coneixia a l\'Alberca com la porta de Las Hurdes.\n</string>
     <string name="en_bus">A Bus</string>
-    <string name="comoLlegarBus">Si no disposeu de vehicle propi per poder venir fins a l\'Alberca o simplement voleu venir amb autobús, hi ha línies d\'autobusos amb diferents horaris d\'anada i tornada per poder visitar el poble:</string>
+    <string name="comoLlegarBus">Si no disposeu de vehicle propi per poder venir fins a l\'Alberca o simplement voleu venir amb autobús, hi ha línies d\'autobusos amb diferents horaris d\'anada i tornada per poder visitar el poble:\n</string>
     <string name="telefono">Telefono:</string>
     <string name="puntuacion">Puntuació:</string>
-    <string name="otros_lugares">Als voltants de La Alberca hi ha molts altres preciosos pobles i llocs per descobrir. Aquí en van uns quants: \\n</string>
-    <string name="textoprincipal3">"Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es Un pueblo para soñar "</string>
-
+    <string name="otros_lugares">Als voltants de La Alberca hi ha molts altres preciosos pobles i llocs per descobrir. Aquí en van uns quants: \n</string>
+    <string name="idioma_validator">idiomaca</string>
 
 </resources>

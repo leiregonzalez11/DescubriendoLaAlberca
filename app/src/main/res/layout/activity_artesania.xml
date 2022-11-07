@@ -62,7 +62,7 @@
             android:layout_margin="15dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.artesania.artesaniaActivity">
+            tools:context=".anterior.categorias.artesania.artesaniaActivity">
 
             <TextView
                 android:id="@+id/artetitulo"

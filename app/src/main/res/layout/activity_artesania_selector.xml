@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustes.ajustesActivity">
+    tools:context=".anterior.ajustes.ajustesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -65,7 +65,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".categorias.artesania.artesaniaSelectorActivity">
+            tools:context=".anterior.categorias.artesania.artesaniaSelectorActivity">
 
             <TextView
                 android:id="@+id/arteselectortext"

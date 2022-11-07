@@ -28,103 +28,103 @@
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".ajustes.comercioLocalActivity"
+            android:name=".anterior.ajustes.comercioLocalActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.gastronomia.gastronomiaActivity4"
+            android:name=".anterior.categorias.gastronomia.gastronomiaActivity4"
             android:exported="false" />
         <activity
-            android:name=".categorias.gastronomia.gastronomiaActivity3"
+            android:name=".anterior.categorias.gastronomia.gastronomiaActivity3"
             android:exported="false" />
         <activity
-            android:name=".ajustes.comoLlegarActivity"
+            android:name=".anterior.ajustes.comoLlegarActivity"
             android:exported="false" />
         <activity
-            android:name=".ajustes.contactoActivity"
+            android:name=".anterior.ajustes.contactoActivity"
             android:exported="false" />
         <activity
-            android:name=".ajustes.rest.establecimientoActivity"
+            android:name=".anterior.ajustes.rest.establecimientoActivity"
             android:exported="false" />
         <activity
-            android:name=".ajustes.dondeComerActivity"
+            android:name=".anterior.ajustes.dondeComerActivity"
             android:exported="false" />
         <activity
-            android:name=".ajustes.aloj.alojamientoActivity"
+            android:name=".anterior.ajustes.aloj.alojamientoActivity"
             android:exported="false" />
         <activity
-            android:name=".ajustes.dondeDormirActivity"
+            android:name=".anterior.ajustes.dondeDormirActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.rutas.rutasActivity"
+            android:name=".anterior.categorias.rutas.rutasActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.otros.otrosActivity"
+            android:name=".anterior.categorias.otros.otrosActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaActivity5"
+            android:name=".anterior.categorias.artesania.artesaniaActivity5"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaSelectorActivity"
+            android:name=".anterior.categorias.artesania.artesaniaSelectorActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.gastronomia.gastronomiaActivity"
+            android:name=".anterior.categorias.gastronomia.gastronomiaActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.gastronomia.gastronomiaActivity2"
+            android:name=".anterior.categorias.gastronomia.gastronomiaActivity2"
             android:exported="false" />
         <activity
-            android:name=".categorias.tradiciones.tradicionesActivity"
+            android:name=".anterior.categorias.tradiciones.tradicionesActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.tradiciones.tradicionesActivity2"
+            android:name=".anterior.categorias.tradiciones.tradicionesActivity2"
             android:exported="false" />
         <activity
-            android:name=".categorias.historia.historiaActivity2"
+            android:name=".anterior.categorias.historia.historiaActivity2"
             android:exported="false" />
         <activity
-            android:name=".categorias.historia.historiaActivity"
+            android:name=".anterior.categorias.historia.historiaActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.arquitectura.arquitecturaActivity5"
+            android:name=".anterior.categorias.arquitectura.arquitecturaActivity5"
             android:exported="false" />
         <activity
-            android:name=".ajustes.idiomasActivity"
+            android:name=".anterior.ajustes.idiomasActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaActivity4"
+            android:name=".anterior.categorias.artesania.artesaniaActivity4"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaActivity3"
+            android:name=".anterior.categorias.artesania.artesaniaActivity3"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaActivity2"
+            android:name=".anterior.categorias.artesania.artesaniaActivity2"
             android:exported="false" />
         <activity
-            android:name=".categorias.artesania.artesaniaActivity"
+            android:name=".anterior.categorias.artesania.artesaniaActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.arquitectura.arquitecturaActivity4"
+            android:name=".anterior.categorias.arquitectura.arquitecturaActivity4"
             android:exported="false" />
         <activity
-            android:name=".categorias.arquitectura.arquitecturaActivity3"
+            android:name=".anterior.categorias.arquitectura.arquitecturaActivity3"
             android:exported="false" />
         <activity
-            android:name=".categorias.arquitectura.arquitecturaActivity2"
+            android:name=".anterior.categorias.arquitectura.arquitecturaActivity2"
             android:exported="false" />
         <activity
-            android:name=".ajustes.ajustesActivity"
+            android:name=".anterior.ajustes.ajustesActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.categoriasActivity"
+            android:name=".anterior.categorias.categoriasActivity"
             android:exported="false" />
         <activity
-            android:name=".mapa.MapsActivity"
+            android:name=".anterior.mapa.MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".categorias.arquitectura.ArquitecturaActivity"
+            android:name=".anterior.categorias.arquitectura.ArquitecturaActivity"
             android:exported="false" />
         <activity
-            android:name=".inicio.MainActivity"
+            android:name=".anterior.inicio.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity_splash_screen"

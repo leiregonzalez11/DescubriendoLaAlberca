@@ -6,10 +6,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity2">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#880E4F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.Toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alex_brush"
+            android:layout_marginTop="18dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,9 +48,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            android:padding="13sp"
-            tools:context=".categorias.categoriasActivity">
+            android:padding="15dp"
+            tools:context=".anterior.categorias.categoriasActivity">
 
             <ImageButton
                 android:id="@+id/botonhistoria"
@@ -32,7 +57,7 @@
                 android:layout_height="120dp"
                 android:background="@color/white"
                 android:layout_marginStart="70dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/botonartesania"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +70,7 @@
                 android:layout_width="160dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -160,9 +185,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/botonpersonajes"
                 tools:ignore="ContentDescription" />
 
+            <TextView
+                android:id="@+id/textidioma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/idioma_validator"
+                android:textColor="#00000000"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="14dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </ScrollView>
 

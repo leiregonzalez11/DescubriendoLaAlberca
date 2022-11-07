@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustes.rest.establecimientoActivity;
+import com.example.tfg.anterior.ajustes.rest.establecimientoActivity;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,7 @@ public class RestaurantesFragment extends Fragment {
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
 
-        ListView listView = (ListView) getView().findViewById(R.id.listviewRest);
+        ListView listView = requireView().findViewById(R.id.listviewRest);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
