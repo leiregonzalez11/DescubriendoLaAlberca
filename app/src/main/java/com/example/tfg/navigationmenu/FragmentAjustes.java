@@ -32,10 +32,11 @@ import java.util.Objects;
 
 public class FragmentAjustes extends Fragment {
 
-    String opc1, opc2, opc3, opc4, opc5, idioma;
+    Bundle args;
     Fragment fragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    String opc1, opc2, opc3, opc4, opc5, idioma, iu;
 
     public FragmentAjustes() {
         // Required empty public constructor
@@ -45,6 +46,10 @@ public class FragmentAjustes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(true);
+        args = new Bundle();
+        args.putString("iu", "ajustes");
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }
@@ -53,13 +58,6 @@ public class FragmentAjustes extends Fragment {
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
-
-        setHasOptionsMenu(true);
 
         ListView listView = requireView().findViewById(R.id.listview);
         ListView listView2 = requireView().findViewById(R.id.listview2);
@@ -178,15 +176,13 @@ public class FragmentAjustes extends Fragment {
     @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem menuItem) {
 
-        Bundle args = new Bundle();
-        args.putString("idioma", idioma);
-
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
                 //Toast.makeText(getContext(), "Has pulsado: Contacto", Toast.LENGTH_LONG).show();
 
                 //Añadimos los argumentos
                 fragment = new formFragment();
+                fragment.setArguments(args);
 
                 // Obtener el administrador de fragmentos a través de la actividad
                 fragmentManager = requireActivity().getSupportFragmentManager();
@@ -200,13 +196,14 @@ public class FragmentAjustes extends Fragment {
 
                 // Cambiar
                 fragmentTransaction.commit();
-                return true;
+                break;
 
             case R.id.menu_idioma:
                 //Toast.makeText(getContext(), "Has pulsado: Idiomas", Toast.LENGTH_LONG).show();
 
                 //Añadimos los argumentos
                 fragment = new idiomasFragment();
+                fragment.setArguments(args);
 
                 // Obtener el administrador de fragmentos a través de la actividad
                 fragmentManager = requireActivity().getSupportFragmentManager();
@@ -220,11 +217,12 @@ public class FragmentAjustes extends Fragment {
 
                 // Cambiar
                 fragmentTransaction.commit();
-                return true;
+                break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
+        return true;
     }
 
 

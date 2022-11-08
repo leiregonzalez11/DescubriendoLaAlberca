@@ -1,14 +1,10 @@
 package com.example.tfg.navigationmenu;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.example.tfg.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,32 +22,23 @@ public class FragmentMapa extends SupportMapFragment implements OnMapReadyCallba
         // Required empty public constructor
     }
 
-    @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        setHasOptionsMenu(false);
 
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         getMapAsync(this);
-
         return rootView;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_mapa, container, false);
     }
 
-    @SuppressLint("ResourceAsColor")
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        /*
-        * //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
-        * */
 
     }
 

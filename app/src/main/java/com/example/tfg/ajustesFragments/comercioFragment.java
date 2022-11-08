@@ -29,6 +29,8 @@ public class comercioFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_comercio, container, false);
     }
@@ -37,12 +39,6 @@ public class comercioFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         String text1 = getResources().getString(R.string.alimentacion);
         String text2 = getResources().getString(R.string.artesaniamayus);
@@ -89,15 +85,15 @@ public class comercioFragment extends Fragment implements View.OnClickListener{
         });
 
         //Botón atras
-        ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComercio);
-        atrasBtn.setOnClickListener(this);
+        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComercio);
+        //atrasBtn.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        ImageButton btn = (ImageButton) view;
+        /*ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.atrasBtnComercio){
             //Definimos los argumentos
@@ -117,6 +113,6 @@ public class comercioFragment extends Fragment implements View.OnClickListener{
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 }

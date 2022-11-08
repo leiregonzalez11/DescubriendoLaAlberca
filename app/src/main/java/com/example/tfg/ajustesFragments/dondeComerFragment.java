@@ -39,6 +39,8 @@ public class dondeComerFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_donde_comer, container, false);
     }
@@ -47,12 +49,6 @@ public class dondeComerFragment extends Fragment implements View.OnClickListener
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         String text1 = getResources().getString(R.string.bares);
         String text2 = getResources().getString(R.string.rest);
@@ -97,8 +93,8 @@ public class dondeComerFragment extends Fragment implements View.OnClickListener
         });
 
         //Botón atras
-        ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComer);
-        atrasBtn.setOnClickListener(this);
+        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComer);
+        //atrasBtn.setOnClickListener(this);
 
     }
 
@@ -106,7 +102,7 @@ public class dondeComerFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        ImageButton btn = (ImageButton) view;
+        /*ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.atrasBtnComer){
             //Definimos los argumentos
@@ -126,7 +122,7 @@ public class dondeComerFragment extends Fragment implements View.OnClickListener
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
 }

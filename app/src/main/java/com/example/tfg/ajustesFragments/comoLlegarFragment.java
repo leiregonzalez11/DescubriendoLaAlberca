@@ -40,6 +40,8 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_como_llegar, container, false);
     }
@@ -48,12 +50,6 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         storageRef = FirebaseStorage.getInstance().getReference();
         img1 = requireView().findViewById(R.id.comollegar3);
@@ -67,8 +63,8 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
         spinner.setOnItemSelectedListener(this);
 
         //Botón atras
-        ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComoLlegar);
-        atrasBtn.setOnClickListener(this);
+        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComoLlegar);
+        //atrasBtn.setOnClickListener(this);
 
     }
 
@@ -108,7 +104,7 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        ImageButton btn = (ImageButton) view;
+        /*ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.atrasBtnComoLlegar){
             //Definimos los argumentos
@@ -128,7 +124,7 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
 

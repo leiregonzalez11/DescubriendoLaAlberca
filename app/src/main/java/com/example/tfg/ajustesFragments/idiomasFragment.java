@@ -21,6 +21,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tfg.R;
 import com.example.tfg.navigationmenu.FragmentAjustes;
+import com.example.tfg.navigationmenu.FragmentCategorias;
+import com.example.tfg.navigationmenu.FragmentInicio;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -29,7 +31,7 @@ import java.util.Objects;
 public class idiomasFragment extends Fragment implements View.OnClickListener {
 
     RadioButton radioCas, radioEus, radioIng;
-    String language, idioma;
+    String language, idioma, iu;
 
     public idiomasFragment() {
         // Required empty public constructor
@@ -39,6 +41,10 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+        iu = requireArguments().getString("iu");
+        System.out.println("IU IDIOMAS: " + iu);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_idiomas, container, false);
     }
@@ -47,12 +53,6 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         radioCas = requireView().findViewById(R.id.radio_es);
         radioEus = requireView().findViewById(R.id.radio_eu);
@@ -75,8 +75,8 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
         }
 
         //Botón atras
-        ImageButton atrasBtn = requireView().findViewById(R.id.idiomasBtn);
-        atrasBtn.setOnClickListener(this);
+        //ImageButton atrasBtn = requireView().findViewById(R.id.idiomasBtn);
+        //atrasBtn.setOnClickListener(this);
 
         comprobarIdioma();
 
@@ -87,7 +87,7 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        ImageButton btn = (ImageButton) view;
+        /*ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.idiomasBtn){
             //Definimos los argumentos
@@ -107,7 +107,7 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
     private void comprobarIdioma(){
@@ -115,27 +115,41 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
         radioCas.setOnClickListener(view -> {
             language ="es";
             changeLanguage();
-            start();
+            start(iu);
 
         });
 
         radioEus.setOnClickListener(view -> {
             language="eu";
             changeLanguage();
-            start();
+            start(iu);
         });
 
         radioIng.setOnClickListener(view -> {
             language="en";
             changeLanguage();
-            start();
+            start(iu);
         });
 
     }
 
-    private void start() {
-        //Creamos el Fragment
-        Fragment fragment = new FragmentAjustes();
+    private void start(String iu) {
+
+        Fragment fragment = null;
+
+        //Determinamos el fragment de retorno y creamos el Fragment
+
+        switch (iu) {
+            case "inicio":
+                fragment = new FragmentInicio();
+                break;
+            case "categorias":
+                fragment = new FragmentCategorias();
+                break;
+            case "ajustes":
+                fragment = new FragmentAjustes();
+                break;
+        }
 
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -144,6 +158,7 @@ public class idiomasFragment extends Fragment implements View.OnClickListener {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         // Remplazamos el contenido principal por el fragmento
+        assert fragment != null;
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
 

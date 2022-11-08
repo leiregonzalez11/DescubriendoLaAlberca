@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -16,11 +17,11 @@ import com.example.tfg.navigationmenu.FragmentMapa;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.Objects;
+
 public class MainActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
-    FragmentInicio inicio;
-    //String tour;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -28,12 +29,16 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        inicio = new FragmentInicio();
-        loadFragment(inicio);
+        Toolbar myToolbar = findViewById(R.id.toolbarPrueba);
+        setSupportActionBar(myToolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        myToolbar.setTitleTextColor(R.color.white);
+
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewPrueba);
         bottomNavigationView.setOnItemSelectedListener(this);
+        loadFragment(new FragmentInicio());
 
     }
 
@@ -74,9 +79,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
 
     @Override
     public void onBackPressed(){
-        DialogFragment tourSiFragment = new ExitFragment();
-        tourSiFragment.setCancelable(false);
-        tourSiFragment.show(getSupportFragmentManager(),"exit_fragment");
+        DialogFragment exitFragment = new ExitFragment();
+        exitFragment.setCancelable(false);
+        exitFragment.show(getSupportFragmentManager(),"exit_fragment");
     }
 
 }

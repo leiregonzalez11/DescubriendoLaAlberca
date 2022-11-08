@@ -40,6 +40,8 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_donde_dormir, container, false);
     }
@@ -48,12 +50,6 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         String text1 = getResources().getString(R.string.apart);
         String text2 = getResources().getString(R.string.hotel);
@@ -100,8 +96,8 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
         });
 
         //Botón atras
-        ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnDormir);
-        atrasBtn.setOnClickListener(this);
+        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnDormir);
+        //atrasBtn.setOnClickListener(this);
 
     }
 
@@ -109,7 +105,7 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        ImageButton btn = (ImageButton) view;
+        /*ImageButton btn = (ImageButton) view;
 
         if (btn.getId() == R.id.atrasBtnDormir){
             //Definimos los argumentos
@@ -129,7 +125,7 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
 }

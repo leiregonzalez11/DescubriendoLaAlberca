@@ -30,6 +30,7 @@ import com.example.tfg.adapters.tabAdapterComer;
 import com.example.tfg.anterior.ajustes.ajustesActivity;
 import com.example.tfg.anterior.ajustes.contactoActivity;
 import com.example.tfg.navigationmenu.FragmentAjustes;
+import com.example.tfg.navigationmenu.FragmentCategorias;
 import com.example.tfg.navigationmenu.FragmentInicio;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
@@ -41,10 +42,10 @@ import java.util.Objects;
 
 public class formFragment extends Fragment implements View.OnClickListener {
 
+    boolean enviado;
     EditText asuntoET;
     TextInputEditText mensajeET;
-    boolean enviado;
-    String asunto, asuntoet, mensajeet;
+    String asunto, asuntoet, mensajeet, iu;
 
     public formFragment() {
         // Required empty public constructor
@@ -54,6 +55,10 @@ public class formFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(false);
+        iu = requireArguments().getString("iu");
+        System.out.println("IU FORM: " + iu);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_form, container, false);
     }
@@ -62,12 +67,6 @@ public class formFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         asuntoET= requireView().findViewById(R.id.asunto);
         asuntoet = asuntoET.getHint().toString().trim();
@@ -88,8 +87,8 @@ public class formFragment extends Fragment implements View.OnClickListener {
         Button siguienteBtn = requireView().findViewById(R.id.btnEnviar);
         siguienteBtn.setOnClickListener(this);
 
-        Button atrasBtn = requireView().findViewById(R.id.btnAtrasForm);
-        atrasBtn.setOnClickListener(this);
+        //Button atrasBtn = requireView().findViewById(R.id.btnAtrasForm);
+        //atrasBtn.setOnClickListener(this);
 
     }
 
@@ -109,7 +108,7 @@ public class formFragment extends Fragment implements View.OnClickListener {
                 }
 
             }
-        } else if (btn.getId() == R.id.btnAtrasForm){
+        } /*else if (btn.getId() == R.id.btnAtrasForm){
 
             //Creamos el Fragment
             Fragment fragment = new FragmentAjustes();
@@ -126,16 +125,28 @@ public class formFragment extends Fragment implements View.OnClickListener {
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
     @Override
     public void onResume() {
         if (enviado){
+
+            Fragment fragment = null;
+
             Toast.makeText(getContext(), "Email Enviado", Toast.LENGTH_LONG).show();
 
-            //Creamos el Fragment
-            Fragment fragment = new FragmentAjustes();
+            switch (iu) {
+                case "inicio":
+                    fragment = new FragmentInicio();
+                    break;
+                case "categorias":
+                    fragment = new FragmentCategorias();
+                    break;
+                case "ajustes":
+                    fragment = new FragmentAjustes();
+                    break;
+            }
 
             // Obtenemos el administrador de fragmentos a través de la actividad
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -144,6 +155,7 @@ public class formFragment extends Fragment implements View.OnClickListener {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
             // Remplazamos el contenido principal por el fragmento
+            assert fragment != null;
             fragmentTransaction.replace(R.id.relativelayout, fragment);
             fragmentTransaction.addToBackStack(null);
 

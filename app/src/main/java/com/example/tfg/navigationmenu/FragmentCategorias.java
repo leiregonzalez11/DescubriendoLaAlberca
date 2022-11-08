@@ -3,6 +3,9 @@ package com.example.tfg.navigationmenu;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -12,9 +15,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.formFragment;
+import com.example.tfg.ajustesFragments.idiomasFragment;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -23,9 +30,13 @@ import java.util.Objects;
 
 public class FragmentCategorias extends Fragment implements View.OnClickListener{
 
+    Bundle args;
+    Fragment fragment;
+    String idioma, path, iu;
+    FragmentManager fragmentManager;
     private StorageReference storageRef;
+    FragmentTransaction fragmentTransaction;
     protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro, btnPers, btnRutas, btnOtros, btnArte, btnArqui;
-    String idioma, path;
 
     public FragmentCategorias() {
         // Required empty public constructor
@@ -35,6 +46,10 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        setHasOptionsMenu(true);
+        args = new Bundle();
+        args.putString("iu", "categorias");
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_categorias, container, false);
     }
@@ -43,12 +58,6 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
-
-        //Toolbar
-        Toolbar myToolbar = requireView().findViewById(R.id.toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
-        Objects.requireNonNull(Objects.requireNonNull((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-        myToolbar.setTitleTextColor(R.color.white);
 
         idioma = determinarIdioma();
 
@@ -190,6 +199,62 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
 
         return idioma;
     }
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menuusuario, menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+
+        switch (menuItem.getItemId()) {
+            case R.id.menu_contacto:
+                //Toast.makeText(getContext(), "Has pulsado: Contacto", Toast.LENGTH_LONG).show();
+                //Añadimos los argumentos
+                fragment = new formFragment();
+                fragment.setArguments(args);
+
+                // Obtener el administrador de fragmentos a través de la actividad
+                fragmentManager = requireActivity().getSupportFragmentManager();
+
+                // Definir una transacción
+                fragmentTransaction = fragmentManager.beginTransaction();
+
+                // Remplazar el contenido principal por el fragmento
+                fragmentTransaction.replace(R.id.relativelayout, fragment);
+                fragmentTransaction.addToBackStack(null);
+
+                // Cambiar
+                fragmentTransaction.commit();
+                return true;
+
+            case R.id.menu_idioma:
+                //Toast.makeText(getContext(), "Has pulsado: Idiomas", Toast.LENGTH_LONG).show();
+
+                //Añadimos los argumentos
+                fragment = new idiomasFragment();
+                fragment.setArguments(args);
+
+                // Obtener el administrador de fragmentos a través de la actividad
+                fragmentManager = requireActivity().getSupportFragmentManager();
+
+                // Definir una transacción
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                // Remplazar el contenido principal por el fragmento
+                fragmentTransaction.replace(R.id.relativelayout, fragment);
+                fragmentTransaction.addToBackStack(null);
+
+                // Cambiar
+                fragmentTransaction.commit();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
+    }
+
 
 
 }
