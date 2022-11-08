@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class ApartFragment extends Fragment{
 
     ArrayList lista1;
-    String idioma, nombreAloj;
+    String nombreAloj;
 
     public ApartFragment() {
         // Required empty public constructor

@@ -8,36 +8,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.bumptech.glide.Glide;
 import com.example.tfg.R;
-import com.example.tfg.adapters.SpinnerAdapter;
-import com.example.tfg.adapters.tabAdapter;
-import com.example.tfg.adapters.tabAdapterComer;
-import com.example.tfg.anterior.ajustes.ajustesActivity;
-import com.example.tfg.anterior.ajustes.contactoActivity;
 import com.example.tfg.navigationmenu.FragmentAjustes;
 import com.example.tfg.navigationmenu.FragmentCategorias;
 import com.example.tfg.navigationmenu.FragmentInicio;
-import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 

@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.tfg.anterior.inicio.MainActivity;
 import com.example.tfg.R;
 
 public class tourFragment extends DialogFragment{
@@ -22,7 +21,7 @@ public class tourFragment extends DialogFragment{
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
-        Intent inicio = new Intent(getActivity(), MainActivity.class);
+        Intent inicio = new Intent(getActivity(), null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
         //builder.setTitle(R.string.dialog_tour_titulo);

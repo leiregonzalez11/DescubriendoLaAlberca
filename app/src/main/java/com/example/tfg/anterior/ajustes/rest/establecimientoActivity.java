@@ -20,11 +20,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.anterior.ajustes.ajustesActivity;
-import com.example.tfg.anterior.ajustes.dondeComerActivity;
-import com.example.tfg.anterior.categorias.categoriasActivity;
-import com.example.tfg.anterior.inicio.MainActivity;
-import com.example.tfg.anterior.mapa.MapsActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -39,7 +34,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Objects;
 
 
-public class establecimientoActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener, OnMapReadyCallback {
+public class establecimientoActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback {
 
     BottomNavigationView bottomNavigationView;
     GoogleMap mMap;
@@ -116,11 +111,6 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
         ImageButton atrasBtn = findViewById(R.id.restAtras);
         atrasBtn.setOnClickListener(this);
 
-        //MENU
-        bottomNavigationView = findViewById(R.id.navigationViewRest);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_ajustes);
-        bottomNavigationView.setOnItemSelectedListener(this);
-
     }
 
     @Override
@@ -161,43 +151,6 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(getApplicationContext()).load(uri).into(img));
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.navigation_inicio:
-                Intent inicio = new Intent(this, MainActivity.class);
-                startActivity(inicio);
-                finish();
-                return true;
-
-            case R.id.navigation_mapa:
-                Intent mapa = new Intent(this, MapsActivity.class);
-                mapa.putExtra("idioma",idioma);
-                startActivity(mapa);
-                finish();
-                return true;
-
-            case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
-                categorias.putExtra("idioma",idioma);
-                startActivity(categorias);
-                finish();
-                return true;
-
-            case R.id.navigation_ajustes:
-                Intent ajustes = new Intent(this, ajustesActivity.class);
-                ajustes.putExtra("idioma", idioma);
-                startActivity(ajustes);
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-    }
 
     @Override
     public void onBackPressed() {}
@@ -211,7 +164,7 @@ public class establecimientoActivity extends AppCompatActivity implements Naviga
         switch (btn.getId()){
 
             case R.id.restAtras:
-                Intent atras = new Intent(this, dondeComerActivity.class);
+                Intent atras = new Intent(this, null);
                 atras.putExtra("idioma", idioma);
                 startActivity(atras);
                 break;

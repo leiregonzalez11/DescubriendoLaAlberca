@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.tfg">
+    package="com.example.tfg"
+    tools:ignore="CoarseFineLocation">
+
     <!-- Herramientas del teléfono utilizadas -->
     <uses-feature
         android:name="android.hardware.camera2.full"
-        android:required="true" /> <!-- Permisos dados -->d
+        android:required="true" /> <!-- Permisos dados -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -24,11 +25,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.ajustes.comercioLocalActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".anterior.categorias.gastronomia.gastronomiaActivity4"
@@ -37,22 +40,10 @@
             android:name=".anterior.categorias.gastronomia.gastronomiaActivity3"
             android:exported="false" />
         <activity
-            android:name=".anterior.ajustes.comoLlegarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.ajustes.contactoActivity"
-            android:exported="false" />
-        <activity
             android:name=".anterior.ajustes.rest.establecimientoActivity"
             android:exported="false" />
         <activity
-            android:name=".anterior.ajustes.dondeComerActivity"
-            android:exported="false" />
-        <activity
             android:name=".anterior.ajustes.aloj.alojamientoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.ajustes.dondeDormirActivity"
             android:exported="false" />
         <activity
             android:name=".anterior.categorias.rutas.rutasActivity"
@@ -79,16 +70,7 @@
             android:name=".anterior.categorias.tradiciones.tradicionesActivity2"
             android:exported="false" />
         <activity
-            android:name=".anterior.categorias.historia.historiaActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.historia.historiaActivity"
-            android:exported="false" />
-        <activity
             android:name=".anterior.categorias.arquitectura.arquitecturaActivity5"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.ajustes.idiomasActivity"
             android:exported="false" />
         <activity
             android:name=".anterior.categorias.artesania.artesaniaActivity4"
@@ -112,12 +94,6 @@
             android:name=".anterior.categorias.arquitectura.arquitecturaActivity2"
             android:exported="false" />
         <activity
-            android:name=".anterior.ajustes.ajustesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.categoriasActivity"
-            android:exported="false" />
-        <activity
             android:name=".anterior.mapa.MapsActivity"
             android:exported="false" />
         <activity
@@ -132,13 +108,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
     </application>
 
 </manifest>

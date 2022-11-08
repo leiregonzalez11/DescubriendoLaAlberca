@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -115,13 +115,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/botonpersonajes"
+                app:layout_constraintEnd_toStartOf="@+id/botoncultura"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/botonmonumentos"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/botonpersonajes"
+                android:id="@+id/botoncultura"
                 android:layout_width="160dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
@@ -143,7 +143,7 @@
                 android:background="@color/white"
                 app:layout_constraintEnd_toStartOf="@+id/botonotros"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/botonpersonajes"
+                app:layout_constraintTop_toBottomOf="@+id/botoncultura"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -156,7 +156,7 @@
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botonruta"
-                app:layout_constraintTop_toBottomOf="@+id/botonpersonajes"
+                app:layout_constraintTop_toBottomOf="@+id/botoncultura"
                 tools:ignore="ContentDescription" />
 
             <TextView

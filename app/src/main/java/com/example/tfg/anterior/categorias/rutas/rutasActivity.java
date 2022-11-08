@@ -19,10 +19,6 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
-import com.example.tfg.anterior.ajustes.ajustesActivity;
-import com.example.tfg.anterior.categorias.categoriasActivity;
-import com.example.tfg.anterior.inicio.MainActivity;
-import com.example.tfg.anterior.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.storage.FirebaseStorage;
@@ -116,27 +112,27 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
 
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                Intent inicio = new Intent(this, MainActivity.class);
+                Intent inicio = new Intent(this, null);
                 startActivity(inicio);
                 finish();
                 return true;
 
             case R.id.navigation_mapa:
-                Intent mapa = new Intent(this, MapsActivity.class);
+                Intent mapa = new Intent(this, null);
                 mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();
                 return true;
 
             case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
+                Intent categorias = new Intent(this, null);
                 categorias.putExtra("idioma",idioma);
                 startActivity(categorias);
                 finish();
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent ajustes = new Intent(this, ajustesActivity.class);
+                Intent ajustes = new Intent(this, null);
                 ajustes.putExtra("idioma", idioma);
                 startActivity(ajustes);
                 finish();
@@ -184,7 +180,7 @@ public class rutasActivity extends AppCompatActivity implements NavigationBarVie
         Button btn = (Button) view;
 
         if (btn.getId() == R.id.rutasAtras1) {
-            Intent arteCat = new Intent(this, categoriasActivity.class);
+            Intent arteCat = new Intent(this, null);
             arteCat.putExtra("idioma", idioma);
             startActivity(arteCat);
             finish();

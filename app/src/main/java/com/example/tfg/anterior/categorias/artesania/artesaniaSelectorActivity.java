@@ -13,10 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.anterior.inicio.MainActivity;
 import com.example.tfg.R;
-import com.example.tfg.anterior.categorias.categoriasActivity;
-import com.example.tfg.anterior.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -111,18 +108,18 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
 
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                Intent inicio = new Intent(this, MainActivity.class);
+                Intent inicio = new Intent(this, null);
                 startActivity(inicio);
                 return true;
 
             case R.id.navigation_mapa:
-                Intent mapa = new Intent(this, MapsActivity.class);
+                Intent mapa = new Intent(this, null);
                 mapa.putExtra("idioma", idioma);
                 startActivity(mapa);
                 return true;
 
             case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
+                Intent categorias = new Intent(this, null);
                 categorias.putExtra("idioma", idioma);
                 startActivity(categorias);
                 return true;
@@ -152,7 +149,7 @@ public class artesaniaSelectorActivity extends AppCompatActivity implements Navi
                 break;
 
             case R.id.artefin2:
-                Intent cat = new Intent(this, categoriasActivity.class);
+                Intent cat = new Intent(this, null);
                 cat.putExtra("idioma", idioma);
                 startActivity(cat);
                 finish();

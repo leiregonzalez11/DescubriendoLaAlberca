@@ -15,11 +15,7 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.anterior.ajustes.ajustesActivity;
-import com.example.tfg.anterior.categorias.categoriasActivity;
-import com.example.tfg.anterior.inicio.MainActivity;
 import com.example.tfg.adapters.SliderAdapter;
-import com.example.tfg.anterior.mapa.MapsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -91,29 +87,19 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
 
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                Intent inicio = new Intent(this, MainActivity.class);
+                Intent inicio = new Intent(this, null);
                 startActivity(inicio);
                 finish();
                 return true;
 
             case R.id.navigation_mapa:
-                Intent mapa = new Intent(this, MapsActivity.class);
-                mapa.putExtra("idioma",idioma);
-                startActivity(mapa);
-                finish();
-                return true;
 
             case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
-                categorias.putExtra("idioma",idioma);
-                startActivity(categorias);
-                finish();
-                return true;
 
             case R.id.navigation_ajustes:
-                Intent ajustes = new Intent(this, ajustesActivity.class);
-                ajustes.putExtra("idioma", idioma);
-                startActivity(ajustes);
+                Intent mapa = new Intent(this, null);
+                mapa.putExtra("idioma",idioma);
+                startActivity(mapa);
                 finish();
                 return true;
 
@@ -139,7 +125,7 @@ public class ArquitecturaActivity extends AppCompatActivity implements Navigatio
                 break;
 
             case R.id.arquiAtras1:
-                Intent mapa = new Intent(this, categoriasActivity.class);
+                Intent mapa = new Intent(this, null);
                 mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();

@@ -14,8 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.tfg.anterior.inicio.MainActivity;
-
 
 public class ExitFragment extends DialogFragment{
 

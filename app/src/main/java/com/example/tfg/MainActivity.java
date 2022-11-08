@@ -13,13 +13,13 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.navigationmenu.FragmentAjustes;
 import com.example.tfg.navigationmenu.FragmentCategorias;
 import com.example.tfg.navigationmenu.FragmentInicio;
-import com.example.tfg.navigationmenu.FragmentMapa;
+import com.example.tfg.navigationmenu.MapsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.Objects;
 
-public class MainActivity2 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
 
@@ -53,7 +53,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
                 break;
 
             case R.id.navigation_mapa:
-                fragment = new FragmentMapa();
+                fragment = new MapsFragment();
                 break;
 
             case R.id.navigation_categoria:

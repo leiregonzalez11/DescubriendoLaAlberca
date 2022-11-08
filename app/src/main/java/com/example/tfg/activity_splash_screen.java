@@ -41,7 +41,7 @@ public class activity_splash_screen extends AppCompatActivity {
 
                 /* INTERFAZ PRINCIPAL*/
                 //Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
-                Intent intent = new Intent(activity_splash_screen.this, MainActivity2.class);
+                Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 

@@ -12,10 +12,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tfg.R;
-import com.example.tfg.anterior.ajustes.ajustesActivity;
-import com.example.tfg.anterior.categorias.categoriasActivity;
-import com.example.tfg.anterior.inicio.MainActivity;
-import com.example.tfg.anterior.mapa.MapsActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -77,27 +73,27 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
 
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                Intent inicio = new Intent(this, MainActivity.class);
+                Intent inicio = new Intent(this, null);
                 startActivity(inicio);
                 finish();
                 return true;
 
             case R.id.navigation_mapa:
-                Intent mapa = new Intent(this, MapsActivity.class);
+                Intent mapa = new Intent(this, null);
                 mapa.putExtra("idioma",idioma);
                 startActivity(mapa);
                 finish();
                 return true;
 
             case R.id.navigation_categoria:
-                Intent categorias = new Intent(this, categoriasActivity.class);
+                Intent categorias = new Intent(this, null);
                 categorias.putExtra("idioma",idioma);
                 startActivity(categorias);
                 finish();
                 return true;
 
             case R.id.navigation_ajustes:
-                Intent ajustes = new Intent(this, ajustesActivity.class);
+                Intent ajustes = new Intent(this, null);
                 ajustes.putExtra("idioma", idioma);
                 startActivity(ajustes);
                 finish();
@@ -125,7 +121,7 @@ public class arquitecturaActivity5 extends AppCompatActivity implements Navigati
                 break;
 
             case R.id.arquiAtras5:
-                Intent arquifin = new Intent(this, categoriasActivity.class);
+                Intent arquifin = new Intent(this, null);
                 arquifin.putExtra("idioma", idioma);
                 startActivity(arquifin);
                 finish();
