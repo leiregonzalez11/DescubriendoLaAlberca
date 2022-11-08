@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -87,9 +89,6 @@ public class formFragment extends Fragment implements View.OnClickListener {
         Button siguienteBtn = requireView().findViewById(R.id.btnEnviar);
         siguienteBtn.setOnClickListener(this);
 
-        //Button atrasBtn = requireView().findViewById(R.id.btnAtrasForm);
-        //atrasBtn.setOnClickListener(this);
-
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -106,26 +105,48 @@ public class formFragment extends Fragment implements View.OnClickListener {
                     asuntoET.setText("");
                     mensajeET.setText("");
                 }
-
             }
-        } /*else if (btn.getId() == R.id.btnAtrasForm){
+        }
+    }
 
-            //Creamos el Fragment
-            Fragment fragment = new FragmentAjustes();
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                myToolbar.setNavigationIcon(null);
+                Fragment fragment = null;
 
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
+                switch (iu) {
+                    case "inicio":
+                        fragment = new FragmentInicio();
+                        break;
+                    case "categorias":
+                        fragment = new FragmentCategorias();
+                        break;
+                    case "ajustes":
+                        fragment = new FragmentAjustes();
+                        break;
+                }
 
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
-        }*/
+                // Obtenemos el administrador de fragmentos a través de la actividad
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+
+                // Definimos una transacción
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                // Remplazamos el contenido principal por el fragmento
+                fragmentTransaction.replace(R.id.relativelayout, fragment);
+                fragmentTransaction.addToBackStack(null);
+
+                // Cambiamos el fragment en la interfaz
+                fragmentTransaction.commit();
+            }
+        });
     }
 
     @Override

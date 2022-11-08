@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -23,6 +25,8 @@ import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.adapters.tabAdapter;
 import com.example.tfg.adapters.tabAdapterComer;
 import com.example.tfg.navigationmenu.FragmentAjustes;
+import com.example.tfg.navigationmenu.FragmentCategorias;
+import com.example.tfg.navigationmenu.FragmentInicio;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -30,7 +34,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Objects;
 
 
-public class dondeDormirFragment extends Fragment implements View.OnClickListener {
+public class dondeDormirFragment extends Fragment {
 
     public dondeDormirFragment() {
         // Required empty public constructor
@@ -95,37 +99,34 @@ public class dondeDormirFragment extends Fragment implements View.OnClickListene
             }
         });
 
-        //Botón atras
-        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnDormir);
-        //atrasBtn.setOnClickListener(this);
-
     }
 
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        /*ImageButton btn = (ImageButton) view;
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        if (btn.getId() == R.id.atrasBtnDormir){
-            //Definimos los argumentos
+                myToolbar.setNavigationIcon(null);
+                Fragment fragment = new FragmentAjustes();
 
-            //Creamos el Fragment
-            Fragment fragment = new FragmentAjustes();
+                // Obtenemos el administrador de fragmentos a través de la actividad
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                // Definimos una transacción
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                // Remplazamos el contenido principal por el fragmento
+                fragmentTransaction.replace(R.id.relativelayout, fragment);
+                fragmentTransaction.addToBackStack(null);
 
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
-        }*/
+                // Cambiamos el fragment en la interfaz
+                fragmentTransaction.commit();
+            }
+        });
     }
 
 }

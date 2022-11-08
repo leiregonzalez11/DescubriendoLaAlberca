@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -26,7 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Objects;
 
 
-public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemSelectedListener {
 
     private StorageReference storageRef;
     private View img1;
@@ -62,10 +64,6 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
         //spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitenbus, bus));
         spinner.setOnItemSelectedListener(this);
 
-        //Botón atras
-        //ImageButton atrasBtn = requireView().findViewById(R.id.atrasBtnComoLlegar);
-        //atrasBtn.setOnClickListener(this);
-
     }
 
     /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
@@ -100,32 +98,32 @@ public class comoLlegarFragment extends Fragment implements  AdapterView.OnItemS
 
     }
 
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        /*ImageButton btn = (ImageButton) view;
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        if (btn.getId() == R.id.atrasBtnComoLlegar){
-            //Definimos los argumentos
+                myToolbar.setNavigationIcon(null);
+                Fragment fragment = new FragmentAjustes();
 
-            //Creamos el Fragment
-            Fragment fragment = new FragmentAjustes();
+                // Obtenemos el administrador de fragmentos a través de la actividad
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                // Definimos una transacción
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                // Remplazamos el contenido principal por el fragmento
+                fragmentTransaction.replace(R.id.relativelayout, fragment);
+                fragmentTransaction.addToBackStack(null);
 
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
-        }*/
+                // Cambiamos el fragment en la interfaz
+                fragmentTransaction.commit();
+            }
+        });
     }
-
 
 }
