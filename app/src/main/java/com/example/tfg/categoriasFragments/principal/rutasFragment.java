@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments;
+package com.example.tfg.categoriasFragments.principal;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

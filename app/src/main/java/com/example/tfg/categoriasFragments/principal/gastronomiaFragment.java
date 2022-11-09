@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments;
+package com.example.tfg.categoriasFragments.principal;
 
 import android.os.Bundle;
 import android.text.Html;
@@ -19,6 +19,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.categoriasFragments.secundarias.turronerasFragment;
 import com.example.tfg.navigationmenu.FragmentCategorias;
 
 public class gastronomiaFragment extends Fragment {
@@ -34,7 +36,6 @@ public class gastronomiaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setHasOptionsMenu(false);
 
@@ -62,7 +63,7 @@ public class gastronomiaFragment extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(view1 -> {
+        myToolbar.setNavigationOnClickListener(v -> {
 
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new FragmentCategorias();
@@ -103,8 +104,23 @@ public class gastronomiaFragment extends Fragment {
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_alim, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view12, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
+            Fragment fragment = new turronerasFragment();
+            fragment.setArguments(args);
+
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
+
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         ArrayList<String> lista2 = new ArrayList<>();
@@ -116,8 +132,6 @@ public class gastronomiaFragment extends Fragment {
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
             Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
         });
-
-
 
     }
 }

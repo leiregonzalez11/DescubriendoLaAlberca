@@ -22,9 +22,9 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.formFragment;
 import com.example.tfg.ajustesFragments.idiomasFragment;
-import com.example.tfg.categoriasFragments.gastronomiaFragment;
-import com.example.tfg.categoriasFragments.otrosFragment;
-import com.example.tfg.categoriasFragments.rutasFragment;
+import com.example.tfg.categoriasFragments.principal.gastronomiaFragment;
+import com.example.tfg.categoriasFragments.principal.otrosFragment;
+import com.example.tfg.categoriasFragments.principal.rutasFragment;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
