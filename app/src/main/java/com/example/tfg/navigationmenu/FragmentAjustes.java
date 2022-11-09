@@ -50,6 +50,9 @@ public class FragmentAjustes extends Fragment {
         args = new Bundle();
         args.putString("iu", "ajustes");
 
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(null);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }

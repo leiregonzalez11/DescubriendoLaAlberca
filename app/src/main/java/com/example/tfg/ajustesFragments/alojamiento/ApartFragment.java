@@ -9,17 +9,19 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.anterior.ajustes.aloj.alojamientoActivity;
 
 import java.util.ArrayList;
 
 public class ApartFragment extends Fragment{
 
     ArrayList lista1;
+    Bundle args;
     String nombreAloj;
 
     public ApartFragment() {
@@ -29,6 +31,10 @@ public class ApartFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        args = new Bundle();
+        args.putString("categoria", "alojamiento");
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_apart, container, false);
     }
@@ -53,9 +59,23 @@ public class ApartFragment extends Fragment{
 
             nombreAloj = lista1.get(position).toString();
 
-            Intent aloj = new Intent(getContext(), alojamientoActivity.class);
-            aloj.putExtra("nombreAloj", nombreAloj);
-            startActivity(aloj);
+            Fragment fragment = new alojamientoFragment();
+            args.putString("nombreAloj", nombreAloj);
+            fragment.setArguments(args);
+
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
+
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
+
         });
 
 

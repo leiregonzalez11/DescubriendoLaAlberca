@@ -4,16 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarPrueba"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
         android:background="#880E4F"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:theme="@style/AppTheme.Toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -21,129 +22,27 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/alatsi"
+            android:fontFamily="@font/alex_brush"
+            android:layout_marginTop="15dp"
             android:text="@string/app_name"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
-        android:id="@+id/scrollview"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="70dp"
-        android:scrollbarSize="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:id="@+id/layout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".anterior.inicio.MainActivity">
-
-
-            <TextView
-                android:id="@+id/bienvenidatext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/aref_ruqaa"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:text="@string/tituloprincipal"
-                android:textAlignment="gravity"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="320dp"
-                android:layout_height="200dp"
-                android:layout_margin="15dp"
-                android:theme="@style/Theme.MaterialComponents.Light">
-
-                <!--android:layout_marginTop="50dp"
-                -->
-
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSlider"
-                    android:layout_width="320dp"
-                    android:layout_height="200dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="600"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/textoprincipal1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/alata"
-                android:textColor="@color/black"
-                android:text="@string/textoprincipal"
-                android:textSize="17sp" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/textoprincipal2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alata"
-                android:gravity='center_horizontal'
-                android:text="@string/textoprincipal2"
-                android:textSize="17sp" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/textoprincipal3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/aref_ruqaa"
-                android:textStyle="italic"
-                android:gravity='center_horizontal'
-                android:text="@string/textoprincipal4"
-                android:textSize="25sp" />
-
-        </LinearLayout>
-
-    </ScrollView>
+        android:id="@+id/relativelayout"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="60dp">
+    </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationView"
+        android:id="@+id/navigationViewPrueba"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#880E4F"

@@ -40,9 +40,6 @@
             android:name=".anterior.categorias.gastronomia.gastronomiaActivity3"
             android:exported="false" />
         <activity
-            android:name=".anterior.ajustes.rest.establecimientoActivity"
-            android:exported="false" />
-        <activity
             android:name=".anterior.ajustes.aloj.alojamientoActivity"
             android:exported="false" />
         <activity

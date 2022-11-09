@@ -27,10 +27,11 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
 
         Toolbar myToolbar = findViewById(R.id.toolbarPrueba);
         setSupportActionBar(myToolbar);
+        myToolbar.setNavigationIcon(null);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 

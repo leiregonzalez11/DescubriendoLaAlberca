@@ -62,8 +62,8 @@ public class dondeDormirFragment extends Fragment {
         ViewPager2 viewPager = requireView().findViewById(R.id.viewPager);
 
         TabLayout tabLayout  = requireView().findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
         tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
+        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
         tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 

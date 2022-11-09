@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -43,6 +44,9 @@ public class FragmentInicio extends Fragment {
         setHasOptionsMenu(true);
         args = new Bundle();
         args.putString("iu", "inicio");
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(null);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inicio, container, false);

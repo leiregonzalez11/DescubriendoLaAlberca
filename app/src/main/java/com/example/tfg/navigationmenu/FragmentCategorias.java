@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -46,6 +47,9 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
         setHasOptionsMenu(true);
         argsMenu = new Bundle();
         argsMenu.putString("iu", "categorias");
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        myToolbar.setNavigationIcon(null);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_categorias, container, false);
