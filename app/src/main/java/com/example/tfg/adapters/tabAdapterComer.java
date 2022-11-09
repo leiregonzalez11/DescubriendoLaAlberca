@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tfg.ajustesFragments.restauracion.BaresFragment;
-import com.example.tfg.ajustesFragments.restauracion.RestaurantesFragment;
+import com.example.tfg.ajustesFragments.restauracion.Bares;
+import com.example.tfg.ajustesFragments.restauracion.Restaurantes;
 
 public class tabAdapterComer extends FragmentStateAdapter {
 
@@ -21,9 +21,9 @@ public class tabAdapterComer extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new RestaurantesFragment();
+                return new Restaurantes();
             default:
-                return new BaresFragment();
+                return new Bares();
         }
     }
 

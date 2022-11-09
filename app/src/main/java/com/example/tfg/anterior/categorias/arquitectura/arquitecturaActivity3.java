@@ -52,7 +52,7 @@ public class arquitecturaActivity3 extends AppCompatActivity implements Navigati
 
         GestorDB dbHelper = new GestorDB(getApplicationContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interfaz3", categoria, 5);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interior", categoria, 5);
 
         text1 = findViewById(R.id.arqui31);
         text2 = findViewById(R.id.arqui32);

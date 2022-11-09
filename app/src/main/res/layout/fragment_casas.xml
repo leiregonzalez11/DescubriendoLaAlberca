@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustesFragments.alojamiento.CasasFragment">
+    tools:context=".ajustesFragments.alojamiento.CasasRurales">
 
     <ListView
         android:id="@+id/listviewCasas"

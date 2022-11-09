@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tfg.ajustesFragments.alojamiento.ApartFragment;
-import com.example.tfg.ajustesFragments.alojamiento.CasasFragment;
-import com.example.tfg.ajustesFragments.alojamiento.HotelesFragment;
+import com.example.tfg.ajustesFragments.alojamiento.Apartamento;
+import com.example.tfg.ajustesFragments.alojamiento.CasasRurales;
+import com.example.tfg.ajustesFragments.alojamiento.Hoteles;
 
 public class tabAdapter extends FragmentStateAdapter {
 
@@ -23,11 +23,11 @@ public class tabAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new ApartFragment();
+                return new Apartamento();
             case 2:
-                return new CasasFragment();
+                return new CasasRurales();
             default:
-                return new HotelesFragment();
+                return new Hoteles();
         }
     }
 

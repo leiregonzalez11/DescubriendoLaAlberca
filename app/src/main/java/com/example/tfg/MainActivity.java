@@ -11,10 +11,10 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.tfg.dialogFragments.ExitFragment;
-import com.example.tfg.navigationmenu.FragmentAjustes;
-import com.example.tfg.navigationmenu.FragmentCategorias;
-import com.example.tfg.navigationmenu.FragmentInicio;
-import com.example.tfg.navigationmenu.MapsFragment;
+import com.example.tfg.navigationmenu.Ajustes;
+import com.example.tfg.navigationmenu.Categorias;
+import com.example.tfg.navigationmenu.Inicio;
+import com.example.tfg.navigationmenu.Maps;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -23,6 +23,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     public BottomNavigationView bottomNavigationView;
+    String fragment_id;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -36,11 +37,12 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
+        fragment_id = "inicio";
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewPrueba);
         bottomNavigationView.setOnItemSelectedListener(this);
-        loadFragment(new FragmentInicio());
+        loadFragment(new Inicio());
 
     }
 
@@ -51,19 +53,23 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         Fragment fragment = null;
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                fragment = new FragmentInicio();
+                fragment = new Inicio();
+                fragment_id = "inicio";
                 break;
 
             case R.id.navigation_mapa:
-                fragment = new MapsFragment();
+                fragment = new Maps();
+                fragment_id = "maps";
                 break;
 
             case R.id.navigation_categoria:
-                fragment = new FragmentCategorias();
+                fragment = new Categorias();
+                fragment_id = "categorias";
                 break;
 
             case R.id.navigation_ajustes:
-                fragment = new FragmentAjustes();
+                fragment = new Ajustes();
+                fragment_id = "ajustes";
                 break;
 
         }
@@ -81,9 +87,11 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     @Override
     public void onBackPressed(){
-        DialogFragment exitFragment = new ExitFragment();
-        exitFragment.setCancelable(false);
-        exitFragment.show(getSupportFragmentManager(),"exit_fragment");
+        if (fragment_id.equals("inicio")){
+            DialogFragment exitFragment = new ExitFragment();
+            exitFragment.setCancelable(false);
+            exitFragment.show(getSupportFragmentManager(),"exit_fragment");
+        }
     }
 
 }

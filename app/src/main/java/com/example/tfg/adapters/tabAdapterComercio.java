@@ -7,9 +7,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tfg.ajustesFragments.comercio.AlimentacionFragment;
-import com.example.tfg.ajustesFragments.comercio.ArtesaniaFragment;
-import com.example.tfg.ajustesFragments.comercio.OtrosComerciosFragment;
+import com.example.tfg.ajustesFragments.comercio.AlimentacionTienda;
+import com.example.tfg.ajustesFragments.comercio.ArtesaniaTienda;
+import com.example.tfg.ajustesFragments.comercio.OtrosComercios;
 
 public class tabAdapterComercio extends FragmentStateAdapter {
 
@@ -23,11 +23,11 @@ public class tabAdapterComercio extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new ArtesaniaFragment();
+                return new ArtesaniaTienda();
             case 2:
-                return new OtrosComerciosFragment();
+                return new OtrosComercios();
             default:
-                return new AlimentacionFragment();
+                return new AlimentacionTienda();
         }
     }
 

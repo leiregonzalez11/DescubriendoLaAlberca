@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ajustesFragments.restauracion.RestaurantesFragment">
+    tools:context=".ajustesFragments.restauracion.Restaurantes">
 
     <ListView
         android:id="@+id/listviewRest"

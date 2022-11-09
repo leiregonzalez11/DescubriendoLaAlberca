@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ajustesFragments.restauracion.establecimientoFragment">
+    tools:context=".ajustesFragments.restauracion.Establecimiento">
 
     <ScrollView
         android:id="@+id/scrollview"

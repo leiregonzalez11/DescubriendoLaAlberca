@@ -117,8 +117,7 @@
         <item>Plato 1</item>
         <item>Plato 2</item>
     </string-array>
-    <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful towns and places to discover. Here are a few: \\n</string>
-    <string name="textoprincipal3">"Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es Un pueblo para soñar "</string>
+    <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful villages and places to discover. Here are a few options: \n</string>
     <string name="idioma_validator">language</string>
 
 </resources>

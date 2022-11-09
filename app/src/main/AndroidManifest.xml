@@ -49,12 +49,6 @@
             android:name=".anterior.categorias.artesania.artesaniaSelectorActivity"
             android:exported="false" />
         <activity
-            android:name=".anterior.categorias.tradiciones.tradicionesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.tradiciones.tradicionesActivity2"
-            android:exported="false" />
-        <activity
             android:name=".anterior.categorias.arquitectura.arquitecturaActivity5"
             android:exported="false" />
         <activity

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.secundarias.artesania.trajeMasculino">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layoutArte41"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/artetext"
+                android:layout_width="323dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="40sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text="@string/traje_serrano"
+                android:textAlignment="gravity"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/exttext"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:textStyle="bold"
+                android:gravity="left"
+                android:text="@string/traje_hombre" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/arte41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-25dp"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity='center_horizontal' />
+
+            <ImageView
+                android:id="@+id/arte41img"
+                android:layout_width="wrap_content"
+                android:layout_height="450dp"
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/arte42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity='center_horizontal' />
+
+            <ImageView
+                android:id="@+id/arte42img"
+                android:layout_width="wrap_content"
+                android:layout_height="450dp"
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/arte43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity='center_horizontal' />
+
+            <ImageView
+                android:id="@+id/arte43img"
+                android:layout_width="wrap_content"
+                android:layout_height="450dp"
+                android:layout_margin="10dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/arte44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-40dp"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity='center_horizontal' />
+
+            <LinearLayout
+                android:id="@+id/layoutArte42"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/fab_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/arteAtras4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/white"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:textStyle="bold"
+                    android:layout_margin="18sp"
+                    android:text="@string/atras">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/artefintraje"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/volver_a_artesania"
+                    android:textColor="@color/white"
+                    android:background="#880E4F"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/amiri"
+                    android:layout_margin="18sp"
+                    android:layout_gravity="center">
+
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

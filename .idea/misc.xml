@@ -67,7 +67,10 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_alojamiento.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_apart.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_artesania.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_artesania_inicio.xml" value="0.3625" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_artesania_selector.xml" value="0.3484375" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_bares.xml" value="0.1" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_bordado_serrano.xml" value="0.3484375" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_casas.xml" value="0.19519927536231885" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_categorias.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_comercio.xml" value="0.22807017543859648" />
@@ -85,12 +88,17 @@
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_mapa.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_maps.xml" value="0.23404255319148937" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_mapsprueba.xml" value="0.23641304347826086" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_orfebreria.xml" value="0.3625" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_otros.xml" value="0.23596014492753623" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_otros_comercios.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_restaurantes.xml" value="0.1" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_rutas.xml" value="0.23596014492753623" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tour.xml" value="0.264" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tour_si.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tradiciones.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_tradiciones_selector.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_traje_masculino.xml" value="0.3625" />
+        <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_trajes_femeninos.xml" value="0.3484375" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/fragment_turroneras.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/grid_item.xml" value="0.2" />
         <entry key="..\:/Users/leire/OneDrive/Escritorio/TFG/tfg/app/src/main/res/layout/gris_item.xml" value="0.176" />
