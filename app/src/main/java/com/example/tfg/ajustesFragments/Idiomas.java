@@ -80,7 +80,7 @@ public class Idiomas extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
         myToolbar.setNavigationOnClickListener(v -> {
 
@@ -142,7 +142,7 @@ public class Idiomas extends Fragment {
     private void start(String iu) {
 
         Fragment fragment = null;
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
 
         //Determinamos el fragment de retorno y creamos el Fragment

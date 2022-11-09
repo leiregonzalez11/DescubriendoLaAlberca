@@ -1,51 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#880E4F"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <Button
-            android:id="@+id/arquiAtras5"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="18sp"
-            android:background="#880E4F"
-            android:drawableLeft="@drawable/arrow_back"
-            android:gravity="left">
-        </Button>
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alatsi"
-            android:text="@string/app_name"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-    </androidx.appcompat.widget.Toolbar>
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.secundarias.arquitectura.casaAlbercana">
 
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="70dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +23,7 @@
             android:id="@+id/layoutArqui21"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/fab_margin"
+            android:padding="15dp"
             android:gravity="center"
             android:orientation="vertical"
             tools:context=".anterior.categorias.arquitectura.arquitecturaActivity5"
@@ -71,14 +35,13 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alatsi"
-                android:textSize="25sp"
+                android:fontFamily="@font/alex_brush"
+                android:textSize="40sp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="@string/la_casa_albercana"
                 android:textAlignment="gravity"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/exttext"
@@ -87,7 +50,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
-                android:fontFamily="@font/alatsi"
+                android:fontFamily="@font/amiri"
+                android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:gravity="left"
@@ -99,11 +63,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
-
+                android:layout_marginTop="-10dp"
                 android:layout_marginRight="7dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="-10dp"
                 android:text="Casa Museo Satur y Juanela"
-                android:fontFamily="@font/alata"
+                android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -114,17 +78,16 @@
                 android:layout_width="300dp"
                 android:layout_height="250dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginRight="15dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="360dp"
-                android:layout_height="210dp"
+                android:layout_height="230dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="5dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
@@ -134,13 +97,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical">
-
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="-5dp"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -156,11 +120,12 @@
                             android:id="@+id/horario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/amiri"
+                            android:layout_marginTop="-10dp"
                             android:gravity='left'
                             android:text="Horario:"
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -168,12 +133,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="-10dp"
                             android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
-                            android:text="Sábados: 11:30-13:30 / 16:00-19:00 \nDomingos: 11:30 - 13:30"
+                            android:text="Sábados: 11:30-13:30 / 16:00-19:00 \n Domingos: 11:30 - 13:30"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -181,7 +147,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-1dp"
+                        android:layout_marginTop="-5dp"
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -195,26 +161,27 @@
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/telrest"
+                            android:id="@+id/telcasa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/amiri"
+                            android:layout_marginTop="-10dp"
                             android:gravity='left'
                             android:text="@string/telefono"
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/telrest2"
+                            android:id="@+id/telcasa2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:fontFamily="@font/alata"
-                            android:text="625 75 58 19"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="17sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -239,11 +206,12 @@
                             android:id="@+id/precio"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/amiri"
+                            android:layout_marginTop="-10dp"
                             android:gravity='left'
                             android:text="Precio:"
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -252,11 +220,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginBottom="-10dp"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:text="General: 2,5€ / Grupos: 2€"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="17sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -264,8 +233,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
                         android:layout_gravity="left"
-
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -281,35 +250,34 @@
                             android:id="@+id/web"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:text="Web:"
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
                             tools:ignore="HardcodedText" />
 
                         <TextView
-                            android:id="@+id/web2"
+                            android:id="@+id/webcasa2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginBottom="-10dp"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
-                            android:text="www.casamuseosaturjuanela.com/"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="17sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
 
 
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -326,12 +294,13 @@
                             android:id="@+id/puntrest"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:text="@string/puntuacion"
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -361,10 +330,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="7dp"
-                android:layout_marginBottom="1dp"
-                android:fontFamily="@font/alata"
+                android:fontFamily="@font/amiri"
+                android:textStyle="bold"
                 android:gravity='center'
                 android:text="@string/ubicacion"
                 android:textColor="@color/black"
@@ -377,16 +345,17 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginRight="7dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="@font/alata"
+                android:layout_marginTop="-20dp"
+                android:fontFamily="@font/amiri"
                 android:text="Calle Mesón, 7"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText" />
 
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/mapViewSatur"
+                android:id="@+id/mapViewCasa"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
@@ -397,20 +366,22 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.697"
-                tools:context=".anterior.ajustes.rest.establecimientoActivity" />
+                app:layout_constraintVertical_bias="0.697" />
 
 
             <Button
-                android:id="@+id/arqui5atras"
+                android:id="@+id/arquiAtras5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginBottom="20dp"
                 android:layout_margin="18sp"
                 android:textColor="@color/white"
                 android:background="#880E4F"
-                android:fontFamily="@font/alata"
+                android:textStyle="bold"
+                android:fontFamily="@font/amiri"
                 android:text="@string/atras">
 
             </Button>
@@ -419,18 +390,4 @@
 
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewArqui5"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#880E4F"
-        app:itemIconSize="65dip"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:menu="@menu/navigation" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -79,7 +79,7 @@ public class Alojamiento extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
         myToolbar.setNavigationOnClickListener(view1 -> {
 

@@ -45,7 +45,7 @@ public class Inicio extends Fragment {
         args = new Bundle();
         args.putString("iu", "inicio");
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
 
         // Inflate the layout for this fragment

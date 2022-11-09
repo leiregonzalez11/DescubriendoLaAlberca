@@ -16,7 +16,7 @@ public class listViewAdapter extends BaseAdapter {
 
     private final Context context;
     private final int layout;
-    private final ArrayList<String> names;
+    private final ArrayList names;
 
     public listViewAdapter(Context context, int layout, ArrayList names){
         this.context = context;
@@ -51,7 +51,7 @@ public class listViewAdapter extends BaseAdapter {
         view = layoutInflater.inflate(this.layout, null);
 
         // Valor actual según la posición
-        String currentName  = names.get(position);
+        String currentName  = names.get(position).toString();
 
         // Referenciamos el elemento a modificar y lo rellenamos
         TextView textView = view.findViewById(R.id.textView);

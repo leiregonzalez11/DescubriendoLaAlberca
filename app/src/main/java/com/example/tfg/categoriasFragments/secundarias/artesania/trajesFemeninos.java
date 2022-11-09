@@ -73,7 +73,7 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

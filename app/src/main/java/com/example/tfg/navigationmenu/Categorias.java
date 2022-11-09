@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
@@ -55,7 +56,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         args = new Bundle();
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
 
         // Inflate the layout for this fragment
@@ -100,8 +101,9 @@ public class Categorias extends Fragment implements View.OnClickListener{
                 break;
 
             case R.id.botonarquitectura:
-                Toast.makeText(getContext(), "Has pulsado arquitectura", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Has pulsado arquitectura", Toast.LENGTH_LONG).show();
                 categoria = "arquitectura";
+                fragment = new arquitecturaInicio();
                 break;
 
             case R.id.botonmonumentos:

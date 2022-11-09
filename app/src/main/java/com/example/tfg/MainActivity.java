@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = findViewById(R.id.toolbarPrueba);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.setNavigationIcon(null);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);

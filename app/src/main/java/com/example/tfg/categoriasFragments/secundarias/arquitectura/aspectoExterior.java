@@ -1,7 +1,6 @@
-package com.example.tfg.categoriasFragments.secundarias.artesania;
+package com.example.tfg.categoriasFragments.secundarias.arquitectura;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,19 +21,20 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class trajeMasculino extends Fragment implements View.OnClickListener{
+public class aspectoExterior extends Fragment implements View.OnClickListener{
 
     Bundle args;
-    Fragment fragment;
     String idioma, categoria;
     ImageView img1, img2, img3;
     StorageReference storageRef;
+    TextView text1, text2, text3;
 
-    public trajeMasculino() {
+    public aspectoExterior() {
         // Required empty public constructor
     }
 
@@ -53,13 +53,14 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
 
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_traje_masculino, container, false);
+        return inflater.inflate(R.layout.fragment_aspecto_exterior, container, false);
     }
 
     @SuppressLint("SetTextI18n")
@@ -68,7 +69,7 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(view1 -> {
+        myToolbar.setNavigationOnClickListener(view12 -> {
 
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
@@ -87,36 +88,36 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
             fragmentTransaction.commit();
         });
 
-        img1 = requireView().findViewById(R.id.arte41img);
-        img2 = requireView().findViewById(R.id.arte42img);
-        img3 = requireView().findViewById(R.id.arte43img);
-
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "trajemasc", categoria, 4);
+        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "exterior", categoria, 3);
 
-        TextView text1 = requireView().findViewById(R.id.arte41);
-        TextView text2 = requireView().findViewById(R.id.arte42);
-        TextView text3 = requireView().findViewById(R.id.arte43);
-        TextView text4 = requireView().findViewById(R.id.arte44);
+        text1 = requireView().findViewById(R.id.arqui21);
+        text2 = requireView().findViewById(R.id.arqui22);
+        text3 = requireView().findViewById(R.id.arqui23);
 
-        text1.setText(datos[0] + Html.fromHtml("<br>"));
-        text2.setText(datos[1] + Html.fromHtml("<br>"));
-        text3.setText(datos[2] + Html.fromHtml("<br>"));
-        text4.setText(datos[3] + Html.fromHtml("<br>"));
+        text1.setText(datos[0]+ Html.fromHtml("<br>"));
+        text2.setText(datos[1]+ Html.fromHtml("<br>"));
+        text3.setText(datos[2]+ Html.fromHtml("<br>"));
 
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("artesania/hombre1.jpg", img1);
-        obtenerImagenFirebase("artesania/hombre2.jpg", img2);
-        obtenerImagenFirebase("artesania/hombre3.jpg", img3);
+
+        img1 = requireView().findViewById(R.id.arqui21img);
+        img2 = requireView().findViewById(R.id.arqui22img);
+        img3 = requireView().findViewById(R.id.arqui23img);
+        obtenerImagenFirebase("arquitectura/exterior1.jpg", img1);
+        //TODO: Cambiar la foto
+        obtenerImagenFirebase("arquitectura/exterior3.jpeg", img2);
+        obtenerImagenFirebase("arquitectura/exterior2.jpg", img3);
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn2 = requireView().findViewById(R.id.arteAtras4);
-        atrasBtn2.setOnClickListener(this);
+        Button siguienteBtn = requireView().findViewById(R.id.arquisiguiente2);
+        siguienteBtn.setOnClickListener(this);
 
-        Button finBtn = requireView().findViewById(R.id.artefintraje);
+        Button finBtn = requireView().findViewById(R.id.arquiAtras2);
         finBtn.setOnClickListener(this);
+
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
@@ -126,21 +127,24 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
     }
 
     @SuppressLint("NonConstantResourceId")
-    @Override
     public void onClick(View view) {
+        //Cuando se presione el botón, realiza una acción aquí
 
         Button btn = (Button) view;
+        Fragment fragment = null;
 
         switch (btn.getId()){
-            case R.id.artefintraje:
-                fragment = new artesaniaSelector();
+
+            case R.id.arquisiguiente2:
+                fragment = new aspectoInterior();
                 break;
 
-            case R.id.arteAtras4:
-                fragment = new trajesFemeninos();
+            case R.id.arquiAtras2:
+                fragment = new arquitecturaInicio();
                 break;
         }
 
+        assert fragment != null;
         fragment.setArguments(args);
 
         // Obtenemos el administrador de fragmentos a través de la actividad
@@ -155,6 +159,6 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
 
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
-
     }
+
 }
