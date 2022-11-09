@@ -22,6 +22,9 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.formFragment;
 import com.example.tfg.ajustesFragments.idiomasFragment;
+import com.example.tfg.categoriasFragments.gastronomiaFragment;
+import com.example.tfg.categoriasFragments.otrosFragment;
+import com.example.tfg.categoriasFragments.rutasFragment;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -47,6 +50,8 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
         setHasOptionsMenu(true);
         argsMenu = new Bundle();
         argsMenu.putString("iu", "categorias");
+
+        args = new Bundle();
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbarPrueba);
         myToolbar.setNavigationIcon(null);
@@ -162,8 +167,9 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.botongastronomia:
-                Toast.makeText(getContext(), "Has pulsado gastronomia", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Has pulsado gastronomia", Toast.LENGTH_LONG).show();
                 categoria = "gastronomia";
+                fragment = new gastronomiaFragment();
                 break;
 
             case R.id.botoncultura:
@@ -172,17 +178,19 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.botonruta:
-                Toast.makeText(getContext(), "Has pulsado rutas", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Has pulsado rutas", Toast.LENGTH_LONG).show();
                 categoria = "rutas";
+                fragment = new rutasFragment();
                 break;
 
             case R.id.botonotros:
-                Toast.makeText(getContext(), "Has pulsado otros lugares", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Has pulsado otros lugares", Toast.LENGTH_LONG).show();
                 categoria = "otroslugares";
+                fragment = new otrosFragment();
                 break;
         }
 
-        /*idioma = determinarIdioma();
+        idioma = determinarIdioma();
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
         fragment.setArguments(args);
@@ -198,7 +206,7 @@ public class FragmentCategorias extends Fragment implements View.OnClickListener
         fragmentTransaction.addToBackStack(null);
 
         // Cambiar
-        fragmentTransaction.commit();*/
+        fragmentTransaction.commit();
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */

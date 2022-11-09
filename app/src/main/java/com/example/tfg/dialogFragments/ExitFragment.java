@@ -1,4 +1,4 @@
-package com.example.tfg;
+package com.example.tfg.dialogFragments;
 
 import androidx.fragment.app.DialogFragment;
 
@@ -13,6 +13,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+
+import com.example.tfg.MainActivity;
+import com.example.tfg.R;
 
 
 public class ExitFragment extends DialogFragment{

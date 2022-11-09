@@ -85,7 +85,7 @@ public class FragmentAjustes extends Fragment {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
             fragment = new comercioFragment();
             // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager = requireActivity().getSupportFragmentManager();
             // Definir una transacción
             fragmentTransaction = fragmentManager.beginTransaction();
             // Remplazar el contenido principal por el fragmento
@@ -106,7 +106,7 @@ public class FragmentAjustes extends Fragment {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
             fragment = new comoLlegarFragment();
             // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager = requireActivity().getSupportFragmentManager();
             // Definir una transacción
             fragmentTransaction = fragmentManager.beginTransaction();
             // Remplazar el contenido principal por el fragmento

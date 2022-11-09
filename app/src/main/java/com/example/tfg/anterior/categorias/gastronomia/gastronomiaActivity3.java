@@ -10,9 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +24,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
-public class gastronomiaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, OnClickListener{
+public class gastronomiaActivity3 extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
     String idioma, categoria;
@@ -71,13 +68,6 @@ public class gastronomiaActivity3 extends AppCompatActivity implements Navigatio
         img2 = findViewById(R.id.gastro32img);
         obtenerImagenFirebase("gastronomia/turroneras2.jpg", img2);
 
-        //BOTON SIGUIENTE y ATRAS
-
-        Button atrasBtn = findViewById(R.id.gastroatras3);
-        atrasBtn.setOnClickListener(this);
-
-        Button atrasBtn2 = findViewById(R.id.gastroAtras3);
-        atrasBtn2.setOnClickListener(this);
 
         //MENU
         bottomNavigationView = findViewById(R.id.navigationViewGastro3);
@@ -124,25 +114,6 @@ public class gastronomiaActivity3 extends AppCompatActivity implements Navigatio
         }
     }
 
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
-
-        Button btn = (Button) view;
-
-        if (btn.getId() == R.id.gastroatras3) {
-            Intent atras = new Intent(this, gastronomiaActivity2.class);
-            atras.putExtra("idioma", idioma);
-            atras.putExtra("categoria", categoria);
-            startActivity(atras);
-            finish();
-        } else if (btn.getId() == R.id.gastroAtras3){
-            Intent cat = new Intent(this, null);
-            cat.putExtra("idioma",idioma);
-            startActivity(cat);
-            finish();
-        }
-    }
 
     @Override
     public void onBackPressed() {}

@@ -34,9 +34,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".anterior.categorias.gastronomia.gastronomiaActivity4"
-            android:exported="false" />
-        <activity
             android:name=".anterior.categorias.gastronomia.gastronomiaActivity3"
             android:exported="false" />
         <activity
@@ -53,12 +50,6 @@
             android:exported="false" />
         <activity
             android:name=".anterior.categorias.artesania.artesaniaSelectorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.gastronomia.gastronomiaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.gastronomia.gastronomiaActivity2"
             android:exported="false" />
         <activity
             android:name=".anterior.categorias.tradiciones.tradicionesActivity"

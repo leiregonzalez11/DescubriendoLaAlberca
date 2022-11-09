@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import com.example.tfg.dialogFragments.ExitFragment;
 import com.example.tfg.navigationmenu.FragmentAjustes;
 import com.example.tfg.navigationmenu.FragmentCategorias;
 import com.example.tfg.navigationmenu.FragmentInicio;

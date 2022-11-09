@@ -1,51 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#880E4F"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <Button
-            android:id="@+id/rutasAtras1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="18sp"
-            android:background="#880E4F"
-            android:drawableLeft="@drawable/arrow_back"
-            android:gravity="left">
-        </Button>
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alatsi"
-            android:text="@string/app_name"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-    </androidx.appcompat.widget.Toolbar>
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.rutasFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="70dp"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,10 +23,9 @@
             android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:padding="15dp"
             android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".anterior.categorias.rutas.rutasActivity">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/otrostitulo"
@@ -71,8 +34,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="25sp"
-                android:fontFamily="@font/alatsi"
+                android:textSize="40sp"
+                android:fontFamily="@font/alex_brush"
                 android:gravity="center"
                 android:text="@string/rutasmayus"
                 android:textAlignment="gravity"
@@ -81,17 +44,16 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rutas"
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="7dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="9dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="-20dp"
+                android:gravity="center"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alata"
+                android:fontFamily="@font/amiri"
                 android:text="@string/rutas_inicio"
-                android:textSize="16sp"/>
+                android:textSize="17sp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -144,7 +106,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -161,11 +123,12 @@
                             android:id="@+id/rutas3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                     </LinearLayout>
 
@@ -173,6 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -189,11 +153,12 @@
                             android:id="@+id/rutas4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                     </LinearLayout>
 
@@ -201,6 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -217,11 +183,12 @@
                             android:id="@+id/rutas5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                     </LinearLayout>
 
@@ -229,6 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -245,11 +213,12 @@
                             android:id="@+id/rutas6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="17sp"/>
+                            android:textSize="18sp"/>
 
                     </LinearLayout>
 
@@ -274,11 +243,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
                 android:paddingLeft="7dp"
-                android:fontFamily="@font/alata"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="16sp"/>
+                android:textSize="17sp"/>
 
             <ImageView
                 android:id="@+id/rutasimg2"
@@ -290,22 +260,8 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-       </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationViewRutas"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#880E4F"
-        app:itemIconSize="65dip"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:menu="@menu/navigation" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

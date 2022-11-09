@@ -1,4 +1,4 @@
-package com.example.tfg.tour;
+package com.example.tfg.dialogFragments;
 
 import androidx.fragment.app.DialogFragment;
 
