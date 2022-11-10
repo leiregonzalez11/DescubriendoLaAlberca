@@ -29,7 +29,7 @@
     <string name="categorias">Kategoriak</string>
     <string name="ajustes">Doikuntzak</string>
     <string name="mapa">Mapa</string>
-    <string name="fiestasmayus">FESTAK</string>
+    <string name="fiestasmayus">Festak</string>
     <string name="castellano">Gaztelania</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Ingelesa</string>
@@ -76,7 +76,7 @@
     <string name="mensaje">Mezua</string>
     <string name="asuntoet">Zein da zure mezuaren arrazoia?</string>
     <string name="asuntoVacio">Mezuaren gaia ezin da hutsik egon</string>
-    <string name="formulario_de_contacto">Harremanetarako formularioa</string>
+    <string name="formulario_de_contacto">Harremanetarako Formularioa</string>
     <string name="enviar">Bidali</string>
     <string name="mensajeVacio">Mezua ezin da hutsik egon</string>
     <string name="ajustes6">Herriko dendak</string>
@@ -89,6 +89,10 @@
     <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:\n</string>
     <string name="puntuacion">Puntuazioa:</string>
     <string name="en_bus">Autobusez</string>
+    <string name="alimentacion">Janari Dendak</string>
+    <string name="otras_tiendas">Beste Dendak</string>
+    <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \n</string>
+    <string name="idioma_validator">hizkuntza</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -113,11 +117,27 @@
         <item>La Alberca - Ciudad Rodrigo</item>
     </string-array>
 
-    <string-array name="platos">
-        <item>Plato 1</item>
-        <item>Plato 2</item>
+    <string-array name="tipo">
+        <item>Gozoa</item>
+        <item>Gazia</item>
     </string-array>
-    <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \n</string>
-    <string name="idioma_validator">hizkuntza</string>
+
+    <string-array name="recetasDulces">
+        <item>Bollo Maimón</item>
+        <item>Floretas</item>
+        <item>Leche Frita</item>
+        <item>Perrunillas</item>
+        <item>Turuletes</item>
+    </string-array>
+
+    <string-array name="recetasSaladas">
+        <item>Cabrito Cuchifrito</item>
+        <item>Hornazo</item>
+        <item>Limón Serrano</item>
+        <item>Patatas Meneás</item>
+        <item>Tostón Asado</item>
+        <item>Zorongollo</item>
+    </string-array>
+
 
 </resources>

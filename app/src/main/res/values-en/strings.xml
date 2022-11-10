@@ -29,7 +29,7 @@
     <string name="categorias">Categories</string>
     <string name="ajustes">Settings</string>
     <string name="mapa">Map</string>
-    <string name="fiestasmayus">FESTIVITIES</string>
+    <string name="fiestasmayus">Festivities</string>
     <string name="castellano">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="ingles">English</string>
@@ -89,6 +89,10 @@
     <string name="comoLlegarBus">If you do not have your own vehicle to come to La Alberca or simply want to come by bus, there are bus lines with different round-trip schedules to visit the town:\n</string>
     <string name="introComoLlegar">La Alberca is located south of the province of Salamanca, bordering the province of Cáceres. Due to its bordering location, historically, La Alberca was known as the gate of Las Hurdes. \n</string>
     <string name="puntuacion">Score:</string>
+    <string name="alimentacion">Food Store</string>
+    <string name="otras_tiendas">Other Stores</string>
+    <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful villages and places to discover. Here are a few options: \n</string>
+    <string name="idioma_validator">language</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -113,11 +117,26 @@
         <item>La Alberca - Ciudad Rodrigo</item>
     </string-array>
 
-    <string-array name="platos">
-        <item>Plato 1</item>
-        <item>Plato 2</item>
+    <string-array name="tipo">
+        <item>Sweet</item>
+        <item>Salty</item>
     </string-array>
-    <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful villages and places to discover. Here are a few options: \n</string>
-    <string name="idioma_validator">language</string>
+
+    <string-array name="recetasDulces">
+        <item>Bollo Maimón</item>
+        <item>Floretas</item>
+        <item>Leche Frita</item>
+        <item>Perrunillas</item>
+        <item>Turuletes</item>
+    </string-array>
+
+    <string-array name="recetasSaladas">
+        <item>Cabrito Cuchifrito</item>
+        <item>Hornazo</item>
+        <item>Limón Serrano</item>
+        <item>Patatas Meneás</item>
+        <item>Tostón Asado</item>
+        <item>Zorongollo</item>
+    </string-array>
 
 </resources>

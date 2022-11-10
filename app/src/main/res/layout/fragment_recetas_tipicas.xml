@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.secundarias.gastronomia.recetasTipicas">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/layoutGastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".anterior.categorias.artesania.artesaniaActivity2">
+
+            <TextView
+                android:id="@+id/gastrotext"
+                android:layout_width="323dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="40sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text="Recetas Típicas"
+                android:textAlignment="gravity"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/recetasTextIntro"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="-40dp"
+                android:fontFamily="@font/amiri"
+                android:text="TEXTO DE INTRODUCCIÓN A RECETAS TÍPICAS DE LA ALBERCA Y ALREDEDORES \n"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_marginBottom="15dp"
+                    app:cardElevation="10dp"
+                    app:strokeColor="@color/black"
+                    app:cardCornerRadius="15dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerTipo"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="5dp"
+                        android:backgroundTint="@color/black" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardElevation="10dp"
+                    app:strokeColor="@color/black"
+                    app:cardCornerRadius="15dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerRecetas"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:backgroundTint="@color/black" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tituloreceta"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <Button
+                android:id="@+id/recetasAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:text="@string/atras">
+            </Button>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

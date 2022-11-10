@@ -60,6 +60,8 @@
     <string name="interior_inicio">La casa albercana tenia tres parts fonamentals: la quadra, l\'habitatge i el lloc d\'emmagatzematge. \n</string>
     <string name="rutas_inicio">Tot poble de conte ha de tenir un entorn de somni, i La Alberca no anava a ser menys. Boscos de         pins, rouredes i castanyers donen vida als voltants d\'aquest poble, amb rutes de tota mena en els quals poder gaudir de la naturalesa, de la fauna i de l\'aire pur que ens ofereixen.\n</string>
     <string name="alojamiento_inicio">Si desitges passar més d\'un dia en La Alberca per a poder conèixer tots els seus secrets, existeixen moltes opcions d\'allotjament:\n</string>
+    <string name="alimentacion">Alimentación</string>
+    <string name="otras_tiendas">Otros comercios</string>
 
     <string-array name="trajes_serranos">
         <item>El Sayas vestit</item>
@@ -76,6 +78,28 @@
         <item>La Alberca - San Martin del Castañar</item>
         <item>La Alberca - Peña del Huevo</item>
         <item>La Alberca - Mogarraz</item>
+    </string-array>
+
+    <string-array name="tipo">
+        <item>Dulce</item>
+        <item>Salado</item>
+    </string-array>
+
+    <string-array name="recetasDulces">
+        <item>Bollo Maimón</item>
+        <item>Floretas</item>
+        <item>Leche Frita</item>
+        <item>Perrunillas</item>
+        <item>Turuletes</item>
+    </string-array>
+
+    <string-array name="recetasSaladas">
+        <item>Cabrito Cuchifrito</item>
+        <item>Hornazo</item>
+        <item>Limón Serrano</item>
+        <item>Patatas Meneás</item>
+        <item>Tostón Asado</item>
+        <item>Zorongollo</item>
     </string-array>
 
     <string name="apart">Apartaments</string>

@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
 import com.example.tfg.navigationmenu.Categorias;
 
@@ -130,7 +131,22 @@ public class gastronomiaInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            Fragment fragment = new recetasTipicas();
+            fragment.setArguments(args);
+
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
+
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
     }
