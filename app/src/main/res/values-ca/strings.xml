@@ -131,5 +131,8 @@
     <string name="puntuacion">Puntuació:</string>
     <string name="otros_lugares">Als voltants de La Alberca hi ha molts altres preciosos pobles i llocs per descobrir. Aquí en van uns quants: \n</string>
     <string name="idioma_validator">idiomaca</string>
+    <string name="pueblos_de_la_sierra">Pueblos de la Sierra</string>
+    <string name="km_desde_la_alberca">Km desde La Alberca:</string>
+    <string name="fiesta_mayor">Fiesta Mayor:</string>
 
 </resources>

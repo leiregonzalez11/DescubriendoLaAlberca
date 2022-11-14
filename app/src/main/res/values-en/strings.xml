@@ -93,6 +93,9 @@
     <string name="otras_tiendas">Other Stores</string>
     <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful villages and places to discover. Here are a few options: \n</string>
     <string name="idioma_validator">language</string>
+    <string name="pueblos_de_la_sierra">Villages of the Sierra de Francia</string>
+    <string name="km_desde_la_alberca">Km from La Alberca:</string>
+    <string name="fiesta_mayor">Main festivity:</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

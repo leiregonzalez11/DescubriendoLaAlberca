@@ -108,7 +108,6 @@ public class otrosPueblos extends Fragment {
         });
 
         Spinner spinner = requireView().findViewById(R.id.spinnerPueblos);
-        TextView titulopueblo = requireView().findViewById(R.id.titulopueblo);
 
         String [] pueblos = getResources().getStringArray(R.array.pueblosdelasierra);
         spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, pueblos));
@@ -118,7 +117,6 @@ public class otrosPueblos extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 //Toast.makeText(getContext(), "Has pulsado: "+ pueblo, Toast.LENGTH_LONG).show();
                 pueblo = (String) adapterView.getItemAtPosition(position);
-                titulopueblo.setText(pueblo);
 
                 String puebloBBDD = pueblo.replaceAll(" ", "").toLowerCase();
 

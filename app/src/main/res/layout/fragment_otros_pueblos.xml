@@ -30,18 +30,17 @@
 
             <TextView
                 android:id="@+id/gastrotext"
-                android:layout_width="323dp"
+                android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="40sp"
+                android:textSize="32sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
-                android:text="Pueblos de la Sierra"
+                android:text="@string/pueblos_de_la_sierra"
                 android:textAlignment="gravity"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+                android:textStyle="bold" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextIntro"
@@ -74,19 +73,6 @@
                         android:backgroundTint="@color/black" />
 
                 </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/titulopueblo"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:textSize="35sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
-                android:gravity="center"
-                android:textAlignment="gravity"
-                android:textStyle="bold"
-                />
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/mapViewPueblo"
@@ -151,10 +137,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/amiri"
-                            android:layout_marginTop="-12dp"
+                            android:layout_marginTop="-10dp"
                             android:layout_marginLeft="-5dp"
                             android:gravity='left'
-                            android:text="Km desde La Alberca: "
+                            android:text="@string/km_desde_la_alberca"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="19sp"/>
@@ -164,7 +150,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="-12dp"
+                            android:layout_marginTop="-10dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textColor="@color/black"
@@ -192,11 +178,11 @@
                             android:id="@+id/fiesta"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-12dp"
+                            android:layout_marginTop="-10dp"
                             android:layout_marginLeft="-5dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
-                            android:text="Fiesta Mayor: "
+                            android:text="@string/fiesta_mayor"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="19sp"/>
@@ -206,7 +192,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="-12dp"
+                            android:layout_marginTop="-10dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textColor="@color/black"

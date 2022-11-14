@@ -93,6 +93,9 @@
     <string name="otras_tiendas">Beste Dendak</string>
     <string name="otros_lugares">La Alberca inguruetan beste hainbat herri eta leku eder daude ezagutzeko. Hona hemen batzuk: \n</string>
     <string name="idioma_validator">hizkuntza</string>
+    <string name="pueblos_de_la_sierra">Sierra de Franciako herriak</string>
+    <string name="km_desde_la_alberca">Km La Albercatik:</string>
+    <string name="fiesta_mayor">Festa nagusia:</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

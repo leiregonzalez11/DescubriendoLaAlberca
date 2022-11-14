@@ -168,7 +168,9 @@
         <item>Villanueva del Conde</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pueblos_de_la_sierra">Pueblos de la Sierra de Francia</string>
+    <string name="km_desde_la_alberca">Km desde La Alberca:</string>
+    <string name="fiesta_mayor">Fiesta Mayor:</string>
 
 
 </resources>
