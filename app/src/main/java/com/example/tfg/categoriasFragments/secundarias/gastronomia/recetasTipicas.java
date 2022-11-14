@@ -1,6 +1,5 @@
 package com.example.tfg.categoriasFragments.secundarias.gastronomia;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +17,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
@@ -35,10 +32,8 @@ public class recetasTipicas extends Fragment {
     Bundle args;
     GestorDB dbHelper;
     String [] recetas;
-    ImageView img1, img2;
     StorageReference storageRef;
-    TextView text1, text2, text3;
-    String categoria, idioma, nombreReceta, tipoRecetas;
+    String categoria, idioma, nombreRecetaBBDD, tipoRecetas;
 
     public recetasTipicas() {
         // Required empty public constructor
@@ -72,32 +67,27 @@ public class recetasTipicas extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Categorias();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         dbHelper = new GestorDB(requireContext());
         storageRef = FirebaseStorage.getInstance().getReference();
-        tipoRecetas = "dulce";
-
 
         Spinner spinner1 = requireView().findViewById(R.id.spinnerTipo);
         Spinner spinner2 = requireView().findViewById(R.id.spinnerRecetas);
@@ -129,9 +119,16 @@ public class recetasTipicas extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 //Toast.makeText(getContext(), "Has pulsado " + (String) adapterView.getItemAtPosition(position), Toast.LENGTH_LONG).show();
-                nombreReceta = determinarReceta((String) adapterView.getItemAtPosition(position));
+
                 tituloreceta.setText((String) adapterView.getItemAtPosition(position));
-                //String[] datos = dbHelper.obtenerDatosRecetas(idioma, nombreReceta, categoria);
+
+                if (tipoRecetas.equalsIgnoreCase("dulce")){
+                    nombreRecetaBBDD = determinarRecetaDulce((String) adapterView.getItemAtPosition(position));
+                } else{
+                    nombreRecetaBBDD = determinarRecetaSalada((String) adapterView.getItemAtPosition(position));
+                }
+
+                //String[] datos = dbHelper.obtenerDatosRecetas(idioma, nombreRecetaBBDD, categoria);
             }
 
             @Override
@@ -162,16 +159,42 @@ public class recetasTipicas extends Fragment {
 
     }
 
-    /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
-    private String determinarReceta(String idRuta) {
+    /** Método utilizado para conocer la receta dulce elegida por el usuario para obtener la información */
+    private String determinarRecetaDulce(String idReceta) {
 
-        if(idRuta.toLowerCase().contains("francia")){
-            nombreReceta = "peñadefrancia";
-        } else if (idRuta.toLowerCase().contains("raíces")) {
-            nombreReceta = "raices";
+        //Recetas dulces
+        if(idReceta.toLowerCase().contains("leche")){
+            nombreRecetaBBDD = "lechefrita";
+        } else if (idReceta.toLowerCase().contains("perrunillas")) {
+            nombreRecetaBBDD = "perrunillas";
+        }else if (idReceta.toLowerCase().contains("turulete")) {
+            nombreRecetaBBDD = "turuletes";
+        }else if (idReceta.toLowerCase().contains("bollo")) {
+            nombreRecetaBBDD = "bollomaimon";
+        }else if (idReceta.toLowerCase().contains("flor")) {
+            nombreRecetaBBDD = "floreta";
         }
+        return nombreRecetaBBDD;
+    }
 
-        return nombreReceta;
+    /** Método utilizado para conocer la receta salada elegida por el usuario para obtener la información */
+    private String determinarRecetaSalada(String idReceta) {
+
+        //Recetas dulces
+        if(idReceta.toLowerCase().contains("patata")){
+            nombreRecetaBBDD = "patatasmeneas";
+        } else if (idReceta.toLowerCase().contains("toston")) {
+            nombreRecetaBBDD = "tostonasado";
+        }else if (idReceta.toLowerCase().contains("cabrito")) {
+            nombreRecetaBBDD = "cabritocuchifrito";
+        }else if (idReceta.toLowerCase().contains("hornazo")) {
+            nombreRecetaBBDD = "hornazo";
+        }else if (idReceta.toLowerCase().contains("serrano")) {
+            nombreRecetaBBDD = "limonserrano";
+        }else if (idReceta.toLowerCase().contains("zorongollo")) {
+            nombreRecetaBBDD = "zorongollo";
+        }
+        return nombreRecetaBBDD;
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */

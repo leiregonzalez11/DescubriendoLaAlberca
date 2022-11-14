@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laAlbercaDB";
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 6;
     private final Context context;
     private boolean seguir = true;
 
@@ -333,5 +333,31 @@ public class GestorDB extends SQLiteOpenHelper {
         c.close();
         return descr;
     }
+
+    public String [] obtenerInfoPueblos (String idioma, String pueblo, String tabla, String categoria){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[5];
+
+        String query = "SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
+                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + pueblo + "';";
+
+        System.out.println("QUERY: " + query);
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
+                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + pueblo + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 5; j++){
+                descrip = c.getString(j);
+                System.out.println("DESCRIIIIIIIP " + descrip);
+                descr[j] = descrip;
+            }
+        }
+        c.close();
+        return descr;
+    }
+
 
 }

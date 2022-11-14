@@ -108,25 +108,22 @@ public class turroneras extends Fragment {
         obtenerImagenFirebase("gastronomia/turroneras2.jpg", img2);
 
         Button atrasBtn = requireView().findViewById(R.id.gastroAtras3);
-        atrasBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new gastronomiaInicio();
-                fragment.setArguments(args);
+        atrasBtn.setOnClickListener(v -> {
+            Fragment fragment = new gastronomiaInicio();
+            fragment.setArguments(args);
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
     }

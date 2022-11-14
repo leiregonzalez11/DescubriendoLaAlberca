@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 import com.example.tfg.navigationmenu.Categorias;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class otrosLugaresInicio extends Fragment {
 
     String idioma, categoria, opc1, opc2, opc3, opc4;
+    Bundle args;
 
     public otrosLugaresInicio() {
         // Required empty public constructor
@@ -40,10 +42,16 @@ public class otrosLugaresInicio extends Fragment {
 
         setHasOptionsMenu(false);
 
+        args = new Bundle();
+
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
             categoria = getArguments().getString("categoria");
         }
+
+        args.putString("idioma", idioma);
+        args.putString("categoria", categoria);
+
     }
 
     @Override
@@ -87,6 +95,7 @@ public class otrosLugaresInicio extends Fragment {
         opc3 = "Pueblos de la Sierra";
         opc4 = "Valle de Las Batuecas";
 
+        //Hurdes
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
@@ -99,6 +108,8 @@ public class otrosLugaresInicio extends Fragment {
 
         });
 
+
+        //Peña de Francia
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
@@ -110,6 +121,8 @@ public class otrosLugaresInicio extends Fragment {
 
         });
 
+
+        //Pueblos
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
 
@@ -117,10 +130,27 @@ public class otrosLugaresInicio extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            Fragment fragment = new otrosPueblos();
+            fragment.setArguments(args);
+
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
+
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
 
         });
 
+
+        //Batuecas
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
 

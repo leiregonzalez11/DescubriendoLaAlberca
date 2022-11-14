@@ -64,26 +64,23 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Categorias();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         dbHelper = new GestorDB(requireContext());

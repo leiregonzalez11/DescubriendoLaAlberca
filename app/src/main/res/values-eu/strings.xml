@@ -139,5 +139,21 @@
         <item>Zorongollo</item>
     </string-array>
 
+    <string-array name="pueblosdelasierra">
+        <item>Cepeda</item>
+        <item>Garcibuey</item>
+        <item>Herguijuela de la Sierra</item>
+        <item>Las Casas del Conde</item>
+        <item>Madroñal</item>
+        <item>Miranda del Castañar</item>
+        <item>Mogarraz</item>
+        <item>San Martin del Castañar</item>
+        <item>San Miguel del Robledo</item>
+        <item>Sequeros</item>
+        <item>Sotoserrano</item>
+        <item>Valero</item>
+        <item>Villanueva del Conde</item>
+    </string-array>
+
 
 </resources>
