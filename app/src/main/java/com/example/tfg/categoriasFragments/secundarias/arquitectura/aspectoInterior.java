@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -97,11 +98,11 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
         text4 = requireView().findViewById(R.id.arqui34);
         text5 = requireView().findViewById(R.id.arqui35);
 
-        text1.setText(datos[0]+ Html.fromHtml("<br>"));
-        text2.setText(datos[1]+ Html.fromHtml("<br>"));
-        text3.setText(datos[2]+ Html.fromHtml("<br>"));
-        text4.setText(datos[3]+ Html.fromHtml("<br>"));
-        text5.setText(datos[4]+ Html.fromHtml("<br>"));
+        text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text4.setText(datos[3]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text5.setText(datos[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
 

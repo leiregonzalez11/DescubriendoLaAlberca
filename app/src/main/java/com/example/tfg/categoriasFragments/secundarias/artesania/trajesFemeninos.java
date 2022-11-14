@@ -1,19 +1,16 @@
 package com.example.tfg.categoriasFragments.secundarias.artesania;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -75,26 +71,23 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Categorias();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         dbHelper = new GestorDB(getContext());
@@ -178,17 +171,17 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         String [] datos = dbHelper.obtenerDatosTrajes(idioma, "trajes", categoria, 3, nombreTraje);
 
         if (nombreTraje.equalsIgnoreCase("vistas") & idioma.equalsIgnoreCase("en")){
-            text1.setText(datos[1] + Html.fromHtml("<br>"));
-            text2.setText(datos[0] + Html.fromHtml("<br>"));
+            text1.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2]);
         } else if (nombreTraje.equalsIgnoreCase("manteo") & idioma.equalsIgnoreCase("en")){
-            text1.setText(datos[2] + Html.fromHtml("<br>"));
-            text2.setText(datos[0] + Html.fromHtml("<br>"));
-            text3.setText(datos[1] + Html.fromHtml("<br>"));
+            text1.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         } else{
-            text1.setText(datos[0] + Html.fromHtml("<br>"));
-            text2.setText(datos[1] + Html.fromHtml("<br>"));
-            text3.setText(datos[2] + Html.fromHtml("<br>"));
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         }
         obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
         obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);

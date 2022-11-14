@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
@@ -27,22 +28,26 @@ public class Hoteles extends Fragment {
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
 
         args = new Bundle();
         args.putString("categoria", "alojamiento");
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_hoteles, container, false);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ListView listView = requireView().findViewById(R.id.listviewHoteles);
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -53,7 +58,7 @@ public class Hoteles extends Fragment {
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_hotel, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show()
 
             nombreAloj = lista1.get(position).toString();
@@ -76,7 +81,7 @@ public class Hoteles extends Fragment {
             fragmentTransaction.commit();
 
         });
-
     }
+
 
 }

@@ -1,34 +1,31 @@
 package com.example.tfg.categoriasFragments.principal;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
-import android.view.LayoutInflater;
+import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.tfg.GestorDB;
-import com.example.tfg.R;
+import androidx.annotation.NonNull;
+import android.view.LayoutInflater;
+import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.Fragment;
+import android.annotation.SuppressLint;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SliderAdapter;
-import com.example.tfg.categoriasFragments.secundarias.tradiciones.tradicionesSelector;
-import com.example.tfg.navigationmenu.Categorias;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+import androidx.fragment.app.FragmentTransaction;
+import com.example.tfg.navigationmenu.Categorias;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.example.tfg.categoriasFragments.secundarias.tradiciones.tradicionesSelector;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 
 public class tradicionesInicio extends Fragment {
 
-    Bundle args;
+    private Bundle args;
     private String idioma, categoria;
 
     public tradicionesInicio() {
@@ -66,26 +63,23 @@ public class tradicionesInicio extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Categorias();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -93,7 +87,7 @@ public class tradicionesInicio extends Fragment {
         String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio", categoria, 1);
 
         TextView text1 = requireView().findViewById(R.id.trad11);
-        text1.setText(datos[0]+ Html.fromHtml("<br>"));
+        text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //SLIDER
         SliderView sliderView = requireView().findViewById(R.id.imageSliderTrad1);
@@ -106,25 +100,22 @@ public class tradicionesInicio extends Fragment {
 
         //BOTON SIGUIENTE
         Button sigBtn = requireView().findViewById(R.id.tradsiguiente1);
-        sigBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new tradicionesSelector();
-                fragment.setArguments(args);
+        sigBtn.setOnClickListener(v -> {
+            Fragment fragment = new tradicionesSelector();
+            fragment.setArguments(args);
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
     }

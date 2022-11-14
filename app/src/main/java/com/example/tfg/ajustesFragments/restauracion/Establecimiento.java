@@ -11,14 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -34,11 +32,11 @@ import com.google.firebase.storage.StorageReference;
 
 public class Establecimiento extends Fragment {
 
-    String idioma, categoria, establecimiento, ubicacion, telefono;
+    String categoria, establecimiento, ubicacion, telefono;
     double lat, lon;
     private StorageReference storageRef;
 
-    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
          * Manipulates the map once available.
@@ -134,7 +132,7 @@ public class Establecimiento extends Fragment {
 
             tel.setText(telsubrayado);
             tel.setOnClickListener(view12 -> {
-                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el numero de telefono
+                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
                 startActivity(dial); // Ejecutamos el Intent
             });

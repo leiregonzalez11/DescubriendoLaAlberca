@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.ajustesFragments.Comercio;
@@ -24,7 +25,6 @@ import com.example.tfg.ajustesFragments.DondeComer;
 import com.example.tfg.ajustesFragments.DondeDormir;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
-
 import java.util.ArrayList;
 
 
@@ -34,32 +34,34 @@ public class Ajustes extends Fragment {
     Fragment fragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-    String opc1, opc2, opc3, opc4, opc5, idioma, iu;
+    String opc1, opc2, opc3, opc4, opc5;
 
     public Ajustes() {
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         args = new Bundle();
         args.putString("iu", "ajustes");
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }
 
-    @SuppressLint("ResourceAsColor")
-    @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
 
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ListView listView = requireView().findViewById(R.id.listview);
         ListView listView2 = requireView().findViewById(R.id.listview2);
         ListView listView3 = requireView().findViewById(R.id.listview3);
@@ -79,7 +81,7 @@ public class Ajustes extends Fragment {
 
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
             fragment = new Comercio();
             // Obtener el administrador de fragmentos a través de la actividad
@@ -100,7 +102,7 @@ public class Ajustes extends Fragment {
         listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_direccion, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
             fragment = new ComoLlegar();
             // Obtener el administrador de fragmentos a través de la actividad
@@ -121,11 +123,11 @@ public class Ajustes extends Fragment {
         listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_comer, lista3);
         listView3.setAdapter(myAdapter3);
 
-        listView3.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
             fragment = new DondeComer();
             // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager = requireActivity().getSupportFragmentManager();
             // Definir una transacción
             fragmentTransaction = fragmentManager.beginTransaction();
             // Remplazar el contenido principal por el fragmento
@@ -141,11 +143,11 @@ public class Ajustes extends Fragment {
         listViewAdapter myAdapter4 = new listViewAdapter(getContext(), R.layout.list_dormir, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
             fragment = new DondeDormir();
             // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager = requireActivity().getSupportFragmentManager();
             // Definir una transacción
             fragmentTransaction = fragmentManager.beginTransaction();
             // Remplazar el contenido principal por el fragmento
@@ -162,14 +164,12 @@ public class Ajustes extends Fragment {
         listViewAdapter myAdapter5 = new listViewAdapter(getContext(), R.layout.list_servicios, lista5);
         listView5.setAdapter(myAdapter5);
 
-        listView5.setOnItemClickListener((adapterView, view, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
-        });
-
+        listView5.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show());
     }
 
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menuusuario, menu);
     }
@@ -179,50 +179,35 @@ public class Ajustes extends Fragment {
 
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
-                //Toast.makeText(getContext(), "Has pulsado: Contacto", Toast.LENGTH_LONG).show();
-
-                //Añadimos los argumentos
+                //Creamos el fragmento
                 fragment = new FormularioDeContacto();
-                fragment.setArguments(args);
-
-                // Obtener el administrador de fragmentos a través de la actividad
-                fragmentManager = requireActivity().getSupportFragmentManager();
-
-                // Definir una transacción
-                fragmentTransaction = fragmentManager.beginTransaction();
-
-                // Remplazar el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
-
-                // Cambiar
-                fragmentTransaction.commit();
                 break;
 
             case R.id.menu_idioma:
-                //Toast.makeText(getContext(), "Has pulsado: Idiomas", Toast.LENGTH_LONG).show();
-
-                //Añadimos los argumentos
+                //Creamos el fragmento
                 fragment = new Idiomas();
-                fragment.setArguments(args);
-
-                // Obtener el administrador de fragmentos a través de la actividad
-                fragmentManager = requireActivity().getSupportFragmentManager();
-
-                // Definir una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                // Remplazar el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
-
-                // Cambiar
-                fragmentTransaction.commit();
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
+
+        //Añadimos los argumentos
+        fragment.setArguments(args);
+
+        // Obtener el administrador de fragmentos a través de la actividad
+        fragmentManager = requireActivity().getSupportFragmentManager();
+
+        // Definir una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // Remplazar el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+
+        // Cambiar
+        fragmentTransaction.commit();
+
         return true;
     }
 

@@ -1,21 +1,17 @@
 package com.example.tfg.categoriasFragments.secundarias.artesania;
 
-import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
@@ -62,26 +58,23 @@ public class artesaniaSelector extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Categorias();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
         ListView listView = requireView().findViewById(R.id.listviewArte1);
@@ -92,7 +85,7 @@ public class artesaniaSelector extends Fragment {
         opc2 = getResources().getString(R.string.traje_serrano);
         opc3 = getString(R.string.alhajas);
 
-        ArrayList<String> lista1 = new ArrayList<String>();
+        ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
@@ -116,7 +109,7 @@ public class artesaniaSelector extends Fragment {
             fragmentTransaction.commit();
         });
 
-        ArrayList<String> lista2 = new ArrayList<String>();
+        ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
         listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_item, lista2);
@@ -140,7 +133,7 @@ public class artesaniaSelector extends Fragment {
             fragmentTransaction.commit();
         });
 
-        ArrayList<String> lista3 = new ArrayList<String>();
+        ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
 
         listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_item, lista3);

@@ -6,11 +6,11 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +28,8 @@ import com.smarteist.autoimageslider.SliderView;
 
 public class arquitecturaInicio extends Fragment {
 
-    Bundle args;
-    String idioma, categoria;
+    private Bundle args;
+    private String idioma, categoria;
 
     public arquitecturaInicio() {
         // Required empty public constructor
@@ -90,10 +90,10 @@ public class arquitecturaInicio extends Fragment {
         String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "inicio", categoria, 2);
 
         TextView interfaz1 = requireView().findViewById(R.id.arqui11);
-        interfaz1.setText(datos[0] + Html.fromHtml("<br>"));
+        interfaz1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         TextView interfaz2 = requireView().findViewById(R.id.arqui12);
-        interfaz2.setText(datos[1] + Html.fromHtml("<br>"));
+        interfaz2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //SLIDER
         SliderView sliderView = requireView().findViewById(R.id.imageSliderArqui1);
@@ -107,25 +107,22 @@ public class arquitecturaInicio extends Fragment {
 
         //BOTON SIGUIENTE
         Button sigBtn = requireView().findViewById(R.id.arquisiguiente1);
-        sigBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new aspectoExterior();
-                fragment.setArguments(args);
+        sigBtn.setOnClickListener(v -> {
+            Fragment fragment = new aspectoExterior();
+            fragment.setArguments(args);
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
 
     }

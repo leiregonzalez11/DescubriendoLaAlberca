@@ -1,30 +1,27 @@
 package com.example.tfg.categoriasFragments.principal;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-
+import com.example.tfg.R;
+import android.view.View;
+import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import com.example.tfg.GestorDB;
+import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
+import android.annotation.SuppressLint;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.example.tfg.GestorDB;
-import com.example.tfg.R;
 import com.example.tfg.adapters.SliderAdapter;
-import com.example.tfg.categoriasFragments.secundarias.artesania.artesaniaSelector;
-import com.example.tfg.navigationmenu.Categorias;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+import com.example.tfg.navigationmenu.Categorias;
+import androidx.fragment.app.FragmentTransaction;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.example.tfg.categoriasFragments.secundarias.artesania.artesaniaSelector;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 
 public class artesaniaInicio extends Fragment {
 
@@ -87,9 +84,9 @@ public class artesaniaInicio extends Fragment {
         TextView text2 = requireView().findViewById(R.id.arte12);
         TextView text3 = requireView().findViewById(R.id.arte13);
 
-        text1.setText(datos[0] + Html.fromHtml("<br>"));
-        text2.setText(datos[1] + Html.fromHtml("<br>"));
-        text3.setText(datos[2] + Html.fromHtml("<br>"));
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //SLIDER
         SliderView sliderView = requireView().findViewById(R.id.imageSliderArte1);

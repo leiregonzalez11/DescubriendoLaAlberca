@@ -1,11 +1,9 @@
 package com.example.tfg.categoriasFragments.principal;
 
 import android.os.Bundle;
-import android.text.Html;
 import com.example.tfg.R;
 import android.view.View;
 import java.util.ArrayList;
-import android.widget.Toast;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,16 +11,16 @@ import com.example.tfg.GestorDB;
 import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
 import com.example.tfg.navigationmenu.Categorias;
+import androidx.fragment.app.FragmentTransaction;
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 
 public class gastronomiaInicio extends Fragment {
 
@@ -90,8 +88,8 @@ public class gastronomiaInicio extends Fragment {
         TextView text1 = requireView().findViewById(R.id.gastro11);
         TextView text2 = requireView().findViewById(R.id.gastro12);
 
-        text1.setText(datos[0] + Html.fromHtml("<br>"));
-        text2.setText(datos[1] + Html.fromHtml("<br>"));
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         ListView listView = requireView().findViewById(R.id.listviewGastro1);
         ListView listView2 = requireView().findViewById(R.id.listviewGastro2);

@@ -2,30 +2,23 @@ package com.example.tfg.categoriasFragments.secundarias.otrosLugares;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
-import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,9 +26,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
 
 public class otrosPueblos extends Fragment {
 
@@ -43,7 +34,7 @@ public class otrosPueblos extends Fragment {
     double lat, lon;
     String pueblo, idioma, categoria;
 
-    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
          * Manipulates the map once available.
@@ -139,7 +130,7 @@ public class otrosPueblos extends Fragment {
 
                 km.setText(datos[1]);
                 fiestamayor.setText(datos[2]);
-                descr.setText(datos[0] + Html.fromHtml("<br>"));
+                descr.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 lat = Double.parseDouble(datos[3]);
                 lon = Double.parseDouble(datos[4]);
 

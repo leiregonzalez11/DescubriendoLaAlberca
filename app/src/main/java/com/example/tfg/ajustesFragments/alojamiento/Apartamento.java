@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -27,23 +29,25 @@ public class Apartamento extends Fragment{
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
 
         args = new Bundle();
         args.putString("categoria", "alojamiento");
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_apart, container, false);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
-
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ListView listView = requireView().findViewById(R.id.listviewApart);
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -53,7 +57,7 @@ public class Apartamento extends Fragment{
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
 
             nombreAloj = lista1.get(position).toString();
@@ -77,9 +81,6 @@ public class Apartamento extends Fragment{
 
         });
 
-
     }
-
-
 
 }

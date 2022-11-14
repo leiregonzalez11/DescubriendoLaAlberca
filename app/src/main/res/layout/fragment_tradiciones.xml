@@ -30,15 +30,15 @@
             <TextView
                 android:id="@+id/tradtitulo"
                 android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/black"
-                android:textSize="40sp"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
                 android:text="@string/tradicionesmayus"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="40sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 

@@ -39,42 +39,18 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         // Required empty public constructor
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+
+        iu = requireArguments().getString("iu");
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        setHasOptionsMenu(false);
-        iu = requireArguments().getString("iu");
-        System.out.println("IU FORM: " + iu);
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_form, container, false);
-    }
-
-    @SuppressLint("ResourceAsColor")
-    @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
-        asuntoET= requireView().findViewById(R.id.asunto);
-        asuntoet = asuntoET.getHint().toString().trim();
-        mensajeET = requireView().findViewById(R.id.mensaje);
-
-        asunto = getResources().getString(R.string.asuntoet);
-
-        asuntoET.setOnClickListener(view -> {
-            if (asuntoet.equals(asunto)){
-                asuntoET.setHint("");
-            } else if (asuntoet.equals("")) {
-                asuntoET.setHint(asunto);
-            }
-        });
-
-        //Botón Enviar
-
-        Button siguienteBtn = requireView().findViewById(R.id.btnEnviar);
-        siguienteBtn.setOnClickListener(this);
-
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -100,39 +76,57 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = null;
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = null;
 
-                switch (iu) {
-                    case "inicio":
-                        fragment = new Inicio();
-                        break;
-                    case "categorias":
-                        fragment = new Categorias();
-                        break;
-                    case "ajustes":
-                        fragment = new Ajustes();
-                        break;
-                }
+            switch (iu) {
+                case "inicio":
+                    fragment = new Inicio();
+                    break;
+                case "categorias":
+                    fragment = new Categorias();
+                    break;
+                case "ajustes":
+                    fragment = new Ajustes();
+                    break;
+            }
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            assert fragment != null;
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
+        });
+
+        asuntoET= requireView().findViewById(R.id.asunto);
+        asuntoet = asuntoET.getHint().toString().trim();
+        mensajeET = requireView().findViewById(R.id.mensaje);
+
+        asunto = getResources().getString(R.string.asuntoet);
+
+        asuntoET.setOnClickListener(v -> {
+            if (asuntoet.equals(asunto)){
+                asuntoET.setHint("");
+            } else if (asuntoet.equals("")) {
+                asuntoET.setHint(asunto);
             }
         });
+
+        //Botón Enviar
+
+        Button siguienteBtn = requireView().findViewById(R.id.btnEnviar);
+        siguienteBtn.setOnClickListener(this);
+
     }
 
     @Override

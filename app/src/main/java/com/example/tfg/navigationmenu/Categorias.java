@@ -10,21 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
 import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
+import com.example.tfg.categoriasFragments.principal.culturaInicio;
+import com.example.tfg.categoriasFragments.principal.fiestasInicio;
 import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
+import com.example.tfg.categoriasFragments.principal.historiaInicio;
+import com.example.tfg.categoriasFragments.principal.monumentosInicio;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.categoriasFragments.principal.rutasInicio;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
@@ -47,17 +49,23 @@ public class Categorias extends Fragment implements View.OnClickListener{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
         argsMenu = new Bundle();
         argsMenu.putString("iu", "categorias");
 
         args = new Bundle();
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
+
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_categorias, container, false);
@@ -65,8 +73,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         idioma = determinarIdioma();
 
@@ -84,57 +91,51 @@ public class Categorias extends Fragment implements View.OnClickListener{
         switch (btn.getId()){
 
             case R.id.botonhistoria:
-                Toast.makeText(getContext(), "Has pulsado historia", Toast.LENGTH_LONG).show();
                 categoria = "historia";
+                fragment = new historiaInicio();
                 break;
 
             case R.id.botonartesania:
-                //Toast.makeText(getContext(), "Has pulsado artesania", Toast.LENGTH_LONG).show();
                 categoria = "artesania";
                 fragment = new artesaniaInicio();
                 break;
 
             case R.id.botontradiciones:
-                //Toast.makeText(getContext(), "Has pulsado tradiciones", Toast.LENGTH_LONG).show();
                 categoria = "tradiciones";
                 fragment = new tradicionesInicio();
                 break;
 
             case R.id.botonarquitectura:
-                //Toast.makeText(getContext(), "Has pulsado arquitectura", Toast.LENGTH_LONG).show();
                 categoria = "arquitectura";
                 fragment = new arquitecturaInicio();
                 break;
 
             case R.id.botonmonumentos:
-                Toast.makeText(getContext(), "Has pulsado sitios de interés", Toast.LENGTH_LONG).show();
                 categoria = "sitiosdeinteres";
+                fragment = new monumentosInicio();
                 break;
 
             case R.id.botonfiestas:
-                Toast.makeText(getContext(), "Has pulsado fiestas", Toast.LENGTH_LONG).show();
                 categoria = "fiestas";
+                fragment = new fiestasInicio();
                 break;
 
             case R.id.botongastronomia:
-                //Toast.makeText(getContext(), "Has pulsado gastronomia", Toast.LENGTH_LONG).show();
                 categoria = "gastronomia";
                 fragment = new gastronomiaInicio();
                 break;
 
             case R.id.botoncultura:
-                Toast.makeText(getContext(), "Has pulsado cultura", Toast.LENGTH_LONG).show();
                 categoria = "cultura";
+                fragment = new culturaInicio();
                 break;
 
             case R.id.botonruta:
-                //Toast.makeText(getContext(), "Has pulsado rutas", Toast.LENGTH_LONG).show();
                 categoria = "rutas";
                 fragment = new rutasInicio();
                 break;
 
             case R.id.botonotros:
-                //Toast.makeText(getContext(), "Has pulsado otros lugares", Toast.LENGTH_LONG).show();
                 categoria = "otroslugares";
                 fragment = new otrosLugaresInicio();
                 break;
@@ -169,13 +170,11 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
-                //Toast.makeText(getContext(), "Has pulsado: Contacto", Toast.LENGTH_LONG).show();
                 //Creamos el fragmento
                 fragment = new FormularioDeContacto();
                 break;
 
             case R.id.menu_idioma:
-                //Toast.makeText(getContext(), "Has pulsado: Idiomas", Toast.LENGTH_LONG).show();
                 //Creamos el fragmento
                 fragment = new Idiomas();
                 break;
@@ -184,6 +183,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
                 return super.onOptionsItemSelected(menuItem);
         }
 
+        //Añadimos los argumentos
         fragment.setArguments(argsMenu);
 
         // Obtener el administrador de fragmentos a través de la actividad

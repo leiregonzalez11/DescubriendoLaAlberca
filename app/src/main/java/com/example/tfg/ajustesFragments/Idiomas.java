@@ -35,48 +35,22 @@ public class Idiomas extends Fragment {
         // Required empty public constructor
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+
+        iu = requireArguments().getString("iu");
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        setHasOptionsMenu(false);
-        iu = requireArguments().getString("iu");
-        System.out.println("IU IDIOMAS: " + iu);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_idiomas, container, false);
     }
 
     @SuppressLint("ResourceAsColor")
-    @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
-        radioCas = requireView().findViewById(R.id.radio_es);
-        radioEus = requireView().findViewById(R.id.radio_eu);
-        radioIng = requireView().findViewById(R.id.radio_en);
-
-        TextView texto = requireView().findViewById(R.id.textAjustes);
-
-        if (texto.getText().toString().equals("Seleccione un idioma:")){
-            radioCas.setChecked(true);
-            radioCas.setTextColor(R.color.purple_500);
-            idioma = "es";
-        } else if (texto.getText().toString().contains("aukeratu:")){
-            radioEus.setChecked(true);
-            radioEus.setTextColor(R.color.purple_500);
-            idioma = "eu";
-        }else if (texto.getText().toString().contains("language:")){
-            radioIng.setChecked(true);
-            radioIng.setTextColor(R.color.purple_500);
-            idioma = "en";
-        }
-
-        comprobarIdioma();
-
-    }
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
@@ -114,6 +88,29 @@ public class Idiomas extends Fragment {
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
         });
+
+        radioCas = requireView().findViewById(R.id.radio_es);
+        radioEus = requireView().findViewById(R.id.radio_eu);
+        radioIng = requireView().findViewById(R.id.radio_en);
+
+        TextView texto = requireView().findViewById(R.id.textAjustes);
+
+        if (texto.getText().toString().equals("Seleccione un idioma:")){
+            radioCas.setChecked(true);
+            radioCas.setTextColor(R.color.purple_500);
+            idioma = "es";
+        } else if (texto.getText().toString().contains("aukeratu:")){
+            radioEus.setChecked(true);
+            radioEus.setTextColor(R.color.purple_500);
+            idioma = "eu";
+        }else if (texto.getText().toString().contains("language:")){
+            radioIng.setChecked(true);
+            radioIng.setTextColor(R.color.purple_500);
+            idioma = "en";
+        }
+
+        comprobarIdioma();
+
     }
 
     private void comprobarIdioma(){

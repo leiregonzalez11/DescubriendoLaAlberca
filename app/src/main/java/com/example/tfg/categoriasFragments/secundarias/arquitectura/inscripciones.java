@@ -2,26 +2,22 @@ package com.example.tfg.categoriasFragments.secundarias.arquitectura;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,8 +27,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     Bundle args;
     String idioma, categoria;
     StorageReference storageRef;
-    ImageView img1, img2, img3, img4, img5;
-    TextView text1, text2, text3, text4, text5;
+    ImageView img1, img2;
 
     public inscripciones() {
         // Required empty public constructor
@@ -95,9 +90,9 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         TextView text2 = requireView().findViewById(R.id.arqui42);
         TextView text3 = requireView().findViewById(R.id.arqui43);
 
-        text1.setText(datos[0] + Html.fromHtml("<br>"));
-        text2.setText(datos[1] + Html.fromHtml("<br>"));
-        text3.setText(datos[2] + Html.fromHtml("<br>"));
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
 

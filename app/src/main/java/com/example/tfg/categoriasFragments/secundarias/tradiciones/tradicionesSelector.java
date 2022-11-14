@@ -94,7 +94,7 @@ public class tradicionesSelector extends Fragment {
         String opc1 = "El Pendón";
         String opc2 = "La Loa";
         String opc3 = "La Moza de Ánimas";
-        String opc4 = "Majadas Viejas";
+        String opc4 = "Alboradas";
         String opc5 = "Otras tradiciones y leyendas";
 
         ArrayList<String> lista1 = new ArrayList<>();

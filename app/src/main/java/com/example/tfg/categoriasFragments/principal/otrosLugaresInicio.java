@@ -1,30 +1,22 @@
 package com.example.tfg.categoriasFragments.principal;
 
-
 import android.os.Bundle;
-
+import com.example.tfg.R;
+import android.view.View;
+import java.util.ArrayList;
+import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
+import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.navigationmenu.Categorias;
-
-import java.util.ArrayList;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 
 public class otrosLugaresInicio extends Fragment {
 
@@ -66,7 +58,7 @@ public class otrosLugaresInicio extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(view1 -> {
+        myToolbar.setNavigationOnClickListener(v -> {
 
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
@@ -103,10 +95,8 @@ public class otrosLugaresInicio extends Fragment {
 
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-
-        });
+        listView.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show());
 
 
         //Peña de Francia
@@ -116,10 +106,8 @@ public class otrosLugaresInicio extends Fragment {
         listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_monte, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
-
-        });
+        listView2.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show());
 
 
         //Pueblos
@@ -157,10 +145,8 @@ public class otrosLugaresInicio extends Fragment {
         listViewAdapter myAdapter4 = new listViewAdapter(getContext() , R.layout.list_bosque, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
-
-        });
+        listView4.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
 
 
     }

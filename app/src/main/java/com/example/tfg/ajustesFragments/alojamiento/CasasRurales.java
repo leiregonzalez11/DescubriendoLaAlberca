@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,33 +20,38 @@ import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
 
+
 public class CasasRurales extends Fragment {
 
     ArrayList lista1;
     Bundle args;
-    String nombreAloj, idioma;
+    String nombreAloj;
 
     public CasasRurales() {
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
 
         args = new Bundle();
         args.putString("categoria", "alojamiento");
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_casas, container, false);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
-        ListView listView = getView().findViewById(R.id.listviewCasas);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        ListView listView = requireView().findViewById(R.id.listviewCasas);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -53,7 +60,7 @@ public class CasasRurales extends Fragment {
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_casas, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
             nombreAloj = lista1.get(position).toString();
 
@@ -74,10 +81,7 @@ public class CasasRurales extends Fragment {
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
         });
-
-
-
-
     }
+
 
 }

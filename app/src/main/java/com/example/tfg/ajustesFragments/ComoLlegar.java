@@ -1,6 +1,5 @@
 package com.example.tfg.ajustesFragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,32 +33,16 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
         // Required empty public constructor
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        setHasOptionsMenu(false);
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_como_llegar, container, false);
-    }
-
-    @SuppressLint("ResourceAsColor")
-    @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
-
-        storageRef = FirebaseStorage.getInstance().getReference();
-        img1 = requireView().findViewById(R.id.comollegar3);
-
-        //Spinner
-        Spinner spinner = requireView().findViewById(R.id.spinnerBus);
-        String [] bus = getResources().getStringArray(R.array.bus);
-        spinner.setOnItemSelectedListener(this);
-        spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitenbus, bus));
-        //spinner.setAdapter(new ArrayAdapter<>(this, R.layout.dropdownitenbus, bus));
-        spinner.setOnItemSelectedListener(this);
-
     }
 
     /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
@@ -99,27 +82,34 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.arrow_back);
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myToolbar.setNavigationOnClickListener(v -> {
 
-                myToolbar.setNavigationIcon(null);
-                Fragment fragment = new Ajustes();
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Ajustes();
 
-                // Obtenemos el administrador de fragmentos a través de la actividad
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            // Obtenemos el administrador de fragmentos a través de la actividad
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
-                // Definimos una transacción
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            // Definimos una transacción
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Remplazamos el contenido principal por el fragmento
-                fragmentTransaction.replace(R.id.relativelayout, fragment);
-                fragmentTransaction.addToBackStack(null);
+            // Remplazamos el contenido principal por el fragmento
+            fragmentTransaction.replace(R.id.relativelayout, fragment);
+            fragmentTransaction.addToBackStack(null);
 
-                // Cambiamos el fragment en la interfaz
-                fragmentTransaction.commit();
-            }
+            // Cambiamos el fragment en la interfaz
+            fragmentTransaction.commit();
         });
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+        img1 = requireView().findViewById(R.id.comollegar3);
+
+        //Spinner
+        Spinner spinner = requireView().findViewById(R.id.spinnerBus);
+        String [] bus = getResources().getStringArray(R.array.bus);
+        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitenbus, bus));
+        spinner.setOnItemSelectedListener(this);
     }
 
 }

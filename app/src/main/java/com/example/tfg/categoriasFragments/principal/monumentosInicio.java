@@ -1,69 +1,62 @@
-package com.example.tfg.ajustesFragments.restauracion;
+package com.example.tfg.categoriasFragments.principal;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-
+import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import android.annotation.SuppressLint;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.example.tfg.navigationmenu.Categorias;
 
-import com.example.tfg.GestorDB;
-import com.example.tfg.R;
-import com.example.tfg.adapters.listViewAdapter;
+public class monumentosInicio extends Fragment {
 
-import java.util.ArrayList;
+    private String categoria, idioma;
+    private Bundle args;
 
-public class Restaurantes extends Fragment {
-
-    ArrayList lista1;
-    Bundle args;
-    String nombreRest;
-
-    public Restaurantes() {
+    public monumentosInicio() {
         // Required empty public constructor
     }
 
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+
+        if (getArguments() != null) {
+            idioma = getArguments().getString("idioma");
+            categoria = getArguments().getString("categoria");
+        }
+
         args = new Bundle();
-        args.putString("categoria", "restaurante");
+
+        args.putString("idioma", idioma);
+        args.putString("categoria", categoria);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restaurantes, container, false);
+        return inflater.inflate(R.layout.fragment_monumentos_inicio, container, false);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ListView listView = requireView().findViewById(R.id.listviewRest);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationOnClickListener(v -> {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "restaurante");
-
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_rest, lista1);
-        listView.setAdapter(myAdapter);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
-            nombreRest = lista1.get(position).toString();
-
-            Fragment fragment = new Establecimiento();
-            args.putString("nombreEst", nombreRest);
-            fragment.setArguments(args);
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = new Categorias();
 
             // Obtenemos el administrador de fragmentos a través de la actividad
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -77,9 +70,6 @@ public class Restaurantes extends Fragment {
 
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
-
         });
     }
-
-
 }

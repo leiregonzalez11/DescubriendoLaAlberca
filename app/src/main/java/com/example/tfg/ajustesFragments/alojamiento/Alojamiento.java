@@ -38,7 +38,7 @@ public class Alojamiento extends Fragment {
     double lat, lon;
     private StorageReference storageRef;
 
-    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
          * Manipulates the map once available.
@@ -133,7 +133,7 @@ public class Alojamiento extends Fragment {
 
             tel.setText(telsubrayado);
             tel.setOnClickListener(view12 -> {
-                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el numero de telefono
+                Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
                 startActivity(dial); // Ejecutamos el Intent
             });

@@ -1,19 +1,19 @@
 package com.example.tfg.ajustesFragments.restauracion;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-
 import java.util.ArrayList;
 
 public class Bares extends Fragment {
@@ -26,20 +26,24 @@ public class Bares extends Fragment {
         // Required empty public constructor
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+        args = new Bundle();
+        args.putString("categoria", "restaurante");
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        args = new Bundle();
-        args.putString("categoria", "restaurante");
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bares, container, false);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onActivityCreated(Bundle state) {
-        super.onActivityCreated(state);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         ListView listView = (ListView) requireView().findViewById(R.id.listviewBares);
 
@@ -50,7 +54,7 @@ public class Bares extends Fragment {
         listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, lista1);
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, view, position, id) -> {
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
             nombreRest = lista1.get(position).toString();
 
@@ -71,6 +75,7 @@ public class Bares extends Fragment {
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
         });
+
     }
 
 }

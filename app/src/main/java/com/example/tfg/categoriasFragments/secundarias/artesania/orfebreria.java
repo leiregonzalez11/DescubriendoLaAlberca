@@ -2,22 +2,19 @@ package com.example.tfg.categoriasFragments.secundarias.artesania;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -31,7 +28,7 @@ public class orfebreria extends Fragment {
     Bundle args;
     String idioma, categoria;
     ImageView img1, img2;
-    TextView text1, text2, text3;
+    TextView text1, text2;
     StorageReference storageRef;
 
     public orfebreria() {
@@ -94,8 +91,8 @@ public class orfebreria extends Fragment {
         text1 = requireView().findViewById(R.id.arte51);
         text2 = requireView().findViewById(R.id.arte52);
 
-        text1.setText(datos[0] + Html.fromHtml("<br>"));
-        text2.setText(datos[1] + Html.fromHtml("<br>"));
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
