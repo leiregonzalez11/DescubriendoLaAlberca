@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/layoutArqui21"
@@ -123,7 +124,7 @@
                             android:fontFamily="@font/amiri"
                             android:layout_marginTop="-10dp"
                             android:gravity='left'
-                            android:text="Horario:"
+                            android:text="@string/horario"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -137,7 +138,7 @@
                             android:layout_marginBottom="10dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
-                            android:text="Sábados: 11:30-13:30 / 16:00-19:00 \n Domingos: 11:30 - 13:30"
+                            android:text="@string/horario2"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             tools:ignore="HardcodedText" />
@@ -209,7 +210,7 @@
                             android:fontFamily="@font/amiri"
                             android:layout_marginTop="-10dp"
                             android:gravity='left'
-                            android:text="Precio:"
+                            android:text="@string/precio"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -223,7 +224,7 @@
                             android:layout_marginTop="-10dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
-                            android:text="General: 2,5€ / Grupos: 2€"
+                            android:text="@string/precio2"
                             android:textColor="@color/black"
                             android:textSize="17sp"
                             tools:ignore="HardcodedText" />

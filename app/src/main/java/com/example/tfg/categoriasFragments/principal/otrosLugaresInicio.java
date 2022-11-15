@@ -84,8 +84,8 @@ public class otrosLugaresInicio extends Fragment {
 
         opc1 = "Las Hurdes";
         opc2 = "Peña de Francia";
-        opc3 = "Pueblos de la Sierra";
-        opc4 = "Valle de Las Batuecas";
+        opc3 = getString(R.string.pueblos_de_la_sierra);
+        opc4 = getString(R.string.batuecas);
 
         //Hurdes
         ArrayList<String> lista1 = new ArrayList<>();

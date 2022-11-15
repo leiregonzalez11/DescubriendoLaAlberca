@@ -99,7 +99,8 @@ public class recetasTipicas extends Fragment {
            @Override
            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                tipoRecetas = (String) adapterView.getItemAtPosition(position);
-               if (tipoRecetas.equalsIgnoreCase("dulce")){
+               if (tipoRecetas.equalsIgnoreCase("dulce") || tipoRecetas.equalsIgnoreCase("sweet") ||
+                       tipoRecetas.equalsIgnoreCase("gozoa")){
                    recetas = getResources().getStringArray(R.array.recetasDulces);
                } else {
                    recetas = getResources().getStringArray(R.array.recetasSaladas);
@@ -122,7 +123,8 @@ public class recetasTipicas extends Fragment {
 
                 tituloreceta.setText((String) adapterView.getItemAtPosition(position));
 
-                if (tipoRecetas.equalsIgnoreCase("dulce")){
+                if (tipoRecetas.equalsIgnoreCase("dulce") || tipoRecetas.equalsIgnoreCase("sweet") ||
+                        tipoRecetas.equalsIgnoreCase("gozoa")){
                     nombreRecetaBBDD = determinarRecetaDulce((String) adapterView.getItemAtPosition(position));
                 } else{
                     nombreRecetaBBDD = determinarRecetaSalada((String) adapterView.getItemAtPosition(position));

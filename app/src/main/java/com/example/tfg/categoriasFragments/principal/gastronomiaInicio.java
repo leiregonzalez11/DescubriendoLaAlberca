@@ -94,8 +94,8 @@ public class gastronomiaInicio extends Fragment {
         ListView listView = requireView().findViewById(R.id.listviewGastro1);
         ListView listView2 = requireView().findViewById(R.id.listviewGastro2);
 
-        opc1 = "Las Turroneras";
-        opc2 = "Recetas típicas";
+        opc1 = getString(R.string.turroneras);
+        opc2 = getString(R.string.recetas);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);

@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/layoutGastro"
@@ -38,7 +39,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
-                android:text="Recetas Típicas"
+                android:text="@string/recetas"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />

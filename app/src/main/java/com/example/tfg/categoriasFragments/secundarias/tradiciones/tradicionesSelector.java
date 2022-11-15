@@ -90,12 +90,14 @@ public class tradicionesSelector extends Fragment {
         ListView listView3 = requireView().findViewById(R.id.listviewtrad3);
         ListView listView4 = requireView().findViewById(R.id.listviewtrad4);
         ListView listView5 = requireView().findViewById(R.id.listviewtrad5);
+        ListView listView6 = requireView().findViewById(R.id.listviewtrad6);
 
-        String opc1 = "El Pendón";
-        String opc2 = "La Loa";
-        String opc3 = "La Moza de Ánimas";
-        String opc4 = "Alboradas";
-        String opc5 = "Otras tradiciones y leyendas";
+        String opc1 = "Alboradas";
+        String opc2 = "El Marrano de San Antón";
+        String opc3 = "El Pendón";
+        String opc4 = "La Loa";
+        String opc5 = "La Moza de Ánimas";
+        String opc6 = getString(R.string.otras_tradiciones);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -104,10 +106,8 @@ public class tradicionesSelector extends Fragment {
 
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-
-        });
+        listView.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show());
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -115,10 +115,8 @@ public class tradicionesSelector extends Fragment {
         listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_item, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
-
-        });
+        listView2.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show());
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
@@ -126,10 +124,8 @@ public class tradicionesSelector extends Fragment {
         listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_item, lista3);
         listView3.setAdapter(myAdapter3);
 
-        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
-
-        });
+        listView3.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show());
 
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
@@ -137,21 +133,27 @@ public class tradicionesSelector extends Fragment {
         listViewAdapter myAdapter4 = new listViewAdapter(getContext(), R.layout.list_item, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
+        listView4.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
 
-        });
-
+        //
         ArrayList<String> lista5 = new ArrayList<>();
         lista5.add(opc5);
 
         listViewAdapter myAdapter5 = new listViewAdapter(getContext(), R.layout.list_item, lista5);
         listView5.setAdapter(myAdapter5);
 
-        listView5.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show();
+        listView5.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show());
 
-        });
+        ArrayList<String> lista6 = new ArrayList<>();
+        lista6.add(opc6);
+
+        listViewAdapter myAdapter6 = new listViewAdapter(getContext(), R.layout.list_item, lista6);
+        listView6.setAdapter(myAdapter6);
+
+        listView6.setOnItemClickListener((adapterView, v, position, id) ->
+                Toast.makeText(getContext(), "Has pulsado: "+ opc6, Toast.LENGTH_LONG).show());
 
         //BOTON SIGUIENTE y ATRAS
 

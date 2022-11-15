@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/layoutTrad21"
@@ -110,6 +111,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+            <ListView
+                android:id="@+id/listviewtrad5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="NestedScrolling" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
@@ -118,7 +135,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listviewtrad5"
+                    android:id="@+id/listviewtrad6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />

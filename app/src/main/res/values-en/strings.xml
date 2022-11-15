@@ -2,13 +2,19 @@
     <string name="app_name">Descubriendo La Alberca</string>
     <string name="tituloprincipal">Welcome to La Alberca!</string>
 
-    <string name="textoprincipal">To the south of Salamanca, on the northern slopes of
-        the Sierra de Francia, lies La Alberca, "a village for dreaming", as the poet and
-        professor Don José María Requejo likes to say. \n</string>
+    <string name="textoprincipal">In the south of the province of Salamanca, in the heart of the Sierra de Francia, lies La Alberca,
+        surrounded by extensive forests full of oak and chestnut trees. Sierra de Francia, lies La Alberca, surrounded by extensive forests
+        full of oak and chestnut trees. Every corner of La Alberca has a special charm: its cobbled streets, its houses built of stone and wood and the roofs of the houses that
+        and the roofs that are joined together in the air form an architectural ensemble in which to lose oneself and enjoy.\n
+    </string>
 
-    <string name="textoprincipal2">Declared a Historic-Artistic Site in 1940, this beautiful
-        village stands out for its urban layout, preserving like few others the typical
-        architecture of the typical architecture of the Sierra de Francia. \n</string>
+    <string name="textoprincipal2">La Alberca, a magical setting, can boast of being the first village in Spain to be declared a
+        Historic-Artistic Site in Spain, specifically in 1940. Its festivals, its traditions, such as the Moza de Ánimas or
+        the Marrano de San Antón, its gastronomy… so many reasons that will make your visit an incomparable experience.
+        As the poet and professor from Alberca, Don José María Requejo, likes to say, La Alberca is… \n
+    </string>
+
+    <string name="textoprincipal4" translatable="false">A Village To Dream Of </string>
 
     <string name="dialog_tour_titulo">Welcome to La Alberca!</string>
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app? </string>
@@ -96,6 +102,16 @@
     <string name="pueblos_de_la_sierra">Villages of the Sierra de Francia</string>
     <string name="km_desde_la_alberca">Km from La Alberca:</string>
     <string name="fiesta_mayor">Main festivity:</string>
+    <string name="servicios">Services</string>
+    <string name="recetas">Typical recipes</string>
+    <string name="turroneras">The Turroneras</string>
+    <string name="horario">Schedule:</string>
+    <string name="horario2">Saturdays: 11:30–13:30 / 16:00–19:00 \n  Sundays: 11:30–13:30</string>
+    <string name="precio">Rate:</string>
+    <string name="precio2">General: 2,5€ / Groups: 2€</string>
+    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="batuecas">Las Batuecas Valley</string>
+    <string name="otras_tradiciones">Other traditions and legends</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

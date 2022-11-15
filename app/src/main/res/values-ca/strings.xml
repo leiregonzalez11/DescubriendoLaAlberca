@@ -134,5 +134,16 @@
     <string name="pueblos_de_la_sierra">Pueblos de la Sierra</string>
     <string name="km_desde_la_alberca">Km desde La Alberca:</string>
     <string name="fiesta_mayor">Fiesta Mayor:</string>
+    <string name="servicios">Servicios</string>
+    <string name="recetas">Recetas típicas</string>
+    <string name="textoprincipal4">Un Pueblo Para Soñar</string>
+    <string name="turroneras">Las Turroneras</string>
+    <string name="horario">Horario:</string>
+    <string name="horario2">Sábados: 11:30-13:30 / 16:00-19:00 \n Domingos: 11:30 - 13:30</string>
+    <string name="precio">Precio:</string>
+    <string name="precio2">General: 2,5€ / Grupos: 2€</string>
+    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="batuecas">Valle de Las Batuecas</string>
+    <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
 
 </resources>

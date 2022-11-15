@@ -14,7 +14,7 @@
         el Marrano de San Antón, su gastronomía… tantas y tantas razones que harán de su visita una experiencia inigualable.
         Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es…  \n</string>
 
-    <string name="textoprincipal4" translatable="false">Un Pueblo Para Soñar</string>
+    <string name="textoprincipal4">Un Pueblo Para Soñar</string>
 
     <string name="dialog_tour_titulo">¡Bienvenido a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -102,7 +102,7 @@
     <string name="puntuacion">Puntuación:</string>
     <string name="telefono">Teléfono:</string>
     <string name="otros_lugares">En los alrededores de La Alberca existen muchos otros preciosos pueblos y lugares que descubrir. Aquí van unos cuantos: \n</string>
-    <string name="turroneras" translatable="false">Las Turroneras</string>
+    <string name="turroneras">Las Turroneras</string>
     <string name="alimentacion">Alimentación</string>
     <string name="otras_tiendas">Otros Comercios</string>
     <string name="idioma_validator">idioma</string>
@@ -171,6 +171,15 @@
     <string name="pueblos_de_la_sierra">Pueblos de la Sierra de Francia</string>
     <string name="km_desde_la_alberca">Km desde La Alberca:</string>
     <string name="fiesta_mayor">Fiesta Mayor:</string>
+    <string name="servicios">Servicios</string>
+    <string name="recetas">Recetas típicas</string>
+    <string name="horario">Horario:</string>
+    <string name="horario2">Sábados: 11:30-13:30 / 16:00-19:00 \n Domingos: 11:30 - 13:30</string>
+    <string name="precio">Precio:</string>
+    <string name="precio2">General: 2,5€ / Grupos: 2€</string>
+    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="batuecas">Valle de Las Batuecas</string>
+    <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
 
 
 </resources>
