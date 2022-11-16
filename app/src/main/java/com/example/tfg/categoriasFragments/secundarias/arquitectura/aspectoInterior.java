@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -90,7 +88,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "interior", categoria, 5);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "interior", categoria, 5);
 
         text1 = requireView().findViewById(R.id.arqui31);
         text2 = requireView().findViewById(R.id.arqui32);

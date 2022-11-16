@@ -86,7 +86,7 @@ public class orfebreria extends Fragment {
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "orfebreria", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "orfebreria", categoria, 3);
 
         text1 = requireView().findViewById(R.id.arte51);
         text2 = requireView().findViewById(R.id.arte52);

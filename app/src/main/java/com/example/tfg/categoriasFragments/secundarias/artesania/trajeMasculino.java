@@ -89,7 +89,7 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "trajemasc", categoria, 4);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "trajemasc", categoria, 4);
 
         TextView text1 = requireView().findViewById(R.id.arte41);
         TextView text2 = requireView().findViewById(R.id.arte42);

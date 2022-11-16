@@ -1,7 +1,7 @@
-INSERT INTO arquitectura (namePag, idioma, descr) VALUES ('interfaz11','en', '');
-INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('trajes1','es','manteo','');
-sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, descr) VALUES ('interfaz13','fr', '');");
-sqLiteDatabase.execSQL("INSERT INTO artesania (namePag, idioma, nombreTraje, descr) VALUES ('trajes3','en','zagalejo','');");
+INSERT INTO arquitectura (catArqui, idioma, descrArqui) VALUES ('interfaz11','en', '');
+INSERT INTO artesania (catArte, idioma, nombreTraje, descrArte) VALUES ('trajes1','es','manteo','');
+sqLiteDatabase.execSQL("INSERT INTO artesania (catArte, idioma, descrArte) VALUES ('interfaz13','fr', '');");
+sqLiteDatabase.execSQL("INSERT INTO artesania (catArte, idioma, nombreTraje, descrArte) VALUES ('trajes3','en','zagalejo','');");
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('es', 'torrita', '', 'Distancia: 14 km (ida y vuelta)', 'Desnivel: 432 metros', 'Dificultad técnica: Fácil - Moderada', 'Tiempo: 5 horas (Aprox.)');
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('eu', 'torrita', '', 'Distantzia: 14 km (joan-etorri)', 'Desnibela: 432 metro', 'Zailtasun teknikoa: Erraza - Neurriduna', 'Denbora: 5 ordu (Inguru)');
 INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad, tiempo) VALUES ('en', 'torrita', '', 'Distance: 14 km (Roundtrip)', 'Unevenness: 432 meters', 'Technical Difficulty: Easy - Moderate', 'Time: 5 hours (Approx.)');

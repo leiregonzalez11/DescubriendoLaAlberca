@@ -78,7 +78,7 @@ public class artesaniaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "inicio", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "inicio", categoria, 3);
 
         TextView text1 = requireView().findViewById(R.id.arte11);
         TextView text2 = requireView().findViewById(R.id.arte12);

@@ -83,7 +83,7 @@ public class gastronomiaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String[] datos = dbHelper.obtenerDescrInterfaz(idioma, "inicio", categoria, 2);
+        String[] datos = dbHelper.obtenerDescrGastro(idioma, "inicio", categoria, 2);
 
         TextView text1 = requireView().findViewById(R.id.gastro11);
         TextView text2 = requireView().findViewById(R.id.gastro12);

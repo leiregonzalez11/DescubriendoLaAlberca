@@ -87,7 +87,7 @@ public class arquitecturaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "inicio", categoria, 2);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "inicio", categoria, 2);
 
         TextView interfaz1 = requireView().findViewById(R.id.arqui11);
         interfaz1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

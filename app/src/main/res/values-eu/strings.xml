@@ -88,9 +88,13 @@
     <string name="telefono">Telefonoa:</string>
     <string name="atras">Aurrekoa</string>
     <string name="en_coche">Autoz</string>
-    <string name="comoLlegarCoche">Probintziako hiriburutik La Albercara iristeko modurik errazena SA-215 errepidetik da, Tamames herrira, eta han SA-201 errepiderako saihesbidea hartuko dugu, Salamanca eta La Alberca bereizten dituen 76km ko bidaia egin ondoren gure helmugara eramango gaituena.\n</string>
-    <string name="introComoLlegar">La Alberca Salamanca probintziaren hegoaldean dago, Cáceres probintziarekin muga egiten du. Bere muga-kokapenagatik, historikoki, La Alberca Las Hurdesen atea bezala ezagutzen zen.\n</string>
-    <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:\n</string>
+    <string name="comoLlegarCoche">Probintziako hiriburutik La Albercara iristeko modurik errazena SA-215 errepidetik da,
+        Tamames herrira, eta han SA-201 errepiderako saihesbidea hartuko dugu, Salamanca eta La Alberca bereizten dituen 76kmko
+        bidaia egin ondoren gure helmugara eramango gaituena.\n</string>
+    <string name="introComoLlegar">La Alberca Salamanca probintziaren hegoaldean dago, Caceres probintziarekin muga egiten du.
+        Bere muga-kokapenagatik, historikoki, La Alberca Las Hurdesen atea bezala ezagutzen zen.\n</string>
+    <string name="comoLlegarBus">La Albercara etortzeko ibilgailu propiorik ez baduzu edo, besterik gabe, autobusez etorri nahi
+        baduzu, herrira joateko joan-etorriko ordutegi desberdinak dituzten autobus lineak daude:\n</string>
     <string name="puntuacion">Puntuazioa:</string>
     <string name="en_bus">Autobusez</string>
     <string name="alimentacion">Janari Dendak</string>
@@ -102,6 +106,14 @@
     <string name="fiesta_mayor">Festa nagusia:</string>
     <string name="servicios">Zerbitzuak</string>
     <string name="recetas">Errezeta tipikoak</string>
+    <string name="turroneras">Turronerak</string>
+    <string name="horario">Ordutegia:</string>
+    <string name="horario2">Larunbata : 11:30–13:30 / 16:00–19:00 \n Igandea: 11:30–13:30</string>
+    <string name="precio">Prezioak:</string>
+    <string name="precio2">Orokorra: 2,5€ / Taldeak: 2€</string>
+    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="batuecas">Las Batuecas Harana</string>
+    <string name="otras_tradiciones">Beste tradizioak eta elezaharrak</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -144,7 +156,6 @@
         <item>Hornazo</item>
         <item>Limón Serrano</item>
         <item>Patatas Meneás</item>
-        <item>Tostón Asado</item>
         <item>Zorongollo</item>
     </string-array>
 
@@ -163,14 +174,7 @@
         <item>Valero</item>
         <item>Villanueva del Conde</item>
     </string-array>
-    <string name="turroneras">Turronerak</string>
-    <string name="horario">Ordutegia:</string>
-    <string name="horario2">Larunbata : 11:30–13:30 / 16:00–19:00 \n Igandea: 11:30–13:30</string>
-    <string name="precio">Prezioak:</string>
-    <string name="precio2">Orokorra: 2,5€ / Taldeak: 2€</string>
-    <string name="pueblos">Pueblos de la Sierra</string>
-    <string name="batuecas">Las Batuecas Harana</string>
-    <string name="otras_tradiciones">Beste tradizioak eta elezaharrak</string>
+
 
 
 </resources>

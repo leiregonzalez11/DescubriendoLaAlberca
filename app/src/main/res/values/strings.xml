@@ -148,7 +148,6 @@
         <item>Hornazo</item>
         <item>Limón Serrano</item>
         <item>Patatas Meneás</item>
-        <item>Tostón Asado</item>
         <item>Zorongollo</item>
     </string-array>
 
@@ -174,7 +173,7 @@
     <string name="servicios">Servicios</string>
     <string name="recetas">Recetas típicas</string>
     <string name="horario">Horario:</string>
-    <string name="horario2">Sábados: 11:30-13:30 / 16:00-19:00 \n Domingos: 11:30 - 13:30</string>
+    <string name="horario2">Sábados: 11:30–13:30 / 16:00–19:00 \n Domingos: 11:30–13:30</string>
     <string name="precio">Precio:</string>
     <string name="precio2">General: 2,5€ / Grupos: 2€</string>
     <string name="pueblos">Pueblos de la Sierra</string>

@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +90,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "exterior", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "exterior", categoria, 3);
 
         text1 = requireView().findViewById(R.id.arqui21);
         text2 = requireView().findViewById(R.id.arqui22);

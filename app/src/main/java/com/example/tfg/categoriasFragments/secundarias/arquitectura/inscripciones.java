@@ -84,7 +84,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "inscripciones", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "inscripciones", categoria, 3);
 
         TextView text1 = requireView().findViewById(R.id.arqui41);
         TextView text2 = requireView().findViewById(R.id.arqui42);

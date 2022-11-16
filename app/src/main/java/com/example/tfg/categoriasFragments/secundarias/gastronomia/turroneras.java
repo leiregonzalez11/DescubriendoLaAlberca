@@ -87,7 +87,7 @@ public class turroneras extends Fragment {
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "turroneras", categoria, 3);
+        String [] datos = dbHelper.obtenerDescrGastro(idioma, "turroneras", categoria, 3);
 
         text1 = requireView().findViewById(R.id.gastro31);
         text2 = requireView().findViewById(R.id.gastro32);

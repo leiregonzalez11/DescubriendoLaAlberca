@@ -87,7 +87,7 @@ public class bordadoSerrano extends Fragment {
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDescrInterfaz(idioma, "bordado", categoria, 4);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "bordado", categoria, 4);
 
         text1 = requireView().findViewById(R.id.arte21);
         text2 = requireView().findViewById(R.id.arte22);
