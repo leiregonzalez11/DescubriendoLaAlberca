@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/tradtitulo"
-                android:layout_width="323dp"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
