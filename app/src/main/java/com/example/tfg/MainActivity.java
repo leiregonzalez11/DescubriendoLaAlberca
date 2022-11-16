@@ -1,6 +1,7 @@
 package com.example.tfg;
 
 import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         myToolbar.setNavigationIcon(null);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
+
+        /*Cargamos la BD...*/
+        GestorDB dbHelper =  new GestorDB(getApplicationContext());
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         fragment_id = "inicio";
 

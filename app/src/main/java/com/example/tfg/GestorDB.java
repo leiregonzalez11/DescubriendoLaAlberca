@@ -18,12 +18,10 @@ import java.util.ArrayList;
 
 public class GestorDB extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "laAlbercaDB";
-    private static final int DB_VERSION = 7;
+    private static final String DB_NAME = "laalbercaDB";
+    private static final int DB_VERSION = 1;
     private final Context context;
     private boolean seguir = true;
-
-    String ingr, paso1, paso2, paso3, paso4, paso5, pasos;
 
     public GestorDB(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
