@@ -144,5 +144,7 @@
     <string name="pueblos">Pueblos de la Sierra</string>
     <string name="batuecas">Valle de Las Batuecas</string>
     <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
+    <string name="ingredientes">INGREDIENTES \n</string>
+    <string name="pasos_a_seguir">PASOS A SEGUIR \n</string>
 
 </resources>

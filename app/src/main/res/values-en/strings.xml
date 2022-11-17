@@ -112,6 +112,8 @@
     <string name="pueblos">Pueblos de la Sierra</string>
     <string name="batuecas">Las Batuecas Valley</string>
     <string name="otras_tradiciones">Other traditions and legends</string>
+    <string name="ingredientes">INGREDIENTS \n</string>
+    <string name="pasos_a_seguir">STEPS TO TAKE \n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

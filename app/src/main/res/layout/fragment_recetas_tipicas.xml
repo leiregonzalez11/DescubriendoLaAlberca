@@ -166,7 +166,7 @@
                 android:layout_marginBottom="-55dp"
                 android:fontFamily="@font/amiri"
                 android:textStyle="bold"
-                android:text="INGREDIENTES \n"
+                android:text="@string/ingredientes"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="20sp"/>
@@ -180,12 +180,12 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="170dp"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="left"
@@ -196,7 +196,7 @@
                             android:id="@+id/img1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription" />
 
@@ -214,7 +214,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="-5dp"
@@ -225,7 +225,7 @@
                             android:id="@+id/img3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -244,7 +244,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="-5dp"
@@ -255,7 +255,7 @@
                             android:id="@+id/img5"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -274,7 +274,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="-5dp"
@@ -285,14 +285,14 @@
                             android:id="@+id/img7"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
                             android:id="@+id/txt7"
-                            android:layout_width="match_parent"
+                            android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-10dp"
                             android:fontFamily="@font/amiri"
@@ -304,7 +304,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="-5dp"
@@ -315,7 +315,7 @@
                             android:id="@+id/img9"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -334,7 +334,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="170dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="-5dp"
@@ -345,7 +345,7 @@
                             android:id="@+id/img11"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -563,7 +563,7 @@
                 android:layout_marginBottom="-55dp"
                 android:fontFamily="@font/amiri"
                 android:textStyle="bold"
-                android:text="PASOS A SEGUIR \n"
+                android:text="@string/pasos_a_seguir"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="20sp"/>

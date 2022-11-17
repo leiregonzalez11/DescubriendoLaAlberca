@@ -72,7 +72,7 @@ public class Ajustes extends Fragment {
         opc2 = getResources().getString(R.string.ajustes1);
         opc3 = getResources().getString(R.string.ajustes3);
         opc4 = getResources().getString(R.string.ajustes4);
-        opc5 = getString(R.string.servicios);
+        opc5 = getResources().getString(R.string.servicios);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);

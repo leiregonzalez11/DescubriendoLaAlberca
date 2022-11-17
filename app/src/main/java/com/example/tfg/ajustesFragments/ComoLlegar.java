@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,7 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
 
     private StorageReference storageRef;
     private View img1;
+    String idioma;
     private String nombreBus;
 
     public ComoLlegar() {
@@ -68,7 +70,8 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
         determinarRuta((String) adapterView.getItemAtPosition(position));
-        obtenerImagenFirebase("ajustes/" + nombreBus + ".jpg", (ImageView) img1);
+        determinarIdioma();
+        obtenerImagenFirebase("ajustes/" + nombreBus + "-" + idioma + ".jpg", (ImageView) img1);
 
     }
 
@@ -110,6 +113,25 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitenbus, bus));
         spinner.setOnItemSelectedListener(this);
+    }
+
+    /** Método utilizado para obtener el idioma actual de la app */
+    public void determinarIdioma() {
+
+        TextView texto = requireView().findViewById(R.id.ajustestext);
+        String text = texto.getText().toString();
+
+        switch (text) {
+            case "¿Cómo llegar hasta La Alberca?":
+                idioma = "es";
+                break;
+            case "Nola iritsi La Albercara?":
+                idioma = "eu";
+                break;
+            case "How to get to La Alberca?":
+                idioma = "en";
+                break;
+        }
     }
 
 }

@@ -114,6 +114,8 @@
     <string name="pueblos">Pueblos de la Sierra</string>
     <string name="batuecas">Las Batuecas Harana</string>
     <string name="otras_tradiciones">Beste tradizioak eta elezaharrak</string>
+    <string name="ingredientes">OSAGAIAK \n</string>
+    <string name="pasos_a_seguir">JARRAITU BEHARREKO PAUSOAK \n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
