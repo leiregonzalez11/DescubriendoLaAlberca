@@ -130,8 +130,7 @@ public class recetasTipicas extends Fragment {
                 //Toast.makeText(getContext(), "Has pulsado " + (String) adapterView.getItemAtPosition(position), Toast.LENGTH_LONG).show();
 
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
-                if (nombreReceta.equalsIgnoreCase("limón serrano") || nombreReceta.equalsIgnoreCase("cabrito cuchifrito")
-                        || nombreReceta.equalsIgnoreCase("patatas meneás")){
+                if (tipoRecetas.equalsIgnoreCase(tipo[1])){
                     String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
                     Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
                     receta.setNombreReceta(nombreReceta);
@@ -343,7 +342,7 @@ public class recetasTipicas extends Fragment {
             img12.setImageResource(0);
 
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ingLayout.getLayoutParams());
-            lp.bottomMargin = -10;
+            lp.bottomMargin = 50;
             ingLayout.setLayoutParams(lp);
 
         } else if (receta.getIngredientes().length == 12){
@@ -363,7 +362,7 @@ public class recetasTipicas extends Fragment {
             img12.setImageResource(R.drawable.arrow_right_foreground);
 
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ingLayout.getLayoutParams());
-            lp.bottomMargin = -10;
+            lp.bottomMargin = 30;
             ingLayout.setLayoutParams(lp);
         }
 
