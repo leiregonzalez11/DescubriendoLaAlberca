@@ -130,7 +130,7 @@ public class recetasTipicas extends Fragment {
                 //Toast.makeText(getContext(), "Has pulsado " + (String) adapterView.getItemAtPosition(position), Toast.LENGTH_LONG).show();
 
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
-                if (tipoRecetas.equalsIgnoreCase(tipo[1])){
+                if (!nombreReceta.equalsIgnoreCase("turuletes") && !nombreReceta.equalsIgnoreCase("floretas")){
                     String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
                     Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
                     receta.setNombreReceta(nombreReceta);

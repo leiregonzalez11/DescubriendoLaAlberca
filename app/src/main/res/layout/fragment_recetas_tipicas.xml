@@ -52,7 +52,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-40dp"
                 android:fontFamily="@font/amiri"
-                android:text="TEXTO DE INTRODUCCIÓN A RECETAS TÍPICAS DE LA ALBERCA Y ALREDEDORES \n"
+                android:text="@string/recetas_intro"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>

@@ -116,6 +116,8 @@
     <string name="otras_tradiciones">Beste tradizioak eta elezaharrak</string>
     <string name="ingredientes">OSAGAIAK \n</string>
     <string name="pasos_a_seguir">JARRAITU BEHARREKO PAUSOAK \n</string>
+    <string name="recetas_intro">Sierra de Franciako gastronomia bere gisatu eta jakietarako erabiltzen dituen produktuen sukaldaritza-balio handiagatik nabarmentzen da, kalitate handiko elaborazioak eta produktuak sortzen baititu, eta horregatik dira hain ezagunak mendilerroko errezetak. \n</string>
+    <string name="donde_comer_intro">La Alberca asko eta ondo jaten den herri bat da. Plater tradizionalak, txingarretan egindako haragiak, etxeko postreak, zerrako ardoak,tapak… Ostalariek egunez egun irekitzen dituzte beren lokaletako ateak, bisitariari etxe bakoitzeko onena eskaintzeko.\n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
