@@ -150,12 +150,12 @@
 
                         <ImageView
                             android:id="@+id/comollegar2"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_marginLeft="20dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="7dp"
-                            android:src="@drawable/bus"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_bus_solid"
                             tools:ignore="ContentDescription" />
 
                         <TextView
@@ -201,7 +201,7 @@
 
                         <Spinner
                             android:id="@+id/spinnerBus"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"

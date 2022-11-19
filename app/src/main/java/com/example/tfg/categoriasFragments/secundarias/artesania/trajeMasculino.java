@@ -63,7 +63,7 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
 
             myToolbar.setNavigationIcon(null);

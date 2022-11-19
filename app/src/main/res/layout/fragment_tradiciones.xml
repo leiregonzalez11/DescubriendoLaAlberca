@@ -29,9 +29,9 @@
 
             <TextView
                 android:id="@+id/tradtitulo"
-                android:layout_width="380dp"
+                android:layout_width="385dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
@@ -39,62 +39,157 @@
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
                 android:textSize="40sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="15dp">
-
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSliderTrad1"
-                    android:layout_width="match_parent"
-                    android:layout_height="232dp"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="right"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="1500"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorMargin="15dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="#5A5A5A"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
-
-            </com.google.android.material.card.MaterialCardView>
-
+                android:textStyle="bold" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad11"
-                android:layout_width="match_parent"
+                android:layout_width="385dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/tradsiguiente1"
-                android:layout_width="wrap_content"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardElevation="10dp"
+                app:strokeColor="@color/black"
+                app:cardCornerRadius="15dp">
+
+                <Spinner
+                    android:id="@+id/spinnerTrad"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:backgroundTint="@color/black" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/titulotrad"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="-20dp"
-                android:textColor="@color/white"
-                android:background="#880E4F"
-                android:fontFamily="@font/alata"
-                android:text="@string/siguiente">
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textStyle="bold"
+                tools:targetApi="o" />
 
-            </Button>
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad12"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--
+            <ImageView
+                android:id="@+id/imgReceta1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:contentDescription="FOTO 1 RECETA">
+            </ImageView>
+
+            -->
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad13"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-30dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad14"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-30dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--AÑADIR AUDIO-->
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad15"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad16"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--AÑADIR AUDIO-->
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad17"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad18"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
         </LinearLayout>
 

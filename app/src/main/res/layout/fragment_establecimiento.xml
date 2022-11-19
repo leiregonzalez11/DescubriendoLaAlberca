@@ -6,231 +6,200 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ajustesFragments.restauracion.Establecimiento">
 
-    <ScrollView
-        android:id="@+id/scrollview"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbarSize="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="650dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp">
 
-        <LinearLayout
-            android:id="@+id/layoutAloj1"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".anterior.ajustes.rest.establecimientoActivity">
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="15dp">
 
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
+                android:id="@+id/layoutAloj2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="15dp">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical"
+                tools:context=".anterior.ajustes.aloj.alojamientoActivity">
 
-                <LinearLayout
-                    android:id="@+id/layoutrest2"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/nombreRest"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:gravity='center'
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
 
-                    <TextView
-                        android:id="@+id/nombreRest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/alex_brush"
-                        android:gravity='center'
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textSize="30sp" />
+                <ImageView
+                    android:id="@+id/fotoRest"
+                    android:layout_width="280dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="-30dp"
+                    android:src="@drawable/laalberca2"
+                    tools:ignore="ContentDescription" />
 
-                    <ImageView
-                        android:id="@+id/fotoRest"
-                        android:layout_width="330dp"
-                        android:layout_height="200dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/laalberca2"
-                        tools:ignore="ContentDescription" />
 
-                    <com.google.android.material.card.MaterialCardView
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginBottom="25dp"
+                    app:cardElevation="10dp"
+                    app:strokeColor="@color/black"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginTop="35dp"
-                        app:cardElevation="10dp"
-                        app:strokeColor="@color/black"
-                        app:cardCornerRadius="15dp">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="left"
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_mobile_retro_solid"
+                                tools:ignore="ContentDescription">
+                            </ImageView>
+
+
+                            <TextView
+                                android:id="@+id/telrest2"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:layout_gravity="left"
-                                android:orientation="horizontal"
-                                tools:ignore="UseCompoundDrawables">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="15dp"
-                                    android:src="@drawable/arrow_right_foreground"
-                                    tools:ignore="ContentDescription">
-                                </ImageView>
-
-                                <TextView
-                                    android:id="@+id/telrest"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/amiri"
-                                    android:layout_marginTop="-12dp"
-                                    android:layout_marginLeft="-5dp"
-                                    android:gravity='left'
-                                    android:text="@string/telefono"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black"
-                                    android:textSize="19sp"/>
-
-                                <TextView
-                                    android:id="@+id/telrest2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="-12dp"
-                                    android:fontFamily="@font/amiri"
-                                    android:gravity='left'
-                                    android:textColor="@color/black"
-                                    android:textSize="19sp"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-
-                                android:layout_gravity="left"
-                                android:orientation="horizontal"
-                                tools:ignore="UseCompoundDrawables">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="15dp"
-                                    android:src="@drawable/arrow_right_foreground"
-                                    tools:ignore="ContentDescription">
-                                </ImageView>
-
-                                <TextView
-                                    android:id="@+id/puntrest"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="-12dp"
-                                    android:layout_marginLeft="-5dp"
-                                    android:fontFamily="@font/amiri"
-                                    android:gravity='left'
-                                    android:text="@string/puntuacion"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black"
-                                    android:textSize="19sp"/>
-
-                                <RatingBar
-                                    android:id="@+id/ratingBar"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="-12dp"
-                                    android:layout_marginLeft="-50dp"
-                                    android:layout_marginRight="-25dp"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:scaleX="0.5"
-                                    android:scaleY="0.5"
-                                    android:stepSize="0.5"
-                                    android:progressTint="#FFB300"
-                                    android:progressBackgroundTint="#B4000000"/>
-
-                            </LinearLayout>
-
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="-12dp"
+                                android:fontFamily="@font/amiri"
+                                android:gravity='left'
+                                android:textColor="@color/black"
+                                android:textSize="19sp"/>
 
                         </LinearLayout>
 
-                    </com.google.android.material.card.MaterialCardView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="-7dp"
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginRight="7dp"
-                        android:layout_marginBottom="-20dp"
-                        android:fontFamily="@font/amiri"
-                        android:gravity='center'
-                        android:text="@string/ubicacion"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textSize="23sp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_star_half_stroke_solid"
+                                tools:ignore="ContentDescription">
+                            </ImageView>
 
-                    <TextView
-                        android:id="@+id/ubirest2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginRight="7dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/amiri"
-                        android:gravity='center'
-                        android:text="@string/ubicacion"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"/>
+                            <RatingBar
+                                android:id="@+id/ratingBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-7dp"
+                                android:layout_marginLeft="-50dp"
+                                android:layout_marginRight="-25dp"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:scaleX="0.5"
+                                android:scaleY="0.5"
+                                android:stepSize="0.5"
+                                android:progressTint="#FFB300"
+                                android:progressBackgroundTint="#B4000000"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_map_location_dot_solid"
+                                tools:ignore="ContentDescription">
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/ubirest2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="-9dp"
+                                android:fontFamily="@font/amiri"
+                                android:gravity='left'
+                                android:text="text"
+                                android:textColor="@color/black"
+                                android:textSize="17sp"/>
+
+                        </LinearLayout>
 
 
-                    <androidx.fragment.app.FragmentContainerView
-                        android:id="@+id/mapViewRestaurante"
-                        android:name="com.google.android.gms.maps.SupportMapFragment"
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="15dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.697" />
+                    </LinearLayout>
 
-                </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-            </com.google.android.material.card.MaterialCardView>
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/mapViewRestaurante"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="280dp"
+                    android:layout_height="150dp"
 
-        </LinearLayout>
+                    android:layout_marginBottom="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.697"
+                    tools:context=".anterior.ajustes.aloj.alojamientoActivity" />
 
-    </ScrollView>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

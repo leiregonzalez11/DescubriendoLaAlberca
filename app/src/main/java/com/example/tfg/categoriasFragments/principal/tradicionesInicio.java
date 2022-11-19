@@ -4,7 +4,8 @@ import android.os.Bundle;
 import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import androidx.annotation.NonNull;
@@ -15,18 +16,15 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import com.example.tfg.adapters.SliderAdapter;
-import com.smarteist.autoimageslider.SliderView;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.navigationmenu.Categorias;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.example.tfg.categoriasFragments.secundarias.tradiciones.tradicionesSelector;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 
 public class tradicionesInicio extends Fragment {
 
     private Bundle args;
-    private String idioma, categoria;
+    private String idioma, categoria, nombreTrad;
 
     public tradicionesInicio() {
         // Required empty public constructor
@@ -62,7 +60,7 @@ public class tradicionesInicio extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
 
             myToolbar.setNavigationIcon(null);
@@ -82,43 +80,49 @@ public class tradicionesInicio extends Fragment {
             fragmentTransaction.commit();
         });
 
+        TextView titulo = requireView().findViewById(R.id.titulotrad);
+        TextView text1 = requireView().findViewById(R.id.trad11);
+        TextView text2 = requireView().findViewById(R.id.trad12);
+        TextView text3 = requireView().findViewById(R.id.trad13);
+        TextView text4 = requireView().findViewById(R.id.trad14);
+        TextView text5 = requireView().findViewById(R.id.trad15);
+        TextView text6 = requireView().findViewById(R.id.trad16);
+        TextView text7 = requireView().findViewById(R.id.trad17);
+        TextView text8 = requireView().findViewById(R.id.trad18);
+
         GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio", categoria, 1);
 
-        TextView text1 = requireView().findViewById(R.id.trad11);
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        //SLIDER
-        SliderView sliderView = requireView().findViewById(R.id.imageSliderTrad1);
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
-        SliderAdapter adapter = new SliderAdapter(images);
-        sliderView.setSliderAdapter(adapter);
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.SLIDE);
-        sliderView.startAutoCycle();
+        Spinner spinner = requireView().findViewById(R.id.spinnerTrad);
+        String [] tradiciones = getResources().getStringArray(R.array.tradiciones);
+        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitemtradiciones, tradiciones));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                nombreTrad = (String) adapterView.getItemAtPosition(position);
+                titulo.setText(nombreTrad);
+                if (nombreTrad.equalsIgnoreCase("la moza de ánimas")) {
+                    String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
+                    String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, categoria, 7);
+                    text2.setText(textoTrad[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text3.setText(textoTrad[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text4.setText(textoTrad[2]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text5.setText(textoTrad[3]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text6.setText(textoTrad[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text7.setText(textoTrad[5]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                    text8.setText(textoTrad[6]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                }
+            }
 
-        //BOTON SIGUIENTE
-        Button sigBtn = requireView().findViewById(R.id.tradsiguiente1);
-        sigBtn.setOnClickListener(v -> {
-            Fragment fragment = new tradicionesSelector();
-            fragment.setArguments(args);
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            }
         });
 
     }
-
 
 }

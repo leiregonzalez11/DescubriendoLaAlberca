@@ -87,7 +87,7 @@ public class otrosPueblos extends Fragment {
         GestorDB dbHelper = new GestorDB(getContext());
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.arrow_back);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
 
             myToolbar.setNavigationIcon(null);

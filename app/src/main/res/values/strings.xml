@@ -106,6 +106,23 @@
     <string name="alimentacion">Alimentación</string>
     <string name="otras_tiendas">Otros Comercios</string>
     <string name="idioma_validator">idioma</string>
+    <string name="pueblos_de_la_sierra">Pueblos de la Sierra de Francia</string>
+    <string name="km_desde_la_alberca">Km desde La Alberca:</string>
+    <string name="fiesta_mayor">Fiesta Mayor:</string>
+    <string name="servicios">Servicios</string>
+    <string name="recetas">Recetas típicas</string>
+    <string name="horario">Horario:</string>
+    <string name="horario2">Sábados: 11:30–13:30 / 16:00–19:00 \n Domingos: 11:30–13:30</string>
+    <string name="precio">Precio:</string>
+    <string name="precio2">General: 2,5€ / Grupos: 2€</string>
+    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="batuecas">Valle de Las Batuecas</string>
+    <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
+    <string name="ingredientes">INGREDIENTES \n</string>
+    <string name="pasos_a_seguir">PASOS A SEGUIR \n</string>
+    <string name="recetas_intro">La gastronomía de la Sierra de Francia destaca por el altísimo valor culinario de los productos que emplea para sus guisos y manjares, dando lugar a elaboraciones y productos de altísima calidad, de ahí que las recetas de la Sierra sean tan populares. \n</string>
+    <string name="donde_comer_intro">La Alberca es un pueblo donde se come mucho y bien. Platos tradicionales, carnes a la brasa, postres caseros, vinos de la sierra,
+        tapas… una gran oferta gastronómica ofrecida por los hosteleros del pueblo que día a día abren las puertas de sus locales para brindar al visitante lo mejor de cada casa. \n</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>
@@ -166,24 +183,15 @@
         <item>Valero</item>
         <item>Villanueva del Conde</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="pueblos_de_la_sierra">Pueblos de la Sierra de Francia</string>
-    <string name="km_desde_la_alberca">Km desde La Alberca:</string>
-    <string name="fiesta_mayor">Fiesta Mayor:</string>
-    <string name="servicios">Servicios</string>
-    <string name="recetas">Recetas típicas</string>
-    <string name="horario">Horario:</string>
-    <string name="horario2">Sábados: 11:30–13:30 / 16:00–19:00 \n Domingos: 11:30–13:30</string>
-    <string name="precio">Precio:</string>
-    <string name="precio2">General: 2,5€ / Grupos: 2€</string>
-    <string name="pueblos">Pueblos de la Sierra</string>
-    <string name="batuecas">Valle de Las Batuecas</string>
-    <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
-    <string name="ingredientes">INGREDIENTES \n</string>
-    <string name="pasos_a_seguir">PASOS A SEGUIR \n</string>
-    <string name="recetas_intro">La gastronomía de la Sierra de Francia destaca por el altísimo valor culinario de los productos que emplea para sus guisos y manjares, dando lugar a elaboraciones y productos de altísima calidad, de ahí que las recetas de la Sierra sean tan populares. \n</string>
-    <string name="donde_comer_intro">La Alberca es un pueblo donde se come mucho y bien. Platos tradicionales, carnes a la brasa, postres caseros, vinos de la sierra,
-        tapas… una gran oferta gastronómica ofrecida por los hosteleros del pueblo que día a día abren las puertas de sus locales para brindar al visitante lo mejor de cada casa. \n</string>
+
+    <string-array name="tradiciones">
+        <item>Alboradas</item>
+        <item>El Cristo del Sudor</item>
+        <item>El Marrano de San Antón</item>
+        <item>El Pendón</item>
+        <item>La Loa</item>
+        <item>La Moza de Ánimas</item>
+    </string-array>
 
 
 </resources>

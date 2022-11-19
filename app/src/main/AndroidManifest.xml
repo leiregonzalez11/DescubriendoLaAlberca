@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -32,54 +33,6 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.ajustes.aloj.alojamientoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.rutas.rutasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.otros.otrosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaActivity5"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaSelectorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.arquitectura.arquitecturaActivity5"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaActivity4"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.artesania.artesaniaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.arquitectura.arquitecturaActivity4"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.arquitectura.arquitecturaActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.arquitectura.arquitecturaActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.mapa.MapsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.categorias.arquitectura.ArquitecturaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".anterior.inicio.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity_splash_screen"
