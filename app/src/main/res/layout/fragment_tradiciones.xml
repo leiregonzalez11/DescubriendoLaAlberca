@@ -93,40 +93,100 @@
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <!--
             <ImageView
-                android:id="@+id/imgReceta1"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:id="@+id/imgTrad1"
+                android:layout_width="280dp"
+                android:layout_height="180dp"
                 android:src="@drawable/laalberca2"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:contentDescription="FOTO 1 RECETA">
+                tools:ignore="ContentDescription">
             </ImageView>
-
-            -->
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad13"
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/imgTrad2"
+                android:layout_width="280dp"
+                android:layout_height="180dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad14"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-40dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad15"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-30dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/layoutvideo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <VideoView
+                    android:id="@+id/videoView1"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp" />
+
+                <Button
+                    android:id="@+id/play1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:text="Reproducir">
+
+                </Button>
+
+            </LinearLayout>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad16"
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -137,42 +197,41 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <!--AÑADIR AUDIO-->
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad15"
-                android:layout_width="385dp"
+            <LinearLayout
+                android:id="@+id/layoutvideo2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad16"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                <VideoView
+                    android:id="@+id/videoView2"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp" />
 
-            <!--AÑADIR AUDIO-->
+                <Button
+                    android:id="@+id/play2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:text="Reproducir">
+
+                </Button>
+
+            </LinearLayout>
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad17"
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textStyle="italic"
@@ -184,7 +243,6 @@
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-10dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
