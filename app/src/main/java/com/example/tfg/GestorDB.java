@@ -126,7 +126,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Carga de datos desde un archivo .txt usando res/raw
         assert context != null;
-        InputStream file = context.getResources().openRawResource(R.raw.datos);
+        InputStream file = context.getResources().openRawResource(R.raw.inserts);
         BufferedReader buffer = new BufferedReader((new InputStreamReader(file)));
 
         while (seguir){

@@ -9,7 +9,7 @@
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/layoutTrad11"
@@ -47,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-10dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -55,199 +56,40 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 app:cardElevation="10dp"
-                app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
 
-                <Spinner
-                    android:id="@+id/spinnerTrad"
+                <ListView
+                    android:id="@+id/listviewtrad1"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:backgroundTint="@color/black" />
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/titulotrad"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:textSize="30sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
-                android:gravity="center"
-                android:textAlignment="gravity"
-                android:textStyle="bold"
-                tools:targetApi="o" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad12"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imgTrad1"
-                android:layout_width="280dp"
-                android:layout_height="180dp"
-                android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad13"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imgTrad2"
-                android:layout_width="280dp"
-                android:layout_height="180dp"
-                android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad14"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad15"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <LinearLayout
-                android:id="@+id/layoutvideo1"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <VideoView
-                    android:id="@+id/videoView1"
-                    android:layout_width="150dp"
-                    android:layout_height="120dp" />
-
-                <Button
-                    android:id="@+id/play1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:text="Reproducir">
-
-                </Button>
-
-            </LinearLayout>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad16"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
 
-            <LinearLayout
-                android:id="@+id/layoutvideo2"
+            <ListView
+                android:id="@+id/listviewtrad2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                tools:ignore="NestedScrolling" />
 
-                <VideoView
-                    android:id="@+id/videoView2"
-                    android:layout_width="150dp"
-                    android:layout_height="120dp" />
-
-                <Button
-                    android:id="@+id/play2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:text="Reproducir">
-
-                </Button>
-
-            </LinearLayout>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad17"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/trad18"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

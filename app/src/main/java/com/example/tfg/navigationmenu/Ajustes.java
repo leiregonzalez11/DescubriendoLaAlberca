@@ -62,6 +62,7 @@ public class Ajustes extends Fragment {
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         ListView listView = requireView().findViewById(R.id.listview);
         ListView listView2 = requireView().findViewById(R.id.listview2);
         ListView listView3 = requireView().findViewById(R.id.listview3);
