@@ -87,22 +87,9 @@ public class tradicionesInicio extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         TextView text1 = requireView().findViewById(R.id.trad11);
@@ -132,15 +119,7 @@ public class tradicionesInicio extends Fragment {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
             fragment = new mozaDeAnimas();
             fragment.setArguments(args);
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         /*----------------------
@@ -159,17 +138,21 @@ public class tradicionesInicio extends Fragment {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
             fragment = new marranoSanAnton();
             fragment.setArguments(args);
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }

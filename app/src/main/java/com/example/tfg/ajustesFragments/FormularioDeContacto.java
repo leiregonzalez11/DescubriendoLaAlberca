@@ -93,19 +93,7 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
                     break;
             }
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            assert fragment != null;
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         asuntoET= requireView().findViewById(R.id.asunto);
@@ -149,24 +137,10 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
                     break;
             }
 
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            assert fragment != null;
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         }
         super.onResume();
     }
-
-
 
     @SuppressLint("IntentReset")
     private boolean enviarEmail(){
@@ -201,7 +175,6 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         return enviado;
     }
 
-
     public boolean validarDatos() {
 
         boolean valido = true;
@@ -228,6 +201,18 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         }
 
         return valido;
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }

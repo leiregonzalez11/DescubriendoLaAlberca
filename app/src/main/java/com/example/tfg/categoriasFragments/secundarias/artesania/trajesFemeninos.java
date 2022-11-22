@@ -1,29 +1,29 @@
 package com.example.tfg.categoriasFragments.secundarias.artesania;
 
-import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.text.HtmlCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
+import com.example.tfg.R;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
-import com.example.tfg.R;
+import android.widget.AdapterView;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.Fragment;
+import android.annotation.SuppressLint;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SpinnerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,17 +31,16 @@ import com.google.firebase.storage.StorageReference;
 
 public class trajesFemeninos extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
-    Bundle args;
-    GestorDB dbHelper;
-    ImageView img1, img2;
-    TextView text1, text2, text3;
-    StorageReference storageRef;
-    String idioma, categoria, nombreTraje;
+    private Bundle args;
+    private GestorDB dbHelper;
+    private ImageView img1, img2;
+    private StorageReference storageRef;
+    private TextView text1, text2, text3;
+    private String idioma, categoria, nombreTraje;
 
     public trajesFemeninos() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,29 +64,15 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_trajes_femeninos, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         dbHelper = new GestorDB(getContext());
@@ -106,8 +91,6 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitemartesania, trajes));
         spinner.setOnItemSelectedListener(this);
 
-        storageRef = FirebaseStorage.getInstance().getReference();
-
         //BOTON SIGUIENTE y ATRAS
 
         Button atrasBtn2 = requireView().findViewById(R.id.arteAtras3);
@@ -117,12 +100,6 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         siguienteBtn.setOnClickListener(this);
 
 
-    }
-
-    /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -146,19 +123,7 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
 
         assert fragment != null;
         fragment.setArguments(args);
-
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
+        cargarFragment(fragment);
     }
 
     @SuppressLint("SetTextI18n")
@@ -183,6 +148,9 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         }
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
         obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
         obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
 
@@ -190,6 +158,12 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {}
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private String determinarTraje(String idtraje) {
@@ -254,5 +228,17 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         }
 
         return nombreTraje;
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 }

@@ -73,20 +73,7 @@ public class Idiomas extends Fragment {
                     break;
             }
 
-            assert fragment != null;
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         radioCas = requireView().findViewById(R.id.radio_es);
@@ -113,6 +100,46 @@ public class Idiomas extends Fragment {
 
     }
 
+    private void start(String iu) {
+
+        Fragment fragment = null;
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(null);
+
+        //Determinamos el fragment de retorno y creamos el Fragment
+
+        switch (iu) {
+            case "inicio":
+                fragment = new Inicio();
+                break;
+            case "categorias":
+                fragment = new Categorias();
+                break;
+            case "ajustes":
+                fragment = new Ajustes();
+                break;
+        }
+
+        cargarFragment(fragment);
+    }
+
+    private void changeLanguage(){
+
+        Locale nuevaloc = new Locale(language);
+        Locale.setDefault(nuevaloc);
+        Configuration configuration = requireActivity().getBaseContext().getResources().getConfiguration();
+        configuration.setLocale(nuevaloc);
+        configuration.setLayoutDirection(nuevaloc);
+
+        Context context = requireActivity().getBaseContext().createConfigurationContext(configuration);
+        requireActivity().getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+
+    }
+
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
     private void comprobarIdioma(){
 
         radioCas.setOnClickListener(view -> {
@@ -136,57 +163,16 @@ public class Idiomas extends Fragment {
 
     }
 
-    private void start(String iu) {
-
-        Fragment fragment = null;
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(null);
-
-        //Determinamos el fragment de retorno y creamos el Fragment
-
-        switch (iu) {
-            case "inicio":
-                fragment = new Inicio();
-                break;
-            case "categorias":
-                fragment = new Categorias();
-                break;
-            case "ajustes":
-                fragment = new Ajustes();
-                break;
-        }
-
+    private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
         // Definimos una transacción
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         // Remplazamos el contenido principal por el fragmento
-        assert fragment != null;
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
-
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
-    }
-
-
-    private void changeLanguage(){
-
-        Locale nuevaloc = new Locale(language);
-        Locale.setDefault(nuevaloc);
-        Configuration configuration = requireActivity().getBaseContext().getResources().getConfiguration();
-        configuration.setLocale(nuevaloc);
-        configuration.setLayoutDirection(nuevaloc);
-
-        Context context = requireActivity().getBaseContext().createConfigurationContext(configuration);
-        requireActivity().getBaseContext().getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
-
-    }
-
-    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
     }
 
 }

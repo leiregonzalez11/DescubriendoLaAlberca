@@ -59,31 +59,19 @@ public class artesaniaSelector extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
-        ListView listView = requireView().findViewById(R.id.listviewArte1);
-        ListView listView2 = requireView().findViewById(R.id.listviewArte2);
-        ListView listView3 = requireView().findViewById(R.id.listviewArte3);
+        //Selección de artesania
+
+        /*--------------------
+         | El bordado serrano |
+         --------------------*/
 
         opc1 = getResources().getString(R.string.el_bordado_serrano);
-        opc2 = getResources().getString(R.string.traje_serrano);
-        opc3 = getString(R.string.alhajas);
+        ListView listView = requireView().findViewById(R.id.listviewArte1);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -94,20 +82,16 @@ public class artesaniaSelector extends Fragment {
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             Fragment fragment = new bordadoSerrano();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
+
+        /*------------------
+         | El traje serrano |
+         ------------------*/
+
+        opc2 = getResources().getString(R.string.traje_serrano);
+        ListView listView2 = requireView().findViewById(R.id.listviewArte2);
+
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -118,20 +102,15 @@ public class artesaniaSelector extends Fragment {
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
             Fragment fragment = new trajesFemeninos();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
+
+        /*------------
+         | Orfebrería |
+         ------------*/
+
+        opc3 = getString(R.string.alhajas);
+        ListView listView3 = requireView().findViewById(R.id.listviewArte3);
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
@@ -142,19 +121,7 @@ public class artesaniaSelector extends Fragment {
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
             Fragment fragment = new orfebreria();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
         //BOTON ATRAS
@@ -163,22 +130,21 @@ public class artesaniaSelector extends Fragment {
         atrasBtn.setOnClickListener(v -> {
             Fragment fragment = new artesaniaInicio();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
+    }
 
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }

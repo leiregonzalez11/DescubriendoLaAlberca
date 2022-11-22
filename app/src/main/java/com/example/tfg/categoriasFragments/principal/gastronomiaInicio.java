@@ -25,12 +25,12 @@ import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipica
 public class gastronomiaInicio extends Fragment {
 
     Bundle args;
+    Fragment fragment;
     String categoria, idioma, opc1, opc2;
 
     public gastronomiaInicio() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,22 +63,9 @@ public class gastronomiaInicio extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            fragment = new Categorias();
+            cargarFragment(fragment);
         });
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -91,11 +78,12 @@ public class gastronomiaInicio extends Fragment {
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        ListView listView = requireView().findViewById(R.id.listviewGastro1);
-        ListView listView2 = requireView().findViewById(R.id.listviewGastro2);
+        /*----------------
+         | Las turroneras |
+         ----------------*/
 
         opc1 = getString(R.string.turroneras);
-        opc2 = getString(R.string.recetas);
+        ListView listView = requireView().findViewById(R.id.listviewGastro1);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -104,23 +92,17 @@ public class gastronomiaInicio extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-            Fragment fragment = new turroneras();
+            fragment = new turroneras();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
+
+        /*-----------------
+         | Recetas típicas |
+         -----------------*/
+
+        opc2 = getString(R.string.recetas);
+        ListView listView2 = requireView().findViewById(R.id.listviewGastro2);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -129,23 +111,22 @@ public class gastronomiaInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
-            Fragment fragment = new recetasTipicas();
+            fragment = new recetasTipicas();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
-
     }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
+    }
+
 }

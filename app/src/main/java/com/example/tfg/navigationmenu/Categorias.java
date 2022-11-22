@@ -38,9 +38,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
     Bundle args, argsMenu;
     Fragment fragment;
     String idioma, path, categoria;
-    FragmentManager fragmentManager;
     private StorageReference storageRef;
-    FragmentTransaction fragmentTransaction;
     protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro,
             btnCultura, btnRutas, btnOtros, btnArte, btnArqui;
 
@@ -74,12 +72,8 @@ public class Categorias extends Fragment implements View.OnClickListener{
     @SuppressLint("ResourceAsColor")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         idioma = determinarIdioma();
-
-        storageRef = FirebaseStorage.getInstance().getReference();
         setBtnListeners();
-
     }
 
     @SuppressLint({"NonConstantResourceId", "ShowToast"})
@@ -145,19 +139,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
         fragment.setArguments(args);
-
-        // Obtener el administrador de fragmentos a través de la actividad
-        fragmentManager = requireActivity().getSupportFragmentManager();
-
-        // Definir una transacción
-        fragmentTransaction = fragmentManager.beginTransaction();
-
-        // Remplazar el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-
-        // Cambiar
-        fragmentTransaction.commit();
+        cargarFragment(fragment);
     }
 
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -185,19 +167,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         //Añadimos los argumentos
         fragment.setArguments(argsMenu);
-
-        // Obtener el administrador de fragmentos a través de la actividad
-        fragmentManager = requireActivity().getSupportFragmentManager();
-
-        // Definir una transacción
-        fragmentTransaction = fragmentManager.beginTransaction();
-
-        // Remplazar el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-
-        // Cambiar
-        fragmentTransaction.commit();
+        cargarFragment(fragment);
 
         return true;
     }
@@ -205,6 +175,8 @@ public class Categorias extends Fragment implements View.OnClickListener{
     /** Setters de los listeners de las categorias */
     @SuppressLint("WrongViewCast")
     private void setBtnListeners() {
+
+        storageRef = FirebaseStorage.getInstance().getReference();
 
         btnhistoria = requireView().findViewById(R.id.botonhistoria);
         path = "categorias/" + idioma + "/historia-" + idioma + ".jpg";
@@ -261,7 +233,6 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageButton btn){
-        System.out.println(path);
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(btn));
     }
@@ -288,8 +259,16 @@ public class Categorias extends Fragment implements View.OnClickListener{
         return idioma;
     }
 
-
-
-
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
+    }
 
 }

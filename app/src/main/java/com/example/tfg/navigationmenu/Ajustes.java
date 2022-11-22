@@ -32,8 +32,6 @@ public class Ajustes extends Fragment {
 
     Bundle args;
     Fragment fragment;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
     String opc1, opc2, opc3, opc4, opc5;
 
     public Ajustes() {
@@ -46,8 +44,6 @@ public class Ajustes extends Fragment {
         args = new Bundle();
         args.putString("iu", "ajustes");
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(null);
     }
 
     @Override
@@ -63,17 +59,15 @@ public class Ajustes extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ListView listView = requireView().findViewById(R.id.listview);
-        ListView listView2 = requireView().findViewById(R.id.listview2);
-        ListView listView3 = requireView().findViewById(R.id.listview3);
-        ListView listView4 = requireView().findViewById(R.id.listview4);
-        ListView listView5 = requireView().findViewById(R.id.listview5);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(null);
+
+        /*-----------------
+         | ¿Comercio local |
+         -----------------*/
 
         opc1 = getResources().getString(R.string.ajustes6);
-        opc2 = getResources().getString(R.string.ajustes1);
-        opc3 = getResources().getString(R.string.ajustes3);
-        opc4 = getResources().getString(R.string.ajustes4);
-        opc5 = getResources().getString(R.string.servicios);
+        ListView listView = requireView().findViewById(R.id.listview);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -83,19 +77,16 @@ public class Ajustes extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
             fragment = new Comercio();
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
-
+            cargarFragment(fragment);
         });
+
+        /*---------------
+         | ¿Cómo llegar? |
+         ---------------*/
+
+        opc2 = getResources().getString(R.string.ajustes1);
+        ListView listView2 = requireView().findViewById(R.id.listview2);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -104,19 +95,16 @@ public class Ajustes extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
             fragment = new ComoLlegar();
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
-
+            cargarFragment(fragment);
         });
+
+        /*---------------
+         | ¿Dónde comer? |
+         ---------------*/
+
+        opc3 = getResources().getString(R.string.ajustes3);
+        ListView listView3 = requireView().findViewById(R.id.listview3);
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
@@ -125,18 +113,16 @@ public class Ajustes extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
             fragment = new DondeComer();
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
+
+        /*----------------
+         | ¿Dónde dormir? |
+         ----------------*/
+
+        opc4 = getResources().getString(R.string.ajustes4);
+        ListView listView4 = requireView().findViewById(R.id.listview4);
 
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
@@ -145,19 +131,17 @@ public class Ajustes extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
             fragment = new DondeDormir();
-            // Obtener el administrador de fragmentos a través de la actividad
-            fragmentManager = requireActivity().getSupportFragmentManager();
-            // Definir una transacción
-            fragmentTransaction = fragmentManager.beginTransaction();
-            // Remplazar el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-            // Cambiar
-            fragmentTransaction.commit();
-
+            cargarFragment(fragment);
         });
+
+        /*-----------
+         | Servicios |
+         -----------*/
+
+        opc5 = getResources().getString(R.string.servicios);
+
+        ListView listView5 = requireView().findViewById(R.id.listview5);
 
         ArrayList<String> lista5 = new ArrayList<>();
         lista5.add(opc5);
@@ -195,23 +179,21 @@ public class Ajustes extends Fragment {
 
         //Añadimos los argumentos
         fragment.setArguments(args);
-
-        // Obtener el administrador de fragmentos a través de la actividad
-        fragmentManager = requireActivity().getSupportFragmentManager();
-
-        // Definir una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        // Remplazar el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-
-        // Cambiar
-        fragmentTransaction.commit();
+        cargarFragment(fragment);
 
         return true;
     }
 
-
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
+    }
 
 }

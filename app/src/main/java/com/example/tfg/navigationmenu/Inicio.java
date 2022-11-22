@@ -93,17 +93,13 @@ public class Inicio extends Fragment {
 
         //Añadimos los argumentos
         fragment.setArguments(args);
-
         // Obtener el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
         // Definir una transacción
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         // Remplazar el contenido principal por el fragmento
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
-
         // Cambiar
         fragmentTransaction.commit();
 

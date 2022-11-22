@@ -36,7 +36,6 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +49,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_rutas, container, false);
     }
@@ -62,20 +60,15 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new Categorias();
-
             // Obtenemos el administrador de fragmentos a través de la actividad
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
             // Definimos una transacción
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
             // Remplazamos el contenido principal por el fragmento
             fragmentTransaction.replace(R.id.relativelayout, fragment);
             fragmentTransaction.addToBackStack(null);
-
             // Cambiamos el fragment en la interfaz
             fragmentTransaction.commit();
         });
