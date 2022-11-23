@@ -48,48 +48,107 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-10dp"
+                android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
+                android:id="@+id/layoutvideo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="15dp">
+                android:padding="5dp"
+                android:layout_marginBottom="-20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <ListView
-                    android:id="@+id/listviewtrad1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:ignore="NestedScrolling" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="15dp">
 
-            </com.google.android.material.card.MaterialCardView>
+                    <ListView
+                        android:id="@+id/listviewtrad2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        tools:ignore="NestedScrolling" />
 
-            <com.google.android.material.card.MaterialCardView
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ListView
+                        android:id="@+id/listviewtrad3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        tools:ignore="NestedScrolling" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutvideo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="15dp">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <ListView
-                android:id="@+id/listviewtrad2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:ignore="NestedScrolling" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="10dp">
 
-            </com.google.android.material.card.MaterialCardView>
+                    <ListView
+                        android:id="@+id/listviewtrad1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        tools:ignore="NestedScrolling" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ListView
+                        android:id="@+id/listviewtrad4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        tools:ignore="NestedScrolling" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
 
         </LinearLayout>
 

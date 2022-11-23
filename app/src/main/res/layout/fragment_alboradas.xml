@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.secundarias.tradiciones.alboradas">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layoutTrad11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tituloalboradas"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/black"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/alboradas1"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imgalboradas1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/alboradas2"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="-40dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/alboradas3"
+                android:layout_width="380dp"
+                android:layout_height="145dp"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:text="@string/alborada"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:id="@+id/layoutvideo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <VideoView
+                    android:id="@+id/videoViewAlb"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:focusable="false"/>
+
+                <Button
+                    android:id="@+id/play"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:text="Play">
+                </Button>
+
+                <Button
+                    android:id="@+id/pause"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:text="Pause">
+                </Button>
+
+                <Button
+                    android:id="@+id/stop"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="#880E4F"
+                    android:fontFamily="@font/amiri"
+                    android:text="Stop">
+                </Button>
+
+            </LinearLayout>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/alboradas4"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-30dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/alboradas5"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imgalboradas2"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/alboradas6"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/alboradasAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:text="@string/atras">
+            </Button>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

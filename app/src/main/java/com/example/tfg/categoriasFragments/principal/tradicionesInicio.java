@@ -31,6 +31,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.ajustesFragments.Comercio;
+import com.example.tfg.categoriasFragments.secundarias.tradiciones.alboradas;
+import com.example.tfg.categoriasFragments.secundarias.tradiciones.laLoa;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.marranoSanAnton;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.mozaDeAnimas;
 import com.example.tfg.navigationmenu.Categorias;
@@ -46,9 +48,7 @@ public class tradicionesInicio extends Fragment {
 
     Bundle args;
     Fragment fragment;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    String opc1, opc2, idioma, categoria;
+    String opc1, opc2, opc3, opc4, idioma, categoria;
 
     public tradicionesInicio() {
         // Required empty public constructor
@@ -111,7 +111,7 @@ public class tradicionesInicio extends Fragment {
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista1);
 
         listView.setAdapter(myAdapter);
 
@@ -125,18 +125,59 @@ public class tradicionesInicio extends Fragment {
         /*----------------------
          | Marrano de San Antón |
          -----------------------*/
+
         opc2 = "El Marrano de San Antón";
         ListView listView2 = requireView().findViewById(R.id.listviewtrad2);
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
-        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_item, lista2);
+        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista2);
 
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
             fragment = new marranoSanAnton();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
+        });
+
+        /*--------
+         | La Loa |
+         --------*/
+
+        opc3 = "La Loa";
+        ListView listView3 = requireView().findViewById(R.id.listviewtrad3);
+        ArrayList<String> lista3 = new ArrayList<>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista3);
+
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
+            fragment = new laLoa();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
+        });
+
+        /*---------------
+         | Las alboradas |
+         ---------------*/
+
+        opc4 = "Las Alboradas";
+        ListView listView4 = requireView().findViewById(R.id.listviewtrad4);
+        ArrayList<String> lista4 = new ArrayList<>();
+        lista4.add(opc4);
+
+        listViewAdapter myAdapter4 = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista4);
+
+        listView4.setAdapter(myAdapter4);
+
+        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
+            fragment = new alboradas();
             fragment.setArguments(args);
             cargarFragment(fragment);
         });
