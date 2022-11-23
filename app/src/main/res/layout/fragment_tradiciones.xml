@@ -54,6 +54,18 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/trad12"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-30dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:id="@+id/layoutvideo1"
                 android:layout_width="match_parent"

@@ -115,7 +115,10 @@ public class alboradas extends Fragment {
 
         btnPlay.setOnClickListener(v -> videoView.start());
         btnPause.setOnClickListener(v -> videoView.pause());
-        btnStop.setOnClickListener(v -> videoView.seekTo(0));
+        btnStop.setOnClickListener(v -> {
+            videoView.pause();
+            videoView.seekTo(0);
+        });
 
         //Setter de las imagenes de la interfaz TODO
         storageRef = FirebaseStorage.getInstance().getReference();

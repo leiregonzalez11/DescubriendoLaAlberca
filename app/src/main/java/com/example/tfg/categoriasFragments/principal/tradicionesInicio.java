@@ -93,12 +93,14 @@ public class tradicionesInicio extends Fragment {
         });
 
         TextView text1 = requireView().findViewById(R.id.trad11);
+        TextView text2 = requireView().findViewById(R.id.trad12);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio", categoria, 1);
+        String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio", categoria, 2);
 
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //Selección de tradiciones
 
