@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private final Context context;
     private boolean seguir = true;
 
@@ -132,7 +132,7 @@ public class GestorDB extends SQLiteOpenHelper {
         while (seguir){
             try{
                 String query = buffer.readLine();
-                //System.out.println("Query: " + query);
+                System.out.println("Query: " + query);
                 Log.d("Query: ", query);
 
                 if (!query.contains("//")) {
