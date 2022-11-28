@@ -126,15 +126,6 @@ public class Establecimiento extends Fragment {
 
         ubi.setText(ubicacion);
 
-        storageRef = FirebaseStorage.getInstance().getReference();
-        ImageView img = requireView().findViewById(R.id.fotoRest);
-        obtenerImagenFirebase("/restaurante/" + establecimiento.toLowerCase().replaceAll(" ", "") + ".jpg", img);
-
-    }
-
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     private void cargarFragment(Fragment fragment){

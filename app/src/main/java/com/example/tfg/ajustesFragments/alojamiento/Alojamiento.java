@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,7 +33,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class Alojamiento extends Fragment {
+public class Alojamiento extends DialogFragment {
 
     String categoria, alojamiento, telefono;
     double lat, lon;
@@ -86,7 +87,7 @@ public class Alojamiento extends Fragment {
 
         //Mapa
         SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewAlojamiento);
+                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewAloj);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
@@ -116,7 +117,7 @@ public class Alojamiento extends Fragment {
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
 
             tel.setText(telsubrayado);
-            tel.setOnClickListener(view12 -> {
+            tel.setOnClickListener(v -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
                 startActivity(dial); // Ejecutamos el Intent
@@ -127,15 +128,6 @@ public class Alojamiento extends Fragment {
 
         ubi.setText(datos[3]);
 
-        storageRef = FirebaseStorage.getInstance().getReference();
-        ImageView img = requireView().findViewById(R.id.fotoAloj);
-        obtenerImagenFirebase("/ajustes/" + alojamiento.toLowerCase().replaceAll(" ", "") + ".jpg", img);
-
-    }
-
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     private void cargarFragment(Fragment fragment){

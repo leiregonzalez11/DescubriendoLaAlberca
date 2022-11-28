@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,12 +18,15 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Hoteles extends Fragment {
+public class Hoteles extends Fragment implements SearchView.OnQueryTextListener {
 
-    ArrayList lista1;
+    List<String> lista1 = new ArrayList<>();
     Bundle args;
     String nombreAloj;
+    listViewAdapter myAdapter;
+    SearchView editsearch;
 
     public Hoteles() {
         // Required empty public constructor
@@ -54,15 +58,15 @@ public class Hoteles extends Fragment {
 
         lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "hotel");
 
+        editsearch = (SearchView) requireView().findViewById(R.id.svHoteles);
+        editsearch.setOnQueryTextListener(this);
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_hotel, lista1);
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_hotel, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show()
-
-            nombreAloj = lista1.get(position).toString();
-
+            //Obtenemos el nombre del elemento pulsado y cargamos su información
+            nombreAloj = adapterView.getItemAtPosition(position).toString();
             Fragment fragment = new Alojamiento();
             args.putString("nombreAloj", nombreAloj);
             fragment.setArguments(args);
@@ -83,4 +87,14 @@ public class Hoteles extends Fragment {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        myAdapter.getFilter().filter(s);
+        return false;
+    }
 }

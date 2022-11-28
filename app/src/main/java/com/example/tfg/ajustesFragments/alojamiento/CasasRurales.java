@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,13 +20,16 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class CasasRurales extends Fragment {
+public class CasasRurales extends Fragment implements SearchView.OnQueryTextListener{
 
-    ArrayList lista1;
+    List<String> lista1 = new ArrayList<>();
     Bundle args;
     String nombreAloj;
+    listViewAdapter myAdapter;
+    SearchView editsearch;
 
     public CasasRurales() {
         // Required empty public constructor
@@ -57,13 +61,15 @@ public class CasasRurales extends Fragment {
 
         lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "casarural");
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_casas, lista1);
+        editsearch = (SearchView) requireView().findViewById(R.id.svCasas);
+        editsearch.setOnQueryTextListener(this);
+
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_casas, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show());
-            nombreAloj = lista1.get(position).toString();
-
+            //Obtenemos el nombre del elemento pulsado y cargamos su información
+            nombreAloj = adapterView.getItemAtPosition(position).toString();
             Fragment fragment = new Alojamiento();
             args.putString("nombreAloj", nombreAloj);
             fragment.setArguments(args);
@@ -81,6 +87,17 @@ public class CasasRurales extends Fragment {
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        myAdapter.getFilter().filter(s);
+        return false;
     }
 
 }

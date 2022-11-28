@@ -19,10 +19,11 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OtrosComercios extends Fragment {
 
-    ArrayList lista1;
+    List<String> lista1 = new ArrayList<>();
     String nombreRest;
 
     public OtrosComercios() {

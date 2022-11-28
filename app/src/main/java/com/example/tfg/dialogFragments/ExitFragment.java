@@ -25,7 +25,6 @@ public class ExitFragment extends DialogFragment{
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
-        Intent inicio = new Intent(getActivity(), MainActivity.class);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
 

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
 
@@ -294,11 +295,11 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Restaurantes
-    public ArrayList obtenerlistaRestaurantes(String tabla, String categoriaRest) {
+    public List<String> obtenerlistaRestaurantes(String tabla, String categoriaRest) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
-        ArrayList<String> descr = new ArrayList<>();
+        List<String> descr = new ArrayList<>();
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT nombreRest FROM " + tabla + "" +
                 " WHERE categoriaRest = '" + categoriaRest+ "';", null);

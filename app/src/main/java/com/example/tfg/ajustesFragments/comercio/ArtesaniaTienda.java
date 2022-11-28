@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,10 +19,11 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArtesaniaTienda extends Fragment {
 
-    ArrayList lista1;
+    List<String> lista1 = new ArrayList<>();
     String nombreRest;
 
     public ArtesaniaTienda() {
@@ -57,7 +57,7 @@ public class ArtesaniaTienda extends Fragment {
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
-            nombreRest = lista1.get(position).toString();
+            nombreRest = lista1.get(position);
         });
     }
 

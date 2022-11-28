@@ -18,11 +18,12 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AlimentacionTienda extends Fragment {
 
-    ArrayList lista1;
-    String nombreRest;
+    List<String> lista1 = new ArrayList<>();
+    String nombreT;
 
     public AlimentacionTienda() {
         // Required empty public constructor
@@ -54,8 +55,8 @@ public class AlimentacionTienda extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
-            nombreRest = lista1.get(position).toString();
+            //Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
+            nombreT = adapterView.getItemAtPosition(position).toString();
 
         });
 
