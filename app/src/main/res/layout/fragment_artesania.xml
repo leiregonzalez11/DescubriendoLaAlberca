@@ -2,13 +2,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ajustesFragments.restauracion.Bares">
+    android:layout_height="match_parent">
+
+    <SearchView
+        android:id="@+id/svArte"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:iconifiedByDefault="false"/>
 
     <ListView
         android:id="@+id/listviewArtesania"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="5dp"/>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,10 +22,13 @@ import com.example.tfg.adapters.listViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArtesaniaTienda extends Fragment {
+public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextListener {
 
     List<String> lista1 = new ArrayList<>();
-    String nombreRest;
+    String nombreTienda;
+    Bundle args;
+    listViewAdapter myAdapter;
+    SearchView editsearch;
 
     public ArtesaniaTienda() {
         // Required empty public constructor
@@ -33,6 +37,10 @@ public class ArtesaniaTienda extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        args = new Bundle();
+
+        //TODO: Cambiar a COMERCIO
+        args.putString("categoria", "alojamiento");
 
     }
 
@@ -50,14 +58,22 @@ public class ArtesaniaTienda extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "bar");
+        //TODO: CAMBIAR A COMERCIOS
+        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, lista1);
+        editsearch = (SearchView) requireView().findViewById(R.id.svArte);
+        editsearch.setOnQueryTextListener(this);
+
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Toast.makeText(requireActivity().getApplicationContext(), "Has pulsado: "+ lista1.get(position), Toast.LENGTH_LONG).show();
-            nombreRest = lista1.get(position);
+            //Obtenemos el nombre del elemento pulsado y cargamos su información
+            nombreTienda = adapterView.getItemAtPosition(position).toString();
+            Fragment fragment = new Tienda();
+            args.putString("nombreCom", nombreTienda);
+            fragment.setArguments(args);
+            cargarFragment(fragment);
         });
     }
 
@@ -71,6 +87,17 @@ public class ArtesaniaTienda extends Fragment {
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        myAdapter.getFilter().filter(s);
+        return false;
     }
 
 }
