@@ -64,7 +64,6 @@ public class artesaniaInicio extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setTitleMarginStart(-5);
         myToolbar.setNavigationOnClickListener(view12 -> {
 
             myToolbar.setNavigationIcon(null);
