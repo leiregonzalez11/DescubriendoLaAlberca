@@ -66,63 +66,11 @@ public class artesaniaSelector extends Fragment {
 
         //Selección de artesania
 
-        /*--------------------
-         | El bordado serrano |
-         --------------------*/
-
-        opc1 = getResources().getString(R.string.el_bordado_serrano);
-        ListView listView = requireView().findViewById(R.id.listviewArte1);
-
-        ArrayList<String> lista1 = new ArrayList<>();
-        lista1.add(opc1);
-
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
-        listView.setAdapter(myAdapter);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new bordadoSerrano();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
-
-        /*------------------
-         | El traje serrano |
-         ------------------*/
-
-        opc2 = getResources().getString(R.string.traje_serrano);
-        ListView listView2 = requireView().findViewById(R.id.listviewArte2);
 
 
-        ArrayList<String> lista2 = new ArrayList<>();
-        lista2.add(opc2);
 
-        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_item, lista2);
-        listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new trajesFemeninos();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
 
-        /*------------
-         | Orfebrería |
-         ------------*/
-
-        opc3 = getString(R.string.alhajas);
-        ListView listView3 = requireView().findViewById(R.id.listviewArte3);
-
-        ArrayList<String> lista3 = new ArrayList<>();
-        lista3.add(opc3);
-
-        listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_item, lista3);
-        listView3.setAdapter(myAdapter3);
-
-        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new orfebreria();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
 
         //BOTON ATRAS
 

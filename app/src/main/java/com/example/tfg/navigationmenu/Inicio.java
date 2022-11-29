@@ -20,6 +20,9 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.SliderAdapter;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -39,6 +42,11 @@ public class Inicio extends Fragment {
         setHasOptionsMenu(true);
         args = new Bundle();
         args.putString("iu", "inicio");
+
+        FirebaseApp.initializeApp(/*context=*/ requireContext());
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance());
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);

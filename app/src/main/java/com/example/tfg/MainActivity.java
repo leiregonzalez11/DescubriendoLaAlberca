@@ -18,6 +18,9 @@ import com.example.tfg.navigationmenu.Inicio;
 import com.example.tfg.navigationmenu.Maps;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 
 import java.util.Objects;
 

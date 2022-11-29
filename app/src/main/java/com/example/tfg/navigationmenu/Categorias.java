@@ -30,6 +30,9 @@ import com.example.tfg.categoriasFragments.principal.monumentosInicio;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.categoriasFragments.principal.rutasInicio;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 

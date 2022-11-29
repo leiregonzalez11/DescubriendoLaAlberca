@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -66,7 +67,8 @@ public class bordadoSerrano extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = new artesaniaInicio();
+            fragment.setArguments(args);
             cargarFragment(fragment);
         });
 
@@ -94,15 +96,6 @@ public class bordadoSerrano extends Fragment {
         obtenerImagenFirebase("artesania/bordado2.jpg", img2);
         img3 = requireView().findViewById(R.id.arte23img);
         obtenerImagenFirebase("artesania/bordado3.jpg", img3);
-
-        //BOTON ATRAS
-
-        Button atrasBtn2 = requireView().findViewById(R.id.arteAtras2);
-        atrasBtn2.setOnClickListener(view1 -> {
-            Fragment fragment = new artesaniaSelector();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
 
     }
 

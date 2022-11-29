@@ -55,7 +55,7 @@
 
             <ImageView
                 android:id="@+id/arte51img"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="350dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
@@ -77,28 +77,13 @@
 
             <ImageView
                 android:id="@+id/arte52img"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="300dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
                 tools:ignore="ContentDescription">
             </ImageView>
-
-            <Button
-                android:id="@+id/arteAtras5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:background="#880E4F"
-                android:textStyle="bold"
-                android:fontFamily="@font/amiri"
-                android:layout_margin="18sp"
-                android:text="@string/atras">
-
-            </Button>
 
         </LinearLayout>
 

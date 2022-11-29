@@ -24,9 +24,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SpinnerAdapter;
 import androidx.fragment.app.FragmentTransaction;
-import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 
 
 public class trajesFemeninos extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
@@ -71,7 +71,8 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = new artesaniaInicio();
+            fragment.setArguments(args);
             cargarFragment(fragment);
         });
 
@@ -93,12 +94,8 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn2 = requireView().findViewById(R.id.arteAtras3);
-        atrasBtn2.setOnClickListener(this);
-
         Button siguienteBtn = requireView().findViewById(R.id.artesiguiente3);
         siguienteBtn.setOnClickListener(this);
-
 
     }
 
@@ -109,16 +106,8 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         Button btn = (Button) view;
         Fragment fragment = null;
 
-        switch (btn.getId()){
-
-            case R.id.arteAtras3:
-                fragment = new artesaniaSelector();
-                break;
-
-            case R.id.artesiguiente3:
-                fragment = new trajeMasculino();
-                break;
-
+        if (btn.getId() == R.id.artesiguiente3) {
+            fragment = new trajeMasculino();
         }
 
         assert fragment != null;
@@ -168,64 +157,38 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private String determinarTraje(String idtraje) {
 
+        LinearLayout layout = requireView().findViewById(R.id.layoutFotoArte1);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(layout.getLayoutParams());
+
         if(idtraje.toLowerCase().contains("sayas")){
             nombreTraje = "sayas";
-
-            //Ajustamos las imagenes al texto
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
-            lp.topMargin = -180;
-            lp.rightMargin = 40;
-            lp.leftMargin = 40;
-            lp.bottomMargin = -180;
-            img1.setLayoutParams(lp);
-
+            lp.topMargin=-130;
+            lp.bottomMargin=-20;
 
         } else if (idtraje.toLowerCase().contains("ventioseno")){
-            nombreTraje = "ventioseno";//Ajustamos las imagenes al texto
-
-            //Ajustamos las imagenes al texto
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
-            lp.topMargin = 0;
-            lp.rightMargin = 40;
-            lp.leftMargin = 40;
-            lp.bottomMargin = 0;
-            img1.setLayoutParams(lp);
+            nombreTraje = "ventioseno";
+            lp.bottomMargin=80;
+            lp.topMargin=-25;
 
         } else if (idtraje.toLowerCase().contains("vistas")){
             nombreTraje = "vistas";
-
-            //Ajustamos las imagenes al texto
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
-            lp.topMargin = 0;
-            lp.rightMargin = 40;
-            lp.leftMargin = 40;
-            lp.bottomMargin = 0;
-            img1.setLayoutParams(lp);
+            lp.bottomMargin=80;
+            lp.topMargin=-25;
 
         } else if (idtraje.toLowerCase().contains("zagalejo")){
             nombreTraje = "zagalejo";
-
-            //Ajustamos las imagenes al texto
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
-            lp.topMargin = 0;
-            lp.rightMargin = 40;
-            lp.leftMargin = 40;
-            lp.bottomMargin = 0;
-            img1.setLayoutParams(lp);
-
+            lp.bottomMargin=80;
+            lp.topMargin=-25;
 
         } else if (idtraje.toLowerCase().contains("manteo")){
             nombreTraje = "manteo";
-
-            //Ajustamos las imagenes al texto
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(img1.getLayoutParams());
-            lp.topMargin = 0;
-            lp.rightMargin = 40;
-            lp.leftMargin = 40;
-            lp.bottomMargin = 0;
-            img1.setLayoutParams(lp);
-
+            lp.bottomMargin=80;
+            lp.topMargin=-25;
         }
+
+        layout.setLayoutParams(lp);
+        System.out.println("TOP: " + lp.topMargin);
+        System.out.println("BOTTOM: " + lp.bottomMargin);
 
         return nombreTraje;
     }

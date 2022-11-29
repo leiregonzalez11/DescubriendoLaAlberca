@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -65,7 +66,8 @@ public class orfebreria extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = new artesaniaInicio();
+            fragment.setArguments(args);
             cargarFragment(fragment);
         });
 
@@ -87,15 +89,6 @@ public class orfebreria extends Fragment {
         obtenerImagenFirebase("artesania/orfebreria2.jpg", img1);
         img2 = requireView().findViewById(R.id.arte52img);
         obtenerImagenFirebase("artesania/orfebreria1.jpeg", img2);
-
-        //BOTON SIGUIENTE y ATRAS
-
-        Button atrasBtn2 = requireView().findViewById(R.id.arteAtras5);
-        atrasBtn2.setOnClickListener(v -> {
-            Fragment fragment = new artesaniaSelector();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
 
     }
 

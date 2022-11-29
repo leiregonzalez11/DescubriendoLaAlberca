@@ -52,8 +52,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity="left"
-                android:text="@string/traje_mujer"
-                tools:targetApi="o" />
+                android:text="@string/traje_mujer" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -79,32 +78,39 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte31"
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
 
+        <LinearLayout
+            android:id="@+id/layoutFotoArte1"
+            android:layout_width="350dp"
+            android:layout_height="370dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/arte31img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:ignore="ContentDescription" >
             </ImageView>
 
+        </LinearLayout>
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte32"
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -112,15 +118,15 @@
 
             <ImageView
                 android:id="@+id/arte32img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_width="350dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte33"
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="10dp"
@@ -130,44 +136,21 @@
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
 
-            <LinearLayout
-                android:id="@+id/layoutArte32"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/arteAtras3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:textStyle="bold"
-                    android:text="@string/atras"
-                    tools:ignore="ButtonStyle">
-                </Button>
-
                 <Button
                     android:id="@+id/artesiguiente3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:textColor="@color/white"
                     android:background="#880E4F"
                     android:fontFamily="@font/amiri"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="20dp"
                     android:textStyle="bold"
                     android:text="@string/siguiente"
-                    android:layout_gravity="center"
+                    android:layout_gravity="right"
                     tools:ignore="ButtonStyle">
 
                 </Button>
-
-            </LinearLayout>
 
         </LinearLayout>
 

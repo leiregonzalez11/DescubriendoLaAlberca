@@ -5,6 +5,7 @@ import com.example.tfg.R;
 import android.view.View;
 import android.widget.Button;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import android.view.LayoutInflater;
@@ -16,6 +17,10 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SliderAdapter;
+import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.categoriasFragments.secundarias.artesania.bordadoSerrano;
+import com.example.tfg.categoriasFragments.secundarias.artesania.orfebreria;
+import com.example.tfg.categoriasFragments.secundarias.artesania.trajesFemeninos;
 import com.smarteist.autoimageslider.SliderView;
 import com.example.tfg.navigationmenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
@@ -23,10 +28,12 @@ import com.smarteist.autoimageslider.SliderAnimations;
 import com.example.tfg.categoriasFragments.secundarias.artesania.artesaniaSelector;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 
+import java.util.ArrayList;
+
 public class artesaniaInicio extends Fragment {
 
     Bundle args;
-    String idioma, categoria;
+    String idioma, categoria, opc1, opc2, opc3;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,9 +79,69 @@ public class artesaniaInicio extends Fragment {
         TextView text2 = requireView().findViewById(R.id.arte12);
         TextView text3 = requireView().findViewById(R.id.arte13);
 
+        /*------------------
+         | El traje serrano |
+         ------------------*/
+
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        opc2 = getResources().getString(R.string.traje_serrano);
+        ListView listView2 = requireView().findViewById(R.id.listviewArte2);
+
+        ArrayList<String> lista2 = new ArrayList<>();
+        lista2.add(opc2);
+
+        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.listview_artesania, lista2);
+        listView2.setAdapter(myAdapter2);
+
+        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
+            Fragment fragment = new trajesFemeninos();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
+        });
+
+
+        /*------------
+         | Orfebrería |
+         ------------*/
+
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        opc3 = getString(R.string.alhajas);
+        ListView listView3 = requireView().findViewById(R.id.listviewArte3);
+
+        ArrayList<String> lista3 = new ArrayList<>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.listview_artesania, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
+            Fragment fragment = new orfebreria();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
+        });
+
+        /*--------------------
+         | El bordado serrano |
+         --------------------*/
+
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        opc1 = getResources().getString(R.string.el_bordado_serrano);
+        ListView listView = requireView().findViewById(R.id.listviewArte1);
+
+        ArrayList<String> lista1 = new ArrayList<>();
+        lista1.add(opc1);
+
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.listview_artesania, lista1);
+        listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
+            Fragment fragment = new bordadoSerrano();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
+        });
 
         //SLIDER
         SliderView sliderView = requireView().findViewById(R.id.imageSliderArte1);
@@ -85,15 +152,6 @@ public class artesaniaInicio extends Fragment {
         sliderView.setIndicatorAnimation(IndicatorAnimationType.DROP);
         sliderView.setScrollTimeInSec(3);
         sliderView.startAutoCycle();
-
-        //BOTON SIGUIENTE
-
-        Button sigBtn = requireView().findViewById(R.id.arteSiguiente1);
-        sigBtn.setOnClickListener(view1 -> {
-            Fragment fragment = new artesaniaSelector();
-            fragment.setArguments(args);
-            cargarFragment(fragment);
-        });
 
     }
 

@@ -56,10 +56,8 @@
 
             <ImageView
                 android:id="@+id/arte21img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-120dp"
-                android:layout_marginBottom="-120dp"
+                android:layout_width="350dp"
+                android:layout_height="180dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
@@ -71,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
+                android:layout_marginBottom="-25dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -79,10 +77,8 @@
 
             <ImageView
                 android:id="@+id/arte22img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
-                android:layout_marginBottom="-180dp"
+                android:layout_width="350dp"
+                android:layout_height="220dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
@@ -93,8 +89,8 @@
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="-40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -102,10 +98,8 @@
 
             <ImageView
                 android:id="@+id/arte23img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-180dp"
-                android:layout_marginBottom="-180dp"
+                android:layout_width="350dp"
+                android:layout_height="220dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
@@ -116,26 +110,12 @@
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="-10dp"
                 android:fontFamily="@font/amiri"
                 android:gravity='center_horizontal'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
-
-            <Button
-                android:id="@+id/arteAtras2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="30dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
-                android:text="@string/atras">
-            </Button>
 
         </LinearLayout>
 

@@ -70,8 +70,8 @@
 
             <ImageView
                 android:id="@+id/arte41img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 tools:ignore="ContentDescription">
             </ImageView>
@@ -90,8 +90,8 @@
 
             <ImageView
                 android:id="@+id/arte42img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 tools:ignore="ContentDescription">
             </ImageView>
@@ -110,8 +110,8 @@
 
             <ImageView
                 android:id="@+id/arte43img"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 tools:ignore="ContentDescription">
             </ImageView>
@@ -128,29 +128,6 @@
                 android:textSize="18sp"
                 android:gravity='center_horizontal' />
 
-            <LinearLayout
-                android:id="@+id/layoutArte42"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/arteAtras4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:textStyle="bold"
-                    android:layout_margin="18sp"
-                    android:text="@string/atras">
-
-                </Button>
-
                 <Button
                     android:id="@+id/artefintraje"
                     android:layout_width="150dp"
@@ -162,11 +139,9 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/amiri"
                     android:layout_margin="18sp"
-                    android:layout_gravity="center">
+                    android:layout_gravity="right">
 
                 </Button>
-
-            </LinearLayout>
 
         </LinearLayout>
 

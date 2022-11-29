@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -65,7 +66,8 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = new trajesFemeninos();
+            fragment.setArguments(args);
             cargarFragment(fragment);
         });
 
@@ -78,10 +80,7 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
         String [] datos = dbHelper.obtenerDatosArte(idioma, "trajemasc", categoria, 4);
         setDatosEImagenes(datos);
 
-        //BOTON SIGUIENTE y ATRAS
-
-        Button atrasBtn2 = requireView().findViewById(R.id.arteAtras4);
-        atrasBtn2.setOnClickListener(this);
+        //BOTON SIGUIENTE
 
         Button finBtn = requireView().findViewById(R.id.artefintraje);
         finBtn.setOnClickListener(this);
@@ -93,14 +92,8 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
 
         Button btn = (Button) view;
 
-        switch (btn.getId()){
-            case R.id.artefintraje:
-                fragment = new artesaniaSelector();
-                break;
-
-            case R.id.arteAtras4:
-                fragment = new trajesFemeninos();
-                break;
+        if (btn.getId() == R.id.artefintraje) {
+            fragment = new artesaniaInicio();
         }
 
         fragment.setArguments(args);
