@@ -16,8 +16,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -88,23 +90,11 @@ public class casaAlbercana extends Fragment {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setTitleMarginStart(-5);
         myToolbar.setNavigationOnClickListener(view12 -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            Fragment fragment = new arquitecturaInicio();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
         });
 
         //Mapa
@@ -138,25 +128,25 @@ public class casaAlbercana extends Fragment {
             startActivity(dial); // Ejecutamos el Intent
         });
 
-        Button finBtn = requireView().findViewById(R.id.arquiAtras5);
-        finBtn.setOnClickListener(view1 -> {
+        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras5);
+        finBtn.setOnClickListener(v -> {
             Fragment fragment = new inscripciones();
             fragment.setArguments(args);
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            cargarFragment(fragment);
         });
 
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }

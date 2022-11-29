@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="15dp"
-        app:srcCompat="@drawable/store"
+        app:srcCompat="@drawable/ic_basket_shopping_solid"
         tools:ignore="ContentDescription" />
 
     <TextView

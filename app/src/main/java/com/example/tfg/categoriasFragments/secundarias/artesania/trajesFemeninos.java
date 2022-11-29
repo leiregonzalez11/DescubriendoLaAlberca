@@ -69,6 +69,7 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setTitleMarginStart(-5);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = new artesaniaInicio();

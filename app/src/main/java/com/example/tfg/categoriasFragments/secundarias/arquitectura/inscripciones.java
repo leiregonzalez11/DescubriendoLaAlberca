@@ -13,11 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -63,23 +65,11 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setTitleMarginStart(-5);
         myToolbar.setNavigationOnClickListener(view12 -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            Fragment fragment = new arquitecturaInicio();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
         });
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -104,12 +94,15 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
 
         //BOTON SIGUIENTE y ATRAS
-        Button atrasBtnCat = requireView().findViewById(R.id.arquiAtras4);
-        atrasBtnCat.setOnClickListener(this);
+        ImageButton siguienteBtn = requireView().findViewById(R.id.arquisiguiente4);
+        ImageButton siguienteBtn2 = requireView().findViewById(R.id.arquisiguiente44);
+        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras4);
+        ImageButton finBtn2 = requireView().findViewById(R.id.arquiAtras44);
 
-
-        Button finBtn = requireView().findViewById(R.id.arquisiguiente4);
+        siguienteBtn.setOnClickListener(this);
+        siguienteBtn2.setOnClickListener(this);
         finBtn.setOnClickListener(this);
+        finBtn2.setOnClickListener(this);
 
 
     }
@@ -124,33 +117,29 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
         Fragment fragment = null;
 
-        switch (btn.getId()){
-
-            case R.id.arquisiguiente4:
-                fragment = new casaAlbercana();
-                break;
-
-            case R.id.arquiAtras4:
-                fragment = new aspectoInterior();
-                break;
+        int id = btn.getId();
+        if ((id == R.id.arquisiguiente4) || (id == R.id.arquisiguiente44)) {
+            fragment = new casaAlbercana();
+        } else if ((id == R.id.arquiAtras4) || (id == R.id.arquiAtras44)){
+            fragment = new aspectoInterior();
         }
 
         assert fragment != null;
         fragment.setArguments(args);
+        cargarFragment(fragment);
+    }
 
+    private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
         // Definimos una transacción
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         // Remplazamos el contenido principal por el fragmento
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
-
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }

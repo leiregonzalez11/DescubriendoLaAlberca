@@ -9,9 +9,9 @@
         android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        app:srcCompat="@drawable/ic_utensils_solid"
         android:layout_gravity="center_vertical"
-        android:layout_margin="15dp"
-        app:srcCompat="@drawable/restaurant" />
+        android:layout_margin="15dp"/>
 
     <TextView
         android:id="@+id/textView"

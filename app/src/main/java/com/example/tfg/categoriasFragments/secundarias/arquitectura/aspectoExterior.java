@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,23 +70,12 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-
+        myToolbar.setTitleMarginStart(-5);
+        myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            Fragment fragment = new arquitecturaInicio();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
         });
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -112,11 +102,15 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button siguienteBtn = requireView().findViewById(R.id.arquisiguiente2);
-        siguienteBtn.setOnClickListener(this);
+        ImageButton siguienteBtn = requireView().findViewById(R.id.arquisiguiente2);
+        ImageButton siguienteBtn2 = requireView().findViewById(R.id.arquisiguiente22);
+        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras2);
+        ImageButton finBtn2 = requireView().findViewById(R.id.arquiAtras22);
 
-        Button finBtn = requireView().findViewById(R.id.arquiAtras2);
+        siguienteBtn.setOnClickListener(this);
+        siguienteBtn2.setOnClickListener(this);
         finBtn.setOnClickListener(this);
+        finBtn2.setOnClickListener(this);
 
     }
 
@@ -130,33 +124,29 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
         Fragment fragment = null;
 
-        switch (btn.getId()){
-
-            case R.id.arquisiguiente2:
-                fragment = new aspectoInterior();
-                break;
-
-            case R.id.arquiAtras2:
-                fragment = new arquitecturaInicio();
-                break;
+        int id = btn.getId();
+        if ((btn.getId() == R.id.arquisiguiente2) || (id == R.id.arquisiguiente22)) {
+            fragment = new aspectoInterior();
+        } else if ((id == R.id.arquiAtras2) || (id == R.id.arquiAtras22)) {
+            fragment = new arquitecturaInicio();
         }
 
         assert fragment != null;
         fragment.setArguments(args);
+        cargarFragment(fragment);
+    }
 
+    private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
         // Definimos una transacción
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         // Remplazamos el contenido principal por el fragmento
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
-
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }

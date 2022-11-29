@@ -15,12 +15,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -68,22 +70,9 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
-
-            // Obtenemos el administrador de fragmentos a través de la actividad
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
-            // Definimos una transacción
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            // Remplazamos el contenido principal por el fragmento
-            fragmentTransaction.replace(R.id.relativelayout, fragment);
-            fragmentTransaction.addToBackStack(null);
-
-            // Cambiamos el fragment en la interfaz
-            fragmentTransaction.commit();
+            Fragment fragment = new arquitecturaInicio();
+            fragment.setArguments(args);
+            cargarFragment(fragment);
         });
 
         GestorDB dbHelper = new GestorDB(getContext());
@@ -118,11 +107,15 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         //BOTON SIGUIENTE y ATRAS
 
-        Button atrasBtn = requireView().findViewById(R.id.arquiAtras3);
-        atrasBtn.setOnClickListener(this);
+        ImageButton atrasBtn = requireView().findViewById(R.id.arquiAtras3);
+        ImageButton atrasBtn2 = requireView().findViewById(R.id.arquiAtras33);
+        ImageButton siguienteBtn = requireView().findViewById(R.id.arquisiguiente3);
+        ImageButton siguienteBtn2 = requireView().findViewById(R.id.arquisiguiente33);
 
-        Button siguienteBtn = requireView().findViewById(R.id.arquisiguiente3);
         siguienteBtn.setOnClickListener(this);
+        siguienteBtn2.setOnClickListener(this);
+        atrasBtn.setOnClickListener(this);
+        atrasBtn2.setOnClickListener(this);
 
 
     }
@@ -137,36 +130,32 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
         Fragment fragment = null;
 
-        switch (btn.getId()){
-
-            case R.id.arquisiguiente3:
-                fragment = new inscripciones();
-                break;
-
-            case R.id.arquiAtras3:
-                fragment = new aspectoExterior();
-                break;
+        int id = btn.getId();
+        if ((id == R.id.arquisiguiente3) || (id == R.id.arquisiguiente33)) {
+            fragment = new inscripciones();
+        } else if ((id == R.id.arquiAtras3) || (id == R.id.arquiAtras33)){
+            fragment = new aspectoExterior();
         }
 
         if (fragment != null) {
             fragment.setArguments(args);
+            cargarFragment(fragment);
         }
+    }
 
+    private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-
         // Definimos una transacción
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         // Remplazamos el contenido principal por el fragmento
-        assert fragment != null;
         fragmentTransaction.replace(R.id.relativelayout, fragment);
         fragmentTransaction.addToBackStack(null);
-
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
+
 }

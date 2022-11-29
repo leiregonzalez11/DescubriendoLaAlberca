@@ -7,17 +7,18 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="22dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
-        android:layout_margin="15dp"
-        app:srcCompat="@drawable/bar" />
+        android:layout_margin="14dp"
+        app:srcCompat="@drawable/ic_mug_saucer_solid" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="-2dp"
         android:fontFamily="@font/amiri"
         android:textColor="@color/black"
         android:textStyle="bold"

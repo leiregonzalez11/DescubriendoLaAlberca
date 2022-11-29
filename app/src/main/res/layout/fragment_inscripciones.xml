@@ -42,20 +42,53 @@
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/exttext"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="@font/amiri"
-                android:gravity="left"
-                android:text="@string/_3_inscripciones"
-                tools:targetApi="o" />
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="-10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+
+                <TextView
+                    android:id="@+id/exttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="-18dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="23sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/amiri"
+                    android:gravity="left"
+                    android:text="@string/_3_inscripciones"
+                    tools:targetApi="o" />
+
+                <ImageButton
+                    android:id="@+id/arquiAtras4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="140dp"
+                    android:src="@drawable/ic_circle_arrow_left_solid"
+                    app:tint="@color/black">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/arquisiguiente4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="right"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_circle_arrow_right_solid"
+                    app:tint="@color/black">
+                </ImageButton>
+
+            </LinearLayout>
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui41"
@@ -115,45 +148,33 @@
                 android:textSize="18sp"/>
 
             <LinearLayout
-                android:id="@+id/layoutArqui22"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:layout_marginTop="-10dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-                <Button
-                    android:id="@+id/arquiAtras4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:layout_margin="18sp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
+                <ImageButton
+                    android:id="@+id/arquiAtras44"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
                     android:textStyle="bold"
-                    android:fontFamily="@font/amiri"
-                    android:text="@string/atras"
-                    tools:ignore="ButtonStyle">
+                    android:src="@drawable/ic_circle_arrow_left_solid"
+                    app:tint="@color/black">
+                </ImageButton>
 
-                </Button>
-
-                <Button
-                    android:id="@+id/arquisiguiente4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/siguiente"
-                    android:layout_gravity="center"
-                    android:layout_margin="18sp"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
+                <ImageButton
+                    android:id="@+id/arquisiguiente44"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
                     android:textStyle="bold"
-                    android:fontFamily="@font/amiri"
-                    tools:ignore="ButtonStyle">
-
-                </Button>
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_circle_arrow_right_solid"
+                    app:tint="@color/black">
+                </ImageButton>
 
             </LinearLayout>
 

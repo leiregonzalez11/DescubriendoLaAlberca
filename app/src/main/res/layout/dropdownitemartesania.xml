@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="1dp"
-        android:layout_marginRight="-7dp"
-        android:layout_marginLeft="10dp"
-        app:srcCompat="@drawable/clothes"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="15dp"
+        app:srcCompat="@drawable/ic_shirt_solid"
         tools:ignore="ContentDescription" />
 
     <TextView

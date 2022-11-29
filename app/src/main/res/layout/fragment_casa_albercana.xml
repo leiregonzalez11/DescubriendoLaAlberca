@@ -27,7 +27,6 @@
             android:padding="15dp"
             android:gravity="center"
             android:orientation="vertical"
-            tools:context=".anterior.categorias.arquitectura.arquitecturaActivity5"
             tools:ignore="ScrollViewSize">
 
             <TextView
@@ -44,27 +43,42 @@
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/exttext"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/amiri"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:gravity="left"
-                android:text="@string/masinfo"
-                tools:targetApi="o" />
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="-20dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_circle_info_solid"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/exttext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:fontFamily="@font/amiri"
+                    android:textStyle="bold"
+                    android:textSize="23sp"
+                    android:layout_marginTop="-18dp"
+                    android:textColor="@color/black"
+                    android:gravity="left"
+                    android:text="@string/masinfo"
+                    tools:targetApi="o" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/nombreRest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="7dp"
                 android:layout_marginBottom="-10dp"
                 android:text="Casa Museo Satur y Juanela"
@@ -85,10 +99,11 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="360dp"
-                android:layout_height="230dp"
+                android:layout_height="270dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
@@ -105,42 +120,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginTop="-5dp"
+                        android:layout_marginTop="5dp"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/arrow_right_foreground"
+                            android:src="@drawable/ic_clock_solid"
                             tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:id="@+id/horario"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amiri"
-                            android:layout_marginTop="-10dp"
-                            android:gravity='left'
-                            android:text="@string/horario"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/horario2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="-10dp"
+                            android:layout_marginTop="-18dp"
                             android:layout_marginBottom="10dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:text="@string/horario2"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -148,41 +151,29 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-5dp"
+                        android:layout_marginTop="-7dp"
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:src="@drawable/arrow_right_foreground"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_mobile_retro_solid"
                             tools:ignore="ContentDescription">
                         </ImageView>
-
-                        <TextView
-                            android:id="@+id/telcasa"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amiri"
-                            android:layout_marginTop="-10dp"
-                            android:gravity='left'
-                            android:text="@string/telefono"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"/>
 
                         <TextView
                             android:id="@+id/telcasa2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="-10dp"
+                            android:layout_marginTop="-15dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -191,42 +182,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-
+                        android:layout_marginTop="5dp"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:src="@drawable/arrow_right_foreground"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_money_bills_solid"
                             tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:id="@+id/precio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/amiri"
-                            android:layout_marginTop="-10dp"
-                            android:gravity='left'
-                            android:text="@string/precio"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/precio2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginBottom="-10dp"
-                            android:layout_marginTop="-10dp"
+                            android:layout_marginTop="-15dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:text="@string/precio2"
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
@@ -234,31 +213,18 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-5dp"
+                        android:layout_marginTop="15dp"
                         android:layout_gravity="left"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:src="@drawable/arrow_right_foreground"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_globe_solid"
                             tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:id="@+id/web"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
-                            android:gravity='left'
-                            android:text="Web:"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/webcasa2"
@@ -266,42 +232,31 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginBottom="-10dp"
-                            android:layout_marginTop="-10dp"
+                            android:layout_marginTop="-15dp"
                             android:fontFamily="@font/amiri"
                             android:gravity='left'
                             android:textColor="@color/black"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="17dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:src="@drawable/arrow_right_foreground"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_star_half_stroke_solid"
                             tools:ignore="ContentDescription">
                         </ImageView>
-
-                        <TextView
-                            android:id="@+id/puntrest"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
-                            android:gravity='left'
-                            android:text="@string/puntuacion"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"/>
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -321,39 +276,42 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="-5dp"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_map_location_dot_solid"
+                            tools:ignore="ContentDescription">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/ubirest2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="-16dp"
+                            android:fontFamily="@font/amiri"
+                            android:text="Calle Mesón, 7"
+                            android:gravity='center'
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-
-            <TextView
-                android:id="@+id/ubirest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:fontFamily="@font/amiri"
-                android:textStyle="bold"
-                android:gravity='center'
-                android:text="@string/ubicacion"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/ubirest2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="-20dp"
-                android:fontFamily="@font/amiri"
-                android:text="Calle Mesón, 7"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:ignore="HardcodedText" />
-
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/mapViewCasa"
@@ -369,23 +327,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.697" />
 
-
-            <Button
-                android:id="@+id/arquiAtras5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="-40dp"
-                android:layout_marginBottom="20dp"
-                android:layout_margin="18sp"
-                android:textColor="@color/white"
-                android:background="#880E4F"
-                android:textStyle="bold"
-                android:fontFamily="@font/amiri"
-                android:text="@string/atras">
-
-            </Button>
+                <ImageButton
+                    android:id="@+id/arquiAtras5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:src="@drawable/ic_circle_arrow_left_solid"
+                    app:tint="@color/black">
+                </ImageButton>
 
         </LinearLayout>
 
