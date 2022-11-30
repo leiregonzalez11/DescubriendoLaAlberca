@@ -23,11 +23,11 @@ public class tabAdapterComercio extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new ArtesaniaTienda();
+                return ArtesaniaTienda.newInstance();
             case 2:
-                return new OtrosComercios();
+                return OtrosComercios.newInstance();
             default:
-                return new AlimentacionTienda();
+                return AlimentacionTienda.newInstance();
         }
     }
 

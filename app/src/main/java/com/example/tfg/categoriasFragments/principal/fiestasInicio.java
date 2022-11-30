@@ -22,6 +22,19 @@ public class fiestasInicio extends Fragment {
     private Bundle args;
     private String idioma, categoria;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static fiestasInicio newInstance(Bundle args) {
+        fiestasInicio fragment = new fiestasInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public fiestasInicio() {
         // Required empty public constructor
     }
@@ -56,9 +69,8 @@ public class fiestasInicio extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
     }

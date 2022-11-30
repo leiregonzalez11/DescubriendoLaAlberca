@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.navigationmenu.Inicio;
@@ -30,6 +31,19 @@ public class Idiomas extends Fragment {
 
     RadioButton radioCas, radioEus, radioIng;
     String language, idioma, iu;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Idiomas newInstance(Bundle args) {
+        Idiomas fragment = new Idiomas();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public Idiomas() {
         // Required empty public constructor
@@ -63,13 +77,13 @@ public class Idiomas extends Fragment {
 
             switch (iu) {
                 case "inicio":
-                    fragment = new Inicio();
+                    fragment = Inicio.newInstance();
                     break;
                 case "categorias":
-                    fragment = new Categorias();
+                    fragment = Categorias.newInstance();
                     break;
                 case "ajustes":
-                    fragment = new Ajustes();
+                    fragment = Ajustes.newInstance();
                     break;
             }
 
@@ -110,13 +124,13 @@ public class Idiomas extends Fragment {
 
         switch (iu) {
             case "inicio":
-                fragment = new Inicio();
+                fragment = Inicio.newInstance();
                 break;
             case "categorias":
-                fragment = new Categorias();
+                fragment = Categorias.newInstance();
                 break;
             case "ajustes":
-                fragment = new Ajustes();
+                fragment = Ajustes.newInstance();
                 break;
         }
 

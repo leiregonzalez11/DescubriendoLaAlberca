@@ -28,6 +28,19 @@ public class gastronomiaInicio extends Fragment {
     Fragment fragment;
     String categoria, idioma, opc1, opc2;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static gastronomiaInicio newInstance(Bundle args) {
+        gastronomiaInicio fragment = new gastronomiaInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public gastronomiaInicio() {
         // Required empty public constructor
     }
@@ -64,7 +77,7 @@ public class gastronomiaInicio extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            fragment = new Categorias();
+            fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -92,8 +105,7 @@ public class gastronomiaInicio extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new turroneras();
-            fragment.setArguments(args);
+            fragment = turroneras.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -111,8 +123,7 @@ public class gastronomiaInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new recetasTipicas();
-            fragment.setArguments(args);
+            fragment = recetasTipicas.newInstance(args);
             cargarFragment(fragment);
         });
     }

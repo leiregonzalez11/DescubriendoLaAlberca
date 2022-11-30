@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustesFragments.restauracion.Bares;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,15 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
     String nombreAloj;
     listViewAdapter myAdapter;
     SearchView editsearch;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Apartamento newInstance() {
+        return new Apartamento();
+    }
 
     public Apartamento() {
         // Required empty public constructor
@@ -67,9 +77,8 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreAloj = adapterView.getItemAtPosition(position).toString();
-            Fragment fragment = new Alojamiento();
             args.putString("nombreAloj", nombreAloj);
-            fragment.setArguments(args);
+            Fragment fragment = Alojamiento.newInstance(args);
             cargarFragment(fragment);
         });
     }

@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
+import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,6 +32,19 @@ public class bordadoSerrano extends Fragment {
     ImageView img1, img2, img3;
     StorageReference storageRef;
     TextView text1, text2, text3, text4;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static bordadoSerrano newInstance(Bundle args) {
+        bordadoSerrano fragment = new bordadoSerrano();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public bordadoSerrano() {
         // Required empty public constructor
@@ -67,8 +81,7 @@ public class bordadoSerrano extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new artesaniaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = artesaniaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 

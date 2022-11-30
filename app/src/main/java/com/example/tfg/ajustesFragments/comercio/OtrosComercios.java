@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustesFragments.DondeDormir;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,15 @@ public class OtrosComercios extends Fragment implements SearchView.OnQueryTextLi
     Bundle args;
     listViewAdapter myAdapter;
     SearchView editsearch;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static OtrosComercios newInstance() {
+        return new OtrosComercios();
+    }
 
     public OtrosComercios() {
         // Required empty public constructor
@@ -70,9 +80,8 @@ public class OtrosComercios extends Fragment implements SearchView.OnQueryTextLi
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreTienda = adapterView.getItemAtPosition(position).toString();
-            Fragment fragment = new Tienda();
             args.putString("nombreCom", nombreTienda);
-            fragment.setArguments(args);
+            Fragment fragment = Tienda.newInstance(args);
             cargarFragment(fragment);
         });
     }

@@ -20,6 +20,7 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
+import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -54,6 +55,19 @@ public class otrosPueblos extends Fragment {
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
     };
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static otrosPueblos newInstance(Bundle args) {
+        otrosPueblos fragment = new otrosPueblos();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public otrosPueblos() {
         // Required empty public constructor
@@ -91,7 +105,7 @@ public class otrosPueblos extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -140,8 +154,7 @@ public class otrosPueblos extends Fragment {
 
         Button atrasBtn = requireView().findViewById(R.id.pueblosAtras);
         atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = new otrosLugaresInicio();
-            fragment.setArguments(args);
+            Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);
         });
 

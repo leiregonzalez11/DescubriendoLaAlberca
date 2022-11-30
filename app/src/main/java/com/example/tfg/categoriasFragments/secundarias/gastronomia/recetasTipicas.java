@@ -25,6 +25,7 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -40,6 +41,19 @@ public class recetasTipicas extends Fragment {
     ImageView img7, img8, img9, img10, img11, img12;
     String categoria, idioma, nombreReceta, tipoRecetas;
     TextView ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, ing10, ing11, ing12;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static recetasTipicas newInstance(Bundle args) {
+        recetasTipicas fragment = new recetasTipicas();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public recetasTipicas() {
         // Required empty public constructor
@@ -74,9 +88,8 @@ public class recetasTipicas extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -134,8 +147,7 @@ public class recetasTipicas extends Fragment {
 
         Button atrasBtn = requireView().findViewById(R.id.recetasAtras);
         atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = new gastronomiaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = gastronomiaInicio.newInstance(args);
             cargarFragment(fragment);
         });
     }

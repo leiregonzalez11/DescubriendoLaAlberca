@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.DondeDormir;
+import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -58,6 +59,24 @@ public class Alojamiento extends DialogFragment {
         }
     };
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Alojamiento newInstance(Bundle args) {
+        Alojamiento fragment = new Alojamiento();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+
+    }
+
+    public Alojamiento(){
+        //Empty requited constructor
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -79,9 +98,8 @@ public class Alojamiento extends DialogFragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new DondeDormir();
+            Fragment fragment = DondeDormir.newInstance();
             cargarFragment(fragment);
         });
 

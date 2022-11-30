@@ -34,6 +34,15 @@ public class Ajustes extends Fragment {
     Fragment fragment;
     String opc1, opc2, opc3, opc4, opc5;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Ajustes newInstance() {
+        return new Ajustes();
+    }
+
     public Ajustes() {
         // Required empty public constructor
     }
@@ -77,7 +86,7 @@ public class Ajustes extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new Comercio();
+            fragment = Comercio.newInstance();
             cargarFragment(fragment);
         });
 
@@ -95,7 +104,7 @@ public class Ajustes extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new ComoLlegar();
+            fragment = ComoLlegar.newInstance();
             cargarFragment(fragment);
         });
 
@@ -113,7 +122,7 @@ public class Ajustes extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new DondeComer();
+            fragment = DondeComer.newInstance();
             cargarFragment(fragment);
         });
 
@@ -131,7 +140,7 @@ public class Ajustes extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            fragment = new DondeDormir();
+            fragment = DondeDormir.newInstance();
             cargarFragment(fragment);
         });
 
@@ -165,20 +174,18 @@ public class Ajustes extends Fragment {
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
                 //Creamos el fragmento
-                fragment = new FormularioDeContacto();
+                fragment = FormularioDeContacto.newInstance(args);
                 break;
 
             case R.id.menu_idioma:
                 //Creamos el fragmento
-                fragment = new Idiomas();
+                fragment = Idiomas.newInstance(args);
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
 
-        //Añadimos los argumentos
-        fragment.setArguments(args);
         cargarFragment(fragment);
 
         return true;

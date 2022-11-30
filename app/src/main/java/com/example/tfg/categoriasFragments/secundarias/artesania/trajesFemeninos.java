@@ -24,6 +24,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SpinnerAdapter;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
@@ -37,6 +39,19 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     private StorageReference storageRef;
     private TextView text1, text2, text3;
     private String idioma, categoria, nombreTraje;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static trajesFemeninos newInstance(Bundle args) {
+        trajesFemeninos fragment = new trajesFemeninos();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public trajesFemeninos() {
         // Required empty public constructor
@@ -71,8 +86,7 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new artesaniaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = artesaniaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -107,11 +121,10 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         Fragment fragment = null;
 
         if (btn.getId() == R.id.artesiguiente3) {
-            fragment = new trajeMasculino();
+            fragment = trajeMasculino.newInstance(args);
         }
 
         assert fragment != null;
-        fragment.setArguments(args);
         cargarFragment(fragment);
     }
 

@@ -42,6 +42,15 @@ public class Categorias extends Fragment implements View.OnClickListener{
     protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro,
             btnCultura, btnRutas, btnOtros, btnArte, btnArqui;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Categorias newInstance() {
+        return new Categorias();
+    }
+
     public Categorias() {
         // Required empty public constructor
     }
@@ -51,6 +60,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        //Argumentos para el menu de ajustes (idioma/formulario de contacto)
         argsMenu = new Bundle();
         argsMenu.putString("iu", "categorias");
 
@@ -64,7 +74,6 @@ public class Categorias extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_categorias, container, false);
     }
@@ -82,63 +91,72 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         ImageButton btn = (ImageButton) view;
 
+        idioma = determinarIdioma();
+        args.putString("idioma", idioma);
+
         switch (btn.getId()){
 
             case R.id.botonhistoria:
                 categoria = "historia";
-                fragment = new historiaInicio();
+                args.putString("categoria", categoria);
+                fragment = historiaInicio.newInstance(args);
                 break;
 
             case R.id.botonartesania:
                 categoria = "artesania";
-                fragment = new artesaniaInicio();
+                args.putString("categoria", categoria);
+                fragment = artesaniaInicio.newInstance(args);
                 break;
 
             case R.id.botontradiciones:
                 categoria = "tradiciones";
-                fragment = new tradicionesInicio();
+                args.putString("categoria", categoria);
+                fragment = tradicionesInicio.newInstance(args);
                 break;
 
             case R.id.botonarquitectura:
                 categoria = "arquitectura";
-                fragment = new arquitecturaInicio();
+                args.putString("categoria", categoria);
+                fragment = arquitecturaInicio.newInstance(args);
                 break;
 
             case R.id.botonmonumentos:
                 categoria = "sitiosdeinteres";
-                fragment = new monumentosInicio();
+                args.putString("categoria", categoria);
+                fragment = monumentosInicio.newInstance(args);
                 break;
 
             case R.id.botonfiestas:
                 categoria = "fiestas";
-                fragment = new fiestasInicio();
+                args.putString("categoria", categoria);
+                fragment = fiestasInicio.newInstance(args);
                 break;
 
             case R.id.botongastronomia:
                 categoria = "gastronomia";
-                fragment = new gastronomiaInicio();
+                args.putString("categoria", categoria);
+                fragment = gastronomiaInicio.newInstance(args);
                 break;
 
             case R.id.botoncultura:
                 categoria = "cultura";
-                fragment = new culturaInicio();
+                args.putString("categoria", categoria);
+                fragment = culturaInicio.newInstance(args);
                 break;
 
             case R.id.botonruta:
                 categoria = "rutas";
-                fragment = new rutasInicio();
+                args.putString("categoria", categoria);
+                fragment = rutasInicio.newInstance(args);
                 break;
 
             case R.id.botonotros:
                 categoria = "otroslugares";
-                fragment = new otrosLugaresInicio();
+                args.putString("categoria", categoria);
+                fragment = otrosLugaresInicio.newInstance(args);
                 break;
         }
 
-        idioma = determinarIdioma();
-        args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
-        fragment.setArguments(args);
         cargarFragment(fragment);
     }
 
@@ -153,20 +171,18 @@ public class Categorias extends Fragment implements View.OnClickListener{
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
                 //Creamos el fragmento
-                fragment = new FormularioDeContacto();
+                fragment = FormularioDeContacto.newInstance(argsMenu);
                 break;
 
             case R.id.menu_idioma:
                 //Creamos el fragmento
-                fragment = new Idiomas();
+                fragment = Idiomas.newInstance(argsMenu);
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
 
-        //Añadimos los argumentos
-        fragment.setArguments(argsMenu);
         cargarFragment(fragment);
 
         return true;

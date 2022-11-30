@@ -31,6 +31,19 @@ public class arquitecturaInicio extends Fragment {
     private Bundle args;
     private String idioma, categoria;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static arquitecturaInicio newInstance(Bundle args) {
+        arquitecturaInicio fragment = new arquitecturaInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public arquitecturaInicio() {
         // Required empty public constructor
     }
@@ -67,9 +80,8 @@ public class arquitecturaInicio extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -96,8 +108,7 @@ public class arquitecturaInicio extends Fragment {
         //BOTON SIGUIENTE
         Button sigBtn = requireView().findViewById(R.id.arquisiguiente1);
         sigBtn.setOnClickListener(v -> {
-            Fragment fragment = new aspectoExterior();
-            fragment.setArguments(args);
+            Fragment fragment = aspectoExterior.newInstance(args);
             cargarFragment(fragment);
         });
 

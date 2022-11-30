@@ -20,6 +20,8 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -30,6 +32,19 @@ public class mozaDeAnimas extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static mozaDeAnimas newInstance(Bundle args) {
+        mozaDeAnimas fragment = new mozaDeAnimas();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public mozaDeAnimas() {
         // Required empty public constructor
@@ -66,7 +81,7 @@ public class mozaDeAnimas extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -134,8 +149,7 @@ public class mozaDeAnimas extends Fragment {
         Button atrasBtn = requireView().findViewById(R.id.mozaAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
-            Fragment fragment = new tradicionesInicio();
-            fragment.setArguments(args);
+            Fragment fragment = tradicionesInicio.newInstance(args);
             cargarFragment(fragment);
         });
 

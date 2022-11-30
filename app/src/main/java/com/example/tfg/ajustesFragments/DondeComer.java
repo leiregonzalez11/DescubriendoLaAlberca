@@ -21,6 +21,15 @@ import com.google.android.material.tabs.TabLayout;
 
 public class DondeComer extends Fragment{
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static DondeComer newInstance() {
+        return new DondeComer();
+    }
+
     public DondeComer() {
         // Required empty public constructor
     }
@@ -45,7 +54,7 @@ public class DondeComer extends Fragment{
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Ajustes();
+            Fragment fragment = Ajustes.newInstance();
             cargarFragment(fragment);
         });
 

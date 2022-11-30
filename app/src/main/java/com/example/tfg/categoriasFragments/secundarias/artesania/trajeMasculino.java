@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
+import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -30,6 +31,19 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
     String idioma, categoria;
     ImageView img1, img2, img3;
     StorageReference storageRef;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static trajeMasculino newInstance(Bundle args) {
+        trajeMasculino fragment = new trajeMasculino();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public trajeMasculino() {
         // Required empty public constructor
@@ -66,8 +80,7 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new trajesFemeninos();
-            fragment.setArguments(args);
+            Fragment fragment = trajesFemeninos.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -93,10 +106,9 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
         Button btn = (Button) view;
 
         if (btn.getId() == R.id.artefintraje) {
-            fragment = new artesaniaInicio();
+            fragment = artesaniaInicio.newInstance(args);
         }
 
-        fragment.setArguments(args);
         cargarFragment(fragment);
 
     }

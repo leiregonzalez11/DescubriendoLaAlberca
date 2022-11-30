@@ -19,6 +19,19 @@ public class monumentosInicio extends Fragment {
     private String categoria, idioma;
     private Bundle args;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static monumentosInicio newInstance(Bundle args) {
+        monumentosInicio fragment = new monumentosInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public monumentosInicio() {
         // Required empty public constructor
     }
@@ -55,7 +68,7 @@ public class monumentosInicio extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
     }

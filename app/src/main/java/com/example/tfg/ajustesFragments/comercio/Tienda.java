@@ -25,6 +25,7 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.ajustesFragments.Comercio;
 import com.example.tfg.ajustesFragments.DondeDormir;
+import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -58,6 +59,23 @@ public class Tienda extends DialogFragment {
         }
     };
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Tienda newInstance(Bundle args) {
+        Tienda fragment = new Tienda();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
+    public Tienda(){
+        //Required empty constructor
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -79,9 +97,8 @@ public class Tienda extends DialogFragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Comercio();
+            Fragment fragment = Comercio.newInstance();
             cargarFragment(fragment);
         });
 

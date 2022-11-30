@@ -32,6 +32,19 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
     private TextView text2, text3, text4, text5, text6;
     private StorageReference storageRef;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static rutasInicio newInstance(Bundle args) {
+        rutasInicio fragment = new rutasInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public rutasInicio() {
         // Required empty public constructor
     }
@@ -61,7 +74,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             // Obtenemos el administrador de fragmentos a través de la actividad
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             // Definimos una transacción

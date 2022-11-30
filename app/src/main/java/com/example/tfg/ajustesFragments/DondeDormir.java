@@ -15,11 +15,21 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.tfg.R;
 import com.example.tfg.adapters.tabAdapter;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class DondeDormir extends Fragment {
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static DondeDormir newInstance() {
+        return new DondeDormir();
+    }
 
     public DondeDormir() {
         // Required empty public constructor
@@ -45,7 +55,7 @@ public class DondeDormir extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Ajustes();
+            Fragment fragment = Ajustes.newInstance();
             cargarFragment(fragment);
         });
 

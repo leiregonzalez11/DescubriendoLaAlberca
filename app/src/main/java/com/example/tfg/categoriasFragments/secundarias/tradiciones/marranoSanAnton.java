@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -33,6 +34,19 @@ public class marranoSanAnton extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static marranoSanAnton newInstance(Bundle args) {
+        marranoSanAnton fragment = new marranoSanAnton();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public marranoSanAnton() {
         // Required empty public constructor
@@ -70,7 +84,7 @@ public class marranoSanAnton extends Fragment {
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             //Creamos el fragment
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -108,7 +122,7 @@ public class marranoSanAnton extends Fragment {
         Button atrasBtn = requireView().findViewById(R.id.marranoAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
-            Fragment fragment = new tradicionesInicio();
+            Fragment fragment = tradicionesInicio.newInstance(args);
             fragment.setArguments(args);
             cargarFragment(fragment);
 

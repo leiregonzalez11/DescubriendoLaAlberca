@@ -1,31 +1,27 @@
 package com.example.tfg.categoriasFragments.secundarias.arquitectura;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-
+import com.example.tfg.R;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
+import android.widget.ImageButton;
+import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
+import android.annotation.SuppressLint;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
-import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
-import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 
 public class aspectoExterior extends Fragment implements View.OnClickListener{
 
@@ -35,10 +31,21 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
     StorageReference storageRef;
     TextView text1, text2, text3;
 
-    public aspectoExterior() {
-        // Required empty public constructor
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static aspectoExterior newInstance(Bundle args) {
+        aspectoExterior fragment = new aspectoExterior();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
     }
 
+    // Required empty public constructor
+    public aspectoExterior() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,8 +79,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new arquitecturaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = arquitecturaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -128,13 +134,12 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         int id = btn.getId();
         if ((btn.getId() == R.id.arquisiguiente2) || (id == R.id.arquisiguiente22)) {
-            fragment = new aspectoInterior();
+            fragment = aspectoInterior.newInstance(args);
         } else if ((id == R.id.arquiAtras2) || (id == R.id.arquiAtras22)) {
-            fragment = new arquitecturaInicio();
+            fragment = arquitecturaInicio.newInstance(args);
         }
 
         assert fragment != null;
-        fragment.setArguments(args);
         cargarFragment(fragment);
     }
 

@@ -31,6 +31,19 @@ public class turroneras extends Fragment {
     StorageReference storageRef;
     TextView text1, text2, text3;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static turroneras newInstance(Bundle args) {
+        turroneras fragment = new turroneras();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public turroneras() {
         // Required empty public constructor
     }
@@ -66,7 +79,7 @@ public class turroneras extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -93,7 +106,7 @@ public class turroneras extends Fragment {
 
         Button atrasBtn = requireView().findViewById(R.id.gastroAtras3);
         atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = new gastronomiaInicio();
+            Fragment fragment = gastronomiaInicio.newInstance(args);
             fragment.setArguments(args);
             cargarFragment(fragment);
         });

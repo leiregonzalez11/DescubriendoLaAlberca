@@ -23,6 +23,19 @@ public class otrosLugaresInicio extends Fragment {
     String idioma, categoria, opc1, opc2, opc3, opc4;
     Bundle args;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static otrosLugaresInicio newInstance(Bundle args) {
+        otrosLugaresInicio fragment = new otrosLugaresInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public otrosLugaresInicio() {
         // Required empty public constructor
     }
@@ -61,7 +74,7 @@ public class otrosLugaresInicio extends Fragment {
         myToolbar.setNavigationOnClickListener(v -> {
 
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -107,8 +120,7 @@ public class otrosLugaresInicio extends Fragment {
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
             //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
-            Fragment fragment = new otrosPueblos();
-            fragment.setArguments(args);
+            Fragment fragment = otrosPueblos.newInstance(args);
             cargarFragment(fragment);
         });
 

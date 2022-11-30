@@ -57,6 +57,19 @@ public class casaAlbercana extends Fragment {
         }
     };
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static casaAlbercana newInstance(Bundle args) {
+        casaAlbercana fragment = new casaAlbercana();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public casaAlbercana() {
         // Required empty public constructor
     }
@@ -91,8 +104,7 @@ public class casaAlbercana extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = new arquitecturaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = arquitecturaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -129,8 +141,7 @@ public class casaAlbercana extends Fragment {
 
         ImageButton finBtn = requireView().findViewById(R.id.arquiAtras5);
         finBtn.setOnClickListener(v -> {
-            Fragment fragment = new inscripciones();
-            fragment.setArguments(args);
+            Fragment fragment = inscripciones.newInstance(args);
             cargarFragment(fragment);
         });
 

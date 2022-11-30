@@ -21,9 +21,9 @@ public class tabAdapterComer extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new Restaurantes();
+                return Restaurantes.newInstance();
             default:
-                return new Bares();
+                return Bares.newInstance();
         }
     }
 

@@ -20,7 +20,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.Comercio;
 import com.example.tfg.ajustesFragments.DondeComer;
+import com.example.tfg.categoriasFragments.principal.culturaInicio;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -55,6 +57,20 @@ public class Establecimiento extends Fragment {
         }
     };
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Establecimiento newInstance(Bundle args) {
+        Establecimiento fragment = new Establecimiento();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -76,9 +92,8 @@ public class Establecimiento extends Fragment {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
-
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new DondeComer();
+            Fragment fragment = DondeComer.newInstance();
             cargarFragment(fragment);
         });
 

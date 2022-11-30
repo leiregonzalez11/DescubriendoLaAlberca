@@ -23,11 +23,11 @@ public class tabAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new Apartamento();
+                return Apartamento.newInstance();
             case 2:
-                return new CasasRurales();
+                return CasasRurales.newInstance();
             default:
-                return new Hoteles();
+                return Hoteles.newInstance();
         }
     }
 

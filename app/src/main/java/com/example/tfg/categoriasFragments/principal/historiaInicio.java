@@ -20,6 +20,19 @@ public class historiaInicio extends Fragment {
     Fragment fragment;
     private String idioma, categoria;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static historiaInicio newInstance(Bundle args) {
+        historiaInicio fragment = new historiaInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public historiaInicio() {
         // Required empty public constructor
     }
@@ -56,7 +69,7 @@ public class historiaInicio extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            fragment = new Categorias();
+            fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
     }

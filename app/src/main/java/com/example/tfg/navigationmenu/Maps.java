@@ -19,6 +19,19 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Maps extends Fragment {
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Maps newInstance() {
+        return new Maps();
+    }
+
+    public Maps(){
+        //Empty
+    }
+
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -61,4 +74,5 @@ public class Maps extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
+
 }

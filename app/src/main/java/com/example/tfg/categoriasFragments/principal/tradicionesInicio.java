@@ -1,19 +1,11 @@
 package com.example.tfg.categoriasFragments.principal;
 
-import static java.lang.Thread.sleep;
-
-import android.net.Uri;
 import android.os.Bundle;
-
-import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import android.view.View;
+import java.util.ArrayList;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import androidx.annotation.NonNull;
@@ -22,33 +14,35 @@ import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
-import android.widget.VideoView;
-
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustesFragments.Comercio;
+import com.example.tfg.navigationmenu.Categorias;
+import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.alboradas;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.laLoa;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.marranoSanAnton;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.mozaDeAnimas;
-import com.example.tfg.navigationmenu.Categorias;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
-import java.util.ArrayList;
-import java.util.Objects;
 
 public class tradicionesInicio extends Fragment {
 
     Bundle args;
     Fragment fragment;
     String opc1, opc2, opc3, opc4, idioma, categoria;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static tradicionesInicio newInstance(Bundle args) {
+        tradicionesInicio fragment = new tradicionesInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public tradicionesInicio() {
         // Required empty public constructor
@@ -88,7 +82,7 @@ public class tradicionesInicio extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -118,9 +112,7 @@ public class tradicionesInicio extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show();
-            fragment = new mozaDeAnimas();
-            fragment.setArguments(args);
+            fragment = mozaDeAnimas.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -138,9 +130,7 @@ public class tradicionesInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
-            fragment = new marranoSanAnton();
-            fragment.setArguments(args);
+            fragment = marranoSanAnton.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -158,9 +148,7 @@ public class tradicionesInicio extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
-            fragment = new laLoa();
-            fragment.setArguments(args);
+            fragment = laLoa.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -178,9 +166,7 @@ public class tradicionesInicio extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show();
-            fragment = new alboradas();
-            fragment.setArguments(args);
+            fragment = alboradas.newInstance(args);
             cargarFragment(fragment);
         });
 

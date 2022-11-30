@@ -17,9 +17,25 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class culturaInicio extends Fragment {
 
-    private Bundle args;
     Fragment fragment;
     private String idioma, categoria;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static culturaInicio newInstance(Bundle args) {
+        culturaInicio fragment = new culturaInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
+    public culturaInicio() {
+        // Required empty public constructor
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,8 +47,7 @@ public class culturaInicio extends Fragment {
             categoria = getArguments().getString("categoria");
         }
 
-        args = new Bundle();
-
+        Bundle args = new Bundle();
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
     }
@@ -53,7 +68,7 @@ public class culturaInicio extends Fragment {
         myToolbar.setNavigationOnClickListener(v -> {
 
             myToolbar.setNavigationIcon(null);
-            fragment = new Categorias();
+            fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
     }

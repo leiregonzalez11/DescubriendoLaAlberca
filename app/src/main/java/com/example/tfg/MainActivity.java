@@ -58,22 +58,22 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         Fragment fragment = null;
         switch (item.getItemId()){
             case R.id.navigation_inicio:
-                fragment = new Inicio();
+                fragment = Inicio.newInstance();
                 fragment_id = "inicio";
                 break;
 
             case R.id.navigation_mapa:
-                fragment = new Maps();
+                fragment = Maps.newInstance();
                 fragment_id = "maps";
                 break;
 
             case R.id.navigation_categoria:
-                fragment = new Categorias();
+                fragment = Categorias.newInstance();
                 fragment_id = "categorias";
                 break;
 
             case R.id.navigation_ajustes:
-                fragment = new Ajustes();
+                fragment = Ajustes.newInstance();
                 fragment_id = "ajustes";
                 break;
 

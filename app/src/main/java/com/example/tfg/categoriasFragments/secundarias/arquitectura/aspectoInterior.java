@@ -35,6 +35,19 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
     ImageView img1, img2, img3, img4, img5;
     TextView text1, text2, text3, text4, text5;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static aspectoInterior newInstance(Bundle args) {
+        aspectoInterior fragment = new aspectoInterior();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public aspectoInterior() {
         // Required empty public constructor
     }
@@ -70,8 +83,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = new arquitecturaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = arquitecturaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -135,13 +147,12 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         int id = btn.getId();
         if ((id == R.id.arquisiguiente3) || (id == R.id.arquisiguiente33)) {
-            fragment = new inscripciones();
+            fragment = inscripciones.newInstance(args);
         } else if ((id == R.id.arquiAtras3) || (id == R.id.arquiAtras33)){
-            fragment = new aspectoExterior();
+            fragment = aspectoExterior.newInstance(args);
         }
 
         if (fragment != null) {
-            fragment.setArguments(args);
             cargarFragment(fragment);
         }
     }

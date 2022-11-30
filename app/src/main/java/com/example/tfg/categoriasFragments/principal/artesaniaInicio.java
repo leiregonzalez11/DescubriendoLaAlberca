@@ -3,7 +3,6 @@ package com.example.tfg.categoriasFragments.principal;
 import android.os.Bundle;
 import com.example.tfg.R;
 import android.view.View;
-import android.widget.Button;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,7 +24,6 @@ import com.smarteist.autoimageslider.SliderView;
 import com.example.tfg.navigationmenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 import com.smarteist.autoimageslider.SliderAnimations;
-import com.example.tfg.categoriasFragments.secundarias.artesania.artesaniaSelector;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 
 import java.util.ArrayList;
@@ -34,6 +32,23 @@ public class artesaniaInicio extends Fragment {
 
     Bundle args;
     String idioma, categoria, opc1, opc2, opc3;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static artesaniaInicio newInstance(Bundle args) {
+        artesaniaInicio fragment = new artesaniaInicio();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
+    public artesaniaInicio() {
+        // Required empty public constructor
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +82,7 @@ public class artesaniaInicio extends Fragment {
         myToolbar.setNavigationOnClickListener(view12 -> {
 
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -95,8 +110,7 @@ public class artesaniaInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new trajesFemeninos();
-            fragment.setArguments(args);
+            Fragment fragment = trajesFemeninos.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -117,8 +131,7 @@ public class artesaniaInicio extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new orfebreria();
-            fragment.setArguments(args);
+            Fragment fragment = orfebreria.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -138,8 +151,7 @@ public class artesaniaInicio extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = new bordadoSerrano();
-            fragment.setArguments(args);
+            Fragment fragment = bordadoSerrano.newInstance(args);
             cargarFragment(fragment);
         });
 

@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tfg.R;
+import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.navigationmenu.Inicio;
@@ -34,6 +35,19 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
     EditText asuntoET;
     TextInputEditText mensajeET;
     String asunto, asuntoet, mensajeet, iu;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static FormularioDeContacto newInstance(Bundle args) {
+        FormularioDeContacto fragment = new FormularioDeContacto();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public FormularioDeContacto() {
         // Required empty public constructor
@@ -83,13 +97,13 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
 
             switch (iu) {
                 case "inicio":
-                    fragment = new Inicio();
+                    fragment = Inicio.newInstance();
                     break;
                 case "categorias":
-                    fragment = new Categorias();
+                    fragment = Categorias.newInstance();
                     break;
                 case "ajustes":
-                    fragment = new Ajustes();
+                    fragment = Ajustes.newInstance();
                     break;
             }
 
@@ -127,13 +141,13 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
 
             switch (iu) {
                 case "inicio":
-                    fragment = new Inicio();
+                    fragment = Inicio.newInstance();
                     break;
                 case "categorias":
-                    fragment = new Categorias();
+                    fragment = Categorias.newInstance();
                     break;
                 case "ajustes":
-                    fragment = new Ajustes();
+                    fragment = Ajustes.newInstance();
                     break;
             }
 

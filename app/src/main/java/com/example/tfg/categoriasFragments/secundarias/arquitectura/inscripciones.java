@@ -31,6 +31,19 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     StorageReference storageRef;
     ImageView img1, img2;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static inscripciones newInstance(Bundle args) {
+        inscripciones fragment = new inscripciones();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     public inscripciones() {
         // Required empty public constructor
     }
@@ -66,8 +79,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = new arquitecturaInicio();
-            fragment.setArguments(args);
+            Fragment fragment = arquitecturaInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -121,13 +133,12 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         int id = btn.getId();
         if ((id == R.id.arquisiguiente4) || (id == R.id.arquisiguiente44)) {
-            fragment = new casaAlbercana();
+            fragment = casaAlbercana.newInstance(args);
         } else if ((id == R.id.arquiAtras4) || (id == R.id.arquiAtras44)){
-            fragment = new aspectoInterior();
+            fragment = aspectoInterior.newInstance(args);
         }
 
         assert fragment != null;
-        fragment.setArguments(args);
         cargarFragment(fragment);
     }
 

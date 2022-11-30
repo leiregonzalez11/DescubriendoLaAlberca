@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,6 +32,19 @@ public class laLoa extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static laLoa newInstance(Bundle args) {
+        laLoa fragment = new laLoa();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
 
     public laLoa() {
         // Required empty public constructor
@@ -68,7 +82,7 @@ public class laLoa extends Fragment {
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             //Creamos el fragment
-            Fragment fragment = new Categorias();
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -108,8 +122,7 @@ public class laLoa extends Fragment {
         Button atrasBtn = requireView().findViewById(R.id.loaAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
-            Fragment fragment = new tradicionesInicio();
-            fragment.setArguments(args);
+            Fragment fragment = tradicionesInicio.newInstance(args);
             cargarFragment(fragment);
 
         });

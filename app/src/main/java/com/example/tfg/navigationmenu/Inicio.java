@@ -30,6 +30,15 @@ public class Inicio extends Fragment {
     Bundle args;
     Fragment fragment;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static Inicio newInstance() {
+        return new Inicio();
+    }
+
     public Inicio() {
         // Required empty public constructor
     }
@@ -79,31 +88,33 @@ public class Inicio extends Fragment {
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
                 //Creamos el fragmento
-                fragment = new FormularioDeContacto();
+                fragment = FormularioDeContacto.newInstance(args);
                 break;
 
             case R.id.menu_idioma:
                 //Creamos el fragmento
-                fragment = new Idiomas();
+                fragment = Idiomas.newInstance(args);
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
 
-        //Añadimos los argumentos
-        fragment.setArguments(args);
-        // Obtener el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definir una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazar el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiar
-        fragmentTransaction.commit();
+        cargarFragment(fragment);
 
         return true;
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }

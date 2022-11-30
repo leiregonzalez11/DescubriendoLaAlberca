@@ -31,6 +31,15 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
     String idioma;
     private String nombreBus;
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static ComoLlegar newInstance() {
+        return new ComoLlegar();
+    }
+
     public ComoLlegar() {
         // Required empty public constructor
     }
