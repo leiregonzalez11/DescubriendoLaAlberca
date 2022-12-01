@@ -28,51 +28,27 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
 
     private StorageReference storageRef;
     private View img1;
-    String idioma;
-    private String nombreBus;
+    private String idioma, nombreBus;
+    private Spinner spinner;
+    TextView texto;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static ComoLlegar newInstance() {
         return new ComoLlegar();
     }
 
-    public ComoLlegar() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public ComoLlegar() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_como_llegar, container, false);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-
-        determinarRuta((String) adapterView.getItemAtPosition(position));
-        determinarIdioma();
-        obtenerImagenFirebase("ajustes/" + nombreBus + "-" + idioma + ".jpg", (ImageView) img1);
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
@@ -80,24 +56,49 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
             Fragment fragment = new Ajustes();
             cargarFragment(fragment);
         });
+    }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_como_llegar, container, false);
+        if(v != null){
+            img1 = v.findViewById(R.id.comollegar3);
+            spinner = v.findViewById(R.id.spinnerBus);
+            texto = v.findViewById(R.id.ajustestext);
+        }
+        return v;
+    }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         storageRef = FirebaseStorage.getInstance().getReference();
-        img1 = requireView().findViewById(R.id.comollegar3);
-
         //Spinner
-        Spinner spinner = requireView().findViewById(R.id.spinnerBus);
         String [] bus = getResources().getStringArray(R.array.bus);
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitenbus, bus));
         spinner.setOnItemSelectedListener(this);
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        determinarRuta((String) adapterView.getItemAtPosition(position));
+        determinarIdioma();
+        obtenerImagenFirebase("ajustes/" + nombreBus + "-" + idioma + ".jpg", (ImageView) img1);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {}
+
     /** Método utilizado para obtener el idioma actual de la app */
     public void determinarIdioma() {
-
-        TextView texto = requireView().findViewById(R.id.ajustestext);
         String text = texto.getText().toString();
-
         switch (text) {
             case "¿Cómo llegar hasta La Alberca?":
                 idioma = "es";
@@ -113,7 +114,6 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
 
     /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
     private void determinarRuta(String idBus) {
-
         if(idBus.toLowerCase().contains("salamanca")){
             nombreBus = "laalbercasalamanca";
         } else if (idBus.toLowerCase().contains("béjar")){
@@ -140,5 +140,4 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
-
 }

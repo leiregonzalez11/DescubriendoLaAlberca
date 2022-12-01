@@ -4,12 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.tfg.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,12 +17,10 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Maps extends Fragment {
 
-    private Toolbar myToolbar;
     SupportMapFragment mapFragment;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-
         /**
          * Manipula el mapa una vez haya sido creado.
          * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
@@ -54,7 +50,7 @@ public class Maps extends Fragment {
     /** El Fragment ha sido creado */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myToolbar = requireActivity().findViewById(R.id.toolbar);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
         setHasOptionsMenu(false);
     }

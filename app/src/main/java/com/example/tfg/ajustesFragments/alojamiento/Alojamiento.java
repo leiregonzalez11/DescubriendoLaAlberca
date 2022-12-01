@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.DondeComer;
 import com.example.tfg.ajustesFragments.DondeDormir;
 import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -36,16 +37,17 @@ import com.google.firebase.storage.StorageReference;
 
 public class Alojamiento extends DialogFragment {
 
-    String categoria, alojamiento, telefono;
-    double lat, lon;
-    private StorageReference storageRef;
+    private double lat, lon;
+    private RatingBar ratingBar;
+    private TextView ubi, tel, text1;
+    private SupportMapFragment mapFragment;
+    private String categoria, alojamiento, telefono;
 
+    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-
         /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
+         * Manipula el mapa una vez haya sido creado.
+         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
@@ -60,9 +62,9 @@ public class Alojamiento extends DialogFragment {
     };
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Alojamiento newInstance(Bundle args) {
         Alojamiento fragment = new Alojamiento();
@@ -73,56 +75,64 @@ public class Alojamiento extends DialogFragment {
 
     }
 
-    public Alojamiento(){
-        //Empty requited constructor
+    /** Required empty public constructor */
+    public Alojamiento(){}
+
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view1 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = DondeComer.newInstance();
+            cargarFragment(fragment);
+        });
+        alojamiento = requireArguments().getString("nombreAloj");
+        categoria = requireArguments().getString("categoria");
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        setHasOptionsMenu(false);
-
-        alojamiento = requireArguments().getString("nombreAloj");
-        categoria = requireArguments().getString("categoria");
-
-        return inflater.inflate(R.layout.fragment_alojamiento, container, false);
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_alojamiento, container, false);
+        if(v != null){
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewAloj);
+            text1 = requireView().findViewById(R.id.nombreAloj);
+            tel = requireView().findViewById(R.id.telaloj2);
+            ubi = requireView().findViewById(R.id.ubi2);
+            ratingBar = requireView().findViewById(R.id.ratingBarAloj);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view1 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = DondeDormir.newInstance();
-            cargarFragment(fragment);
-        });
-
         //Mapa
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewAloj);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
 
-        TextView text1 = requireView().findViewById(R.id.nombreAloj);
-        text1.setText(alojamiento);
-
         //Datos de la interfaz
-
         GestorDB dbHelper = new GestorDB(getContext());
 
-        RatingBar ratingBar = requireView().findViewById(R.id.ratingBarAloj);
+        //Titulo
+        text1.setText(alojamiento);
+
+        //Datos informativos y ubicación
         double punt = dbHelper.obtenerPuntAloj(categoria, alojamiento);
         ratingBar.setRating((float) punt);
-
-        TextView tel = requireView().findViewById(R.id.telaloj2);
-        TextView ubi = requireView().findViewById(R.id.ubi2);
 
         String [] datos = dbHelper.obtenerDatosAloj(categoria, alojamiento);
 
@@ -130,10 +140,11 @@ public class Alojamiento extends DialogFragment {
         lat = Double.parseDouble(datos[1]);
         lon = Double.parseDouble(datos[2]);
 
+        ubi.setText(datos[3]);
+
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
-
             tel.setText(telsubrayado);
             tel.setOnClickListener(v -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
@@ -143,9 +154,6 @@ public class Alojamiento extends DialogFragment {
         } else{
             tel.setText(telefono);
         }
-
-        ubi.setText(datos[3]);
-
     }
 
     private void cargarFragment(Fragment fragment){

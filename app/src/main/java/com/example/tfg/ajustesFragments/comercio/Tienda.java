@@ -8,10 +8,8 @@ import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -19,33 +17,29 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.ajustesFragments.Comercio;
-import com.example.tfg.ajustesFragments.DondeDormir;
-import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
+import com.example.tfg.ajustesFragments.DondeComer;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class Tienda extends DialogFragment {
 
-    String categoria, tienda, telefono;
     double lat, lon;
+    private RatingBar ratingBar;
+    private TextView ubi, tel, text1;
+    String categoria, tienda, telefono;
+    private SupportMapFragment mapFragment;
 
+    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-
         /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
+         * Manipula el mapa una vez haya sido creado.
+         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
@@ -60,9 +54,9 @@ public class Tienda extends DialogFragment {
     };
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Tienda newInstance(Bundle args) {
         Tienda fragment = new Tienda();
@@ -72,68 +66,78 @@ public class Tienda extends DialogFragment {
         return fragment;
     }
 
-    public Tienda(){
-        //Required empty constructor
+    /** Required empty public constructor */
+    public Tienda(){}
+
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view1 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = DondeComer.newInstance();
+            cargarFragment(fragment);
+        });
+        tienda = requireArguments().getString("nombreCom");
+        categoria = requireArguments().getString("categoria");
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        setHasOptionsMenu(false);
-
-        tienda = requireArguments().getString("nombreCom");
-        categoria = requireArguments().getString("categoria");
-
-        return inflater.inflate(R.layout.fragment_tienda, container, false);
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_tienda, container, false);
+        if(v != null){
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCom);
+            text1 = requireView().findViewById(R.id.nombreCom);
+            tel = requireView().findViewById(R.id.telcom);
+            ubi = requireView().findViewById(R.id.ubicom);
+            ratingBar = requireView().findViewById(R.id.ratingBarCom);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view1 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Comercio.newInstance();
-            cargarFragment(fragment);
-        });
-
         //Mapa
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCom);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
 
-        TextView text1 = requireView().findViewById(R.id.nombreCom);
-        text1.setText(tienda);
 
         //Datos de la interfaz
-
         GestorDB dbHelper = new GestorDB(getContext());
 
-        RatingBar ratingBar = requireView().findViewById(R.id.ratingBarCom);
+        //Titulo
+        text1.setText(tienda);
+
+        //Datos informativos y ubicación
         double punt = dbHelper.obtenerPuntAloj(categoria, tienda);
         ratingBar.setRating((float) punt);
 
-        TextView tel = requireView().findViewById(R.id.telcom);
-        TextView ubi = requireView().findViewById(R.id.ubicom);
-
-        //TODO: CAMBIAR
+        //TODO: CAMBIAR A COMERCIO
         String [] datos = dbHelper.obtenerDatosAloj(categoria, tienda);
 
         telefono = datos[0];
         lat = Double.parseDouble(datos[1]);
         lon = Double.parseDouble(datos[2]);
 
+        ubi.setText(datos[3]);
+
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
-
             tel.setText(telsubrayado);
             tel.setOnClickListener(v -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
@@ -143,9 +147,6 @@ public class Tienda extends DialogFragment {
         } else{
             tel.setText(telefono);
         }
-
-        ubi.setText(datos[3]);
-
     }
 
     private void cargarFragment(Fragment fragment){

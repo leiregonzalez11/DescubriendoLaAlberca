@@ -29,49 +29,55 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
     List<String> lista1 = new ArrayList<>();
     Bundle args;
     String nombreAloj;
+    ListView listView;
     listViewAdapter myAdapter;
     SearchView editsearch;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static CasasRurales newInstance() {
         return new CasasRurales();
     }
 
-    public CasasRurales() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public CasasRurales() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-
         args = new Bundle();
         args.putString("categoria", "alojamiento");
     }
 
-
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_casas, container, false);
+        View v =  inflater.inflate(R.layout.fragment_casas, container, false);
+        if(v != null){
+            listView = v.findViewById(R.id.listviewCasas);
+            editsearch = (SearchView) v.findViewById(R.id.svCasas);
+        }
+        return v;
     }
 
-    @SuppressLint("SetTextI18n")
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
+    @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        ListView listView = requireView().findViewById(R.id.listviewCasas);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
         lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "casarural");
 
-        editsearch = (SearchView) requireView().findViewById(R.id.svCasas);
         editsearch.setOnQueryTextListener(this);
 
         myAdapter = new listViewAdapter(getContext(), R.layout.list_casas, lista1);
@@ -86,6 +92,17 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
         });
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        myAdapter.getFilter().filter(s);
+        return false;
+    }
+
     private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -96,17 +113,6 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        myAdapter.getFilter().filter(s);
-        return false;
     }
 
 }

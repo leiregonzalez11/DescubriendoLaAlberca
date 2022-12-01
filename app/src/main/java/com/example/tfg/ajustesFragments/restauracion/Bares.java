@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,32 +15,32 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustesFragments.Comercio;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bares extends Fragment implements SearchView.OnQueryTextListener {
 
     Bundle args;
-    List<String> lista1 = new ArrayList<>();
+    ListView listView;
     String nombreRest;
-    listViewAdapter myAdapter;
     SearchView editsearch;
+    listViewAdapter myAdapter;
+    List<String> lista1 = new ArrayList<>();
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Bares newInstance() {
         return new Bares();
     }
 
-    public Bares() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public Bares() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
@@ -49,25 +48,30 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
         args.putString("categoria", "restaurante");
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bares, container, false);
+        View v =  inflater.inflate(R.layout.fragment_bares, container, false);
+        if(v != null){
+            listView = v.findViewById(R.id.listviewBares);
+            editsearch = (SearchView) v.findViewById(R.id.svBares);
+        }
+        return v;
     }
 
-    @SuppressLint("SetTextI18n")
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
+    @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        ListView listView = (ListView) requireView().findViewById(R.id.listviewBares);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
         lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "bar");
 
-        editsearch = (SearchView) requireView().findViewById(R.id.svBares);
         editsearch.setOnQueryTextListener(this);
 
         myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, lista1);
@@ -83,17 +87,6 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
 
     }
 
-    private void cargarFragment(Fragment fragment){
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
-    }
     @Override
     public boolean onQueryTextSubmit(String s) {
         return false;
@@ -105,5 +98,16 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
         return false;
     }
 
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
+    }
 
 }

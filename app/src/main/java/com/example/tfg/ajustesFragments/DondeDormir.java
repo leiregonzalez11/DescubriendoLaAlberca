@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -12,60 +11,68 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.example.tfg.R;
 import com.example.tfg.adapters.tabAdapter;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class DondeDormir extends Fragment {
 
+    private Toolbar myToolbar;
+    private ViewPager2 viewPager;
+    private TabLayout tabLayout;
+
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static DondeDormir newInstance() {
         return new DondeDormir();
     }
 
-    public DondeDormir() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public DondeDormir() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donde_dormir, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = Ajustes.newInstance();
             cargarFragment(fragment);
         });
+    }
+
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_donde_dormir, container, false);
+        if(v != null){
+            viewPager = v.findViewById(R.id.viewPager);
+            tabLayout  = v.findViewById(R.id.tab_layout);
+        }
+        return v;
+    }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String text1 = getResources().getString(R.string.apart);
         String text2 = getResources().getString(R.string.hotel);
         String text3 = getResources().getString(R.string.casas);
 
-        ViewPager2 viewPager = requireView().findViewById(R.id.viewPager);
-
-        TabLayout tabLayout  = requireView().findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
         tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
         tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
