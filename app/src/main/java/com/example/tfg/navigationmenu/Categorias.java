@@ -53,9 +53,8 @@ public class Categorias extends Fragment implements View.OnClickListener{
         return new Categorias();
     }
 
-    public Categorias() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public Categorias() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */

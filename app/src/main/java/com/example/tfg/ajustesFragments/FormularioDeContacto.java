@@ -33,13 +33,16 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
 
     boolean enviado;
     EditText asuntoET;
+    Toolbar myToolbar;
+    Fragment fragment;
+    Button siguienteBtn;
     TextInputEditText mensajeET;
     String asunto, asuntoet, mensajeet, iu;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static FormularioDeContacto newInstance(Bundle args) {
         FormularioDeContacto fragment = new FormularioDeContacto();
@@ -49,30 +52,62 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         return fragment;
     }
 
-    public FormularioDeContacto() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public FormularioDeContacto() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-
         iu = requireArguments().getString("iu");
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            start(iu);
+        });
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_form, container, false);
+        View v =  inflater.inflate(R.layout.fragment_form, container, false);
+        if(v != null){
+            asuntoET= v.findViewById(R.id.asunto);
+            mensajeET = v.findViewById(R.id.mensaje);
+            siguienteBtn = v.findViewById(R.id.btnEnviar);
+        }
+        return v;
+    }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        asuntoet = asuntoET.getHint().toString().trim();
+        asunto = getResources().getString(R.string.asuntoet);
+
+        asuntoET.setOnClickListener(v -> {
+            if (asuntoet.equals(asunto)){
+                asuntoET.setHint("");
+            } else if (asuntoet.equals("")) {
+                asuntoET.setHint(asunto);
+            }
+        });
+
+        //Botón Enviar
+        siguienteBtn.setOnClickListener(this);
+
     }
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         //Cuando se presione el botón, realiza una acción aquí
-
         Button btn = (Button) view;
-
         if (btn.getId() == R.id.btnEnviar) {
             //Toast.makeText(contactoActivity.this, "Has pulsado Enviar", Toast.LENGTH_LONG).show();
             if (validarDatos()){
@@ -86,74 +121,31 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = null;
-
-            switch (iu) {
-                case "inicio":
-                    fragment = Inicio.newInstance();
-                    break;
-                case "categorias":
-                    fragment = Categorias.newInstance();
-                    break;
-                case "ajustes":
-                    fragment = Ajustes.newInstance();
-                    break;
-            }
-
-            cargarFragment(fragment);
-        });
-
-        asuntoET= requireView().findViewById(R.id.asunto);
-        asuntoet = asuntoET.getHint().toString().trim();
-        mensajeET = requireView().findViewById(R.id.mensaje);
-
-        asunto = getResources().getString(R.string.asuntoet);
-
-        asuntoET.setOnClickListener(v -> {
-            if (asuntoet.equals(asunto)){
-                asuntoET.setHint("");
-            } else if (asuntoet.equals("")) {
-                asuntoET.setHint(asunto);
-            }
-        });
-
-        //Botón Enviar
-
-        Button siguienteBtn = requireView().findViewById(R.id.btnEnviar);
-        siguienteBtn.setOnClickListener(this);
-
-    }
-
-    @Override
     public void onResume() {
         if (enviado){
-
-            Fragment fragment = null;
-
             Toast.makeText(getContext(), "Email Enviado", Toast.LENGTH_LONG).show();
-
-            switch (iu) {
-                case "inicio":
-                    fragment = Inicio.newInstance();
-                    break;
-                case "categorias":
-                    fragment = Categorias.newInstance();
-                    break;
-                case "ajustes":
-                    fragment = Ajustes.newInstance();
-                    break;
-            }
-
-            cargarFragment(fragment);
+            start(iu);
         }
         super.onResume();
+    }
+
+    private void start(String iu) {
+        myToolbar.setNavigationIcon(null);
+        //Determinamos el fragment de retorno y creamos el Fragment
+        switch (iu) {
+            case "inicio":
+                fragment = Inicio.newInstance();
+                break;
+            case "categorias":
+                fragment = Categorias.newInstance();
+                break;
+            case "ajustes":
+                fragment = Ajustes.newInstance();
+                break;
+        }
+
+        assert !(fragment == null);
+        cargarFragment(fragment);
     }
 
     @SuppressLint("IntentReset")
@@ -194,23 +186,20 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         boolean valido = true;
 
         //Validamos los datos introducidos
-
-        EditText textAsunto = requireView().findViewById(R.id.asunto);
-        EditText textMensaje = requireView().findViewById(R.id.mensaje);
-        String asunto = textAsunto.getText().toString();
-        String mensaje = textMensaje.getText().toString();
+        String asunto = asuntoET.getText().toString();
+        String mensaje = Objects.requireNonNull(mensajeET.getText()).toString();
 
         if (asunto.equals("") && mensaje.equals("")) { //Si el asunto y el mensaje están vacíos
             Toast.makeText(getContext(), "No puede haber campos vacíos. Revise el formulario.", Toast.LENGTH_SHORT).show();
-            textAsunto.setHint(getResources().getString(R.string.asuntoet));
+            asuntoET.setHint(getResources().getString(R.string.asuntoet));
             valido = false;
         } else if (asunto.equals("¿Cuál es el motivo de tu mensaje?") || asunto.equals("")) { //Si el asunto está vacío
             Toast.makeText(getContext(), getString(R.string.asuntoVacio), Toast.LENGTH_SHORT).show();
-            textAsunto.setHint(getResources().getString(R.string.asuntoet));
+            asuntoET.setHint(getResources().getString(R.string.asuntoet));
             valido = false;
         } else if (mensaje.equals("")){ //Si el mensaje está vacío
             Toast.makeText(getContext(), getString(R.string.mensajeVacio), Toast.LENGTH_SHORT).show();
-            textMensaje.setText("");
+            mensajeET.setText("");
             valido = false;
         }
 

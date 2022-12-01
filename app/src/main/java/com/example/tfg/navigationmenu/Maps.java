@@ -22,19 +22,6 @@ public class Maps extends Fragment {
     private Toolbar myToolbar;
     SupportMapFragment mapFragment;
 
-    /**
-     * Utilizaremos este Factory Method para crear una nueva instancia
-     * de este fragmento utilizando los parámetros dados.
-     * @return Una nueva instancia del Fragment.
-     */
-    public static Maps newInstance() {
-        return new Maps();
-    }
-
-    public Maps(){
-        //Empty
-    }
-
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -51,6 +38,18 @@ public class Maps extends Fragment {
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
     };
+
+    /**
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
+     */
+    public static Maps newInstance() {
+        return new Maps();
+    }
+
+    /** Required empty public constructor */
+    public Maps(){}
 
     /** El Fragment ha sido creado */
     public void onCreate(Bundle savedInstanceState) {

@@ -41,9 +41,8 @@ public class Inicio extends Fragment {
         return new Inicio();
     }
 
-    public Inicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public Inicio() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */

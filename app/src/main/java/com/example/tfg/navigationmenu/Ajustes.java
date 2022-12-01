@@ -45,9 +45,8 @@ public class Ajustes extends Fragment {
         return new Ajustes();
     }
 
-    public Ajustes() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public Ajustes() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
