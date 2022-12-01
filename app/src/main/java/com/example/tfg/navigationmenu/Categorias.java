@@ -35,17 +35,19 @@ import com.google.firebase.storage.StorageReference;
 
 public class Categorias extends Fragment implements View.OnClickListener{
 
-    Bundle args, argsMenu;
+    TextView texto;
     Fragment fragment;
+    Toolbar myToolbar;
+    Bundle args, argsMenu;
     String idioma, path, categoria;
     private StorageReference storageRef;
     protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro,
             btnCultura, btnRutas, btnOtros, btnArte, btnArqui;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Categorias newInstance() {
         return new Categorias();
@@ -55,32 +57,49 @@ public class Categorias extends Fragment implements View.OnClickListener{
         // Required empty public constructor
     }
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-
-        //Argumentos para el menu de ajustes (idioma/formulario de contacto)
-        argsMenu = new Bundle();
-        argsMenu.putString("iu", "categorias");
-
-        args = new Bundle();
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
-
+        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
+        argsMenu = new Bundle(); //Argumentos para el menu de opciones
+        argsMenu.putString("iu", "categorias");
+        args = new Bundle();
     }
 
-
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+        Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias, container, false);
+        View v =  inflater.inflate(R.layout.fragment_categorias, container, false);
+        if(v != null){
+            myToolbar = requireActivity().findViewById(R.id.toolbar);
+            btnhistoria = v.findViewById(R.id.botonhistoria);
+            btnArte = v.findViewById(R.id.botonartesania);
+            btnTrad = v.findViewById(R.id.botontradiciones);
+            btnArqui = v.findViewById(R.id.botonarquitectura);
+            btnMonu = v.findViewById(R.id.botonmonumentos);
+            btnFiesta = v.findViewById(R.id.botonfiestas);
+            btnGastro = v.findViewById(R.id.botongastronomia);
+            btnCultura = v.findViewById(R.id.botoncultura);
+            btnRutas = v.findViewById(R.id.botonruta);
+            btnOtros = v.findViewById(R.id.botonotros);
+            texto = v.findViewById(R.id.textidioma);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+        Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("ResourceAsColor")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        myToolbar.setNavigationIcon(null);
         idioma = determinarIdioma();
         setBtnListeners();
     }
@@ -194,53 +213,43 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        btnhistoria = requireView().findViewById(R.id.botonhistoria);
         path = "categorias/" + idioma + "/historia-" + idioma + ".jpg";
         btnhistoria.setOnClickListener(this);
         obtenerImagenFirebase(path, btnhistoria);
 
-        btnArte = requireView().findViewById(R.id.botonartesania);
         path = "categorias/" + idioma + "/artesania-" + idioma + ".jpg";
         btnArte.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArte);
 
-        btnTrad = requireView().findViewById(R.id.botontradiciones);
         path = "categorias/" + idioma + "/tradicion-" + idioma + ".jpg";
         btnTrad.setOnClickListener(this);
         obtenerImagenFirebase(path, btnTrad);
 
-        btnArqui = requireView().findViewById(R.id.botonarquitectura);
         path = "categorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
         btnArqui.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArqui);
 
-        btnMonu = requireView().findViewById(R.id.botonmonumentos);
         path = "categorias/" + idioma + "/monumentos-" + idioma + ".jpg";
         btnMonu.setOnClickListener(this);
         obtenerImagenFirebase(path, btnMonu);
 
-        btnFiesta = requireView().findViewById(R.id.botonfiestas);
         path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
         btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
 
-        btnGastro = requireView().findViewById(R.id.botongastronomia);
         path = "categorias/" + idioma + "/gastronomia-" + idioma + ".jpg";
         btnGastro.setOnClickListener(this);
         obtenerImagenFirebase(path, btnGastro);
 
-        btnCultura = requireView().findViewById(R.id.botoncultura);
         //TODO: Cambiar la ruta
         path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
         btnCultura.setOnClickListener(this);
         obtenerImagenFirebase(path, btnCultura);
 
-        btnRutas = requireView().findViewById(R.id.botonruta);
         path = "categorias/" + idioma + "/rutas-" + idioma + ".jpg";
         btnRutas.setOnClickListener(this);
         obtenerImagenFirebase(path, btnRutas);
 
-        btnOtros = requireView().findViewById(R.id.botonotros);
         path = "categorias/" + idioma + "/otros-" + idioma + ".jpg";
         btnOtros.setOnClickListener(this);
         obtenerImagenFirebase(path, btnOtros);
@@ -257,7 +266,6 @@ public class Categorias extends Fragment implements View.OnClickListener{
     public String determinarIdioma() {
 
         String idioma = null;
-        TextView texto = requireView().findViewById(R.id.textidioma);
         String text = texto.getText().toString();
 
         switch (text) {

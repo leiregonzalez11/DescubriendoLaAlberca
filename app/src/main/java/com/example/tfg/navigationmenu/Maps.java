@@ -19,10 +19,13 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Maps extends Fragment {
 
+    private Toolbar myToolbar;
+    SupportMapFragment mapFragment;
+
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Maps newInstance() {
         return new Maps();
@@ -32,16 +35,12 @@ public class Maps extends Fragment {
         //Empty
     }
 
+    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
+         * Manipula el mapa una vez haya sido creado.
+         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
@@ -53,23 +52,37 @@ public class Maps extends Fragment {
         }
     };
 
+    /** El Fragment ha sido creado */
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(null);
+        setHasOptionsMenu(false);
+    }
+
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(null);
-
-        return inflater.inflate(R.layout.fragment_maps, container, false);
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_maps, container, false);
+        if(v != null){
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+
+        //Mapa
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }

@@ -32,12 +32,14 @@ public class Ajustes extends Fragment {
 
     Bundle args;
     Fragment fragment;
+    Toolbar myToolbar;
+    ListView listView, listView2, listView3, listView4, listView5;
     String opc1, opc2, opc3, opc4, opc5;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Ajustes newInstance() {
         return new Ajustes();
@@ -47,36 +49,45 @@ public class Ajustes extends Fragment {
         // Required empty public constructor
     }
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        args = new Bundle();
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(null);
+        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
+        args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "ajustes");
-
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ajustes, container, false);
+        View v =  inflater.inflate(R.layout.fragment_ajustes, container, false);
+        if(v != null){
+            listView = v.findViewById(R.id.listview);
+            listView2 = v.findViewById(R.id.listview2);
+            listView3 = v.findViewById(R.id.listview3);
+            listView4 = v.findViewById(R.id.listview4);
+            listView5 = v.findViewById(R.id.listview5);
+        }
+        return v;
     }
 
-
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(null);
 
         /*-----------------
          | ¿Comercio local |
          -----------------*/
 
         opc1 = getResources().getString(R.string.ajustes6);
-        ListView listView = requireView().findViewById(R.id.listview);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -95,7 +106,6 @@ public class Ajustes extends Fragment {
          ---------------*/
 
         opc2 = getResources().getString(R.string.ajustes1);
-        ListView listView2 = requireView().findViewById(R.id.listview2);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -113,7 +123,6 @@ public class Ajustes extends Fragment {
          ---------------*/
 
         opc3 = getResources().getString(R.string.ajustes3);
-        ListView listView3 = requireView().findViewById(R.id.listview3);
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
@@ -131,7 +140,6 @@ public class Ajustes extends Fragment {
          ----------------*/
 
         opc4 = getResources().getString(R.string.ajustes4);
-        ListView listView4 = requireView().findViewById(R.id.listview4);
 
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
@@ -150,8 +158,6 @@ public class Ajustes extends Fragment {
 
         opc5 = getResources().getString(R.string.servicios);
 
-        ListView listView5 = requireView().findViewById(R.id.listview5);
-
         ArrayList<String> lista5 = new ArrayList<>();
         lista5.add(opc5);
 
@@ -160,6 +166,7 @@ public class Ajustes extends Fragment {
 
         listView5.setOnItemClickListener((adapterView, v, position, id) ->
                 Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show());
+
     }
 
 

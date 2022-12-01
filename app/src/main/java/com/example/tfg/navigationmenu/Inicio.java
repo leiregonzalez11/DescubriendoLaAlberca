@@ -29,11 +29,13 @@ public class Inicio extends Fragment {
 
     Bundle args;
     Fragment fragment;
+    Toolbar myToolbar;
+    SliderView sliderView;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static Inicio newInstance() {
         return new Inicio();
@@ -43,30 +45,38 @@ public class Inicio extends Fragment {
         // Required empty public constructor
     }
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        args = new Bundle();
-        args.putString("iu", "inicio");
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
+        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
+        args = new Bundle(); //Argumentos para el menu de opciones
+        args.putString("iu", "inicio");
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        View v =  inflater.inflate(R.layout.fragment_inicio, container, false);
+        if(v != null){
+            sliderView = v.findViewById(R.id.imageSliderPrueba);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         //SLIDER
-        SliderView sliderView = requireView().findViewById(R.id.imageSliderPrueba);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
