@@ -11,33 +11,28 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.navigationmenu.Inicio;
 import com.google.android.material.textfield.TextInputEditText;
-
 import java.util.Objects;
-
 
 public class FormularioDeContacto extends Fragment implements View.OnClickListener {
 
-    boolean enviado;
-    EditText asuntoET;
-    Toolbar myToolbar;
-    Fragment fragment;
-    Button siguienteBtn;
-    TextInputEditText mensajeET;
-    String asunto, asuntoet, mensajeet, iu;
+    private boolean enviado;
+    private EditText asuntoET;
+    private Toolbar myToolbar;
+    private Fragment fragment;
+    private Button siguienteBtn;
+    private TextInputEditText mensajeET;
+    private String asunto, asuntoet, iu;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -63,9 +58,7 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         iu = requireArguments().getString("iu");
         myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            start(iu);
-        });
+        myToolbar.setNavigationOnClickListener(v -> start(iu));
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -157,7 +150,7 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         String[] CC = {"leiregonz11@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
-        mensajeet = Objects.requireNonNull(mensajeET.getText()).toString();
+        String mensajeet = Objects.requireNonNull(mensajeET.getText()).toString();
         asuntoet = asuntoET.getText().toString();
 
         emailIntent.setData(Uri.parse("mailto:"));

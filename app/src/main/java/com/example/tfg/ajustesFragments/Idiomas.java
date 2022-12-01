@@ -23,11 +23,11 @@ import java.util.Locale;
 
 public class Idiomas extends Fragment {
 
-    RadioButton radioCas, radioEus, radioIng;
-    String language, idioma, iu;
-    TextView texto;
-    Fragment fragment;
-    Toolbar myToolbar;
+    private RadioButton radioCas, radioEus, radioIng;
+    private String language, iu;
+    private TextView texto;
+    private Fragment fragment;
+    private Toolbar myToolbar;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -82,15 +82,12 @@ public class Idiomas extends Fragment {
         if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
             radioCas.setTextColor(R.color.purple_500);
-            idioma = "es";
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
             radioEus.setTextColor(R.color.purple_500);
-            idioma = "eu";
         }else if (texto.getText().toString().contains("language:")){
             radioIng.setChecked(true);
             radioIng.setTextColor(R.color.purple_500);
-            idioma = "en";
         }
 
         comprobarIdioma();
