@@ -25,16 +25,17 @@ import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 
 public class aspectoExterior extends Fragment implements View.OnClickListener{
 
-    Bundle args;
-    String idioma, categoria;
-    ImageView img1, img2, img3;
-    StorageReference storageRef;
-    TextView text1, text2, text3;
+    private Bundle args;
+    private String idioma, categoria;
+    private ImageView img1, img2, img3;
+    private StorageReference storageRef;
+    private TextView text1, text2, text3;
+    private ImageButton siguienteBtn, siguienteBtn2, finBtn, finBtn2;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static aspectoExterior newInstance(Bundle args) {
         aspectoExterior fragment = new aspectoExterior();
@@ -44,13 +45,23 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
         return fragment;
     }
 
-    // Required empty public constructor
+    /** Required empty public constructor */
     public aspectoExterior() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = arquitecturaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -64,32 +75,38 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_aspecto_exterior, container, false);
+        View v =  inflater.inflate(R.layout.fragment_aspecto_exterior, container, false);
+        if(v != null){
+            text1 = v.findViewById(R.id.arqui21);
+            text2 = v.findViewById(R.id.arqui22);
+            text3 = v.findViewById(R.id.arqui23);
+            img1 = v.findViewById(R.id.arqui21img);
+            img2 = v.findViewById(R.id.arqui22img);
+            img3 = v.findViewById(R.id.arqui23img);
+            siguienteBtn = v.findViewById(R.id.arquisiguiente2);
+            siguienteBtn2 = v.findViewById(R.id.arquisiguiente22);
+            finBtn = v.findViewById(R.id.arquiAtras2);
+            finBtn2 = v.findViewById(R.id.arquiAtras22);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = arquitecturaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
-
         GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerDatosArqui(idioma, "exterior", categoria, 3);
-
-        text1 = requireView().findViewById(R.id.arqui21);
-        text2 = requireView().findViewById(R.id.arqui22);
-        text3 = requireView().findViewById(R.id.arqui23);
 
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -97,21 +114,12 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = requireView().findViewById(R.id.arqui21img);
-        img2 = requireView().findViewById(R.id.arqui22img);
-        img3 = requireView().findViewById(R.id.arqui23img);
         obtenerImagenFirebase("arquitectura/exterior1.jpg", img1);
         //TODO: Cambiar la foto
         obtenerImagenFirebase("arquitectura/exterior3.jpeg", img2);
         obtenerImagenFirebase("arquitectura/exterior2.jpg", img3);
 
         //BOTON SIGUIENTE y ATRAS
-
-        ImageButton siguienteBtn = requireView().findViewById(R.id.arquisiguiente2);
-        ImageButton siguienteBtn2 = requireView().findViewById(R.id.arquisiguiente22);
-        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras2);
-        ImageButton finBtn2 = requireView().findViewById(R.id.arquiAtras22);
-
         siguienteBtn.setOnClickListener(this);
         siguienteBtn2.setOnClickListener(this);
         finBtn.setOnClickListener(this);

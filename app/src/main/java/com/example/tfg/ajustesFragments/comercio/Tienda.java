@@ -96,10 +96,10 @@ public class Tienda extends DialogFragment {
         View v =  inflater.inflate(R.layout.fragment_tienda, container, false);
         if(v != null){
             mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCom);
-            text1 = requireView().findViewById(R.id.nombreCom);
-            tel = requireView().findViewById(R.id.telcom);
-            ubi = requireView().findViewById(R.id.ubicom);
-            ratingBar = requireView().findViewById(R.id.ratingBarCom);
+            text1 = v.findViewById(R.id.nombreCom);
+            tel = v.findViewById(R.id.telcom);
+            ubi = v.findViewById(R.id.ubicom);
+            ratingBar = v.findViewById(R.id.ratingBarCom);
         }
         return v;
     }

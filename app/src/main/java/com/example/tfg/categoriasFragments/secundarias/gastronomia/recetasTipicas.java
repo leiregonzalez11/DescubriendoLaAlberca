@@ -2,14 +2,12 @@ package com.example.tfg.categoriasFragments.secundarias.gastronomia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,33 +17,33 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class recetasTipicas extends Fragment {
 
-    Bundle args;
-    GestorDB dbHelper;
-    String [] recetas;
-    LinearLayout ingLayout;
-    StorageReference storageRef;
-    TextView tituloreceta, descrReceta, pasos2;
-    ImageView img7, img8, img9, img10, img11, img12;
-    String categoria, idioma, nombreReceta, tipoRecetas;
-    TextView ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, ing10, ing11, ing12;
+    private Bundle args;
+    private Button atrasBtn;
+    private GestorDB dbHelper;
+    private String [] recetas;
+    private LinearLayout ingLayout;
+    private StorageReference storageRef;
+    private Spinner spinner1, spinner2;
+    private TextView tituloreceta, descrReceta, pasos2;
+    private ImageView img7, img8, img9, img10, img11, img12;
+    private String categoria, idioma, nombreReceta, tipoRecetas;
+    private TextView ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, ing10, ing11, ing12;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static recetasTipicas newInstance(Bundle args) {
         recetasTipicas fragment = new recetasTipicas();
@@ -55,14 +53,22 @@ public class recetasTipicas extends Fragment {
         return fragment;
     }
 
-    public recetasTipicas() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public recetasTipicas() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -75,30 +81,29 @@ public class recetasTipicas extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recetas_tipicas, container, false);
+        View v = inflater.inflate(R.layout.fragment_recetas_tipicas, container, false);
+        if (v != null){
+            spinner1 = v.findViewById(R.id.spinnerTipo);
+            spinner2 = v.findViewById(R.id.spinnerRecetas);
+            getTextAndImages(v);
+            atrasBtn = v.findViewById(R.id.recetasAtras);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
         dbHelper = new GestorDB(requireContext());
         storageRef = FirebaseStorage.getInstance().getReference();
-
-        Spinner spinner1 = requireView().findViewById(R.id.spinnerTipo);
-        Spinner spinner2 = requireView().findViewById(R.id.spinnerRecetas);
-
 
         String [] tipo = getResources().getStringArray(R.array.tipo);
         spinner1.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropsownitemsimple, tipo));
@@ -123,13 +128,9 @@ public class recetasTipicas extends Fragment {
            }
        });
 
-        getTextAndImages();
-
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                //Toast.makeText(getContext(), "Has pulsado " + (String) adapterView.getItemAtPosition(position), Toast.LENGTH_LONG).show();
-
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
                 if (!nombreReceta.equalsIgnoreCase("turuletes")){
                     String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
@@ -145,45 +146,44 @@ public class recetasTipicas extends Fragment {
             }
         });
 
-        Button atrasBtn = requireView().findViewById(R.id.recetasAtras);
         atrasBtn.setOnClickListener(v -> {
             Fragment fragment = gastronomiaInicio.newInstance(args);
             cargarFragment(fragment);
         });
     }
 
-    private void getTextAndImages(){
+    private void getTextAndImages(View v){
 
-        tituloreceta = requireView().findViewById(R.id.tituloreceta);
-        descrReceta = requireView().findViewById(R.id.recetasTextDescr);
+        tituloreceta = v.findViewById(R.id.tituloreceta);
+        descrReceta = v.findViewById(R.id.recetasTextDescr);
 
         //Ingredientes
-        ing1 = requireView().findViewById(R.id.txt1);
-        ing2 = requireView().findViewById(R.id.txt2);
-        ing3 = requireView().findViewById(R.id.txt3);
-        ing4 = requireView().findViewById(R.id.txt4);
-        ing5 = requireView().findViewById(R.id.txt5);
-        ing6 = requireView().findViewById(R.id.txt6);
-        ing7 = requireView().findViewById(R.id.txt7);
-        ing8 = requireView().findViewById(R.id.txt8);
-        ing9 = requireView().findViewById(R.id.txt9);
-        ing10 = requireView().findViewById(R.id.txt10);
-        ing11 = requireView().findViewById(R.id.txt11);
-        ing12 = requireView().findViewById(R.id.txt12);
+        ing1 = v.findViewById(R.id.txt1);
+        ing2 = v.findViewById(R.id.txt2);
+        ing3 = v.findViewById(R.id.txt3);
+        ing4 = v.findViewById(R.id.txt4);
+        ing5 = v.findViewById(R.id.txt5);
+        ing6 = v.findViewById(R.id.txt6);
+        ing7 = v.findViewById(R.id.txt7);
+        ing8 = v.findViewById(R.id.txt8);
+        ing9 = v.findViewById(R.id.txt9);
+        ing10 = v.findViewById(R.id.txt10);
+        ing11 = v.findViewById(R.id.txt11);
+        ing12 = v.findViewById(R.id.txt12);
 
         //Iconos ingredientes
-        img7 = requireView().findViewById(R.id.img7);
-        img8 = requireView().findViewById(R.id.img8);
-        img9 = requireView().findViewById(R.id.img9);
-        img10 = requireView().findViewById(R.id.img10);
-        img11 = requireView().findViewById(R.id.img11);
-        img12 = requireView().findViewById(R.id.img12);
+        img7 = v.findViewById(R.id.img7);
+        img8 = v.findViewById(R.id.img8);
+        img9 = v.findViewById(R.id.img9);
+        img10 = v.findViewById(R.id.img10);
+        img11 = v.findViewById(R.id.img11);
+        img12 = v.findViewById(R.id.img12);
 
         //Pasos
-        pasos2 = requireView().findViewById(R.id.recetasTextPasos2);
+        pasos2 = v.findViewById(R.id.recetasTextPasos2);
 
         //Layout
-        ingLayout = requireView().findViewById(R.id.ingredientes);
+        ingLayout = v.findViewById(R.id.ingredientes);
 
     }
 

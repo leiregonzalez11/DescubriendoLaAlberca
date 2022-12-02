@@ -60,7 +60,7 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_bares, container, false);
+        View v =  inflater.inflate(R.layout.fragment_alimentacion, container, false);
         if(v != null){
             listView = v.findViewById(R.id.listviewAlimentacion);
             editsearch = (SearchView) v.findViewById(R.id.svAlim);

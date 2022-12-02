@@ -60,7 +60,7 @@ public class OtrosComercios extends Fragment implements SearchView.OnQueryTextLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_bares, container, false);
+        View v =  inflater.inflate(R.layout.fragment_otros_comercios, container, false);
         if(v != null){
             listView = v.findViewById(R.id.listviewOtrosComercios);
             editsearch = (SearchView) v.findViewById(R.id.svOtros);

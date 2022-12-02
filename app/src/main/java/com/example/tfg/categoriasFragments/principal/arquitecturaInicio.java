@@ -30,11 +30,14 @@ public class arquitecturaInicio extends Fragment {
 
     private Bundle args;
     private String idioma, categoria;
+    private TextView text1, text2;
+    SliderView sliderView;
+    Button sigBtn;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static arquitecturaInicio newInstance(Bundle args) {
         arquitecturaInicio fragment = new arquitecturaInicio();
@@ -44,15 +47,23 @@ public class arquitecturaInicio extends Fragment {
         return fragment;
     }
 
-    public arquitecturaInicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public arquitecturaInicio() {}
 
-
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -66,37 +77,37 @@ public class arquitecturaInicio extends Fragment {
 
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_arquitectura_inicio, container, false);
+        View v =  inflater.inflate(R.layout.fragment_arquitectura_inicio, container, false);
+        if(v != null){
+            text1 = v.findViewById(R.id.arqui11);
+            text2 = v.findViewById(R.id.arqui12);
+            sliderView = v.findViewById(R.id.imageSliderArqui1);
+            sigBtn = v.findViewById(R.id.arquisiguiente1);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
 
         GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerDatosArqui(idioma, "inicio", categoria, 2);
 
-        TextView interfaz1 = requireView().findViewById(R.id.arqui11);
-        interfaz1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-
-        TextView interfaz2 = requireView().findViewById(R.id.arqui12);
-        interfaz2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //SLIDER
-        SliderView sliderView = requireView().findViewById(R.id.imageSliderArqui1);
         int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
@@ -106,12 +117,10 @@ public class arquitecturaInicio extends Fragment {
         sliderView.startAutoCycle();
 
         //BOTON SIGUIENTE
-        Button sigBtn = requireView().findViewById(R.id.arquisiguiente1);
         sigBtn.setOnClickListener(v -> {
             Fragment fragment = aspectoExterior.newInstance(args);
             cargarFragment(fragment);
         });
-
     }
 
     private void cargarFragment(Fragment fragment){
@@ -125,6 +134,5 @@ public class arquitecturaInicio extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
-
 
 }

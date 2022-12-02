@@ -24,8 +24,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SpinnerAdapter;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
@@ -39,11 +37,14 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     private StorageReference storageRef;
     private TextView text1, text2, text3;
     private String idioma, categoria, nombreTraje;
+    private LinearLayout layout;
+    private Spinner spinner;
+    private Button siguienteBtn;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static trajesFemeninos newInstance(Bundle args) {
         trajesFemeninos fragment = new trajesFemeninos();
@@ -53,14 +54,22 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         return fragment;
     }
 
-    public trajesFemeninos() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public trajesFemeninos() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = artesaniaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -73,42 +82,40 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trajes_femeninos, container, false);
+        View v = inflater.inflate(R.layout.fragment_trajes_femeninos, container, false);
+        if (v != null){
+            layout = v.findViewById(R.id.layoutFotoArte1);
+            text1 = v.findViewById(R.id.arte31);
+            text2 = v.findViewById(R.id.arte32);
+            text3 = v.findViewById(R.id.arte33);
+            img1 = v.findViewById(R.id.arte31img);
+            img2 = v.findViewById(R.id.arte32img);
+            spinner = v.findViewById(R.id.spinner);
+            siguienteBtn = v.findViewById(R.id.artesiguiente3);
+        }
+        return v;
     }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = artesaniaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
-
         dbHelper = new GestorDB(getContext());
-
-        text1 = requireView().findViewById(R.id.arte31);
-        text2 = requireView().findViewById(R.id.arte32);
-        text3 = requireView().findViewById(R.id.arte33);
-
-        img1 = requireView().findViewById(R.id.arte31img);
-        img2 = requireView().findViewById(R.id.arte32img);
 
         //Spinner
 
-        Spinner spinner = requireView().findViewById(R.id.spinner);
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
         spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitemartesania, trajes));
         spinner.setOnItemSelectedListener(this);
 
         //BOTON SIGUIENTE y ATRAS
-
-        Button siguienteBtn = requireView().findViewById(R.id.artesiguiente3);
         siguienteBtn.setOnClickListener(this);
 
     }
@@ -170,7 +177,6 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private String determinarTraje(String idtraje) {
 
-        LinearLayout layout = requireView().findViewById(R.id.layoutFotoArte1);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(layout.getLayoutParams());
 
         if(idtraje.toLowerCase().contains("sayas")){

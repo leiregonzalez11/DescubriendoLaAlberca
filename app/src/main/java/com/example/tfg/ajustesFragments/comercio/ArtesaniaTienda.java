@@ -60,7 +60,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_bares, container, false);
+        View v =  inflater.inflate(R.layout.fragment_artesania, container, false);
         if(v != null){
             listView = v.findViewById(R.id.listviewArtesania);
             editsearch = (SearchView) v.findViewById(R.id.svArte);

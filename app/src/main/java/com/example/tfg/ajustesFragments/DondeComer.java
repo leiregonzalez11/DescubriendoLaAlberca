@@ -58,8 +58,8 @@ public class DondeComer extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_donde_comer, container, false);
         if(v != null){
-            viewPager = requireView().findViewById(R.id.viewPagerComer);
-            tabLayout  = requireView().findViewById(R.id.tab_layoutComer);
+            viewPager = v.findViewById(R.id.viewPagerComer);
+            tabLayout  = v.findViewById(R.id.tab_layoutComer);
         }
         return v;
     }

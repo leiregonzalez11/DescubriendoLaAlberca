@@ -34,9 +34,9 @@ public class orfebreria extends Fragment {
     StorageReference storageRef;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static orfebreria newInstance(Bundle args) {
         orfebreria fragment = new orfebreria();
@@ -46,14 +46,22 @@ public class orfebreria extends Fragment {
         return fragment;
     }
 
-    public orfebreria() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public orfebreria() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = artesaniaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -66,23 +74,27 @@ public class orfebreria extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_orfebreria, container, false);
+        View v = inflater.inflate(R.layout.fragment_orfebreria, container, false);
+        if (v != null){
+            text1 = v.findViewById(R.id.arte51);
+            text2 = v.findViewById(R.id.arte52);
+            img1 = v.findViewById(R.id.arte51img);
+            img2 = v.findViewById(R.id.arte52img);
+        }
+        return v;
     }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = artesaniaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -90,17 +102,12 @@ public class orfebreria extends Fragment {
 
         String [] datos = dbHelper.obtenerDatosArte(idioma, "orfebreria", categoria, 3);
 
-        text1 = requireView().findViewById(R.id.arte51);
-        text2 = requireView().findViewById(R.id.arte52);
-
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = requireView().findViewById(R.id.arte51img);
         obtenerImagenFirebase("artesania/orfebreria2.jpg", img1);
-        img2 = requireView().findViewById(R.id.arte52img);
         obtenerImagenFirebase("artesania/orfebreria1.jpeg", img2);
 
     }

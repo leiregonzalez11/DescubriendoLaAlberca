@@ -27,14 +27,16 @@ import com.example.tfg.categoriasFragments.secundarias.tradiciones.mozaDeAnimas;
 
 public class tradicionesInicio extends Fragment {
 
-    Bundle args;
-    Fragment fragment;
-    String opc1, opc2, opc3, opc4, idioma, categoria;
+    private Bundle args;
+    private Fragment fragment;
+    private TextView text1, text2;
+    private String idioma, categoria;
+    private ListView listView, listView2, listView3, listView4;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static tradicionesInicio newInstance(Bundle args) {
         tradicionesInicio fragment = new tradicionesInicio();
@@ -44,39 +46,16 @@ public class tradicionesInicio extends Fragment {
         return fragment;
     }
 
-    public tradicionesInicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public tradicionesInicio() {}
 
-
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(false);
-
-        if (getArguments() != null) {
-            idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
-        }
-
-        args = new Bundle();
-        args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tradiciones, container, false);
-    }
-
-    @SuppressLint("SetTextI18n")
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
         //Toolbar
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -86,8 +65,41 @@ public class tradicionesInicio extends Fragment {
             cargarFragment(fragment);
         });
 
-        TextView text1 = requireView().findViewById(R.id.trad11);
-        TextView text2 = requireView().findViewById(R.id.trad12);
+        args = new Bundle();
+
+        if (getArguments() != null) {
+            idioma = getArguments().getString("idioma");
+            categoria = getArguments().getString("categoria");
+        }
+
+        args.putString("idioma", idioma);
+        args.putString("categoria", categoria);
+    }
+
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_tradiciones, container, false);
+        if(v != null){
+            text1 = v.findViewById(R.id.trad11);
+            text2 = v.findViewById(R.id.trad12);
+            listView = v.findViewById(R.id.listviewtrad1);
+            listView2 = v.findViewById(R.id.listviewtrad2);
+            listView3 = v.findViewById(R.id.listviewtrad3);
+            listView4 = v.findViewById(R.id.listviewtrad4);
+        }
+        return v;
+    }
+
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -101,8 +113,7 @@ public class tradicionesInicio extends Fragment {
         /*----------------
          | Moza de Ánimas |
          ----------------*/
-        opc1 = "La Moza de Ánimas";
-        ListView listView = requireView().findViewById(R.id.listviewtrad1);
+        String opc1 = "La Moza de Ánimas";
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -120,8 +131,7 @@ public class tradicionesInicio extends Fragment {
          | Marrano de San Antón |
          -----------------------*/
 
-        opc2 = "El Marrano de San Antón";
-        ListView listView2 = requireView().findViewById(R.id.listviewtrad2);
+        String opc2 = "El Marrano de San Antón";
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
@@ -138,8 +148,7 @@ public class tradicionesInicio extends Fragment {
          | La Loa |
          --------*/
 
-        opc3 = "La Loa";
-        ListView listView3 = requireView().findViewById(R.id.listviewtrad3);
+        String opc3 = "La Loa";
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
 
@@ -156,8 +165,7 @@ public class tradicionesInicio extends Fragment {
          | Las alboradas |
          ---------------*/
 
-        opc4 = "Las Alboradas";
-        ListView listView4 = requireView().findViewById(R.id.listviewtrad4);
+        String opc4 = "Las Alboradas";
         ArrayList<String> lista4 = new ArrayList<>();
         lista4.add(opc4);
 

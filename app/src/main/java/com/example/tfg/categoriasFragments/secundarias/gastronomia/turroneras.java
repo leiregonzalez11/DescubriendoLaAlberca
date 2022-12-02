@@ -25,16 +25,17 @@ import com.google.firebase.storage.StorageReference;
 
 public class turroneras extends Fragment {
 
-    Bundle args;
-    ImageView img1, img2;
-    String categoria, idioma;
-    StorageReference storageRef;
-    TextView text1, text2, text3;
+    private Bundle args;
+    private Button atrasBtn;
+    private ImageView img1, img2;
+    private String categoria, idioma;
+    private StorageReference storageRef;
+    private TextView text1, text2, text3;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static turroneras newInstance(Bundle args) {
         turroneras fragment = new turroneras();
@@ -44,14 +45,22 @@ public class turroneras extends Fragment {
         return fragment;
     }
 
-    public turroneras() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public turroneras() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -64,24 +73,29 @@ public class turroneras extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_turroneras, container, false);
+        View v = inflater.inflate(R.layout.fragment_turroneras, container, false);
+        if (v != null){
+            text1 = v.findViewById(R.id.gastro31);
+            text2 = v.findViewById(R.id.gastro32);
+            text3 = v.findViewById(R.id.gastro33);
+            img1 = v.findViewById(R.id.gastro31img);
+            img2 = v.findViewById(R.id.gastro32img);
+            atrasBtn = v.findViewById(R.id.gastroAtras3);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -89,28 +103,19 @@ public class turroneras extends Fragment {
 
         String [] datos = dbHelper.obtenerDescrGastro(idioma, "turroneras", categoria, 3);
 
-        text1 = requireView().findViewById(R.id.gastro31);
-        text2 = requireView().findViewById(R.id.gastro32);
-        text3 = requireView().findViewById(R.id.gastro33);
-
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = requireView().findViewById(R.id.gastro31img);
-        img2 = requireView().findViewById(R.id.gastro32img);
         obtenerImagenFirebase("gastronomia/turroneras1.jpg", img1);
         obtenerImagenFirebase("gastronomia/turroneras2.jpg", img2);
 
-        Button atrasBtn = requireView().findViewById(R.id.gastroAtras3);
         atrasBtn.setOnClickListener(v -> {
             Fragment fragment = gastronomiaInicio.newInstance(args);
-            fragment.setArguments(args);
             cargarFragment(fragment);
         });
-
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */

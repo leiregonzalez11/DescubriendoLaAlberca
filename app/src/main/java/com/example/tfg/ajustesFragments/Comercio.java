@@ -58,8 +58,8 @@ public class Comercio extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_comercio, container, false);
         if(v != null){
-            viewPager = requireView().findViewById(R.id.viewPagerComercio);
-            tabLayout  = requireView().findViewById(R.id.tab_layoutComercio);
+            viewPager = v.findViewById(R.id.viewPagerComercio);
+            tabLayout  = v.findViewById(R.id.tab_layoutComercio);
         }
         return v;
     }

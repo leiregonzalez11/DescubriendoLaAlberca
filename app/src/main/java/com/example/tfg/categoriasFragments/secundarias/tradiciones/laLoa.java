@@ -2,7 +2,6 @@ package com.example.tfg.categoriasFragments.secundarias.tradiciones;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -10,19 +9,16 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -32,11 +28,14 @@ public class laLoa extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+    private ImageView img1, img2;
+    private Button atrasBtn;
+    private TextView titulo, text1, text2, text3, text4, text5;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static laLoa newInstance(Bundle args) {
         laLoa fragment = new laLoa();
@@ -46,14 +45,24 @@ public class laLoa extends Fragment {
         return fragment;
     }
 
-    public laLoa() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public laLoa() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        //Toolbar
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            //Creamos el fragment
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
@@ -69,34 +78,29 @@ public class laLoa extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_la_loa, container, false);
+        View v = inflater.inflate(R.layout.fragment_la_loa, container, false);
+        if (v != null){
+            //Textos de la interfaz
+            titulo = v.findViewById(R.id.tituloloa);
+            text1 = v.findViewById(R.id.loa1);
+            text2 = v.findViewById(R.id.loa2);
+            text3 = v.findViewById(R.id.loa3);
+            text4 = v.findViewById(R.id.loa4);
+            text5 = v.findViewById(R.id.loa5);
+            //Imágenes de la interfaz
+            img1 = v.findViewById(R.id.imgloa1);
+            img2 = v.findViewById(R.id.imgloa2);
+            //Botones
+            atrasBtn = v.findViewById(R.id.loaAtras);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        //Toolbar
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            //Creamos el fragment
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
-        //Textos de la interfaz
-        TextView titulo = requireView().findViewById(R.id.tituloloa);
-        TextView text1 = requireView().findViewById(R.id.loa1);
-        TextView text2 = requireView().findViewById(R.id.loa2);
-        TextView text3 = requireView().findViewById(R.id.loa3);
-        TextView text4 = requireView().findViewById(R.id.loa4);
-        TextView text5 = requireView().findViewById(R.id.loa5);
-
-        //Imágenes de la interfaz
-        ImageView img1 = requireView().findViewById(R.id.imgloa1);
-        ImageView img2 = requireView().findViewById(R.id.imgloa2);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -119,7 +123,6 @@ public class laLoa extends Fragment {
         storageRef = FirebaseStorage.getInstance().getReference();
 
         //Botón atrás
-        Button atrasBtn = requireView().findViewById(R.id.loaAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
             Fragment fragment = tradicionesInicio.newInstance(args);

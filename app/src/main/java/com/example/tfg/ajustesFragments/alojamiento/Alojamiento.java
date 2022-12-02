@@ -105,10 +105,10 @@ public class Alojamiento extends DialogFragment {
         View v =  inflater.inflate(R.layout.fragment_alojamiento, container, false);
         if(v != null){
             mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewAloj);
-            text1 = requireView().findViewById(R.id.nombreAloj);
-            tel = requireView().findViewById(R.id.telaloj2);
-            ubi = requireView().findViewById(R.id.ubi2);
-            ratingBar = requireView().findViewById(R.id.ratingBarAloj);
+            text1 = v.findViewById(R.id.nombreAloj);
+            tel = v.findViewById(R.id.telaloj2);
+            ubi = v.findViewById(R.id.ubi2);
+            ratingBar = v.findViewById(R.id.ratingBarAloj);
         }
         return v;
     }

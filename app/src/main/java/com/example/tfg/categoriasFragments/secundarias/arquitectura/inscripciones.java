@@ -30,11 +30,13 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     String idioma, categoria;
     StorageReference storageRef;
     ImageView img1, img2;
+    TextView text1, text2, text3;
+    ImageButton siguienteBtn, siguienteBtn2, finBtn, finBtn2;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static inscripciones newInstance(Bundle args) {
         inscripciones fragment = new inscripciones();
@@ -44,15 +46,21 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         return fragment;
     }
 
-    public inscripciones() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public inscripciones() {}
 
-
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            Fragment fragment = arquitecturaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -65,31 +73,37 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         args.putString("categoria", categoria);
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inscripciones, container, false);
+        View v = inflater.inflate(R.layout.fragment_inscripciones, container, false);
+        if (v != null){
+            text1 = v.findViewById(R.id.arqui41);
+            text2 = v.findViewById(R.id.arqui42);
+            text3 = v.findViewById(R.id.arqui43);
+            img1 = v.findViewById(R.id.arqui41img);
+            img2 = v.findViewById(R.id.arqui42img);
+            siguienteBtn = v.findViewById(R.id.arquisiguiente4);
+            siguienteBtn2 = v.findViewById(R.id.arquisiguiente44);
+            finBtn = v.findViewById(R.id.arquiAtras4);
+            finBtn2 = v.findViewById(R.id.arquiAtras44);
+        }
+
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = arquitecturaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
-
         GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerDatosArqui(idioma, "inscripciones", categoria, 3);
-
-        TextView text1 = requireView().findViewById(R.id.arqui41);
-        TextView text2 = requireView().findViewById(R.id.arqui42);
-        TextView text3 = requireView().findViewById(R.id.arqui43);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -97,31 +111,15 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = requireView().findViewById(R.id.arqui41img);
-        img2 = requireView().findViewById(R.id.arqui42img);
-
         obtenerImagenFirebase("arquitectura/inscripciones2.jpg", img1);
         obtenerImagenFirebase("arquitectura/inscripciones3.jpg", img2);
 
-
         //BOTON SIGUIENTE y ATRAS
-        ImageButton siguienteBtn = requireView().findViewById(R.id.arquisiguiente4);
-        ImageButton siguienteBtn2 = requireView().findViewById(R.id.arquisiguiente44);
-        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras4);
-        ImageButton finBtn2 = requireView().findViewById(R.id.arquiAtras44);
-
         siguienteBtn.setOnClickListener(this);
         siguienteBtn2.setOnClickListener(this);
         finBtn.setOnClickListener(this);
         finBtn2.setOnClickListener(this);
 
-
-    }
-
-    /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -140,6 +138,12 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         assert fragment != null;
         cargarFragment(fragment);
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     private void cargarFragment(Fragment fragment){

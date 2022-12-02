@@ -20,13 +20,14 @@ import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos
 
 public class otrosLugaresInicio extends Fragment {
 
-    String idioma, categoria, opc1, opc2, opc3, opc4;
-    Bundle args;
+    private Bundle args;
+    private String idioma, categoria, opc1, opc2, opc3, opc4;
+    private ListView listView, listView2, listView3, listView4;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static otrosLugaresInicio newInstance(Bundle args) {
         otrosLugaresInicio fragment = new otrosLugaresInicio();
@@ -36,16 +37,23 @@ public class otrosLugaresInicio extends Fragment {
         return fragment;
     }
 
-    public otrosLugaresInicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public otrosLugaresInicio() {}
 
-
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -59,29 +67,27 @@ public class otrosLugaresInicio extends Fragment {
 
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_otros, container, false);
+        View v =  inflater.inflate(R.layout.fragment_otros, container, false);
+        if(v != null){
+            listView = v.findViewById(R.id.listviewhurdes);
+            listView2 = v.findViewById(R.id.listviewpeñafrancia);
+            listView3 = v.findViewById(R.id.listviewpueblos);
+            listView4 = v.findViewById(R.id.listviewbatuecas);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
-        ListView listView = requireView().findViewById(R.id.listviewhurdes);
-        ListView listView2 = requireView().findViewById(R.id.listviewpeñafrancia);
-        ListView listView3 = requireView().findViewById(R.id.listviewpueblos);
-        ListView listView4 = requireView().findViewById(R.id.listviewbatuecas);
 
         opc1 = "Las Hurdes";
         opc2 = "Peña de Francia";
@@ -149,6 +155,5 @@ public class otrosLugaresInicio extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
-
 
 }

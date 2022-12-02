@@ -3,7 +3,6 @@ package com.example.tfg.categoriasFragments.secundarias.tradiciones;
 import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -11,7 +10,6 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +17,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,11 +30,15 @@ public class alboradas extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+    private ImageView img1, img2;
+    VideoView videoView;
+    private Button atrasBtn, btnPlay, btnPause, btnStop;
+    private TextView titulo, text1, text2, text4, text5, text6;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static alboradas newInstance(Bundle args) {
         alboradas fragment = new alboradas();
@@ -48,14 +48,24 @@ public class alboradas extends Fragment {
         return fragment;
     }
 
-    public alboradas() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public alboradas() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        //Toolbar
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            //Creamos el fragment
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
@@ -67,38 +77,39 @@ public class alboradas extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alboradas, container, false);
+        View v = inflater.inflate(R.layout.fragment_alboradas, container, false);
+        if (v != null){
+            //Textos de la interfaz
+            titulo = v.findViewById(R.id.tituloalboradas);
+            text1 = v.findViewById(R.id.alboradas1);
+            text2 = v.findViewById(R.id.alboradas2);
+            text4 = v.findViewById(R.id.alboradas4);
+            text5 = v.findViewById(R.id.alboradas5);
+            text6 = v.findViewById(R.id.alboradas6);
+            //Imágenes de la interfaz
+            img1 = v.findViewById(R.id.imgalboradas1);
+            img2 = v.findViewById(R.id.imgalboradas2);
+            //Videos de la interfaz
+            videoView = v.findViewById(R.id.videoViewAlb);
+            btnPlay = v.findViewById(R.id.play);
+            btnPause = v.findViewById(R.id.pause);
+            btnStop = v.findViewById(R.id.stop);
+            atrasBtn = v.findViewById(R.id.alboradasAtras);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        //Toolbar
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            //Creamos el fragment
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
-        //Textos de la interfaz
-        TextView titulo = requireView().findViewById(R.id.tituloalboradas);
-        TextView text1 = requireView().findViewById(R.id.alboradas1);
-        TextView text2 = requireView().findViewById(R.id.alboradas2);
-        TextView text4 = requireView().findViewById(R.id.alboradas4);
-        TextView text5 = requireView().findViewById(R.id.alboradas5);
-        TextView text6 = requireView().findViewById(R.id.alboradas6);
-
-        //Imágenes de la interfaz
-        ImageView img1 = requireView().findViewById(R.id.imgalboradas1);
-        ImageView img2 = requireView().findViewById(R.id.imgalboradas2);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -117,12 +128,6 @@ public class alboradas extends Fragment {
         text5.setText(textoTrad[3]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text6.setText(textoTrad[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        //Videos de la interfaz
-        VideoView videoView = requireView().findViewById(R.id.videoViewAlb);
-        Button btnPlay = requireView().findViewById(R.id.play);
-        Button btnPause = requireView().findViewById(R.id.pause);
-        Button btnStop = requireView().findViewById(R.id.stop);
-
         //Setter de los videos de la interfaz
         Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.alboradasansebastian);
         videoView.setVideoURI(uri);
@@ -138,13 +143,10 @@ public class alboradas extends Fragment {
         storageRef = FirebaseStorage.getInstance().getReference();
 
         //Botón atrás
-        Button atrasBtn = requireView().findViewById(R.id.alboradasAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
             Fragment fragment = tradicionesInicio.newInstance(args);
-            fragment.setArguments(args);
             cargarFragment(fragment);
-
         });
 
     }

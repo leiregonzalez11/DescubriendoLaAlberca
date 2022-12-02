@@ -20,8 +20,6 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
-import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,23 +27,21 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
-
 public class otrosPueblos extends Fragment {
 
-    Bundle args;
-    double lat, lon;
-    String pueblo, idioma, categoria;
+    private Bundle args;
+    private Button atrasBtn;
+    private double lat, lon;
+    private Spinner spinner;
+    private SupportMapFragment mapFragment;
+    private TextView km, fiestamayor, descr;
+    private String pueblo, idioma, categoria;
 
+    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-
         /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
+         * Manipula el mapa una vez haya sido creado.
+         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
@@ -57,9 +53,9 @@ public class otrosPueblos extends Fragment {
     };
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static otrosPueblos newInstance(Bundle args) {
         otrosPueblos fragment = new otrosPueblos();
@@ -69,14 +65,22 @@ public class otrosPueblos extends Fragment {
         return fragment;
     }
 
-    public otrosPueblos() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public otrosPueblos() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view1 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -89,27 +93,30 @@ public class otrosPueblos extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_otros_pueblos, container, false);
+        View v = inflater.inflate(R.layout.fragment_otros_pueblos, container, false);
+        if (v != null){
+            spinner = v.findViewById(R.id.spinnerPueblos);
+            km = v.findViewById(R.id.km2);
+            fiestamayor = v.findViewById(R.id.fiesta2);
+            descr = v.findViewById(R.id.pueblosDescr);
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPueblo);
+            atrasBtn = v.findViewById(R.id.pueblosAtras);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         GestorDB dbHelper = new GestorDB(getContext());
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view1 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
-        Spinner spinner = requireView().findViewById(R.id.spinnerPueblos);
 
         String [] pueblos = getResources().getStringArray(R.array.pueblosdelasierra);
         spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, pueblos));
@@ -117,6 +124,7 @@ public class otrosPueblos extends Fragment {
             @SuppressLint("SetTextI18n")
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
                 //Toast.makeText(getContext(), "Has pulsado: "+ pueblo, Toast.LENGTH_LONG).show();
                 pueblo = (String) adapterView.getItemAtPosition(position);
 
@@ -124,9 +132,6 @@ public class otrosPueblos extends Fragment {
 
                 String [] datos = dbHelper.obtenerInfoPueblos(idioma, puebloBBDD, categoria, "pueblo");
 
-                TextView km = requireView().findViewById(R.id.km2);
-                TextView fiestamayor = requireView().findViewById(R.id.fiesta2);
-                TextView descr = requireView().findViewById(R.id.pueblosDescr);
 
                 km.setText(datos[1]);
                 fiestamayor.setText(datos[2]);
@@ -135,8 +140,6 @@ public class otrosPueblos extends Fragment {
                 lon = Double.parseDouble(datos[4]);
 
                 //Mapa
-                SupportMapFragment mapFragment =
-                        (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPueblo);
                 if (mapFragment != null) {
                     mapFragment.getMapAsync(callback);
                 }
@@ -151,8 +154,6 @@ public class otrosPueblos extends Fragment {
             }
         });
 
-
-        Button atrasBtn = requireView().findViewById(R.id.pueblosAtras);
         atrasBtn.setOnClickListener(v -> {
             Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);

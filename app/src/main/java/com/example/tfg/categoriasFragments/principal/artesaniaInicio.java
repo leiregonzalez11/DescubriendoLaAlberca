@@ -30,13 +30,16 @@ import java.util.ArrayList;
 
 public class artesaniaInicio extends Fragment {
 
-    Bundle args;
-    String idioma, categoria, opc1, opc2, opc3;
+    private Bundle args;
+    private SliderView sliderView;
+    private String idioma, categoria;
+    private TextView text1, text2, text3;
+    private ListView listView, listView2, listView3;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static artesaniaInicio newInstance(Bundle args) {
         artesaniaInicio fragment = new artesaniaInicio();
@@ -46,14 +49,23 @@ public class artesaniaInicio extends Fragment {
         return fragment;
     }
 
-    public artesaniaInicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public artesaniaInicio() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -66,33 +78,35 @@ public class artesaniaInicio extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_artesania_inicio, container, false);
+        View v =  inflater.inflate(R.layout.fragment_artesania_inicio, container, false);
+        if(v != null){
+            text1 = v.findViewById(R.id.arte11);
+            text2 = v.findViewById(R.id.arte12);
+            text3 = v.findViewById(R.id.arte13);
+            listView = v.findViewById(R.id.listviewArte1);
+            listView2 = v.findViewById(R.id.listviewArte2);
+            listView3 = v.findViewById(R.id.listviewArte3);
+            sliderView = v.findViewById(R.id.imageSliderArte1);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
         GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerDatosArte(idioma, "inicio", categoria, 3);
-
-        TextView text1 = requireView().findViewById(R.id.arte11);
-        TextView text2 = requireView().findViewById(R.id.arte12);
-        TextView text3 = requireView().findViewById(R.id.arte13);
 
         /*------------------
          | El traje serrano |
@@ -100,8 +114,7 @@ public class artesaniaInicio extends Fragment {
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        opc2 = getResources().getString(R.string.traje_serrano);
-        ListView listView2 = requireView().findViewById(R.id.listviewArte2);
+        String opc2 = getResources().getString(R.string.traje_serrano);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -114,15 +127,13 @@ public class artesaniaInicio extends Fragment {
             cargarFragment(fragment);
         });
 
-
         /*------------
          | Orfebrería |
          ------------*/
 
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        opc3 = getString(R.string.alhajas);
-        ListView listView3 = requireView().findViewById(R.id.listviewArte3);
+        String opc3 = getString(R.string.alhajas);
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);
@@ -141,8 +152,7 @@ public class artesaniaInicio extends Fragment {
 
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        opc1 = getResources().getString(R.string.el_bordado_serrano);
-        ListView listView = requireView().findViewById(R.id.listviewArte1);
+        String opc1 = getResources().getString(R.string.el_bordado_serrano);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -156,7 +166,6 @@ public class artesaniaInicio extends Fragment {
         });
 
         //SLIDER
-        SliderView sliderView = requireView().findViewById(R.id.imageSliderArte1);
         int[] images = new int[]{R.drawable.arte1, R.drawable.arte2, R.drawable.arte3};
         SliderAdapter adapterSlider = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapterSlider);

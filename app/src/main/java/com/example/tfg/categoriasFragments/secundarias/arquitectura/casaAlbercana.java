@@ -32,20 +32,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class casaAlbercana extends Fragment {
 
     Bundle args;
+    TextView tel, web;
+    ImageButton finBtn;
     String idioma, categoria;
+    SupportMapFragment mapFragment;
 
+    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-
         /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
+         * Manipula el mapa una vez haya sido creado.
+         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
          */
-        @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng location = new LatLng(40.488984, -6.109707);
             googleMap.addMarker(new MarkerOptions()
@@ -58,9 +55,9 @@ public class casaAlbercana extends Fragment {
     };
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static casaAlbercana newInstance(Bundle args) {
         casaAlbercana fragment = new casaAlbercana();
@@ -70,14 +67,21 @@ public class casaAlbercana extends Fragment {
         return fragment;
     }
 
-    public casaAlbercana() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public casaAlbercana() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            Fragment fragment = arquitecturaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -90,32 +94,32 @@ public class casaAlbercana extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_casa_albercana, container, false);
+         View v = inflater.inflate(R.layout.fragment_casa_albercana, container, false);
+         if (v != null){
+             mapFragment =(SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCasa);
+             tel = v.findViewById(R.id.telcasa2);
+             web = v.findViewById(R.id.webcasa2);
+             finBtn = v.findViewById(R.id.arquiAtras5);
+         }
+         return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = arquitecturaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
-
         //Mapa
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCasa);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
-
-        TextView tel = requireView().findViewById(R.id.telcasa2);
 
         SpannableString telsubrayado = new SpannableString("625 75 58 19");
         telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
@@ -127,7 +131,6 @@ public class casaAlbercana extends Fragment {
             startActivity(dial); // Ejecutamos el Intent
         });
 
-        TextView web = requireView().findViewById(R.id.webcasa2);
 
         SpannableString websubrayado = new SpannableString("www.casamuseosaturjuanela.com/");
         websubrayado.setSpan(new UnderlineSpan(), 0, websubrayado.length(), 0);
@@ -139,7 +142,6 @@ public class casaAlbercana extends Fragment {
             startActivity(dial); // Ejecutamos el Intent
         });
 
-        ImageButton finBtn = requireView().findViewById(R.id.arquiAtras5);
         finBtn.setOnClickListener(v -> {
             Fragment fragment = inscripciones.newInstance(args);
             cargarFragment(fragment);

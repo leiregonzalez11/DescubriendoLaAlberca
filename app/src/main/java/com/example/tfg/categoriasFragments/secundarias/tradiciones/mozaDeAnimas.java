@@ -20,8 +20,6 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -32,11 +30,15 @@ public class mozaDeAnimas extends Fragment {
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
+    private ImageView img1, img2;
+    private VideoView videoView, videoView2;
+    private Button btnPlay1, btnPlay2, atrasBtn;
+    private TextView titulo, text2, text3, text4, text5, text6, text7, text8;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static mozaDeAnimas newInstance(Bundle args) {
         mozaDeAnimas fragment = new mozaDeAnimas();
@@ -46,14 +48,23 @@ public class mozaDeAnimas extends Fragment {
         return fragment;
     }
 
-    public mozaDeAnimas() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public mozaDeAnimas() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        //Toolbar
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
@@ -65,45 +76,42 @@ public class mozaDeAnimas extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_moza_de_animas, container, false);
+        View v = inflater.inflate(R.layout.fragment_moza_de_animas, container, false);
+        if (v != null){
+            //Textos de la interfaz
+            titulo = v.findViewById(R.id.titulotrad);
+            text2 = v.findViewById(R.id.trad12);
+            text3 = v.findViewById(R.id.trad13);
+            text4 = v.findViewById(R.id.trad14);
+            text5 = v.findViewById(R.id.trad15);
+            text6 = v.findViewById(R.id.trad16);
+            text7 = v.findViewById(R.id.trad17);
+            text8 = v.findViewById(R.id.trad18);
+            //Imágenes de la interfaz
+            img1 = v.findViewById(R.id.imgTrad1);
+            img2 = v.findViewById(R.id.imgTrad2);
+            //Videos de la interfaz
+            videoView = v.findViewById(R.id.videoView1);
+            videoView2 = v.findViewById(R.id.videoView2);
+            //Botones
+            btnPlay1 = v.findViewById(R.id.play1);
+            btnPlay2 = v.findViewById(R.id.play2);
+            atrasBtn = v.findViewById(R.id.mozaAtras);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        //Toolbar
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
-        //Textos de la interfaz
-        TextView titulo = requireView().findViewById(R.id.titulotrad);
-        TextView text2 = requireView().findViewById(R.id.trad12);
-        TextView text3 = requireView().findViewById(R.id.trad13);
-        TextView text4 = requireView().findViewById(R.id.trad14);
-        TextView text5 = requireView().findViewById(R.id.trad15);
-        TextView text6 = requireView().findViewById(R.id.trad16);
-        TextView text7 = requireView().findViewById(R.id.trad17);
-        TextView text8 = requireView().findViewById(R.id.trad18);
-
-        //Imágenes de la interfaz
-        ImageView img1 = requireView().findViewById(R.id.imgTrad1);
-        ImageView img2 = requireView().findViewById(R.id.imgTrad2);
-
-        //Videos de la interfaz
-        VideoView videoView = requireView().findViewById(R.id.videoView1);
-        VideoView videoView2 = requireView().findViewById(R.id.videoView2);
-        Button btnPlay1 = requireView().findViewById(R.id.play1);
-        Button btnPlay2 = requireView().findViewById(R.id.play2);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -146,7 +154,6 @@ public class mozaDeAnimas extends Fragment {
         });
 
         //Botón atrás
-        Button atrasBtn = requireView().findViewById(R.id.mozaAtras);
         atrasBtn.setOnClickListener(v -> {
             //Creamos el fragment y añadimos los args
             Fragment fragment = tradicionesInicio.newInstance(args);

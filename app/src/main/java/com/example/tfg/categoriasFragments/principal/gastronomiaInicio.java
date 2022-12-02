@@ -24,14 +24,16 @@ import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipica
 
 public class gastronomiaInicio extends Fragment {
 
-    Bundle args;
-    Fragment fragment;
-    String categoria, idioma, opc1, opc2;
+    private Bundle args;
+    private Fragment fragment;
+    private TextView text1, text2;
+    private ListView listView, listView2;
+    private String categoria, idioma, opc1, opc2;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static gastronomiaInicio newInstance(Bundle args) {
         gastronomiaInicio fragment = new gastronomiaInicio();
@@ -41,15 +43,23 @@ public class gastronomiaInicio extends Fragment {
         return fragment;
     }
 
-    public gastronomiaInicio() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public gastronomiaInicio() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -62,31 +72,32 @@ public class gastronomiaInicio extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gastronomia, container, false);
+        View v =  inflater.inflate(R.layout.fragment_gastronomia, container, false);
+        if(v != null){
+            text1 = v.findViewById(R.id.gastro11);
+            text2 = v.findViewById(R.id.gastro12);
+            listView = v.findViewById(R.id.listviewGastro1);
+            listView2 = v.findViewById(R.id.listviewGastro2);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
         GestorDB dbHelper = new GestorDB(getContext());
 
         String[] datos = dbHelper.obtenerDescrGastro(idioma, "inicio", categoria, 2);
-
-        TextView text1 = requireView().findViewById(R.id.gastro11);
-        TextView text2 = requireView().findViewById(R.id.gastro12);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -96,7 +107,6 @@ public class gastronomiaInicio extends Fragment {
          ----------------*/
 
         opc1 = getString(R.string.turroneras);
-        ListView listView = requireView().findViewById(R.id.listviewGastro1);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -114,7 +124,6 @@ public class gastronomiaInicio extends Fragment {
          -----------------*/
 
         opc2 = getString(R.string.recetas);
-        ListView listView2 = requireView().findViewById(R.id.listviewGastro2);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);

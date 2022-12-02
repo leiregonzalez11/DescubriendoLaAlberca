@@ -12,15 +12,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
-import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
-import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -34,9 +31,9 @@ public class bordadoSerrano extends Fragment {
     TextView text1, text2, text3, text4;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment BlankFragment.
+     * Utilizaremos este Factory Method para crear una nueva instancia
+     * de este fragmento utilizando los parámetros dados.
+     * @return Una nueva instancia del Fragment.
      */
     public static bordadoSerrano newInstance(Bundle args) {
         bordadoSerrano fragment = new bordadoSerrano();
@@ -46,14 +43,22 @@ public class bordadoSerrano extends Fragment {
         return fragment;
     }
 
-    public bordadoSerrano() {
-        // Required empty public constructor
-    }
+    /** Required empty public constructor */
+    public bordadoSerrano() {}
 
+    /** El Fragment ha sido creado.
+     * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view12 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = artesaniaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
         args = new Bundle();
 
@@ -66,35 +71,36 @@ public class bordadoSerrano extends Fragment {
         args.putString("categoria", categoria);
     }
 
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bordado_serrano, container, false);
+        View v = inflater.inflate(R.layout.fragment_bordado_serrano, container, false);
+        if (v != null){
+            text1 = v.findViewById(R.id.arte21);
+            text2 = v.findViewById(R.id.arte22);
+            text3 = v.findViewById(R.id.arte23);
+            text4 = v.findViewById(R.id.arte24);
+            img1 = v.findViewById(R.id.arte21img);
+            img2 = v.findViewById(R.id.arte22img);
+            img3 = v.findViewById(R.id.arte23img);
+        }
+        return v;
     }
 
+    /** La vista de layout ha sido creada y ya está disponible
+     Aquí fijaremos todos los parámetros de nuestras vistas **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = artesaniaInicio.newInstance(args);
-            cargarFragment(fragment);
-        });
 
         GestorDB dbHelper = new GestorDB(getContext());
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
         String [] datos = dbHelper.obtenerDatosArte(idioma, "bordado", categoria, 4);
-
-        text1 = requireView().findViewById(R.id.arte21);
-        text2 = requireView().findViewById(R.id.arte22);
-        text3 = requireView().findViewById(R.id.arte23);
-        text4 = requireView().findViewById(R.id.arte24);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -103,11 +109,8 @@ public class bordadoSerrano extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        img1 = requireView().findViewById(R.id.arte21img);
         obtenerImagenFirebase("artesania/bordado1.jpg", img1);
-        img2 = requireView().findViewById(R.id.arte22img);
         obtenerImagenFirebase("artesania/bordado2.jpg", img2);
-        img3 = requireView().findViewById(R.id.arte23img);
         obtenerImagenFirebase("artesania/bordado3.jpg", img3);
 
     }
