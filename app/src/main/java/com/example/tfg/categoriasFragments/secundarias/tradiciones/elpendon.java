@@ -2,6 +2,7 @@ package com.example.tfg.categoriasFragments.secundarias.tradiciones;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -9,12 +10,14 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -23,22 +26,23 @@ import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class laLoa extends Fragment {
+
+public class elpendon extends Fragment {
 
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
     private ImageView img1, img2;
     private Button atrasBtn;
-    private TextView titulo, text1, text2, text3, text4, text5;
+    private TextView titulo, text1, text2, text3, text4, text5, text6, text7;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static laLoa newInstance(Bundle args) {
-        laLoa fragment = new laLoa();
+    public static elpendon newInstance(Bundle args) {
+        elpendon fragment = new elpendon();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -46,7 +50,7 @@ public class laLoa extends Fragment {
     }
 
     /** Required empty public constructor */
-    public laLoa() {}
+    public elpendon() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
@@ -78,20 +82,22 @@ public class laLoa extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_la_loa, container, false);
+        View v = inflater.inflate(R.layout.fragment_elpendon, container, false);
         if (v != null){
             //Textos de la interfaz
-            titulo = v.findViewById(R.id.tituloloa);
-            text1 = v.findViewById(R.id.loa1);
-            text2 = v.findViewById(R.id.loa2);
-            text3 = v.findViewById(R.id.loa3);
-            text4 = v.findViewById(R.id.loa4);
-            text5 = v.findViewById(R.id.loa5);
+            titulo = v.findViewById(R.id.titulopendon);
+            text1 = v.findViewById(R.id.pendon1);
+            text2 = v.findViewById(R.id.pendon2);
+            text3 = v.findViewById(R.id.pendon3);
+            text4 = v.findViewById(R.id.pendon4);
+            text5 = v.findViewById(R.id.pendon5);
+            text6 = v.findViewById(R.id.pendon6);
+            text7 = v.findViewById(R.id.pendon7);
             //Imágenes de la interfaz
-            img1 = v.findViewById(R.id.imgloa1);
-            img2 = v.findViewById(R.id.imgloa2);
+            img1 = v.findViewById(R.id.imgpendon1);
+            img2 = v.findViewById(R.id.imgpendon2);
             //Botones
-            atrasBtn = v.findViewById(R.id.loaAtras);
+            atrasBtn = v.findViewById(R.id.pendonAtras);
         }
         return v;
     }
@@ -105,19 +111,21 @@ public class laLoa extends Fragment {
         GestorDB dbHelper = new GestorDB(getContext());
 
         //Setter de los textos de la interfaz
-        String nombreTrad = "La Loa";
+        String nombreTrad = "El Pendón";
         titulo.setText(nombreTrad);
         titulo.requestFocus();
         String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 
         //Obtención de datos desde la bbdd
-        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, categoria, 5);
+        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, categoria, 7);
 
         text1.setText(textoTrad[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(textoTrad[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(textoTrad[2]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(textoTrad[3]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text5.setText(textoTrad[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text6.setText(textoTrad[5]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text7.setText(textoTrad[6]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //Setter de las imagenes de la interfaz TODO
         storageRef = FirebaseStorage.getInstance().getReference();

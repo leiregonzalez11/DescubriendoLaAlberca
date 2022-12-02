@@ -14,9 +14,12 @@ import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.categoriasFragments.secundarias.tradiciones.elpendon;
 import com.example.tfg.navigationmenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.categoriasFragments.secundarias.tradiciones.alboradas;
@@ -31,7 +34,7 @@ public class tradicionesInicio extends Fragment {
     private Fragment fragment;
     private TextView text1, text2;
     private String idioma, categoria;
-    private ListView listView, listView2, listView3, listView4;
+    private ListView listView, listView2, listView3, listView4, listView5, listView6;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -91,6 +94,8 @@ public class tradicionesInicio extends Fragment {
             listView2 = v.findViewById(R.id.listviewtrad2);
             listView3 = v.findViewById(R.id.listviewtrad3);
             listView4 = v.findViewById(R.id.listviewtrad4);
+            listView5 = v.findViewById(R.id.listviewtrad5);
+            listView6 = v.findViewById(R.id.listviewtrad6);
         }
         return v;
     }
@@ -176,6 +181,39 @@ public class tradicionesInicio extends Fragment {
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
             fragment = alboradas.newInstance(args);
             cargarFragment(fragment);
+        });
+
+        /*-----------
+         | El Pendón |
+         -----------*/
+
+        String opc5 = "El Pendón";
+        ArrayList<String> lista5 = new ArrayList<>();
+        lista5.add(opc5);
+
+        listViewAdapter myAdapter5 = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista5);
+
+        listView5.setAdapter(myAdapter5);
+
+        listView5.setOnItemClickListener((adapterView, v, position, id) -> {
+            fragment = elpendon.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        /*-------------------
+         | Otras tradiciones |
+         -------------------*/
+
+        String opc6 = "Otras tradiciones";
+        ArrayList<String> lista6 = new ArrayList<>();
+        lista6.add(opc6);
+
+        listViewAdapter myAdapter6 = new listViewAdapter(getContext(), R.layout.listview_tradiciones, lista6);
+
+        listView6.setAdapter(myAdapter6);
+
+        listView6.setOnItemClickListener((adapterView, v, position, id) -> {
+            Toast.makeText(getContext(), "Has pulsado: "+ opc6, Toast.LENGTH_LONG).show();
         });
 
     }
