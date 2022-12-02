@@ -200,11 +200,11 @@ public class tradicionesInicio extends Fragment {
             cargarFragment(fragment);
         });
 
-        /*-------------------
-         | Otras tradiciones |
-         -------------------*/
+        /*--------------
+         | Las Campanas |
+         --------------*/
 
-        String opc6 = "Otras tradiciones";
+        String opc6 = "Las Campanas";
         ArrayList<String> lista6 = new ArrayList<>();
         lista6.add(opc6);
 

@@ -400,8 +400,7 @@ INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','es', 'Y
 INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','es', 'Y en ello proveyendo, mandé dar e di la presente, por la cual, siendo lo susodicho cosa tan antigua, como dicen que es, y atento que en muchos otros Conçaijos sea costumbre que, cuando van las proscisiones el lunes Albillo, los conçaijos del Alberca quisieren ir y fueren por sus desvociones a las dichas dos proscisiones y sacaren el Pendón sobredicho, el día que dicen que se saca, pueda el dicho Conçaijo de la Alberca lo gozar desto por mi mandado e permitido.');
 INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','es', 'Fecha en la mi villa de Alba, a siete de Mayo de mil e quinientos e cuarenta e siete años. Yo la Duquesa Marquesa. Por Mandado de S. S. Juan de Portillo. Pedro Andrés: de derechos tres reales.');
 INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','es', 'A día de hoy, el pendón original se conserva en el archivo parroquial del pueblo, y se dice que el pendón aún conserva sangre de la batalla que la tradición atribuye a que las mujeres cortaron los testículos a algunos soldados de las tropas portuguesas.');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-elcristodelsudor','es', '');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-lascampanasdelaiglesia','es', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('lascampanasdelaiglesia','es', '');
 //
 //Idioma: Euskera
 //
@@ -435,8 +434,7 @@ INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('inicio','eu', 'Best
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','eu', '');
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','eu', '');
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','eu', '');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-elcristodelsudor','eu', '');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-lascampanasdelaiglesia','eu', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES (lascampanasdelaiglesia','eu', '');
 //
 //Idioma: Inglés
 //
@@ -464,6 +462,11 @@ INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('inicio','en', 'Anot
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('lasalboradas','en','');
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('lasalboradas','en','');
 //INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-elcristodelsudor','en', '');
-//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('otrastrad-lascampanasdelaiglesia','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('elpendón','en', '');
+//INSERT INTO tradiciones (nombreTrad, idioma, descr) VALUES ('lascampanasdelaiglesia','en', '');
 //
