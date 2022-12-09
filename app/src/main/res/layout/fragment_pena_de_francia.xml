@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categoriasFragments.secundarias.otrosLugares.penaDeFrancia">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layoutArte1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".anterior.categorias.gastronomia.gastronomiaActivity">
+
+            <TextView
+                android:id="@+id/gastrotitulo"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text= "Peña de Francia"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/pena11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/pena12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:textStyle="italic"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/pena13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/pena14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/pena15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewPena1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewPena2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
