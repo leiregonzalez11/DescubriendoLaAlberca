@@ -33,6 +33,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
@@ -61,7 +62,8 @@ public class penaDeFrancia extends Fragment {
         public void onMapReady(GoogleMap googleMap) {
             //Localización de la peña de francia
             LatLng location = new LatLng(lat, lon);
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.5f));
+            //googleMap.addMarker(new MarkerOptions().position(location).title("Peña de Francia"));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.5f));
             //Tipo de mapa: Hibrido
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
@@ -146,14 +148,13 @@ public class penaDeFrancia extends Fragment {
         text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //Ubicacion
-
-        String [] ubicacion = dbHelper.obtenerUbiPena();
+        String [] ubicacion = dbHelper.obtenerUbiOtros("peñadefrancia");
         lat = Double.parseDouble(ubicacion[0]);
         lon = Double.parseDouble(ubicacion[1]);
 
         //Mapa
         if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
+          mapFragment.getMapAsync(callback);
         }
 
         /*----------
@@ -165,7 +166,7 @@ public class penaDeFrancia extends Fragment {
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_item, lista1);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_monte2, lista1);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
@@ -182,7 +183,7 @@ public class penaDeFrancia extends Fragment {
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
 
-        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_item, lista2);
+        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_monte2, lista2);
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {

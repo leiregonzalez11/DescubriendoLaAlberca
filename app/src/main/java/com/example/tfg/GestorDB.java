@@ -20,7 +20,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
     private final Context context;
     private boolean seguir = true;
 
@@ -90,7 +90,7 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla otros lugares
         String query5 = "CREATE TABLE IF NOT EXISTS otroslugares (idOtros INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaOtros VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, nombreOtro VARCHAR NOT NULL, descrOtro VARCHAR NOT NULL, " +
-                "kmdesdeLa VARCHAR NOT NULL, fiestamayor VARCHAR, latLugar VARCHAR, lonLugar VARCHAR)";
+                "kmdesdeLa VARCHAR, fiestamayor VARCHAR, latLugar VARCHAR, lonLugar VARCHAR)";
         Log.i("Tabla Otros Lugares: ", query5);
         sqLiteDatabase.execSQL(query5);
 
@@ -429,19 +429,14 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String [] obtenerUbiPena (){
+    public String [] obtenerUbiOtros (String categoria){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[2];
 
-        String query = "SELECT latLugar, lonLugar FROM otrosLugares" +
-                " WHERE categoriaOtros = 'principal';";
-
-        System.out.println("QUERY: " + query);
-
-        Cursor c = sqLiteDatabase.rawQuery(query, null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria +"' AND nombreOtro = 'principal';", null);
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
@@ -458,19 +453,14 @@ public class GestorDB extends SQLiteOpenHelper {
 
         String descrip;
         String [] descr = new String[numTV];
+        int i = 0;
 
-        String query = "SELECT descrOtro FROM " + tabla + "" +
-                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';";
-
-        System.out.println("QUERY: " + query);
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
-                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro FROM " + tabla + "" +
+                " WHERE categoriaOtros LIKE '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro LIKE '" + lugar + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 5; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
         }
         c.close();
         return descr;

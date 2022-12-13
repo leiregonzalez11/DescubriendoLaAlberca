@@ -15,6 +15,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaDeFrancia;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 
@@ -113,8 +115,11 @@ public class otrosLugaresInicio extends Fragment {
         listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_monte, lista2);
         listView2.setAdapter(myAdapter2);
 
-        listView2.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show());
+        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
+            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            Fragment fragment = penaDeFrancia.newInstance(args);
+            cargarFragment(fragment);
+        });
 
 
         //Pueblos

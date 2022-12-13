@@ -132,12 +132,10 @@ public class recetasTipicas extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
-                if (!nombreReceta.equalsIgnoreCase("turuletes")){
-                    String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
-                    Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
-                    receta.setNombreReceta(nombreReceta);
-                    setTextAndImages(receta);
-                }
+                String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
+                Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
+                receta.setNombreReceta(nombreReceta);
+                setTextAndImages(receta);
             }
 
             @Override
