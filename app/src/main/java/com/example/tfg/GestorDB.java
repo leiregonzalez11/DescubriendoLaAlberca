@@ -429,4 +429,52 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    public String [] obtenerUbiPena (){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[2];
+
+        String query = "SELECT latLugar, lonLugar FROM otrosLugares" +
+                " WHERE categoriaOtros = 'principal';";
+
+        System.out.println("QUERY: " + query);
+
+        Cursor c = sqLiteDatabase.rawQuery(query, null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 2; j++){
+                descrip = c.getString(j);
+                descr[j] = descrip;
+            }
+        }
+        c.close();
+        return descr;
+    }
+
+    public String [] obtenerInfoPena (String idioma, String lugar, String tabla, String categoria, Integer numTV){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[numTV];
+
+        String query = "SELECT descrOtro FROM " + tabla + "" +
+                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';";
+
+        System.out.println("QUERY: " + query);
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
+                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 5; j++){
+                descrip = c.getString(j);
+                descr[j] = descrip;
+            }
+        }
+        c.close();
+        return descr;
+    }
+
+
 }

@@ -124,6 +124,7 @@ public class penaDeFrancia extends Fragment {
             text5 = v.findViewById(R.id.pena15);
             listView = v.findViewById(R.id.listviewPena1);
             listView2 = v.findViewById(R.id.listviewPena2);
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPena);
         }
         return v;
     }
@@ -136,13 +137,24 @@ public class penaDeFrancia extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String[] datos = dbHelper.obtenerDescrGastro(idioma, "inicio", categoria, 2);
+        String[] datos = dbHelper.obtenerInfoPena(idioma, "inicio", categoria, "peñadefrancia", 5);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        //Ubicacion
+
+        String [] ubicacion = dbHelper.obtenerUbiPena();
+        lat = Double.parseDouble(ubicacion[0]);
+        lon = Double.parseDouble(ubicacion[1]);
+
+        //Mapa
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(callback);
+        }
 
         /*----------
          | Historia |
