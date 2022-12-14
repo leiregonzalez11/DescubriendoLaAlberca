@@ -27,6 +27,7 @@ import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.monumentosPenaFrancia;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -48,9 +49,10 @@ public class penaDeFrancia extends Fragment {
     private double lat, lon;
     private Fragment fragment;
     private TextView text1, text2, text3, text4, text5;
-    private ListView listView, listView2;
+    private ListView listView, listView2, listView3;
     private SupportMapFragment mapFragment;
-    private String idioma, categoria, opc1, opc2;
+    private String idioma;
+    private String categoria;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -126,6 +128,7 @@ public class penaDeFrancia extends Fragment {
             text5 = v.findViewById(R.id.pena15);
             listView = v.findViewById(R.id.listviewPena1);
             listView2 = v.findViewById(R.id.listviewPena2);
+            listView3 = v.findViewById(R.id.listviewPena3);
             mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPena);
         }
         return v;
@@ -161,7 +164,7 @@ public class penaDeFrancia extends Fragment {
          | Historia |
          ----------*/
 
-        opc1 = getString(R.string.historiamayus);
+        String opc1 = getString(R.string.historiamayus);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -178,7 +181,7 @@ public class penaDeFrancia extends Fragment {
          | ¿Qué visitar? |
          ---------------*/
 
-        opc2 = "¿Qué visitar?";
+        String opc2 = "¿Qué visitar?";
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -187,6 +190,23 @@ public class penaDeFrancia extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
+            fragment = monumentosPenaFrancia.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        /*---------
+         | Leyenda |
+         ---------*/
+
+        String opc3 = "El Descubrimiento de la Virgen";
+
+        ArrayList<String> lista3 = new ArrayList<>();
+        lista3.add(opc3);
+
+        listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_monte2, lista3);
+        listView3.setAdapter(myAdapter3);
+
+        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
             //fragment = recetasTipicas.newInstance(args);
             cargarFragment(fragment);
         });
