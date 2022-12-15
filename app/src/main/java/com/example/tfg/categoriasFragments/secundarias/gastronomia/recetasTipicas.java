@@ -357,10 +357,10 @@ public class recetasTipicas extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        if (nombreRecetaBBDD.equalsIgnoreCase("turuletes")){
+        if (nombreRecetaBBDD.equalsIgnoreCase("turuletes") || nombreRecetaBBDD.equalsIgnoreCase("floretas")
+                || nombreRecetaBBDD.equalsIgnoreCase("zorongollo")){
             obtenerImagenFirebase("gastronomia/" + nombreRecetaBBDD + ".png", foto);
         }
-
 
     }
 
