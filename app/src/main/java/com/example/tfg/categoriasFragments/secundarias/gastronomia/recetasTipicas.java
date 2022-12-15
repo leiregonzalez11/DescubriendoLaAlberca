@@ -36,8 +36,8 @@ public class recetasTipicas extends Fragment {
     private StorageReference storageRef;
     private Spinner spinner1, spinner2;
     private TextView tituloreceta, descrReceta, pasos2;
-    private ImageView img7, img8, img9, img10, img11, img12;
-    private String categoria, idioma, nombreReceta, tipoRecetas;
+    private ImageView img7, img8, img9, img10, img11, img12, foto;
+    private String categoria, idioma, nombreReceta, tipoRecetas, nombreRecetaBBDD;
     private TextView ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, ing10, ing11, ing12;
 
     /**
@@ -132,7 +132,7 @@ public class recetasTipicas extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
-                String nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
+                nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
                 Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
                 receta.setNombreReceta(nombreReceta);
                 setTextAndImages(receta);
@@ -176,6 +176,9 @@ public class recetasTipicas extends Fragment {
         img10 = v.findViewById(R.id.img10);
         img11 = v.findViewById(R.id.img11);
         img12 = v.findViewById(R.id.img12);
+
+        //Imagen receta
+        foto = v.findViewById(R.id.imgReceta2);
 
         //Pasos
         pasos2 = v.findViewById(R.id.recetasTextPasos2);
@@ -351,6 +354,13 @@ public class recetasTipicas extends Fragment {
             lp.bottomMargin = 30;
             ingLayout.setLayoutParams(lp);
         }
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        if (nombreRecetaBBDD.equalsIgnoreCase("turuletes")){
+            obtenerImagenFirebase("gastronomia/" + nombreRecetaBBDD + ".png", foto);
+        }
+
 
     }
 
