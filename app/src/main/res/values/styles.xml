@@ -39,5 +39,12 @@
         <item name="android:textSize">13sp</item>
     </style>
 
+    <style name="italictext" parent="TextAppearance.AppCompat">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="normaltext" parent="TextAppearance.AppCompat">
+        <item name="android:textStyle">normal</item>
+    </style>
 
 </resources>

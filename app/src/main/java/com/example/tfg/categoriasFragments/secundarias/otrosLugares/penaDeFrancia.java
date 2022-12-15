@@ -27,6 +27,8 @@ import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.historiaPenaFrancia;
+import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.leyendaPenaFrancia;
 import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.monumentosPenaFrancia;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -173,7 +175,7 @@ public class penaDeFrancia extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //fragment = turroneras.newInstance(args);
+            fragment = historiaPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -207,7 +209,7 @@ public class penaDeFrancia extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            //fragment = recetasTipicas.newInstance(args);
+            fragment = leyendaPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });
 
