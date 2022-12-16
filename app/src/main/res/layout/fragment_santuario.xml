@@ -7,118 +7,204 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".categoriasFragments.secundarias.otrosLugares.penaFrancia.santuario">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutArte1"
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
         android:background="@color/white"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="15dp"
-        tools:context=".anterior.categorias.gastronomia.gastronomiaActivity">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
-        <TextView
-            android:id="@+id/santinicio"
-            android:layout_width="323dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutArte1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="@font/alex_brush"
+            android:background="@color/white"
             android:gravity="center"
-            android:text="El Santuario"
-            android:textAlignment="gravity"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/santuariotext"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:targetApi="o" />
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <com.example.tfg.adapters.JustifyTextView
-            android:id="@+id/santuariotext"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/amiri"
-            android:gravity='center'
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/santinicio" />
+            <TextView
+                android:id="@+id/santinicio"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text="El Santuario"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/santuariotext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="o" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="350dp"
-            android:layout_height="450dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="-45dp"
-            android:layout_marginEnd="30dp"
-            android:src="@drawable/planosantuario"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/santuariotext">
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santinicio" />
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="300dp"
+                android:layout_height="350dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="-65dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/planosantuario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santuariotext">
 
-        <Button
-            android:id="@+id/convento"
-            android:layout_width="141dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="50dp"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/aref_ruqaa"
-            android:text="El Convento"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/imageView2"
-            app:layout_constraintEnd_toEndOf="@id/imageView2"
-            app:layout_constraintHorizontal_bias="0.604"
-            app:layout_constraintStart_toStartOf="@id/imageView2"
-            app:layout_constraintTop_toTopOf="@id/imageView2"
-            app:layout_constraintVertical_bias="0.927" />
+            </ImageView>
 
-        <Button
-            android:id="@+id/iglesiapeña"
-            android:layout_width="153dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="64dp"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/aref_ruqaa"
-            android:text="La Iglesia"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/imageView2"
-            app:layout_constraintEnd_toEndOf="@id/imageView2"
-            app:layout_constraintHorizontal_bias="0.187"
-            app:layout_constraintStart_toStartOf="@id/imageView2"
-            app:layout_constraintTop_toTopOf="@id/imageView2"
-            app:layout_constraintVertical_bias="0.073" />
+            <Button
+                android:id="@+id/convento"
+                android:layout_width="142dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="50dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/aref_ruqaa"
+                android:text="El Convento"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="@id/imageView2"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:layout_constraintVertical_bias="0.926" />
 
-        <Button
-            android:id="@+id/pozoverde"
-            android:layout_width="162dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="45dp"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/aref_ruqaa"
-            android:text="El pozo verde"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/imageView2"
-            app:layout_constraintEnd_toEndOf="@id/imageView2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/imageView2"
-            app:layout_constraintTop_toTopOf="@id/imageView2"
-            app:layout_constraintVertical_bias="0.195" />
+            <Button
+                android:id="@+id/iglesiapeña"
+                android:layout_width="97dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="64dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/aref_ruqaa"
+                android:text="La Iglesia"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintHorizontal_bias="0.347"
+                app:layout_constraintStart_toStartOf="@id/imageView2"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:layout_constraintVertical_bias="0.681" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/pozoverde"
+                android:layout_width="135dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="45dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/aref_ruqaa"
+                android:text="El pozo verde"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintHorizontal_bias="0.883"
+                app:layout_constraintStart_toStartOf="@id/imageView2"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:layout_constraintVertical_bias="0.207" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext2"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext3"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santuariotext2" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext4"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santuariotext3" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext5"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santuariotext4" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext6"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/santuariotext5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </FrameLayout>
