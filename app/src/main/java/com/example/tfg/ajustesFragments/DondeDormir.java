@@ -15,6 +15,7 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.tabAdapter;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class DondeDormir extends Fragment {
@@ -73,15 +74,11 @@ public class DondeDormir extends Fragment {
         String text2 = getResources().getString(R.string.hotel);
         String text3 = getResources().getString(R.string.casas);
 
-        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
-        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
-        tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapter myadapter = new tabAdapter(getParentFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
-        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -89,6 +86,17 @@ public class DondeDormir extends Fragment {
                 super.onPageSelected(position);
             }
         });
+
+        viewPager.setAdapter(myadapter);
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            if (position == 0){
+                tab.setText(text2.toUpperCase());
+            } else if (position == 1){
+                tab.setText(text1.toUpperCase());
+            }else if (position == 2){
+                tab.setText(text3.toUpperCase());
+            }
+        }).attach();
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

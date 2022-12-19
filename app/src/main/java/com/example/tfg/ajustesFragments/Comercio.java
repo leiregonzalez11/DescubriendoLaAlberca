@@ -16,6 +16,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.tfg.adapters.tabAdapterComercio;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class Comercio extends Fragment {
 
@@ -71,17 +72,17 @@ public class Comercio extends Fragment {
 
         String text1 = getResources().getString(R.string.alimentacion);
         String text2 = getResources().getString(R.string.artesaniamayus);
-        String text3 = getResources().getString(R.string.otras_tiendas);
-
-        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
-        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
-        tabLayout.addTab(tabLayout.newTab().setText(text3.toUpperCase()));
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         tabAdapterComercio myadapter = new tabAdapterComercio(getParentFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
-        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            if (position == 0){
+                tab.setText(text1.toUpperCase());
+            } else if (position == 1){
+                tab.setText(text2.toUpperCase());
+            }
+        }).attach();
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -90,12 +91,11 @@ public class Comercio extends Fragment {
             }
         });
 
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 assert tab.parent != null;
-                viewPager.setCurrentItem(tab.parent.getSelectedTabPosition());
+                viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -104,6 +104,17 @@ public class Comercio extends Fragment {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {}
         });
+
+        //tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
+        //tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+
+        tabLayout.setOnScrollChangeListener((view1, i, i1, i2, i3) -> {
+            TabLayout tab = view1.findViewById(R.id.tab_layoutComercio);
+            viewPager.setCurrentItem(tab.getSelectedTabPosition());
+
+        });
+
     }
 
     private void cargarFragment(Fragment fragment){

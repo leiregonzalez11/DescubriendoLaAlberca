@@ -91,7 +91,7 @@ public class otrosLugaresInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        opc1 = "Las Hurdes";
+        opc1 = "Las Hurdes Altas";
         opc2 = "Peña de Francia";
         opc3 = getString(R.string.pueblos_de_la_sierra);
         opc4 = getString(R.string.batuecas);

@@ -15,6 +15,7 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.tabAdapterComer;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class DondeComer extends Fragment {
@@ -72,9 +73,7 @@ public class DondeComer extends Fragment {
         String text1 = getResources().getString(R.string.bares);
         String text2 = getResources().getString(R.string.rest);
 
-        tabLayout.addTab(tabLayout.newTab().setText(text1.toUpperCase()));
-        tabLayout.addTab(tabLayout.newTab().setText(text2.toUpperCase()));
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
 
         tabAdapterComer myadapter = new tabAdapterComer(getParentFragmentManager(), getLifecycle());
 
@@ -87,6 +86,15 @@ public class DondeComer extends Fragment {
                 super.onPageSelected(position);
             }
         });
+
+        viewPager.setAdapter(myadapter);
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            if (position == 0){
+                tab.setText(text1.toUpperCase());
+            } else if (position == 1){
+                tab.setText(text2.toUpperCase());
+            }
+        }).attach();
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

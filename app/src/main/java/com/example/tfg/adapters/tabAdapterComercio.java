@@ -24,8 +24,6 @@ public class tabAdapterComercio extends FragmentStateAdapter {
         switch (position) {
             case 1:
                 return ArtesaniaTienda.newInstance();
-            case 2:
-                return OtrosComercios.newInstance();
             default:
                 return AlimentacionTienda.newInstance();
         }
@@ -33,7 +31,7 @@ public class tabAdapterComercio extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 
 }
