@@ -86,6 +86,8 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             img1.setImageResource(R.drawable.planolaalbercaparking);
         }else if (selecteditem.equalsIgnoreCase("sitios de interés")){
             img1.setImageResource(R.drawable.planolaalbercamonumentos);
+        }else if (selecteditem.equalsIgnoreCase("servicios")){
+            img1.setImageResource(R.drawable.planolaalbercaservicios);
         }
     }
 

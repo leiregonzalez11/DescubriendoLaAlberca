@@ -9,8 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -33,8 +31,8 @@ public class Ajustes extends Fragment {
     Bundle args;
     Fragment fragment;
     Toolbar myToolbar;
-    ListView listView, listView2, listView3, listView4, listView5;
-    String opc1, opc2, opc3, opc4, opc5;
+    ListView listView, listView2, listView3, listView4;
+    String opc1, opc2, opc3, opc4;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -71,7 +69,6 @@ public class Ajustes extends Fragment {
             listView2 = v.findViewById(R.id.listview2);
             listView3 = v.findViewById(R.id.listview3);
             listView4 = v.findViewById(R.id.listview4);
-            listView5 = v.findViewById(R.id.listview5);
         }
         return v;
     }
@@ -150,21 +147,6 @@ public class Ajustes extends Fragment {
             fragment = DondeDormir.newInstance();
             cargarFragment(fragment);
         });
-
-        /*-----------
-         | Servicios |
-         -----------*/
-
-        opc5 = getResources().getString(R.string.servicios);
-
-        ArrayList<String> lista5 = new ArrayList<>();
-        lista5.add(opc5);
-
-        listViewAdapter myAdapter5 = new listViewAdapter(getContext(), R.layout.list_servicios, lista5);
-        listView5.setAdapter(myAdapter5);
-
-        listView5.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show());
 
     }
 
