@@ -82,12 +82,10 @@ public class Categorias extends Fragment implements View.OnClickListener{
             btnArte = v.findViewById(R.id.botonartesania);
             btnTrad = v.findViewById(R.id.botontradiciones);
             btnArqui = v.findViewById(R.id.botonarquitectura);
-            btnMonu = v.findViewById(R.id.botonmonumentos);
             btnFiesta = v.findViewById(R.id.botonfiestas);
             btnGastro = v.findViewById(R.id.botongastronomia);
             btnCultura = v.findViewById(R.id.botoncultura);
             btnRutas = v.findViewById(R.id.botonruta);
-            btnOtros = v.findViewById(R.id.botonotros);
             texto = v.findViewById(R.id.textidioma);
         }
         return v;
@@ -138,11 +136,11 @@ public class Categorias extends Fragment implements View.OnClickListener{
                 fragment = arquitecturaInicio.newInstance(args);
                 break;
 
-            case R.id.botonmonumentos:
+            /*case R.id.botonmonumentos:
                 categoria = "sitiosdeinteres";
                 args.putString("categoria", categoria);
                 fragment = monumentosInicio.newInstance(args);
-                break;
+                break;*/
 
             case R.id.botonfiestas:
                 categoria = "fiestas";
@@ -168,11 +166,11 @@ public class Categorias extends Fragment implements View.OnClickListener{
                 fragment = rutasInicio.newInstance(args);
                 break;
 
-            case R.id.botonotros:
+            /*case R.id.botonotros:
                 categoria = "otroslugares";
                 args.putString("categoria", categoria);
                 fragment = otrosLugaresInicio.newInstance(args);
-                break;
+                break;*/
         }
 
         cargarFragment(fragment);
@@ -228,10 +226,6 @@ public class Categorias extends Fragment implements View.OnClickListener{
         btnArqui.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArqui);
 
-        path = "categorias/" + idioma + "/monumentos-" + idioma + ".jpg";
-        btnMonu.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnMonu);
-
         path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
         btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
@@ -248,10 +242,6 @@ public class Categorias extends Fragment implements View.OnClickListener{
         path = "categorias/" + idioma + "/rutas-" + idioma + ".jpg";
         btnRutas.setOnClickListener(this);
         obtenerImagenFirebase(path, btnRutas);
-
-        path = "categorias/" + idioma + "/otros-" + idioma + ".jpg";
-        btnOtros.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnOtros);
 
     }
 

@@ -23,12 +23,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            tools:context=".anterior.categorias.categoriasActivity">
+            android:layout_marginBottom="10dp">
 
             <ImageButton
                 android:id="@+id/botonhistoria"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:background="@color/white"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
@@ -42,7 +42,7 @@
             <ImageButton
                 android:id="@+id/botonartesania"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
@@ -55,7 +55,7 @@
             <ImageButton
                 android:id="@+id/botontradiciones"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
@@ -68,7 +68,7 @@
             <ImageButton
                 android:id="@+id/botonarquitectura"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:background="@color/white"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
@@ -78,11 +78,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/botonartesania"
                 tools:ignore="ContentDescription" />
 
-
             <ImageButton
-                android:id="@+id/botonmonumentos"
+                android:id="@+id/botongastronomia"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
@@ -90,73 +89,47 @@
                 app:layout_constraintEnd_toStartOf="@+id/botonfiestas"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/botontradiciones"
-                tools:targetApi="o"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/botonfiestas"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="70dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/botonmonumentos"
-                app:layout_constraintTop_toBottomOf="@+id/botonarquitectura"
-                tools:targetApi="o"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/botongastronomia"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="15dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/botoncultura"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/botonmonumentos"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/botoncultura"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botongastronomia"
-                app:layout_constraintTop_toBottomOf="@+id/botonfiestas"
+                app:layout_constraintTop_toBottomOf="@+id/botonarquitectura"
+                tools:targetApi="o"
                 tools:ignore="ContentDescription" />
 
-            <ImageButton
-                android:id="@+id/botonruta"
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/botonotros"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/botoncultura"
-                tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/botonotros"
+                android:id="@+id/botoncultura"
                 android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="70dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/botonruta"
-                app:layout_constraintTop_toBottomOf="@+id/botoncultura"
+                app:layout_constraintTop_toBottomOf="@+id/botonfiestas"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/botonruta"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/botoncultura"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/botongastronomia"
                 tools:ignore="ContentDescription" />
 
             <TextView
