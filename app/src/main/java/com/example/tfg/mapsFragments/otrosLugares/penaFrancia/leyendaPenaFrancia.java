@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,7 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaDeFrancia;
+import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 
 public class leyendaPenaFrancia extends Fragment {
 

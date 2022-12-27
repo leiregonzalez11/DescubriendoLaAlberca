@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares;
+package com.example.tfg.mapsFragments.otrosLugares;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,29 +14,20 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.recetasTipicas;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.turroneras;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.historiaPenaFrancia;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.leyendaPenaFrancia;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia.monumentosPenaFrancia;
-import com.example.tfg.navigationmenu.Categorias;
+import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.historiaPenaFrancia;
+import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.leyendaPenaFrancia;
+import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.monumentosPenaFrancia;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 

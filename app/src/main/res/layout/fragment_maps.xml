@@ -19,12 +19,57 @@
                 android:id="@+id/mapa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/planolaalberca" />
+                app:srcCompat="@drawable/planolaalbercabasico"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="210dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.964"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <Spinner
+                    android:id="@+id/spinnerMapa"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/black" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/amiri"
+                android:text="Pulsa sobre los iconos para más información"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.176"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="1.0">
+
+            </TextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

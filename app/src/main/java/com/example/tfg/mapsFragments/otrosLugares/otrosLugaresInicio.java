@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.principal;
+package com.example.tfg.mapsFragments.otrosLugares;
 
 import android.os.Bundle;
 import com.example.tfg.R;
@@ -16,9 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.listViewAdapter;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaDeFrancia;
 import com.example.tfg.navigationmenu.Categorias;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.otrosPueblos;
 
 public class otrosLugaresInicio extends Fragment {
 

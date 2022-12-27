@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

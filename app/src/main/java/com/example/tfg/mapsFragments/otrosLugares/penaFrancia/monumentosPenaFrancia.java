@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,21 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
-import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
-import com.example.tfg.categoriasFragments.principal.culturaInicio;
-import com.example.tfg.categoriasFragments.principal.fiestasInicio;
-import com.example.tfg.categoriasFragments.principal.gastronomiaInicio;
-import com.example.tfg.categoriasFragments.principal.historiaInicio;
-import com.example.tfg.categoriasFragments.principal.monumentosInicio;
-import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
-import com.example.tfg.categoriasFragments.principal.rutasInicio;
-import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaDeFrancia;
+import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 

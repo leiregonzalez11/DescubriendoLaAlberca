@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaFrancia;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.secundarias.otrosLugares.penaDeFrancia;
 
 public class santuario extends Fragment implements View.OnClickListener{
 

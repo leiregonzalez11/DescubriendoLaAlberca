@@ -1,4 +1,4 @@
-package com.example.tfg.categoriasFragments.secundarias.otrosLugares;
+package com.example.tfg.mapsFragments.otrosLugares;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
-import com.example.tfg.categoriasFragments.principal.otrosLugaresInicio;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
