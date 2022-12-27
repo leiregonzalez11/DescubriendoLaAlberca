@@ -17,24 +17,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Maps extends Fragment {
 
-    SupportMapFragment mapFragment;
-
-    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
-    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-        /**
-         * Manipula el mapa una vez haya sido creado.
-         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
-         */
-        @Override
-        public void onMapReady(GoogleMap googleMap) {
-            // Añadimos un marcador a la ubicación elegida y hacemos zoom
-            LatLng location = new LatLng(40.48890, -6.11050);
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.3f));
-            //Tipo de mapa: Hibrido
-            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        }
-    };
-
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
@@ -66,7 +48,7 @@ public class Maps extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_maps, container, false);
         if(v != null){
-            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+
         }
         return v;
     }
@@ -77,10 +59,6 @@ public class Maps extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Mapa
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
-        }
     }
 
 }

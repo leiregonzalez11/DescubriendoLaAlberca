@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mapsinicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mapa de La Alberca"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/alex_brush"
+                app:layout_constraintBottom_toTopOf="mapa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/mapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mapsinicio"
+                app:srcCompat="@drawable/planolaalberca" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

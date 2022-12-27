@@ -8,9 +8,6 @@
     android:background="#fff"
     tools:context=".activity_splash_screen">
 
-    <!--THIS IS IMAGEVIEW FOR OUR IMAGE IN SPLASH SCREEN-->
-    <!--YOU CAN ADD YOUR IMAGE TO DRAWABLES.
-        HERE geeksforgeeks IS THE NAME OF IMAGE-->
     <ImageView
         android:id="@+id/SplashScreenImage"
         android:layout_width="300dp"
