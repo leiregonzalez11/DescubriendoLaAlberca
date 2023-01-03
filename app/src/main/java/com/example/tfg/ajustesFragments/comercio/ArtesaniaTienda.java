@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +17,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustesFragments.DondeDormir;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,8 +74,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        //TODO: CAMBIAR A COMERCIOS
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
+        lista1 = dbHelper.obtenerlistaComercios("comercio", "artesania");
 
         editsearch.setOnQueryTextListener(this);
 
@@ -100,7 +97,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
 
     @Override
     public boolean onQueryTextChange(String s) {
-        myAdapter.getFilter().filter(s);
+        if (!s.equalsIgnoreCase("")) myAdapter.getFilter().filter(s);
         return false;
     }
 

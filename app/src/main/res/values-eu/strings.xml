@@ -111,7 +111,7 @@
     <string name="horario2">Larunbata : 11:30–13:30 / 16:00–19:00 \n Igandea: 11:30–13:30</string>
     <string name="precio">Prezioak:</string>
     <string name="precio2">Orokorra: 2,5€ / Taldeak: 2€</string>
-    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="pueblos">Sierra de Franciako herriak</string>
     <string name="batuecas">Las Batuecas Harana</string>
     <string name="otras_tradiciones">Beste tradizioak eta elezaharrak</string>
     <string name="ingredientes">OSAGAIAK \n</string>
@@ -119,6 +119,7 @@
     <string name="recetas_intro">Sierra de Franciako gastronomia bere gisatu eta jakietarako erabiltzen dituen produktuen sukaldaritza-balio handiagatik nabarmentzen da, kalitate handiko elaborazioak eta produktuak sortzen baititu, eta horregatik dira hain ezagunak mendilerroko errezetak. \n</string>
     <string name="donde_comer_intro">La Alberca asko eta ondo jaten den herri bat da. Plater tradizionalak, txingarretan egindako haragiak, etxeko postreak, zerrako ardoak,tapak… Ostalariek egunez egun irekitzen dituzte beren lokaletako ateak, bisitariari etxe bakoitzeko onena eskaintzeko.\n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
+    <string name="infomaps">Sakatu ikonoen gainean informazio gehiagorako</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -180,6 +181,11 @@
         <item>Villanueva del Conde</item>
     </string-array>
 
-
+    <string-array name="opcionesmapa">
+        <item>Parking-ak</item>
+        <item>Zerbitzuak</item>
+        <item>Interes guneak</item>
+        <item>Ingurualdeak</item>
+    </string-array>
 
 </resources>

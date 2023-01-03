@@ -291,25 +291,25 @@ INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, latRest, lo
 //                      ----COMERCIO----                       |
 //--------------------------------------------------------------
 //
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Supermercado Rita','923 41 50 64','Calle Puente 5','40.48898575068656', '-6.110166603448417');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Supermercado Covirán','901 11 69 95','Avenida Batuecas 2','40.49072120428466', '-6.111944820744922');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Supermercado H.G','635 28 36 82','Carretera Mogarraz, 1','40.49104005755068', '-6.1115709878632964');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','La Alberca Sabores','No Disponible','Calle Tablado 1','40.48911276343381', '-6.110405693765042');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Cárnicas Madroñal de la Sierra','923 41 52 62','Plaza Mayor, 0','40.4896758389351', '-6.10963125705376');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Carnicería Herederos De Fermín','923415265','Calle Tablado 45','40.49043530588495', '-6.111366301917484');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Alimentación Mar-San','No Disponible','Calle Barrio Nuevo 2','40.48842692056495', '-6.110628416264399');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('supermercado','Ibéricos Doña Consuelo','923 05 25 57','Calle Puente 3','40.48901964870328','-6.1102409050512865');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Embutidos Fermin','923 41 51 35','Carretera Salamanca Km 77,3','40.49611891131886', '-6.109600705515678');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Embutidos Basilio Hoyos','923 41 50 28','Avenida Peña de Francia 3 Bajo','40.48809180062033', '-6.113211366785214');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Jamones y Embutidos Josefa Hoyos','923 41 52 61','Avenida Peña de Francia, 0','40.490210280942506', '-6.115386819415001');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Garcigrande de Bellota','923 41 52 12','Calle Tablado 9','40.48946760924945', '-6.110490183349131');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Embutidos Casa Eusebio','No Disponible','Calle Tablado 30','40.48999332455257', '-6.110692229125269');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Jamones Andrés Becerro E Hijos','No Disponible','Calle Tablado 64','40.49037980080051', '-6.1111637865562045');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('embutidos','Jamones Julián Becerro','917 05 61 70','Calle Luciano Barcala 1','40.49025375832315', '-6.111103525889237');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('tiendasespecializadas','La despensa del Solano','636 83 14 33','Plaza de la Iglesia 3','40.48862605458757', '-6.11039043870135');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('tiendasespecializadas','El Pan Negro de Mariluz','923 41 54 68','Calle Tablado 13','40.49042612661173', '-6.111540813005463');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('tiendasespecializadas','Reina Sierra de Francia','675 39 45 93','Plaza de la Iglesia 32','40.48827104495236', '-6.110377380391388');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('tiendasespecializadas','Panadería La Puente','923 41 50 02','Calle Puente 35','40.48820194248211', '-6.109114063287667');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Supermercado Rita','923 41 50 64','Calle Puente 5','40.48898575068656', '-6.110166603448417');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Supermercado Covirán','901 11 69 95','Avenida Batuecas 2','40.49072120428466', '-6.111944820744922');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Supermercado H.G','635 28 36 82','Carretera Mogarraz, 1','40.49104005755068', '-6.1115709878632964');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','La Alberca Sabores','No Disponible','Calle Tablado 1','40.48911276343381', '-6.110405693765042');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Cárnicas Madroñal de la Sierra','923 41 52 62','Plaza Mayor, 0','40.4896758389351', '-6.10963125705376');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Carnicería Herederos De Fermín','923415265','Calle Tablado 45','40.49043530588495', '-6.111366301917484');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Alimentación Mar-San','No Disponible','Calle Barrio Nuevo 2','40.48842692056495', '-6.110628416264399');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Ibéricos Doña Consuelo','923 05 25 57','Calle Puente 3','40.48901964870328','-6.1102409050512865');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Embutidos Fermin','923 41 51 35','Carretera Salamanca Km 77,3','40.49611891131886', '-6.109600705515678');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Embutidos Basilio Hoyos','923 41 50 28','Avenida Peña de Francia 3 Bajo','40.48809180062033', '-6.113211366785214');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Jamones y Embutidos Josefa Hoyos','923 41 52 61','Avenida Peña de Francia, 0','40.490210280942506', '-6.115386819415001');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Garcigrande de Bellota','923 41 52 12','Calle Tablado 9','40.48946760924945', '-6.110490183349131');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Embutidos Casa Eusebio','No Disponible','Calle Tablado 30','40.48999332455257', '-6.110692229125269');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Jamones Andrés Becerro E Hijos','No Disponible','Calle Tablado 64','40.49037980080051', '-6.1111637865562045');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Jamones Julián Becerro','917 05 61 70','Calle Luciano Barcala 1','40.49025375832315', '-6.111103525889237');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','La despensa del Solano','636 83 14 33','Plaza de la Iglesia 3','40.48862605458757', '-6.11039043870135');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','El Pan Negro de Mariluz','923 41 54 68','Calle Tablado 13','40.49042612661173', '-6.111540813005463');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Reina Sierra de Francia','675 39 45 93','Plaza de la Iglesia 32','40.48827104495236', '-6.110377380391388');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Panadería La Puente','923 41 50 02','Calle Puente 35','40.48820194248211', '-6.109114063287667');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('artesania','Tienda Museo San Antonio','923 41 51 02','Calle Tablado 72','40.490621506550475', '-6.11134233162684');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('artesania','Artesanía La Alberca','No Disponible','Calle Tablado 68','40.4904460789802', '-6.111208221178729');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('artesania','Artesanía El Tablao','No Disponible','Calle Tablado 39','40.49012565599008', '-6.110908489289598');

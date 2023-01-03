@@ -109,7 +109,7 @@
     <string name="horario2">Saturdays: 11:30–13:30 / 16:00–19:00 \n  Sundays: 11:30–13:30</string>
     <string name="precio">Rate:</string>
     <string name="precio2">General: 2,5€ / Groups: 2€</string>
-    <string name="pueblos">Pueblos de la Sierra</string>
+    <string name="pueblos">Villages of the Sierra de Francia</string>
     <string name="batuecas">Las Batuecas Valley</string>
     <string name="otras_tradiciones">Other traditions and legends</string>
     <string name="ingredientes">INGREDIENTS \n</string>
@@ -117,6 +117,7 @@
     <string name="recetas_intro">The gastronomy of the Sierra de Francia stands out for the high culinary value of the products used for its stews and delicacies, giving rise to preparations and products of the highest quality, which is why the recipes of the Sierra are so popular. \n</string>
     <string name="donde_comer_intro">La Alberca is a village where you can eat a lot and eat well. Traditional dishes, grilled meats, homemade desserts, wines from the Sierra de Francia, tapas… a great gastronomic offer offered by the innkeepers who open the doors of their establishments every day to offer visitors the best of each house. \n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
+    <string name="infomaps">Click on the icons for more information</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -176,6 +177,13 @@
         <item>Sotoserrano</item>
         <item>Valero</item>
         <item>Villanueva del Conde</item>
+    </string-array>
+
+    <string-array name="opcionesmapa">
+        <item>Parkings</item>
+        <item>Services</item>
+        <item>Sites of Interest</item>
+        <item>Surroundings</item>
     </string-array>
 
 </resources>

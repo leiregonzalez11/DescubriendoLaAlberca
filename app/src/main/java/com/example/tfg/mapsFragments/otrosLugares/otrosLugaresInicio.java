@@ -17,6 +17,7 @@ import com.example.tfg.adapters.listViewAdapter;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tfg.navigationmenu.Categorias;
+import com.example.tfg.navigationmenu.Maps;
 
 public class otrosLugaresInicio extends Fragment {
 
@@ -51,7 +52,7 @@ public class otrosLugaresInicio extends Fragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
+            Fragment fragment = Maps.newInstance();
             cargarFragment(fragment);
         });
 
@@ -59,11 +60,10 @@ public class otrosLugaresInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+        args.putString("categoria", "otroslugares");
 
     }
 
@@ -76,7 +76,7 @@ public class otrosLugaresInicio extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_otros, container, false);
         if(v != null){
-            listView = v.findViewById(R.id.listviewhurdes);
+            listView = v.findViewById(R.id.listviewmajadas);
             listView2 = v.findViewById(R.id.listviewpeñafrancia);
             listView3 = v.findViewById(R.id.listviewpueblos);
             listView4 = v.findViewById(R.id.listviewbatuecas);
@@ -89,7 +89,7 @@ public class otrosLugaresInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        opc1 = "Las Hurdes Altas";
+        opc1 = "Majadas Viejas";
         opc2 = "Peña de Francia";
         opc3 = getString(R.string.pueblos_de_la_sierra);
         opc4 = getString(R.string.batuecas);
@@ -128,7 +128,6 @@ public class otrosLugaresInicio extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc3, Toast.LENGTH_LONG).show();
             Fragment fragment = otrosPueblos.newInstance(args);
             cargarFragment(fragment);
         });

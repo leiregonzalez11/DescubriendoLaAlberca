@@ -76,8 +76,7 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        //TODO: CAMBIAR A COMERCIOS
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
+        lista1 = dbHelper.obtenerlistaComercios("comercio", "alimentacion");
 
         editsearch.setOnQueryTextListener(this);
 

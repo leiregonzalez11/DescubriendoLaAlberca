@@ -19,6 +19,8 @@ import com.example.tfg.R;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.navigationmenu.Inicio;
+import com.example.tfg.navigationmenu.Maps;
+
 import java.util.Locale;
 
 public class Idiomas extends Fragment {
@@ -109,6 +111,9 @@ public class Idiomas extends Fragment {
                 break;
             case "ajustes":
                 fragment = Ajustes.newInstance();
+                break;
+            case "maps":
+                fragment = Maps.newInstance();
                 break;
         }
 

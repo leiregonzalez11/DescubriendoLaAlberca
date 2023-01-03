@@ -477,5 +477,25 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    //Tabla Comercios
+
+    //Tabla Alojamientos
+    public ArrayList<String> obtenerlistaComercios(String tabla, String categoriaCom){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        ArrayList<String> descr = new ArrayList<>();
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreCom FROM " + tabla + "" +
+                " WHERE categoriaCom LIKE '%" + categoriaCom + "';", null);
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr.add(descrip);
+        }
+        c.close();
+        return descr;
+    }
+
 
 }

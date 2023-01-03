@@ -124,6 +124,7 @@
     <string name="donde_comer_intro">La Alberca es un pueblo donde se come mucho y bien. Platos tradicionales, carnes a la brasa, postres caseros, vinos de la sierra,
         tapas… una gran oferta gastronómica ofrecida por los hosteleros del pueblo que día a día abren las puertas de sus locales para brindar al visitante lo mejor de cada casa. \n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
+    <string name="infomaps">Pulsa sobre los iconos para más información</string>
 
 
     <string-array name="trajes_serranos">
@@ -196,10 +197,10 @@
     </string-array>
 
     <string-array name="opcionesmapa">
-        <item>Parking</item>
+        <item>Parkings</item>
         <item>Servicios</item>
         <item>Sitios de interés</item>
-        <item>Sierra de Francia</item>
+        <item>Alrededores</item>
     </string-array>
 
 

@@ -21,6 +21,7 @@ import com.example.tfg.R;
 import com.example.tfg.navigationmenu.Ajustes;
 import com.example.tfg.navigationmenu.Categorias;
 import com.example.tfg.navigationmenu.Inicio;
+import com.example.tfg.navigationmenu.Maps;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.Objects;
 
@@ -134,6 +135,9 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
                 break;
             case "ajustes":
                 fragment = Ajustes.newInstance();
+                break;
+            case "maps":
+                fragment = Maps.newInstance();
                 break;
         }
 
