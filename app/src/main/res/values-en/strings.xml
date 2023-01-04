@@ -137,6 +137,7 @@
     <string name="santocristo">Saint Christ\'s Exterior Chapel</string>
     <string name="convento">The Convent</string>
     <string name="el_pozo_verde">The green well</string>
+    <string name="acerca_de">About the App</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

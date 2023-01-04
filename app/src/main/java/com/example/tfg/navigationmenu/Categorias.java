@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -179,25 +181,32 @@ public class Categorias extends Fragment implements View.OnClickListener{
         inflater.inflate(R.menu.menuusuario, menu);
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "ShowToast"})
     public boolean onOptionsItemSelected(MenuItem menuItem) {
 
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
                 //Creamos el fragmento
                 fragment = FormularioDeContacto.newInstance(argsMenu);
+                cargarFragment(fragment);
                 break;
 
             case R.id.menu_idioma:
                 //Creamos el fragmento
                 fragment = Idiomas.newInstance(argsMenu);
+                cargarFragment(fragment);
+                break;
+
+            case R.id.menu_acercade:
+                //Creamos el fragmento
+                //fragment = Idiomas.newInstance(args);
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
 
-        cargarFragment(fragment);
+
 
         return true;
     }

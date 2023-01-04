@@ -3,11 +3,15 @@
 
     <item
         android:id="@+id/menu_idioma"
-        android:title="@string/ajustes2" />
+        android:title="@string/ajustes2"/>
 
     <item
         android:id="@+id/menu_contacto"
         android:title="@string/contacto" />
+
+    <item
+        android:id="@+id/menu_acercade"
+        android:title="@string/acerca_de" />
 
 
 </menu>

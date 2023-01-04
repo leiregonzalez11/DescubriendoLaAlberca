@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
@@ -124,7 +125,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         inflater.inflate(R.menu.menuusuario, menu);
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "ShowToast"})
     public boolean onOptionsItemSelected(MenuItem menuItem) {
 
         Fragment fragment = null;
@@ -133,18 +134,23 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             case R.id.menu_contacto:
                 //Creamos el fragmento
                 fragment = FormularioDeContacto.newInstance(argsMenu);
+                cargarFragment(fragment);
                 break;
 
             case R.id.menu_idioma:
                 //Creamos el fragmento
                 fragment = Idiomas.newInstance(argsMenu);
+                cargarFragment(fragment);
+                break;
+
+            case R.id.menu_acercade:
+                //Creamos el fragmento
+                //fragment = Idiomas.newInstance(args);
                 break;
 
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
-
-        cargarFragment(fragment);
 
         return true;
     }
