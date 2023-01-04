@@ -120,6 +120,25 @@
     <string name="donde_comer_intro">La Alberca asko eta ondo jaten den herri bat da. Plater tradizionalak, txingarretan egindako haragiak, etxeko postreak, zerrako ardoak,tapak… Ostalariek egunez egun irekitzen dituzte beren lokaletako ateak, bisitariari etxe bakoitzeko onena eskaintzeko.\n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
     <string name="infomaps">Sakatu ikonoen gainean informazio gehiagorako</string>
+    <string name="penafrancia">Peña de Francia</string>
+    <string name="hurdes">Las Hurdes Iparraldea</string>
+    <string name="altarmayor">Aldare Nagusia</string>
+    <string name="nave_izquierda">Ezkerreko nabea</string>
+    <string name="nave_derecha">Eskuineko nabea</string>
+    <string name="el_coro">Korua</string>
+    <string name="la_iglesia">Eliza</string>
+    <string name="quevisitar">¿Zer bisitatu?</string>
+    <string name="descubrimientovirgen">Ama Birjinaren aurkikuntza</string>
+    <string name="miradorsantodomingo">Santo Domingoko begiratokia</string>
+    <string name="capillablanca">La Blanca kapera</string>
+    <string name="santuario">Santutegia</string>
+    <string name="sanandres">San Andresen Kanpoko Kapera</string>
+    <string name="rollo">Rollo-a</string>
+    <string name="hospederia">Ostatua</string>
+    <string name="balconsantiago">Santiagoko balkoia</string>
+    <string name="santocristo">Santo Kristoren Kanpoko Kapera</string>
+    <string name="convento">Komentua</string>
+    <string name="el_pozo_verde">Putzu berdea</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

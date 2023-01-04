@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,7 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 
@@ -23,6 +26,9 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
     private String idioma;
     private String categoria;
     private Fragment fragment;
+    private String [] datos;
+    private GestorDB dbHelper;
+    private TextView text1, text2, text3;
     private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8;
 
     /**
@@ -57,6 +63,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
 
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
+        args.putString("back", "true");
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -83,6 +90,10 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
             btn6 = v.findViewById(R.id.hospederia);
             btn7 = v.findViewById(R.id.lablanca);
             btn8 = v.findViewById(R.id.balcon);
+            text1 = v.findViewById(R.id.monumentostext1);
+            text2 = v.findViewById(R.id.monumentostext2);
+            text3 = v.findViewById(R.id.monumentostext3);
+
         }
         return v;
     }
@@ -102,6 +113,8 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
 
+        dbHelper = new GestorDB(getContext());
+
     }
 
 
@@ -117,7 +130,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
         fragmentTransaction.commit();
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     @Override
     public void onClick(View view) {
 
@@ -127,10 +140,47 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
 
             case R.id.santuario:
                 fragment = santuario.newInstance(args);
+                cargarFragment(fragment);
+                break;
+            case R.id.santodomingo:
+                datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text1.requestFocus();
+                text2.setText("");
+                text3.setText("");
+                break;
+            case R.id.lablanca:
+                datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", categoria, "peñadefrancia", 3);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text1.requestFocus();
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                break;
+
+            case R.id.sanandresexterior:
+                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordesanandrés", categoria, "peñadefrancia", 2);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text1.requestFocus();
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText("");
+                break;
+
+            case R.id.santocristoexterior:
+                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordelsantocristo", categoria, "peñadefrancia", 2);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text1.requestFocus();
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText("");
+                break;
+
+            case R.id.balcon:
+                datos = dbHelper.obtenerInfoPena(idioma, "balcóndesantiago", categoria, "peñadefrancia", 2);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text1.requestFocus();
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText("");
                 break;
 
         }
-
-        cargarFragment(fragment);
     }
 }

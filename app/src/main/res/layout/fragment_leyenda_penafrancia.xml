@@ -37,7 +37,7 @@
                 android:layout_marginBottom="0dp"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
-                android:text= "El Descubrimiento de la Virgen"
+                android:text= "@string/descubrimientovirgen"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
                 android:textSize="33sp"

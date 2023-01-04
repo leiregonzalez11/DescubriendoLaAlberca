@@ -1,57 +1,71 @@
-package com.example.tfg.ajustesFragments.comercio;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.adapters.listViewAdapter;
-import com.example.tfg.ajustesFragments.DondeDormir;
 
-import java.util.ArrayList;
-import java.util.List;
+public class elrollo extends Fragment implements View.OnClickListener {
 
-public class OtrosComercios extends Fragment implements SearchView.OnQueryTextListener {
-
-    List<String> lista1 = new ArrayList<>();
-    String nombreTienda;
-    Bundle args;
-    listViewAdapter myAdapter;
-    ListView listView;
-    SearchView editsearch;
+    private Bundle args;
+    private String idioma;
+    private String categoria;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static OtrosComercios newInstance() {
-        return new OtrosComercios();
+    public static elrollo newInstance(Bundle args) {
+        elrollo fragment = new elrollo();
+        if (args != null){
+            fragment.setArguments(args);
+        }
+        return fragment;
     }
 
     /** Required empty public constructor */
-    public OtrosComercios() {}
+    public elrollo() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+
         args = new Bundle();
-        //TODO: Cambiar a COMERCIO
-        args.putString("categoria", "alojamiento");
+
+        if (getArguments() != null) {
+            idioma = getArguments().getString("idioma");
+            categoria = getArguments().getString("categoria");
+        }
+
+        args.putString("idioma", idioma);
+        args.putString("categoria", categoria);
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view1 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = monumentosPenaFrancia.newInstance(args);
+            cargarFragment(fragment);
+        });
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -60,49 +74,20 @@ public class OtrosComercios extends Fragment implements SearchView.OnQueryTextLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_otros_comercios, container, false);
-        if(v != null){
-            listView = v.findViewById(R.id.listviewOtrosComercios);
-            editsearch = (SearchView) v.findViewById(R.id.svOtros);
+        View v = inflater.inflate(R.layout.fragment_elrollo, container, false);
+        if (v != null){
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @Override
     @SuppressLint("SetTextI18n")
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        //TODO: CAMBIAR A COMERCIOS
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
-
-        editsearch.setOnQueryTextListener(this);
-
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_otherstores, lista1);
-        listView.setAdapter(myAdapter);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Obtenemos el nombre del elemento pulsado y cargamos su información
-            nombreTienda = adapterView.getItemAtPosition(position).toString();
-            args.putString("nombreCom", nombreTienda);
-            Fragment fragment = Tienda.newInstance(args);
-            cargarFragment(fragment);
-        });
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        myAdapter.getFilter().filter(s);
-        return false;
-    }
 
     private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
@@ -116,4 +101,18 @@ public class OtrosComercios extends Fragment implements SearchView.OnQueryTextLi
         fragmentTransaction.commit();
     }
 
+    @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
+    @Override
+    public void onClick(View view) {
+
+        Button btn = (Button) view;
+
+        switch (btn.getId()){
+
+            case R.id.iglesiapeña:
+                Fragment fragment = iglesia.newInstance(args);
+                cargarFragment(fragment);
+                break;
+        }
+    }
 }

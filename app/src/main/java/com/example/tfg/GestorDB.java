@@ -20,7 +20,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 6;
     private final Context context;
     private boolean seguir = true;
 
@@ -240,7 +240,6 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             for (int j = 0; j < 5; j++){
                 descrip = c.getString(j);
-                System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[i] = descrip;
                 i++;
             }
@@ -261,7 +260,6 @@ public class GestorDB extends SQLiteOpenHelper {
                 " WHERE categoriaAloj = '" + categoriaAloj + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
-            System.out.println("DESCRIIIIIIIP" + descrip);
             descr.add(descrip);
         }
         c.close();
@@ -280,7 +278,6 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             for (int j = 0; j < 4; j++){
                 descrip = c.getString(j);
-                System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[j] = descrip;
             }
         }
@@ -298,8 +295,6 @@ public class GestorDB extends SQLiteOpenHelper {
                 " WHERE nombreAloj = '" + nombreAloj + "';", null);
         while (c.moveToNext()){
             punt = c.getDouble(0);
-            System.out.println("DESCRIIIIIIIP" + punt);
-
         }
         c.close();
         return punt;
@@ -316,7 +311,6 @@ public class GestorDB extends SQLiteOpenHelper {
                 " WHERE categoriaRest = '" + categoriaRest+ "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
-            System.out.println("DESCRIIIIIIIP" + descrip);
             descr.add(descrip);
         }
         c.close();
@@ -335,7 +329,6 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             for (int j = 0; j < 4; j++){
                 descrip = c.getString(j);
-                System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[j] = descrip;
             }
         }
@@ -478,8 +471,6 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Comercios
-
-    //Tabla Alojamientos
     public ArrayList<String> obtenerlistaComercios(String tabla, String categoriaCom){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -492,6 +483,26 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr.add(descrip);
+        }
+        c.close();
+        return descr;
+    }
+
+    public String[] obtenerDatosTienda (String tabla, String nombreCom) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[4];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom, latCom, lonCom FROM " + tabla + "" +
+                " WHERE nombreCom = '" + nombreCom + "';", null);
+        while (c.moveToNext()){
+            for (int j = 0; j < 4; j++){
+                descrip = c.getString(j);
+                System.out.println("DESCRIIIIIIIP" + descrip);
+                descr[j] = descrip;
+            }
         }
         c.close();
         return descr;

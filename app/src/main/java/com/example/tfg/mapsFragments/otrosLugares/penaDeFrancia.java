@@ -10,13 +10,11 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
@@ -28,6 +26,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -41,11 +40,10 @@ public class penaDeFrancia extends Fragment {
     private Bundle args;
     private double lat, lon;
     private Fragment fragment;
-    private TextView text1, text2, text3, text4, text5;
+    private TextView text1, text2, text3, text4, text5, text6;
     private ListView listView, listView2, listView3;
     private SupportMapFragment mapFragment;
-    private String idioma;
-    private String categoria;
+    private String idioma, categoria, back;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -92,7 +90,10 @@ public class penaDeFrancia extends Fragment {
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
             categoria = getArguments().getString("categoria");
+            back = getArguments().getString("back");
         }
+
+        System.out.println(back);
 
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
@@ -119,6 +120,7 @@ public class penaDeFrancia extends Fragment {
             text3 = v.findViewById(R.id.pena13);
             text4 = v.findViewById(R.id.pena14);
             text5 = v.findViewById(R.id.pena15);
+            text6 = v.findViewById(R.id.pena16);
             listView = v.findViewById(R.id.listviewPena1);
             listView2 = v.findViewById(R.id.listviewPena2);
             listView3 = v.findViewById(R.id.listviewPena3);
@@ -134,6 +136,10 @@ public class penaDeFrancia extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         GestorDB dbHelper = new GestorDB(getContext());
+
+        if (back.equalsIgnoreCase("true")){
+            text6.requestFocus();
+        }
 
         String[] datos = dbHelper.obtenerInfoPena(idioma, "inicio", categoria, "peñadefrancia", 5);
 
@@ -174,7 +180,7 @@ public class penaDeFrancia extends Fragment {
          | ¿Qué visitar? |
          ---------------*/
 
-        String opc2 = "¿Qué visitar?";
+        String opc2 = getString(R.string.quevisitar);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);
@@ -191,7 +197,7 @@ public class penaDeFrancia extends Fragment {
          | Leyenda |
          ---------*/
 
-        String opc3 = "El Descubrimiento de la Virgen";
+        String opc3 = getString(R.string.descubrimientovirgen);
 
         ArrayList<String> lista3 = new ArrayList<>();
         lista3.add(opc3);

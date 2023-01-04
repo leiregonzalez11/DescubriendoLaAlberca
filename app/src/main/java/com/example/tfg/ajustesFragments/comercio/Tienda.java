@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.Comercio;
 import com.example.tfg.ajustesFragments.DondeComer;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -78,7 +79,7 @@ public class Tienda extends DialogFragment {
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = DondeComer.newInstance();
+            Fragment fragment = Comercio.newInstance();
             cargarFragment(fragment);
         });
         tienda = requireArguments().getString("nombreCom");
@@ -99,7 +100,6 @@ public class Tienda extends DialogFragment {
             text1 = v.findViewById(R.id.nombreCom);
             tel = v.findViewById(R.id.telcom);
             ubi = v.findViewById(R.id.ubicom);
-            ratingBar = v.findViewById(R.id.ratingBarCom);
         }
         return v;
     }
@@ -122,18 +122,13 @@ public class Tienda extends DialogFragment {
         //Titulo
         text1.setText(tienda);
 
-        //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj(categoria, tienda);
-        ratingBar.setRating((float) punt);
-
-        //TODO: CAMBIAR A COMERCIO
-        String [] datos = dbHelper.obtenerDatosAloj(categoria, tienda);
+        String [] datos = dbHelper.obtenerDatosTienda(categoria, tienda);
 
         telefono = datos[0];
-        lat = Double.parseDouble(datos[1]);
-        lon = Double.parseDouble(datos[2]);
+        lat = Double.parseDouble(datos[2]);
+        lon = Double.parseDouble(datos[3]);
 
-        ubi.setText(datos[3]);
+        ubi.setText(datos[1]);
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);

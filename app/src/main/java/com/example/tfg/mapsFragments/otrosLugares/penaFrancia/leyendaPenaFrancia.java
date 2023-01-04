@@ -62,6 +62,7 @@ public class leyendaPenaFrancia extends Fragment {
 
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
+        args.putString("back", "true");
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);

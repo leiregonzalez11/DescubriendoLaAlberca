@@ -148,6 +148,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 String [] datos = dbHelper.obtenerInfoPena(idioma, "altarmayor", categoria, "peñadefrancia", 1);
                 img1.setImageResource(R.drawable.planoiglesiacentro);
                 text4.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                img1.requestFocus();
                 text5.setText("");
                 text6.setText("");
                 text7.setText("");
@@ -157,6 +158,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 String [] datos1 = dbHelper.obtenerInfoPena(idioma, "coro", categoria, "peñadefrancia", 1);
                 img1.setImageResource(R.drawable.planoiglesiacoro);
                 text4.setText(datos1[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                img1.requestFocus();
                 text5.setText("");
                 text6.setText("");
                 text7.setText("");
@@ -166,6 +168,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 String [] datos2 = dbHelper.obtenerInfoPena(idioma, "naveizquierda", categoria, "peñadefrancia", 5);
                 img1.setImageResource(R.drawable.planoiglesiaizqda);
                 text4.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                img1.requestFocus();
                 text5.setText(datos2[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText(datos2[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text7.setText(datos2[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -175,6 +178,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha", categoria, "peñadefrancia", 2);
                 img1.setImageResource(R.drawable.planoiglesiadcha);
                 text4.setText(datos3[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                img1.requestFocus();
                 text5.setText(datos3[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText("");
                 text7.setText("");

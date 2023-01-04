@@ -9,7 +9,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.tfg.ajustesFragments.comercio.AlimentacionTienda;
 import com.example.tfg.ajustesFragments.comercio.ArtesaniaTienda;
-import com.example.tfg.ajustesFragments.comercio.OtrosComercios;
 
 public class tabAdapterComercio extends FragmentStateAdapter {
 

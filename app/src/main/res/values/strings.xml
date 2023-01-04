@@ -125,6 +125,25 @@
         tapas… una gran oferta gastronómica ofrecida por los hosteleros del pueblo que día a día abren las puertas de sus locales para brindar al visitante lo mejor de cada casa. \n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
     <string name="infomaps">Pulsa sobre los iconos para más información</string>
+    <string name="penafrancia">Peña de Francia</string>
+    <string name="hurdes">Norte de Las Hurdes</string>
+    <string name="altarmayor">El altar mayor</string>
+    <string name="nave_izquierda">Nave Izquierda</string>
+    <string name="nave_derecha">Nave derecha</string>
+    <string name="el_coro">El coro</string>
+    <string name="la_iglesia">La Iglesia</string>
+    <string name="quevisitar">¿Qué visitar?</string>
+    <string name="descubrimientovirgen">El Descubrimiento de la Virgen</string>
+    <string name="miradorsantodomingo">Mirador de Santo Domingo</string>
+    <string name="capillablanca">Capilla de la Blanca</string>
+    <string name="santuario">El Santuario</string>
+    <string name="sanandres">Capilla Exterior de San Andrés</string>
+    <string name="rollo">El Rollo</string>
+    <string name="hospederia">HOSPEDERÍA</string>
+    <string name="balconsantiago">Balcón de Santiago</string>
+    <string name="santocristo">Capilla Exterior del santo cristo</string>
+    <string name="convento">El Convento</string>
+    <string name="el_pozo_verde">El pozo verde</string>
 
 
     <string-array name="trajes_serranos">
@@ -202,6 +221,8 @@
         <item>Sitios de interés</item>
         <item>Alrededores</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

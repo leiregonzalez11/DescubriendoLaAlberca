@@ -20,13 +20,13 @@ import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 
-public class santuario extends Fragment implements View.OnClickListener{
+public class santuario extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma;
     private String categoria;
     private Button btn1,btn2,btn3;
-    GestorDB dbHelper;
+    private GestorDB dbHelper;
     private TextView text1, text2, text3, text4, text5, text6;
 
     /**

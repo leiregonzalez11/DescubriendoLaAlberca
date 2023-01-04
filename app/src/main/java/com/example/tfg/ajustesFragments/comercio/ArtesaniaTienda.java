@@ -49,7 +49,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
         setHasOptionsMenu(false);
         args = new Bundle();
         //TODO: Cambiar a COMERCIO
-        args.putString("categoria", "alojamiento");
+        args.putString("categoria", "comercio");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -61,7 +61,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
         View v =  inflater.inflate(R.layout.fragment_artesania, container, false);
         if(v != null){
             listView = v.findViewById(R.id.listviewArtesania);
-            editsearch = (SearchView) v.findViewById(R.id.svArte);
+            editsearch = v.findViewById(R.id.svArte);
         }
         return v;
     }

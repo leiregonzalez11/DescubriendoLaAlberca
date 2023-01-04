@@ -50,8 +50,7 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        //TODO: Cambiar a COMERCIO
-        args.putString("categoria", "alojamiento");
+        args.putString("categoria", "comercio");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -63,7 +62,7 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
         View v =  inflater.inflate(R.layout.fragment_alimentacion, container, false);
         if(v != null){
             listView = v.findViewById(R.id.listviewAlimentacion);
-            editsearch = (SearchView) v.findViewById(R.id.svAlim);
+            editsearch = v.findViewById(R.id.svAlim);
         }
         return v;
     }

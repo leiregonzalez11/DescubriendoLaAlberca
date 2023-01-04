@@ -118,6 +118,25 @@
     <string name="donde_comer_intro">La Alberca is a village where you can eat a lot and eat well. Traditional dishes, grilled meats, homemade desserts, wines from the Sierra de Francia, tapas… a great gastronomic offer offered by the innkeepers who open the doors of their establishments every day to offer visitors the best of each house. \n</string>
     <string name="alborada">Las cárceles visitaba \n con caridad peregrina \n y su palabra divina \n a los presos confortaba. \n</string>
     <string name="infomaps">Click on the icons for more information</string>
+    <string name="penafrancia">Peña de Francia</string>
+    <string name="hurdes">North of Las Hurdes</string>
+    <string name="altarmayor">The main altar</string>
+    <string name="nave_izquierda">Left Nave</string>
+    <string name="nave_derecha">Right Nave</string>
+    <string name="el_coro">The Choir</string>
+    <string name="la_iglesia">The Church</string>
+    <string name="quevisitar">What to visit?</string>
+    <string name="descubrimientovirgen">The Discovery of the Virgin</string>
+    <string name="miradorsantodomingo">Santo Domingo viewpoint</string>
+    <string name="capillablanca">La Blanca Chapel</string>
+    <string name="santuario">The Sanctuary</string>
+    <string name="sanandres">St Andrew\'s Exterior Chapel </string>
+    <string name="rollo">The Rollo</string>
+    <string name="hospederia">Hostelry</string>
+    <string name="balconsantiago">Santiago\'s Balcony</string>
+    <string name="santocristo">Saint Christ\'s Exterior Chapel</string>
+    <string name="convento">The Convent</string>
+    <string name="el_pozo_verde">The green well</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

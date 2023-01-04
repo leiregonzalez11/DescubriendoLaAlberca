@@ -89,8 +89,8 @@ public class otrosLugaresInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        opc1 = "Majadas Viejas";
-        opc2 = "Peña de Francia";
+        opc1 = getString(R.string.hurdes);
+        opc2 = getString(R.string.penafrancia);
         opc3 = getString(R.string.pueblos_de_la_sierra);
         opc4 = getString(R.string.batuecas);
 
@@ -114,7 +114,7 @@ public class otrosLugaresInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Toast.makeText(getContext(), "Has pulsado: "+ opc2, Toast.LENGTH_LONG).show();
+            args.putString("back", "false");
             Fragment fragment = penaDeFrancia.newInstance(args);
             cargarFragment(fragment);
         });
