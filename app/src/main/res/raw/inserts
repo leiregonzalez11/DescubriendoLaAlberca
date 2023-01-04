@@ -258,6 +258,7 @@ INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj, p
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj, puntuacion, numTel) VALUES ('casarural', 'El Abuelo Felix','Calle Fuente Canal 2','40.489401','-6.111168', 4, 'No Disponible');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj, puntuacion, numTel) VALUES ('casarural', 'El Aserradero','Carretera de Mogarraz 4','40.4906561','-6.1106599', 4.6, '671 71 20 75');
 INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj, puntuacion, numTel) VALUES ('casarural', 'La Casa del Burro','Plaza de la Iglesia 19','40.4883885','-6.1097674',4.8, '625 75 58 19');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, latAloj, lonAloj, puntuacion, numTel) VALUES ('hospederia', 'Hospedería Peña de Francia', 'www.hospederiapenadefrancia.com', '40.51289110016651', '-6.168997180029729', 4.5, '923 16 40 00');
 //
 //--------------------------------------------------------------
 //                    ----RESTAURANTES----                     |
@@ -306,7 +307,6 @@ INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) V
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Embutidos Casa Eusebio','No Disponible','Calle Tablado 30','40.48999332455257', '-6.110692229125269');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Jamones Andrés Becerro E Hijos','No Disponible','Calle Tablado 64','40.49037980080051', '-6.1111637865562045');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Jamones Julián Becerro','917 05 61 70','Calle Luciano Barcala 1','40.49025375832315', '-6.111103525889237');
-INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','La despensa del Solano','636 83 14 33','Plaza de la Iglesia 3','40.48862605458757', '-6.11039043870135');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','El Pan Negro de Mariluz','923 41 54 68','Calle Tablado 13','40.49042612661173', '-6.111540813005463');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Reina Sierra de Francia','675 39 45 93','Plaza de la Iglesia 32','40.48827104495236', '-6.110377380391388');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom, latCom, lonCom) VALUES ('alimentacion','Panadería La Puente','923 41 50 02','Calle Puente 35','40.48820194248211', '-6.109114063287667');

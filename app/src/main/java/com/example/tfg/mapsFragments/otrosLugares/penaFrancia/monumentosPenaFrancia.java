@@ -24,9 +24,8 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
 
     private Bundle args;
     private String idioma;
-    private String categoria;
     private Fragment fragment;
-    private String [] datos;
+    private String categoria;
     private GestorDB dbHelper;
     private TextView text1, text2, text3;
     private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8;
@@ -142,8 +141,12 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 fragment = santuario.newInstance(args);
                 cargarFragment(fragment);
                 break;
+            case R.id.hospederia:
+                fragment = hospederia.newInstance(args);
+                cargarFragment(fragment);
+                break;
             case R.id.santodomingo:
-                datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
+                String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text1.requestFocus();
                 text2.setText("");
@@ -180,7 +183,6 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
                 break;
-
         }
     }
 }

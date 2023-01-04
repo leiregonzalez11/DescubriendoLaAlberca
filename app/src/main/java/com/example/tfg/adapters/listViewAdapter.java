@@ -47,6 +47,7 @@ public class listViewAdapter extends BaseAdapter implements Filterable {
         return position;
     }
 
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, final ViewGroup parent) {
 
@@ -57,7 +58,7 @@ public class listViewAdapter extends BaseAdapter implements Filterable {
         view = layoutInflater.inflate(this.layout, null);
 
         // Valor actual según la posición
-        String currentName  = mData.get(position).toString();
+        String currentName  = mData.get(position);
 
         // Referenciamos el elemento a modificar y lo rellenamos
         TextView textView = view.findViewById(R.id.textView);
