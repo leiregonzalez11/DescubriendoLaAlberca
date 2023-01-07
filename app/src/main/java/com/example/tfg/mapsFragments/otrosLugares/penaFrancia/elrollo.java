@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -23,8 +24,9 @@ import com.example.tfg.R;
 public class elrollo extends Fragment implements View.OnClickListener {
 
     private Bundle args;
-    private String idioma;
-    private String categoria;
+    private String idioma, categoria;
+    private ImageButton btn;
+    private TextView text1, text2, text3;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -76,6 +78,10 @@ public class elrollo extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_elrollo, container, false);
         if (v != null){
+            text1 = v.findViewById(R.id.rollo1);
+            text2 = v.findViewById(R.id.rollo2);
+            text3 = v.findViewById(R.id.rollo3);
+            btn = v.findViewById(R.id.rollobtn);
         }
         return v;
     }
@@ -85,6 +91,18 @@ public class elrollo extends Fragment implements View.OnClickListener {
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        GestorDB dbHelper = new GestorDB(getContext());
+
+        String [] datos =dbHelper.obtenerInfoPena(idioma, "elrollo", categoria, "peñadefrancia", 3);
+
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        btn.setOnClickListener(v -> {
+            System.out.println("AÑADIR DIALOG FRAGMENT INFO ROLLO");
+        });
 
     }
 

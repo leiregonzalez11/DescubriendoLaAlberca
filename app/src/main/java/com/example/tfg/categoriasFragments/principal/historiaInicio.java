@@ -1,16 +1,18 @@
 package com.example.tfg.categoriasFragments.principal;
 
 import android.os.Bundle;
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,6 +21,8 @@ import com.example.tfg.navigationmenu.Categorias;
 public class historiaInicio extends Fragment {
 
     private String idioma, categoria;
+    private ImageButton btn;
+    private TextView text1, text2, text3, pruebatexto;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -72,7 +76,11 @@ public class historiaInicio extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_historia_inicio, container, false);
         if(v != null){
-            Log.i("OBJETOS:", "OBJETOS HISTORIA");
+            pruebatexto = v.findViewById(R.id.pruebatextoh);
+            text1 = v.findViewById(R.id.historia1);
+            text2 = v.findViewById(R.id.historia2);
+            text3 = v.findViewById(R.id.historia3);
+            btn = v.findViewById(R.id.historiabtn);
         }
         return v;
     }
@@ -83,6 +91,42 @@ public class historiaInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        GestorDB dbHelper = new GestorDB(getContext());
+
+        if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
+            btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
+
+            String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
+
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        }
+
+        btn.setOnClickListener(view1 -> {
+            if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
+                btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
+                pruebatexto.setText("2");
+
+                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
+
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+
+            } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
+                btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
+                pruebatexto.setText("1");
+
+                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, categoria, 3);
+
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+            }
+        });
     }
 
     private void cargarFragment(Fragment fragment){

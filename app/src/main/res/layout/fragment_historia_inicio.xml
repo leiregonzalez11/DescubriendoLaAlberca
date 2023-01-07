@@ -21,6 +21,7 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
+            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -28,18 +29,85 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/culturaTitulo"
+                android:id="@+id/historiatitulo"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
-                android:text="@string/historiamayus"
+                android:text= "@string/historiamayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/pruebatextoh"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:text= "1"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="0sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/historia1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/historia2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/historia3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageButton
+                android:id="@+id/historiabtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:tint="@color/black">
+            </ImageButton>
 
         </LinearLayout>
 

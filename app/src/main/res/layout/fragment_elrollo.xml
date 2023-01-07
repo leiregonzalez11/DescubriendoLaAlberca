@@ -3,12 +3,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mapsFragments.otrosLugares.penaFrancia.elrollo">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layoutArte1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gastrotitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:gravity="center"
+                    android:text= "@string/rollo"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/black"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+
+                <ImageButton
+                    android:id="@+id/rollobtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:src="@drawable/ic_circle_info_solid"
+                    app:tint="@color/black">
+                </ImageButton>
+
+            </LinearLayout>
+
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/rollo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/rollo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/rollo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="-20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

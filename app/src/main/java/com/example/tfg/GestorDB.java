@@ -22,6 +22,7 @@ public class GestorDB extends SQLiteOpenHelper {
     private static final String DB_NAME = "laalbercaDB";
     private static final int DB_VERSION = 6;
     private final Context context;
+    private String query;
     private boolean seguir = true;
 
     public GestorDB(@Nullable Context context) {
@@ -61,65 +62,71 @@ public class GestorDB extends SQLiteOpenHelper {
 
 
         //Esquema de la tabla arquitectura
-        String query1 = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "catArqui VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descrArqui VARCHAR NOT NULL)";
-        Log.i("Tabla Arquitectura: ", query1);
-        sqLiteDatabase.execSQL(query1);
+        Log.d("Tabla Arquitectura: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla artesania
-        String query2 = "CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS artesania (idArte INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "catArte VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, nombreTraje VARCHAR, descrArte VARCHAR NOT NULL)";
-        Log.i("Tabla Artesania: ", query2);
-        sqLiteDatabase.execSQL(query2);
+        Log.d("Tabla Artesania: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla gastronomia
-        String query3 = "CREATE TABLE IF NOT EXISTS gastronomia (idGastro INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS gastronomia (idGastro INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "catGastro VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descrGastro VARCHAR NOT NULL, " +
                 "nombreReceta VARCHAR, ingrReceta VARCHAR, pasosReceta VARCHAR)";
-        Log.i("Tabla Gastronomia: ", query3);
-        sqLiteDatabase.execSQL(query3);
+        Log.d("Tabla Gastronomia: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla rutas
-        String query4 = "CREATE TABLE IF NOT EXISTS rutas (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS rutas (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "idioma VARCHAR(2) NOT NULL, nombreRuta VARCHAR NOT NULL, descRuta VARCHAR NOT NULL, " +
                 "distancia VARCHAR NOT NULL, desnivel VARCHAR NOT NULL, dificultad VARCHAR NOT NULL, " +
                 "tiempo VARCHAR NOT NULL)";
-        Log.i("Tabla Rutas: ", query4);
-        sqLiteDatabase.execSQL(query4);
+        Log.d("Tabla Rutas: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla otros lugares
-        String query5 = "CREATE TABLE IF NOT EXISTS otroslugares (idOtros INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS otroslugares (idOtros INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaOtros VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, nombreOtro VARCHAR NOT NULL, descrOtro VARCHAR NOT NULL, " +
                 "kmdesdeLa VARCHAR, fiestamayor VARCHAR, latLugar VARCHAR, lonLugar VARCHAR)";
-        Log.i("Tabla Otros Lugares: ", query5);
-        sqLiteDatabase.execSQL(query5);
+        Log.d("Tabla Otros Lugares: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla alojamiento
-        String query6 = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
                 "latAloj VARCHAR NOT NULL, lonAloj VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
-        Log.i("Tabla Alojamiento: ", query6);
-        sqLiteDatabase.execSQL(query6);
+        Log.i("Tabla Alojamiento: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla restaurantes
-        String query7 = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
                 "ubiRest VARCHAR NOT NULL, latRest VARCHAR NOT NULL, lonRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
-        Log.i("Tabla Restaurantes: ", query7);
-        sqLiteDatabase.execSQL(query7);
+        Log.i("Tabla Restaurantes: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla comercio
-        String query8 = "CREATE TABLE IF NOT EXISTS comercio (idCom INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        query = "CREATE TABLE IF NOT EXISTS comercio (idCom INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, numCom VARCHAR NOT NULL," +
                 "ubiCom VARCHAR NOT NULL, latCom VARCHAR NOT NULL, lonCom VARCHAR NOT NULL)";
-        Log.i("Tabla Comercio: ", query8);
-        sqLiteDatabase.execSQL(query8);
+        Log.i("Tabla Comercio: ", query);
+        sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla tradiciones
-        String query9 = "CREATE TABLE IF NOT EXISTS tradiciones (idTrad INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "nombreTrad TEXT NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
-        Log.i("Tabla Tradiciones: ", query9);
-        sqLiteDatabase.execSQL(query9);
+        query = "CREATE TABLE IF NOT EXISTS tradiciones (idTrad INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nombreTrad VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
+        Log.i("Tabla Tradiciones: ", query);
+        sqLiteDatabase.execSQL(query);
+
+        //Esquema de la tabla historia
+        query = "CREATE TABLE IF NOT EXISTS historia (idHist INTEGER PRIMARY KEY AUTOINCREMENT, catHistoria VARCHAR NOT NULL," +
+                "idioma VARCHAR(2) NOT NULL, descHistoria VARCHAR NOT NULL)";
+        Log.i("Tabla Historia: ", query);
+        sqLiteDatabase.execSQL(query);
 
     }
 
@@ -362,7 +369,8 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrGastro FROM " + tabla + " WHERE catGastro LIKE '" + categoria + "%' AND idioma = '" + idioma + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrGastro FROM " + tabla + " WHERE catGastro LIKE '" + categoria + "%' " +
+                "AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -397,7 +405,8 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE nombreTrad LIKE '" + interfaz + "%' AND idioma = '" + idioma + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE nombreTrad LIKE '" + interfaz + "%' " +
+                "AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -408,6 +417,8 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla otros lugares
+
+    //TODO: HACER COMO EN RECETAS --> CREAR LA CLASE PUEBLO
     public String [] obtenerInfoPueblos (String idioma, String pueblo, String tabla, String categoria){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -425,7 +436,6 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             for (int j = 0; j < 5; j++){
                 descrip = c.getString(j);
-                System.out.println("DESCRIIIIIIIP " + descrip);
                 descr[j] = descrip;
             }
         }
@@ -440,7 +450,8 @@ public class GestorDB extends SQLiteOpenHelper {
         String descrip;
         String [] descr = new String[2];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria +"' AND nombreOtro = 'principal';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria +"'" +
+                " AND nombreOtro = 'principal';", null);
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
@@ -500,7 +511,6 @@ public class GestorDB extends SQLiteOpenHelper {
         while (c.moveToNext()){
             for (int j = 0; j < 4; j++){
                 descrip = c.getString(j);
-                System.out.println("DESCRIIIIIIIP" + descrip);
                 descr[j] = descrip;
             }
         }
@@ -509,4 +519,21 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
 
+    public String[] obtenerInfoHist(String catHist, String idioma, String tabla, int numTV) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[numTV];
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descHistoria FROM historia " +
+                "WHERE catHistoria = ? AND idioma = ?;", new String[]{catHist, idioma});
+        while (c.moveToNext()){
+            for (int j = 0; j < numTV; j++){
+                descrip = c.getString(j);
+                descr[j] = descrip;
+            }
+        }
+        c.close();
+        return descr;
+    }
 }

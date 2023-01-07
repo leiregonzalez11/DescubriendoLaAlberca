@@ -26,6 +26,7 @@ import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+//TODO: CREAR LA CLASE LISTARECETAS PARA NO TENER QUE ESTAR LLAMANDO A LA BD TODO EL RATO
 public class recetasTipicas extends Fragment {
 
     private Bundle args;
