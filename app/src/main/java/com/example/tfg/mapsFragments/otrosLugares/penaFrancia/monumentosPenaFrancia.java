@@ -145,6 +145,10 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 fragment = hospederia.newInstance(args);
                 cargarFragment(fragment);
                 break;
+            case R.id.rollo:
+                fragment = elrollo.newInstance(args);
+                cargarFragment(fragment);
+                break;
             case R.id.santodomingo:
                 String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

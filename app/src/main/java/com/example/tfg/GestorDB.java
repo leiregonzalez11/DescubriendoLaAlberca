@@ -20,7 +20,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 6;
+    private static final int DB_VERSION = 7;
     private final Context context;
     private String query;
     private boolean seguir = true;
@@ -98,21 +98,21 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla alojamiento
         query = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
-                "latAloj VARCHAR NOT NULL, lonAloj VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
+                "idioma VARCHAR(2) NOT NULL, puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
         Log.i("Tabla Alojamiento: ", query);
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla restaurantes
         query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
-                "ubiRest VARCHAR NOT NULL, latRest VARCHAR NOT NULL, lonRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
+                "ubiRest VARCHAR NOT NULL, idioma VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
         Log.i("Tabla Restaurantes: ", query);
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla comercio
         query = "CREATE TABLE IF NOT EXISTS comercio (idCom INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, numCom VARCHAR NOT NULL," +
-                "ubiCom VARCHAR NOT NULL, latCom VARCHAR NOT NULL, lonCom VARCHAR NOT NULL)";
+                "idioma VARCHAR(2) NOT NULL, categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, " +
+                "numCom VARCHAR NOT NULL, ubiCom VARCHAR NOT NULL)";
         Log.i("Tabla Comercio: ", query);
         sqLiteDatabase.execSQL(query);
 
@@ -471,7 +471,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro FROM " + tabla + "" +
-                " WHERE categoriaOtros LIKE '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro LIKE '" + lugar + "';", null);
+                " WHERE categoriaOtros LIKE '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -506,10 +506,10 @@ public class GestorDB extends SQLiteOpenHelper {
         String descrip;
         String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom, latCom, lonCom FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom FROM " + tabla + "" +
                 " WHERE nombreCom = '" + nombreCom + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 4; j++){
+            for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
                 descr[j] = descrip;
             }
@@ -524,14 +524,14 @@ public class GestorDB extends SQLiteOpenHelper {
 
         String descrip;
         String [] descr = new String[numTV];
+        int i=0;
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descHistoria FROM historia " +
                 "WHERE catHistoria = ? AND idioma = ?;", new String[]{catHist, idioma});
         while (c.moveToNext()){
-            for (int j = 0; j < numTV; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
         }
         c.close();
         return descr;

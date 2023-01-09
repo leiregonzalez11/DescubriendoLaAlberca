@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,13 +21,15 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.dialogFragments.ExitFragment;
+import com.example.tfg.dialogFragments.rolloinfofragment;
 
 public class elrollo extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma, categoria;
     private ImageButton btn;
-    private TextView text1, text2, text3;
+    private TextView text1, text2, text3, text4;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -81,6 +84,7 @@ public class elrollo extends Fragment implements View.OnClickListener {
             text1 = v.findViewById(R.id.rollo1);
             text2 = v.findViewById(R.id.rollo2);
             text3 = v.findViewById(R.id.rollo3);
+            text4 = v.findViewById(R.id.rollo4);
             btn = v.findViewById(R.id.rollobtn);
         }
         return v;
@@ -94,14 +98,18 @@ public class elrollo extends Fragment implements View.OnClickListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos =dbHelper.obtenerInfoPena(idioma, "elrollo", categoria, "peñadefrancia", 3);
+        String [] datos =dbHelper.obtenerInfoPena(idioma, "elrollo", categoria, "peñadefrancia", 4);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         btn.setOnClickListener(v -> {
-            System.out.println("AÑADIR DIALOG FRAGMENT INFO ROLLO");
+            DialogFragment exitFragment = new rolloinfofragment();
+            exitFragment.setArguments(args);
+            exitFragment.setCancelable(false);
+            exitFragment.show(getChildFragmentManager(),"rollo_fragment");
         });
 
     }

@@ -10,6 +10,7 @@ import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.dialogFragments.tiendaFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,8 +87,10 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreTienda = adapterView.getItemAtPosition(position).toString();
             args.putString("nombreCom", nombreTienda);
-            Fragment fragment = Tienda.newInstance(args);
-            cargarFragment(fragment);
+            DialogFragment tiendaFragment = new tiendaFragment();
+            tiendaFragment.setArguments(args);
+            tiendaFragment.setCancelable(false);
+            tiendaFragment.show(getChildFragmentManager(),"tienda_fragment");
         });
     }
 
