@@ -9,12 +9,16 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.dialogFragments.alojamientoFragment;
+import com.example.tfg.dialogFragments.tiendaFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,8 +85,10 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreAloj = adapterView.getItemAtPosition(position).toString();
             args.putString("nombreAloj", nombreAloj);
-            Fragment fragment = Alojamiento.newInstance(args);
-            cargarFragment(fragment);
+            DialogFragment alojamientoFragment = new alojamientoFragment();
+            alojamientoFragment.setArguments(args);
+            alojamientoFragment.setCancelable(false);
+            alojamientoFragment.show(getChildFragmentManager(),"tienda_fragment");
         });
     }
 

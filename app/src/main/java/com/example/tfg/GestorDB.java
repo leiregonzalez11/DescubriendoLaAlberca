@@ -280,10 +280,10 @@ public class GestorDB extends SQLiteOpenHelper {
         String descrip;
         String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, latAloj, lonAloj, ubiAloj FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiAloj FROM " + tabla + "" +
                 " WHERE nombreAloj = '" + nombreAloj + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 4; j++){
+            for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
                 descr[j] = descrip;
             }
