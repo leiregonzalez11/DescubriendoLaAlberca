@@ -75,7 +75,7 @@
             <ImageView
                 android:id="@+id/histimg1"
                 android:layout_width="300dp"
-                android:layout_height="270dp"
+                android:layout_height="230dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 tools:ignore="ContentDescription" />
@@ -86,8 +86,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-40dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
@@ -96,7 +96,7 @@
             <ImageView
                 android:id="@+id/histimg2"
                 android:layout_width="300dp"
-                android:layout_height="270dp"
+                android:layout_height="230dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 tools:ignore="ContentDescription" />
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
