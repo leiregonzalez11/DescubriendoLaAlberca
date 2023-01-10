@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.dialogFragments.establecimientoFragment;
+import com.example.tfg.dialogFragments.saltoDelNinoFragment;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
@@ -194,7 +197,12 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text3.setText("");
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("  El Salto del Niño  ");
-                btnExtra.setOnClickListener(view1 -> Toast.makeText(getContext(),"Has pulsado: El Salto del Niño", Toast.LENGTH_LONG).show());
+                btnExtra.setOnClickListener(view1 -> {
+                    DialogFragment saltoFragment = new saltoDelNinoFragment();
+                    saltoFragment.setArguments(args);
+                    saltoFragment.setCancelable(false);
+                    saltoFragment.show(getChildFragmentManager(),"salto_fragment");
+                });
                 break;
         }
     }
