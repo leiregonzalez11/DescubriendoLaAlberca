@@ -9,12 +9,16 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.dialogFragments.alojamientoFragment;
+import com.example.tfg.dialogFragments.establecimientoFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,9 +84,11 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreRest = adapterView.getItemAtPosition(position).toString();
-            args.putString("nombreEst", nombreRest);
-            Fragment fragment = Establecimiento.newInstance(args);
-            cargarFragment(fragment);
+            args.putString("nombreRest", nombreRest);
+            DialogFragment restFragment = new establecimientoFragment();
+            restFragment.setArguments(args);
+            restFragment.setCancelable(false);
+            restFragment.show(getChildFragmentManager(),"rest_fragment");
 
         });
     }
@@ -96,18 +102,6 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
     public boolean onQueryTextChange(String s) {
         myAdapter.getFilter().filter(s);
         return false;
-    }
-
-    private void cargarFragment(Fragment fragment){
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
     }
 
 }

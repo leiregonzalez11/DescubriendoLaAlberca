@@ -329,12 +329,12 @@ public class GestorDB extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
-        String [] descr = new String[4];
+        String [] descr = new String[2];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest, latRest, lonRest FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest FROM " + tabla + "" +
                 " WHERE nombreRest = '" + nombreRest + "';", null);
         while (c.moveToNext()){
-            for (int j = 0; j < 4; j++){
+            for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
                 descr[j] = descrip;
             }

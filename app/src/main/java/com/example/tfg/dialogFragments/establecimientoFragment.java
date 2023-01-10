@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -25,7 +26,7 @@ import com.example.tfg.R;
 
 public class establecimientoFragment extends DialogFragment {
 
-    String categoria, tienda, telefono;
+    String categoria, establecimiento, telefono;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -45,38 +46,40 @@ public class establecimientoFragment extends DialogFragment {
 
         assert getArguments() != null;
 
-        tienda = getArguments().getString("nombreCom");
+        establecimiento = getArguments().getString("nombreRest");
         categoria = getArguments().getString("categoria");
 
-        Button back = infoView.findViewById(R.id.buttonVolverCom);
-        TextView text1 = infoView.findViewById(R.id.nombreCom);
-        TextView tel = infoView.findViewById(R.id.telcom);
-        TextView ubi = infoView.findViewById(R.id.ubicom);
+        Button back = infoView.findViewById(R.id.buttonVolverRest);
+        TextView text1 = infoView.findViewById(R.id.nombreRest);
+        RatingBar ratingBar = infoView.findViewById(R.id.ratingBar);
+        TextView tel = infoView.findViewById(R.id.telrest2);
+        TextView ubi = infoView.findViewById(R.id.ubirest2);
 
         //Datos de la interfaz
         GestorDB dbHelper = new GestorDB(getContext());
 
         //Titulo
-        text1.setText(tienda);
+        text1.setText(establecimiento);
 
-        String [] datos = dbHelper.obtenerDatosTienda(categoria, tienda);
+        //Datos informativos y ubicación
+        double punt = dbHelper.obtenerPuntRest(categoria, establecimiento);
+        ratingBar.setRating((float) punt);
+
+        String [] datos = dbHelper.obtenerDatosRest(categoria, establecimiento);
 
         telefono = datos[0];
-
         ubi.setText(datos[1]);
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
             tel.setText(telsubrayado);
-            tel.setOnClickListener(v -> {
+            tel.setOnClickListener(view12 -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
                 startActivity(dial); // Ejecutamos el Intent
             });
-        } else{
-            tel.setText(telefono);
-        }
+        } else{ tel.setText(telefono); }
 
         back.setOnClickListener(view -> dismiss());
 

@@ -88,7 +88,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
             DialogFragment alojamientoFragment = new alojamientoFragment();
             alojamientoFragment.setArguments(args);
             alojamientoFragment.setCancelable(false);
-            alojamientoFragment.show(getChildFragmentManager(),"tienda_fragment");
+            alojamientoFragment.show(getChildFragmentManager(),"alojamiento_fragment");
         });
     }
 

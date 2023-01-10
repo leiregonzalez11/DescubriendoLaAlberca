@@ -7,19 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.dialogFragments.tiendaFragment;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,18 +98,6 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
     public boolean onQueryTextChange(String s) {
         if (!s.equalsIgnoreCase("")) myAdapter.getFilter().filter(s);
         return false;
-    }
-
-    private void cargarFragment(Fragment fragment){
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
     }
 
 }
