@@ -108,7 +108,7 @@ public class historiaInicio extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
                 pruebatexto.setText("2");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
+                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, categoria, 3);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -119,7 +119,7 @@ public class historiaInicio extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
                 pruebatexto.setText("1");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, categoria, 3);
+                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -23,12 +24,10 @@ import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 
     private Bundle args;
-    private String idioma;
-    private Fragment fragment;
-    private String categoria;
+    private String idioma, categoria;
     private GestorDB dbHelper;
     private TextView text1, text2, text3;
-    private Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8;
+    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btnExtra;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -92,7 +91,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
             text1 = v.findViewById(R.id.monumentostext1);
             text2 = v.findViewById(R.id.monumentostext2);
             text3 = v.findViewById(R.id.monumentostext3);
-
+            btnExtra = v.findViewById(R.id.buttonmonumentos);
         }
         return v;
     }
@@ -138,16 +137,19 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
         switch (btn.getId()){
 
             case R.id.santuario:
-                fragment = santuario.newInstance(args);
+                Fragment fragment = santuario.newInstance(args);
                 cargarFragment(fragment);
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.hospederia:
                 fragment = hospederia.newInstance(args);
                 cargarFragment(fragment);
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.rollo:
                 fragment = elrollo.newInstance(args);
                 cargarFragment(fragment);
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.santodomingo:
                 String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
@@ -155,6 +157,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text1.requestFocus();
                 text2.setText("");
                 text3.setText("");
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.lablanca:
                 datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", categoria, "peñadefrancia", 3);
@@ -162,6 +165,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text1.requestFocus();
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
 
             case R.id.sanandresexterior:
@@ -170,6 +174,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text1.requestFocus();
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
 
             case R.id.santocristoexterior:
@@ -178,6 +183,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text1.requestFocus();
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
 
             case R.id.balcon:
@@ -186,6 +192,9 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 text1.requestFocus();
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
+                btnExtra.setVisibility(View.VISIBLE);
+                btnExtra.setText("  El Salto del Niño  ");
+                btnExtra.setOnClickListener(view1 -> Toast.makeText(getContext(),"Has pulsado: El Salto del Niño", Toast.LENGTH_LONG).show());
                 break;
         }
     }

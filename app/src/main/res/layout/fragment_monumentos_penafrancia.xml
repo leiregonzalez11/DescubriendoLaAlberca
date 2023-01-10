@@ -226,6 +226,19 @@
                 app:layout_constraintTop_toTopOf="@id/imageView2"
                 app:layout_constraintVertical_bias="0.923" />
 
+            <ImageView
+                android:id="@+id/imagemon1"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/laalberca2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonmonumentos">
+            </ImageView>
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/monumentostext1"
                 android:layout_width="380dp"
@@ -241,18 +254,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
-            <ImageView
-                android:id="@+id/imagemon1"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginTop="-10dp"
-                android:src="@drawable/laalberca2"
+            <Button
+                android:id="@+id/buttonmonumentos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-20dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/monumentostext1">
-            </ImageView>
+                app:layout_constraintTop_toBottomOf="@id/monumentostext1" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/monumentostext2"
@@ -294,6 +308,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imagemon2" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -25,7 +26,7 @@ public class santuario extends Fragment implements View.OnClickListener {
     private Bundle args;
     private String idioma;
     private String categoria;
-    private Button btn1,btn2,btn3;
+    private Button btn1,btn2,btn3, btnExtra;
     private GestorDB dbHelper;
     private TextView text1, text2, text3, text4, text5, text6;
 
@@ -82,6 +83,7 @@ public class santuario extends Fragment implements View.OnClickListener {
             btn1 = v.findViewById(R.id.iglesiapeña);
             btn2 = v.findViewById(R.id.pozoverde);
             btn3 = v.findViewById(R.id.convento);
+            btnExtra = v.findViewById(R.id.buttonsantuario);
             text1 = v.findViewById(R.id.santuariotext);
             text2 = v.findViewById(R.id.santuariotext2);
             text3 = v.findViewById(R.id.santuariotext3);
@@ -133,6 +135,7 @@ public class santuario extends Fragment implements View.OnClickListener {
             case R.id.iglesiapeña:
                 Fragment fragment = iglesia.newInstance(args);
                 cargarFragment(fragment);
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.pozoverde:
                 String [] datos = dbHelper.obtenerInfoPena(idioma, "pozoverde", categoria, "peñadefrancia", 1);
@@ -141,6 +144,7 @@ public class santuario extends Fragment implements View.OnClickListener {
                 text4.setText("");
                 text5.setText("");
                 text6.setText("");
+                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.convento:
                 String [] datos2 = dbHelper.obtenerInfoPena(idioma, "convento", categoria, "peñadefrancia", 5);
@@ -149,6 +153,10 @@ public class santuario extends Fragment implements View.OnClickListener {
                 text4.setText(datos2[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text5.setText(datos2[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText(datos2[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                btnExtra.setVisibility(View.VISIBLE);
+                btnExtra.setText("   La Casa Baja   ");
+                btnExtra.setOnClickListener(view1 -> Toast.makeText(getContext(),"Has pulsado: La Casa Baja", Toast.LENGTH_LONG).show());
+
                 break;
         }
     }
