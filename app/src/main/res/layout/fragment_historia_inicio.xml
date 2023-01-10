@@ -72,6 +72,14 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/histimg1"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                tools:ignore="ContentDescription" />
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historia2"
                 android:layout_width="match_parent"
@@ -84,6 +92,15 @@
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/histimg2"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                tools:ignore="ContentDescription" />
+
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historia3"

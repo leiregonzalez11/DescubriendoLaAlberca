@@ -1,6 +1,8 @@
 package com.example.tfg.categoriasFragments.principal;
 
 import android.os.Bundle;
+
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import android.view.View;
@@ -12,16 +14,21 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.navigationmenu.Categorias;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class historiaInicio extends Fragment {
 
-    private String idioma, categoria;
     private ImageButton btn;
+    private ImageView img1, img2;
+    private String idioma, categoria;
+    private StorageReference storageRef;
     private TextView text1, text2, text3, pruebatexto;
 
     /**
@@ -81,6 +88,8 @@ public class historiaInicio extends Fragment {
             text2 = v.findViewById(R.id.historia2);
             text3 = v.findViewById(R.id.historia3);
             btn = v.findViewById(R.id.historiabtn);
+            img1 = v.findViewById(R.id.histimg1);
+            img2 = v.findViewById(R.id.histimg2);
         }
         return v;
     }
@@ -92,6 +101,7 @@ public class historiaInicio extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         GestorDB dbHelper = new GestorDB(getContext());
+        storageRef = FirebaseStorage.getInstance().getReference();
 
         if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
             btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
@@ -101,7 +111,11 @@ public class historiaInicio extends Fragment {
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            obtenerImagenFirebase("historia/historia1.png", (ImageView) img1);
+            obtenerImagenFirebase("historia/historia2.png", (ImageView) img2);
         }
+
+
 
         btn.setOnClickListener(view1 -> {
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
@@ -113,7 +127,8 @@ public class historiaInicio extends Fragment {
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-
+                obtenerImagenFirebase("historia/historia3.png", (ImageView) img1);
+                obtenerImagenFirebase("historia/historia4.png", (ImageView) img2);
 
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
@@ -124,9 +139,17 @@ public class historiaInicio extends Fragment {
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                obtenerImagenFirebase("historia/historia1.png", (ImageView) img1);
+                obtenerImagenFirebase("historia/historia2.png", (ImageView) img2);
 
             }
         });
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     private void cargarFragment(Fragment fragment){
