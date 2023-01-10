@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.dialogFragments.lacasabajaFragment;
+import com.example.tfg.dialogFragments.saltoDelNinoFragment;
 
 public class santuario extends Fragment implements View.OnClickListener {
 
@@ -155,7 +158,12 @@ public class santuario extends Fragment implements View.OnClickListener {
                 text6.setText(datos2[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("   La Casa Baja   ");
-                btnExtra.setOnClickListener(view1 -> Toast.makeText(getContext(),"Has pulsado: La Casa Baja", Toast.LENGTH_LONG).show());
+                btnExtra.setOnClickListener(view1 -> {
+                    DialogFragment casaFragment = new lacasabajaFragment();
+                    casaFragment.setArguments(args);
+                    casaFragment.setCancelable(false);
+                    casaFragment.show(getChildFragmentManager(),"casa_fragment");
+                });
 
                 break;
         }
