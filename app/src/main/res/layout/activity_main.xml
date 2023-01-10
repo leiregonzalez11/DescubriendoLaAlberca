@@ -16,7 +16,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/AppTheme.Toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/PopupTheme">
 
         <TextView
             android:id="@+id/name"
@@ -55,8 +55,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintHorizontal_bias="0.0"
         app:menu="@menu/navigation" />
-
-    <!--android:background="@color/teal_200"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

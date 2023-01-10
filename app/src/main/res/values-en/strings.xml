@@ -138,6 +138,8 @@
     <string name="convento">The Convent</string>
     <string name="el_pozo_verde">The green well</string>
     <string name="acerca_de">About the App</string>
+    <string name="quienes_somos">About Us</string>
+    <string name="agradecimientos">Appreciations</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
