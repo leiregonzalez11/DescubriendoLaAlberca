@@ -16,12 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.dialogFragments.establecimientoFragment;
-import com.example.tfg.dialogFragments.saltoDelNinoFragment;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {

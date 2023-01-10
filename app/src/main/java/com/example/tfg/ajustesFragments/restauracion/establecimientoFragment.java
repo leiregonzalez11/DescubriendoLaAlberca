@@ -1,4 +1,4 @@
-package com.example.tfg.dialogFragments;
+package com.example.tfg.ajustesFragments.restauracion;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;

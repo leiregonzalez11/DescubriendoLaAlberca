@@ -17,12 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.dialogFragments.lacasabajaFragment;
-import com.example.tfg.dialogFragments.saltoDelNinoFragment;
 
 public class santuario extends Fragment implements View.OnClickListener {
 

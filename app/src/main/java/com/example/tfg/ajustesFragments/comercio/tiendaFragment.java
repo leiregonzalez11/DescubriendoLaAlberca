@@ -1,4 +1,4 @@
-package com.example.tfg.dialogFragments;
+package com.example.tfg.ajustesFragments.comercio;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -18,16 +19,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+public class tiendaFragment extends DialogFragment {
 
-public class alojamientoFragment extends DialogFragment {
-
-    String categoria, alojamiento, telefono;
+    String categoria, tienda, telefono;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -40,33 +45,28 @@ public class alojamientoFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View infoView = inflater.inflate(R.layout.fragmentdialog_alojamiento, null);
+        final View infoView = inflater.inflate(R.layout.fragmentdialog_tienda, null);
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(infoView);
 
         assert getArguments() != null;
 
-        alojamiento = getArguments().getString("nombreAloj");
+        tienda = getArguments().getString("nombreCom");
         categoria = getArguments().getString("categoria");
 
-        Button back = infoView.findViewById(R.id.buttonVolverAloj);
-        TextView text1 = infoView.findViewById(R.id.nombreAloj);
-        TextView tel = infoView.findViewById(R.id.telaloj2);
-        TextView ubi = infoView.findViewById(R.id.ubi2);
-        RatingBar ratingBar = infoView.findViewById(R.id.ratingBarAloj);
+        Button back = infoView.findViewById(R.id.buttonVolverCom);
+        TextView text1 = infoView.findViewById(R.id.nombreCom);
+        TextView tel = infoView.findViewById(R.id.telcom);
+        TextView ubi = infoView.findViewById(R.id.ubicom);
 
         //Datos de la interfaz
         GestorDB dbHelper = new GestorDB(getContext());
 
         //Titulo
-        text1.setText(alojamiento);
+        text1.setText(tienda);
 
-        //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj(categoria, alojamiento);
-        ratingBar.setRating((float) punt);
-
-        String [] datos = dbHelper.obtenerDatosAloj(categoria, alojamiento);
+        String [] datos = dbHelper.obtenerDatosTienda(categoria, tienda);
 
         telefono = datos[0];
 
@@ -89,4 +89,5 @@ public class alojamientoFragment extends DialogFragment {
 
         return builder.create();
     }
+
 }

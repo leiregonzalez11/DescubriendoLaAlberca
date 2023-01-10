@@ -1,4 +1,4 @@
-package com.example.tfg.dialogFragments;
+package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;

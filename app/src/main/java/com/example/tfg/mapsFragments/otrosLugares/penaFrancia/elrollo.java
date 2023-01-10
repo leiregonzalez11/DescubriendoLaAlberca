@@ -21,8 +21,6 @@ import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.dialogFragments.ExitFragment;
-import com.example.tfg.dialogFragments.rolloinfofragment;
 
 public class elrollo extends Fragment implements View.OnClickListener {
 
