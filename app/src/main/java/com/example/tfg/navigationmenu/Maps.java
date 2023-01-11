@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,6 +28,8 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
+import com.example.tfg.dialogFragments.ExitFragment;
+import com.example.tfg.dialogFragments.parkingFragment;
 import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,6 +46,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private String idioma;
     private Bundle args, argsMenu;
     private String [] opcionesSpinner;
+    private Button btnp1,btnp2,btnp3,btnp4,btnp5,btnp6,btnp7,btnp8,btnp9,btnp10,btnp11;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -80,6 +85,17 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             img1 = v.findViewById(R.id.mapa);
             spinner = v.findViewById(R.id.spinnerMapa);
             text = v.findViewById(R.id.textomaps);
+            btnp1 = v.findViewById(R.id.btnp1);
+            btnp2 = v.findViewById(R.id.btnp2);
+            btnp3 = v.findViewById(R.id.btnp3);
+            btnp4 = v.findViewById(R.id.btnp4);
+            btnp5 = v.findViewById(R.id.btnp5);
+            btnp6 = v.findViewById(R.id.btnp6);
+            btnp7 = v.findViewById(R.id.btnp7);
+            btnp8 = v.findViewById(R.id.btnp8);
+            btnp9 = v.findViewById(R.id.btnp9);
+            btnp10 = v.findViewById(R.id.btnp10);
+            btnp11 = v.findViewById(R.id.btnp11);
         }
         return v;
     }
@@ -96,6 +112,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         spinner.setOnItemSelectedListener(this);
 
         idioma = determinarIdioma();
+        args.putString("idioma", idioma);
 
     }
 
@@ -103,21 +120,41 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         String selecteditem = adapterView.getSelectedItem().toString();
-        if (selecteditem.equalsIgnoreCase(opcionesSpinner[0]) && idioma.equalsIgnoreCase("es")){
-            img1.setImageResource(R.drawable.planolaalbercaparkinges);
-        }else if (selecteditem.equalsIgnoreCase(opcionesSpinner[0]) && idioma.equalsIgnoreCase("en")){
-            img1.setImageResource(R.drawable.planolaalbercaparkingen);
-        }else if (selecteditem.equalsIgnoreCase(opcionesSpinner[0]) && idioma.equalsIgnoreCase("eu")){
-            img1.setImageResource(R.drawable.planolaalbercaparkingeu);
-        }else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){
+
+        if (selecteditem.equalsIgnoreCase(opcionesSpinner[0])){ //Opcion seleccionada: Parking
+
+            setBtnParking();
+
+            if (idioma.equalsIgnoreCase("es")) {
+                img1.setImageResource(R.drawable.planolaalbercaparkinges);
+            }
+
+            else if (idioma.equalsIgnoreCase("en")){
+                img1.setImageResource(R.drawable.planolaalbercaparkingen);
+            }
+
+            else if (idioma.equalsIgnoreCase("eu")){
+                img1.setImageResource(R.drawable.planolaalbercaparkingeu);
+            }
+        }
+
+        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){ //Opcion seleccionada: Sitios de interés
             img1.setImageResource(R.drawable.planolaalbercamonumentos);
-        }else if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){
+            setVisibilityP(false);
+        }
+
+        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){ //Opcion seleccionada: Servicios
             img1.setImageResource(R.drawable.planolaalbercaservicios);
-        } else if (selecteditem.equalsIgnoreCase(opcionesSpinner[3])){
+            setVisibilityP(false);
+        }
+
+        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[3])){
+            setVisibilityP(false);
             args.putString("idioma", idioma);
             Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);
         }
+
     }
 
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -189,5 +226,63 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         }
 
         return idioma;
+    }
+
+    public void setBtnParking(){
+
+        setVisibilityP(true);
+        btnp1.setOnClickListener(view -> parkingOnClick("eras1"));
+        btnp2.setOnClickListener(view -> parkingOnClick("ermitaeras"));
+        btnp3.setOnClickListener(view -> parkingOnClick("eras2"));
+        btnp4.setOnClickListener(view -> parkingOnClick("eras3"));
+        btnp5.setOnClickListener(view -> parkingOnClick("sanantonio"));
+        btnp6.setOnClickListener(view -> parkingOnClick("afueras"));
+        btnp7.setOnClickListener(view -> parkingOnClick("centromedico"));
+        btnp8.setOnClickListener(view -> parkingOnClick("carreteranueva"));
+        btnp9.setOnClickListener(view -> parkingOnClick("puente"));
+        btnp10.setOnClickListener(view -> parkingOnClick("elcastillo"));
+        btnp11.setOnClickListener(view -> parkingOnClick("barrera"));
+
+    }
+
+    public void setVisibilityP(boolean activar){
+
+        if (activar){
+            btnp1.setVisibility(View.VISIBLE);
+            btnp2.setVisibility(View.VISIBLE);
+            btnp3.setVisibility(View.VISIBLE);
+            btnp4.setVisibility(View.VISIBLE);
+            btnp5.setVisibility(View.VISIBLE);
+            btnp6.setVisibility(View.VISIBLE);
+            btnp7.setVisibility(View.VISIBLE);
+            btnp8.setVisibility(View.VISIBLE);
+            btnp9.setVisibility(View.VISIBLE);
+            btnp10.setVisibility(View.VISIBLE);
+            btnp11.setVisibility(View.VISIBLE);
+        }
+
+        else{
+            btnp1.setVisibility(View.INVISIBLE);
+            btnp2.setVisibility(View.INVISIBLE);
+            btnp3.setVisibility(View.INVISIBLE);
+            btnp4.setVisibility(View.INVISIBLE);
+            btnp5.setVisibility(View.INVISIBLE);
+            btnp6.setVisibility(View.INVISIBLE);
+            btnp7.setVisibility(View.INVISIBLE);
+            btnp8.setVisibility(View.INVISIBLE);
+            btnp9.setVisibility(View.INVISIBLE);
+            btnp10.setVisibility(View.INVISIBLE);
+            btnp11.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    public void parkingOnClick(String parking){
+        DialogFragment parkingFragment = new parkingFragment();
+        args.putString("parking", parking);
+        parkingFragment.setArguments(args);
+        parkingFragment.setCancelable(false);
+        parkingFragment.show(getChildFragmentManager(),"parking_fragment");
+
     }
 }
