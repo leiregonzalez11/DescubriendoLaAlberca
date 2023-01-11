@@ -77,5 +77,4 @@ public class saltoDelNinoFragment extends DialogFragment {
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
-
 }

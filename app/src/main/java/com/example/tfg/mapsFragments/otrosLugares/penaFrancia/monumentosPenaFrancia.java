@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -24,8 +25,9 @@ import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 
     private Bundle args;
-    private String idioma, categoria;
     private GestorDB dbHelper;
+    private ImageView img1, img2;
+    private String idioma, categoria;
     private TextView text1, text2, text3;
     private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btnExtra;
 
@@ -91,6 +93,8 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
             text1 = v.findViewById(R.id.monumentostext1);
             text2 = v.findViewById(R.id.monumentostext2);
             text3 = v.findViewById(R.id.monumentostext3);
+            img1 = v.findViewById(R.id.imagemon1);
+            img2 = v.findViewById(R.id.imagemon2);
             btnExtra = v.findViewById(R.id.buttonmonumentos);
         }
         return v;
@@ -139,57 +143,66 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
             case R.id.santuario:
                 Fragment fragment = santuario.newInstance(args);
                 cargarFragment(fragment);
-                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.hospederia:
-                fragment = hospederia.newInstance(args);
-                cargarFragment(fragment);
-                btnExtra.setVisibility(View.INVISIBLE);
+                DialogFragment hospFragment = new hospederiaFragment();
+                hospFragment.setArguments(args);
+                hospFragment.setCancelable(false);
+                hospFragment.show(getChildFragmentManager(),"hosp_fragment");
                 break;
             case R.id.rollo:
                 fragment = elrollo.newInstance(args);
                 cargarFragment(fragment);
-                btnExtra.setVisibility(View.INVISIBLE);
                 break;
             case R.id.santodomingo:
                 String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
+                img1.setVisibility(View.VISIBLE);
+                img2.setVisibility(View.GONE);
+                img1.requestFocus();
                 text2.setText("");
                 text3.setText("");
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
             case R.id.lablanca:
                 datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", categoria, "peñadefrancia", 3);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
+                img1.requestFocus();
+                img1.setVisibility(View.VISIBLE);
+                img2.setVisibility(View.VISIBLE);
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
 
             case R.id.sanandresexterior:
                 datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordesanandrés", categoria, "peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text1.requestFocus();
+                img1.setVisibility(View.VISIBLE);
+                img2.setVisibility(View.GONE);
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
 
             case R.id.santocristoexterior:
                 datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordelsantocristo", categoria, "peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text1.requestFocus();
+                img1.setVisibility(View.VISIBLE);
+                img2.setVisibility(View.GONE);
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
 
             case R.id.balcon:
                 datos = dbHelper.obtenerInfoPena(idioma, "balcóndesantiago", categoria, "peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text1.requestFocus();
+                img1.setVisibility(View.VISIBLE);
+                img2.setVisibility(View.GONE);
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
                 btnExtra.setVisibility(View.VISIBLE);

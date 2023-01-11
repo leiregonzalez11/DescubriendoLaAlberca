@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mapsFragments.otrosLugares.penaFrancia.hospederiaFragment">
+
+    <LinearLayout
+        android:id="@+id/layoutAloj2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:context=".anterior.ajustes.aloj.alojamientoActivity">
+
+        <TextView
+            android:id="@+id/nombreHosp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/alex_brush"
+            android:gravity='center'
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgHosp"
+            android:layout_width="250dp"
+            android:layout_height="220dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.697" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="15dp"
+            app:strokeColor="@color/black">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_mobile_retro_solid"
+                        tools:ignore="ContentDescription">
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/telHosp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-12dp"
+                        android:fontFamily="@font/amiri"
+                        android:gravity='left'
+                        android:textColor="@color/black"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="-7dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_star_half_stroke_solid"
+                        tools:ignore="ContentDescription" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarHosp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-50dp"
+                        android:layout_marginTop="-7dp"
+                        android:layout_marginRight="-25dp"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:progressBackgroundTint="#B4000000"
+                        android:progressTint="#FFB300"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:stepSize="0.5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_globe_solid"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/ubiHosp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="-9dp"
+                        android:fontFamily="@font/amiri"
+                        android:gravity='left'
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/buttonVolverHosp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-10dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="Volver"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="ButtonStyle" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

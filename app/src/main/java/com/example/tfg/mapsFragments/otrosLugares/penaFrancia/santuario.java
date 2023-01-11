@@ -135,7 +135,7 @@ public class santuario extends Fragment implements View.OnClickListener {
             case R.id.iglesiapeña:
                 Fragment fragment = iglesia.newInstance(args);
                 cargarFragment(fragment);
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
             case R.id.pozoverde:
                 String [] datos = dbHelper.obtenerInfoPena(idioma, "pozoverde", categoria, "peñadefrancia", 1);
@@ -144,7 +144,7 @@ public class santuario extends Fragment implements View.OnClickListener {
                 text4.setText("");
                 text5.setText("");
                 text6.setText("");
-                btnExtra.setVisibility(View.INVISIBLE);
+                btnExtra.setVisibility(View.GONE);
                 break;
             case R.id.convento:
                 String [] datos2 = dbHelper.obtenerInfoPena(idioma, "convento", categoria, "peñadefrancia", 5);

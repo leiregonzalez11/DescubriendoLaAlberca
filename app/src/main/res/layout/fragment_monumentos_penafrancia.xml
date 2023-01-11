@@ -10,7 +10,7 @@
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         android:background="@color/white"
@@ -226,24 +226,27 @@
                 app:layout_constraintTop_toTopOf="@id/imageView2"
                 app:layout_constraintVertical_bias="0.923" />
 
-            <ImageView
-                android:id="@+id/imagemon1"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginTop="25dp"
-                android:src="@drawable/laalberca2"
+            <Button
+                android:id="@+id/buttonmonumentos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="-10dp"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonmonumentos">
-            </ImageView>
+                app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/monumentostext1"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -252,21 +255,24 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@id/buttonmonumentos" />
 
-            <Button
-                android:id="@+id/buttonmonumentos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
-                android:textColor="@color/white"
+            <ImageView
+                android:id="@+id/imagemon1"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="-15dp"
                 android:visibility="invisible"
-                android:textStyle="bold"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:src="@drawable/laalberca2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/monumentostext1" />
+                app:layout_constraintTop_toBottomOf="@id/monumentostext1">
+            </ImageView>
+
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/monumentostext2"
@@ -275,6 +281,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"
@@ -289,6 +297,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginEnd="30dp"
+                android:visibility="invisible"
                 android:src="@drawable/laalberca2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
