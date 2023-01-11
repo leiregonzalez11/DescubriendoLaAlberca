@@ -24,7 +24,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/planolaalbercabasico"
+                app:srcCompat="@drawable/planolaalbercamonumentos"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.card.MaterialCardView
@@ -74,16 +74,16 @@
 
             <Button
                 android:id="@+id/btnp1"
-                android:layout_width="19dp"
-                android:layout_height="84dp"
+                android:layout_width="43dp"
+                android:layout_height="90dp"
                 android:background="#00000000"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.096"
+                app:layout_constraintHorizontal_bias="0.059"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.224" />
+                app:layout_constraintVertical_bias="0.235" />
 
             <Button
                 android:id="@+id/btnp2"
@@ -214,6 +214,162 @@
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
                 app:layout_constraintVertical_bias="0.709" />
+
+            <Button
+                android:id="@+id/btnm1"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.411"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.721" />
+
+            <Button
+                android:id="@+id/btnm2"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.532"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.602" />
+
+            <Button
+                android:id="@+id/btnm3"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.683"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.762" />
+
+            <Button
+                android:id="@+id/btnm4"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.843"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.721" />
+
+            <Button
+                android:id="@+id/btnm5"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.224"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.64" />
+
+            <Button
+                android:id="@+id/btnm6"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.26"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.721" />
+
+            <Button
+                android:id="@+id/btnm7"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.585"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.952" />
+
+            <Button
+                android:id="@+id/btnm8"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.434"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.833" />
+
+            <Button
+                android:id="@+id/btnm9"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.282"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.157" />
+
+            <Button
+                android:id="@+id/btnm10"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.717"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.254" />
+
+            <Button
+                android:id="@+id/btnm11"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.456"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.052" />
+
+            <Button
+                android:id="@+id/btnm12"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:background="#00000000"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.907"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.014" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

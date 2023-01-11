@@ -47,6 +47,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private Bundle args, argsMenu;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5,btnp6,btnp7,btnp8,btnp9,btnp10,btnp11;
+    private Button btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -96,6 +97,18 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp9 = v.findViewById(R.id.btnp9);
             btnp10 = v.findViewById(R.id.btnp10);
             btnp11 = v.findViewById(R.id.btnp11);
+            btnm1 = v.findViewById(R.id.btnm1);
+            btnm2 = v.findViewById(R.id.btnm2);
+            btnm3 = v.findViewById(R.id.btnm3);
+            btnm4 = v.findViewById(R.id.btnm4);
+            btnm5 = v.findViewById(R.id.btnm5);
+            btnm6 = v.findViewById(R.id.btnm6);
+            btnm7 = v.findViewById(R.id.btnm7);
+            btnm8 = v.findViewById(R.id.btnm8);
+            btnm9 = v.findViewById(R.id.btnm9);
+            btnm10 = v.findViewById(R.id.btnm10);
+            btnm11 = v.findViewById(R.id.btnm11);
+            btnm12 = v.findViewById(R.id.btnm12);
         }
         return v;
     }
@@ -124,6 +137,8 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         if (selecteditem.equalsIgnoreCase(opcionesSpinner[0])){ //Opcion seleccionada: Parking
 
             setBtnParking();
+            setVisibilityP(true);
+            setVisibilityM(false);
 
             if (idioma.equalsIgnoreCase("es")) {
                 img1.setImageResource(R.drawable.planolaalbercaparkinges);
@@ -140,15 +155,19 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){ //Opcion seleccionada: Sitios de interés
             img1.setImageResource(R.drawable.planolaalbercamonumentos);
+            setBtnMonumentos();
             setVisibilityP(false);
+            setVisibilityM(true);
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){ //Opcion seleccionada: Servicios
             img1.setImageResource(R.drawable.planolaalbercaservicios);
             setVisibilityP(false);
+            setVisibilityM(false);
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[3])){
+            setVisibilityP(false);
             setVisibilityP(false);
             args.putString("idioma", idioma);
             Fragment fragment = otrosLugaresInicio.newInstance(args);
@@ -228,9 +247,10 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         return idioma;
     }
 
+    /** Métodos Mapa Parking*/
+
     public void setBtnParking(){
 
-        setVisibilityP(true);
         btnp1.setOnClickListener(view -> parkingOnClick("eras1"));
         btnp2.setOnClickListener(view -> parkingOnClick("ermitaeras"));
         btnp3.setOnClickListener(view -> parkingOnClick("eras2"));
@@ -285,4 +305,62 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         parkingFragment.show(getChildFragmentManager(),"parking_fragment");
 
     }
+
+    /** Métodos Mapa Monumentos*/
+
+    public void setBtnMonumentos(){
+
+        btnm1.setOnClickListener(view -> monumentosOnClick("iglesia"));
+        btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor"));
+        btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo"));
+        btnm4.setOnClickListener(view -> monumentosOnClick("miradorsantafe"));
+        btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio"));
+        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre"));
+        btnm7.setOnClickListener(view -> monumentosOnClick("lapuente"));
+        btnm8.setOnClickListener(view -> monumentosOnClick("lasespeñitas"));
+        btnm9.setOnClickListener(view -> monumentosOnClick("ermitasdelaseras"));
+        btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio"));
+        btnm11.setOnClickListener(view -> monumentosOnClick("ermitaelhumilladero"));
+        btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio"));
+
+    }
+
+    public void setVisibilityM(boolean activar){
+
+        if (activar){
+            btnm1.setVisibility(View.VISIBLE);
+            btnm2.setVisibility(View.VISIBLE);
+            btnm3.setVisibility(View.VISIBLE);
+            btnm4.setVisibility(View.VISIBLE);
+            btnm5.setVisibility(View.VISIBLE);
+            btnm6.setVisibility(View.VISIBLE);
+            btnm7.setVisibility(View.VISIBLE);
+            btnm8.setVisibility(View.VISIBLE);
+            btnm9.setVisibility(View.VISIBLE);
+            btnm10.setVisibility(View.VISIBLE);
+            btnm11.setVisibility(View.VISIBLE);
+            btnm12.setVisibility(View.VISIBLE);
+        }
+
+        else{
+            btnm1.setVisibility(View.INVISIBLE);
+            btnm2.setVisibility(View.INVISIBLE);
+            btnm3.setVisibility(View.INVISIBLE);
+            btnm4.setVisibility(View.INVISIBLE);
+            btnm5.setVisibility(View.INVISIBLE);
+            btnm6.setVisibility(View.INVISIBLE);
+            btnm7.setVisibility(View.INVISIBLE);
+            btnm8.setVisibility(View.INVISIBLE);
+            btnm9.setVisibility(View.INVISIBLE);
+            btnm10.setVisibility(View.INVISIBLE);
+            btnm11.setVisibility(View.INVISIBLE);
+            btnm12.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    public void monumentosOnClick(String monumento){
+       Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+    }
+
 }
