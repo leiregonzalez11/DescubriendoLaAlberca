@@ -21,13 +21,13 @@
             android:layout_width="230dp"
             android:layout_height="140dp"
             android:src="@drawable/laalberca2"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="50dp">
 
         </ImageView>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:layout_height="110dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:theme="@style/Theme.MaterialComponents.Light"
@@ -40,6 +40,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -52,8 +53,8 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="15dp"
                         android:src="@drawable/euro_sign_solid"
@@ -84,14 +85,36 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="15dp"
                         android:src="@drawable/square_parking_solid"
                         tools:ignore="ContentDescription">
                     </ImageView>
 
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:progress="33"
+                        android:progressTint="#880E4F" />
+
+                    <ImageButton
+                        android:id="@+id/infoparking"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_circle_info_solid"
+                        tools:ignore="ContentDescription">
+                    </ImageButton>
+
+
+                    <!--
                     <TextView
                         android:id="@+id/aparcar"
                         android:layout_width="match_parent"
@@ -102,6 +125,7 @@
                         android:gravity='left'
                         android:textColor="@color/black"
                         android:textSize="17sp"/>
+                        -->
 
                 </LinearLayout>
 

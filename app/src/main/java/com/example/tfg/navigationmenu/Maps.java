@@ -253,8 +253,8 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
         btnp1.setOnClickListener(view -> parkingOnClick("eras1"));
         btnp2.setOnClickListener(view -> parkingOnClick("ermitaeras"));
-        btnp3.setOnClickListener(view -> parkingOnClick("eras2"));
-        btnp4.setOnClickListener(view -> parkingOnClick("eras3"));
+        btnp3.setOnClickListener(view -> parkingOnClick("caravanas"));
+        btnp4.setOnClickListener(view -> parkingOnClick("eras2"));
         btnp5.setOnClickListener(view -> parkingOnClick("sanantonio"));
         btnp6.setOnClickListener(view -> parkingOnClick("afueras"));
         btnp7.setOnClickListener(view -> parkingOnClick("centromedico"));
@@ -300,6 +300,15 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     public void parkingOnClick(String parking){
         DialogFragment parkingFragment = new parkingFragment();
         args.putString("parking", parking);
+
+        if (parking.equalsIgnoreCase("eras1") || parking.equalsIgnoreCase("eras2") || parking.equalsIgnoreCase("ermitaeras")){
+            args.putInt("aparcar", 66);
+        } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
+            args.putInt("aparcar", 100);
+        } else{
+            args.putInt("aparcar", 33);
+        }
+
         parkingFragment.setArguments(args);
         parkingFragment.setCancelable(false);
         parkingFragment.show(getChildFragmentManager(),"parking_fragment");

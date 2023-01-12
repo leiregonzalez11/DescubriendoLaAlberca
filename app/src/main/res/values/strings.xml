@@ -221,11 +221,14 @@
         <item>Sitios de interés</item>
         <item>Alrededores</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="acerca_de">Acerca De</string>
     <string name="quienes_somos">¿Quienes somos?</string>
     <string name="agradecimientos">Agradecimientos</string>
+    <string name="de_pago">Parking de Pago</string>
+    <string name="gratis">Parking gratuito</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

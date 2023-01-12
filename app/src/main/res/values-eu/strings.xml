@@ -142,6 +142,8 @@
     <string name="acerca_de">Aplikazioari buruz</string>
     <string name="quienes_somos">Nor gara gu?</string>
     <string name="agradecimientos">Eskertzak</string>
+    <string name="de_pago">Ordainpeko parking-a</string>
+    <string name="gratis">Doako parking-a</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

@@ -140,6 +140,8 @@
     <string name="acerca_de">About the App</string>
     <string name="quienes_somos">About Us</string>
     <string name="agradecimientos">Appreciations</string>
+    <string name="de_pago">Toll Parking</string>
+    <string name="gratis">Free Parking</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

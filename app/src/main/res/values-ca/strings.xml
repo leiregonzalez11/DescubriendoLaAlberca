@@ -172,5 +172,7 @@
     <string name="acerca_de">Acerca De</string>
     <string name="quienes_somos">¿Quienes somos?</string>
     <string name="agradecimientos">Agradecimientos</string>
+    <string name="de_pago">De Pago</string>
+    <string name="gratis">Gratuito</string>
 
 </resources>
