@@ -20,9 +20,14 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.R;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class parkingFragment extends DialogFragment {
+
+    private StorageReference storageRef;
 
     @SuppressLint("InflateParams")
     @NonNull
@@ -49,6 +54,10 @@ public class parkingFragment extends DialogFragment {
         TextView precio = parkingView.findViewById(R.id.euro);
         ProgressBar progressBar = parkingView.findViewById(R.id.progressBar);
         ImageView img = parkingView.findViewById(R.id.parkingfoto);
+
+        //Imagen
+        storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("mapas/parking/" + parking + ".png", img);
 
         if (parking.equalsIgnoreCase("sanantonio")){
             precio.setText(R.string.de_pago);
@@ -78,6 +87,12 @@ public class parkingFragment extends DialogFragment {
         });
 
         return builder.create();
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
 }

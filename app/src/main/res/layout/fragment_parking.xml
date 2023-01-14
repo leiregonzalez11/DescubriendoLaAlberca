@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/parkingfoto"
-            android:layout_width="230dp"
-            android:layout_height="140dp"
+            android:layout_width="320dp"
+            android:layout_height="250dp"
             android:src="@drawable/laalberca2"
             android:layout_marginTop="50dp">
 
