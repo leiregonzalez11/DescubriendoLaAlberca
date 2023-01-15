@@ -77,7 +77,7 @@
                 android:layout_width="300dp"
                 android:layout_height="230dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
@@ -87,7 +87,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
+                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
@@ -104,6 +104,28 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historia3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-40dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/histimg3"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                tools:ignore="ContentDescription" />
+
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/historia4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"

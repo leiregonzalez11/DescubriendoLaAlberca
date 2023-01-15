@@ -26,10 +26,10 @@ import com.google.firebase.storage.StorageReference;
 public class historiaInicio extends Fragment {
 
     private ImageButton btn;
-    private ImageView img1, img2;
+    private ImageView img1, img2, img3;
     private String idioma, categoria;
     private StorageReference storageRef;
-    private TextView text1, text2, text3, pruebatexto;
+    private TextView text1, text2, text3, text4, pruebatexto;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -87,9 +87,12 @@ public class historiaInicio extends Fragment {
             text1 = v.findViewById(R.id.historia1);
             text2 = v.findViewById(R.id.historia2);
             text3 = v.findViewById(R.id.historia3);
+            text4 = v.findViewById(R.id.historia4);
             btn = v.findViewById(R.id.historiabtn);
             img1 = v.findViewById(R.id.histimg1);
             img2 = v.findViewById(R.id.histimg2);
+            img3 = v.findViewById(R.id.histimg3);
+
         }
         return v;
     }
@@ -106,13 +109,15 @@ public class historiaInicio extends Fragment {
         if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
             btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
 
-            String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,3);
+            String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,4);
 
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             obtenerImagenFirebase("historia/historia1.png", img1);
             obtenerImagenFirebase("historia/historia2.png", img2);
+            obtenerImagenFirebase("historia/historia5.png", img3);
         }
 
 
@@ -122,25 +127,29 @@ public class historiaInicio extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
                 pruebatexto.setText("2");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, 3);
+                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, 4);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                obtenerImagenFirebase("historia/historia3.png", img1);
-                obtenerImagenFirebase("historia/historia4.png", img2);
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                obtenerImagenFirebase("historia/historia6.png", img1);
+                obtenerImagenFirebase("historia/historia3.png", img2);
+                obtenerImagenFirebase("historia/historia4.png", img3);
 
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
                 pruebatexto.setText("1");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,3);
+                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,4);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 obtenerImagenFirebase("historia/historia1.png", img1);
                 obtenerImagenFirebase("historia/historia2.png", img2);
+                obtenerImagenFirebase("historia/historia5.png", img3);
 
             }
         });
