@@ -91,12 +91,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp3 = v.findViewById(R.id.btnp3);
             btnp4 = v.findViewById(R.id.btnp4);
             btnp5 = v.findViewById(R.id.btnp5);
-            btnp6 = v.findViewById(R.id.btnp6);
-            btnp7 = v.findViewById(R.id.btnp7);
-            btnp8 = v.findViewById(R.id.btnp8);
-            btnp9 = v.findViewById(R.id.btnp9);
-            btnp10 = v.findViewById(R.id.btnp10);
-            btnp11 = v.findViewById(R.id.btnp11);
             btnm1 = v.findViewById(R.id.btnm1);
             btnm2 = v.findViewById(R.id.btnm2);
             btnm3 = v.findViewById(R.id.btnm3);
@@ -252,16 +246,10 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     public void setBtnParking(){
 
         btnp1.setOnClickListener(view -> parkingOnClick("eras1"));
-        btnp2.setOnClickListener(view -> parkingOnClick("ermitaeras"));
-        btnp3.setOnClickListener(view -> parkingOnClick("caravanas"));
-        btnp4.setOnClickListener(view -> parkingOnClick("eras2"));
-        btnp5.setOnClickListener(view -> parkingOnClick("sanantonio"));
-        btnp6.setOnClickListener(view -> parkingOnClick("afueras"));
-        btnp7.setOnClickListener(view -> parkingOnClick("centromedico"));
-        btnp8.setOnClickListener(view -> parkingOnClick("carreteranueva"));
-        btnp9.setOnClickListener(view -> parkingOnClick("puente"));
-        btnp10.setOnClickListener(view -> parkingOnClick("elcastillo"));
-        btnp11.setOnClickListener(view -> parkingOnClick("barrera"));
+        btnp2.setOnClickListener(view -> parkingOnClick("caravanas"));
+        btnp3.setOnClickListener(view -> parkingOnClick("eras2"));
+        btnp4.setOnClickListener(view -> parkingOnClick("sanantonio"));
+        btnp5.setOnClickListener(view -> parkingOnClick("afueras"));
 
     }
 
@@ -273,12 +261,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp3.setVisibility(View.VISIBLE);
             btnp4.setVisibility(View.VISIBLE);
             btnp5.setVisibility(View.VISIBLE);
-            btnp6.setVisibility(View.VISIBLE);
-            btnp7.setVisibility(View.VISIBLE);
-            btnp8.setVisibility(View.VISIBLE);
-            btnp9.setVisibility(View.VISIBLE);
-            btnp10.setVisibility(View.VISIBLE);
-            btnp11.setVisibility(View.VISIBLE);
         }
 
         else{
@@ -287,12 +269,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp3.setVisibility(View.INVISIBLE);
             btnp4.setVisibility(View.INVISIBLE);
             btnp5.setVisibility(View.INVISIBLE);
-            btnp6.setVisibility(View.INVISIBLE);
-            btnp7.setVisibility(View.INVISIBLE);
-            btnp8.setVisibility(View.INVISIBLE);
-            btnp9.setVisibility(View.INVISIBLE);
-            btnp10.setVisibility(View.INVISIBLE);
-            btnp11.setVisibility(View.INVISIBLE);
         }
 
     }
@@ -301,7 +277,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         DialogFragment parkingFragment = new parkingFragment();
         args.putString("parking", parking);
 
-        if (parking.equalsIgnoreCase("eras1") || parking.equalsIgnoreCase("eras2") || parking.equalsIgnoreCase("ermitaeras")){
+        if (parking.equalsIgnoreCase("eras1") || parking.equalsIgnoreCase("eras2")){
             args.putInt("aparcar", 66);
         } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
             args.putInt("aparcar", 100);
