@@ -3,7 +3,6 @@ package com.example.tfg.navigationmenu;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -28,15 +27,9 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
 import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
-import com.example.tfg.dialogFragments.ExitFragment;
-import com.example.tfg.dialogFragments.parkingFragment;
+import com.example.tfg.mapsFragments.parking.parkingFragment;
 import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
-import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
+import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -303,9 +296,9 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre"));
         btnm7.setOnClickListener(view -> monumentosOnClick("lapuente"));
         btnm8.setOnClickListener(view -> monumentosOnClick("lasespeñitas"));
-        btnm9.setOnClickListener(view -> monumentosOnClick("ermitasdelaseras"));
+        btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas"));
         btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio"));
-        btnm11.setOnClickListener(view -> monumentosOnClick("ermitaelhumilladero"));
+        btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero"));
         btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio"));
 
     }
@@ -345,7 +338,18 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     }
 
     public void monumentosOnClick(String monumento){
-       Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+
+        if (!monumento.equalsIgnoreCase("ermitadelhumilladero") && !monumento.equalsIgnoreCase("ermitasanantonio")
+                && !monumento.equalsIgnoreCase("ermitadesanblas")){
+            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+        } else{
+            DialogFragment parkingFragment = new ermitasFragment();
+            args.putString("ermita", monumento);
+            args.putString("idioma", idioma);
+            parkingFragment.setArguments(args);
+            parkingFragment.setCancelable(false);
+            parkingFragment.show(getChildFragmentManager(),"ermitas_fragment");
+        }
     }
 
 }

@@ -142,6 +142,10 @@
     <string name="agradecimientos">Appreciations</string>
     <string name="de_pago">Toll Parking</string>
     <string name="gratis">Free Parking</string>
+    <string name="volver">Back</string>
+    <string name="humilladero">Hermitage of Humilladero</string>
+    <string name="sanblas">Hermitage of San Blas</string>
+    <string name="sanantonio">Hermitage of San Antonio</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mapsFragments.sitiosdeinteres.ermitasFragment">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tituloermita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="-4dp"
+                android:fontFamily="@font/alex_brush"
+                android:textAlignment="gravity"
+                android:text=""
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/ermita1text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/ermitasfoto1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/ermita2text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/ermitasfoto2"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/ermita3text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/buttonVolverErmita"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="-10dp"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/amiri"
+                    android:text="@string/volver"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

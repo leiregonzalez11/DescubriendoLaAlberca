@@ -144,6 +144,10 @@
     <string name="agradecimientos">Eskertzak</string>
     <string name="de_pago">Ordainpeko parking-a</string>
     <string name="gratis">Doako parking-a</string>
+    <string name="volver">Atzera</string>
+    <string name="humilladero">Humilladero baseliza</string>
+    <string name="sanblas">San Blas baseliza</string>
+    <string name="sanantonio">San Antonio baseliza</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

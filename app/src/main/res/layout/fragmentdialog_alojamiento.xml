@@ -175,10 +175,10 @@
                 android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="@font/amiri"
-                android:text="Volver"
-                android:textStyle="bold"
+                android:text="@string/volver"
                 android:textColor="@color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="ButtonStyle" />
 
         </LinearLayout>

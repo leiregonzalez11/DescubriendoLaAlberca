@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dialogFragments.infoparkingFragment">
+    tools:context=".mapsFragments.parking.infoparkingFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="@font/amiri"
-                android:text="Volver"
+                android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="18sp"

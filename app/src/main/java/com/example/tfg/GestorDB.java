@@ -20,9 +20,8 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 7;
+    private static final int DB_VERSION = 8;
     private final Context context;
-    private String query;
     private boolean seguir = true;
 
     public GestorDB(@Nullable Context context) {
@@ -54,6 +53,8 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tradiciones");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS historia");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS monumento");
         onCreate(sqLiteDatabase);
 
     }
@@ -62,7 +63,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
 
         //Esquema de la tabla arquitectura
-        query = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String query = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "catArqui VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descrArqui VARCHAR NOT NULL)";
         Log.d("Tabla Arquitectura: ", query);
         sqLiteDatabase.execSQL(query);
@@ -125,6 +126,12 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla historia
         query = "CREATE TABLE IF NOT EXISTS historia (idHist INTEGER PRIMARY KEY AUTOINCREMENT, catHistoria VARCHAR NOT NULL," +
                 "idioma VARCHAR(2) NOT NULL, descHistoria VARCHAR NOT NULL)";
+        Log.i("Tabla Historia: ", query);
+        sqLiteDatabase.execSQL(query);
+
+        //Esquema de la tabla monumento
+        query = "CREATE TABLE IF NOT EXISTS monumento (idMon INTEGER PRIMARY KEY AUTOINCREMENT, nombreMon VARCHAR NOT NULL," +
+                "idioma VARCHAR(2) NOT NULL, descMon VARCHAR NOT NULL)";
         Log.i("Tabla Historia: ", query);
         sqLiteDatabase.execSQL(query);
 
@@ -519,7 +526,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
 
-    public String[] obtenerInfoHist(String catHist, String idioma, String tabla, int numTV) {
+    public String[] obtenerInfoHist(String catHist, String idioma, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
@@ -528,6 +535,27 @@ public class GestorDB extends SQLiteOpenHelper {
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descHistoria FROM historia " +
                 "WHERE catHistoria = ? AND idioma = ?;", new String[]{catHist, idioma});
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            System.out.println(descrip);
+            System.out.println(i);
+            descr[i] = descrip;
+            i++;
+            System.out.println(i);
+        }
+        c.close();
+        return descr;
+    }
+
+    public String[] obtenerInfoMonumentos(String idioma, String nombreMonumento, int numTV) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[numTV];
+        int i=0;
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descMon FROM monumento " +
+                "WHERE nombreMon = ? AND idioma = ?;", new String[]{nombreMonumento, idioma});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;

@@ -15,11 +15,36 @@ INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'es', '
 //
 //Idioma: Euskera
 //
-//INSERT INTO historia (idioma, descHistoria) VALUES ('eu', '');
+//INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('', 'eu', '');
 //
 //Idioma: Inglés
 //
-//INSERT INTO historia (idioma, descHistoria) VALUES ('en', '');
+//INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('', 'en', '');
+//
+//-----------------------------------------------------------
+//                   ----MONUMENTOS----                      |
+//-----------------------------------------------------------
+//
+//Idioma: Castellano
+//
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadelhumilladero', 'es', 'La mayoría de pueblos de esta comarca salmantina tienen una ermita del Humilladero. Aquí solía estar la cruz de término y servía para que los visitantes se despidieran y rezaran al salir de viaje o a su llegada. En otros tiempos era lugar de entrada de quienes venían de otras tierras lejanas, afanes de vida y asuntos de ciudades.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadelhumilladero', 'es', 'La ermita del Humilladero de La Alberca, también conocida como ermita de la Vera Cruz o "El Millaero", es una ermita de sólida construcción datada del año 1678 con un buen pórtico de madera con columnas de granito y una escalinata a lo largo de toda la fachada.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadelhumilladero', 'es', 'Su frontal es un curioso armazón de ventanas de madera que se pueden  abrir con el máximo cuidado y respeto para poder curiosear todo su interior. En esta ermita, que es anterior a la de San Antonio, se guarda el Santo Cristo de la Misericordia que el Jueves Santo se une a la procesión general que viene del pueblo para que marchen juntos hacia la Iglesia.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadesanblas', 'es', 'En una de las entradas del pueblo, en la carretera dirección a las Batuecas, junto a un ciprés que destaca desde lejos, se encuentra la ermita de San Blás. Antiguamente conocida como la de Los Santos Mártires, hasta no hace muchos años era el cementerio del pueblo.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadesanblas', 'es', 'Se conoce que en el año 1813 fue reconstruida, debido a que se encontraba muy arruinada por haber servido como hospital durante la guerra. Su reparación se consideró sumamente necesaria por ser la única ermita en la que se podía celebrar los Divinos Oficios y administrarse los Santos Sacramentos en cualquier acontecimiento en caso de que se inhabilitase la Iglesia Parroquial del pueblo.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadesanblas', 'es', 'A día de hoy no se realiza culto en ella, sin embargo para los albercanos cobra especial importancia por la romería de "El Día del Pendón". Como curiosidad, justo al lado suele guardarse el famoso marrano de San Antón.');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'es', 'La ermita de San Antonio está a la salida del pueblo, con dirección a Salamanca. Es de pequeñas dimensiones y tiene amplio pórtico, cuyos lados eran, como las barandillas del Solano bajo, de sillería. A principios del siglo XX se quitaron para poner las actuales, de hierro, más prácticas pero de menor gusto. Sobre el dintel de entrada se lee lo siguiente:');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'es', 'Divo Antonio de Padua hoc sacellum dicavit Antonius a Velasco, Presbiter. 16 kalendas M. ; S.P.B. Anno 1670');
+INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'es', 'El año de su construcción consta, como se ve en la inscripción, de 1670. Además, se dice que un quinto, al tener que incorporarse a filas, fué de noche a encomendarse al Santo de la advocación de esta ermita y, bajo la imagen exterior, ocultó una onza de oro. A su regreso pudo, con satisfacción, recogerla de nuevo. El Santo le resultó fiel depositario.');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('', 'es', '');
+//
+//Idioma: Euskera
+//
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('', 'eu', '');
+//
+//Idioma: Inglés
+//
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('', 'en', '');
 //
 //--------------------------------------------------------------
 //                   ----ARQUITECTURA----                      |

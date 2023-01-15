@@ -229,6 +229,10 @@
     <string name="gratis">Parking gratuito</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="volver">Volver</string>
+    <string name="humilladero">Ermita del Humilladero</string>
+    <string name="sanblas">Ermita de San Blas</string>
+    <string name="sanantonio">Ermita de San Antonio</string>
 
 
 </resources>

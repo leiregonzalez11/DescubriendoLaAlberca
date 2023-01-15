@@ -106,13 +106,13 @@ public class historiaInicio extends Fragment {
         if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
             btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
 
-            String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
+            String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,3);
 
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            obtenerImagenFirebase("historia/historia1.png", (ImageView) img1);
-            obtenerImagenFirebase("historia/historia2.png", (ImageView) img2);
+            obtenerImagenFirebase("historia/historia1.png", img1);
+            obtenerImagenFirebase("historia/historia2.png", img2);
         }
 
 
@@ -122,25 +122,25 @@ public class historiaInicio extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
                 pruebatexto.setText("2");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, categoria, 3);
+                String [] datos = dbHelper.obtenerInfoHist("cat2", idioma, 3);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                obtenerImagenFirebase("historia/historia3.png", (ImageView) img1);
-                obtenerImagenFirebase("historia/historia4.png", (ImageView) img2);
+                obtenerImagenFirebase("historia/historia3.png", img1);
+                obtenerImagenFirebase("historia/historia4.png", img2);
 
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
                 pruebatexto.setText("1");
 
-                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma, categoria, 3);
+                String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,3);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                obtenerImagenFirebase("historia/historia1.png", (ImageView) img1);
-                obtenerImagenFirebase("historia/historia2.png", (ImageView) img2);
+                obtenerImagenFirebase("historia/historia1.png", img1);
+                obtenerImagenFirebase("historia/historia2.png", img2);
 
             }
         });
