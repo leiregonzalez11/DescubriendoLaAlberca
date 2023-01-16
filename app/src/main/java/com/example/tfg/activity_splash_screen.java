@@ -26,7 +26,7 @@ public class activity_splash_screen extends AppCompatActivity {
         // SO THAT WE CAN PERFORM ANIMATION USING THAT IMAGE
 
         ImageView backgroundImage = findViewById(R.id.SplashScreenImage);
-        Animation slideAnimation = AnimationUtils.loadAnimation(this, R.anim.side_slide);
+        Animation slideAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
         backgroundImage.startAnimation(slideAnimation);
 
         // we used the postDelayed(Runnable, time) method
