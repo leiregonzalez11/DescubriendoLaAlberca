@@ -30,6 +30,8 @@ import com.example.tfg.ajustesFragments.Idiomas;
 import com.example.tfg.mapsFragments.parking.parkingFragment;
 import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesiamapaFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.plazamapaFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -39,7 +41,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private String idioma;
     private Bundle args, argsMenu;
     private String [] opcionesSpinner;
-    private Button btnp1,btnp2,btnp3,btnp4,btnp5,btnp6,btnp7,btnp8,btnp9,btnp10,btnp11;
+    private Button btnp1,btnp2,btnp3,btnp4,btnp5;
     private Button btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
 
     /**
@@ -270,7 +272,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         DialogFragment parkingFragment = new parkingFragment();
         args.putString("parking", parking);
 
-        if (parking.equalsIgnoreCase("eras1") || parking.equalsIgnoreCase("eras2")){
+        if ( parking.equalsIgnoreCase("eras2")){
             args.putInt("aparcar", 66);
         } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
             args.putInt("aparcar", 100);
@@ -339,16 +341,29 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     public void monumentosOnClick(String monumento){
 
-        if (!monumento.equalsIgnoreCase("ermitadelhumilladero") && !monumento.equalsIgnoreCase("ermitasanantonio")
-                && !monumento.equalsIgnoreCase("ermitadesanblas")){
+        if (!monumento.contains("ermita") && !monumento.equalsIgnoreCase("iglesia") && !monumento.equalsIgnoreCase("plazamayor")){
             Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
         } else{
-            DialogFragment parkingFragment = new ermitasFragment();
-            args.putString("ermita", monumento);
             args.putString("idioma", idioma);
-            parkingFragment.setArguments(args);
-            parkingFragment.setCancelable(false);
-            parkingFragment.show(getChildFragmentManager(),"ermitas_fragment");
+            DialogFragment fragment;
+            if (monumento.contains("ermita")){
+                fragment = new ermitasFragment();
+                args.putString("ermita", monumento);
+                fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(),"ermitas_fragment");
+            } else if (monumento.equalsIgnoreCase("iglesia")){
+                fragment = new iglesiamapaFragment();
+                fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(),"plazaiglesia_fragment");
+            } else {
+                fragment = new plazamapaFragment();
+                fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(),"plaza_fragment");
+            }
+
         }
     }
 

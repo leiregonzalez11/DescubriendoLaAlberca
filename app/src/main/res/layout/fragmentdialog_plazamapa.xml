@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mapsFragments.sitiosdeinteres.plazamapaFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:ignore="UselessParent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tituloplaza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="-15dp"
+            android:fontFamily="@font/alex_brush"
+            android:textAlignment="gravity"
+            android:text="Plaza Mayor"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="35sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="300dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/plazamapa"
+                android:layout_width="300dp"
+                android:layout_height="220dp"
+                android:src="@drawable/plazalaalberca"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"/>
+
+            <Button
+                android:id="@+id/buttonAyuntamiento"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintVertical_bias="0.307" />
+
+            <Button
+                android:id="@+id/buttonCrucero"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintHorizontal_bias="0.416"
+                app:layout_constraintVertical_bias="0.609" />
+
+            <Button
+                android:id="@+id/buttonEscuelas"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintHorizontal_bias="0.164"
+                app:layout_constraintVertical_bias="0.502" />
+
+            <Button
+                android:id="@+id/buttonTeatro"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintVertical_bias="0.905" />
+
+            <Button
+                android:id="@+id/buttonBiblioteca"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintVertical_bias="0.911" />
+
+            <Button
+                android:id="@+id/buttonUnamuno"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/plazamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazamapa"
+                app:layout_constraintHorizontal_bias="0.792"
+                app:layout_constraintStart_toStartOf="@id/plazamapa"
+                app:layout_constraintTop_toTopOf="@id/plazamapa"
+                app:layout_constraintVertical_bias="0.674" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textplazaiglesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-25dp"
+            android:layout_marginBottom="-5dp"
+            android:fontFamily="@font/amiri"
+            android:textAlignment="gravity"
+            android:text="@string/infomaps"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/buttonVolverPlaza"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-5dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="@string/volver"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
