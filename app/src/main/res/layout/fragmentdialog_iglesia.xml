@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mapsFragments.sitiosdeinteres.iglesiaFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tituloiglesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="-15dp"
+            android:fontFamily="@font/alex_brush"
+            android:textAlignment="gravity"
+            android:text="Iglesia"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="35sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="400dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/iglesiamapa"
+                android:layout_width="380dp"
+                android:layout_height="500dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/planoiglesiapueblo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"/>
+
+            <Button
+                android:id="@+id/capillacentral"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.53"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.266" />
+
+            <Button
+                android:id="@+id/capilladolores"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.814"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.24" />
+
+            <Button
+                android:id="@+id/retablosantaana"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.371"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.393" />
+
+            <Button
+                android:id="@+id/retablovirgencarmen"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.681"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.391" />
+
+            <Button
+                android:id="@+id/retablomayor"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.114" />
+
+            <Button
+                android:id="@+id/pulpito"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.561" />
+
+            <Button
+                android:id="@+id/retablosanpedro"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.747"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.603" />
+
+            <Button
+                android:id="@+id/retablocristosudor"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.894"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.445" />
+
+            <Button
+                android:id="@+id/pilaagua1"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.376"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.783" />
+
+            <Button
+                android:id="@+id/pilaagua2"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.67"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.783" />
+
+            <Button
+                android:id="@+id/torre"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.138"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.316" />
+
+            <Button
+                android:id="@+id/virgenrosario"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.138"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.429" />
+
+            <Button
+                android:id="@+id/santocristo"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.305"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.603" />
+
+            <Button
+                android:id="@+id/pilabautismal"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.302"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.899" />
+
+            <Button
+                android:id="@+id/portico1"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.748" />
+
+            <Button
+                android:id="@+id/portico2"
+                android:layout_width="50dp"
+                android:layout_height="51dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.748" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textplazaiglesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-35dp"
+            android:layout_marginBottom="-5dp"
+            android:fontFamily="@font/amiri"
+            android:textAlignment="gravity"
+            android:text="@string/infomaps"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/buttonVolverIglesia"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-5dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="@string/volver"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -81,8 +81,9 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonIglesia:
-                monumento = "iglesia de Nuestra Señora de la Asunción";
-                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
+                DialogFragment iglesia = new iglesiaFragment();
+                iglesia.setCancelable(false);
+                iglesia.show(getChildFragmentManager(),"iglesia_fragment");
                 break;
             case R.id.buttonCasaSS:
                 monumento = "antigua casa de la Santa Inquisición";
