@@ -29,6 +29,7 @@ import com.example.tfg.ajustesFragments.FormularioDeContacto;
 import com.example.tfg.ajustesFragments.Idiomas;
 import com.example.tfg.mapsFragments.parking.parkingFragment;
 import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
+import com.example.tfg.mapsFragments.parking.senalParkingFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesiamapaFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.plazamapaFragment;
@@ -41,7 +42,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private String idioma;
     private Bundle args, argsMenu;
     private String [] opcionesSpinner;
-    private Button btnp1,btnp2,btnp3,btnp4,btnp5;
+    private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
     private Button btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
 
     /**
@@ -81,6 +82,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             img1 = v.findViewById(R.id.mapa);
             spinner = v.findViewById(R.id.spinnerMapa);
             text = v.findViewById(R.id.textomaps);
+            btnparking = v.findViewById(R.id.btnparking);
             btnp1 = v.findViewById(R.id.btnp1);
             btnp2 = v.findViewById(R.id.btnp2);
             btnp3 = v.findViewById(R.id.btnp3);
@@ -245,6 +247,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         btnp3.setOnClickListener(view -> parkingOnClick("eras2"));
         btnp4.setOnClickListener(view -> parkingOnClick("sanantonio"));
         btnp5.setOnClickListener(view -> parkingOnClick("afueras"));
+        btnparking.setOnClickListener(view -> parkingOnClick("señal"));
 
     }
 
@@ -256,6 +259,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp3.setVisibility(View.VISIBLE);
             btnp4.setVisibility(View.VISIBLE);
             btnp5.setVisibility(View.VISIBLE);
+            btnparking.setVisibility(View.VISIBLE);
         }
 
         else{
@@ -264,25 +268,38 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp3.setVisibility(View.INVISIBLE);
             btnp4.setVisibility(View.INVISIBLE);
             btnp5.setVisibility(View.INVISIBLE);
+            btnparking.setVisibility(View.INVISIBLE);
         }
 
     }
 
     public void parkingOnClick(String parking){
-        DialogFragment parkingFragment = new parkingFragment();
-        args.putString("parking", parking);
 
-        if ( parking.equalsIgnoreCase("eras2")){
-            args.putInt("aparcar", 66);
-        } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
-            args.putInt("aparcar", 100);
+        if (!parking.equalsIgnoreCase("señal")){
+            DialogFragment parkingFragment = new parkingFragment();
+            args.putString("parking", parking);
+
+            if ( parking.equalsIgnoreCase("eras2")){
+                args.putInt("aparcar", 66);
+            } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
+                args.putInt("aparcar", 100);
+            } else{
+                args.putInt("aparcar", 33);
+            }
+
+            parkingFragment.setArguments(args);
+            parkingFragment.setCancelable(false);
+            parkingFragment.show(getChildFragmentManager(),"parking_fragment");
         } else{
-            args.putInt("aparcar", 33);
+            DialogFragment parkingFragment = new senalParkingFragment();
+            args.putString("idioma", idioma);
+            parkingFragment.setArguments(args);
+            parkingFragment.setCancelable(false);
+            parkingFragment.show(getChildFragmentManager(),"parkingSeñal_fragment");
+
+
         }
 
-        parkingFragment.setArguments(args);
-        parkingFragment.setCancelable(false);
-        parkingFragment.show(getChildFragmentManager(),"parking_fragment");
 
     }
 
