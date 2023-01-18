@@ -8,11 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -52,38 +49,37 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
     private void setListeners(View plazaView) {
 
         Button torre = plazaView.findViewById(R.id.torre);
-        torre.setOnClickListener(this);
         Button carmen = plazaView.findViewById(R.id.retablovirgencarmen);
-        carmen.setOnClickListener(this);
         Button pedro = plazaView.findViewById(R.id.retablosanpedro);
-        pedro.setOnClickListener(this);
         Button sudor = plazaView.findViewById(R.id.retablocristosudor);
-        sudor.setOnClickListener(this);
         Button rosario = plazaView.findViewById(R.id.virgenrosario);
-        rosario.setOnClickListener(this);
         Button capillacentral = plazaView.findViewById(R.id.capillacentral);
-        capillacentral.setOnClickListener(this);
         Button salida1 = plazaView.findViewById(R.id.portico1);
-        salida1.setOnClickListener(this);
         Button salida2 = plazaView.findViewById(R.id.portico2);
-        salida2.setOnClickListener(this);
         Button pilab = plazaView.findViewById(R.id.pilabautismal);
-        pilab.setOnClickListener(this);
         Button pila1 = plazaView.findViewById(R.id.pilaagua1);
-        pila1.setOnClickListener(this);
         Button pila2 = plazaView.findViewById(R.id.pilaagua2);
-        pila2.setOnClickListener(this);
         Button retablomayor = plazaView.findViewById(R.id.retablomayor);
-        retablomayor.setOnClickListener(this);
         Button dolores = plazaView.findViewById(R.id.capilladolores);
-        dolores.setOnClickListener(this);
         Button pulpito = plazaView.findViewById(R.id.pulpito);
-        pulpito.setOnClickListener(this);
         Button ana = plazaView.findViewById(R.id.retablosantaana);
-        ana.setOnClickListener(this);
         Button santoc = plazaView.findViewById(R.id.santocristo);
+        torre.setOnClickListener(this);
+        carmen.setOnClickListener(this);
+        pedro.setOnClickListener(this);
+        sudor.setOnClickListener(this);
+        rosario.setOnClickListener(this);
+        capillacentral.setOnClickListener(this);
+        salida1.setOnClickListener(this);
+        salida2.setOnClickListener(this);
+        pilab.setOnClickListener(this);
+        pila1.setOnClickListener(this);
+        pila2.setOnClickListener(this);
+        retablomayor.setOnClickListener(this);
+        dolores.setOnClickListener(this);
+        pulpito.setOnClickListener(this);
+        ana.setOnClickListener(this);
         santoc.setOnClickListener(this);
-
 
     }
 
@@ -96,8 +92,53 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
         switch (btn.getId()) {
 
-
+            case R.id.santocristo:
+                monumento = "santocristo";
+                break;
+            case R.id.retablosanpedro:
+                monumento = "sanpedro";
+                break;
+            case R.id.retablosantaana:
+                monumento = "santaana";
+                break;
+            case R.id.pulpito:
+                monumento = "pulpito";
+                break;
+            case R.id.pilaagua1:
+            case R.id.pilaagua2:
+                monumento = "pilaagua";
+                break;
+            case R.id.pilabautismal:
+                monumento = "bautismal";
+                break;
+            case R.id.retablocristosudor:
+                monumento = "cristosudor";
+                break;
+            case R.id.capillacentral:
+                monumento = "capillacentral";
+                break;
+            case R.id.retablomayor:
+                monumento = "retablomayor";
+                break;
+            case R.id.portico1:
+            case R.id.portico2:
+                monumento = "portico";
+                break;
+            case R.id.capilladolores:
+                monumento = "dolores";
+                break;
+            case R.id.torre:
+                monumento = "torre";
+                break;
+            case R.id.retablovirgencarmen:
+                monumento = "carmen";
+                break;
+            case R.id.virgenrosario:
+                monumento = "rosario";
+                break;
         }
+
+        Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
 
     }
 }

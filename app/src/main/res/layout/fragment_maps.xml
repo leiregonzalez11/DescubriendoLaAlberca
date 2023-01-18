@@ -24,7 +24,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/planolaalbercaparkinges"
+                app:srcCompat="@drawable/planolaalbercamonumentos"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.card.MaterialCardView
@@ -239,7 +239,7 @@
                 app:layout_constraintHorizontal_bias="0.585"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.952" />
+                app:layout_constraintVertical_bias="0.933" />
 
             <Button
                 android:id="@+id/btnm8"
@@ -252,7 +252,7 @@
                 app:layout_constraintHorizontal_bias="0.434"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.833" />
+                app:layout_constraintVertical_bias="0.81" />
 
             <Button
                 android:id="@+id/btnm9"
@@ -301,10 +301,26 @@
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.907"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.907"
                 app:layout_constraintVertical_bias="0.014" />
+
+            <ImageButton
+                android:id="@+id/moninfo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:src="@drawable/ic_circle_info_solid"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.046"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.89"
+                app:tint="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

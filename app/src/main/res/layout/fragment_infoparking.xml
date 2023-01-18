@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/textaparcar"
@@ -18,7 +19,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/amiri"
-            android:text="LEYENDA DE APARCAMIENTO"
+            android:text="FACILIDAD PARA APARCAR"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -59,10 +60,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-9dp"
                 android:fontFamily="@font/amiri"
-                android:text="Dificil para aparcar"
+                android:text="Dificil"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -100,10 +101,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-9dp"
                 android:fontFamily="@font/amiri"
-                android:text="Suele haber plazas para aparcar"
+                android:text="Complicado"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -141,10 +142,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-9dp"
                 android:fontFamily="@font/amiri"
-                android:text="Fácil para aparcar"
+                android:text="Fácil"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="17sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -152,6 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
             android:gravity="right"
             android:orientation="horizontal">

@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,14 +33,16 @@ import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.mapsFragments.parking.senalParkingFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesiamapaFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.infoMonuFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.plazamapaFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    private Spinner spinner;
     private TextView text;
-    private ImageView img1;
     private String idioma;
+    private ImageView img1;
+    private Spinner spinner;
+    private ImageButton btnminfo;
     private Bundle args, argsMenu;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
@@ -72,8 +75,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
      Aquí se instanciarán los objetos que si son vistas */
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
@@ -100,6 +102,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10 = v.findViewById(R.id.btnm10);
             btnm11 = v.findViewById(R.id.btnm11);
             btnm12 = v.findViewById(R.id.btnm12);
+            btnminfo = v.findViewById(R.id.moninfo);
         }
         return v;
     }
@@ -175,7 +178,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     @SuppressLint({"NonConstantResourceId", "ShowToast"})
     public boolean onOptionsItemSelected(MenuItem menuItem) {
 
-        Fragment fragment = null;
+        Fragment fragment;
 
         switch (menuItem.getItemId()) {
             case R.id.menu_contacto:
@@ -290,17 +293,14 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             parkingFragment.setArguments(args);
             parkingFragment.setCancelable(false);
             parkingFragment.show(getChildFragmentManager(),"parking_fragment");
+
         } else{
             DialogFragment parkingFragment = new senalParkingFragment();
             args.putString("idioma", idioma);
             parkingFragment.setArguments(args);
             parkingFragment.setCancelable(false);
             parkingFragment.show(getChildFragmentManager(),"parkingSeñal_fragment");
-
-
         }
-
-
     }
 
     /** Métodos Mapa Monumentos*/
@@ -319,6 +319,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio"));
         btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero"));
         btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio"));
+        btnminfo.setOnClickListener(view -> monumentosOnClick("infomonumentos"));
 
     }
 
@@ -337,6 +338,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10.setVisibility(View.VISIBLE);
             btnm11.setVisibility(View.VISIBLE);
             btnm12.setVisibility(View.VISIBLE);
+            btnminfo.setVisibility(View.VISIBLE);
         }
 
         else{
@@ -352,14 +354,15 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10.setVisibility(View.INVISIBLE);
             btnm11.setVisibility(View.INVISIBLE);
             btnm12.setVisibility(View.INVISIBLE);
+            btnminfo.setVisibility(View.INVISIBLE);
         }
 
     }
 
     public void monumentosOnClick(String monumento){
 
-        if (!monumento.contains("ermita") && !monumento.equalsIgnoreCase("iglesia") && !monumento.equalsIgnoreCase("plazamayor")){
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+        if (!monumento.contains("ermita") && !monumento.contains("info") && !monumento.equalsIgnoreCase("iglesia") && !monumento.equalsIgnoreCase("plazamayor")){
+            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
         } else{
             args.putString("idioma", idioma);
             DialogFragment fragment;
@@ -374,9 +377,13 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
                 fragment.setArguments(args);
                 fragment.setCancelable(false);
                 fragment.show(getChildFragmentManager(),"plazaiglesia_fragment");
-            } else {
+            } else if (monumento.equalsIgnoreCase("plazamayor")){
                 fragment = new plazamapaFragment();
                 fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(),"plaza_fragment");
+            }else{
+                fragment = new infoMonuFragment();
                 fragment.setCancelable(false);
                 fragment.show(getChildFragmentManager(),"plaza_fragment");
             }

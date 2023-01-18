@@ -1,8 +1,7 @@
-package com.example.tfg.mapsFragments.parking;
+package com.example.tfg.mapsFragments.sitiosdeinteres;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,15 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.example.tfg.R;
 
-public class infoparkingFragment extends DialogFragment {
+public class infoMonuFragment extends DialogFragment {
 
-    @SuppressLint("InflateParams")
+    @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -34,16 +30,17 @@ public class infoparkingFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View parkingView = inflater.inflate(R.layout.fragment_infoparking, null);
+        final View infomView = inflater.inflate(R.layout.fragment_info_monu, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(parkingView);
+        builder.setView(infomView);
 
-        Button no = parkingView.findViewById(R.id.buttonVolverP);
-
-        no.setOnClickListener(view -> dismiss());
+        Button volver = infomView.findViewById(R.id.buttonVolverInfo);
+        volver.setOnClickListener(view -> dismiss());
 
         return builder.create();
     }
+
+
 }
