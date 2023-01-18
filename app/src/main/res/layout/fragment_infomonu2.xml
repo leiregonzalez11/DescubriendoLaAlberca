@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.sitiosdeinteres.infoMonuFragment">
+    tools:context=".mapsFragments.sitiosdeinteres.infomonu2Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Ermita de San Blás"
+                android:text="Ayuntamiento"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -78,7 +78,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Ermita del Humilladero"
+                android:text="Crucero de la plaza"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -108,7 +108,7 @@
                 android:layout_marginTop="-5dp"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/amiri"
-                android:text="Ermita de San Antonio"
+                android:text="Antiguas escuelas"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -138,7 +138,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Plaza de San Antonio"
+                android:text="Teatro"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -168,7 +168,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Antiguo Hospicio"
+                android:text="Retrato de Miguel de Unamuno"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -198,187 +198,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Busto de Maurice Legendre"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/siete"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="Iglesia Parroquial"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/ocho"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="Plaza Mayor"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/nueve"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="Las Espeñitas"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/diez"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="Barrio El Castillo"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/once"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="Mirador de Santa Fé"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/doce"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
-                android:text="La Puente"
+                android:text="Biblioteca"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -395,7 +215,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonVolverInfo"
+                android:id="@+id/buttonVolverInfo2"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

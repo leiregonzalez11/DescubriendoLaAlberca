@@ -27,9 +27,7 @@ import com.example.tfg.categoriasFragments.principal.historiaInicio;
 import com.google.firebase.storage.FirebaseStorage;
 
 
-public class plazamapaFragment extends DialogFragment {
-
-    private String monumento;
+public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -50,46 +48,69 @@ public class plazamapaFragment extends DialogFragment {
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
 
-        Button ayunt = plazaView.findViewById(R.id.buttonAyuntamiento);
-        ayunt.setOnClickListener(view -> {
-            monumento = "ayuntamiento";
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
-        });
+        setListeners(plazaView);
 
-        Button teatro = plazaView.findViewById(R.id.buttonTeatro);
-        teatro.setOnClickListener(view -> {
-            monumento = "teatro";
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
-        });
-
-        Button biblio = plazaView.findViewById(R.id.buttonBiblioteca);
-        biblio.setOnClickListener(view -> {
-            monumento = "biblioteca";
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
-        });
-
-        Button crucero = plazaView.findViewById(R.id.buttonCrucero);
-        crucero.setOnClickListener(view -> {
-            monumento = "crucero";
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
-        });
-
-        Button unamuno = plazaView.findViewById(R.id.buttonUnamuno);
-        unamuno.setOnClickListener(view -> {
-            monumento = "imagen de unamuno";
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
-        });
-
-        Button escuelas = plazaView.findViewById(R.id.buttonEscuelas);
-        escuelas.setOnClickListener(view -> {
-            monumento = "antiguas escuelas";
-            Toast.makeText(getContext(), "Has pulsado :" + monumento, Toast.LENGTH_LONG).show();
+        ImageButton info = plazaView.findViewById(R.id.moninfo2);
+        info.setOnClickListener(view -> {
+            DialogFragment fragment = new infomonu2Fragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"plaza_fragment");
         });
 
         Button volver = plazaView.findViewById(R.id.buttonVolverPlaza);
         volver.setOnClickListener(view -> dismiss());
 
         return builder.create();
+    }
+
+    private void setListeners(View plazaView) {
+        Button ayunt = plazaView.findViewById(R.id.buttonAyuntamiento);
+        ayunt.setOnClickListener(this);
+        Button teatro = plazaView.findViewById(R.id.buttonTeatro);
+        teatro.setOnClickListener(this);
+        Button biblio = plazaView.findViewById(R.id.buttonBiblioteca);
+        biblio.setOnClickListener(this);
+        Button crucero = plazaView.findViewById(R.id.buttonCrucero);
+        crucero.setOnClickListener(this);
+        Button unamuno = plazaView.findViewById(R.id.buttonUnamuno);
+        unamuno.setOnClickListener(this);
+        Button escuelas = plazaView.findViewById(R.id.buttonEscuelas);
+        escuelas.setOnClickListener(this);
+    }
+
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View view) {
+
+        Button btn = (Button) view;
+
+        switch (btn.getId()) {
+            case R.id.buttonEscuelas:
+                String monumento = "antiguas escuelas";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buttonBiblioteca:
+                monumento = "biblioteca";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buttonUnamuno:
+                monumento = "retrato de unamuno";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buttonCrucero:
+                monumento = "crucero";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buttonAyuntamiento:
+                monumento = "ayuntamiento";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buttonTeatro:
+                monumento = "teatro";
+                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 
 }

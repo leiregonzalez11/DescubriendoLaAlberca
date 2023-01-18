@@ -14,14 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.tfg.R;
 
 
 public class iglesiamapaFragment extends DialogFragment implements View.OnClickListener {
-
-    private String monumento;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -43,6 +42,13 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         String idioma = getArguments().getString("idioma");
 
         setListeners(plazaView);
+
+        ImageButton info = plazaView.findViewById(R.id.moninfo1);
+        info.setOnClickListener(view -> {
+            DialogFragment fragment = new infomonu1Fragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"plaza_fragment");
+        });
 
         Button volver = plazaView.findViewById(R.id.buttonVolverPlazaIglesia);
         volver.setOnClickListener(view -> dismiss());
@@ -73,7 +79,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         switch (btn.getId()) {
 
             case R.id.buttonHornacina:
-                monumento = "hornacina de la moza de ánimas";
+                String monumento = "hornacina de la moza de ánimas";
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonMarrano:

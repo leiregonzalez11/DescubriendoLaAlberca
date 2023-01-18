@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.tfg.R;
@@ -31,6 +32,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
         final View plazaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
+        
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(plazaView);
@@ -39,6 +41,13 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         //String idioma = getArguments().getString("idioma");
 
         setListeners(plazaView);
+
+        ImageButton info = plazaView.findViewById(R.id.moninfo3);
+        info.setOnClickListener(view -> {
+            DialogFragment fragment = new infomonu3Fragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"plaza_fragment");
+        });
 
         Button volver = plazaView.findViewById(R.id.buttonVolverIglesia);
         volver.setOnClickListener(view -> dismiss());
