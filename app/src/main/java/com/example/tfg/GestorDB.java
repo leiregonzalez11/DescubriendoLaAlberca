@@ -135,6 +135,12 @@ public class GestorDB extends SQLiteOpenHelper {
         Log.i("Tabla Historia: ", query);
         sqLiteDatabase.execSQL(query);
 
+        //Esquema de la tabla monumento
+        query = "CREATE TABLE IF NOT EXISTS diccionario (idDic INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, letra VARCHAR NOT NULL," +
+                "palabra VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
+        Log.i("Tabla Historia: ", query);
+        sqLiteDatabase.execSQL(query);
+
     }
 
     private void cargarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {
@@ -182,6 +188,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO gastronomia (catGastro, idioma, nombreReceta, descrGastro, ingrReceta, pasosReceta) VALUES ('receta', 'en', 'floretas', 'Floretas or floretas are another of Salamanca''s most delicious typical sweets and are easier to make than you might think. Traditionally, these sweets were typical of Carnival, Lent and Easter, but nowadays they can be found in bakeries at any time of the year. The mould used to make them, the \"florero\", is a tool that used to be passed down from mother to daughter along with the recipe.', '250ml milk,2 tablespoons sugar,1 egg,½ orange zest,30ml aniseed,200gr wheat flour,1 pinch of salt,Oil for frying,Cinnamon,Sugar for breading', '1. Start by beating the eggs and sugar in a bowl. When they are well mixed, add the milk, aniseed and orange zest.--2. Gradually add the flour and stir until it has a smooth, lump-free consistency. Strain the dough through a sieve if necessary. Transfer the dough to another bowl and leave to rest, covered, for about 20 minutes.--3. Heat plenty of oil in a deep frying pan over medium heat. Put the flower moulds into the oil so that they heat up at the same time. This step is very important so that the dough can adhere well to the mould.--4. When the oil is hot, uncover the batter and stir it a little until it has a light consistency. We introduce the mould into the batter up to the middle of the drawing without covering the whole flower and we put it immediately into the frying pan, taking care that it does not touch the bottom, and we shake it gently until the flower comes off.--5. Fry the flower until golden brown on both sides for a few seconds and transfer to absorbent paper before coating them generously in a mixture of cinnamon and sugar.--6. Reheat the mould and dip it in the batter again, repeating the previous operation until all the batter has been coated.--7. Dredge the portions in sugar and cinnamon. Serve the florets.--');");
         sqLiteDatabase.execSQL("INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat1', 'en', 'At the end of the Middle Ages, an event of major importance for the area was the discovery of the image of the Virgen de la Peña de Francia (1434), which turned the sanctuary that was subsequently built into a place of pilgrimage, which was joined by pilgrims on the Pilgrim''s Way to Santiago who followed the so-called \"Camino del Sur\" along the Calzada de la Plata (Silver Road).');");
         sqLiteDatabase.execSQL("INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadelhumilladero', 'en', 'Most of the villages in this region of Salamanca have a hermitage of the Humilladero. This used to be the site of the boundary cross and was a place for visitors to say goodbye and pray when leaving on their journey or on their arrival. In other times it was a place of entry for those who came from other distant lands, for life''s pursuits and the affairs of cities.');");
+        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('es', 'c', 'Cuarto''l salaero', 'Habitación para salar la matanza.');");
     }
 
     //Tabla Arquitectura
@@ -548,7 +555,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerInfoMonumentos(String idioma, String categoriaMon, String nombreMonumento, int numTV) {
+    public String[] obtenerInfoMonumentosConCat(String idioma, String categoriaMon, String nombreMonumento, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
@@ -565,4 +572,56 @@ public class GestorDB extends SQLiteOpenHelper {
         c.close();
         return descr;
     }
+
+    public String[] obtenerInfoMonumentos(String idioma, String nombreMonumento, int numTV) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[numTV];
+        int i=0;
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descMon FROM monumento " +
+                "WHERE nombreMon = ? AND idioma = ?;", new String[]{nombreMonumento, idioma});
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
+        }
+        c.close();
+        return descr;
+    }
+
+    //Tabla Diccionario
+
+    public ArrayList<String> obtenerPalabras(String idioma, String letra) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        ArrayList<String> descr = new ArrayList<>();
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT palabra FROM diccionario " +
+                "WHERE idioma = ? AND letra = ?;", new String[]{idioma, letra});
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr.add(descrip);
+        }
+        c.close();
+        return descr;
+    }
+
+    public String obtenerDefinicion(String idioma, String palabra) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip = "";
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM diccionario " +
+                "WHERE idioma = ? AND palabra = ?;", new String[]{idioma, palabra});
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+        }
+        c.close();
+        return descrip;
+    }
+
+
 }

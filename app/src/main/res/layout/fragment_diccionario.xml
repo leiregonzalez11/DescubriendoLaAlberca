@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".categoriasFragments.secundarias.cultura.diccionario.diccionario">
+
+    <LinearLayout
+        android:id="@+id/layoutGastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gastrotext"
+            android:layout_width="323dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="40sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/alex_brush"
+            android:gravity="center"
+            android:text="Diccionario Albercano"
+            android:textAlignment="gravity"
+            android:textStyle="bold"
+            tools:targetApi="o" />
+
+        <com.example.tfg.adapters.JustifyTextView
+            android:id="@+id/recetasTextIntro"
+            android:layout_width="385dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="-40dp"
+            android:fontFamily="@font/amiri"
+            android:text="Texto introducción a diccionario \n"
+            android:textColor="@color/black"
+            android:gravity='center_horizontal'
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/a"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/a"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/b"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/b"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/c"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/c"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/d"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/d"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/e"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/e"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/fg"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/fg"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/hj"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/hj"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/mn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/mn"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/p"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/p"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/rs"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/rs"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/t"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/t"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/uvz"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/uvz"
+                tools:ignore="ContentDescription">
+            </ImageButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

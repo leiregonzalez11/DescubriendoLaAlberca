@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".categoriasFragments.secundarias.cultura.diccionario.definicionpalabra">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/palabratitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/alex_brush"
+            android:text="Palabra"
+            android:gravity='left'
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="35sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/definicionpalabra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/amiri"
+                android:gravity='left'
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonVolverDef"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-10dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/amiri"
+                android:text="@string/volver"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -69,6 +69,14 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         casaSS.setOnClickListener(this);
         Button hornacina = plazaView.findViewById(R.id.buttonHornacina);
         hornacina.setOnClickListener(this);
+        Button predio1 = plazaView.findViewById(R.id.buttonpredio1);
+        predio1.setOnClickListener(this);
+        Button predio2 = plazaView.findViewById(R.id.buttonpredio2);
+        predio2.setOnClickListener(this);
+        Button predio3 = plazaView.findViewById(R.id.buttonpredio3);
+        predio3.setOnClickListener(this);
+        Button predio4 = plazaView.findViewById(R.id.buttonpredio4);
+        predio4.setOnClickListener(this);
 
     }
 
@@ -99,6 +107,14 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 monumento = "antigua casa de la Santa Inquisición";
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
+            case R.id.buttonpredio1:
+            case R.id.buttonpredio2:
+            case R.id.buttonpredio3:
+            case R.id.buttonpredio4:
+                monumento = "predio";
+                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
+                break;
+
         }
 
     }

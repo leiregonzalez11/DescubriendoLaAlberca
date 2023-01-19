@@ -35,7 +35,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="15dp"
                 android:src="@drawable/uno"
                 tools:ignore="ContentDescription">
@@ -65,7 +65,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="15dp"
                 android:src="@drawable/dos"
                 tools:ignore="ContentDescription">
@@ -95,7 +95,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="15dp"
                 android:src="@drawable/tres"
                 tools:ignore="ContentDescription">
@@ -125,7 +125,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="15dp"
                 android:src="@drawable/cuatro"
                 tools:ignore="ContentDescription">
@@ -139,6 +139,36 @@
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
                 android:text="Hornacina de la Ánimas Benditas"
+                android:gravity='left'
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/cinco"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/mon5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/amiri"
+                android:text="Predio"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>

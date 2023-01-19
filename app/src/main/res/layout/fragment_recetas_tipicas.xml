@@ -26,8 +26,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".anterior.categorias.artesania.artesaniaActivity2">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/gastrotext"

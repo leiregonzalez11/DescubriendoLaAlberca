@@ -11,8 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
+import android.widget.Button;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
+
+import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.diccionario;
 import com.example.tfg.navigationmenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -21,6 +25,7 @@ public class culturaInicio extends Fragment {
 
     Bundle args;
     private String idioma, categoria;
+    Button btndic;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -61,7 +66,6 @@ public class culturaInicio extends Fragment {
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
 
     }
 
@@ -74,7 +78,7 @@ public class culturaInicio extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_cultura_inicio, container, false);
         if(v != null){
-            Log.i("OBJETOS:", "OBJETOS CULTURA");
+            btndic = v.findViewById(R.id.diccionario);
         }
         return v;
     }
@@ -84,6 +88,11 @@ public class culturaInicio extends Fragment {
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        btndic.setOnClickListener(v -> {
+            Fragment fragment = diccionario.newInstance(args);
+            cargarFragment(fragment);
+        });
 
     }
 

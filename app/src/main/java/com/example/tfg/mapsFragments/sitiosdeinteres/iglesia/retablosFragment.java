@@ -57,7 +57,7 @@ public class retablosFragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos =dbHelper.obtenerInfoMonumentos(idioma, "iglesia", retablo, 2);
+        String [] datos =dbHelper.obtenerInfoMonumentosConCat(idioma, "iglesia", retablo, 2);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
