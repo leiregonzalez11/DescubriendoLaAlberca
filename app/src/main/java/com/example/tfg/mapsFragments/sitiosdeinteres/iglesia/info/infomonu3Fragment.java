@@ -1,4 +1,4 @@
-package com.example.tfg.mapsFragments.sitiosdeinteres;
+package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;

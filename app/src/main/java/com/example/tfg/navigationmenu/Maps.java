@@ -32,9 +32,9 @@ import com.example.tfg.mapsFragments.parking.parkingFragment;
 import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.mapsFragments.parking.senalParkingFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesiamapaFragment;
-import com.example.tfg.mapsFragments.sitiosdeinteres.infoMonuFragment;
-import com.example.tfg.mapsFragments.sitiosdeinteres.plazamapaFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.iglesiamapaFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infoMonuFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.plaza.plazamapaFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
 

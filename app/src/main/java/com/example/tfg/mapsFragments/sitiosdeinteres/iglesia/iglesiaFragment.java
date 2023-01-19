@@ -1,4 +1,4 @@
-package com.example.tfg.mapsFragments.sitiosdeinteres;
+package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -15,10 +15,12 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.tfg.R;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu3Fragment;
 
 public class iglesiaFragment extends DialogFragment implements View.OnClickListener {
 
     private String monumento;
+    private Bundle args = new Bundle();
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -32,13 +34,14 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
         final View plazaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
-        
+
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(plazaView);
 
-        //assert getArguments()!=null;
-        //String idioma = getArguments().getString("idioma");
+        assert getArguments()!=null;
+        String idioma = getArguments().getString("idioma");
+        args.putString("idioma", idioma);
 
         setListeners(plazaView);
 
@@ -98,6 +101,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
     public void onClick(View view) {
 
         Button btn = (Button) view;
+        DialogFragment fragment;
 
         switch (btn.getId()) {
 
@@ -108,7 +112,12 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "sanpedro";
                 break;
             case R.id.retablosantaana:
-                monumento = "santaana";
+                monumento = "retablosantaana";
+                args.putString("retablo", monumento);
+                fragment = new retablosFragment();
+                fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(), "retablo_fragment");
                 break;
             case R.id.pulpito:
                 monumento = "pulpito";
@@ -143,11 +152,18 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "carmen";
                 break;
             case R.id.virgenrosario:
-                monumento = "rosario";
+                monumento = "retablorosario";
+                args.putString("retablo", monumento);
+                fragment = new retablosFragment();
+                fragment.setArguments(args);
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(), "retablo_fragment");
                 break;
         }
 
-        Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
+        if (!monumento.contains("rosario") && !monumento.contains("ana")){
+            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

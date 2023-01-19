@@ -20,7 +20,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 8;
+    private static final int DB_VERSION = 9;
     private final Context context;
     private boolean seguir = true;
 
@@ -130,7 +130,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla monumento
-        query = "CREATE TABLE IF NOT EXISTS monumento (idMon INTEGER PRIMARY KEY AUTOINCREMENT, nombreMon VARCHAR NOT NULL," +
+        query = "CREATE TABLE IF NOT EXISTS monumento (idMon INTEGER PRIMARY KEY AUTOINCREMENT, categoriaMon VARCHAR, nombreMon VARCHAR NOT NULL," +
                 "idioma VARCHAR(2) NOT NULL, descMon VARCHAR NOT NULL)";
         Log.i("Tabla Historia: ", query);
         sqLiteDatabase.execSQL(query);
@@ -548,7 +548,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerInfoMonumentos(String idioma, String nombreMonumento, int numTV) {
+    public String[] obtenerInfoMonumentos(String idioma, String categoriaMon, String nombreMonumento, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
@@ -556,7 +556,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i=0;
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT descMon FROM monumento " +
-                "WHERE nombreMon = ? AND idioma = ?;", new String[]{nombreMonumento, idioma});
+                "WHERE categoriaMon = ? AND nombreMon = ? AND idioma = ?;", new String[]{categoriaMon, nombreMonumento, idioma});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;

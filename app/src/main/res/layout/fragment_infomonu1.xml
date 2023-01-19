@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.sitiosdeinteres.infomonu1Fragment">
+    tools:context=".mapsFragments.sitiosdeinteres.iglesia.info.infomonu1Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"

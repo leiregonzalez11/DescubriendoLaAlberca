@@ -1,4 +1,4 @@
-package com.example.tfg.mapsFragments.sitiosdeinteres;
+package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -8,19 +8,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.tfg.R;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.iglesiaFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu1Fragment;
 
 
 public class iglesiamapaFragment extends DialogFragment implements View.OnClickListener {
+
+    private Bundle args = new Bundle();
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -40,6 +42,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
 
         assert getArguments()!=null;
         String idioma = getArguments().getString("idioma");
+        args.putString("idioma", idioma);
 
         setListeners(plazaView);
 
@@ -88,6 +91,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 break;
             case R.id.buttonIglesia:
                 DialogFragment iglesia = new iglesiaFragment();
+                iglesia.setArguments(args);
                 iglesia.setCancelable(false);
                 iglesia.show(getChildFragmentManager(),"iglesia_fragment");
                 break;

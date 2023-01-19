@@ -1,30 +1,22 @@
-package com.example.tfg.mapsFragments.sitiosdeinteres;
+package com.example.tfg.mapsFragments.sitiosdeinteres.plaza;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categoriasFragments.principal.historiaInicio;
-import com.google.firebase.storage.FirebaseStorage;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu2Fragment;
 
 
 public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
