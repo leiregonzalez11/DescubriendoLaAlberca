@@ -146,7 +146,13 @@ public class iglesia extends Fragment implements View.OnClickListener{
         switch (btn.getId()){
             case R.id.altar:
                 String [] datos = dbHelper.obtenerInfoPena(idioma, "altarmayor", categoria, "peñadefrancia", 1);
-                img1.setImageResource(R.drawable.planoiglesiacentro);
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiacentroes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiacentroen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiacentroeu);
+                }
                 text4.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 img1.requestFocus();
                 text5.setText("");
@@ -156,7 +162,13 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 break;
             case R.id.coropeña:
                 String [] datos1 = dbHelper.obtenerInfoPena(idioma, "coro", categoria, "peñadefrancia", 1);
-                img1.setImageResource(R.drawable.planoiglesiacoro);
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiacoroes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiacoroen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiacoroeu);
+                }
                 text4.setText(datos1[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 img1.requestFocus();
                 text5.setText("");
@@ -166,7 +178,13 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 break;
             case R.id.naveizqda:
                 String [] datos2 = dbHelper.obtenerInfoPena(idioma, "naveizquierda", categoria, "peñadefrancia", 5);
-                img1.setImageResource(R.drawable.planoiglesiaizqda);
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiaizqdaes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiaizqdaen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiaizqdaeu);
+                }
                 text4.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 img1.requestFocus();
                 text5.setText(datos2[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -176,7 +194,13 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 break;
             case R.id.navedcha:
                 String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha", categoria, "peñadefrancia", 2);
-                img1.setImageResource(R.drawable.planoiglesiadcha);
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiadchaes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiadchaen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiadchaeu);
+                }
                 text4.setText(datos3[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 img1.requestFocus();
                 text5.setText(datos3[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

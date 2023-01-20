@@ -30,6 +30,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/imgtienda"
             android:layout_width="280dp"
             android:layout_height="150dp"
             android:src="@drawable/laalberca2"

@@ -18,15 +18,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class establecimientoFragment extends DialogFragment {
 
     String categoria, establecimiento, telefono;
+    private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -61,6 +67,12 @@ public class establecimientoFragment extends DialogFragment {
         //Titulo
         text1.setText(establecimiento);
 
+        //Imagen
+        ImageView img = infoView.findViewById(R.id.imgrest);
+        storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("ajustes/hosteleria/" + establecimiento.toLowerCase().replace(" ", "") + ".png", img);
+
+
         //Datos informativos y ubicación
         double punt = dbHelper.obtenerPuntRest(categoria, establecimiento);
         ratingBar.setRating((float) punt);
@@ -84,6 +96,12 @@ public class establecimientoFragment extends DialogFragment {
         back.setOnClickListener(view -> dismiss());
 
         return builder.create();
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
 

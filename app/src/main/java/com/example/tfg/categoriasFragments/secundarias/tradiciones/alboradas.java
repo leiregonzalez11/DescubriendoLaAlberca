@@ -129,7 +129,7 @@ public class alboradas extends Fragment {
         text6.setText(textoTrad[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //Setter de los videos de la interfaz
-        Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.alboradasansebastian);
+        Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.videoalboradasansebastian);
         videoView.setVideoURI(uri);
 
         btnPlay.setOnClickListener(v -> videoView.start());

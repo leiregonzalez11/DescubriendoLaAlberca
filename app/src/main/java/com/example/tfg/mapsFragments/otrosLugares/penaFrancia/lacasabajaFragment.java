@@ -76,10 +76,10 @@ public class lacasabajaFragment extends DialogFragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("otros/penafrancia/casabaja1.png", (ImageView) img1);
-        obtenerImagenFirebase("otros/penafrancia/casabaja2.png", (ImageView) img2);
-        obtenerImagenFirebase("otros/penafrancia/casabaja3.png", (ImageView) img3);
-        obtenerImagenFirebase("otros/penafrancia/casabaja4.png", (ImageView) img4);
+        obtenerImagenFirebase("otros/penafrancia/casabaja1.png", img1);
+        obtenerImagenFirebase("otros/penafrancia/casabaja2.png", img2);
+        obtenerImagenFirebase("otros/penafrancia/casabaja3.png", img3);
+        obtenerImagenFirebase("otros/penafrancia/casabaja4.png", img4);
 
         back.setOnClickListener(view -> dismiss());
 
