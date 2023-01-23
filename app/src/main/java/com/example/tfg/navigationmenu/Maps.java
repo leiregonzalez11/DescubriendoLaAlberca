@@ -227,13 +227,13 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         String texto = text.getText().toString();
 
         switch (texto) {
-            case "Pulsa sobre los iconos para más información":
+            case "Pulsa sobre los iconos para más info.":
                 idioma = "es";
                 break;
-            case "Sakatu ikonoen gainean informazio gehiagorako":
+            case "Sakatu ikonoen gainean info gehiagorako.":
                 idioma = "eu";
                 break;
-            case "Click on the icons for more information":
+            case "Click on the icons for more info.":
                 idioma = "en";
                 break;
         }

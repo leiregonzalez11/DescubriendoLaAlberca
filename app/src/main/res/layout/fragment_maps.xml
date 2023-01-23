@@ -19,7 +19,7 @@
                 android:id="@+id/mapa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -39,7 +39,7 @@
                 app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.964"
+                app:layout_constraintVertical_bias="0.94"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp">
 
@@ -57,7 +57,6 @@
                 android:id="@+id/textomaps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/amiri"
                 android:text="@string/infomaps"
@@ -65,7 +64,7 @@
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.176"
+                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/mapa"
                 app:layout_constraintVertical_bias="1.0">
@@ -122,7 +121,7 @@
                 app:layout_constraintHorizontal_bias="0.056"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.88" />
+                app:layout_constraintVertical_bias="0.86" />
 
             <Button
                 android:id="@+id/btnp4"
@@ -319,7 +318,7 @@
                 app:layout_constraintHorizontal_bias="0.046"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.89"
+                app:layout_constraintVertical_bias="0.872"
                 app:tint="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

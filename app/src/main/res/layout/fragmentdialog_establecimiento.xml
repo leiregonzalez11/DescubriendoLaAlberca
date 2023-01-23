@@ -12,47 +12,41 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="5dp"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/nombreRest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/alex_brush"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/imgrest"
             android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:src="@drawable/laalberca2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.697">
-
-        </ImageView>
+            android:layout_height="220dp"
+            tools:ignore="ContentDescription"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="160dp"
             android:layout_marginLeft="15dp"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginBottom="25dp"
-            app:cardElevation="10dp"
-            app:strokeColor="@color/black"
-            app:cardCornerRadius="15dp">
+            app:strokeWidth="3dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardElevation="15dp"
+            app:cardCornerRadius="30dp"
+            app:strokeColor="@color/black">
 
             <LinearLayout
                 android:layout_width="match_parent"

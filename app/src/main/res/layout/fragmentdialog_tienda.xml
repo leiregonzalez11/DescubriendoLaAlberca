@@ -20,26 +20,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/alex_brush"
             android:gravity='center'
             android:textColor="@color/black"
-            android:textSize="28sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imgtienda"
             android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:src="@drawable/laalberca2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.697">
+            android:layout_height="220dp"
+            tools:ignore="ContentDescription">
 
         </ImageView>
 
@@ -47,8 +41,9 @@
             android:layout_width="wrap_content"
             android:layout_height="110dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
+            app:strokeWidth="3dp"
             android:layout_marginBottom="25dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:cardCornerRadius="30dp"

@@ -19,8 +19,8 @@ import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "laalbercaDB";
-    private static final int DB_VERSION = 9;
+    private static final String DB_NAME = "laalbercadb";
+    private static final int DB_VERSION = 1;
     private final Context context;
     private boolean seguir = true;
 
@@ -99,20 +99,20 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla alojamiento
         query = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
-                "idioma VARCHAR(2) NOT NULL, puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
+                "puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
         Log.i("Tabla Alojamiento: ", query);
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla restaurantes
         query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
-                "ubiRest VARCHAR NOT NULL, idioma VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
+                "ubiRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
         Log.i("Tabla Restaurantes: ", query);
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla comercio
         query = "CREATE TABLE IF NOT EXISTS comercio (idCom INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "idioma VARCHAR(2) NOT NULL, categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, " +
+                "categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, " +
                 "numCom VARCHAR NOT NULL, ubiCom VARCHAR NOT NULL)";
         Log.i("Tabla Comercio: ", query);
         sqLiteDatabase.execSQL(query);

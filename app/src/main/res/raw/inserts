@@ -319,90 +319,89 @@ INSERT INTO rutas (idioma, nombreRuta, descRuta, distancia, desnivel, dificultad
 //                    ----ALOJAMIENTOS----                     |
 //--------------------------------------------------------------
 //
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Camping Al-Bereka', 'Carretera Salamanca-La Alberca Km 75', 'es', 4, '923 41 51 95');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hostal El Castillo','Carretera de Mogarraz 5','es', 3.9, '923 41 53 08');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hostal La Balsá', 'Calle  Balsada 2', 'es', 4.2, '923 41 53 37');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hostal San Blas', 'Avenida de Las Batuecas 25', 'es', 4.1, '923 41 53 22');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hotel Antiguas Eras La Alberca', 'Avenida de Las Batuecas 29', 'es', 4.3, '923 41 51 13');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hotel Doña Teresa', ' Avenida de la Guardia Civil s/n', 'es', 4.2, '923 41 53 08');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hostal La Alberca', 'Plaza San Antonio 1', 'es', 4.1, '923 41 51 16');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hotel Las Batuecas', 'Avenida de Las Batuecas 4', 'es', 3.6, '923 41 51 88');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hotel', 'Hotel Termal Abadía de los Templarios','Carretera Salamanca-La Alberca Km 76','es', 4.6, '923 42 31 07');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'El Palaero','Calle Hospicio 30','es', 4.35, '630 93 80 86');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'Villadolores','Calle Chorrito 6','es', 4.2, '628 03 96 30');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'Apartamentos Anita','Avenida de Las Batuecas 4','es', 4.2, '923 28 21 20');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'Apartamentos Casa del Herrero','Calle Castillo Bajo 47','es', 4, '657 51 44 61');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'Apartamento La Campanina','Plaza de la Iglesia 33 1º','es', 4.9, '658 18 09 51');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('apartamento', 'Apartamentos Rurality Home','Avenida de la Virgen de la Peña 12 1ºA','es', 4.9, '686 17 97 70');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Casitas del Huerto','Paraje de las Correderas s/n','es', 4.6, '923 41 52 37');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Casa del tablao','Calle Pedragal 2','es', 4.7, '923 41 52 37');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Casa La Tía Bruja','Calle Barrio Nuevo 46','es', 3.8, 'No Disponible');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Casa Rural Espeñitas','Calle Las Espeñitas 4','es', 4.8, '686 82 84 90');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Casa Rural Río La Llana','Calle Nogales 5','es',4.7, '923 41 51 43');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'Castillo Alto','Calle Castillo Alto 10','es', 4, '690 10 45 21');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'El Abuelo Felix','Calle Fuente Canal 2','es', 4, 'No Disponible');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'El Aserradero','Carretera de Mogarraz 4','es', 4.6, '671 71 20 75');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('casarural', 'La Casa del Burro','Plaza de la Iglesia 19','es',4.8, '625 75 58 19');
-INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, idioma, puntuacion, numTel) VALUES ('hospederia', 'Hospedería Peña de Francia', 'www.hospederiapenadefrancia.com', 'es', 4.5, '923 16 40 00');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Camping Al-Bereka', 'Carretera Salamanca-La Alberca Km 75', 4, '923 41 51 95');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hostal El Castillo','Carretera de Mogarraz 5', 3.9, '923 41 53 08');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hostal La Balsá', 'Calle  Balsada 2', 4.2, '923 41 53 37');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hostal San Blas', 'Avenida de Las Batuecas 25', 4.1, '923 41 53 22');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hotel Antiguas Eras La Alberca', 'Avenida de Las Batuecas 29', 4.3, '923 41 51 13');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hotel Doña Teresa', ' Avenida de la Guardia Civil s/n', 4.2, '923 41 53 08');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hostal La Alberca', 'Plaza San Antonio 1', 4.1, '923 41 51 16');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hotel Las Batuecas', 'Avenida de Las Batuecas 4', 3.6, '923 41 51 88');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hotel', 'Hotel Termal Abadía de los Templarios','Carretera Salamanca-La Alberca Km 76', 4.6, '923 42 31 07');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('apartamento', 'El Palaero','Calle Hospicio 30', 4.35, '630 93 80 86');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('apartamento', 'Villadolores','Calle Chorrito 6', 4.2, '628 03 96 30');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('apartamento', 'Apartamentos Anita','Avenida de Las Batuecas 4', 4.2, '923 28 21 20');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('apartamento', 'Apartamento La Campanina','Plaza de la Iglesia 33 1º', 4.9, '658 18 09 51');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('apartamento', 'Apartamentos Rurality Home','Avenida de la Virgen de la Peña 12 1ºA', 4.9, '686 17 97 70');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Casitas del Huerto','Paraje de las Correderas s/n', 4.6, '923 41 52 37');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Casa del tablao','Calle Pedragal 2', 4.7, '923 41 52 37');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Casa La Tía Bruja','Calle Barrio Nuevo 46', 3.8, 'No Disponible');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Casa Rural Espeñitas','Calle Las Espeñitas 4', 4.8, '686 82 84 90');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Casa Rural Río La Llana','Calle Nogales 5',4.7, '923 41 51 43');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'Castillo Alto','Calle Castillo Alto 10', 4, '690 10 45 21');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'El Aserradero','Carretera de Mogarraz 4', 4.6, '671 71 20 75');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'La Casa del Burro','Plaza de la Iglesia 19', 4.8, '625 75 58 19');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('casarural', 'La Esquina de Ánimas','Plaza de la Iglesia 9', 5, '923 41 54 43');
+INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel) VALUES ('hospederia', 'Hospedería Peña de Francia', 'www.hospederiapenadefrancia.com', 4.5, '923 16 40 00');
 //
 //--------------------------------------------------------------
 //                    ----RESTAURANTES----                     |
 //--------------------------------------------------------------
 //
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','1830','923 41 50 20','Calle Tablado 66','es',3.8);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','Bar Marcos','923 41 53 16','Calle Tablado 4','es', 3.7);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','El Porrón','No Disponible','Plaza Mayor 12','es', 3.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','El Rincón de Lola','923 41 54 58','Plaza Mayor 10','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','La Balsá','923 41 53 37','Calle Balsada 2', 'es', 2.4);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','La Barrera','665 34 78 18','Plaza de la Iglesia 37','es', 5);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','La Nogal','923 41 51 14','Plaza Padre Arsenio s/n','es', 3.7);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','La Peña','No Disponible','Plaza Mayor 8','es', 3);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','Tetería Singular','654 93 61 48','Calle Espeñitas 2','es', 4.6);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('bar','San Blás','923 41 55 32','Avenida de Las Batuecas 25','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','El Balcón de la Plaza','923 41 52 24','Plaza Mayor 11','es', 4.1);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','El Castillo','923 41 50 01','Carretera de Mogarraz 5','es', 3.9);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','El Encuentro','923 41 53 10','Calle Tablado 8','es', 4.5);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','El Soportal','923 41 52 96','Plaza Mayor 7','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','Ibéricos de la Alberca Doña Consuelo','923 05 25 57','Calle Puente 3','es', 4.7);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','La Abuela Carmen','923 41 53 08','Avenida de la Guardia Civil s/n','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','La Cantina de Elías','923 41 52 37','Plaza San Antonio 2','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','La Catedral','923 41 52 67','Plaza Mayor 4','es', 4.2);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','La Parrilla','No Disponible','Calle Tablado 64','es', 1.8);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','La Taberna','923 41 52 37','Plaza Mayor 5','es', 4.4);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','Las Bóvedas','923 42 31 07','Carretera Salamanca-La Alberca Km 76','es',4.6);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','Mesón La Colmena','923 41 54 85','Calle Tablado 37','es', 4.3);
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, idioma, puntuacion) VALUES ('restaurante','¡Oh! Espacio del Jamón','923 41 54 69','Calle Tablado 32','es', 4.6);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','1830','923 41 50 20','Calle Tablado 66',3.8);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','Bar Marcos','923 41 53 16','Calle Tablado 4', 3.7);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','El Porrón','No Disponible','Plaza Mayor 12', 3.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','El Rincón de Lola','923 41 54 58','Plaza Mayor 10', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','La Balsá','923 41 53 37','Calle Balsada 2',  2.4);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','La Barrera','665 34 78 18','Plaza de la Iglesia 37', 5);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','La Nogal','923 41 51 14','Plaza Padre Arsenio s/n', 3.7);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','La Peña','No Disponible','Plaza Mayor 8', 3);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','Tetería Singular','654 93 61 48','Calle Espeñitas 2', 4.6);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','San Blás','923 41 55 32','Avenida de Las Batuecas 25', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Balcón de la Plaza','923 41 52 24','Plaza Mayor 11', 4.1);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Castillo','923 41 50 01','Carretera de Mogarraz 5', 3.9);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Encuentro','923 41 53 10','Calle Tablado 8', 4.5);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Soportal','923 41 52 96','Plaza Mayor 7', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','Ibéricos de la Alberca Doña Consuelo','923 05 25 57','Calle Puente 3', 4.7);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','La Abuela Carmen','923 41 53 08','Avenida de la Guardia Civil s/n', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','La Cantina de Elías','923 41 52 37','Plaza San Antonio 2', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','La Catedral','923 41 52 67','Plaza Mayor 4', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','La Parrilla','No Disponible','Calle Tablado 64', 1.8);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','La Taberna','923 41 52 37','Plaza Mayor 5', 4.4);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','Las Bóvedas','923 42 31 07','Carretera Salamanca-La Alberca Km 76',4.6);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','Mesón La Colmena','923 41 54 85','Calle Tablado 37', 4.3);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','¡Oh! Espacio del Jamón','923 41 54 69','Calle Tablado 32', 4.6);
 //
 //--------------------------------------------------------------
 //                      ----COMERCIO----                       |
 //--------------------------------------------------------------
 //
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Supermercado Rita','923 41 50 64','Calle Puente 5');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Supermercado Covirán','901 11 69 95','Avenida Batuecas 2');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Supermercado H.G','635 28 36 82','Carretera Mogarraz, 1');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','La Alberca Sabores','No Disponible','Calle Tablado 1');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Cárnicas Madroñal de la Sierra','923 41 52 62','Plaza Mayor, 0');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Carnicería Herederos De Fermín','923415265','Calle Tablado 45');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Alimentación Mar-San','No Disponible','Calle Barrio Nuevo 2');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Ibéricos Doña Consuelo','923 05 25 57','Calle Puente 3');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Embutidos Fermin','923 41 51 35','Carretera Salamanca Km 77,3');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Embutidos Basilio Hoyos','923 41 50 28','Avenida Peña de Francia 3 Bajo');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Jamones y Embutidos Josefa Hoyos','923 41 52 61','Avenida Peña de Francia, 0');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Garcigrande de Bellota','923 41 52 12','Calle Tablado 9');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Embutidos Casa Eusebio','No Disponible','Calle Tablado 30');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Jamones Andrés Becerro E Hijos','No Disponible','Calle Tablado 64');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Jamones Julián Becerro','917 05 61 70','Calle Luciano Barcala 1');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','El Pan Negro de Mariluz','923 41 54 68','Calle Tablado 13');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Reina Sierra de Francia','675 39 45 93','Plaza de la Iglesia 32');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'alimentacion','Panadería La Puente','923 41 50 02','Calle Puente 35');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Tienda Museo San Antonio','923 41 51 02','Calle Tablado 72');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Artesanía La Alberca','No Disponible','Calle Tablado 68');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Artesanía El Tablao','No Disponible','Calle Tablado 39');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Artesanía Hoyos-Calama','625 75 58 19','Plaza de la Iglesia 33');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','El Tablao 33','654 58 42 74','Calle Tablado 33');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Artesanía Daniela','923 41 50 82','Calle Puente 11');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Tienda de regalos La Puente','No Disponible','Calle Puente 25');
-INSERT INTO comercio (idioma, categoriaCom, nombreCom, numCom, ubiCom) VALUES ('es', 'artesania','Artesanía y Platería Puri y Charo','923 41 53 94','Calle Tablado 45');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Supermercado Rita','923 41 50 64','Calle Puente 5');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Supermercado Covirán','901 11 69 95','Avenida Batuecas 2');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Supermercado H.G','635 28 36 82','Carretera Mogarraz, 1');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','La Alberca Sabores','No Disponible','Calle Tablado 1');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Cárnicas Madroñal de la Sierra','923 41 52 62','Plaza Mayor, 0');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Carnicería Herederos De Fermín','923415265','Calle Tablado 45');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Alimentación Mar-San','No Disponible','Calle Barrio Nuevo 2');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Ibéricos Doña Consuelo','923 05 25 57','Calle Puente 3');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Embutidos Fermin','923 41 51 35','Carretera Salamanca Km 77,3');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Embutidos Basilio Hoyos','923 41 50 28','Avenida Peña de Francia 3 Bajo');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Jamones y Embutidos Josefa Hoyos','923 41 52 61','Avenida Peña de Francia, 0');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Garcigrande de Bellota','923 41 52 12','Calle Tablado 9');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Embutidos Casa Eusebio','No Disponible','Calle Tablado 30');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Jamones Andrés Becerro E Hijos','No Disponible','Calle Tablado 64');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Jamones Julián Becerro','917 05 61 70','Calle Luciano Barcala 1');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','El Pan Negro de Mariluz','923 41 54 68','Calle Tablado 13');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Reina Sierra de Francia','675 39 45 93','Plaza de la Iglesia 32');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('alimentacion','Panadería La Puente','923 41 50 02','Calle Puente 35');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Tienda Museo San Antonio','923 41 51 02','Calle Tablado 72');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía La Alberca','No Disponible','Calle Tablado 68');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía El Tablao','No Disponible','Calle Tablado 39');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía Hoyos-Calama','625 75 58 19','Plaza de la Iglesia 33');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','El Tablao 33','654 58 42 74','Calle Tablado 33');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía Daniela','923 41 50 82','Calle Puente 11');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Tienda de regalos La Puente','No Disponible','Calle Puente 25');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía y Platería Puri y Charo','923 41 53 94','Calle Tablado 45');
 //
 //--------------------------------------------------------------
 //                    ----OTROS LUGARES----                    |

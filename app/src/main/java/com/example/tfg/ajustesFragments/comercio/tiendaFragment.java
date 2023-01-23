@@ -77,23 +77,24 @@ public class tiendaFragment extends DialogFragment {
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgtienda);
         storageRef = FirebaseStorage.getInstance().getReference();
+        System.out.println("Tienda: " + tienda.toLowerCase().replace(" ", ""));
         obtenerImagenFirebase("ajustes/tiendas/" + tienda.toLowerCase().replace(" ", "") + ".png", img);
 
         telefono = datos[0];
 
-        ubi.setText(datos[1]);
+        ubi.setText(datos[1] + "  ");
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
-            tel.setText(telsubrayado);
+            tel.setText(telsubrayado + " ");
             tel.setOnClickListener(v -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas
                 startActivity(dial); // Ejecutamos el Intent
             });
         } else{
-            tel.setText(telefono);
+            tel.setText(telefono + " ");
         }
 
         back.setOnClickListener(view -> dismiss());

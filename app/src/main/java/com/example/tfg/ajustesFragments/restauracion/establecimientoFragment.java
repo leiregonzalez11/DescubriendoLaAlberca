@@ -70,6 +70,7 @@ public class establecimientoFragment extends DialogFragment {
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgrest);
         storageRef = FirebaseStorage.getInstance().getReference();
+        System.out.println("Rest: " + establecimiento.toLowerCase().replace(" ", ""));
         obtenerImagenFirebase("ajustes/hosteleria/" + establecimiento.toLowerCase().replace(" ", "") + ".png", img);
 
 
