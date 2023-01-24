@@ -348,7 +348,6 @@ INSERT INTO alojamiento (categoriaAloj, nombreAloj, ubiAloj, puntuacion, numTel)
 //                    ----RESTAURANTES----                     |
 //--------------------------------------------------------------
 //
-INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','1830','923 41 50 20','Calle Tablado 66',3.8);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','Bar Marcos','923 41 53 16','Calle Tablado 4', 3.7);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','El Porrón','No Disponible','Plaza Mayor 12', 3.2);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','El Rincón de Lola','923 41 54 58','Plaza Mayor 10', 4.2);
@@ -358,6 +357,7 @@ INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion)
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','La Peña','No Disponible','Plaza Mayor 8', 3);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','Tetería Singular','654 93 61 48','Calle Espeñitas 2', 4.6);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('bar','San Blás','923 41 55 32','Avenida de Las Batuecas 25', 4.2);
+INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','1830','923 41 50 20','Calle Tablado 66',3.8);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Balcón de la Plaza','923 41 52 24','Plaza Mayor 11', 4.1);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Castillo','923 41 50 01','Carretera de Mogarraz 5', 3.9);
 INSERT INTO restaurante (categoriaRest, nombreRest, numTel, ubiRest, puntuacion) VALUES ('restaurante','El Encuentro','923 41 53 10','Calle Tablado 8', 4.5);
@@ -402,6 +402,8 @@ INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesani
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía Daniela','923 41 50 82','Calle Puente 11');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Tienda de regalos La Puente','No Disponible','Calle Puente 25');
 INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania','Artesanía y Platería Puri y Charo','923 41 53 94','Calle Tablado 45');
+INSERT INTO comercio (categoriaCom, nombreCom, numCom, ubiCom) VALUES ('artesania', 'La Esquina de Ánimas','923 41 54 43', 'Plaza de la Iglesia 9');
+
 //
 //--------------------------------------------------------------
 //                    ----OTROS LUGARES----                    |

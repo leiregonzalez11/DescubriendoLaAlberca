@@ -104,10 +104,8 @@
 
             <ImageView
                 android:id="@+id/arqui21img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-200dp"
-                android:layout_marginBottom="-200dp"
+                android:layout_width="320dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
@@ -119,7 +117,7 @@
                 android:layout_width="385dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center'
@@ -127,10 +125,8 @@
 
             <ImageView
                 android:id="@+id/arqui22img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-200dp"
-                android:layout_marginBottom="-190dp"
+                android:layout_width="300dp"
+                android:layout_height="330dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">
@@ -142,7 +138,7 @@
                 android:layout_width="385dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-40dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center'
@@ -150,10 +146,8 @@
 
             <ImageView
                 android:id="@+id/arqui23img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-200dp"
-                android:layout_marginBottom="-180dp"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 tools:ignore="ContentDescription">

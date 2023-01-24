@@ -29,7 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 
 
-public class trajesFemeninos extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelectedListener{
 
     private Bundle args;
     private GestorDB dbHelper;
@@ -39,7 +39,6 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
     private String idioma, categoria, nombreTraje;
     private LinearLayout layout;
     private Spinner spinner;
-    private Button siguienteBtn;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -97,7 +96,6 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
             img1 = v.findViewById(R.id.arte31img);
             img2 = v.findViewById(R.id.arte32img);
             spinner = v.findViewById(R.id.spinner);
-            siguienteBtn = v.findViewById(R.id.artesiguiente3);
         }
         return v;
     }
@@ -110,29 +108,10 @@ public class trajesFemeninos extends Fragment implements View.OnClickListener, A
         dbHelper = new GestorDB(getContext());
 
         //Spinner
-
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
         spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitemartesania, trajes));
         spinner.setOnItemSelectedListener(this);
 
-        //BOTON SIGUIENTE y ATRAS
-        siguienteBtn.setOnClickListener(this);
-
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
-
-        Button btn = (Button) view;
-        Fragment fragment = null;
-
-        if (btn.getId() == R.id.artesiguiente3) {
-            fragment = trajeMasculino.newInstance(args);
-        }
-
-        assert fragment != null;
-        cargarFragment(fragment);
     }
 
     @SuppressLint("SetTextI18n")

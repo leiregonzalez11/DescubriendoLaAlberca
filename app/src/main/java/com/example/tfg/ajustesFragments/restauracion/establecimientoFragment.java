@@ -81,12 +81,12 @@ public class establecimientoFragment extends DialogFragment {
         String [] datos = dbHelper.obtenerDatosRest(categoria, establecimiento);
 
         telefono = datos[0];
-        ubi.setText(datos[1]);
+        ubi.setText(datos[1] + "    ");
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);
             telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);
-            tel.setText(telsubrayado);
+            tel.setText(telsubrayado  + "  ");
             tel.setOnClickListener(view12 -> {
                 Uri number = Uri.parse("tel:" + telefono); // Creamos una uri con el número de telefono
                 Intent dial = new Intent(Intent.ACTION_DIAL, number); // Creamos una llamada al Intent de llamadas

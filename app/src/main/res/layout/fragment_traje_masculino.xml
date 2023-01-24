@@ -126,22 +126,8 @@
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:gravity='center_horizontal' />
-
-                <Button
-                    android:id="@+id/artefintraje"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/volver_a_artesania"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/amiri"
-                    android:layout_margin="18sp"
-                    android:layout_gravity="right">
-
-                </Button>
+                android:gravity='center_horizontal'>
+            </com.example.tfg.adapters.JustifyTextView>
 
         </LinearLayout>
 

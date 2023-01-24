@@ -136,25 +136,8 @@
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
 
-                <Button
-                    android:id="@+id/artesiguiente3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/siguiente"
-                    android:layout_gravity="right"
-                    tools:ignore="ButtonStyle">
-
-                </Button>
-
         </LinearLayout>
 
     </ScrollView>
-
 
 </FrameLayout>

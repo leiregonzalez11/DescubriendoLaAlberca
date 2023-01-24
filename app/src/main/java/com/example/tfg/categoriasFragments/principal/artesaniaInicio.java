@@ -11,15 +11,18 @@ import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.example.tfg.adapters.SliderAdapter;
 import com.example.tfg.adapters.listViewAdapter;
+import com.example.tfg.ajustesFragments.restauracion.establecimientoFragment;
 import com.example.tfg.categoriasFragments.secundarias.artesania.bordadoSerrano;
 import com.example.tfg.categoriasFragments.secundarias.artesania.orfebreria;
 import com.example.tfg.categoriasFragments.secundarias.artesania.trajesFemeninos;
+import com.example.tfg.categoriasFragments.secundarias.artesania.trajeserranoFragment;
 import com.smarteist.autoimageslider.SliderView;
 import com.example.tfg.navigationmenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
@@ -123,8 +126,10 @@ public class artesaniaInicio extends Fragment {
         listView2.setAdapter(myAdapter2);
 
         listView2.setOnItemClickListener((adapterView, v, position, id) -> {
-            Fragment fragment = trajesFemeninos.newInstance(args);
-            cargarFragment(fragment);
+            DialogFragment trajes = new trajeserranoFragment();
+            trajes.setArguments(args);
+            trajes.setCancelable(false);
+            trajes.show(getChildFragmentManager(),"trajes");
         });
 
         /*------------

@@ -12,10 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -23,14 +21,12 @@ import com.example.tfg.categoriasFragments.principal.artesaniaInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class trajeMasculino extends Fragment implements View.OnClickListener{
+public class trajeMasculino extends Fragment {
 
     Bundle args;
-    Fragment fragment;
     String idioma, categoria;
     ImageView img1, img2, img3;
     StorageReference storageRef;
-    private Button finBtn;
     private TextView text1, text2, text3, text4;
 
     /**
@@ -89,7 +85,6 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
             img1 = v.findViewById(R.id.arte41img);
             img2 = v.findViewById(R.id.arte42img);
             img3 = v.findViewById(R.id.arte43img);
-            finBtn = v.findViewById(R.id.artefintraje);
         }
         return v;
     }
@@ -104,19 +99,6 @@ public class trajeMasculino extends Fragment implements View.OnClickListener{
         String [] datos = dbHelper.obtenerDatosArte(idioma, "trajemasc", categoria, 4);
         setDatosEImagenes(datos);
 
-        //BOTON SIGUIENTE
-
-        finBtn.setOnClickListener(this);
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View view) {
-        Button btn = (Button) view;
-        if (btn.getId() == R.id.artefintraje) {
-            fragment = artesaniaInicio.newInstance(args);
-        }
-        cargarFragment(fragment);
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */

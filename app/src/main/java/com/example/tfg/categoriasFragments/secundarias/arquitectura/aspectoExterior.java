@@ -115,8 +115,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
         storageRef = FirebaseStorage.getInstance().getReference();
 
         obtenerImagenFirebase("arquitectura/exterior1.jpg", img1);
-        //TODO: Cambiar la foto
-        obtenerImagenFirebase("arquitectura/exterior3.jpeg", img2);
+        obtenerImagenFirebase("arquitectura/exterior3.jpg", img2);
         obtenerImagenFirebase("arquitectura/exterior2.jpg", img3);
 
         //BOTON SIGUIENTE y ATRAS
