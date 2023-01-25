@@ -133,6 +133,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 //Imagenes
                 obtenerImagenFirebase("otros/penafrancia/capillasanandres.png", img1);
+                obtenerImagenFirebase("otros/penafrancia/capillasanandres2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -149,7 +150,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("otros/penafrancia/capilladelablanca1.png", img1);
+                obtenerImagenFirebase("otros/penafrancia/capillasantocristo1.png", img1);
+                obtenerImagenFirebase("otros/penafrancia/capillasantocristo2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
