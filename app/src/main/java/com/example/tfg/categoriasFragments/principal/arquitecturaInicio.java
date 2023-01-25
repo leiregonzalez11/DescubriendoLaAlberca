@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.tfg.GestorDB;
@@ -32,7 +33,7 @@ public class arquitecturaInicio extends Fragment {
     private String idioma, categoria;
     private TextView text1, text2;
     SliderView sliderView;
-    Button sigBtn;
+    ImageButton sigBtn;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia

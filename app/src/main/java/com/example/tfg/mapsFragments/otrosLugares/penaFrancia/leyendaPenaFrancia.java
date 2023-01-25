@@ -16,11 +16,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
+import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.StorageReference;
 
 public class leyendaPenaFrancia extends Fragment {
 
@@ -29,6 +33,7 @@ public class leyendaPenaFrancia extends Fragment {
     private String categoria;
     private ImageButton btn;
     private TextView pruebatexto, text1, text2, text3, text4;
+    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -157,4 +162,13 @@ public class leyendaPenaFrancia extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
+
+
+
 }

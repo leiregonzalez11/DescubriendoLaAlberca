@@ -72,19 +72,35 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/penaimg1"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-25dp"
+                tools:ignore="ContentDescription" />
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pena13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-40dp"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/penaimg2"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pena14"
@@ -93,12 +109,20 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/penaimg3"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-30dp"
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pena15"
@@ -106,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="-40dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"

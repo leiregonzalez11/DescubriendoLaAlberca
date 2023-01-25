@@ -52,11 +52,19 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/historiaimg1"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historiap2"
@@ -65,11 +73,19 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/historiaimg2"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historiap3"
@@ -84,13 +100,21 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/historiaimg3"
+                android:layout_width="300dp"
+                android:layout_height="330dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                tools:ignore="ContentDescription" />
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/historiap4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"

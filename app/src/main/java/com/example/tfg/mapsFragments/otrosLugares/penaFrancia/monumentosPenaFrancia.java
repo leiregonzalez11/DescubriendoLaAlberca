@@ -18,18 +18,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
+import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private GestorDB dbHelper;
-    private ImageView img1, img2;
     private String idioma, categoria;
-    private TextView text1, text2, text3;
-    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btnExtra;
+    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -90,12 +93,6 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
             btn6 = v.findViewById(R.id.hospederia);
             btn7 = v.findViewById(R.id.lablanca);
             btn8 = v.findViewById(R.id.balcon);
-            text1 = v.findViewById(R.id.monumentostext1);
-            text2 = v.findViewById(R.id.monumentostext2);
-            text3 = v.findViewById(R.id.monumentostext3);
-            img1 = v.findViewById(R.id.imagemon1);
-            img2 = v.findViewById(R.id.imagemon2);
-            btnExtra = v.findViewById(R.id.buttonmonumentos);
         }
         return v;
     }
@@ -116,6 +113,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
         btn8.setOnClickListener(this);
 
         dbHelper = new GestorDB(getContext());
+        storageRef = FirebaseStorage.getInstance().getReference();
 
     }
 
@@ -137,6 +135,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
     public void onClick(View view) {
 
         Button btn = (Button) view;
+        String monumento = "";
 
         switch (btn.getId()){
 
@@ -155,65 +154,33 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
                 cargarFragment(fragment);
                 break;
             case R.id.santodomingo:
-                String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo", categoria, "peñadefrancia", 1);
-                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                img1.setVisibility(View.VISIBLE);
-                img2.setVisibility(View.GONE);
-                img1.requestFocus();
-                text2.setText("");
-                text3.setText("");
-                btnExtra.setVisibility(View.GONE);
+                monumento = "santodomingo";
                 break;
+
             case R.id.lablanca:
-                datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", categoria, "peñadefrancia", 3);
-                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                img1.requestFocus();
-                img1.setVisibility(View.VISIBLE);
-                img2.setVisibility(View.VISIBLE);
-                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                btnExtra.setVisibility(View.GONE);
+                monumento ="lablanca";
                 break;
 
             case R.id.sanandresexterior:
-                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordesanandrés", categoria, "peñadefrancia", 2);
-                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
-                img1.setVisibility(View.VISIBLE);
-                img2.setVisibility(View.GONE);
-                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText("");
-                btnExtra.setVisibility(View.GONE);
+                monumento ="sanandresexterior";
                 break;
 
             case R.id.santocristoexterior:
-                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordelsantocristo", categoria, "peñadefrancia", 2);
-                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
-                img1.setVisibility(View.VISIBLE);
-                img2.setVisibility(View.GONE);
-                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText("");
-                btnExtra.setVisibility(View.GONE);
+                monumento = "santocristoexterior";
                 break;
 
             case R.id.balcon:
-                datos = dbHelper.obtenerInfoPena(idioma, "balcóndesantiago", categoria, "peñadefrancia", 2);
-                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
-                img1.setVisibility(View.VISIBLE);
-                img2.setVisibility(View.GONE);
-                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText("");
-                btnExtra.setVisibility(View.VISIBLE);
-                btnExtra.setText("  El Salto del Niño  ");
-                btnExtra.setOnClickListener(view1 -> {
-                    DialogFragment saltoFragment = new saltoDelNinoFragment();
-                    saltoFragment.setArguments(args);
-                    saltoFragment.setCancelable(false);
-                    saltoFragment.show(getChildFragmentManager(),"salto_fragment");
-                });
+                monumento = "balconsantiago";
                 break;
+        }
+
+        if (!monumento.equalsIgnoreCase("")){
+            DialogFragment monFragment = new monumentopenaFragment();
+            System.out.println("MONUMENTO: " + monumento);
+            args.putString("monumento", monumento);
+            monFragment.setArguments(args);
+            monFragment.setCancelable(false);
+            monFragment.show(getChildFragmentManager(),"mon_fragment");
         }
     }
 }

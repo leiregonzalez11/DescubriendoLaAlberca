@@ -17,10 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.StorageReference;
 
 public class elrollo extends Fragment implements View.OnClickListener {
 
@@ -28,6 +32,7 @@ public class elrollo extends Fragment implements View.OnClickListener {
     private String idioma, categoria;
     private ImageButton btn;
     private TextView text1, text2, text3, text4;
+    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -138,5 +143,11 @@ public class elrollo extends Fragment implements View.OnClickListener {
                 cargarFragment(fragment);
                 break;
         }
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 }

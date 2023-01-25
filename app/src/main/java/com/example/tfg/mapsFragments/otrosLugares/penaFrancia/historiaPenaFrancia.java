@@ -2,7 +2,6 @@ package com.example.tfg.mapsFragments.otrosLugares.penaFrancia;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -10,15 +9,17 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,8 +29,9 @@ import com.example.tfg.mapsFragments.otrosLugares.penaDeFrancia;
 public class historiaPenaFrancia extends Fragment {
 
     private Bundle args;
-    private String idioma;
-    private String categoria;
+    private String idioma, categoria;
+    private ImageView img1, img2, img3;
+    private StorageReference storageRef;
     private TextView text1, text2, text3, text4;
 
     /**
@@ -87,6 +89,9 @@ public class historiaPenaFrancia extends Fragment {
             text2 = v.findViewById(R.id.historiap2);
             text3 = v.findViewById(R.id.historiap3);
             text4 = v.findViewById(R.id.historiap4);
+            img1 = v.findViewById(R.id.historiaimg1);
+            img2 = v.findViewById(R.id.historiaimg2);
+            img3 = v.findViewById(R.id.historiaimg3);
         }
         return v;
     }
@@ -105,6 +110,12 @@ public class historiaPenaFrancia extends Fragment {
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        obtenerImagenFirebase("otros/penafrancia/historia2.png", img1);
+        obtenerImagenFirebase("otros/penafrancia/historia1.png", img2);
+        obtenerImagenFirebase("otros/penafrancia/historia3.png", img3);
+
     }
 
     private void cargarFragment(Fragment fragment){
@@ -117,6 +128,12 @@ public class historiaPenaFrancia extends Fragment {
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
 }

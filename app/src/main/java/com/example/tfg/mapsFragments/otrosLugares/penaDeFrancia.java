@@ -13,8 +13,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
@@ -27,6 +30,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -40,10 +45,12 @@ public class penaDeFrancia extends Fragment {
     private Bundle args;
     private double lat, lon;
     private Fragment fragment;
-    private TextView text1, text2, text3, text4, text5, text6;
-    private ListView listView, listView2, listView3;
+    private ImageView img1, img2, img3;
+    private StorageReference storageRef;
     private SupportMapFragment mapFragment;
     private String idioma, categoria, back;
+    private ListView listView, listView2, listView3;
+    private TextView text1, text2, text3, text4, text5, text6;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -121,6 +128,9 @@ public class penaDeFrancia extends Fragment {
             text4 = v.findViewById(R.id.pena14);
             text5 = v.findViewById(R.id.pena15);
             text6 = v.findViewById(R.id.pena16);
+            img1 = v.findViewById(R.id.penaimg1);
+            img2 = v.findViewById(R.id.penaimg2);
+            img3 = v.findViewById(R.id.penaimg3);
             listView = v.findViewById(R.id.listviewPena1);
             listView2 = v.findViewById(R.id.listviewPena2);
             listView3 = v.findViewById(R.id.listviewPena3);
@@ -148,6 +158,14 @@ public class penaDeFrancia extends Fragment {
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        //Imagenes
+
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        obtenerImagenFirebase("otros/penafrancia/peñafrancia1.png", img1);
+        obtenerImagenFirebase("otros/penafrancia/peñafrancia2.png", img2);
+        obtenerImagenFirebase("otros/penafrancia/peñafrancia3.png", img3);
 
         //Ubicacion
         String [] ubicacion = dbHelper.obtenerUbiOtros("peñadefrancia");
@@ -223,4 +241,11 @@ public class penaDeFrancia extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
+
 }

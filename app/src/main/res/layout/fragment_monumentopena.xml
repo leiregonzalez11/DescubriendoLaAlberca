@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mapsFragments.otrosLugares.penaFrancia.monumentopenaFragment">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/monumentospenatitulo"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/alex_brush"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/monumentostext1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imagemon1"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="-15dp"
+                android:src="@drawable/laalberca2">
+            </ImageView>
+
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/monumentostext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imagemon2"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="-10dp"
+                android:src="@drawable/laalberca2">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/monumentostext3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonmonumentos"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="15dp"
+                android:background="#880E4F"
+                android:fontFamily="@font/amiri"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/buttonVolverMon"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="-10dp"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/amiri"
+                    android:text="Volver"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</FrameLayout>

@@ -16,18 +16,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.StorageReference;
 
 public class santuario extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma;
     private String categoria;
-    private Button btn1,btn2,btn3, btnExtra;
     private GestorDB dbHelper;
+    private StorageReference storageRef;
+    private Button btn1,btn2,btn3, btnExtra;
     private TextView text1, text2, text3, text4, text5, text6;
 
     /**
@@ -137,22 +142,36 @@ public class santuario extends Fragment implements View.OnClickListener {
                 cargarFragment(fragment);
                 btnExtra.setVisibility(View.GONE);
                 break;
+
             case R.id.pozoverde:
+
+                /* Texto */
                 String [] datos = dbHelper.obtenerInfoPena(idioma, "pozoverde", categoria, "peñadefrancia", 1);
                 text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
                 text4.setText("");
                 text5.setText("");
                 text6.setText("");
+
+                /* Imágenes */
+
+                /* Botón La Casa Baja */
                 btnExtra.setVisibility(View.GONE);
                 break;
+
             case R.id.convento:
+
+                /* Texto */
                 String [] datos2 = dbHelper.obtenerInfoPena(idioma, "convento", categoria, "peñadefrancia", 5);
                 text2.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos2[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text4.setText(datos2[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text5.setText(datos2[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText(datos2[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+                /* Imágenes */
+
+                /* Botón La Casa Baja */
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("   La Casa Baja   ");
                 btnExtra.setOnClickListener(view1 -> {
@@ -165,4 +184,11 @@ public class santuario extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
+
 }

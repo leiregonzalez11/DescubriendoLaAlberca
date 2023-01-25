@@ -26,7 +26,6 @@ import com.google.firebase.storage.StorageReference;
 
 public class lacasabajaFragment extends DialogFragment {
 
-    private ImageView img1, img2, img3, img4;
     private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -57,10 +56,10 @@ public class lacasabajaFragment extends DialogFragment {
         TextView info5 = infoView.findViewById(R.id.casainfotext5);
         TextView info6 = infoView.findViewById(R.id.casainfotext6);
         TextView info7 = infoView.findViewById(R.id.casainfotext7);
-        img1 = infoView.findViewById(R.id.casaimg1);
-        img2 = infoView.findViewById(R.id.casaimg2);
-        img3 = infoView.findViewById(R.id.casaimg3);
-        img4 = infoView.findViewById(R.id.casaimg4);
+        ImageView img1 = infoView.findViewById(R.id.casaimg1);
+        ImageView img2 = infoView.findViewById(R.id.casaimg2);
+        ImageView img3 = infoView.findViewById(R.id.casaimg3);
+        ImageView img4 = infoView.findViewById(R.id.casaimg4);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
