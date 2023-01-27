@@ -95,8 +95,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                img1.setVisibility(View.VISIBLE);
                 obtenerImagenFirebase("otros/penafrancia/miradorsantodomingo.png", img1);
+                //obtenerImagenFirebase("otros/penafrancia/miradorsantodomingo2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -107,9 +107,6 @@ public class monumentopenaFragment extends DialogFragment {
 
                 //Texto
                 datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", categoria, "peñadefrancia", 3);
-                System.out.println("MONUMENTO: " + datos[0]);
-                System.out.println("MONUMENTO: " + datos[1]);
-                System.out.println("MONUMENTO: " + datos[2]);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -145,7 +142,6 @@ public class monumentopenaFragment extends DialogFragment {
                 //Texto
                 datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordelsantocristo", categoria, "peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text1.requestFocus();
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
 
@@ -168,15 +164,107 @@ public class monumentopenaFragment extends DialogFragment {
 
                 //Imagenes
                 //obtenerImagenFirebase("otros/penafrancia/balcondesantiago.png", img1);
+                //obtenerImagenFirebase("otros/penafrancia/balcondesantiago2.png", img2);
 
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("  El Salto del Niño  ");
-                btnExtra.setOnClickListener(view1 -> {
+                btnExtra.setOnClickListener(v -> {
                     DialogFragment saltoFragment = new saltoDelNinoFragment();
                     saltoFragment.setArguments(args);
                     saltoFragment.setCancelable(false);
                     saltoFragment.show(getChildFragmentManager(),"salto_fragment");
                 });
+                break;
+
+            case "pozoverde":
+
+                titulo.setText("El Pozo Verde");
+
+                //Texto
+                datos = dbHelper.obtenerInfoPena(idioma, "pozoverde", categoria, "peñadefrancia", 2);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText("");
+
+                //Imagenes
+                obtenerImagenFirebase("otros/penafrancia/pozoverde1.png", img1);
+                //obtenerImagenFirebase("otros/penafrancia/pozoverde2.png", img2);
+
+                btnExtra.setVisibility(View.GONE);
+                break;
+
+            case "navedcha":
+
+                titulo.setText("Nave Derecha");
+
+                String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha", categoria, "peñadefrancia", 2);
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiadchaes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiadchaen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiadchaeu);
+                }
+
+                //Texto
+                text1.setText(datos3[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos3[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText("");
+
+                //Imagenes
+                //obtenerImagenFirebase("otros/penafrancia/navederecha.png", img2);
+
+                btnExtra.setVisibility(View.GONE);
+                break;
+
+            case "coropeña":
+
+                titulo.setText("Coro de la Iglesia");
+
+                String [] datos1 = dbHelper.obtenerInfoPena(idioma, "coro", categoria, "peñadefrancia", 1);
+
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiacoroes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiacoroen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiacoroeu);
+                }
+
+                //Texto
+                text1.setText(datos1[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText("");
+                text3.setText("");
+
+                //Imagenes
+                //obtenerImagenFirebase("otros/penafrancia/coro.png", img2);
+
+                btnExtra.setVisibility(View.GONE);
+                break;
+
+            case "altarmayor":
+
+                titulo.setText("Altar Mayor");
+
+                String [] datos4 = dbHelper.obtenerInfoPena(idioma, "altarmayor", categoria, "peñadefrancia", 1);
+
+                if (idioma.equalsIgnoreCase("es")){
+                    img1.setImageResource(R.drawable.planoiglesiacentroes);
+                } else if (idioma.equalsIgnoreCase("en")){
+                    img1.setImageResource(R.drawable.planoiglesiacentroen);
+                } else{
+                    img1.setImageResource(R.drawable.planoiglesiacentroeu);
+                }
+
+                //Texto
+                text1.setText(datos4[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText("");
+                text3.setText("");
+
+                //Imagenes
+                //obtenerImagenFirebase("otros/penafrancia/coro.png", img2);
+
+                btnExtra.setVisibility(View.GONE);
                 break;
         }
 

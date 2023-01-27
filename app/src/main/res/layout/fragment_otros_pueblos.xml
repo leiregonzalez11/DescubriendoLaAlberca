@@ -11,13 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_gravity="center"
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:id="@+id/layoutGastro"
@@ -78,26 +73,7 @@
                 android:id="@+id/mapViewPueblo"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="320dp"
-                android:layout_height="200dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.697" />
-
-            <!--
-            <ImageView
-                android:id="@+id/pueblosImg1"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:layout_marginTop="-100dp"
-                android:layout_marginBottom="-120dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-           -->
+                android:layout_height="200dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -198,33 +174,26 @@
                             android:textColor="@color/black"
                             android:textSize="19sp"/>
 
-
-
                     </LinearLayout>
-
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!--
             <ImageView
-                android:id="@+id/pueblosImg2"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="-80dp"
-                android:layout_marginBottom="-100dp"
+                android:id="@+id/imagepueblo"
+                android:layout_width="300dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription">
             </ImageView>
-            -->
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pueblosDescr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"
@@ -232,20 +201,6 @@
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
-
-
-            <Button
-                android:id="@+id/pueblosAtras"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
-                android:text="@string/atras">
-            </Button>
 
         </LinearLayout>
 

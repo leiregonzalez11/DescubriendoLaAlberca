@@ -14,8 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
@@ -25,13 +28,16 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class otrosPueblos extends Fragment {
 
     private Bundle args;
-    private Button atrasBtn;
     private double lat, lon;
     private Spinner spinner;
+    private ImageView img;
+    private StorageReference storageRef;
     private SupportMapFragment mapFragment;
     private TextView km, fiestamayor, descr;
     private String pueblo, idioma, categoria;
@@ -73,13 +79,6 @@ public class otrosPueblos extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(view1 -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
 
         args = new Bundle();
 
@@ -90,6 +89,15 @@ public class otrosPueblos extends Fragment {
 
         args.putString("idioma", idioma);
         args.putString("categoria", categoria);
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        myToolbar.setNavigationOnClickListener(view1 -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = otrosLugaresInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -105,7 +113,7 @@ public class otrosPueblos extends Fragment {
             fiestamayor = v.findViewById(R.id.fiesta2);
             descr = v.findViewById(R.id.pueblosDescr);
             mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPueblo);
-            atrasBtn = v.findViewById(R.id.pueblosAtras);
+            img = v.findViewById(R.id.imagepueblo);
         }
         return v;
     }
@@ -131,7 +139,6 @@ public class otrosPueblos extends Fragment {
 
                 String [] datos = dbHelper.obtenerInfoPueblos(idioma, puebloBBDD, categoria, "pueblo");
 
-
                 km.setText(datos[1]);
                 fiestamayor.setText(datos[2]);
                 descr.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -143,7 +150,9 @@ public class otrosPueblos extends Fragment {
                     mapFragment.getMapAsync(callback);
                 }
 
-                //TODO: AÑADIR FOTOS
+                //Imagenes
+                storageRef = FirebaseStorage.getInstance().getReference();
+                obtenerImagenFirebase("otros/pueblos/" + puebloBBDD +".png", img);
 
             }
 
@@ -151,11 +160,6 @@ public class otrosPueblos extends Fragment {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
-
-        atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = otrosLugaresInicio.newInstance(args);
-            cargarFragment(fragment);
         });
 
     }
@@ -170,6 +174,12 @@ public class otrosPueblos extends Fragment {
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
 

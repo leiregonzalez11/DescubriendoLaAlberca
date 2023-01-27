@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.penaFrancia.monumentopenaFragment">
+    tools:context=".mapsFragments.otrosLugares.penaFrancia.conventoFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -13,92 +12,116 @@
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
         android:background="@color/white"
-        android:layout_gravity="center"
         tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monumentospenatitulo"
+                android:id="@+id/tituloconvento"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/monumentostext1"
+                android:id="@+id/santuariotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imagemon1"
-                android:layout_width="320dp"
-                android:layout_height="280dp"
-                android:layout_marginTop="-15dp"
-                android:src="@drawable/laalberca2"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/monumentostext2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imagemon2"
+                android:id="@+id/imageconv1"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:src="@drawable/laalberca2">
             </ImageView>
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/monumentostext3"
+                android:id="@+id/santuariotext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageconv2"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="-15dp"
+                android:src="@drawable/laalberca2">
+            </ImageView>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/santuariotext5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/buttonmonumentos"
+                android:id="@+id/buttoncasabaja"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="-20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="20dp"
                 android:background="#880E4F"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +133,7 @@
 
 
                 <Button
-                    android:id="@+id/buttonVolverMon"
+                    android:id="@+id/buttonVolverConv"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -128,8 +151,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
 
     </ScrollView>
 

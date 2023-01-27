@@ -11,18 +11,15 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.google.common.net.InternetDomainName;
 import com.google.firebase.storage.StorageReference;
 
 public class santuario extends Fragment implements View.OnClickListener {
@@ -30,10 +27,9 @@ public class santuario extends Fragment implements View.OnClickListener {
     private Bundle args;
     private String idioma;
     private String categoria;
-    private GestorDB dbHelper;
     private StorageReference storageRef;
-    private Button btn1,btn2,btn3, btnExtra;
-    private TextView text1, text2, text3, text4, text5, text6;
+    private Button btn1,btn2,btn3;
+    private TextView text1;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -88,13 +84,7 @@ public class santuario extends Fragment implements View.OnClickListener {
             btn1 = v.findViewById(R.id.iglesiapeña);
             btn2 = v.findViewById(R.id.pozoverde);
             btn3 = v.findViewById(R.id.convento);
-            btnExtra = v.findViewById(R.id.buttonsantuario);
             text1 = v.findViewById(R.id.santuariotext);
-            text2 = v.findViewById(R.id.santuariotext2);
-            text3 = v.findViewById(R.id.santuariotext3);
-            text4 = v.findViewById(R.id.santuariotext4);
-            text5 = v.findViewById(R.id.santuariotext5);
-            text6 = v.findViewById(R.id.santuariotext6);
         }
         return v;
     }
@@ -109,7 +99,7 @@ public class santuario extends Fragment implements View.OnClickListener {
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
 
-        dbHelper = new GestorDB(getContext());
+        GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerInfoPena(idioma, "elsantuario", categoria, "peñadefrancia", 1);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -138,49 +128,27 @@ public class santuario extends Fragment implements View.OnClickListener {
         switch (btn.getId()){
 
             case R.id.iglesiapeña:
+
                 Fragment fragment = iglesia.newInstance(args);
                 cargarFragment(fragment);
-                btnExtra.setVisibility(View.GONE);
                 break;
 
             case R.id.pozoverde:
 
-                /* Texto */
-                String [] datos = dbHelper.obtenerInfoPena(idioma, "pozoverde", categoria, "peñadefrancia", 1);
-                text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText("");
-                text4.setText("");
-                text5.setText("");
-                text6.setText("");
-
-                /* Imágenes */
-
-                /* Botón La Casa Baja */
-                btnExtra.setVisibility(View.GONE);
+                String monumento = "pozoverde";
+                DialogFragment monFragment = new monumentopenaFragment();
+                args.putString("monumento", monumento);
+                monFragment.setArguments(args);
+                monFragment.setCancelable(false);
+                monFragment.show(getChildFragmentManager(),"mon_fragment");
                 break;
 
             case R.id.convento:
 
-                /* Texto */
-                String [] datos2 = dbHelper.obtenerInfoPena(idioma, "convento", categoria, "peñadefrancia", 5);
-                text2.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText(datos2[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text4.setText(datos2[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text5.setText(datos2[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text6.setText(datos2[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-
-                /* Imágenes */
-
-                /* Botón La Casa Baja */
-                btnExtra.setVisibility(View.VISIBLE);
-                btnExtra.setText("   La Casa Baja   ");
-                btnExtra.setOnClickListener(view1 -> {
-                    DialogFragment casaFragment = new lacasabajaFragment();
-                    casaFragment.setArguments(args);
-                    casaFragment.setCancelable(false);
-                    casaFragment.show(getChildFragmentManager(),"casa_fragment");
-                });
-
+                DialogFragment convFragment = new conventoFragment();
+                convFragment.setArguments(args);
+                convFragment.setCancelable(false);
+                convFragment.show(getChildFragmentManager(),"conv_fragment");
                 break;
         }
     }

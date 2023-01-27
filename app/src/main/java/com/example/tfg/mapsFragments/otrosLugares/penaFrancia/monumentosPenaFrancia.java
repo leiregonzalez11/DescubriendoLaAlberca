@@ -176,7 +176,6 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
 
         if (!monumento.equalsIgnoreCase("")){
             DialogFragment monFragment = new monumentopenaFragment();
-            System.out.println("MONUMENTO: " + monumento);
             args.putString("monumento", monumento);
             monFragment.setArguments(args);
             monFragment.setCancelable(false);
