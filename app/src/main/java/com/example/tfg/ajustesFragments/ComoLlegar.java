@@ -27,7 +27,7 @@ import com.google.firebase.storage.StorageReference;
 public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedListener {
 
     private StorageReference storageRef;
-    private View img1;
+    private ImageView img1;
     private String idioma, nombreBus;
     private Spinner spinner;
     TextView texto;
@@ -90,7 +90,7 @@ public class ComoLlegar extends Fragment implements  AdapterView.OnItemSelectedL
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         determinarRuta((String) adapterView.getItemAtPosition(position));
         determinarIdioma();
-        obtenerImagenFirebase("ajustes/" + nombreBus + "-" + idioma + ".jpg", (ImageView) img1);
+        obtenerImagenFirebase("ajustes/comollegar/" + nombreBus + "-" + idioma + ".png", img1);
     }
 
     @Override

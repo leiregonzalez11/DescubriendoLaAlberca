@@ -112,9 +112,9 @@ public class historiaPenaFrancia extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("otros/penafrancia/historia2.png", img1);
-        obtenerImagenFirebase("otros/penafrancia/historia1.png", img2);
-        obtenerImagenFirebase("otros/penafrancia/historia3.png", img3);
+        obtenerImagenFirebase("mapas/otros/penafrancia/historia2.png", img1);
+        obtenerImagenFirebase("mapas/otros/penafrancia/historia1.png", img2);
+        obtenerImagenFirebase("mapas/otros/penafrancia/historia3.png", img3);
 
     }
 

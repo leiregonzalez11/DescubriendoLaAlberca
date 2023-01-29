@@ -69,7 +69,7 @@ public class hospederiaFragment extends DialogFragment {
 
         //Imagen
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("otros/penafrancia/hospederia.png", img);
+        obtenerImagenFirebase("mapas/otros/penafrancia/hospederia.png", img);
 
         //Datos informativos y ubicación
         double punt = dbHelper.obtenerPuntAloj("alojamiento", alojamiento);

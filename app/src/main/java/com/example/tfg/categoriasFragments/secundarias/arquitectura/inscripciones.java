@@ -111,8 +111,8 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("arquitectura/inscripciones2.jpg", img1);
-        obtenerImagenFirebase("arquitectura/inscripciones3.jpg", img2);
+        obtenerImagenFirebase("categorias/arquitectura/inscripciones2.png", img1);
+        obtenerImagenFirebase("categorias/arquitectura/inscripciones3.png", img2);
 
         //BOTON SIGUIENTE y ATRAS
         siguienteBtn.setOnClickListener(this);

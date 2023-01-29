@@ -116,9 +116,9 @@ public class trajeMasculino extends Fragment {
         text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("artesania/hombre1.jpg", img1);
-        obtenerImagenFirebase("artesania/hombre2.jpg", img2);
-        obtenerImagenFirebase("artesania/hombre3.jpg", img3);
+        obtenerImagenFirebase("categorias/artesania/hombre1.png", img1);
+        obtenerImagenFirebase("categorias/artesania/hombre2.png", img2);
+        obtenerImagenFirebase("categorias/artesania/hombre3.png", img3);
     }
 
     private void cargarFragment(Fragment fragment){

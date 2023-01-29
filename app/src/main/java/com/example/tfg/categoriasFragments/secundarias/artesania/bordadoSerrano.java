@@ -109,9 +109,9 @@ public class bordadoSerrano extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("artesania/bordado1.jpg", img1);
-        obtenerImagenFirebase("artesania/bordado2.jpg", img2);
-        obtenerImagenFirebase("artesania/bordado3.jpg", img3);
+        obtenerImagenFirebase("categorias/artesania/bordado1.png", img1);
+        obtenerImagenFirebase("categorias/artesania/bordado2.png", img2);
+        obtenerImagenFirebase("categorias/artesania/bordado3.png", img3);
 
     }
 

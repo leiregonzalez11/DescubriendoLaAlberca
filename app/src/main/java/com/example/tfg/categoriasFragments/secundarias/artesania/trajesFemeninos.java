@@ -139,8 +139,8 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("artesania/" + nombreTraje + "1.jpg", img1);
-        obtenerImagenFirebase("artesania/" + nombreTraje + "2.jpg", img2);
+        obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "1.png", img1);
+        obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "2.png", img2);
 
     }
 

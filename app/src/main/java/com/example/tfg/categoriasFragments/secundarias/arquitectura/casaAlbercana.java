@@ -15,27 +15,32 @@ import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
-import com.example.tfg.navigationmenu.Categorias;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 
 public class casaAlbercana extends Fragment {
 
-    Bundle args;
-    TextView tel, web;
-    ImageButton finBtn;
-    String idioma, categoria;
-    SupportMapFragment mapFragment;
+    private Bundle args;
+    private TextView tel, web;
+    private ImageView img;
+    private ImageButton finBtn;
+    private String idioma, categoria;
+    private StorageReference storageRef;
+    private SupportMapFragment mapFragment;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -105,6 +110,7 @@ public class casaAlbercana extends Fragment {
              mapFragment =(SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCasa);
              tel = v.findViewById(R.id.telcasa2);
              web = v.findViewById(R.id.webcasa2);
+             img = v.findViewById(R.id.imgcasa);
              finBtn = v.findViewById(R.id.arquiAtras5);
          }
          return v;
@@ -142,11 +148,20 @@ public class casaAlbercana extends Fragment {
             startActivity(dial); // Ejecutamos el Intent
         });
 
+        storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase(img);
+
         finBtn.setOnClickListener(v -> {
             Fragment fragment = inscripciones.newInstance(args);
             cargarFragment(fragment);
         });
 
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(ImageView img){
+        StorageReference pathReference = storageRef.child("categorias/arquitectura/casamuseo.png");
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
     private void cargarFragment(Fragment fragment){

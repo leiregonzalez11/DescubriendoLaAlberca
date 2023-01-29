@@ -163,9 +163,9 @@ public class penaDeFrancia extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("otros/penafrancia/peñafrancia1.png", img1);
-        obtenerImagenFirebase("otros/penafrancia/peñafrancia2.png", img2);
-        obtenerImagenFirebase("otros/penafrancia/peñafrancia3.png", img3);
+        obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia1.png", img1);
+        obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia2.png", img2);
+        obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia3.png", img3);
 
         //Ubicacion
         String [] ubicacion = dbHelper.obtenerUbiOtros("peñadefrancia");

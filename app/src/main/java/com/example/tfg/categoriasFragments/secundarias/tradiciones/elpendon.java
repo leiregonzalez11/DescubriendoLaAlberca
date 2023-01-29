@@ -127,8 +127,10 @@ public class elpendon extends Fragment {
         text6.setText(textoTrad[5]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text7.setText(textoTrad[6]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        //Setter de las imagenes de la interfaz TODO
+        //Setter de las imagenes de la interfaz
         storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("categorias/tradiciones/pendon1.png", img1);
+        obtenerImagenFirebase("categorias/tradiciones/pendon2.png", img2);
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {

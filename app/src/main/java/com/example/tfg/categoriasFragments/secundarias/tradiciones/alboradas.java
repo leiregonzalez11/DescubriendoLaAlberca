@@ -139,8 +139,10 @@ public class alboradas extends Fragment {
             videoView.seekTo(0);
         });
 
-        //Setter de las imagenes de la interfaz TODO
+        //Setter de las imagenes de la interfaz
         storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("categorias/tradiciones/alborada1.png", img1);
+        obtenerImagenFirebase("categorias/tradiciones/alborada2.png", img2);
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {

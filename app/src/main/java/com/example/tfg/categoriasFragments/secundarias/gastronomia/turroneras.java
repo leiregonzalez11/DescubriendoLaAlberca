@@ -109,8 +109,8 @@ public class turroneras extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("gastronomia/turroneras1.jpg", img1);
-        obtenerImagenFirebase("gastronomia/turroneras2.jpg", img2);
+        obtenerImagenFirebase("categorias/gastronomia/turroneras1.png", img1);
+        obtenerImagenFirebase("categorias/gastronomia/turroneras2.png", img2);
 
         atrasBtn.setOnClickListener(v -> {
             Fragment fragment = gastronomiaInicio.newInstance(args);

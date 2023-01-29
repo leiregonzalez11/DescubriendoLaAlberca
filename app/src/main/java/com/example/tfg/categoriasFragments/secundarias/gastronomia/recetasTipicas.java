@@ -357,8 +357,7 @@ public class recetasTipicas extends Fragment {
         }
 
         storageRef = FirebaseStorage.getInstance().getReference();
-
-        obtenerImagenFirebase("gastronomia/" + nombreRecetaBBDD + ".png", foto);
+        obtenerImagenFirebase("categorias/gastronomia/" + nombreRecetaBBDD + ".png", foto);
 
     }
 

@@ -107,8 +107,8 @@ public class orfebreria extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("artesania/orfebreria2.jpg", img1);
-        obtenerImagenFirebase("artesania/orfebreria1.jpeg", img2);
+        obtenerImagenFirebase("categorias/artesania/orfebreria2.png", img1);
+        obtenerImagenFirebase("categorias/artesania/orfebreria1.png", img2);
 
     }
 

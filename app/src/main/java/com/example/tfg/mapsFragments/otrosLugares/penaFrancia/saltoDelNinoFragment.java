@@ -64,7 +64,7 @@ public class saltoDelNinoFragment extends DialogFragment {
         info3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("otros/penafrancia/saltodelniño.png", (ImageView) img1);
+        obtenerImagenFirebase("mapas/otros/penafrancia/saltodelniño.png", (ImageView) img1);
 
         back.setOnClickListener(view -> dismiss());
 

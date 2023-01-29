@@ -121,6 +121,8 @@ public class laLoa extends Fragment {
 
         //Setter de las imagenes de la interfaz TODO
         storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("categorias/tradiciones/loa1.png", img1);
+        obtenerImagenFirebase("categorias/tradiciones/loa2.png", img2);
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {

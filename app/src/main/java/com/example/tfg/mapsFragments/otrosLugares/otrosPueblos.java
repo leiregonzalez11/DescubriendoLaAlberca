@@ -152,7 +152,7 @@ public class otrosPueblos extends Fragment {
 
                 //Imagenes
                 storageRef = FirebaseStorage.getInstance().getReference();
-                obtenerImagenFirebase("otros/pueblos/" + puebloBBDD +".png", img);
+                obtenerImagenFirebase("mapas/otros/pueblos/" + puebloBBDD +".png", img);
 
             }
 

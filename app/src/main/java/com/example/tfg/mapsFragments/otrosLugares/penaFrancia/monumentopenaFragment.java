@@ -95,8 +95,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                obtenerImagenFirebase("otros/penafrancia/miradorsantodomingo.png", img1);
-                //obtenerImagenFirebase("otros/penafrancia/miradorsantodomingo2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/miradorsantodomingo.png", img1);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/miradorsantodomingo2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -112,8 +112,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
                 //Imagenes
-                obtenerImagenFirebase("otros/penafrancia/capilladelablanca1.png", img1);
-                obtenerImagenFirebase("otros/penafrancia/capilladelablanca2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capilladelablanca1.png", img1);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capilladelablanca2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -129,8 +129,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                obtenerImagenFirebase("otros/penafrancia/capillasanandres.png", img1);
-                obtenerImagenFirebase("otros/penafrancia/capillasanandres2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capillasanandres.png", img1);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capillasanandres2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -146,8 +146,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                obtenerImagenFirebase("otros/penafrancia/capillasantocristo1.png", img1);
-                obtenerImagenFirebase("otros/penafrancia/capillasantocristo2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capillasantocristo1.png", img1);
+                obtenerImagenFirebase("mapas/otros/penafrancia/capillasantocristo2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -163,8 +163,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
                 //Imagenes
-                //obtenerImagenFirebase("otros/penafrancia/balcondesantiago.png", img1);
-                //obtenerImagenFirebase("otros/penafrancia/balcondesantiago2.png", img2);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/balcondesantiago.png", img1);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/balcondesantiago2.png", img2);
 
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("  El Salto del Niño  ");
@@ -187,8 +187,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                obtenerImagenFirebase("otros/penafrancia/pozoverde1.png", img1);
-                //obtenerImagenFirebase("otros/penafrancia/pozoverde2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/pozoverde1.png", img1);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/pozoverde2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -212,7 +212,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("otros/penafrancia/navederecha.png", img2);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/navederecha.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -237,7 +237,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("otros/penafrancia/coro.png", img2);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/coro.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -262,7 +262,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("otros/penafrancia/coro.png", img2);
+                //obtenerImagenFirebase("mapas/otros/penafrancia/coro.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;

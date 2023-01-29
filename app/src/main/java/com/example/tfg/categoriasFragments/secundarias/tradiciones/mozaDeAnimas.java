@@ -134,6 +134,8 @@ public class mozaDeAnimas extends Fragment {
 
         //Setter de las imagenes de la interfaz TODO
         storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("categorias/tradiciones/mozaanimas1.png", img1);
+        obtenerImagenFirebase("categorias/tradiciones/mozaanimas2.png", img2);
 
         //Setter de los videos de la interfaz
         Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.mozadeanimasprimeraparte);

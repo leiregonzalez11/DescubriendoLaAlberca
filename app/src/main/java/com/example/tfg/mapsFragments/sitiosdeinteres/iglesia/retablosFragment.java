@@ -49,8 +49,10 @@ public class retablosFragment extends DialogFragment {
         assert getArguments()!=null;
         String retablo = getArguments().getString("retablo");
         String idioma = getArguments().getString("idioma");
+        String title = getArguments().getString("titulo");
 
-        setTitulo(retablo, infomView);
+        TextView titulo = infomView.findViewById(R.id.tituloretablo);
+        titulo.setText(title);
 
         TextView text1 = infomView.findViewById(R.id.retabloinfotext1);
         TextView text2 = infomView.findViewById(R.id.retabloinfotext2);
@@ -72,17 +74,6 @@ public class retablosFragment extends DialogFragment {
         volver.setOnClickListener(view -> dismiss());
 
         return builder.create();
-    }
-
-    private void setTitulo(String retablo, View view) {
-
-        TextView titulo = view.findViewById(R.id.tituloretablo);
-
-        if (retablo.contains("ana")){
-            titulo.setText("Retablo de Santa Ana");
-        } else if (retablo.contains("rosario")){
-            titulo.setText("Retablo de la Virgen del Rosario");
-        }
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */

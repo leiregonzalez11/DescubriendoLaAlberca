@@ -125,9 +125,9 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
         text4.setText(datos[2]);
         text5.setText(datos[4]);
         text6.setText(datos[3]);
-        obtenerImagenFirebase("rutas/" + nombreRuta + "1.jpg", img1);
-        obtenerImagenFirebase("rutas/" + nombreRuta + "2.jpg", img2);
-        obtenerImagenFirebase("rutas/" + nombreRuta + "3.jpg", img3);
+        obtenerImagenFirebase("categorias/rutas/" + nombreRuta + "1.png", img1);
+        obtenerImagenFirebase("categorias/rutas/" + nombreRuta + "2.png", img2);
+        obtenerImagenFirebase("categorias/rutas/" + nombreRuta + "3.png", img3);
     }
 
     @Override

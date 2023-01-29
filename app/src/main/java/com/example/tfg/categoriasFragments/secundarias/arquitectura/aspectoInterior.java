@@ -119,11 +119,11 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("arquitectura/interior1.jpg", img1);
-        obtenerImagenFirebase("arquitectura/interior5.jpg", img2);
-        obtenerImagenFirebase("arquitectura/interior2.jpg", img3);
-        obtenerImagenFirebase("arquitectura/interior4.jpg", img4);
-        obtenerImagenFirebase("arquitectura/interior3.jpg", img5);
+        obtenerImagenFirebase("categorias/arquitectura/interior1.png", img1);
+        obtenerImagenFirebase("categorias/arquitectura/interior5.png", img2);
+        obtenerImagenFirebase("categorias/arquitectura/interior2.png", img3);
+        obtenerImagenFirebase("categorias/arquitectura/interior4.png", img4);
+        obtenerImagenFirebase("categorias/arquitectura/interior3.png", img5);
 
         //BOTON SIGUIENTE y ATRAS
         siguienteBtn.setOnClickListener(this);
