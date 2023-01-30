@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.VideoView;
@@ -15,24 +16,28 @@ import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.monumentopenaFragment;
 import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.categoriasFragments.principal.tradicionesInicio;
 
-public class mozaDeAnimas extends Fragment {
+public class mozaDeAnimas extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma, categoria;
     private StorageReference storageRef;
     private ImageView img1, img2;
     private VideoView videoView, videoView2;
-    private Button btnPlay1, btnPlay2, atrasBtn;
+    private Button atrasBtn;
+    private ImageButton btnPlay1, btnPause1, btnStop1, btnPlay2, btnPause2, btnStop2;
     private TextView titulo, text2, text3, text4, text5, text6, text7, text8;
 
     /**
@@ -102,6 +107,10 @@ public class mozaDeAnimas extends Fragment {
             //Botones
             btnPlay1 = v.findViewById(R.id.play1);
             btnPlay2 = v.findViewById(R.id.play2);
+            btnStop1 = v.findViewById(R.id.stop1);
+            btnStop2 = v.findViewById(R.id.stop2);
+            btnPause1 = v.findViewById(R.id.pause1);
+            btnPause2 = v.findViewById(R.id.pause2);
             atrasBtn = v.findViewById(R.id.mozaAtras);
         }
         return v;
@@ -132,7 +141,7 @@ public class mozaDeAnimas extends Fragment {
         text7.setText(textoTrad[5]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text8.setText(textoTrad[6]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        //Setter de las imagenes de la interfaz TODO
+        //Setter de las imagenes de la interfaz
         storageRef = FirebaseStorage.getInstance().getReference();
         obtenerImagenFirebase("categorias/tradiciones/mozaanimas1.png", img1);
         obtenerImagenFirebase("categorias/tradiciones/mozaanimas2.png", img2);
@@ -143,17 +152,13 @@ public class mozaDeAnimas extends Fragment {
         videoView.setVideoURI(uri);
         videoView2.setVideoURI(uri2);
 
-        btnPlay1.setOnClickListener(v -> {
-            videoView.start();
-            videoView2.pause();
-            videoView2.seekTo(0);
+        btnPlay1.setOnClickListener(this);
+        btnPlay2.setOnClickListener(this);
+        btnPause1.setOnClickListener(this);
+        btnPause2.setOnClickListener(this);
+        btnStop1.setOnClickListener(this);
+        btnStop2.setOnClickListener(this);
 
-        });
-        btnPlay2.setOnClickListener(v -> {
-            videoView.pause();
-            videoView.seekTo(0);
-            videoView2.start();
-        });
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {
@@ -183,4 +188,31 @@ public class mozaDeAnimas extends Fragment {
     }
 
 
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
+    @Override
+    public void onClick(View view) {
+
+        ImageButton btn = (ImageButton) view;
+        switch (btn.getId()){
+            case R.id.play1:
+                videoView.start();
+                break;
+            case R.id.play2:
+                videoView2.start();
+                break;
+            case R.id.pause1:
+                videoView.pause();
+                break;
+            case R.id.pause2:
+                videoView2.pause();
+                break;
+            case R.id.stop1:
+                videoView.pause();
+                videoView.seekTo(0);
+            case R.id.stop2:
+                videoView2.pause();
+                videoView2.seekTo(0);
+                break;
+        }
+    }
 }

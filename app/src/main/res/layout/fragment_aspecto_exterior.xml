@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".categoriasFragments.secundarias.arquitectura.aspectoExterior">
 
@@ -12,6 +13,7 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:background="@color/white"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -69,6 +72,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="right"
+                    android:background="@color/white"
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:layout_marginLeft="110dp"
@@ -80,6 +84,7 @@
                     android:id="@+id/arquisiguiente2"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:background="@color/white"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="right"
                     android:textStyle="bold"
@@ -167,6 +172,7 @@
                     android:layout_height="25dp"
                     android:gravity="center"
                     android:textStyle="bold"
+                    android:background="@color/white"
                     android:src="@drawable/ic_circle_arrow_left_solid"
                     app:tint="@color/black">
                 </ImageButton>
@@ -178,6 +184,7 @@
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
+                    android:background="@color/white"
                     android:src="@drawable/ic_circle_arrow_right_solid"
                     app:tint="@color/black">
                 </ImageButton>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".categoriasFragments.secundarias.tradiciones.mozaDeAnimas">
 
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
+        android:background="@color/white"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,18 +128,33 @@
                     android:layout_height="130dp"
                     android:focusable="false"/>
 
-                <Button
+                <ImageButton
                     android:id="@+id/play1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:text="Reproducir">
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"
+                    android:src="@drawable/play"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
 
-                </Button>
+                <ImageButton
+                    android:id="@+id/pause1"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:src="@drawable/pause"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/stop1"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:src="@drawable/stop"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
 
             </LinearLayout>
 
@@ -180,18 +197,33 @@
                     android:layout_height="130dp"
                     android:focusable="false"/>
 
-                <Button
+                <ImageButton
                     android:id="@+id/play2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:background="#880E4F"
-                    android:fontFamily="@font/amiri"
-                    android:text="Reproducir">
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"
+                    android:src="@drawable/play"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
 
-                </Button>
+                <ImageButton
+                    android:id="@+id/pause2"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:src="@drawable/pause"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/stop2"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:src="@drawable/stop"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
 
             </LinearLayout>
 

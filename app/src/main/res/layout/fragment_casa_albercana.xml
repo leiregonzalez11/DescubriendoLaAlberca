@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".categoriasFragments.secundarias.arquitectura.casaAlbercana">
 
     <ScrollView
@@ -12,6 +13,7 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -331,6 +333,7 @@
                     android:id="@+id/arquiAtras5"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:background="@color/white"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center"

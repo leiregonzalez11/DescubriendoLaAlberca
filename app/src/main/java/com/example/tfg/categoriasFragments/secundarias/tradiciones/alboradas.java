@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -32,7 +33,8 @@ public class alboradas extends Fragment {
     private StorageReference storageRef;
     private ImageView img1, img2;
     VideoView videoView;
-    private Button atrasBtn, btnPlay, btnPause, btnStop;
+    private Button atrasBtn;
+    private ImageButton btnPlay, btnPause, btnStop;
     private TextView titulo, text1, text2, text4, text5, text6;
 
     /**
