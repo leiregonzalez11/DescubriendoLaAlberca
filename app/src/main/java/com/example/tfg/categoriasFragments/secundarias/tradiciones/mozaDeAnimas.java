@@ -73,12 +73,12 @@ public class mozaDeAnimas extends Fragment implements View.OnClickListener {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args = new Bundle();
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.

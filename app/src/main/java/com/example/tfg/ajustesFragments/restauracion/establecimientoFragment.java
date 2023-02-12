@@ -53,7 +53,7 @@ public class establecimientoFragment extends DialogFragment {
         assert getArguments() != null;
 
         establecimiento = getArguments().getString("nombreRest");
-        categoria = getArguments().getString("categoria");
+
 
         Button back = infoView.findViewById(R.id.buttonVolverRest);
         TextView text1 = infoView.findViewById(R.id.nombreRest);
@@ -75,10 +75,10 @@ public class establecimientoFragment extends DialogFragment {
 
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntRest(categoria, establecimiento);
+        double punt = dbHelper.obtenerPuntRest(establecimiento);
         ratingBar.setRating((float) punt);
 
-        String [] datos = dbHelper.obtenerDatosRest(categoria, establecimiento);
+        String [] datos = dbHelper.obtenerDatosRest(establecimiento);
 
         telefono = datos[0];
         ubi.setText(datos[1] + "    ");

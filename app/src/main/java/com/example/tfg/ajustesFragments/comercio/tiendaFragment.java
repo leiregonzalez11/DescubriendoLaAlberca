@@ -59,7 +59,6 @@ public class tiendaFragment extends DialogFragment {
         assert getArguments() != null;
 
         tienda = getArguments().getString("nombreCom");
-        categoria = getArguments().getString("categoria");
 
         Button back = infoView.findViewById(R.id.buttonVolverCom);
         TextView text1 = infoView.findViewById(R.id.nombreCom);
@@ -72,7 +71,7 @@ public class tiendaFragment extends DialogFragment {
         //Titulo
         text1.setText(tienda);
 
-        String [] datos = dbHelper.obtenerDatosTienda(categoria, tienda);
+        String [] datos = dbHelper.obtenerDatosTienda(tienda);
 
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgtienda);

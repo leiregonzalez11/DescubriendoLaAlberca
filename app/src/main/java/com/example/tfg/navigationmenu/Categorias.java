@@ -39,10 +39,10 @@ public class Categorias extends Fragment implements View.OnClickListener{
     Fragment fragment;
     Toolbar myToolbar;
     Bundle args, argsMenu;
-    String idioma, path, categoria;
+    String idioma, path;
     private StorageReference storageRef;
-    protected ImageButton btnhistoria, btnTrad, btnMonu, btnFiesta, btnGastro,
-            btnCultura, btnRutas, btnOtros, btnArte, btnArqui;
+    protected ImageButton btnhistoria, btnTrad, btnFiesta, btnGastro,
+            btnCultura, btnRutas, btnArte, btnArqui;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -113,64 +113,37 @@ public class Categorias extends Fragment implements View.OnClickListener{
         switch (btn.getId()){
 
             case R.id.botonhistoria:
-                categoria = "historia";
-                args.putString("categoria", categoria);
                 fragment = historiaInicio.newInstance(args);
                 break;
 
             case R.id.botonartesania:
-                categoria = "artesania";
-                args.putString("categoria", categoria);
                 fragment = artesaniaInicio.newInstance(args);
                 break;
 
             case R.id.botontradiciones:
-                categoria = "tradiciones";
-                args.putString("categoria", categoria);
                 fragment = tradicionesInicio.newInstance(args);
                 break;
 
             case R.id.botonarquitectura:
-                categoria = "arquitectura";
-                args.putString("categoria", categoria);
                 fragment = arquitecturaInicio.newInstance(args);
                 break;
 
-            /*case R.id.botonmonumentos:
-                categoria = "sitiosdeinteres";
-                args.putString("categoria", categoria);
-                fragment = monumentosInicio.newInstance(args);
-                break;*/
-
             case R.id.botonfiestas:
-                categoria = "fiestas";
-                args.putString("categoria", categoria);
                 fragment = fiestasInicio.newInstance(args);
                 break;
 
             case R.id.botongastronomia:
-                categoria = "gastronomia";
-                args.putString("categoria", categoria);
                 fragment = gastronomiaInicio.newInstance(args);
                 break;
 
             case R.id.botoncultura:
-                categoria = "cultura";
-                args.putString("categoria", categoria);
                 fragment = culturaInicio.newInstance(args);
                 break;
 
             case R.id.botonruta:
-                categoria = "rutas";
-                args.putString("categoria", categoria);
                 fragment = rutasInicio.newInstance(args);
                 break;
 
-            /*case R.id.botonotros:
-                categoria = "otroslugares";
-                args.putString("categoria", categoria);
-                fragment = otrosLugaresInicio.newInstance(args);
-                break;*/
         }
 
         cargarFragment(fragment);
@@ -217,36 +190,36 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        path = "categorias/" + idioma + "/historia-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/historia-" + idioma + ".jpg";
         btnhistoria.setOnClickListener(this);
         obtenerImagenFirebase(path, btnhistoria);
 
-        path = "categorias/" + idioma + "/artesania-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/artesania-" + idioma + ".jpg";
         btnArte.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArte);
 
-        path = "categorias/" + idioma + "/tradicion-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/tradicion-" + idioma + ".jpg";
         btnTrad.setOnClickListener(this);
         obtenerImagenFirebase(path, btnTrad);
 
-        path = "categorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
         btnArqui.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArqui);
 
-        path = "categorias/" + idioma + "/fiestas-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/fiestas-" + idioma + ".jpg";
         btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
 
-        path = "categorias/" + idioma + "/gastronomia-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/gastronomia-" + idioma + ".jpg";
         btnGastro.setOnClickListener(this);
         obtenerImagenFirebase(path, btnGastro);
 
         //TODO: Cambiar la ruta
-        path = "categorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
         btnCultura.setOnClickListener(this);
         obtenerImagenFirebase(path, btnCultura);
 
-        path = "categorias/" + idioma + "/rutas-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/rutas-" + idioma + ".jpg";
         btnRutas.setOnClickListener(this);
         obtenerImagenFirebase(path, btnRutas);
 

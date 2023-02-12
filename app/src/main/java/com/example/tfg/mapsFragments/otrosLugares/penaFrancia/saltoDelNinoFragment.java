@@ -47,8 +47,6 @@ public class saltoDelNinoFragment extends DialogFragment {
 
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
-        String categoria = getArguments().getString("categoria");
-
         Button back = infoView.findViewById(R.id.buttonVolverSalto);
         TextView info = infoView.findViewById(R.id.saltoinfotext1);
         TextView info2 = infoView.findViewById(R.id.saltoinfotext2);
@@ -57,7 +55,7 @@ public class saltoDelNinoFragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsaltodelniño", categoria, "peñadefrancia", 3);
+        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsaltodelniño", "peñadefrancia", 3);
 
         info.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         info2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

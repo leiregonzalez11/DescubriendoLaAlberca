@@ -3,28 +3,24 @@ package com.example.tfg.categoriasFragments.secundarias.cultura.diccionario;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
-
 import java.util.List;
 import java.util.Locale;
 
-public class listapalabras extends DialogFragment {
+public class listapalabrasf extends DialogFragment {
 
-    private Bundle args = new Bundle();
+    private final Bundle args = new Bundle();
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -60,13 +56,12 @@ public class listapalabras extends DialogFragment {
             letraTV.setText(tit.toUpperCase());
         }
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        List<String> palabras = dbHelper.obtenerPalabras(idioma, letra);
+        ListaPalabras palabras = new ListaPalabras(requireContext(), idioma);
+        List <String> lista = palabras.obtenerListaPalabras(letra);
 
         ListView listView = infomView.findViewById(R.id.listviewpalabras);
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, palabras);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, lista);
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {

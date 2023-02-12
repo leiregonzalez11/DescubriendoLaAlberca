@@ -54,9 +54,9 @@
 
         <com.example.tfg.adapters.JustifyTextView
             android:id="@+id/iglesiatext"
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/black"
             android:fontFamily="@font/amiri"
             android:gravity='center'
@@ -68,9 +68,9 @@
 
         <com.example.tfg.adapters.JustifyTextView
             android:id="@+id/iglesiatext2"
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="-20dp"
             android:textColor="@color/black"
             android:fontFamily="@font/amiri"
@@ -83,9 +83,9 @@
 
         <com.example.tfg.adapters.JustifyTextView
             android:id="@+id/iglesiatext3"
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="-20dp"
             android:textColor="@color/black"
             android:fontFamily="@font/amiri"
@@ -187,9 +187,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/iglesiatext4"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
@@ -216,9 +216,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/iglesiatext5"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
@@ -229,9 +229,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/iglesiatext6"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
@@ -243,9 +243,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/iglesiatext7"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
@@ -257,9 +257,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/iglesiatext8"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"

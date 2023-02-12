@@ -47,7 +47,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad12"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
@@ -69,7 +69,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad13"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
@@ -91,7 +91,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad14"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
@@ -103,7 +103,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad15"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -160,7 +160,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad16"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -172,7 +172,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad17"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -229,7 +229,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/trad18"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"

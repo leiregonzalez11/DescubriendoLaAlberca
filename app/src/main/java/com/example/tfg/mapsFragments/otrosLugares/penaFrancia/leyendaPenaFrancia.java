@@ -62,11 +62,11 @@ public class leyendaPenaFrancia extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
         args.putString("back", "true");
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
@@ -106,7 +106,7 @@ public class leyendaPenaFrancia extends Fragment {
 
         if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
             btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
-            String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda1", categoria, "peñadefrancia", 4);
+            String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda1","peñadefrancia", 4);
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setTypeface(Typeface.create(text2.getTypeface(), Typeface.ITALIC));
@@ -121,7 +121,7 @@ public class leyendaPenaFrancia extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
                 pruebatexto.setText("2");
 
-                String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda2", categoria, "peñadefrancia", 4);
+                String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda2","peñadefrancia", 4);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -135,7 +135,7 @@ public class leyendaPenaFrancia extends Fragment {
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
                 pruebatexto.setText("1");
 
-                String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda1", categoria, "peñadefrancia", 4);
+                String [] datos = dbHelper.obtenerInfoPena(idioma, "leyenda1", "peñadefrancia", 4);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

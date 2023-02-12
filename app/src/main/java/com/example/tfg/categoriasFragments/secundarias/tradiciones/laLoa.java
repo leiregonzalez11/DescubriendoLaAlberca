@@ -66,12 +66,12 @@ public class laLoa extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args = new Bundle();
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     @Override

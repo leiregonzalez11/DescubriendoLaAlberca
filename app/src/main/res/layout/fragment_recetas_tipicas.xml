@@ -45,7 +45,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextIntro"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
@@ -134,7 +134,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextDescr"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:layout_marginLeft="10dp"
@@ -158,9 +158,8 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextIngr"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-55dp"
                 android:fontFamily="@font/amiri"
@@ -543,7 +542,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextPasos"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:layout_marginLeft="10dp"
@@ -557,7 +556,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextPasos2"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"

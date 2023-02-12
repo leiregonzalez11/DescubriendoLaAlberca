@@ -30,10 +30,10 @@ import com.smarteist.autoimageslider.SliderView;
 public class arquitecturaInicio extends Fragment {
 
     private Bundle args;
-    private String idioma, categoria;
+    private String idioma;
     private TextView text1, text2;
-    SliderView sliderView;
-    ImageButton sigBtn;
+    private SliderView sliderView;
+    private ImageButton sigBtn;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -70,11 +70,9 @@ public class arquitecturaInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
 
     }
 
@@ -103,7 +101,7 @@ public class arquitecturaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArqui(idioma, "inicio", categoria, 2);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma,"inicio",2);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

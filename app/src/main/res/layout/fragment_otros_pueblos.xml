@@ -39,7 +39,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/recetasTextIntro"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"

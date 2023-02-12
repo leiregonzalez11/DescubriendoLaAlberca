@@ -1,7 +1,5 @@
 package com.example.tfg.categoriasFragments.secundarias.gastronomia;
 
-
-//TODO: CREAR LA CLASE LISTARECETAS PARA NO TENER QUE ESTAR LLAMANDO A LA BD TODO EL RATO
 public class Receta {
 
     private String nombreReceta;

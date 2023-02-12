@@ -67,11 +67,11 @@ public class orfebreria extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -100,7 +100,7 @@ public class orfebreria extends Fragment {
 
         //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 
-        String [] datos = dbHelper.obtenerDatosArte(idioma, "orfebreria", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "orfebreria", 3);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -181,7 +180,7 @@ public class diccionario extends Fragment implements View.OnClickListener {
         }
 
         args.putString("letra", letra);
-        DialogFragment fragment = new listapalabras();
+        DialogFragment fragment = new listapalabrasf();
         fragment.setArguments(args);
         fragment.setCancelable(false);
         fragment.show(getChildFragmentManager(),"listap_fragment");

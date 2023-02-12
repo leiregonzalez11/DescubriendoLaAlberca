@@ -27,7 +27,7 @@ public class historiaInicio extends Fragment {
 
     private ImageButton btn;
     private ImageView img1, img2, img3;
-    private String idioma, categoria;
+    private String idioma;
     private StorageReference storageRef;
     private TextView text1, text2, text3, text4, pruebatexto;
 
@@ -66,11 +66,9 @@ public class historiaInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
 
     }
 
@@ -108,7 +106,6 @@ public class historiaInicio extends Fragment {
 
         if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
             btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
-
             String [] datos = dbHelper.obtenerInfoHist("cat1", idioma,4);
 
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -123,6 +120,7 @@ public class historiaInicio extends Fragment {
 
 
         btn.setOnClickListener(view1 -> {
+            pruebatexto.clearFocus();
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
                 btn.setImageResource(R.drawable.ic_circle_arrow_left_solid);
                 pruebatexto.setText("2");
@@ -133,11 +131,14 @@ public class historiaInicio extends Fragment {
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                pruebatexto.requestFocus();
+
                 obtenerImagenFirebase("categorias/historia/historia6.png", img1);
                 obtenerImagenFirebase("categorias/historia/historia3.png", img2);
                 obtenerImagenFirebase("categorias/historia/historia4.png", img3);
 
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
+                pruebatexto.clearFocus();
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);
                 pruebatexto.setText("1");
 
@@ -147,6 +148,8 @@ public class historiaInicio extends Fragment {
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                pruebatexto.requestFocus();
+
                 obtenerImagenFirebase("historia/historia1.png", img1);
                 obtenerImagenFirebase("historia/historia2.png", img2);
                 obtenerImagenFirebase("historia/historia5.png", img3);

@@ -61,7 +61,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/leyendap1"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
@@ -73,7 +73,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/leyendap2"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
@@ -85,7 +85,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/leyendap3"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
@@ -97,7 +97,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/leyendap4"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"

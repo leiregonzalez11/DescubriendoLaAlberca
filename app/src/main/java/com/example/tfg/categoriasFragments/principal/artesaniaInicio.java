@@ -35,7 +35,7 @@ public class artesaniaInicio extends Fragment {
 
     private Bundle args;
     private SliderView sliderView;
-    private String idioma, categoria;
+    private String idioma;
     private TextView text1, text2, text3;
     private ListView listView, listView2, listView3;
 
@@ -74,11 +74,11 @@ public class artesaniaInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -109,7 +109,7 @@ public class artesaniaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArte(idioma, "inicio", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "inicio",3);
 
         /*------------------
          | El traje serrano |

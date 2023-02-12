@@ -33,7 +33,7 @@
 
             <TextView
                 android:id="@+id/artetitulo"
-                android:layout_width="323dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
@@ -75,13 +75,12 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte11"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/amiri"
                 android:layout_marginTop="12dp"
-                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-30dp"
-                android:paddingLeft="7dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:gravity='center'
@@ -111,12 +110,11 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte12"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-40dp"
-                android:paddingLeft="7dp"
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center'
@@ -147,12 +145,11 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte13"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-40dp"
-                android:paddingLeft="7dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
                 android:gravity='center'

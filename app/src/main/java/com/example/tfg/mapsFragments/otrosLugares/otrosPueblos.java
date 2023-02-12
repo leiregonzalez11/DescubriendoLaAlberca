@@ -40,7 +40,7 @@ public class otrosPueblos extends Fragment {
     private StorageReference storageRef;
     private SupportMapFragment mapFragment;
     private TextView km, fiestamayor, descr;
-    private String pueblo, idioma, categoria;
+    private String pueblo, idioma;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -84,11 +84,10 @@ public class otrosPueblos extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -137,7 +136,7 @@ public class otrosPueblos extends Fragment {
 
                 String puebloBBDD = pueblo.replaceAll(" ", "").toLowerCase();
 
-                String [] datos = dbHelper.obtenerInfoPueblos(idioma, puebloBBDD, categoria, "pueblo");
+                String [] datos = dbHelper.obtenerInfoPueblos(idioma, puebloBBDD, "pueblo");
 
                 km.setText(datos[1]);
                 fiestamayor.setText(datos[2]);

@@ -78,9 +78,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte31"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
@@ -107,9 +107,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte32"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-30dp"
                 android:fontFamily="@font/amiri"
                 android:textColor="@color/black"
@@ -126,9 +126,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte33"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="@font/amiri"

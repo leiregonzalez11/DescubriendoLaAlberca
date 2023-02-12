@@ -59,11 +59,11 @@ public class iglesia extends Fragment implements View.OnClickListener{
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -112,11 +112,11 @@ public class iglesia extends Fragment implements View.OnClickListener{
 
         dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "iglesia", categoria, "peñadefrancia", 2);
+        String [] datos = dbHelper.obtenerInfoPena(idioma, "iglesia","peñadefrancia", 2);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        String [] datos2 = dbHelper.obtenerInfoPena(idioma, "vidrieras", categoria, "peñadefrancia", 1);
+        String [] datos2 = dbHelper.obtenerInfoPena(idioma, "vidrieras","peñadefrancia", 1);
         text3.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
     }
@@ -149,7 +149,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
                 monumento = "coropeña";
                 break;
             case R.id.naveizqda:
-                String [] datos2 = dbHelper.obtenerInfoPena(idioma, "naveizquierda", categoria, "peñadefrancia", 5);
+                String [] datos2 = dbHelper.obtenerInfoPena(idioma, "naveizquierda", "peñadefrancia", 5);
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiaizqdaes);
                 } else if (idioma.equalsIgnoreCase("en")){

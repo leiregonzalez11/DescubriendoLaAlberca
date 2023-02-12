@@ -46,7 +46,6 @@ public class lacasabajaFragment extends DialogFragment {
 
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
-        String categoria = getArguments().getString("categoria");
 
         Button back = infoView.findViewById(R.id.buttonVolverCasa);
         TextView info = infoView.findViewById(R.id.casainfotext1);
@@ -63,7 +62,7 @@ public class lacasabajaFragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "lacasabaja", categoria, "peñadefrancia", 7);
+        String [] datos = dbHelper.obtenerInfoPena(idioma, "lacasabaja","peñadefrancia", 7);
 
         info.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         info2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

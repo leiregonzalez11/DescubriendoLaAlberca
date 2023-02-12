@@ -45,8 +45,6 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        //TODO: Cambiar a COMERCIO
-        args.putString("categoria", "comercio");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -71,7 +69,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaComercios("comercio", "artesania");
+        lista1 = dbHelper.obtenerlistaComercios("artesania");
 
         editsearch.setOnQueryTextListener(this);
 

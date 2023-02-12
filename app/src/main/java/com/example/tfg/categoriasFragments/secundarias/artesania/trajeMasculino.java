@@ -63,11 +63,11 @@ public class trajeMasculino extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -96,7 +96,7 @@ public class trajeMasculino extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArte(idioma, "trajemasc", categoria, 4);
+        String [] datos = dbHelper.obtenerDatosArte(idioma, "trajemasc", 4);
         setDatosEImagenes(datos);
 
     }

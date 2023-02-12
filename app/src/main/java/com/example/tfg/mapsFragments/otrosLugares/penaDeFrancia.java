@@ -96,14 +96,14 @@ public class penaDeFrancia extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
             back = getArguments().getString("back");
         }
 
         System.out.println(back);
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -151,7 +151,7 @@ public class penaDeFrancia extends Fragment {
             text6.requestFocus();
         }
 
-        String[] datos = dbHelper.obtenerInfoPena(idioma, "inicio", categoria, "peñadefrancia", 5);
+        String[] datos = dbHelper.obtenerInfoPena(idioma, "inicio","peñadefrancia", 5);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

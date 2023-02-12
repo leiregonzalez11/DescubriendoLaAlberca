@@ -47,7 +47,6 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        args.putString("categoria", "alojamiento");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -72,7 +71,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "apartamento");
+        lista1 = dbHelper.obtenerlistaAlojamientos("apartamento");
 
         editsearch.setOnQueryTextListener(this);
 

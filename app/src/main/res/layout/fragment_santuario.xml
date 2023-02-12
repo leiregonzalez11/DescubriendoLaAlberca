@@ -54,9 +54,9 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/santuariotext"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'

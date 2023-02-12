@@ -93,7 +93,7 @@
             <ImageView
                 android:id="@+id/imgcasa"
                 android:layout_width="300dp"
-                android:layout_height="250dp"
+                android:layout_height="230dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:src="@drawable/laalberca2"
@@ -314,20 +314,6 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/mapViewCasa"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.697" />
 
                 <ImageButton
                     android:id="@+id/arquiAtras5"

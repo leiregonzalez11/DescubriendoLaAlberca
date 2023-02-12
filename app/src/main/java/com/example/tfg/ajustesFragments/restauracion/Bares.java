@@ -46,7 +46,6 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        args.putString("categoria", "restaurante");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -71,7 +70,7 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaRestaurantes("restaurante", "bar");
+        lista1 = dbHelper.obtenerlistaRestaurantes("bar");
 
         editsearch.setOnQueryTextListener(this);
 

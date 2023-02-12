@@ -26,7 +26,7 @@ import com.example.tfg.categoriasFragments.principal.arquitecturaInicio;
 public class aspectoExterior extends Fragment implements View.OnClickListener{
 
     private Bundle args;
-    private String idioma, categoria;
+    private String idioma;
     private ImageView img1, img2, img3;
     private StorageReference storageRef;
     private TextView text1, text2, text3;
@@ -67,11 +67,9 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
 
     }
 
@@ -106,7 +104,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArqui(idioma, "exterior", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "exterior", 3);
 
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

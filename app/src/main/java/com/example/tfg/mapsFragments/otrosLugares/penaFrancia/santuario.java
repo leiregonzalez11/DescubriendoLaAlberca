@@ -58,11 +58,11 @@ public class santuario extends Fragment implements View.OnClickListener {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
@@ -101,7 +101,7 @@ public class santuario extends Fragment implements View.OnClickListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsantuario", categoria, "peñadefrancia", 1);
+        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsantuario","peñadefrancia", 1);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
     }

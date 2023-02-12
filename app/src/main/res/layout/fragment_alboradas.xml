@@ -42,7 +42,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/alboradas1"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
@@ -64,7 +64,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/alboradas2"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
@@ -76,7 +76,7 @@
 
             <TextView
                 android:id="@+id/alboradas3"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="145dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="@font/amiri"
@@ -132,7 +132,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/alboradas4"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
@@ -144,7 +144,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/alboradas5"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-20dp"
@@ -165,7 +165,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/alboradas6"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"

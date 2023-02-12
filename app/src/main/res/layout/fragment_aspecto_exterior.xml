@@ -97,7 +97,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui21"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
@@ -119,7 +119,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui22"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-30dp"
@@ -140,7 +140,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui23"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-40dp"

@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 public class aspectoInterior extends Fragment implements View.OnClickListener{
 
     Bundle args;
-    String idioma, categoria;
+    String idioma;
     StorageReference storageRef;
     ImageView img1, img2, img3, img4, img5;
     TextView text1, text2, text3, text4, text5;
@@ -67,11 +66,9 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -109,7 +106,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArqui(idioma, "interior", categoria, 5);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "interior", 5);
 
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

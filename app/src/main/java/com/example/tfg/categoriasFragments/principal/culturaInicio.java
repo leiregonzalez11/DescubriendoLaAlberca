@@ -24,7 +24,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class culturaInicio extends Fragment {
 
     Bundle args;
-    private String idioma, categoria;
+    private String idioma;
     Button btndic;
 
     /**
@@ -62,7 +62,6 @@ public class culturaInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);

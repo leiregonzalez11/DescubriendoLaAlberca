@@ -61,11 +61,11 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
         args.putString("back", "true");
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);

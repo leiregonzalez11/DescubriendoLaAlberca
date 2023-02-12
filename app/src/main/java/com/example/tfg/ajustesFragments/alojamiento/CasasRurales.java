@@ -51,7 +51,6 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        args.putString("categoria", "alojamiento");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -76,7 +75,7 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "casarural");
+        lista1 = dbHelper.obtenerlistaAlojamientos("casarural");
 
         editsearch.setOnQueryTextListener(this);
 

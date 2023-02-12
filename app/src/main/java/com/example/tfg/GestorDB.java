@@ -8,6 +8,9 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.ListaPalabras;
+import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.Palabra;
+import com.example.tfg.categoriasFragments.secundarias.gastronomia.ListaRecetas;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 
 import java.io.BufferedReader;
@@ -15,6 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
@@ -193,7 +198,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Arquitectura
-    public String[] obtenerDatosArqui(String idioma, String categoria, String tabla, int numTV){
+    public String[] obtenerDatosArqui(String idioma, String categoria, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -201,7 +206,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArqui FROM " + tabla + " WHERE catArqui LIKE '" + categoria + "%' AND idioma = '" + idioma + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArqui FROM arquitectura WHERE catArqui LIKE '" + categoria + "%' AND idioma = ?;", new String[] {idioma});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -212,7 +217,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Artesania
-    public String[] obtenerDatosArte(String idioma, String categoria, String tabla, int numTV){
+    public String[] obtenerDatosArte(String idioma, String categoria, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -220,7 +225,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArte FROM " + tabla + " WHERE catArte LIKE '" + categoria + "%' AND idioma = '" + idioma + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArte FROM artesania WHERE catArte LIKE '" + categoria + "%' AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -230,7 +235,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosTrajes(String idioma, String categoria, String tabla, int numTV, String nombreTraje){
+    public String[] obtenerDatosTrajes(String idioma, String categoria, int numTV, String nombreTraje){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -238,8 +243,8 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArte FROM " + tabla + " WHERE catArte LIKE '" + categoria + "%' " +
-                "AND idioma = '" + idioma + "' AND nombreTraje = '" + nombreTraje + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrArte FROM artesania WHERE catArte LIKE '" + categoria + "%' " +
+                "AND idioma = ? AND nombreTraje = ?;", new String[]{idioma, nombreTraje});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -250,7 +255,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Rutas
-    public String[] obtenerDatosRutas(String idioma, String nombreRuta, String tabla){
+    public String[] obtenerDatosRutas(String idioma, String nombreRuta){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -258,8 +263,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[5];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descRuta, distancia, desnivel, dificultad, tiempo FROM " + tabla + "" +
-                " WHERE idioma = '" + idioma + "' AND nombreRuta = '" + nombreRuta + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descRuta, distancia, desnivel, dificultad, tiempo FROM rutas WHERE idioma = ? AND nombreRuta = ?;", new String[]{idioma, nombreRuta});
         while (c.moveToNext()){
             for (int j = 0; j < 5; j++){
                 descrip = c.getString(j);
@@ -272,15 +276,14 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Alojamientos
-    public ArrayList<String> obtenerlistaAlojamientos(String tabla, String categoriaAloj){
+    public ArrayList<String> obtenerlistaAlojamientos(String categoriaAloj){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         ArrayList<String> descr = new ArrayList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreAloj FROM " + tabla + "" +
-                " WHERE categoriaAloj = '" + categoriaAloj + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreAloj FROM alojamiento WHERE categoriaAloj = ?;", new String[]{categoriaAloj});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr.add(descrip);
@@ -289,15 +292,14 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosAloj(String tabla, String nombreAloj){
+    public String[] obtenerDatosAloj(String nombreAloj){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiAloj FROM " + tabla + "" +
-                " WHERE nombreAloj = '" + nombreAloj + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiAloj FROM alojamiento WHERE nombreAloj = ?;", new String[]{nombreAloj});
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
@@ -308,14 +310,13 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public double obtenerPuntAloj(String tabla, String nombreAloj) {
+    public double obtenerPuntAloj(String nombreAloj) {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         double punt = 0;
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM " + tabla + "" +
-                " WHERE nombreAloj = '" + nombreAloj + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM alojamiento WHERE nombreAloj = ?;", new String[]{nombreAloj});
         while (c.moveToNext()){
             punt = c.getDouble(0);
         }
@@ -324,14 +325,13 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Restaurantes
-    public List<String> obtenerlistaRestaurantes(String tabla, String categoriaRest) {
+    public List<String> obtenerlistaRestaurantes(String categoriaRest) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         List<String> descr = new ArrayList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreRest FROM " + tabla + "" +
-                " WHERE categoriaRest = '" + categoriaRest+ "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreRest FROM restaurante WHERE categoriaRest = ?;", new String[]{categoriaRest});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr.add(descrip);
@@ -340,15 +340,14 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosRest(String tabla, String nombreRest) {
+    public String[] obtenerDatosRest(String nombreRest) {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[2];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest FROM " + tabla + "" +
-                " WHERE nombreRest = '" + nombreRest + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest FROM restaurante WHERE nombreRest = ?;", new String[]{nombreRest});
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
@@ -359,14 +358,13 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public double obtenerPuntRest(String tabla, String nombreRest) {
+    public double obtenerPuntRest(String nombreRest) {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         double punt = 0;
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM " + tabla + "" +
-                " WHERE nombreRest = '" + nombreRest + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM restaurante WHERE nombreRest = ?;", new String[]{nombreRest});
         while (c.moveToNext()){
             punt = c.getDouble(0);
             System.out.println("DESCRIIIIIIIP" + punt);
@@ -376,8 +374,8 @@ public class GestorDB extends SQLiteOpenHelper {
         return punt;
     }
 
-    //Tabla gastronomia
-    public String[] obtenerDescrGastro(String idioma, String categoria, String tabla, int numTV){
+    //Tabla Gastronomia
+    public String[] obtenerDescrGastro(String idioma, String categoria, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -385,7 +383,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrGastro FROM " + tabla + " WHERE catGastro LIKE '" + categoria + "%' " +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrGastro FROM gastronomia WHERE catGastro LIKE '" + categoria + "%' " +
                 "AND idioma = '" + idioma + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
@@ -396,23 +394,24 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public Receta obtenerReceta(String idioma, String nombreReceta, String tabla){
+    public LinkedList<Receta> obtenerRecetas(String idioma){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        Receta receta = new Receta();
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrGastro, ingrReceta, pasosReceta FROM " + tabla + " WHERE idioma = '" + idioma + "' " +
-                "AND nombreReceta = '" + nombreReceta +"';", null);
+        LinkedList<Receta> recetas = new LinkedList<>();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreReceta, descrGastro, ingrReceta, pasosReceta FROM gastronomia WHERE idioma = ? AND nombreReceta IS NOT NULL", new String[]{idioma});
         while (c.moveToNext()){
-            receta.setDescrReceta(c.getString(0));
-            receta.setIngredientes(c.getString(1));
-            receta.setPasos(c.getString(2));
+            Receta receta = new Receta();
+            receta.setNombreReceta(c.getString(0));
+            receta.setDescrReceta(c.getString(1));
+            receta.setIngredientes(c.getString(2));
+            receta.setPasos(c.getString(3));
+            recetas.add(receta);
         }
         c.close();
-        return receta;
+        return recetas;
     }
 
-    //Tabla tradiciones
+    //Tabla Tradiciones
     public String[] obtenerInfoTrad(String idioma, String interfaz, String tabla, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -421,8 +420,8 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM " + tabla + " WHERE nombreTrad LIKE '" + interfaz + "%' " +
-                "AND idioma = '" + idioma + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM tradiciones WHERE nombreTrad LIKE '" + interfaz + "%'" +
+                "AND idioma = ?;", new String [] {idioma});
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -432,22 +431,15 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    //Tabla otros lugares
-
-    //TODO: HACER COMO EN RECETAS --> CREAR LA CLASE PUEBLO
-    public String [] obtenerInfoPueblos (String idioma, String pueblo, String tabla, String categoria){
+    //Tabla Otros lugares
+    public String [] obtenerInfoPueblos (String idioma, String pueblo, String categoria){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[5];
 
-        String query = "SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
-                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + pueblo + "';";
-
-        System.out.println("QUERY: " + query);
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM " + tabla + "" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM otrosLugares" +
                 " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + pueblo + "';", null);
         while (c.moveToNext()){
             for (int j = 0; j < 5; j++){
@@ -478,7 +470,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String [] obtenerInfoPena (String idioma, String lugar, String tabla, String categoria, Integer numTV){
+    public String [] obtenerInfoPena (String idioma, String lugar, String categoria, Integer numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -486,8 +478,7 @@ public class GestorDB extends SQLiteOpenHelper {
         String [] descr = new String[numTV];
         int i = 0;
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro FROM " + tabla + "" +
-                " WHERE categoriaOtros LIKE '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro FROM otrosLugares WHERE categoriaOtros LIKE '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + lugar + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr[i] = descrip;
@@ -498,15 +489,14 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Comercios
-    public ArrayList<String> obtenerlistaComercios(String tabla, String categoriaCom){
+    public ArrayList<String> obtenerlistaComercios(String categoriaCom){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         ArrayList<String> descr = new ArrayList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreCom FROM " + tabla + "" +
-                " WHERE categoriaCom LIKE '%" + categoriaCom + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreCom FROM comercio WHERE categoriaCom LIKE '%" + categoriaCom + "';", null);
         while (c.moveToNext()){
             descrip = c.getString(0);
             descr.add(descrip);
@@ -515,15 +505,14 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String[] obtenerDatosTienda (String tabla, String nombreCom) {
+    public String[] obtenerDatosTienda (String nombreCom) {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[4];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom FROM " + tabla + "" +
-                " WHERE nombreCom = '" + nombreCom + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom FROM comercio WHERE nombreCom = ?;", new String[]{nombreCom});
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 descrip = c.getString(j);
@@ -534,7 +523,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-
+    //Tabla Historia
     public String[] obtenerInfoHist(String catHist, String idioma, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -556,6 +545,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    //Tabla Monumentos
     public String[] obtenerInfoMonumentosConCat(String idioma, String categoriaMon, String nombreMonumento, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -593,36 +583,21 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Diccionario
-
-    public ArrayList<String> obtenerPalabras(String idioma, String letra) {
+    public LinkedList<Palabra> obtenerPalabras(String idioma) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        String descrip;
-        ArrayList<String> descr = new ArrayList<>();
+        LinkedList<Palabra> palabras = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT palabra FROM diccionario " +
-                "WHERE idioma = ? AND letra = ?;", new String[]{idioma, letra});
+        Cursor c = sqLiteDatabase.rawQuery("SELECT letra, palabra, descr FROM diccionario WHERE idioma = ?;", new String[]{idioma});
         while (c.moveToNext()){
-            descrip = c.getString(0);
-            descr.add(descrip);
+            Palabra palabra = new Palabra();
+            palabra.setCategoriaPalabra(c.getString(0));
+            palabra.setNombrepalabra(c.getString(1));
+            palabra.setDefinicionpalabra(c.getString(2));
+            palabras.add(palabra);
         }
         c.close();
-        return descr;
+        return palabras;
     }
-
-    public String obtenerDefinicion(String idioma, String palabra) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip = "";
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM diccionario " +
-                "WHERE idioma = ? AND palabra = ?;", new String[]{idioma, palabra});
-        while (c.moveToNext()){
-            descrip = c.getString(0);
-        }
-        c.close();
-        return descrip;
-    }
-
 
 }

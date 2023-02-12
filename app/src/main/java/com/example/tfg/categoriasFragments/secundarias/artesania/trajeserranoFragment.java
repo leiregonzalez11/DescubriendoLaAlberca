@@ -47,8 +47,7 @@ public class trajeserranoFragment extends DialogFragment {
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
         args.putString("idioma", idioma);
-        String categoria = getArguments().getString("categoria");
-        args.putString("categoria", categoria);
+
 
         /*---------------------------
          | El traje serrano femenino |

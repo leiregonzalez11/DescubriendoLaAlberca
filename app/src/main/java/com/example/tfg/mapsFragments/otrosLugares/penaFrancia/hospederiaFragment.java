@@ -5,24 +5,18 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -50,8 +44,6 @@ public class hospederiaFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-        String idioma = getArguments().getString("idioma");
-        String categoria = getArguments().getString("categoria");
         String alojamiento = "Hospedería Peña de Francia";
 
         Button back = infoView.findViewById(R.id.buttonVolverHosp);
@@ -69,13 +61,13 @@ public class hospederiaFragment extends DialogFragment {
 
         //Imagen
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("mapas/otros/penafrancia/hospederia.png", img);
+        obtenerImagenFirebase(img);
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj("alojamiento", alojamiento);
+        double punt = dbHelper.obtenerPuntAloj(alojamiento);
         ratingBar.setRating((float) punt);
 
-        String [] datos = dbHelper.obtenerDatosAloj("alojamiento", alojamiento);
+        String [] datos = dbHelper.obtenerDatosAloj(alojamiento);
 
         String telefono = datos[0];
 
@@ -108,8 +100,8 @@ public class hospederiaFragment extends DialogFragment {
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
+    private void obtenerImagenFirebase(ImageView img){
+        StorageReference pathReference = storageRef.child("mapas/otros/penafrancia/hospederia.png");
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 }

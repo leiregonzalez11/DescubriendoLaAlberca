@@ -46,7 +46,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon1"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
@@ -68,7 +68,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon2"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
@@ -80,7 +80,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon3"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-25dp"
@@ -92,7 +92,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon4"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-35dp"
@@ -104,7 +104,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon5"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -117,7 +117,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon6"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -140,7 +140,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/pendon7"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"

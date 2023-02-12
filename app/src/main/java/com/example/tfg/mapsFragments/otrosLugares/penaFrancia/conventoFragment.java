@@ -56,10 +56,10 @@ public class conventoFragment extends DialogFragment {
         assert getArguments() != null;
         String monumento = getArguments().getString("monumento");
         idioma = getArguments().getString("idioma");
-        categoria = getArguments().getString("categoria");
+
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
 
         titulo = infoView.findViewById(R.id.tituloconvento);
         text1 = infoView.findViewById(R.id.santuariotext1);
@@ -85,7 +85,7 @@ public class conventoFragment extends DialogFragment {
     private void setText(String monumento) {
 
         /* Texto */
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "convento", categoria, "peñadefrancia", 5);
+        String [] datos = dbHelper.obtenerInfoPena(idioma, "convento", "peñadefrancia", 5);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

@@ -27,7 +27,7 @@ import com.google.firebase.storage.StorageReference;
 public class inscripciones extends Fragment implements View.OnClickListener {
 
     Bundle args;
-    String idioma, categoria;
+    String idioma;
     StorageReference storageRef;
     ImageView img1, img2;
     TextView text1, text2, text3;
@@ -66,11 +66,9 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
     }
 
     /** La vista de layout ha sido creada y ya está disponible
@@ -103,7 +101,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerDatosArqui(idioma, "inscripciones", categoria, 3);
+        String [] datos = dbHelper.obtenerDatosArqui(idioma, "inscripciones", 3);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

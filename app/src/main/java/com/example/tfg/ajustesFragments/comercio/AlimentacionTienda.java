@@ -45,7 +45,6 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        args.putString("categoria", "comercio");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -70,7 +69,7 @@ public class AlimentacionTienda extends Fragment implements SearchView.OnQueryTe
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaComercios("comercio", "alimentacion");
+        lista1 = dbHelper.obtenerlistaComercios("alimentacion");
 
         editsearch.setOnQueryTextListener(this);
 

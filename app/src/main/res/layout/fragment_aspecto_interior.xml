@@ -98,7 +98,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arquiintro"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
@@ -122,7 +122,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui31"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
@@ -146,7 +146,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui32"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
@@ -169,7 +169,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui33"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
@@ -192,7 +192,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui34"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
@@ -215,7 +215,7 @@
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arqui35"
                 android:layout_height="wrap_content"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"

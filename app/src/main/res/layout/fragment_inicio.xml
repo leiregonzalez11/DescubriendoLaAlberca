@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/bienvenidatextPrueba"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
@@ -69,7 +69,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal1"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="30dp"
@@ -81,7 +81,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/textoprincipal2"
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginLeft="10dp"

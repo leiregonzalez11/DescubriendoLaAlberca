@@ -63,7 +63,6 @@ public class otrosLugaresInicio extends Fragment {
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", "otroslugares");
 
     }
 

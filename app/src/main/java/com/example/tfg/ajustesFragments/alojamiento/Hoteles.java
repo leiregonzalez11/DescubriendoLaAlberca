@@ -48,7 +48,6 @@ public class Hoteles extends Fragment implements SearchView.OnQueryTextListener 
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
         args = new Bundle();
-        args.putString("categoria", "alojamiento");
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -73,7 +72,7 @@ public class Hoteles extends Fragment implements SearchView.OnQueryTextListener 
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        lista1 = dbHelper.obtenerlistaAlojamientos("alojamiento", "hotel");
+        lista1 = dbHelper.obtenerlistaAlojamientos("hotel");
 
         editsearch.setOnQueryTextListener(this);
 

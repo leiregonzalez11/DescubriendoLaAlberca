@@ -74,11 +74,11 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -121,7 +121,7 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
 
         nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
 
-        String [] datos = dbHelper.obtenerDatosTrajes(idioma, "trajes", categoria, 3, nombreTraje);
+        String [] datos = dbHelper.obtenerDatosTrajes(idioma, "trajes",3, nombreTraje);
 
         if (nombreTraje.equalsIgnoreCase("vistas") & idioma.equalsIgnoreCase("en")){
             text1.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

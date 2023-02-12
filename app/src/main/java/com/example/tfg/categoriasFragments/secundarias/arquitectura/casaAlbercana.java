@@ -38,26 +38,8 @@ public class casaAlbercana extends Fragment {
     private TextView tel, web;
     private ImageView img;
     private ImageButton finBtn;
-    private String idioma, categoria;
+    private String idioma;
     private StorageReference storageRef;
-    private SupportMapFragment mapFragment;
-
-    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
-    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-        /**
-         * Manipula el mapa una vez haya sido creado.
-         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
-         */
-        public void onMapReady(GoogleMap googleMap) {
-            LatLng location = new LatLng(40.488984, -6.109707);
-            googleMap.addMarker(new MarkerOptions()
-                    .position(location)
-                    .title("Casa Museo Satur y Juanela"));
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 17.5f));
-            //Tipo de mapa: Hibrido
-            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        }
-    };
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -92,11 +74,10 @@ public class casaAlbercana extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** La vista de layout ha sido creada y ya está disponible
@@ -107,7 +88,6 @@ public class casaAlbercana extends Fragment {
         // Inflate the layout for this fragment
          View v = inflater.inflate(R.layout.fragment_casa_albercana, container, false);
          if (v != null){
-             mapFragment =(SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewCasa);
              tel = v.findViewById(R.id.telcasa2);
              web = v.findViewById(R.id.webcasa2);
              img = v.findViewById(R.id.imgcasa);
@@ -121,11 +101,6 @@ public class casaAlbercana extends Fragment {
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        //Mapa
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
-        }
 
         SpannableString telsubrayado = new SpannableString("625 75 58 19");
         telsubrayado.setSpan(new UnderlineSpan(), 0, telsubrayado.length(), 0);

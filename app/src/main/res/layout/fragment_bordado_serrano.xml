@@ -46,7 +46,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte21"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
@@ -67,7 +67,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte22"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
@@ -88,7 +88,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte23"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="30dp"
@@ -109,7 +109,7 @@
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/arte24"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="25dp"

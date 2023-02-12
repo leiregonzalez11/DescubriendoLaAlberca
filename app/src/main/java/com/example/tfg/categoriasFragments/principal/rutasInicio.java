@@ -30,7 +30,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
     private Spinner spinner;
     private ImageView img1, img2, img3;
     private StorageReference storageRef;
-    private String idioma, categoria, nombreRuta;
+    private String idioma, nombreRuta;
     private TextView text2, text3, text4, text5, text6;
 
     /**
@@ -66,7 +66,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
     }
 
@@ -113,12 +113,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
 
         nombreRuta = determinarRuta((String) adapterView.getItemAtPosition(position));
 
-        String[] datos = dbHelper.obtenerDatosRutas(idioma, nombreRuta, categoria);
-
-        System.out.println("RUTAAAAA " + nombreRuta);
-        for (int i = 0; i < datos.length; i++){
-            System.out.println("RUTAAAAA " + i + datos[i]);
-        }
+        String[] datos = dbHelper.obtenerDatosRutas(idioma, nombreRuta);
 
         text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[1]);

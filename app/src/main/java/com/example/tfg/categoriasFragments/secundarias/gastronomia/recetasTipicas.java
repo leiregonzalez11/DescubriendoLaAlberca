@@ -31,8 +31,8 @@ public class recetasTipicas extends Fragment {
 
     private Bundle args;
     private Button atrasBtn;
-    private GestorDB dbHelper;
-    private String [] recetas;
+    private String[] recetasS;
+    private ListaRecetas recetas;
     private LinearLayout ingLayout;
     private StorageReference storageRef;
     private Spinner spinner1, spinner2;
@@ -75,11 +75,11 @@ public class recetasTipicas extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
+
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -103,7 +103,9 @@ public class recetasTipicas extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        dbHelper = new GestorDB(requireContext());
+        recetas = new ListaRecetas(requireContext(), idioma);
+        recetas.imprimirRecetas();
+
         storageRef = FirebaseStorage.getInstance().getReference();
 
         String [] tipo = getResources().getStringArray(R.array.tipo);
@@ -114,12 +116,12 @@ public class recetasTipicas extends Fragment {
            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                tipoRecetas = (String) adapterView.getItemAtPosition(position);
                if (tipoRecetas.equalsIgnoreCase(tipo[0])){
-                   recetas = getResources().getStringArray(R.array.recetasDulces);
+                   recetasS = getResources().getStringArray(R.array.recetasDulces);
                } else {
-                   recetas = getResources().getStringArray(R.array.recetasSaladas);
+                   recetasS = getResources().getStringArray(R.array.recetasSaladas);
                }
 
-               spinner2.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitemrecetas, recetas));
+               spinner2.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitemrecetas, recetasS));
 
            }
 
@@ -134,9 +136,7 @@ public class recetasTipicas extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 nombreReceta = (String) adapterView.getItemAtPosition(position);
                 nombreRecetaBBDD = nombreReceta.toLowerCase().replaceAll(" ", "");
-                Receta receta = dbHelper.obtenerReceta(idioma, nombreRecetaBBDD, categoria);
-                receta.setNombreReceta(nombreReceta);
-                setTextAndImages(receta);
+                setTextAndImages();
             }
 
             @Override
@@ -190,9 +190,11 @@ public class recetasTipicas extends Fragment {
     }
 
     @SuppressLint("SetTextI18n")
-    private void setTextAndImages(Receta receta){
+    private void setTextAndImages(){
 
-        tituloreceta.setText(receta.getNombreReceta());
+        Receta receta = recetas.buscarReceta(nombreRecetaBBDD);
+
+        tituloreceta.setText(nombreReceta);
         descrReceta.setText(receta.getDescrReceta() + "\n");
         pasos2.setText(receta.getPasos());
 

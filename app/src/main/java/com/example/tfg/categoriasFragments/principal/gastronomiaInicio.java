@@ -28,7 +28,7 @@ public class gastronomiaInicio extends Fragment {
     private Fragment fragment;
     private TextView text1, text2;
     private ListView listView, listView2;
-    private String categoria, idioma, opc1, opc2;
+    private String idioma;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -65,11 +65,9 @@ public class gastronomiaInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            categoria = getArguments().getString("categoria");
         }
 
         args.putString("idioma", idioma);
-        args.putString("categoria", categoria);
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -97,7 +95,7 @@ public class gastronomiaInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String[] datos = dbHelper.obtenerDescrGastro(idioma, "inicio", categoria, 2);
+        String[] datos = dbHelper.obtenerDescrGastro(idioma, "inicio", 2);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -106,7 +104,7 @@ public class gastronomiaInicio extends Fragment {
          | Las turroneras |
          ----------------*/
 
-        opc1 = getString(R.string.turroneras);
+        String opc1 = getString(R.string.turroneras);
 
         ArrayList<String> lista1 = new ArrayList<>();
         lista1.add(opc1);
@@ -123,7 +121,7 @@ public class gastronomiaInicio extends Fragment {
          | Recetas típicas |
          -----------------*/
 
-        opc2 = getString(R.string.recetas);
+        String opc2 = getString(R.string.recetas);
 
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add(opc2);

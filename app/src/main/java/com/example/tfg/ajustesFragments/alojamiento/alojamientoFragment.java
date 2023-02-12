@@ -54,7 +54,7 @@ public class alojamientoFragment extends DialogFragment {
         assert getArguments() != null;
 
         alojamiento = getArguments().getString("nombreAloj");
-        categoria = getArguments().getString("categoria");
+
 
         Button back = infoView.findViewById(R.id.buttonVolverAloj);
         TextView text1 = infoView.findViewById(R.id.nombreAloj);
@@ -74,10 +74,10 @@ public class alojamientoFragment extends DialogFragment {
         obtenerImagenFirebase("ajustes/alojamientos/" + alojamiento.toLowerCase().replace(" ", "") + ".png", img);
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj(categoria, alojamiento);
+        double punt = dbHelper.obtenerPuntAloj(alojamiento);
         ratingBar.setRating((float) punt);
 
-        String [] datos = dbHelper.obtenerDatosAloj(categoria, alojamiento);
+        String [] datos = dbHelper.obtenerDatosAloj(alojamiento);
 
         telefono = datos[0];
 
