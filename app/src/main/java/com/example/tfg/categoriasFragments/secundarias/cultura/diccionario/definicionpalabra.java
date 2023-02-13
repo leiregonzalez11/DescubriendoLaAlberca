@@ -36,13 +36,11 @@ public class definicionpalabra extends DialogFragment {
         assert getArguments()!=null;
         String palabraElegida = getArguments().getString("palabra");
         String idioma = getArguments().getString("idioma");
-
-        ListaPalabras palabras = new ListaPalabras(requireContext(), idioma);
+        Palabra palabra = getArguments().getParcelable("palabra");
 
         TextView palabratitulo = infoView.findViewById(R.id.palabratitulo);
         TextView definicion = infoView.findViewById(R.id.definicionpalabra);
 
-        Palabra palabra = palabras.buscarPalabra(palabraElegida.toLowerCase());
         palabratitulo.setText(palabra.getNombrePalabra());
         definicion.setText(palabra.getDefinicionpalabra() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 

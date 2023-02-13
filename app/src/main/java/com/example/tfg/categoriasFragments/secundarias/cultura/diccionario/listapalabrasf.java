@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
+
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,9 @@ import android.widget.TextView;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
+
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,6 +48,8 @@ public class listapalabrasf extends DialogFragment {
         String letra = getArguments().getString("letra");
         String idioma = getArguments().getString("idioma");
 
+        ListaPalabras palabras = new ListaPalabras(requireContext(), idioma);
+
         args.putString("idioma", idioma);
 
         TextView letraTV = infomView.findViewById(R.id.letratitulo);
@@ -56,18 +63,17 @@ public class listapalabrasf extends DialogFragment {
             letraTV.setText(tit.toUpperCase());
         }
 
-        ListaPalabras palabras = new ListaPalabras(requireContext(), idioma);
-        List <String> lista = palabras.obtenerListaPalabras(letra);
-
         ListView listView = infomView.findViewById(R.id.listviewpalabras);
 
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, lista);
+        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, palabras.obtenerListaPalabras(letra));
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             String palabra = adapterView.getItemAtPosition(position).toString();
             args.putString("palabra", palabra);
+            args.putParcelable("palabra", palabras.buscarPalabra(palabra));
+
             DialogFragment defFr = new definicionpalabra();
             defFr.setArguments(args);
             defFr.setCancelable(false);

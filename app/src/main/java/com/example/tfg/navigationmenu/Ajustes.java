@@ -61,6 +61,7 @@ public class Ajustes extends Fragment {
         setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
         args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "ajustes");
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
