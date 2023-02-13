@@ -14,7 +14,7 @@
         As the poet and professor from Alberca, Don José María Requejo, likes to say, La Alberca is… \n
     </string>
 
-    <string name="textoprincipal4" translatable="false">A Village To Dream Of </string>
+    <string name="textoprincipal4" translatable="false">A Village To Dream Of</string>
 
     <string name="dialog_tour_titulo">Welcome to La Alberca!</string>
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app? </string>
@@ -34,7 +34,7 @@
     <string name="inicio">Home</string>
     <string name="categorias">Categories</string>
     <string name="ajustes">Settings</string>
-    <string name="mapa">Map</string>
+    <string name="mapa">Maps</string>
     <string name="fiestasmayus">Festivities</string>
     <string name="castellano">Spanish</string>
     <string name="euskera">Basque</string>
@@ -146,6 +146,7 @@
     <string name="humilladero">Hermitage of Humilladero</string>
     <string name="sanblas">Hermitage of San Blas</string>
     <string name="sanantonio">Hermitage of San Antonio</string>
+    <string name="cultura">Culture</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

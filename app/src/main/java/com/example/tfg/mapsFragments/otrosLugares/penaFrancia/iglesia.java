@@ -64,9 +64,11 @@ public class iglesia extends Fragment implements View.OnClickListener{
 
         args.putString("idioma", idioma);
 
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.santuario);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = santuario.newInstance(args);

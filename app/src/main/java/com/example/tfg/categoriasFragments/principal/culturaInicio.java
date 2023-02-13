@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
@@ -52,6 +53,9 @@ public class culturaInicio extends Fragment {
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.categorias);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = Categorias.newInstance();

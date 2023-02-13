@@ -8,17 +8,15 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.ListaPalabras;
 import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.Palabra;
-import com.example.tfg.categoriasFragments.secundarias.gastronomia.ListaRecetas;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
+import com.example.tfg.mapsFragments.otrosLugares.pueblos.Pueblo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -432,40 +430,41 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Otros lugares
-    public String [] obtenerInfoPueblos (String idioma, String pueblo, String categoria){
+    public LinkedList<Pueblo> obtenerPueblos (String idioma){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        String descrip;
-        String [] descr = new String[5];
+        LinkedList<Pueblo> pueblos = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM otrosLugares" +
-                " WHERE categoriaOtros = '" + categoria + "' AND idioma = '" + idioma + "' AND nombreOtro = '" + pueblo + "';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreOtro, descrOtro, kmdesdeLa, fiestamayor, latLugar, lonLugar FROM otrosLugares" +
+                " WHERE categoriaOtros = 'pueblo' AND idioma = ?;", new String[]{idioma});
         while (c.moveToNext()){
-            for (int j = 0; j < 5; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
+            Pueblo pueblo = new Pueblo();
+            pueblo.setNombrePueblo(c.getString(0));
+            pueblo.setDescrPueblo(c.getString(1));
+            pueblo.setKmDesdeLA(c.getString(2));
+            pueblo.setFiestamayor(c.getString(3));
+            pueblo.setLatitud(Double.parseDouble(c.getString(4)));
+            pueblo.setLongitud(Double.parseDouble(c.getString(5)));
+            pueblos.add(pueblo);
         }
         c.close();
-        return descr;
+        return pueblos;
     }
 
-    public String [] obtenerUbiOtros (String categoria){
+    public Double [] obtenerUbiPena (){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Double [] descr = new Double[2];
 
-        String descrip;
-        String [] descr = new String[2];
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria +"'" +
-                " AND nombreOtro = 'principal';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = 'peñadefrancia' AND nombreOtro = 'principal';", null);
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
+                c.getString(j);
+                descr[j] = Double.parseDouble(c.getString(j));
             }
         }
+
         c.close();
         return descr;
     }

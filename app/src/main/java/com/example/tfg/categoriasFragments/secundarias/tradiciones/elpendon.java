@@ -58,23 +58,25 @@ public class elpendon extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-        //Toolbar
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            //Creamos el fragment
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
-
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
         }
 
         args = new Bundle();
         args.putString("idioma", idioma);
+
+        //Toolbar
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.tradicionesmayus);
+        name.setTextSize(27);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            //Creamos el fragment
+            Fragment fragment = tradicionesInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
     }
 

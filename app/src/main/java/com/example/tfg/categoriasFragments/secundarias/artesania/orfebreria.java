@@ -57,6 +57,9 @@ public class orfebreria extends Fragment {
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.artesaniamayus);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = artesaniaInicio.newInstance(args);

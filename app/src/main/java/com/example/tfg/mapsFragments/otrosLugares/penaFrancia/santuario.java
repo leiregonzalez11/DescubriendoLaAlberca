@@ -58,14 +58,15 @@ public class santuario extends Fragment implements View.OnClickListener {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
         }
 
         args.putString("idioma", idioma);
 
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.quevisitar);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = monumentosPenaFrancia.newInstance(args);

@@ -25,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 public class bordadoSerrano extends Fragment {
 
     Bundle args;
-    String idioma, categoria;
+    String idioma;
     ImageView img1, img2, img3;
     StorageReference storageRef;
     TextView text1, text2, text3, text4;
@@ -54,6 +54,9 @@ public class bordadoSerrano extends Fragment {
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.artesaniamayus);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = artesaniaInicio.newInstance(args);

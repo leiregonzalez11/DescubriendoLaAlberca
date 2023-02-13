@@ -63,6 +63,9 @@ public class Categorias extends Fragment implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.categorias);
+        name.setTextSize(30);
         setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
         argsMenu = new Bundle(); //Argumentos para el menu de opciones
         argsMenu.putString("iu", "categorias");

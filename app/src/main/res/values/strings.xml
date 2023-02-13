@@ -35,7 +35,7 @@
     <string name="otrosmayus">Otros Lugares</string>
     <string name="inicio">Inicio</string>
     <string name="ajustes">Ajustes</string>
-    <string name="mapa">Mapa</string>
+    <string name="mapa">Mapas</string>
     <string name="categorias">Categorías</string>
     <string name="fiestasmayus">Fiestas</string>
     <string name="castellano">Castellano</string>
@@ -233,6 +233,7 @@
     <string name="humilladero">Ermita del Humilladero</string>
     <string name="sanblas">Ermita de San Blas</string>
     <string name="sanantonio">Ermita de San Antonio</string>
+    <string name="cultura">Cultura</string>
 
 
 </resources>

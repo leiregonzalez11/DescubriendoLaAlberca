@@ -57,6 +57,9 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.arquitecturamayus);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = arquitecturaInicio.newInstance(args);

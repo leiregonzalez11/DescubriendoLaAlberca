@@ -13,16 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.adapters.SpinnerAdapter;
-import com.example.tfg.navigationmenu.Categorias;
+import com.example.tfg.mapsFragments.otrosLugares.pueblos.ListaPueblos;
+import com.example.tfg.mapsFragments.otrosLugares.pueblos.Pueblo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -34,13 +32,13 @@ import com.google.firebase.storage.StorageReference;
 public class otrosPueblos extends Fragment {
 
     private Bundle args;
-    private double lat, lon;
-    private Spinner spinner;
     private ImageView img;
+    private Pueblo pueblo;
+    private Spinner spinner;
     private StorageReference storageRef;
+    private String puebloSelected, idioma;
     private SupportMapFragment mapFragment;
     private TextView km, fiestamayor, descr;
-    private String pueblo, idioma;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -50,7 +48,7 @@ public class otrosPueblos extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng location = new LatLng(lat, lon);
+            LatLng location = new LatLng(pueblo.getLatitud(), pueblo.getLongitud());
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.5f));
             //Tipo de mapa: Hibrido
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
@@ -88,9 +86,11 @@ public class otrosPueblos extends Fragment {
 
         args.putString("idioma", idioma);
 
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.otrosmayus);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = otrosLugaresInicio.newInstance(args);
@@ -122,27 +122,22 @@ public class otrosPueblos extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        String [] pueblos = getResources().getStringArray(R.array.pueblosdelasierra);
-        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, pueblos));
+        ListaPueblos listaPueblos = new ListaPueblos(requireContext(), idioma);
+        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, listaPueblos.listaNombres()));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
-                //Toast.makeText(getContext(), "Has pulsado: "+ pueblo, Toast.LENGTH_LONG).show();
-                pueblo = (String) adapterView.getItemAtPosition(position);
+                puebloSelected = (String) adapterView.getItemAtPosition(position);
 
-                String puebloBBDD = pueblo.replaceAll(" ", "").toLowerCase();
+                String nombrepueblo = puebloSelected.replaceAll(" ", "").toLowerCase();
 
-                String [] datos = dbHelper.obtenerInfoPueblos(idioma, puebloBBDD, "pueblo");
+                pueblo = listaPueblos.buscarPueblo(nombrepueblo);
 
-                km.setText(datos[1]);
-                fiestamayor.setText(datos[2]);
-                descr.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                lat = Double.parseDouble(datos[3]);
-                lon = Double.parseDouble(datos[4]);
+                descr.setText(pueblo.getDescrPueblo() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                km.setText(pueblo.getKmDesdeLA());
+                fiestamayor.setText(pueblo.getFiestamayor());
 
                 //Mapa
                 if (mapFragment != null) {
@@ -151,7 +146,7 @@ public class otrosPueblos extends Fragment {
 
                 //Imagenes
                 storageRef = FirebaseStorage.getInstance().getReference();
-                obtenerImagenFirebase("mapas/otros/pueblos/" + puebloBBDD +".png", img);
+                obtenerImagenFirebase("mapas/otros/otrospueblos/" + nombrepueblo +".png", img);
 
             }
 

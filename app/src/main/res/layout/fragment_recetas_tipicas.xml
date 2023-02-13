@@ -50,6 +50,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-40dp"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
                 android:fontFamily="@font/amiri"
                 android:text="@string/recetas_intro"
                 android:textColor="@color/black"
@@ -117,19 +119,6 @@
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
-
-            <!--
-            <ImageView
-                android:id="@+id/imgReceta1"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:contentDescription="FOTO 1 RECETA">
-            </ImageView>
-
-            -->
 
 
             <com.example.tfg.adapters.JustifyTextView
@@ -576,7 +565,7 @@
                 android:textStyle="bold"
                 android:background="#880E4F"
                 android:fontFamily="@font/amiri"
-                android:text="@string/atras">
+                android:text="Arriba">
             </Button>
 
         </LinearLayout>

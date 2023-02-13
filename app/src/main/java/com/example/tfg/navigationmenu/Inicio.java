@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,6 +53,9 @@ public class Inicio extends Fragment {
         super.onCreate(savedInstanceState);
         myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(null);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.app_name);
+        name.setTextSize(25);
         setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
         args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "inicio");

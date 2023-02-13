@@ -25,8 +25,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".anterior.categorias.artesania.artesaniaActivity2">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/gastrotext"
@@ -35,6 +34,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="40sp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:textColor="@color/black"
                 android:fontFamily="@font/alex_brush"
                 android:gravity="center"
@@ -110,7 +111,7 @@
                 android:textStyle="bold"
                 android:background="#880E4F"
                 android:fontFamily="@font/amiri"
-                android:text="@string/atras">
+                android:text="Arriba">
             </Button>
 
         </LinearLayout>

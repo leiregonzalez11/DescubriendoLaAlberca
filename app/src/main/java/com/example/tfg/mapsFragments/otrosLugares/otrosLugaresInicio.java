@@ -4,6 +4,8 @@ import android.os.Bundle;
 import com.example.tfg.R;
 import android.view.View;
 import java.util.ArrayList;
+
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -50,6 +52,9 @@ public class otrosLugaresInicio extends Fragment {
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.mapa);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = Maps.newInstance();

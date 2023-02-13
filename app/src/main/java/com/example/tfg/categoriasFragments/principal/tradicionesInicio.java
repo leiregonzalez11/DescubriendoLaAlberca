@@ -62,6 +62,9 @@ public class tradicionesInicio extends Fragment {
         //Toolbar
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.categorias);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = Categorias.newInstance();
@@ -72,7 +75,6 @@ public class tradicionesInicio extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
         }
 
         args.putString("idioma", idioma);

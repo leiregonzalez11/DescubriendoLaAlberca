@@ -26,7 +26,6 @@ import com.example.tfg.navigationmenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-//TODO: CREAR LA CLASE LISTARECETAS PARA NO TENER QUE ESTAR LLAMANDO A LA BD TODO EL RATO
 public class recetasTipicas extends Fragment {
 
     private Bundle args;
@@ -36,9 +35,9 @@ public class recetasTipicas extends Fragment {
     private LinearLayout ingLayout;
     private StorageReference storageRef;
     private Spinner spinner1, spinner2;
-    private TextView tituloreceta, descrReceta, pasos2;
+    private TextView tituloreceta, descrReceta, pasos2, introrecetas;
     private ImageView img7, img8, img9, img10, img11, img12, foto;
-    private String categoria, idioma, nombreReceta, tipoRecetas, nombreRecetaBBDD;
+    private String idioma, nombreReceta, tipoRecetas, nombreRecetaBBDD;
     private TextView ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, ing10, ing11, ing12;
 
     /**
@@ -63,22 +62,25 @@ public class recetasTipicas extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
 
         args = new Bundle();
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
         }
 
         args.putString("idioma", idioma);
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.gastronomiamayus);
+        name.setTextSize(30);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = gastronomiaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
 
     }
 
@@ -146,13 +148,14 @@ public class recetasTipicas extends Fragment {
         });
 
         atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = gastronomiaInicio.newInstance(args);
-            cargarFragment(fragment);
+            introrecetas.clearFocus();
+            introrecetas.requestFocus();
         });
     }
 
     private void getTextAndImages(View v){
 
+        introrecetas = v.findViewById(R.id.recetasTextIntro);
         tituloreceta = v.findViewById(R.id.tituloreceta);
         descrReceta = v.findViewById(R.id.recetasTextDescr);
 

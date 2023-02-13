@@ -13,14 +13,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.adapters.listViewAdapter;
 import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.historiaPenaFrancia;
 import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.leyendaPenaFrancia;
 import com.example.tfg.mapsFragments.otrosLugares.penaFrancia.monumentosPenaFrancia;
@@ -29,7 +27,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -48,8 +45,8 @@ public class penaDeFrancia extends Fragment {
     private ImageView img1, img2, img3;
     private StorageReference storageRef;
     private SupportMapFragment mapFragment;
-    private String idioma, categoria, back;
-    private ListView listView, listView2, listView3;
+    private String idioma, back;
+    private Button btn, btn2, btn3;
     private TextView text1, text2, text3, text4, text5, text6;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
@@ -96,17 +93,16 @@ public class penaDeFrancia extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
             back = getArguments().getString("back");
         }
 
-        System.out.println(back);
-
         args.putString("idioma", idioma);
-
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.otrosmayus);
+        name.setTextSize(30);
         myToolbar.setNavigationOnClickListener(view1 -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = otrosLugaresInicio.newInstance(args);
@@ -131,9 +127,9 @@ public class penaDeFrancia extends Fragment {
             img1 = v.findViewById(R.id.penaimg1);
             img2 = v.findViewById(R.id.penaimg2);
             img3 = v.findViewById(R.id.penaimg3);
-            listView = v.findViewById(R.id.listviewPena1);
-            listView2 = v.findViewById(R.id.listviewPena2);
-            listView3 = v.findViewById(R.id.listviewPena3);
+            btn = v.findViewById(R.id.btnPena1);
+            btn2 = v.findViewById(R.id.btnPena2);
+            btn3 = v.findViewById(R.id.btnPena3);
             mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPena);
         }
         return v;
@@ -168,9 +164,9 @@ public class penaDeFrancia extends Fragment {
         obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia3.png", img3);
 
         //Ubicacion
-        String [] ubicacion = dbHelper.obtenerUbiOtros("peñadefrancia");
-        lat = Double.parseDouble(ubicacion[0]);
-        lon = Double.parseDouble(ubicacion[1]);
+        Double [] ubicacion = dbHelper.obtenerUbiPena();
+        lat = ubicacion[0];
+        lon = ubicacion[1];
 
         //Mapa
         if (mapFragment != null) {
@@ -181,15 +177,7 @@ public class penaDeFrancia extends Fragment {
          | Historia |
          ----------*/
 
-        String opc1 = getString(R.string.historiamayus);
-
-        ArrayList<String> lista1 = new ArrayList<>();
-        lista1.add(opc1);
-
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.list_monte2, lista1);
-        listView.setAdapter(myAdapter);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
+        btn.setOnClickListener(v -> {
             fragment = historiaPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });
@@ -198,15 +186,7 @@ public class penaDeFrancia extends Fragment {
          | ¿Qué visitar? |
          ---------------*/
 
-        String opc2 = getString(R.string.quevisitar);
-
-        ArrayList<String> lista2 = new ArrayList<>();
-        lista2.add(opc2);
-
-        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.list_monte2, lista2);
-        listView2.setAdapter(myAdapter2);
-
-        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
+        btn2.setOnClickListener(v -> {
             fragment = monumentosPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });
@@ -215,15 +195,7 @@ public class penaDeFrancia extends Fragment {
          | Leyenda |
          ---------*/
 
-        String opc3 = getString(R.string.descubrimientovirgen);
-
-        ArrayList<String> lista3 = new ArrayList<>();
-        lista3.add(opc3);
-
-        listViewAdapter myAdapter3 = new listViewAdapter(getContext(), R.layout.list_monte2, lista3);
-        listView3.setAdapter(myAdapter3);
-
-        listView3.setOnItemClickListener((adapterView, v, position, id) -> {
+        btn3.setOnClickListener(v -> {
             fragment = leyendaPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });

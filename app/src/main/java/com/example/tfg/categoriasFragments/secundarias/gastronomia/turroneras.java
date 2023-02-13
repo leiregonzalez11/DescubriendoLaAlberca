@@ -30,7 +30,7 @@ public class turroneras extends Fragment {
     private ImageView img1, img2;
     private String idioma;
     private StorageReference storageRef;
-    private TextView text1, text2, text3;
+    private TextView text1, text2, text3, introturron;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -54,13 +54,6 @@ public class turroneras extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
-        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
-        myToolbar.setNavigationOnClickListener(v -> {
-            myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
-            cargarFragment(fragment);
-        });
 
         args = new Bundle();
 
@@ -69,6 +62,18 @@ public class turroneras extends Fragment {
         }
 
         args.putString("idioma", idioma);
+
+        Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.gastronomiamayus);
+        name.setTextSize(30);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = gastronomiaInicio.newInstance(args);
+            cargarFragment(fragment);
+        });
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -79,6 +84,7 @@ public class turroneras extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_turroneras, container, false);
         if (v != null){
+            introturron = v.findViewById(R.id.gastrotext);
             text1 = v.findViewById(R.id.gastro31);
             text2 = v.findViewById(R.id.gastro32);
             text3 = v.findViewById(R.id.gastro33);
@@ -111,8 +117,8 @@ public class turroneras extends Fragment {
         obtenerImagenFirebase("categorias/gastronomia/turroneras2.png", img2);
 
         atrasBtn.setOnClickListener(v -> {
-            Fragment fragment = gastronomiaInicio.newInstance(args);
-            cargarFragment(fragment);
+            introturron.clearFocus();
+            introturron.requestFocus();
         });
     }
 

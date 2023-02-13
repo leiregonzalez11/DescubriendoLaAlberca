@@ -32,7 +32,7 @@
     <string name="inicio">Hasiera</string>
     <string name="categorias">Kategoriak</string>
     <string name="ajustes">Doikuntzak</string>
-    <string name="mapa">Mapa</string>
+    <string name="mapa">Mapak</string>
     <string name="fiestasmayus">Festak</string>
     <string name="castellano">Gaztelania</string>
     <string name="euskera">Euskera</string>
@@ -148,6 +148,7 @@
     <string name="humilladero">Humilladero baseliza</string>
     <string name="sanblas">San Blas baseliza</string>
     <string name="sanantonio">San Antonio baseliza</string>
+    <string name="cultura">Kultura</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

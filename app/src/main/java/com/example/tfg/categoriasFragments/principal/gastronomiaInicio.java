@@ -1,10 +1,13 @@
 package com.example.tfg.categoriasFragments.principal;
 
+import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import com.example.tfg.R;
 import android.view.View;
 import java.util.ArrayList;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.example.tfg.GestorDB;
@@ -54,6 +57,9 @@ public class gastronomiaInicio extends Fragment {
 
         setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
+        TextView name = myToolbar.findViewById(R.id.name);
+        name.setText(R.string.categorias);
+        name.setTextSize(30);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
