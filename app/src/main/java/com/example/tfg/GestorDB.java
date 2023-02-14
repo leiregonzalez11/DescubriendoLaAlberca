@@ -8,6 +8,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.example.tfg.ajustesFragments.alojamiento.Alojamiento;
+import com.example.tfg.ajustesFragments.comercio.Comercio;
 import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.Palabra;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
@@ -275,57 +277,24 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Alojamientos
-    public ArrayList<String> obtenerlistaAlojamientos(String categoriaAloj){
-
+    public LinkedList<Alojamiento> obteneralojamientos() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        String descrip;
-        ArrayList<String> descr = new ArrayList<>();
+        LinkedList<Alojamiento> alojamientos = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreAloj FROM alojamiento WHERE categoriaAloj = ?;", new String[]{categoriaAloj});
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM alojamiento;", null);
         while (c.moveToNext()){
-            descrip = c.getString(0);
-            descr.add(descrip);
+            Alojamiento alojamiento = new Alojamiento();
+            alojamiento.setCatAloj(c.getString(1));
+            alojamiento.setNombreAloj(c.getString(2));
+            alojamiento.setTelAloj(c.getString(5));
+            alojamiento.setLocationAloj(c.getString(3));
+            alojamiento.setPuntAloj(c.getDouble(4));
+            alojamientos.add(alojamiento);
         }
         c.close();
-        return descr;
+        return alojamientos;
     }
-
-    public String[] obtenerDatosAloj(String nombreAloj){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip;
-        String [] descr = new String[4];
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiAloj FROM alojamiento WHERE nombreAloj = ?;", new String[]{nombreAloj});
-        while (c.moveToNext()){
-            for (int j = 0; j < 2; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
-        }
-        c.close();
-        return descr;
-    }
-
-    public double obtenerPuntAloj(String nombreAloj) {
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        double punt = 0;
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM alojamiento WHERE nombreAloj = ?;", new String[]{nombreAloj});
-        while (c.moveToNext()){
-            punt = c.getDouble(0);
-        }
-        c.close();
-        return punt;
-    }
-
-    //query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
-           // "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
-          //  "ubiRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
 
     //Tabla Restaurantes
     public LinkedList<Establecimiento> obtenerestablecimientos() {
@@ -347,52 +316,23 @@ public class GestorDB extends SQLiteOpenHelper {
         return establecimientos;
     }
 
-    //Tabla Restaurantes
-    public List<String> obtenerlistaRestaurantes(String categoriaRest) {
+    //Tabla Comercios
+    public LinkedList<Comercio> obtenercomercios() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
-        String descrip;
-        List<String> descr = new ArrayList<>();
+        LinkedList<Comercio> comercios = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreRest FROM restaurante WHERE categoriaRest = ?;", new String[]{categoriaRest});
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM comercio;", null);
         while (c.moveToNext()){
-            descrip = c.getString(0);
-            descr.add(descrip);
+            Comercio comercio = new Comercio();
+            comercio.setCatComercio(c.getString(1));
+            comercio.setNombreComercio(c.getString(2));
+            comercio.setTelComercio(c.getString(3));
+            comercio.setLocationComercio(c.getString(4));
+            comercios.add(comercio);
         }
         c.close();
-        return descr;
-    }
-
-    public String[] obtenerDatosRest(String nombreRest) {
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip;
-        String [] descr = new String[2];
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numTel, ubiRest FROM restaurante WHERE nombreRest = ?;", new String[]{nombreRest});
-        while (c.moveToNext()){
-            for (int j = 0; j < 2; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
-        }
-        c.close();
-        return descr;
-    }
-
-    public double obtenerPuntRest(String nombreRest) {
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        double punt = 0;
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM restaurante WHERE nombreRest = ?;", new String[]{nombreRest});
-        while (c.moveToNext()){
-            punt = c.getDouble(0);
-        }
-        c.close();
-        return punt;
+        return comercios;
     }
 
     //Tabla Gastronomia
@@ -505,41 +445,6 @@ public class GestorDB extends SQLiteOpenHelper {
             descrip = c.getString(0);
             descr[i] = descrip;
             i++;
-        }
-        c.close();
-        return descr;
-    }
-
-    //Tabla Comercios
-    public ArrayList<String> obtenerlistaComercios(String categoriaCom){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip;
-        ArrayList<String> descr = new ArrayList<>();
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT nombreCom FROM comercio WHERE categoriaCom LIKE '%" + categoriaCom + "';", null);
-        while (c.moveToNext()){
-            descrip = c.getString(0);
-            descr.add(descrip);
-        }
-        c.close();
-        return descr;
-    }
-
-    public String[] obtenerDatosTienda (String nombreCom) {
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip;
-        String [] descr = new String[4];
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT numCom, ubiCom FROM comercio WHERE nombreCom = ?;", new String[]{nombreCom});
-        while (c.moveToNext()){
-            for (int j = 0; j < 2; j++){
-                descrip = c.getString(j);
-                descr[j] = descrip;
-            }
         }
         c.close();
         return descr;

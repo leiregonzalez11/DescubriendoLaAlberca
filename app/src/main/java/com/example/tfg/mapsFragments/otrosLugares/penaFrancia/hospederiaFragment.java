@@ -20,6 +20,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.alojamiento.Alojamiento;
+import com.example.tfg.ajustesFragments.alojamiento.ListaAlojamientos;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -44,7 +46,7 @@ public class hospederiaFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-        String alojamiento = "Hospedería Peña de Francia";
+        Alojamiento alojamiento = new ListaAlojamientos(requireContext()).buscarAloj("Hospedería Peña de Francia");
 
         Button back = infoView.findViewById(R.id.buttonVolverHosp);
         TextView text1 = infoView.findViewById(R.id.nombreHosp);
@@ -53,30 +55,24 @@ public class hospederiaFragment extends DialogFragment {
         RatingBar ratingBar = infoView.findViewById(R.id.ratingBarHosp);
         ImageView img = infoView.findViewById(R.id.imgHosp);
 
-        //Datos de la interfaz
-        GestorDB dbHelper = new GestorDB(getContext());
-
         //Titulo
-        text1.setText(alojamiento);
+        text1.setText(alojamiento.getNombreAloj());
 
         //Imagen
         storageRef = FirebaseStorage.getInstance().getReference();
         obtenerImagenFirebase(img);
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj(alojamiento);
-        ratingBar.setRating((float) punt);
+        ratingBar.setRating((float) alojamiento.getPuntAloj());
 
-        String [] datos = dbHelper.obtenerDatosAloj(alojamiento);
+        String telefono = alojamiento.getTelAloj();
 
-        String telefono = datos[0];
-
-        SpannableString websubrayado = new SpannableString(datos[1]);
+        SpannableString websubrayado = new SpannableString(alojamiento.getLocationAloj());
         websubrayado.setSpan(new UnderlineSpan(), 0, websubrayado.length(), 0);
 
         ubi.setText(websubrayado);
         ubi.setOnClickListener(v -> {
-            Uri uri = Uri.parse("https://" + datos[1]); // Creamos una uri con el numero de telefono
+            Uri uri = Uri.parse("https://" + alojamiento.getLocationAloj()); // Creamos una uri con el numero de telefono
             Intent dial = new Intent(Intent.ACTION_VIEW, uri); // Creamos una llamada al Intent de llamadas
             startActivity(dial); // Ejecutamos el Intent
         });

@@ -131,9 +131,7 @@ public class otrosPueblos extends Fragment {
 
                 puebloSelected = (String) adapterView.getItemAtPosition(position);
 
-                String nombrepueblo = puebloSelected.replaceAll(" ", "").toLowerCase();
-
-                pueblo = listaPueblos.buscarPueblo(nombrepueblo);
+                pueblo = listaPueblos.buscarPueblo(puebloSelected);
 
                 descr.setText(pueblo.getDescrPueblo() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 km.setText(pueblo.getKmDesdeLA());
@@ -146,7 +144,7 @@ public class otrosPueblos extends Fragment {
 
                 //Imagenes
                 storageRef = FirebaseStorage.getInstance().getReference();
-                obtenerImagenFirebase("mapas/otros/otrospueblos/" + nombrepueblo +".png", img);
+                obtenerImagenFirebase("mapas/otros/otrospueblos/" + puebloSelected.replaceAll(" ", "").toLowerCase() +".png", img);
 
             }
 

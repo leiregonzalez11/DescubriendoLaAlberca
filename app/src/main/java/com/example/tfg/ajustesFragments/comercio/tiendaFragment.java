@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,7 +38,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class tiendaFragment extends DialogFragment {
 
-    String categoria, tienda, telefono;
+    String telefono;
     private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -57,31 +58,23 @@ public class tiendaFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-
-        tienda = getArguments().getString("nombreCom");
+        Comercio comercio = getArguments().getParcelable("comercio");
 
         Button back = infoView.findViewById(R.id.buttonVolverCom);
-        TextView text1 = infoView.findViewById(R.id.nombreCom);
+        TextView nombre = infoView.findViewById(R.id.nombreCom);
         TextView tel = infoView.findViewById(R.id.telcom);
         TextView ubi = infoView.findViewById(R.id.ubicom);
 
-        //Datos de la interfaz
-        GestorDB dbHelper = new GestorDB(getContext());
-
         //Titulo
-        text1.setText(tienda);
-
-        String [] datos = dbHelper.obtenerDatosTienda(tienda);
+        nombre.setText(comercio.getNombreComercio());
 
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgtienda);
         storageRef = FirebaseStorage.getInstance().getReference();
-        System.out.println("Tienda: " + tienda.toLowerCase().replace(" ", ""));
-        obtenerImagenFirebase("ajustes/tiendas/" + tienda.toLowerCase().replace(" ", "") + ".png", img);
+        obtenerImagenFirebase("ajustes/tiendas/" + comercio.getNombreComercio().toLowerCase().replace(" ", "") + ".png", img);
 
-        telefono = datos[0];
-
-        ubi.setText(datos[1] + "  ");
+        telefono = comercio.getTelComercio();
+        ubi.setText(comercio.getLocationComercio() + "  ");
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);

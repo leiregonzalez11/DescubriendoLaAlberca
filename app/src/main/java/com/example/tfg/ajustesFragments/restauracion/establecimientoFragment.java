@@ -5,27 +5,20 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.google.common.net.InternetDomainName;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -51,7 +44,6 @@ public class establecimientoFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-
         Establecimiento establecimiento = getArguments().getParcelable("establ");
 
         Button back = infoView.findViewById(R.id.buttonVolverRest);

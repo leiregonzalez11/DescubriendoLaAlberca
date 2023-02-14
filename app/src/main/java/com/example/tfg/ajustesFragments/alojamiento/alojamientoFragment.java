@@ -5,27 +5,20 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.google.common.net.InternetDomainName;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -52,36 +45,29 @@ public class alojamientoFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-
-        alojamiento = getArguments().getString("nombreAloj");
+        Alojamiento alojamiento = getArguments().getParcelable("aloj");
 
 
         Button back = infoView.findViewById(R.id.buttonVolverAloj);
-        TextView text1 = infoView.findViewById(R.id.nombreAloj);
+        TextView nombre = infoView.findViewById(R.id.nombreAloj);
         TextView tel = infoView.findViewById(R.id.telaloj2);
         TextView ubi = infoView.findViewById(R.id.ubi2);
         RatingBar ratingBar = infoView.findViewById(R.id.ratingBarAloj);
 
-        //Datos de la interfaz
-        GestorDB dbHelper = new GestorDB(getContext());
 
         //Titulo
-        text1.setText(alojamiento);
+        nombre.setText(alojamiento.getNombreAloj());
 
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgaloj);
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("ajustes/alojamientos/" + alojamiento.toLowerCase().replace(" ", "") + ".png", img);
+        obtenerImagenFirebase("ajustes/alojamientos/" + alojamiento.getNombreAloj().toLowerCase().replace(" ", "") + ".png", img);
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntAloj(alojamiento);
-        ratingBar.setRating((float) punt);
+        ratingBar.setRating((float) alojamiento.getPuntAloj());
 
-        String [] datos = dbHelper.obtenerDatosAloj(alojamiento);
-
-        telefono = datos[0];
-
-        ubi.setText(datos[1] + "  ");
+        ubi.setText(alojamiento.getLocationAloj() + "  ");
+        telefono = alojamiento.getTelAloj();
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);

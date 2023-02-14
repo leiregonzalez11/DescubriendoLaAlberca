@@ -20,7 +20,6 @@ import java.util.List;
 
 public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextListener {
 
-    List<String> lista1 = new ArrayList<>();
     String nombreTienda;
     Bundle args;
     listViewAdapter myAdapter;
@@ -67,19 +66,17 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
     @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        lista1 = dbHelper.obtenerlistaComercios("artesania");
+        ListaComercio comercios = new ListaComercio(requireContext());
 
         editsearch.setOnQueryTextListener(this);
 
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, lista1);
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, comercios.getListaArte());
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreTienda = adapterView.getItemAtPosition(position).toString();
-            args.putString("nombreCom", nombreTienda);
+            args.putParcelable("comercio", comercios.buscarComercio(nombreTienda));
             DialogFragment tiendaFragment = new tiendaFragment();
             tiendaFragment.setArguments(args);
             tiendaFragment.setCancelable(false);

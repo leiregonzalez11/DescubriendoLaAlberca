@@ -39,11 +39,11 @@ public class ListaEstablecimiento {
         return lista;
     }
 
-    public Establecimiento buscarEst(String nombrereceta){
+    public Establecimiento buscarEst(String nombreEst){
 
         for (int i = 0; i < establecimientos.size(); i++){
             Establecimiento est = establecimientos.get(i);
-            if (est.getNombreEstabl().equalsIgnoreCase(nombrereceta)){
+            if (est.getNombreEstabl().equalsIgnoreCase(nombreEst)){
                 return est;
             }
         }
