@@ -31,7 +31,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class establecimientoFragment extends DialogFragment {
 
-    String categoria, establecimiento, telefono;
+    private String telefono;
     private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -52,8 +52,7 @@ public class establecimientoFragment extends DialogFragment {
 
         assert getArguments() != null;
 
-        establecimiento = getArguments().getString("nombreRest");
-
+        Establecimiento establecimiento = getArguments().getParcelable("establ");
 
         Button back = infoView.findViewById(R.id.buttonVolverRest);
         TextView text1 = infoView.findViewById(R.id.nombreRest);
@@ -61,27 +60,21 @@ public class establecimientoFragment extends DialogFragment {
         TextView tel = infoView.findViewById(R.id.telrest2);
         TextView ubi = infoView.findViewById(R.id.ubirest2);
 
-        //Datos de la interfaz
-        GestorDB dbHelper = new GestorDB(getContext());
-
         //Titulo
-        text1.setText(establecimiento);
+        text1.setText(establecimiento.getNombreEstabl());
 
         //Imagen
         ImageView img = infoView.findViewById(R.id.imgrest);
         storageRef = FirebaseStorage.getInstance().getReference();
-        System.out.println("Rest: " + establecimiento.toLowerCase().replace(" ", ""));
-        obtenerImagenFirebase("ajustes/hosteleria/" + establecimiento.toLowerCase().replace(" ", "") + ".png", img);
-
+        System.out.println("Rest: " + establecimiento.getTelEstabl().toLowerCase().replace(" ", ""));
+        obtenerImagenFirebase("ajustes/hosteleria/" + establecimiento.getNombreEstabl().toLowerCase().replace(" ", "") + ".png", img);
 
         //Datos informativos y ubicación
-        double punt = dbHelper.obtenerPuntRest(establecimiento);
+        double punt = establecimiento.getPuntEstabl();
         ratingBar.setRating((float) punt);
 
-        String [] datos = dbHelper.obtenerDatosRest(establecimiento);
-
-        telefono = datos[0];
-        ubi.setText(datos[1] + "    ");
+        telefono = establecimiento.getTelEstabl();
+        ubi.setText(establecimiento.getLocationEstabl() + "    ");
 
         if (!telefono.equals("No Disponible")) {
             SpannableString telsubrayado = new SpannableString(telefono);

@@ -68,19 +68,16 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        lista1 = dbHelper.obtenerlistaRestaurantes("restaurante");
-
+        ListaEstablecimiento establecimientos = new ListaEstablecimiento(requireContext());
         editsearch.setOnQueryTextListener(this);
 
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_rest, lista1);
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_rest, establecimientos.getListaRest());
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreRest = adapterView.getItemAtPosition(position).toString();
-            args.putString("nombreRest", nombreRest);
+            args.putParcelable("establ", establecimientos.buscarEst(nombreRest));
             DialogFragment restFragment = new establecimientoFragment();
             restFragment.setArguments(args);
             restFragment.setCancelable(false);

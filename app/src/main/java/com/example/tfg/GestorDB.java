@@ -8,6 +8,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.Palabra;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 import com.example.tfg.mapsFragments.otrosLugares.pueblos.Pueblo;
@@ -322,6 +323,30 @@ public class GestorDB extends SQLiteOpenHelper {
         return punt;
     }
 
+    //query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
+           // "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
+          //  "ubiRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
+
+    //Tabla Restaurantes
+    public LinkedList<Establecimiento> obtenerestablecimientos() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        LinkedList<Establecimiento> establecimientos = new LinkedList<>();
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM restaurante;", null);
+        while (c.moveToNext()){
+            Establecimiento establecimiento = new Establecimiento();
+            establecimiento.setCatEstabl(c.getString(1));
+            establecimiento.setNombreEstabl(c.getString(2));
+            establecimiento.setTelEstabl(c.getString(3));
+            establecimiento.setLocationEstabl(c.getString(4));
+            establecimiento.setPuntEstabl(c.getDouble(5));
+            establecimientos.add(establecimiento);
+        }
+        c.close();
+        return establecimientos;
+    }
+
     //Tabla Restaurantes
     public List<String> obtenerlistaRestaurantes(String categoriaRest) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -365,8 +390,6 @@ public class GestorDB extends SQLiteOpenHelper {
         Cursor c = sqLiteDatabase.rawQuery("SELECT puntuacion FROM restaurante WHERE nombreRest = ?;", new String[]{nombreRest});
         while (c.moveToNext()){
             punt = c.getDouble(0);
-            System.out.println("DESCRIIIIIIIP" + punt);
-
         }
         c.close();
         return punt;
@@ -410,7 +433,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Tradiciones
-    public String[] obtenerInfoTrad(String idioma, String interfaz, String tabla, int numTV){
+    public String[] obtenerInfoTrad(String idioma, String interfaz, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 

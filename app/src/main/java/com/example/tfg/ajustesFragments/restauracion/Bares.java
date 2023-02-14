@@ -17,6 +17,7 @@ import com.example.tfg.R;
 import com.example.tfg.adapters.listViewAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Bares extends Fragment implements SearchView.OnQueryTextListener {
@@ -68,19 +69,17 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
     @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        GestorDB dbHelper = new GestorDB(getContext());
-
-        lista1 = dbHelper.obtenerlistaRestaurantes("bar");
+        ListaEstablecimiento establecimientos = new ListaEstablecimiento(requireContext());
 
         editsearch.setOnQueryTextListener(this);
 
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, lista1);
+        myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, establecimientos.getListaBares());
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreRest = adapterView.getItemAtPosition(position).toString();
-            args.putString("nombreRest", nombreRest);
+            args.putParcelable("establ", establecimientos.buscarEst(nombreRest));
             DialogFragment restFragment = new establecimientoFragment();
             restFragment.setArguments(args);
             restFragment.setCancelable(false);

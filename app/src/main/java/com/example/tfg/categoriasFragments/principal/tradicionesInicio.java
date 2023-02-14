@@ -110,7 +110,7 @@ public class tradicionesInicio extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio", categoria, 2);
+        String [] datos = dbHelper.obtenerInfoTrad(idioma, "inicio",2);
 
         text1.setText(datos[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

@@ -134,7 +134,7 @@ public class mozaDeAnimas extends Fragment implements View.OnClickListener {
         String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 
         //Obtención de datos desde la bbdd
-        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, categoria, 7);
+        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, 7);
 
         text2.setText(textoTrad[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(textoTrad[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
