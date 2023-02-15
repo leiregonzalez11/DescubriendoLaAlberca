@@ -1,16 +1,13 @@
 package com.example.tfg.adapters;
 
-import android.annotation.SuppressLint;
+import android.text.Layout;
+import android.text.TextPaint;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.text.StaticLayout;
 
-@SuppressLint("AppCompatCustomView")
-public class JustifyTextView extends TextView {
+public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private int mLineY;
     private int mViewWidth;

@@ -1,31 +1,30 @@
 package com.example.tfg.ajustesFragments.alojamiento;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.DialogFragment;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
-import android.view.LayoutInflater;
+import com.example.tfg.R;
 import android.view.View;
+import android.app.Dialog;
 import android.widget.Button;
+import android.content.Intent;
+import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.example.tfg.R;
+import android.view.LayoutInflater;
+import androidx.annotation.NonNull;
+import android.text.SpannableString;
+import androidx.annotation.Nullable;
+import android.annotation.SuppressLint;
+import android.text.style.UnderlineSpan;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
 public class alojamientoFragment extends DialogFragment {
 
-    String categoria, alojamiento, telefono;
+    private String telefono;
     private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -47,13 +46,11 @@ public class alojamientoFragment extends DialogFragment {
         assert getArguments() != null;
         Alojamiento alojamiento = getArguments().getParcelable("aloj");
 
-
         Button back = infoView.findViewById(R.id.buttonVolverAloj);
         TextView nombre = infoView.findViewById(R.id.nombreAloj);
         TextView tel = infoView.findViewById(R.id.telaloj2);
         TextView ubi = infoView.findViewById(R.id.ubi2);
         RatingBar ratingBar = infoView.findViewById(R.id.ratingBarAloj);
-
 
         //Titulo
         nombre.setText(alojamiento.getNombreAloj());
@@ -63,10 +60,10 @@ public class alojamientoFragment extends DialogFragment {
         storageRef = FirebaseStorage.getInstance().getReference();
         obtenerImagenFirebase("ajustes/alojamientos/" + alojamiento.getNombreAloj().toLowerCase().replace(" ", "") + ".png", img);
 
-        //Datos informativos y ubicación
+        //Datos informativos
+        ubi.setText(alojamiento.getLocationAloj() + "  ");
         ratingBar.setRating((float) alojamiento.getPuntAloj());
 
-        ubi.setText(alojamiento.getLocationAloj() + "  ");
         telefono = alojamiento.getTelAloj();
 
         if (!telefono.equals("No Disponible")) {

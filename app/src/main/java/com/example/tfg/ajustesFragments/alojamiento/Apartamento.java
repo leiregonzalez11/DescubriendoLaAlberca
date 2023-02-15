@@ -1,28 +1,30 @@
 package com.example.tfg.ajustesFragments.alojamiento;
 
-import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
+import com.example.tfg.R;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
 import androidx.annotation.NonNull;
+import android.view.LayoutInflater;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import com.example.tfg.R;
+import android.annotation.SuppressLint;
+import android.widget.TextView;
+
+import androidx.fragment.app.DialogFragment;
 import com.example.tfg.adapters.listViewAdapter;
 
 public class Apartamento extends Fragment implements SearchView.OnQueryTextListener{
 
-    Bundle args;
-    String nombreAloj;
-    ListView listView;
-    listViewAdapter myAdapter;
-    SearchView editsearch;
+    private Bundle args;
+    private String nombreAloj;
+    private ListView listView;
+    private listViewAdapter myAdapter;
+    private SearchView editsearch;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -67,6 +69,10 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         ListaAlojamientos alojamientos = new ListaAlojamientos(requireContext());
 
         editsearch.setOnQueryTextListener(this);
+        int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        TextView searchText = (TextView) editsearch.findViewById(idtext);
+        Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
+        searchText.setTypeface(typeface);
 
         myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, alojamientos.getListaApartamentos());
         listView.setAdapter(myAdapter);
@@ -91,18 +97,6 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
     public boolean onQueryTextChange(String s) {
         myAdapter.getFilter().filter(s);
         return false;
-    }
-
-    private void cargarFragment(Fragment fragment){
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
     }
 
 }

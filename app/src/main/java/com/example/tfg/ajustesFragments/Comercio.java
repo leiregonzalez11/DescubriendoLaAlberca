@@ -75,6 +75,7 @@ public class Comercio extends Fragment {
         String text2 = getResources().getString(R.string.artesaniamayus);
 
         tabAdapterComercio myadapter = new tabAdapterComercio(getParentFragmentManager(), getLifecycle());
+        viewPager.setOffscreenPageLimit(2);
 
         viewPager.setAdapter(myadapter);
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {

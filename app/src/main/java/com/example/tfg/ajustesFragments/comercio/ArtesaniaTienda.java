@@ -1,14 +1,18 @@
 package com.example.tfg.ajustesFragments.comercio;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import com.example.tfg.GestorDB;
@@ -69,6 +73,11 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
         ListaComercio comercios = new ListaComercio(requireContext());
 
         editsearch.setOnQueryTextListener(this);
+        int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        TextView searchText = (TextView) editsearch.findViewById(idtext);
+        Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
+        searchText.setTypeface(typeface);
+
 
         myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, comercios.getListaArte());
         listView.setAdapter(myAdapter);
@@ -91,7 +100,7 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
 
     @Override
     public boolean onQueryTextChange(String s) {
-        if (!s.equalsIgnoreCase("")) myAdapter.getFilter().filter(s);
+        myAdapter.getFilter().filter(s);
         return false;
     }
 

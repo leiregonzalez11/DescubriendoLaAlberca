@@ -3,24 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ajustesFragments.DondeDormir">
 
     <LinearLayout
         android:id="@+id/layoutHist1"
+        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.0"
-        tools:context=".ajustesFragment.dondeDormirFragment">
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/otrostitulo"
@@ -43,22 +37,22 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="25dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:text="@string/alojamiento_inicio"
             android:fontFamily="@font/amiri"
             android:gravity="center"
+            android:text="@string/alojamiento_inicio"
             android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             tools:targetApi="o" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="480dp"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            android:layout_marginRight="10dp"
+            android:layout_height="400dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="-55dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="40dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:cardElevation="10dp">
 
             <com.google.android.material.tabs.TabLayout
@@ -66,16 +60,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="#880E4F"
-                app:tabTextColor="@color/black"
                 app:tabSelectedTextColor="#880E4F"
-                app:tabTextAppearance="@style/tab_text"/>
+                app:tabTextAppearance="@style/tab_text"
+                app:tabTextColor="@color/black" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
-                android:layout_marginBottom="-10dp"/>
+                android:layout_marginBottom="-10dp" />
 
         </com.google.android.material.card.MaterialCardView>
 

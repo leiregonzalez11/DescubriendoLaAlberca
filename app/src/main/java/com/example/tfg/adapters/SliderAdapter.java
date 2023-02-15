@@ -1,12 +1,11 @@
 package com.example.tfg.adapters;
 
-import android.annotation.SuppressLint;
-import android.view.LayoutInflater;
 import android.view.View;
+import com.example.tfg.R;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.example.tfg.R;
+import android.view.LayoutInflater;
+import android.annotation.SuppressLint;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHolder>{
@@ -33,6 +32,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
     public int getCount() {
         return images.length;
     }
+
     public static class SliderViewHolder extends ViewHolder {
         private final ImageView imageView;
         public SliderViewHolder(View itemView) {

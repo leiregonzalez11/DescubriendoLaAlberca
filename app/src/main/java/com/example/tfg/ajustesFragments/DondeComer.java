@@ -78,7 +78,7 @@ public class DondeComer extends Fragment {
         tabAdapterComer myadapter = new tabAdapterComer(getParentFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
-        //viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
+        viewPager.setOffscreenPageLimit(2);
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

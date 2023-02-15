@@ -79,6 +79,7 @@ public class DondeDormir extends Fragment {
         tabAdapter myadapter = new tabAdapter(getParentFragmentManager(), getLifecycle());
 
         viewPager.setAdapter(myadapter);
+        viewPager.setOffscreenPageLimit(3);
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
