@@ -28,7 +28,7 @@
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
+                android:layout_width="170dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="210dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
@@ -46,9 +46,9 @@
                 <Spinner
                     android:id="@+id/spinnerMapa"
                     android:layout_width="170dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:backgroundTint="@color/black" />
 
             </com.google.android.material.card.MaterialCardView>

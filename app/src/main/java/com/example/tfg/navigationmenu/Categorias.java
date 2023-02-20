@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -193,36 +191,35 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        path = "categorias/portadacategorias/" + idioma + "/historia-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/historia-" + idioma + ".png";
         btnhistoria.setOnClickListener(this);
         obtenerImagenFirebase(path, btnhistoria);
 
-        path = "categorias/portadacategorias/" + idioma + "/artesania-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/artesania-" + idioma + ".png";
         btnArte.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArte);
 
-        path = "categorias/portadacategorias/" + idioma + "/tradicion-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/tradiciones-" + idioma + ".png";
         btnTrad.setOnClickListener(this);
         obtenerImagenFirebase(path, btnTrad);
 
-        path = "categorias/portadacategorias/" + idioma + "/arquitectura-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/arquitectura-" + idioma + ".png";
         btnArqui.setOnClickListener(this);
         obtenerImagenFirebase(path, btnArqui);
 
-        path = "categorias/portadacategorias/" + idioma + "/fiestas-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/fiestas-" + idioma + ".png";
         btnFiesta.setOnClickListener(this);
         obtenerImagenFirebase(path, btnFiesta);
 
-        path = "categorias/portadacategorias/" + idioma + "/gastronomia-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/gastronomia-" + idioma + ".png";
         btnGastro.setOnClickListener(this);
         obtenerImagenFirebase(path, btnGastro);
 
-        //TODO: Cambiar la ruta
-        path = "categorias/portadacategorias/" + idioma + "/alojamientos-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/cultura-" + idioma + ".png";
         btnCultura.setOnClickListener(this);
         obtenerImagenFirebase(path, btnCultura);
 
-        path = "categorias/portadacategorias/" + idioma + "/rutas-" + idioma + ".jpg";
+        path = "categorias/portadacategorias/" + idioma + "/rutas-" + idioma + ".png";
         btnRutas.setOnClickListener(this);
         obtenerImagenFirebase(path, btnRutas);
 
