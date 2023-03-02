@@ -29,8 +29,8 @@ public class conventoFragment extends DialogFragment {
     private Button btnExtra;
     private GestorDB dbHelper;
     private ImageView img1, img2;
-    private String idioma, categoria;
-    private Bundle args = new Bundle();
+    private String idioma;
+    private final Bundle args = new Bundle();
     private StorageReference storageRef;
     private TextView text1, text2, text3, text4, text5, titulo;
 
@@ -57,9 +57,7 @@ public class conventoFragment extends DialogFragment {
         String monumento = getArguments().getString("monumento");
         idioma = getArguments().getString("idioma");
 
-
         args.putString("idioma", idioma);
-
 
         titulo = infoView.findViewById(R.id.tituloconvento);
         text1 = infoView.findViewById(R.id.santuariotext1);
@@ -76,13 +74,13 @@ public class conventoFragment extends DialogFragment {
         Button volver = infoView.findViewById(R.id.buttonVolverConv);
         volver.setOnClickListener(view -> dismiss());
 
-        setText(monumento);
+        setText();
 
         return builder.create();
     }
 
     @SuppressLint("SetTextI18n")
-    private void setText(String monumento) {
+    private void setText() {
 
         /* Texto */
         String [] datos = dbHelper.obtenerInfoPena(idioma, "convento", "peñadefrancia", 5);
@@ -93,6 +91,8 @@ public class conventoFragment extends DialogFragment {
         text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         /* Imágenes */
+        obtenerImagenFirebase("mapas/otros/penafrancia/convento1.png", img1);
+        obtenerImagenFirebase("mapas/otros/penafrancia/convento2.png", img2);
 
         /* Botón La Casa Baja */
         btnExtra.setVisibility(View.VISIBLE);

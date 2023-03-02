@@ -30,8 +30,8 @@ public class monumentopenaFragment extends DialogFragment {
     private Button btnExtra;
     private GestorDB dbHelper;
     private ImageView img1, img2;
-    private String idioma, categoria;
-    private Bundle args = new Bundle();
+    private String idioma;
+    private final Bundle args = new Bundle();
     private StorageReference storageRef;
     private TextView text1, text2, text3, titulo;
 
@@ -89,14 +89,14 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Mirador de Santo Domingo");
 
                 //Texto
-                String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo","peñadefrancia", 1);
+                String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo","peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text2.setText("");
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
 
                 //Imagenes
                 obtenerImagenFirebase("mapas/otros/penafrancia/miradorsantodomingo.png", img1);
-                //obtenerImagenFirebase("mapas/otros/penafrancia/miradorsantodomingo2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/miradorsantodomingo2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -163,8 +163,8 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
                 //Imagenes
-                //obtenerImagenFirebase("mapas/otros/penafrancia/balcondesantiago.png", img1);
-                //obtenerImagenFirebase("mapas/otros/penafrancia/balcondesantiago2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/balconsantiago1.png", img1);
+                obtenerImagenFirebase("mapas/otros/penafrancia/balconsantiago2.png", img2);
 
                 btnExtra.setVisibility(View.VISIBLE);
                 btnExtra.setText("  El Salto del Niño  ");
@@ -188,7 +188,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 //Imagenes
                 obtenerImagenFirebase("mapas/otros/penafrancia/pozoverde1.png", img1);
-                //obtenerImagenFirebase("mapas/otros/penafrancia/pozoverde2.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/pozoverde2.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -197,7 +197,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 titulo.setText("Nave Derecha");
 
-                String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha","peñadefrancia", 2);
+                String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha","peñadefrancia", 3);
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiadchaes);
                 } else if (idioma.equalsIgnoreCase("en")){
@@ -209,7 +209,7 @@ public class monumentopenaFragment extends DialogFragment {
                 //Texto
                 text1.setText(datos3[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos3[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text3.setText("");
+                text3.setText(datos3[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
                 //Imagenes
                 //obtenerImagenFirebase("mapas/otros/penafrancia/navederecha.png", img2);
@@ -246,7 +246,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 titulo.setText("Altar Mayor");
 
-                String [] datos4 = dbHelper.obtenerInfoPena(idioma, "altarmayor","peñadefrancia", 1);
+                String [] datos4 = dbHelper.obtenerInfoPena(idioma, "altarmayor","peñadefrancia", 2);
 
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiacentroes);
@@ -258,11 +258,11 @@ public class monumentopenaFragment extends DialogFragment {
 
                 //Texto
                 text1.setText(datos4[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                text2.setText("");
+                text2.setText(datos4[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("mapas/otros/penafrancia/coro.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/altarmayor.png", img1);
 
                 btnExtra.setVisibility(View.GONE);
                 break;

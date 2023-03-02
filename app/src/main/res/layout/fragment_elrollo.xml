@@ -79,6 +79,15 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/imager1"
+                android:layout_width="320dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="-15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rollo2"
                 android:layout_width="match_parent"
@@ -91,24 +100,43 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/imager2"
+                android:layout_width="320dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="-5dp"
+
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rollo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/imager3"
+                android:layout_width="320dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription">
+            </ImageView>
 
             <com.example.tfg.adapters.JustifyTextView
                 android:id="@+id/rollo4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"

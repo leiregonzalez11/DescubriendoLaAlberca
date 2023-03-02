@@ -24,15 +24,17 @@ import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.google.common.net.InternetDomainName;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class elrollo extends Fragment implements View.OnClickListener {
 
     private Bundle args;
-    private String idioma, categoria;
+    private String idioma;
     private ImageButton btn;
     private TextView text1, text2, text3, text4;
     private StorageReference storageRef;
+    private ImageView img1, img2, img3;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -66,7 +68,6 @@ public class elrollo extends Fragment implements View.OnClickListener {
 
         args.putString("idioma", idioma);
 
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         myToolbar.setNavigationOnClickListener(view1 -> {
@@ -88,6 +89,9 @@ public class elrollo extends Fragment implements View.OnClickListener {
             text2 = v.findViewById(R.id.rollo2);
             text3 = v.findViewById(R.id.rollo3);
             text4 = v.findViewById(R.id.rollo4);
+            img1 = v.findViewById(R.id.imager1);
+            img2 = v.findViewById(R.id.imager2);
+            img3 = v.findViewById(R.id.imager3);
             btn = v.findViewById(R.id.rollobtn);
         }
         return v;
@@ -100,6 +104,7 @@ public class elrollo extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         GestorDB dbHelper = new GestorDB(getContext());
+        storageRef = FirebaseStorage.getInstance().getReference();
 
         String [] datos =dbHelper.obtenerInfoPena(idioma, "elrollo", "peñadefrancia", 4);
 
@@ -107,6 +112,11 @@ public class elrollo extends Fragment implements View.OnClickListener {
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+        //Imagenes
+        obtenerImagenFirebase("mapas/otros/penafrancia/rollo1.png", img1);
+        obtenerImagenFirebase("mapas/otros/penafrancia/rollo2.png", img2);
+        obtenerImagenFirebase("mapas/otros/penafrancia/rollo3.png", img3);
 
         btn.setOnClickListener(v -> {
             DialogFragment exitFragment = new rolloinfofragment();
