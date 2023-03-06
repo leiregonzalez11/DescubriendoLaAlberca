@@ -5,7 +5,11 @@ import android.content.Context;
 import com.example.tfg.GestorDB;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,11 +21,6 @@ public class ListaPalabras {
         GestorDB dbHelper = new GestorDB(context);
         palabras = dbHelper.obtenerPalabras(idioma);
     }
-
-    /* public void eliminarPalabra(String nombrePalabra){
-        Palabra palabra = buscarPalabra(nombrePalabra);
-        palabras.remove(palabra);
-    }*/
 
     public Palabra buscarPalabra(String nombrePalabra){
         for (int i = 0; i< palabras.size(); i++){
@@ -43,21 +42,20 @@ public class ListaPalabras {
                 lista.add(palabra.getNombrePalabra());
             }
         }
-        return lista;
+        return organizedAlphabeticList(lista);
     }
 
-    public int obtenerNumeroPalabras(){
-        return palabras.size();
+    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
+    public static List<String> organizedAlphabeticList(List<String> list) {
+        list.sort(new Comparator<String>() {
+            final Collator collator = Collator.getInstance();
+
+            public int compare(String o1, String o2) {
+                return collator.compare(o1, o2);
+            }
+        });
+        return list;
     }
-
-    public void imprimirPalabras() {
-        for (int i = 0; i < palabras.size(); i++){
-            Palabra palabra = palabras.get(i);
-            System.out.println("PALABRA: " + palabra.getNombrePalabra());
-        }
-    }
-
-
 
 
 }

@@ -25,8 +25,8 @@ import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "laalbercadb";
-    private static final int DB_VERSION = 3;
+    private static final String DB_NAME = "laAlbercaDB";
+    private static final int DB_VERSION = 15;
     private final Context context;
     private boolean seguir = true;
 
@@ -39,6 +39,8 @@ public class GestorDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         assert sqLiteDatabase != null;
+        //Establecemos el encoding a UTF-8
+        //sqLiteDatabase.execSQL("PRAGMA encoding=\"UTF-8\";");
         crearTablas(sqLiteDatabase);
         try {
             cargarDatos(sqLiteDatabase);
@@ -61,6 +63,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS historia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS monumento");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS diccionario");
         onCreate(sqLiteDatabase);
 
     }
@@ -198,7 +201,11 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','en','lacasabaja','The friars lived in the lower house from November to May, specifically from All Souls'' Day (1st November) until the Wednesday before Corpus Christi (end of May-beginning of June) to prepare for the feast of Pentecost, one of the four most important feasts in La Peña. However, a small group of religious remained at the Risco to attend to the pilgrims and the worship of the Sanctuary.');");
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','en','lacasabaja','In the 19th century, the War of Independence left all the buildings with traces of looting and destruction. Despite this, in 1816 the monks began the restoration of the convent. This tenacity in building and rebuilding the convent was put an end to in 1835 by Mendizábal''s Disentailment.');");
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','en','lacasabaja','When the monks were expelled and the convent was sold, the destruction of the convent began. Today, there are no more roofs, the porter''s lodge, the ashlar cloister, the refectory, the kitchen, the cells, the bakery, the offices... everything is full of brambles and weeds that grow luxuriantly on the floor and walls. There are still traces of what was once a royal staircase, of a large and beautiful neoclassical church that serves as a hayloft and stable, and the only remaining vaults of the monastery, in what were once the sacristy and the chapter house, threaten to fall down.');");
+        sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('batuecas','en','monasterio','The enclosure is made up of two fences, within which the convent and its outbuildings are located, and the church, built in 1602 and enlarged in 1686, is the central building of the complex, and is surrounded by a street paved with slate and large gardens in the form of a cloister. To the south, there are several monks'' oratory cells, and on the west wall, a door opens onto the refectory, kitchen, workshops, servants'' quarters, bakery, laundry... The definitive structure of the monastery took shape during the 17th and 18th centuries.');");
         sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('es', 'c', 'Cuarto''l salaero', 'Habitación para salar la matanza.');");
+        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('es', 'c', 'Cuquear', 'Mocking in the night imitating the cuckoo''s sound.');");
+        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('en', 't', 'Tiñuelas', 'Cracks transformed into sores that often appear on a woman''s nipple.');");
+        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('en', 'mnñ', 'Novena (la)', 'Women''s prayer, on Sunday afternoon, facing the Virgen de los Dolores.');");
     }
 
     //Tabla Arquitectura
