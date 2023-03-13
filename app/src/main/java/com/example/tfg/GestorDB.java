@@ -25,8 +25,8 @@ import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "laAlbercaDB";
-    private static final int DB_VERSION = 15;
+    private static final String DB_NAME = "BBDDprueba1";
+    private static final int DB_VERSION = 1;
     private final Context context;
     private boolean seguir = true;
 
@@ -40,9 +40,11 @@ public class GestorDB extends SQLiteOpenHelper {
 
         assert sqLiteDatabase != null;
         //Establecemos el encoding a UTF-8
-        //sqLiteDatabase.execSQL("PRAGMA encoding=\"UTF-8\";");
+        sqLiteDatabase.execSQL("PRAGMA encoding=\"UTF-8\";");
+        //Creamos las tablas de la BBDD
         crearTablas(sqLiteDatabase);
         try {
+            //Cargamos los datos en la BBDD
             cargarDatos(sqLiteDatabase);
             cargarDatosConComillas(sqLiteDatabase);
         } catch (IOException e) {
@@ -287,12 +289,12 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Alojamientos
-    public LinkedList<Alojamiento> obteneralojamientos() {
+    public LinkedList<Alojamiento> obteneralojamientos(String query) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         LinkedList<Alojamiento> alojamientos = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM alojamiento;", null);
+        Cursor c = sqLiteDatabase.rawQuery(query, null);
         while (c.moveToNext()){
             Alojamiento alojamiento = new Alojamiento();
             alojamiento.setCatAloj(c.getString(1));

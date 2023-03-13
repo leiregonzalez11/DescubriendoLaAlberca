@@ -3,16 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ajustesFragments.alojamiento.Hoteles">
 
-    <SearchView
-        android:id="@+id/svHoteles"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="-10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:iconifiedByDefault="false"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:id="@+id/svHoteles"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="2"
+            android:iconifiedByDefault="false"/>
+
+        <ImageButton
+            android:id="@+id/ordenarButton3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/bars_solid" />
+
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listviewHoteles"

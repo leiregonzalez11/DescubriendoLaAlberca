@@ -73,6 +73,17 @@ public class listViewAdapter extends BaseAdapter implements Filterable {
         return valueFilter;
     }
 
+    public void setmData(List<String> names){
+        this.mData = names;
+        notifyDataSetChanged();
+    }
+
+    public void printData (){
+        for (int i = 0; i< mData.size(); i++){
+            System.out.println(mData.get(i));
+        }
+    }
+
     private class ValueFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {

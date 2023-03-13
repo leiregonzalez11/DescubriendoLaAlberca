@@ -46,7 +46,7 @@ public class hospederiaFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-        Alojamiento alojamiento = new ListaAlojamientos(requireContext()).buscarAloj("Hospedería Peña de Francia");
+        Alojamiento alojamiento = ListaAlojamientos.getMiListaAlojamientos().buscarAloj("Hospedería Peña de Francia");
 
         Button back = infoView.findViewById(R.id.buttonVolverHosp);
         TextView text1 = infoView.findViewById(R.id.nombreHosp);

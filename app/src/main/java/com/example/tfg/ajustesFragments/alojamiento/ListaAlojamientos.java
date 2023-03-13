@@ -4,54 +4,53 @@ import android.content.Context;
 
 import com.example.tfg.GestorDB;
 
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ListaAlojamientos {
 
-    private final LinkedList<Alojamiento> alojamientos;
+    private List<Alojamiento> alojamientos;
+    private static ListaAlojamientos miListaAlojamientos;
+    private GestorDB dbHelper;
 
-    public ListaAlojamientos (Context context){
-        GestorDB dbHelper = new GestorDB(context);
-        alojamientos = dbHelper.obteneralojamientos();
+    private ListaAlojamientos (){
+        alojamientos = new LinkedList<>();
     }
 
-    public List<String> getListaHoteles(){
-
-        List<String> lista = new ArrayList<>();
-        for (int i = 0; i < alojamientos.size(); i++){
-            if (alojamientos.get(i).getCatAloj().equalsIgnoreCase("hotel")){
-                lista.add(alojamientos.get(i).getNombreAloj());
-            }
+    public static ListaAlojamientos getMiListaAlojamientos(){
+        if (miListaAlojamientos == null){
+            miListaAlojamientos = new ListaAlojamientos();
         }
-        return lista;
+        return miListaAlojamientos;
     }
 
-    public List<String> getListaCasas(){
-
-        List<String> lista = new ArrayList<>();
-        for (int i = 0; i < alojamientos.size(); i++){
-            if (alojamientos.get(i).getCatAloj().equalsIgnoreCase("casarural")){
-                lista.add(alojamientos.get(i).getNombreAloj());
-            }
-        }
-        return lista;
+    public void setContext(Context context){
+        dbHelper = new GestorDB(context);
     }
+    
 
-    public List<String> getListaApartamentos(){
+    public List<String> getListaNombres(List<Alojamiento> aloj, String orden){
 
-        List<String> lista = new ArrayList<>();
-        for (int i = 0; i < alojamientos.size(); i++){
-            if (alojamientos.get(i).getCatAloj().equalsIgnoreCase("apartamento")){
-                lista.add(alojamientos.get(i).getNombreAloj());
-            }
+        List<String> lista = new LinkedList<>();
+        for (int i = 0; i < aloj.size(); i++){
+            lista.add(aloj.get(i).getNombreAloj());
         }
+
+        if (orden.equalsIgnoreCase("atoz")){
+            organizedAlphabeticList(lista);
+        } else if (orden.equalsIgnoreCase("ztoa")){
+            organizedAlphabeticList(lista);
+            Collections.reverse(lista);
+        }
+
         return lista;
     }
 
     public Alojamiento buscarAloj(String nombreAloj){
-
         for (int i = 0; i < alojamientos.size(); i++){
             Alojamiento est = alojamientos.get(i);
             if (est.getNombreAloj().equalsIgnoreCase(nombreAloj)){
@@ -61,14 +60,70 @@ public class ListaAlojamientos {
         return null;
     }
 
-    public int obtenerNumeroAlojamientos(){
-        return alojamientos.size();
+    public List<Alojamiento> getListaApartamentos (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento';";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
     }
 
-    public void imprimiralojamientos() {
-        for (int i = 0; i < alojamientos.size(); i++){
-            System.out.println("RECETA: " + alojamientos.get(i).getNombreAloj());
-        }
+    public List<Alojamiento> getListaApartamentosAsc (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento' ORDER BY puntuacion ASC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaApartamentosDesc (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento' ORDER BY puntuacion DESC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaCasas (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural';";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaCasasAsc (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural' ORDER BY puntuacion ASC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaCasasDesc (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural' ORDER BY puntuacion DESC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaHoteles (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel';";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaHotelesAsc (){
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel' ORDER BY puntuacion ASC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    public List<Alojamiento> getListaHotelesDesc () {
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel' ORDER BY puntuacion DESC;";
+        alojamientos = dbHelper.obteneralojamientos(query);
+        return alojamientos;
+    }
+
+    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
+    public static List<String> organizedAlphabeticList(List<String> list) {
+        list.sort(new Comparator<String>() {
+            final Collator collator = Collator.getInstance();
+
+            public int compare(String o1, String o2) {
+                return collator.compare(o1, o2);
+            }
+        });
+        return list;
     }
     
 }

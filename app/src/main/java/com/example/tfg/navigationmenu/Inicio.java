@@ -114,7 +114,11 @@ public class Inicio extends Fragment {
                 cargarFragment(fragment);
                 break;
 
-            case R.id.menu_acercade:
+            case R.id.menu_agradecimientos:
+                //Creamos el fragmento
+                //fragment = Idiomas.newInstance(args);
+                break;
+            case R.id.menu_quienessomos:
                 //Creamos el fragmento
                 //fragment = Idiomas.newInstance(args);
                 break;

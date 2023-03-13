@@ -18,9 +18,9 @@
             android:id="@+id/menu_acercade"
             android:title="@string/acerca_de">
             <menu>
-                <item android:id="@+id/create_new"
+                <item android:id="@+id/menu_agradecimientos"
                     android:title="@string/agradecimientos" />
-                <item android:id="@+id/open"
+                <item android:id="@+id/menu_quienessomos"
                     android:title="@string/quienes_somos" />
             </menu>
         </item>
