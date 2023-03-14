@@ -23,7 +23,7 @@ public class ListaEstablecimiento {
         establecimientos = new LinkedList<>();
     }
 
-    public static ListaEstablecimiento getMiListaAlojamientos(){
+public static ListaEstablecimiento getMiListaestablecimientos(){
         if (miListaestablecimientos == null){
             miListaestablecimientos = new ListaEstablecimiento();
         }

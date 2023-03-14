@@ -86,11 +86,11 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
         listView.setAdapter(myAdapter);
 
         Bundle argsD = new Bundle();
-        argsD.putString("ordenar", ordenLista);
 
         ordenarBtn.setOnClickListener(v ->{
             ordenarFragment dialog = new ordenarFragment();
             argsD.putString("ordenar", ordenLista);
+            argsD.putString("origen", "alojamiento");
             dialog.setArguments(argsD);
             //Se implementa la interfaz
             dialog.setOnClickButtonListener(ordenar -> {

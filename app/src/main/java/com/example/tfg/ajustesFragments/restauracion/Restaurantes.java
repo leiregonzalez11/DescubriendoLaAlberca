@@ -79,7 +79,7 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ListaEstablecimiento listaRest = ListaEstablecimiento.getMiListaAlojamientos();
+        ListaEstablecimiento listaRest = ListaEstablecimiento.getMiListaestablecimientos();
         listaRest.setContext(requireContext());
 
         //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
@@ -95,6 +95,7 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
         ordenarBtn.setOnClickListener(v ->{
             ordenarFragment dialog = new ordenarFragment();
             argsD.putString("ordenar", ordenLista);
+            argsD.putString("origen", "establecimiento");
             dialog.setArguments(argsD);
             //Se implementa la interfaz
             dialog.setOnClickButtonListener(ordenar -> {

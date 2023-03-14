@@ -45,11 +45,21 @@ public class ordenarFragment extends DialogFragment{
 
         assert getArguments() != null;
         String orden = getArguments().getString("ordenar");
+        String origen = getArguments().getString("origen");
 
         atoz = view.findViewById(R.id.radio_atoz);
         ztoa = view.findViewById(R.id.radio_ztoa);
         asc = view.findViewById(R.id.radio_asc);
         desc = view.findViewById(R.id.radio_desc);
+
+        if (origen.equalsIgnoreCase("alojamiento") ||
+                origen.equalsIgnoreCase("establecimiento")){
+            asc.setVisibility(View.VISIBLE);
+            desc.setVisibility(View.VISIBLE);
+        } else{
+            asc.setVisibility(View.GONE);
+            desc.setVisibility(View.GONE);
+        }
 
         setRadioButton(orden);
 

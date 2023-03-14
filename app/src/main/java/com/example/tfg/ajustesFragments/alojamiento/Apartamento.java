@@ -92,6 +92,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         ordenarBtn.setOnClickListener(v ->{
             ordenarFragment dialog = new ordenarFragment();
             argsD.putString("ordenar", ordenLista);
+            argsD.putString("origen", "alojamiento");
             dialog.setArguments(argsD);
             //Se implementa la interfaz
             dialog.setOnClickButtonListener(ordenar -> {
