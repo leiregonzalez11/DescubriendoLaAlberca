@@ -309,12 +309,12 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Restaurantes
-    public LinkedList<Establecimiento> obtenerestablecimientos() {
+    public LinkedList<Establecimiento> obtenerestablecimientos(String query) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         LinkedList<Establecimiento> establecimientos = new LinkedList<>();
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM restaurante;", null);
+        Cursor c = sqLiteDatabase.rawQuery(query, null);
         while (c.moveToNext()){
             Establecimiento establecimiento = new Establecimiento();
             establecimiento.setCatEstabl(c.getString(1));

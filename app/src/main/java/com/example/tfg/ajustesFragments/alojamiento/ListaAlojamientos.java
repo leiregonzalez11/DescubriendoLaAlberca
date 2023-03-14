@@ -16,7 +16,6 @@ public class ListaAlojamientos {
 
     private List<Alojamiento> alojamientos;
     private static ListaAlojamientos miListaAlojamientos;
-    private String query;
     private GestorDB dbHelper;
 
     private ListaAlojamientos (){
@@ -54,15 +53,16 @@ public class ListaAlojamientos {
 
     public Alojamiento buscarAloj(String nombreAloj, List<Alojamiento> aloj){
         for (int i = 0; i <aloj.size(); i++){
-            Alojamiento est = aloj.get(i);
-            if (est.getNombreAloj().equalsIgnoreCase(nombreAloj)){
-                return est;
+            Alojamiento aloja = aloj.get(i);
+            if (aloja.getNombreAloj().equalsIgnoreCase(nombreAloj)){
+                return aloja;
             }
         }
         return null;
     }
 
     public List<Alojamiento> getListaAlojamientos (String categoriaAloj, boolean ascdesc, String tipo){
+        String query;
         if (!ascdesc){
             query = "SELECT * FROM alojamiento WHERE categoriaAloj = '" + categoriaAloj + "';";
         } else {
@@ -72,12 +72,6 @@ public class ListaAlojamientos {
         return alojamientos;
     }
 
-
-    public List<Alojamiento> getHospederia () {
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hospederia';";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
 
     //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
     public static List<String> organizedAlphabeticList(List<String> list) {

@@ -3,60 +3,87 @@ package com.example.tfg.ajustesFragments.restauracion;
 import android.content.Context;
 
 import com.example.tfg.GestorDB;
+import com.example.tfg.ajustesFragments.alojamiento.Alojamiento;
+import com.example.tfg.ajustesFragments.alojamiento.ListaAlojamientos;
 
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ListaEstablecimiento {
 
-    private final LinkedList<Establecimiento> establecimientos;
+    private List<Establecimiento> establecimientos;
+    private static ListaEstablecimiento miListaestablecimientos;
+    private GestorDB dbHelper;
 
-    public ListaEstablecimiento (Context context){
-        GestorDB dbHelper = new GestorDB(context);
-        establecimientos = dbHelper.obtenerestablecimientos();
+    private ListaEstablecimiento (){
+        establecimientos = new LinkedList<>();
     }
 
-    public List<String> getListaBares(){
-
-        List<String> lista = new ArrayList<>();
-        for (int i = 0; i < establecimientos.size(); i++){
-            if (establecimientos.get(i).getCatEstabl().equalsIgnoreCase("bar")){
-                lista.add(establecimientos.get(i).getNombreEstabl());
-            }
+    public static ListaEstablecimiento getMiListaAlojamientos(){
+        if (miListaestablecimientos == null){
+            miListaestablecimientos = new ListaEstablecimiento();
         }
+        return miListaestablecimientos;
+    }
+
+    public void setContext(Context context){
+        dbHelper = new GestorDB(context);
+    }
+
+    public List<Establecimiento> getListaEstablecimientos (String categoriaEst, boolean ascdesc, String tipo){
+        String query;
+        if (!ascdesc){
+            query = "SELECT * FROM restaurante WHERE categoriaRest = '" + categoriaEst + "';";
+        } else {
+            query = "SELECT * FROM restaurante WHERE categoriaRest = '" + categoriaEst + "' ORDER BY puntuacion " + tipo.toUpperCase() + ";";
+        }
+        establecimientos = dbHelper.obtenerestablecimientos(query);
+        return establecimientos;
+    }
+
+    public List<String> getListaNombres(List<Establecimiento> est, String orden){
+
+        List<String> lista = new LinkedList<>();
+        for (int i = 0; i < est.size(); i++){
+            lista.add(est.get(i).getNombreEstabl());
+        }
+
+        if (orden.equalsIgnoreCase("atoz")){
+            organizedAlphabeticList(lista);
+        } else if (orden.equalsIgnoreCase("ztoa")){
+            organizedAlphabeticList(lista);
+            Collections.reverse(lista);
+        }
+
         return lista;
     }
 
-    public List<String> getListaRest(){
 
-        List<String> lista = new ArrayList<>();
-        for (int i = 0; i < establecimientos.size(); i++){
-            if (establecimientos.get(i).getCatEstabl().equalsIgnoreCase("restaurante")){
-                lista.add(establecimientos.get(i).getNombreEstabl());
+    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
+    public static List<String> organizedAlphabeticList(List<String> list) {
+        list.sort(new Comparator<String>() {
+            final Collator collator = Collator.getInstance();
+
+            public int compare(String o1, String o2) {
+                return collator.compare(o1, o2);
             }
-        }
-        return lista;
+        });
+        return list;
     }
 
-    public Establecimiento buscarEst(String nombreEst){
 
-        for (int i = 0; i < establecimientos.size(); i++){
-            Establecimiento est = establecimientos.get(i);
-            if (est.getNombreEstabl().equalsIgnoreCase(nombreEst)){
-                return est;
+    public Establecimiento buscarEst(String nombreAloj, List<Establecimiento> est){
+        for (int i = 0; i <est.size(); i++){
+            Establecimiento estbl = est.get(i);
+            if (estbl.getNombreEstabl().equalsIgnoreCase(nombreAloj)){
+                return estbl;
             }
         }
         return null;
     }
 
-    public int obtenerNumeroestablecimientos(){
-        return establecimientos.size();
-    }
-
-    public void imprimirestablecimientos() {
-        for (int i = 0; i < establecimientos.size(); i++){
-            System.out.println("RECETA: " + establecimientos.get(i).getNombreEstabl());
-        }
-    }
 }
