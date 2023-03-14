@@ -30,6 +30,7 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
     ListView listView;
     ImageButton ordenarBtn;
     List<String> listanombres;
+    List<Alojamiento> aloj;
     listViewAdapter myAdapter;
     SearchView editsearch;
 
@@ -89,6 +90,7 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
 
         ordenarBtn.setOnClickListener(v ->{
             ordenarFragment dialog = new ordenarFragment();
+            argsD.putString("ordenar", ordenLista);
             dialog.setArguments(argsD);
             //Se implementa la interfaz
             dialog.setOnClickButtonListener(ordenar -> {
@@ -109,7 +111,7 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreAloj = adapterView.getItemAtPosition(position).toString();
-            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj));
+            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj, aloj));
             DialogFragment alojamientoFragment = new alojamientoFragment();
             alojamientoFragment.setArguments(args);
             alojamientoFragment.setCancelable(false);
@@ -130,21 +132,17 @@ public class CasasRurales extends Fragment implements SearchView.OnQueryTextList
 
     private List <String> determinarOrden(ListaAlojamientos alojamientos){
 
-        List<String> nombres = null;
-        List<Alojamiento> aloj = null;
+        List<String> nombres;
 
         if (ordenLista.equalsIgnoreCase("atoz") || ordenLista.equalsIgnoreCase("ztoa")){
-            aloj = alojamientos.getListaCasas();
+            aloj = alojamientos.getListaAlojamientos("casarural", false, "alfabetico");
             nombres = alojamientos.getListaNombres(aloj, ordenLista);
         }
         else{
-            if (ordenLista.equalsIgnoreCase("asc")){
-                aloj = alojamientos.getListaCasasAsc();
-            } else{
-                aloj = alojamientos.getListaCasasDesc();
-            }
+            aloj = alojamientos.getListaAlojamientos("casarural", true, ordenLista);
             nombres = alojamientos.getListaNombres(aloj, "asc/desc");
         }
+
         return nombres;
     }
 

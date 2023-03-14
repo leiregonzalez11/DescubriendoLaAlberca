@@ -31,6 +31,7 @@ public class Hoteles extends Fragment implements SearchView.OnQueryTextListener 
     ListView listView;
     ImageButton ordenarBtn;
     List<String> listanombres;
+    List<Alojamiento> aloj;
     SearchView editsearch;
     listViewAdapter myAdapter;
 
@@ -111,7 +112,7 @@ public class Hoteles extends Fragment implements SearchView.OnQueryTextListener 
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreAloj = adapterView.getItemAtPosition(position).toString();
-            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj));
+            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj, aloj));
             DialogFragment alojamientoFragment = new alojamientoFragment();
             alojamientoFragment.setArguments(args);
             alojamientoFragment.setCancelable(false);
@@ -142,23 +143,19 @@ public class Hoteles extends Fragment implements SearchView.OnQueryTextListener 
         fragmentTransaction.commit();
     }
 
-    private List<String> determinarOrden(ListaAlojamientos alojamientos){
+    private List <String> determinarOrden(ListaAlojamientos alojamientos){
 
-        List<String> nombres = null;
-        List<Alojamiento> aloj = null;
+        List<String> nombres;
 
         if (ordenLista.equalsIgnoreCase("atoz") || ordenLista.equalsIgnoreCase("ztoa")){
-            aloj = alojamientos.getListaHoteles();
+            aloj = alojamientos.getListaAlojamientos("hotel", false, "alfabetico");
             nombres = alojamientos.getListaNombres(aloj, ordenLista);
         }
         else{
-            if (ordenLista.equalsIgnoreCase("asc")){
-                aloj = alojamientos.getListaHotelesAsc();
-            } else{
-                aloj = alojamientos.getListaHotelesDesc();
-            }
+            aloj = alojamientos.getListaAlojamientos("hotel", true, ordenLista);
             nombres = alojamientos.getListaNombres(aloj, "asc/desc");
         }
+
         return nombres;
     }
 }

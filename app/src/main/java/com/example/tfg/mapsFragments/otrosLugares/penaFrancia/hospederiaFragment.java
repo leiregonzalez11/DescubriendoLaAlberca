@@ -25,6 +25,8 @@ import com.example.tfg.ajustesFragments.alojamiento.ListaAlojamientos;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.List;
+
 public class hospederiaFragment extends DialogFragment {
 
     private StorageReference storageRef;
@@ -46,7 +48,9 @@ public class hospederiaFragment extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments() != null;
-        Alojamiento alojamiento = ListaAlojamientos.getMiListaAlojamientos().buscarAloj("Hospedería Peña de Francia");
+        ListaAlojamientos alojamientos = ListaAlojamientos.getMiListaAlojamientos();
+        alojamientos.setContext(requireContext());
+        Alojamiento alojamiento = alojamientos.getListaAlojamientos("hospederia", false, "alfabetico").get(0);
 
         Button back = infoView.findViewById(R.id.buttonVolverHosp);
         TextView text1 = infoView.findViewById(R.id.nombreHosp);

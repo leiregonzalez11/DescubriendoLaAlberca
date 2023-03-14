@@ -10,11 +10,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class ListaAlojamientos {
 
     private List<Alojamiento> alojamientos;
     private static ListaAlojamientos miListaAlojamientos;
+    private String query;
     private GestorDB dbHelper;
 
     private ListaAlojamientos (){
@@ -50,9 +52,9 @@ public class ListaAlojamientos {
         return lista;
     }
 
-    public Alojamiento buscarAloj(String nombreAloj){
-        for (int i = 0; i < alojamientos.size(); i++){
-            Alojamiento est = alojamientos.get(i);
+    public Alojamiento buscarAloj(String nombreAloj, List<Alojamiento> aloj){
+        for (int i = 0; i <aloj.size(); i++){
+            Alojamiento est = aloj.get(i);
             if (est.getNombreAloj().equalsIgnoreCase(nombreAloj)){
                 return est;
             }
@@ -60,56 +62,19 @@ public class ListaAlojamientos {
         return null;
     }
 
-    public List<Alojamiento> getListaApartamentos (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento';";
+    public List<Alojamiento> getListaAlojamientos (String categoriaAloj, boolean ascdesc, String tipo){
+        if (!ascdesc){
+            query = "SELECT * FROM alojamiento WHERE categoriaAloj = '" + categoriaAloj + "';";
+        } else {
+            query = "SELECT * FROM alojamiento WHERE categoriaAloj = '" + categoriaAloj + "' ORDER BY puntuacion " + tipo.toUpperCase() + ";";
+        }
         alojamientos = dbHelper.obteneralojamientos(query);
         return alojamientos;
     }
 
-    public List<Alojamiento> getListaApartamentosAsc (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento' ORDER BY puntuacion ASC;";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
 
-    public List<Alojamiento> getListaApartamentosDesc (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'apartamento' ORDER BY puntuacion DESC;";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaCasas (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural';";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaCasasAsc (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural' ORDER BY puntuacion ASC;";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaCasasDesc (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'casarural' ORDER BY puntuacion DESC;";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaHoteles (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel';";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaHotelesAsc (){
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel' ORDER BY puntuacion ASC;";
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
-    public List<Alojamiento> getListaHotelesDesc () {
-        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hotel' ORDER BY puntuacion DESC;";
+    public List<Alojamiento> getHospederia () {
+        String query = "SELECT * FROM alojamiento WHERE categoriaAloj = 'hospederia';";
         alojamientos = dbHelper.obteneralojamientos(query);
         return alojamientos;
     }

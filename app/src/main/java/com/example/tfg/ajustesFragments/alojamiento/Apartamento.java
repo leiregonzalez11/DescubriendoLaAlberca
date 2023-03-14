@@ -30,7 +30,10 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
     private ListView listView;
     private ImageButton ordenarBtn;
     private listViewAdapter myAdapter;
+    List<String> listanombres;
+    List<Alojamiento> aloj;
     private SearchView editsearch;
+
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -67,8 +70,6 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         return v;
     }
 
-    List<String> listanombres;
-
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
     @Override
@@ -90,6 +91,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
 
         ordenarBtn.setOnClickListener(v ->{
             ordenarFragment dialog = new ordenarFragment();
+            argsD.putString("ordenar", ordenLista);
             dialog.setArguments(argsD);
             //Se implementa la interfaz
             dialog.setOnClickButtonListener(ordenar -> {
@@ -111,7 +113,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
         listView.setOnItemClickListener((adapterView, v, position, id) -> {
             //Obtenemos el nombre del elemento pulsado y cargamos su información
             nombreAloj = adapterView.getItemAtPosition(position).toString();
-            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj));
+            args.putParcelable("aloj", listaAloj.buscarAloj(nombreAloj, aloj));
             DialogFragment alojamientoFragment = new alojamientoFragment();
             alojamientoFragment.setArguments(args);
             alojamientoFragment.setCancelable(false);
@@ -133,21 +135,17 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
 
     private List <String> determinarOrden(ListaAlojamientos alojamientos){
 
-        List<String> nombres = null;
-        List<Alojamiento> aloj = null;
+        List<String> nombres;
 
         if (ordenLista.equalsIgnoreCase("atoz") || ordenLista.equalsIgnoreCase("ztoa")){
-            aloj = alojamientos.getListaApartamentos();
+            aloj = alojamientos.getListaAlojamientos("apartamento", false, "alfabetico");
             nombres = alojamientos.getListaNombres(aloj, ordenLista);
         }
         else{
-            if (ordenLista.equalsIgnoreCase("asc")){
-                 aloj = alojamientos.getListaApartamentosAsc();
-            } else{
-                aloj = alojamientos.getListaApartamentosDesc();
-            }
+            aloj = alojamientos.getListaAlojamientos("apartamento", true, ordenLista);
             nombres = alojamientos.getListaNombres(aloj, "asc/desc");
         }
+
         return nombres;
     }
 
