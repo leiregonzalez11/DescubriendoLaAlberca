@@ -167,7 +167,7 @@
             android:id="@+id/textplazaiglesia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-35dp"
+            android:layout_marginTop="-25dp"
             android:layout_marginBottom="-5dp"
             android:fontFamily="@font/amiri"
             android:textAlignment="gravity"

@@ -3,24 +3,30 @@ package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu3Fragment;
 
 public class iglesiaFragment extends DialogFragment implements View.OnClickListener {
 
     private String monumento;
-    private Bundle args = new Bundle();
+    private final Bundle args = new Bundle();
+    private ImageView backgroundImage;
+    Animation slideAnimation;
+    View plazaView;
+
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -33,7 +39,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View plazaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
+        plazaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
@@ -43,6 +49,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         String idioma = getArguments().getString("idioma");
         args.putString("idioma", idioma);
 
+        backgroundImage = plazaView.findViewById(R.id.iglesiamapa);
         setListeners(plazaView);
 
         ImageButton info = plazaView.findViewById(R.id.moninfo3);
@@ -53,7 +60,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         });
 
         Button volver = plazaView.findViewById(R.id.buttonVolverIglesia);
-        volver.setOnClickListener(view -> dismiss());
+        volver.setOnClickListener(view -> zoomOut());
 
         return builder.create();
     }
@@ -112,27 +119,21 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Santo Cristo");
                 fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");
+                zoomIn(fragment);
                 break;
             case R.id.retablosanpedro:
                 monumento = "retablosanpedro";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de San Pedro");
                 fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");
+                zoomIn(fragment);
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de Santa Ana");
                 fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");
+                zoomIn(fragment);
                 break;
             case R.id.pulpito:
                 monumento = "pulpito";
@@ -148,10 +149,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "retablocristosudor";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Cristo del Sudor");
-                /*fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");*/
+                //fragment = new retablosFragment();
+                //zoomIn(fragment);
                 break;
             case R.id.capillacentral:
                 monumento = "capillacentral";
@@ -177,18 +176,14 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Carmen");
                 fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");
+                zoomIn(fragment);
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Rosario");
                 fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");
+                zoomIn(fragment);
                 break;
         }
 
@@ -196,5 +191,23 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public void zoomIn (DialogFragment fragment){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
+        backgroundImage.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(() -> {
+            fragment.setArguments(args);
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"fragment");
+        },900);
+    }
+
+    public void zoomOut (){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
+        plazaView.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(this::dismiss,900);
     }
 }

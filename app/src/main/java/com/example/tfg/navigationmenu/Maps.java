@@ -10,12 +10,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -44,6 +47,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private Spinner spinner;
     private ImageButton btnminfo;
     private Bundle args, argsMenu;
+    Animation slideAnimation;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
     private Button btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
@@ -196,9 +200,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
                 cargarFragment(fragment);
                 break;
 
-            case R.id.menu_acercade:
-                //Creamos el fragmento
-                //fragment = Idiomas.newInstance(args);
+            case R.id.menu_agradecimientos:
                 break;
 
             default:
@@ -372,19 +374,13 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             if (monumento.contains("ermita")){
                 fragment = new ermitasFragment();
                 args.putString("ermita", monumento);
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(),"ermitas_fragment");
+                zoomIn(fragment);
             } else if (monumento.equalsIgnoreCase("iglesia")){
                 fragment = new iglesiamapaFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(),"plazaiglesia_fragment");
+                zoomIn(fragment);
             } else if (monumento.equalsIgnoreCase("plazamayor")){
                 fragment = new plazamapaFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(),"plaza_fragment");
+                zoomIn(fragment);
             }else{
                 fragment = new infoMonuFragment();
                 fragment.setCancelable(false);
@@ -392,6 +388,17 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             }
 
         }
+    }
+
+    public void zoomIn (DialogFragment fragment){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
+        img1.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(() -> {
+            fragment.setArguments(args);
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"fragment");
+        },900);
     }
 
 }

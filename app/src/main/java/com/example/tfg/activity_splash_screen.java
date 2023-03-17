@@ -34,11 +34,6 @@ public class activity_splash_screen extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 
-                /* TOUR */
-                /*DialogFragment tourFragment = new tourFragment();
-                tourFragment.setCancelable(false);
-                tourFragment.show(getSupportFragmentManager(),"tour_dialog"); */
-
                 /* INTERFAZ PRINCIPAL*/
                 //Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
                 Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);

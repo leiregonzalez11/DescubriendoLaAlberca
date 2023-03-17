@@ -12,11 +12,15 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -28,6 +32,12 @@ import com.google.firebase.storage.StorageReference;
 public class retablosFragment extends DialogFragment {
 
     private StorageReference storageRef;
+    ImageView img1;
+    private View viewR;
+    Animation slideAnimation;
+
+    public retablosFragment() {
+    }
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -40,22 +50,22 @@ public class retablosFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View infomView = inflater.inflate(R.layout.fragment_retablos, null);
+        viewR = inflater.inflate(R.layout.fragment_retablos, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(infomView);
+        builder.setView(viewR);
 
         assert getArguments()!=null;
         String retablo = getArguments().getString("retablo");
         String idioma = getArguments().getString("idioma");
         String title = getArguments().getString("titulo");
 
-        TextView titulo = infomView.findViewById(R.id.tituloretablo);
+        TextView titulo = viewR.findViewById(R.id.tituloretablo);
         titulo.setText(title);
 
-        TextView text1 = infomView.findViewById(R.id.retabloinfotext1);
-        TextView text2 = infomView.findViewById(R.id.retabloinfotext2);
+        TextView text1 = viewR.findViewById(R.id.retabloinfotext1);
+        TextView text2 = viewR.findViewById(R.id.retabloinfotext2);
 
         GestorDB dbHelper = new GestorDB(getContext());
 
@@ -64,14 +74,14 @@ public class retablosFragment extends DialogFragment {
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        ImageView img1 = infomView.findViewById(R.id.retabloimg1);
+        img1 = viewR.findViewById(R.id.retabloimg1);
 
         //Imagen
         storageRef = FirebaseStorage.getInstance().getReference();
         obtenerImagenFirebase("mapas/monumentos/" + retablo + ".png", img1);
 
-        Button volver = infomView.findViewById(R.id.buttonVolverRetablos);
-        volver.setOnClickListener(view -> dismiss());
+        Button volver = viewR.findViewById(R.id.buttonVolverRetablos);
+        volver.setOnClickListener(view -> zoomOut());
 
         return builder.create();
     }
@@ -80,6 +90,15 @@ public class retablosFragment extends DialogFragment {
     private void obtenerImagenFirebase(String path, ImageView img){
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
+
+    public void zoomOut (){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
+        ScrollView scr = viewR.findViewById(R.id.scrollviewR);
+        scr.startAnimation(slideAnimation);
+        img1.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(this::dismiss,900);
     }
 
 }

@@ -9,8 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -20,6 +23,9 @@ import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu2Fragm
 
 
 public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
+
+    Animation slideAnimation;
+    View plazaMView;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -32,41 +38,41 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View plazaView = inflater.inflate(R.layout.fragmentdialog_plazamapa, null);
+        plazaMView = inflater.inflate(R.layout.fragmentdialog_plazamapa, null);
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(plazaView);
+        builder.setView(plazaMView);
 
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
 
-        setListeners(plazaView);
+        setListeners(plazaMView);
 
-        ImageButton info = plazaView.findViewById(R.id.moninfo2);
+        ImageButton info = plazaMView.findViewById(R.id.moninfo2);
         info.setOnClickListener(view -> {
             DialogFragment fragment = new infomonu2Fragment();
             fragment.setCancelable(false);
             fragment.show(getChildFragmentManager(),"plaza_fragment");
         });
 
-        Button volver = plazaView.findViewById(R.id.buttonVolverPlaza);
-        volver.setOnClickListener(view -> dismiss());
+        Button volver = plazaMView.findViewById(R.id.buttonVolverPlaza);
+        volver.setOnClickListener(view -> zoomOut());
 
         return builder.create();
     }
 
-    private void setListeners(View plazaView) {
-        Button ayunt = plazaView.findViewById(R.id.buttonAyuntamiento);
+    private void setListeners(View plazaMView) {
+        Button ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
         ayunt.setOnClickListener(this);
-        Button teatro = plazaView.findViewById(R.id.buttonTeatro);
+        Button teatro = plazaMView.findViewById(R.id.buttonTeatro);
         teatro.setOnClickListener(this);
-        Button biblio = plazaView.findViewById(R.id.buttonBiblioteca);
+        Button biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
         biblio.setOnClickListener(this);
-        Button crucero = plazaView.findViewById(R.id.buttonCrucero);
+        Button crucero = plazaMView.findViewById(R.id.buttonCrucero);
         crucero.setOnClickListener(this);
-        Button unamuno = plazaView.findViewById(R.id.buttonUnamuno);
+        Button unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
         unamuno.setOnClickListener(this);
-        Button escuelas = plazaView.findViewById(R.id.buttonEscuelas);
+        Button escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
         escuelas.setOnClickListener(this);
     }
 
@@ -103,6 +109,24 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
                 break;
         }
+    }
+
+    /*public void zoomIn (DialogFragment fragment){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
+        backgroundImage.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(() -> {
+            fragment.setArguments(args);
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"fragment");
+        },900);
+    }*/
+
+    public void zoomOut (){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
+        plazaMView.startAnimation(slideAnimation);
+
+        new Handler().postDelayed(this::dismiss,900);
     }
 
 }
