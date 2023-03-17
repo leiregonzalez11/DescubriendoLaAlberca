@@ -38,6 +38,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
+                android:background="@color/white"
                 android:src="@drawable/ic_circle_info_solid"
                 android:textStyle="bold"
                 app:layout_constraintHorizontal_bias="0.046"

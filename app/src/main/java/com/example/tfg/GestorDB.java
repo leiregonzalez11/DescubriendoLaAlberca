@@ -26,7 +26,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private final Context context;
     private boolean seguir = true;
 

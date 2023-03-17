@@ -71,7 +71,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         Button pilab = plazaView.findViewById(R.id.pilabautismal);
         Button pila1 = plazaView.findViewById(R.id.pilaagua1);
         Button pila2 = plazaView.findViewById(R.id.pilaagua2);
-        Button retablomayor = plazaView.findViewById(R.id.retablomayor);
+        Button espadana = plazaView.findViewById(R.id.espadana);
+        Button sacristia = plazaView.findViewById(R.id.sacristia);
         Button dolores = plazaView.findViewById(R.id.capilladolores);
         Button pulpito = plazaView.findViewById(R.id.pulpito);
         Button ana = plazaView.findViewById(R.id.retablosantaana);
@@ -87,7 +88,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         pilab.setOnClickListener(this);
         pila1.setOnClickListener(this);
         pila2.setOnClickListener(this);
-        retablomayor.setOnClickListener(this);
+        espadana.setOnClickListener(this);
+        sacristia.setOnClickListener(this);
         dolores.setOnClickListener(this);
         pulpito.setOnClickListener(this);
         ana.setOnClickListener(this);
@@ -106,22 +108,22 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         switch (btn.getId()) {
 
             case R.id.santocristo:
-                monumento = "santocristo";
+                monumento = "retablocristobatallas";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Santo Cristo");
-                /*fragment = new retablosFragment();
+                fragment = new retablosFragment();
                 fragment.setArguments(args);
                 fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");*/
+                fragment.show(getChildFragmentManager(), "retablo_fragment");
                 break;
             case R.id.retablosanpedro:
-                monumento = "sanpedro";
+                monumento = "retablosanpedro";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de San Pedro");
-                /*fragment = new retablosFragment();
+                fragment = new retablosFragment();
                 fragment.setArguments(args);
                 fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");*/
+                fragment.show(getChildFragmentManager(), "retablo_fragment");
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
@@ -143,7 +145,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "bautismal";
                 break;
             case R.id.retablocristosudor:
-                monumento = "cristosudor";
+                monumento = "retablocristosudor";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Cristo del Sudor");
                 /*fragment = new retablosFragment();
@@ -154,14 +156,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.capillacentral:
                 monumento = "capillacentral";
                 break;
-            case R.id.retablomayor:
-                monumento = "retablomayor";
-                args.putString("retablo", monumento);
-                args.putString("titulo", "Retablo Mayor");
-                /*fragment = new retablosFragment();
-                fragment.setArguments(args);
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");*/
+            case R.id.espadana:
+                monumento = "espadaña";
                 break;
             case R.id.portico1:
             case R.id.portico2:
@@ -173,14 +169,17 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.torre:
                 monumento = "torre";
                 break;
+            case R.id.sacristia:
+                monumento = "sacristia";
+                break;
             case R.id.retablovirgencarmen:
-                monumento = "carmen";
+                monumento = "retablovirgendelcarmen";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Carmen");
-                /*fragment = new retablosFragment();
+                fragment = new retablosFragment();
                 fragment.setArguments(args);
                 fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(), "retablo_fragment");*/
+                fragment.show(getChildFragmentManager(), "retablo_fragment");
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
@@ -193,7 +192,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 break;
         }
 
-        if (!monumento.contains("rosario") && !monumento.contains("ana")){
+        if (!monumento.contains("rosario") && !monumento.contains("ana") && !monumento.contains("pedro") && !monumento.contains("carmen") && !monumento.contains("batallas")){
             Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
         }
 

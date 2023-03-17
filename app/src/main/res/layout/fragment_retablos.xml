@@ -55,6 +55,7 @@
                 android:layout_height="270dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="-5dp"
+                android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView

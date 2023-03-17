@@ -164,16 +164,16 @@
 
             <Button
                 android:id="@+id/btnm2"
-                android:layout_width="54dp"
-                android:layout_height="44dp"
+                android:layout_width="48dp"
+                android:layout_height="35dp"
                 android:background="#00000000"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.532"
+                app:layout_constraintHorizontal_bias="0.509"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.602" />
+                app:layout_constraintVertical_bias="0.593" />
 
             <Button
                 android:id="@+id/btnm3"
@@ -190,16 +190,16 @@
 
             <Button
                 android:id="@+id/btnm4"
-                android:layout_width="54dp"
-                android:layout_height="44dp"
+                android:layout_width="31dp"
+                android:layout_height="22dp"
                 android:background="#00000000"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.843"
+                app:layout_constraintHorizontal_bias="0.56"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.721" />
+                app:layout_constraintVertical_bias="0.645" />
 
             <Button
                 android:id="@+id/btnm5"
@@ -312,6 +312,7 @@
                 android:gravity="center"
                 android:src="@drawable/ic_circle_info_solid"
                 android:textStyle="bold"
+                android:background="@color/white"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"

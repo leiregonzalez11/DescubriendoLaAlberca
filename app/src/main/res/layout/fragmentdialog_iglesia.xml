@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         android:gravity="center">
 
         <LinearLayout
@@ -38,6 +39,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
+                android:background="@color/white"
                 android:src="@drawable/ic_circle_info_solid"
                 android:textStyle="bold"
                 app:layout_constraintHorizontal_bias="0.046"
@@ -47,16 +49,15 @@
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="400dp"
-            android:layout_height="500dp"
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp">
 
             <ImageView
                 android:id="@+id/iglesiamapa"
-                android:layout_width="380dp"
-                android:layout_height="500dp"
-                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/planoiglesiapueblo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,15 +67,15 @@
 
             <Button
                 android:id="@+id/capillacentral"
-                android:layout_width="45dp"
-                android:layout_height="38dp"
+                android:layout_width="53dp"
+                android:layout_height="65dp"
                 android:background="#00FFFFFF"
                 app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
-                app:layout_constraintHorizontal_bias="0.53"
+                app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                app:layout_constraintVertical_bias="0.266" />
+                app:layout_constraintVertical_bias="0.193" />
 
             <Button
                 android:id="@+id/capilladolores"
@@ -113,16 +114,28 @@
                 app:layout_constraintVertical_bias="0.391" />
 
             <Button
-                android:id="@+id/retablomayor"
+                android:id="@+id/espadana"
                 android:layout_width="45dp"
                 android:layout_height="38dp"
                 android:background="#00FFFFFF"
                 app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
-                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                app:layout_constraintVertical_bias="0.114" />
+                app:layout_constraintVertical_bias="0.922" />
+
+            <Button
+                android:id="@+id/sacristia"
+                android:layout_width="45dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/iglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/iglesiamapa"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="@id/iglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/iglesiamapa"
+                app:layout_constraintVertical_bias="0.24" />
 
             <Button
                 android:id="@+id/pulpito"

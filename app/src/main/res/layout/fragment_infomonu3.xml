@@ -12,6 +12,8 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,7 +65,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Retablo mayor"
+                    android:text="Capilla mayor"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -93,7 +95,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Capilla central"
+                    android:text="Sacristía"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -243,7 +245,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Retablo del Santo Cristo de las Batallas"
+                    android:text="Retablo del Cristo de las Batallas"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -273,7 +275,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Pórtico del Solano Bajero"
+                    android:text="Pórticos"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -303,7 +305,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Pilas de agua bautismal"
+                    android:text="Pilas de agua bendita"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -363,7 +365,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
                     android:fontFamily="@font/amiri"
-                    android:text="Pórtico del Solano Cimero"
+                    android:text="Espadaña"
                     android:gravity='left'
                     android:textColor="@color/black"
                     android:textSize="20sp"/>

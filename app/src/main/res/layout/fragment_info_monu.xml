@@ -348,7 +348,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/amiri"
-                android:text="Mirador de Santa Fé"
+                android:text="Casa de cultura"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
