@@ -50,7 +50,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     Animation slideAnimation;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
-    private Button btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
+    private ImageButton btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -155,7 +155,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){ //Opcion seleccionada: Sitios de interés
-            img1.setImageResource(R.drawable.planolaalbercamonumentos);
+            img1.setImageResource(R.drawable.planolaalbercabasico);
             setBtnMonumentos();
             setVisibilityP(false);
             setVisibilityM(true);
@@ -312,19 +312,19 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     public void setBtnMonumentos(){
 
-        btnm1.setOnClickListener(view -> monumentosOnClick("iglesia"));
-        btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor"));
-        btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo"));
-        btnm4.setOnClickListener(view -> monumentosOnClick("miradorsantafe"));
-        btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio"));
-        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre"));
-        btnm7.setOnClickListener(view -> monumentosOnClick("lapuente"));
-        btnm8.setOnClickListener(view -> monumentosOnClick("lasespeñitas"));
-        btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas"));
-        btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio"));
-        btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero"));
-        btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio"));
-        btnminfo.setOnClickListener(view -> monumentosOnClick("infomonumentos"));
+        btnm1.setOnClickListener(view -> monumentosOnClick("iglesia", btnm1));
+        btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor", btnm2));
+        btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo", btnm3));
+        btnm4.setOnClickListener(view -> monumentosOnClick("miradorsantafe", btnm4));
+        btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio", btnm5));
+        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre", btnm6));
+        btnm7.setOnClickListener(view -> monumentosOnClick("lapuente", btnm7));
+        btnm8.setOnClickListener(view -> monumentosOnClick("lasespeñitas", btnm8));
+        btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas", btnm9));
+        btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio", btnm10));
+        btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero", btnm11));
+        btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio", btnm12));
+        btnminfo.setOnClickListener(view -> monumentosOnClick("infomonumentos", btnminfo));
 
     }
 
@@ -364,7 +364,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
-    public void monumentosOnClick(String monumento){
+    public void monumentosOnClick(String monumento, View btn){
 
         if (!monumento.contains("ermita") && !monumento.contains("info") && !monumento.equalsIgnoreCase("iglesia") && !monumento.equalsIgnoreCase("plazamayor")){
             Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
@@ -374,13 +374,13 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             if (monumento.contains("ermita")){
                 fragment = new ermitasFragment();
                 args.putString("ermita", monumento);
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
             } else if (monumento.equalsIgnoreCase("iglesia")){
                 fragment = new iglesiamapaFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
             } else if (monumento.equalsIgnoreCase("plazamayor")){
                 fragment = new plazamapaFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
             }else{
                 fragment = new infoMonuFragment();
                 fragment.setCancelable(false);
@@ -390,9 +390,9 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         }
     }
 
-    public void zoomIn (DialogFragment fragment){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
-        img1.startAnimation(slideAnimation);
+    public void zoomIn (DialogFragment fragment, View view){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
+        view.startAnimation(slideAnimation);
 
         new Handler().postDelayed(() -> {
             fragment.setArguments(args);

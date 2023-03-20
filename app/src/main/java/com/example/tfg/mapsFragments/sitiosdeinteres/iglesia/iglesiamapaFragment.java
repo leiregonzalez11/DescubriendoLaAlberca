@@ -2,7 +2,6 @@ package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,18 +18,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.example.tfg.MainActivity;
 import com.example.tfg.R;
-import com.example.tfg.activity_splash_screen;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.iglesiaFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu1Fragment;
 
 
 public class iglesiamapaFragment extends DialogFragment implements View.OnClickListener {
 
     private final Bundle args = new Bundle();
-    private ImageView backgroundImage;
+    ImageButton iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano, casaSI;
     Animation slideAnimation;
     View iglesiaView;
 
@@ -57,9 +52,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         // HERE WE ARE TAKING THE REFERENCE OF OUR IMAGE
         // SO THAT WE CAN PERFORM ANIMATION USING THAT IMAGE
 
-        backgroundImage = iglesiaView.findViewById(R.id.plazaiglesiamapa);
-
-        setListeners(iglesiaView);
+        setListeners();
 
         ImageButton info = iglesiaView.findViewById(R.id.moninfo1);
         info.setOnClickListener(view -> {
@@ -74,24 +67,26 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         return builder.create();
     }
 
-    private void setListeners(View iglesiaView) {
+    private void setListeners() {
 
-        Button marrano = iglesiaView.findViewById(R.id.buttonMarrano);
+        marrano = iglesiaView.findViewById(R.id.buttonMarrano);
         marrano.setOnClickListener(this);
-        Button iglesia = iglesiaView.findViewById(R.id.buttonIglesia);
+        iglesia = iglesiaView.findViewById(R.id.buttonIglesia);
         iglesia.setOnClickListener(this);
-        Button casaSS = iglesiaView.findViewById(R.id.buttonCasaSS);
-        casaSS.setOnClickListener(this);
-        Button hornacina = iglesiaView.findViewById(R.id.buttonHornacina);
+        casaSI = iglesiaView.findViewById(R.id.buttonCasaSS);
+        casaSI.setOnClickListener(this);
+        hornacina = iglesiaView.findViewById(R.id.buttonHornacina);
         hornacina.setOnClickListener(this);
-        Button predio1 = iglesiaView.findViewById(R.id.buttonpredio1);
+        predio1 = iglesiaView.findViewById(R.id.buttonpredio1);
         predio1.setOnClickListener(this);
-        Button predio2 = iglesiaView.findViewById(R.id.buttonpredio2);
+        predio2 = iglesiaView.findViewById(R.id.buttonpredio2);
         predio2.setOnClickListener(this);
-        Button predio3 = iglesiaView.findViewById(R.id.buttonpredio3);
+        predio3 = iglesiaView.findViewById(R.id.buttonpredio3);
         predio3.setOnClickListener(this);
-        Button predio4 = iglesiaView.findViewById(R.id.buttonpredio4);
+        predio4 = iglesiaView.findViewById(R.id.buttonpredio4);
         predio4.setOnClickListener(this);
+        predio5 = iglesiaView.findViewById(R.id.buttonpredio5);
+        predio5.setOnClickListener(this);
 
     }
 
@@ -100,7 +95,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
     @Override
     public void onClick(View view) {
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
 
         switch (btn.getId()) {
 
@@ -113,8 +108,8 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonIglesia:
-                DialogFragment iglesia = new iglesiaFragment();
-                zoomIn(iglesia);
+                DialogFragment iglesiaF = new iglesiaFragment();
+                zoomIn(iglesiaF, btn);
                 break;
             case R.id.buttonCasaSS:
                 monumento = "casasantainquisición";
@@ -124,7 +119,8 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
             case R.id.buttonpredio2:
             case R.id.buttonpredio3:
             case R.id.buttonpredio4:
-                monumento = "predio";
+            case R.id.buttonpredio5:
+                monumento = "predios";
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
 
@@ -132,16 +128,18 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
 
     }
 
-    public void zoomIn (DialogFragment fragment){
+    public void zoomIn (DialogFragment fragment, View view){
+
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
-        backgroundImage.startAnimation(slideAnimation);
+        view.startAnimation(slideAnimation);
 
         new Handler().postDelayed(() -> {
             fragment.setArguments(args);
             fragment.setCancelable(false);
             fragment.show(getChildFragmentManager(),"fragment");
-        },900);
+        },1000);
     }
+
 
     public void zoomOut (){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);

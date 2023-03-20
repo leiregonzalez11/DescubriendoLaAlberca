@@ -21,9 +21,7 @@ import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu3Fragm
 
 public class iglesiaFragment extends DialogFragment implements View.OnClickListener {
 
-    private String monumento;
     private final Bundle args = new Bundle();
-    private ImageView backgroundImage;
     Animation slideAnimation;
     View plazaView;
 
@@ -49,7 +47,6 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         String idioma = getArguments().getString("idioma");
         args.putString("idioma", idioma);
 
-        backgroundImage = plazaView.findViewById(R.id.iglesiamapa);
         setListeners(plazaView);
 
         ImageButton info = plazaView.findViewById(R.id.moninfo3);
@@ -67,23 +64,23 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
     private void setListeners(View plazaView) {
 
-        Button torre = plazaView.findViewById(R.id.torre);
-        Button carmen = plazaView.findViewById(R.id.retablovirgencarmen);
-        Button pedro = plazaView.findViewById(R.id.retablosanpedro);
-        Button sudor = plazaView.findViewById(R.id.retablocristosudor);
-        Button rosario = plazaView.findViewById(R.id.virgenrosario);
-        Button capillacentral = plazaView.findViewById(R.id.capillacentral);
-        Button salida1 = plazaView.findViewById(R.id.portico1);
-        Button salida2 = plazaView.findViewById(R.id.portico2);
-        Button pilab = plazaView.findViewById(R.id.pilabautismal);
-        Button pila1 = plazaView.findViewById(R.id.pilaagua1);
-        Button pila2 = plazaView.findViewById(R.id.pilaagua2);
-        Button espadana = plazaView.findViewById(R.id.espadana);
-        Button sacristia = plazaView.findViewById(R.id.sacristia);
-        Button dolores = plazaView.findViewById(R.id.capilladolores);
-        Button pulpito = plazaView.findViewById(R.id.pulpito);
-        Button ana = plazaView.findViewById(R.id.retablosantaana);
-        Button santoc = plazaView.findViewById(R.id.santocristo);
+        ImageButton torre = plazaView.findViewById(R.id.torre);
+        ImageButton carmen = plazaView.findViewById(R.id.retablovirgencarmen);
+        ImageButton pedro = plazaView.findViewById(R.id.retablosanpedro);
+        ImageButton sudor = plazaView.findViewById(R.id.retablocristosudor);
+        ImageButton rosario = plazaView.findViewById(R.id.virgenrosario);
+        ImageButton capillacentral = plazaView.findViewById(R.id.capillacentral);
+        ImageButton salida1 = plazaView.findViewById(R.id.portico1);
+        ImageButton salida2 = plazaView.findViewById(R.id.portico2);
+        ImageButton pilab = plazaView.findViewById(R.id.pilabautismal);
+        ImageButton pila1 = plazaView.findViewById(R.id.pilaagua1);
+        ImageButton pila2 = plazaView.findViewById(R.id.pilaagua2);
+        ImageButton espadana = plazaView.findViewById(R.id.espadana);
+        ImageButton sacristia = plazaView.findViewById(R.id.sacristia);
+        ImageButton dolores = plazaView.findViewById(R.id.capilladolores);
+        ImageButton pulpito = plazaView.findViewById(R.id.pulpito);
+        ImageButton ana = plazaView.findViewById(R.id.retablosantaana);
+        ImageButton santoc = plazaView.findViewById(R.id.santocristo);
         torre.setOnClickListener(this);
         carmen.setOnClickListener(this);
         pedro.setOnClickListener(this);
@@ -109,93 +106,111 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
         DialogFragment fragment;
 
         switch (btn.getId()) {
 
             case R.id.santocristo:
-                monumento = "retablocristobatallas";
+                String monumento = "retablocristobatallas";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Santo Cristo");
                 fragment = new retablosFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
                 break;
             case R.id.retablosanpedro:
                 monumento = "retablosanpedro";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de San Pedro");
                 fragment = new retablosFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de Santa Ana");
                 fragment = new retablosFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
                 break;
             case R.id.pulpito:
                 monumento = "pulpito";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Púlpito");
                 break;
             case R.id.pilaagua1:
             case R.id.pilaagua2:
-                monumento = "pilaagua";
+                monumento = "pilasaguabendita";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Pilas de agua bendita");
+                fragment = new iglesiaMon1();
+                zoomIn(fragment, btn);
                 break;
             case R.id.pilabautismal:
-                monumento = "bautismal";
+                monumento = "pilabautismal";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Pila Bautismal");
+                fragment = new iglesiaMon1();
+                zoomIn(fragment, btn);
                 break;
             case R.id.retablocristosudor:
                 monumento = "retablocristosudor";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo del Cristo del Sudor");
                 //fragment = new retablosFragment();
-                //zoomIn(fragment);
+                //zoomIn(fragment, btn);
                 break;
             case R.id.capillacentral:
                 monumento = "capillacentral";
                 break;
             case R.id.espadana:
                 monumento = "espadaña";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Espadaña");
+                fragment = new iglesiaMon1();
+                zoomIn(fragment, btn);
                 break;
             case R.id.portico1:
             case R.id.portico2:
-                monumento = "portico";
+                monumento = "porticos";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Pórticos de la iglesia");
                 break;
             case R.id.capilladolores:
                 monumento = "dolores";
                 break;
             case R.id.torre:
                 monumento = "torre";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Torre de la iglesia");
                 break;
             case R.id.sacristia:
                 monumento = "sacristia";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Sacristía");
+                fragment = new iglesiaMon1();
+                zoomIn(fragment, btn);
                 break;
             case R.id.retablovirgencarmen:
                 monumento = "retablovirgendelcarmen";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Carmen");
                 fragment = new retablosFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
                 args.putString("retablo", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Rosario");
                 fragment = new retablosFragment();
-                zoomIn(fragment);
+                zoomIn(fragment, btn);
                 break;
-        }
-
-        if (!monumento.contains("rosario") && !monumento.contains("ana") && !monumento.contains("pedro") && !monumento.contains("carmen") && !monumento.contains("batallas")){
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    public void zoomIn (DialogFragment fragment){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
-        backgroundImage.startAnimation(slideAnimation);
+    public void zoomIn (DialogFragment fragment, View view){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
+        view.startAnimation(slideAnimation);
 
         new Handler().postDelayed(() -> {
             fragment.setArguments(args);
