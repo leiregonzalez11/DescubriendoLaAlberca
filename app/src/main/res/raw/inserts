@@ -14,6 +14,7 @@ INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'es', '
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'es', 'Precisamente en el siglo XV, Juan II hizo que la villa de La Alberca pasara a depender de la Casa de Alba, que años después logró el control de parte de la Sierra de Francia con el favor de Fernando el Católico, agrupando estos dominios bajo la jurisdicción de la villa cacereña de Granadilla. No obstante La Alberca logró mantener gran autonomía respecto a Granadilla, llegando a tener sus propias ordenanzas en 1515 y a ser Las Hurdes una dehesa de La Alberca hasta 1835, cuando se realiza la que es a día de hoy la limitación de provincias de España, quedando La Alberca definitivamente integrada en la provincia de Salamanca, dentro de la Región Leonesa.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'es', 'En el año 1940, el pueblo se convirtió en Monumento Histórico-Artístico facilitando la conservación del casco urbano. Fue el primer municipio español que consiguió tal distinción.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'es', 'POR HACER');
+//INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat3', 'es', 'POR HACER');
 //
 //Idioma: Euskera
 //
@@ -25,6 +26,7 @@ INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'eu', '
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'eu', 'XV. mendean, hain zuzen ere, Joan II.ak La Alberca hiribildua Albako Etxearen mende jarri zuen. Etxe horrek, urte batzuk geroago, Frantziako mendilerroaren zati baten kontrola lortu zuen, Fernando Katolikoaren faborez, eta eremu horiek Granadillako hiribilduaren jurisdikziopean bildu zituen. Hala ere, La Albercak Granadillarekiko autonomia handia mantentzea lortu zuen, 1515ean bere ordenantza propioak izatera iritsiz eta 1835 arte Las Hurdes La Albercako dehesa izatera iritsiz, gaur egun Espainiako probintzien muga dena, La Alberca Salamancako probintzian behin betiko integratuta geratuz, Leongo Eskualdearen barruan.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'eu', '1940. urtean, herria Monumentu Historiko-Artistiko bihurtu zen, hirigunearen kontserbazioa erraztuz. Sari hori lortu zuen Espainiako lehen udalerria izan zen.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'eu', 'POR HACER');
+//INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat3', 'eu', 'POR HACER');
 //
 //Idioma: Inglés
 //
@@ -35,6 +37,7 @@ INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'en', '
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'en', 'Precisely in the 15th century, John II made the town of La Alberca dependent on the House of Alba, which years later gained control of part of the Sierra de Francia with the favour of Ferdinand the Catholic, grouping these domains under the jurisdiction of the town of Granadilla in Cáceres. Nevertheless, La Alberca managed to maintain great autonomy with respect to Granadilla, even having its own ordinances in 1515 and Las Hurdes being a dehesa of La Alberca until 1835, when what is today the limitation of provinces in Spain was carried out, with La Alberca being definitively integrated into the province of Salamanca, within the Region of León.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'en', 'In 1940, the village became a Historic-Artistic Monument, thus facilitating the conservation of the town centre. It was the first Spanish municipality to achieve this distinction.');
 INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'en', 'POR HACER');
+//INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat3', 'en', 'POR HACER');
 //
 //-----------------------------------------------------------
 //                   ----MONUMENTOS----                      |
@@ -92,10 +95,35 @@ INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadesanblas', 'e
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'eu', 'San Antonio ermita herriaren irteeran dago, Salamancara bidean. Tamaina txikikoa da eta arkupe zabala du. Alboetan, Solano baxuko barandak bezala, harlanduzkoak ziren. XX. mendearen hasieran kendu egin zituzten, gaur egungoak, burdinazkoak, praktikoagoak baina gustu txikiagokoak jartzeko. Sarrerako ateburuan honako hau irakur daiteke:');
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'eu', 'Divo Antonio de Padua hoc sacellum dicavit Antonius a Velasco, Presbiter. 16 kalendas M. ; S.P.B. Anno 1670');
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'eu', 'Inskripzioan ikus daitekeenez, 1670ekoa da eraiki zuten urtea. Bosten bat, ilaretara sartu behar zenez, gauez joan omen zen Santuari ermitaren izena ematera, eta, kanpoko irudiaren azpian, urrezko ontza bat ezkutatu omen zuen. Itzuli zenean, pozik jaso ahal izan zuen berriro. Santua gordailuzain leial suertatu zitzaion.');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('plazasanantonio', 'eu', '');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('antiguohospicio', 'eu', '');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('antiguohospicio', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'crucero', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'crucero', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'antiguasescuelas', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'antiguasescuelas', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'ayuntamiento', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'ayuntamiento', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'eu', '');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosantaana', 'eu', 'Manuel Sánchez Velasco inkisidorearen kontura eraikia, erdiko horma-hobian Belaunaldi Sakratuaren intxaurrondoz egindako irudi paregabea du (Santa Ana, Maria eta Jesus), ziurrenik XII. edo XIII. mendekoa. Ezkerraldean, San Blasen tailua dago, hau ere XII. mendekoa, urte batzuk lehenago izen bereko ermitan zegoen tailua.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosantaana', 'eu', 'Eskuinean, La Albercan kontserbatutako irudirik zaharrena: Majada Zaharreko Ama Birjinaren tailua, XII. mendeko irudi erromaniko interesgarria, udalerritik gertu dagoen Majada Viejas ermitatik datorrena. Goiko horma-hobian, San Pedro Martiria dago, bere ezpata buruan arrailduta duela, eta aldareko mantel ehunduaren azpian, Inkisizio Santuaren ikurra. Santa Anaren erretaulak arrokailak ditu horma-hobietan eta XVIII. mendeko zutabeak.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablorosario', 'eu', 'Duela gutxi zaharberrituta, Arrosarioko Ama Birjinaren erretaula Arrosarioko kaperan dago, 1777an eraikia. Hamaseigarren erretaula barrokoaren tipologian kokatzen den erretaula da, kaperako hormaren espaziora egokitzen dena, espazioa erabat okupatuz eta bere erremate erdizirkularra XVIII. mendeko zutabeen azpian estibiteak dituen gangaren formara egokituz.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablorosario', 'eu', 'Erretaularen dekorazio erabat barrokoa/rococo izan arren, antolaketa-argitasun handia du, hiru kaletan banatutako gorputz bakarreko egitura, bankua eta atikoa. Izenak berak adierazten duen bezala, erretaularen erdian dagoen Arrosarioko Ama Birjinari eskainita dago. Birjinarekin batera, eskuinaldean, San Lorentzo dago, ezkerraldean Pragako Jesus Haurra eta goiko atikoan Santo Domingo, arrosarioaren sustatzailea txakurrarekin eta zuziarekin (Domini Canes), zeinen ordenak eragin handia izan zuen Frantziako Haitzaren santutegitik. Sagrarioaren gainean, Larritasunen Birjinarekin margotutako kobre bat dago.');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosanpedro', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosanpedro', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablocristobatallas', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablocristobatallas', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablovirgendelcarmen', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablovirgendelcarmen', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'pilabautismal', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'pilasaguabendita', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'sacristia', 'eu', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'espadaña', 'eu', '');
 //
 //Idioma: Inglés
 //
@@ -107,10 +135,35 @@ INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitadesanblas', 'e
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'en', 'The hermitage of San Antonio is at the exit of the village, in the direction of Salamanca. It is small in size and has a large portico, the sides of which were, like the railings of the lower Solano, made of ashlar. At the beginning of the 20th century, they were removed and replaced by the current iron ones, which are more practical but less tasteful. On the lintel at the entrance we read the following:');
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'en', 'Divo Antonio de Padua hoc sacellum dicavit Antonius a Velasco, Presbiter. 16 kalendas M. ; S.P.B. Anno 1670');
 INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('ermitasanantonio', 'en', 'The year of its construction is recorded, as can be seen from the inscription, as 1670. It is said that a fifth, having to join the ranks, went at night to pray to the Saint of the invocation of this hermitage and, under the exterior image, he hid an ounce of gold. On his return, he was able, with satisfaction, to pick it up again. The saint proved to be a faithful custodian.');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('plazasanantonio', 'en', '');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('antiguohospicio', 'en', '');
+//INSERT INTO monumento (nombreMon, idioma, descMon) VALUES ('antiguohospicio', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'plaza', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'crucero', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'crucero', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'antiguasescuelas', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'antiguasescuelas', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'ayuntamiento', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plaza', 'ayuntamiento', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('plazaiglesia', 'predios', 'en', '');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosantaana', 'en', 'Built at the expense of the Inquisitor Don Manuel Sánchez Velasco, it has in the central niche a unique walnut image of the Sacred Generation (Saint Anne, Mary and Jesus), possibly from the 12th or 13th century. On the left side, there is a carving of San Blas, also from the 12th century, a carving that years ago was located in the hermitage of the same name.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosantaana', 'en', 'On the right, the oldest image preserved in La Alberca: the carving of the Virgin of Majadas Viejas, an interesting 12th century Romanesque image from the chapel of Majada Viejas, close to the municipality. In the upper niche is San Pedro Mártir with his cloven sword on his head, and under the woven altar cloth, the symbol of the Holy Inquisition. The altarpiece of Santa Ana has rock carvings in its niches and columns typical of the 18th century.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablorosario', 'en', 'Recently restored, the altarpiece of the Virgin of the Rosary is located in the Chapel of the Rosary, built in 1777. It is an altarpiece that fits into the typology of 18th-century Baroque altarpieces that adapts to the space of the chapel wall, completely occupying the space and adapting its semicircular top to the shape of the vault with stipes under the columns typical of the 18th century.');
 INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablorosario', 'en', 'Despite the fully Baroque/Rococo decoration of the altarpiece, it is very clear in its organisation, with a single body divided into three sections, a bench and an attic. As its name indicates, it is dedicated to the Virgin of the Rosary, located in the centre of the altarpiece. Accompanying the Virgin are, on the right side, Saint Lawrence, on the left side the Infant Jesus of Prague and in the upper attic Saint Dominic, promoter of the rosary with the dog and the torch (Domini Canes), whose order had great influence from the sanctuary of La Peña de Francia. Above the tabernacle there is a copper painting of Our Lady of Sorrows.');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosanpedro', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablosanpedro', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablocristobatallas', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablocristobatallas', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablovirgendelcarmen', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'retablovirgendelcarmen', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'pilabautismal', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'pilasaguabendita', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'sacristia', 'en', '');
+//INSERT INTO monumento (categoriaMon, nombreMon, idioma, descMon) VALUES ('iglesia', 'espadaña', 'en', '');
 //
 //--------------------------------------------------------------
 //                   ----ARQUITECTURA----                      |
