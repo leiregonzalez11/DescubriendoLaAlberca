@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
 
 import android.os.Handler;
@@ -16,16 +17,21 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu2Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.retablosFragment;
 
 
 public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
 
     Animation slideAnimation;
     View plazaMView;
+    String monumento;
+    private final Bundle args = new Bundle();
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -45,6 +51,19 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
 
         assert getArguments() != null;
         String idioma = getArguments().getString("idioma");
+        args.putString("idioma", idioma);
+
+        TextView text1 = plazaMView.findViewById(R.id.plaza1text);
+        TextView text2 = plazaMView.findViewById(R.id.plaza2text);
+        TextView text3 = plazaMView.findViewById(R.id.plaza3text);
+
+        GestorDB dbHelper = new GestorDB(getContext());
+
+        String [] datos = dbHelper.obtenerInfoMonumentosConCat(idioma, "plaza", "plaza", 3);
+
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         setListeners(plazaMView);
 
@@ -62,17 +81,17 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
     }
 
     private void setListeners(View plazaMView) {
-        Button ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
+        ImageButton ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
         ayunt.setOnClickListener(this);
-        Button teatro = plazaMView.findViewById(R.id.buttonTeatro);
+        ImageButton teatro = plazaMView.findViewById(R.id.buttonTeatro);
         teatro.setOnClickListener(this);
-        Button biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
+        ImageButton biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
         biblio.setOnClickListener(this);
-        Button crucero = plazaMView.findViewById(R.id.buttonCrucero);
+        ImageButton crucero = plazaMView.findViewById(R.id.buttonCrucero);
         crucero.setOnClickListener(this);
-        Button unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
+        ImageButton unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
         unamuno.setOnClickListener(this);
-        Button escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
+        ImageButton escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
         escuelas.setOnClickListener(this);
     }
 
@@ -81,12 +100,16 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        Button btn = (Button) view;
+        ImageButton btn = (ImageButton) view;
+        DialogFragment fragment;
 
         switch (btn.getId()) {
             case R.id.buttonEscuelas:
-                String monumento = "antiguas escuelas";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                monumento = "antiguasescuelas";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Antiguas escuelas");
+                fragment = new plazaMFragment();
+                zoomIn(fragment, btn);
                 break;
             case R.id.buttonBiblioteca:
                 monumento = "biblioteca";
@@ -98,11 +121,17 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Cruz de la plaza");
+                fragment = new plazaMFragment();
+                zoomIn(fragment, btn);
                 break;
             case R.id.buttonAyuntamiento:
                 monumento = "ayuntamiento";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Ayuntamiento");
+                fragment = new plazaMFragment();
+                zoomIn(fragment, btn);
                 break;
             case R.id.buttonTeatro:
                 monumento = "teatro";
@@ -111,16 +140,16 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
         }
     }
 
-    /*public void zoomIn (DialogFragment fragment){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in3);
-        backgroundImage.startAnimation(slideAnimation);
+    public void zoomIn (DialogFragment fragment, View view){
+        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
+        view.startAnimation(slideAnimation);
 
         new Handler().postDelayed(() -> {
             fragment.setArguments(args);
             fragment.setCancelable(false);
             fragment.show(getChildFragmentManager(),"fragment");
         },900);
-    }*/
+    }
 
     public void zoomOut (){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);

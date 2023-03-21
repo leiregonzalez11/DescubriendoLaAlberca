@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.ermitasFragment">
+    tools:context=".mapsFragments.sitiosdeinteres.plaza.plazaMFragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
+        android:id="@+id/scrollviewP"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -21,96 +21,68 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloermita"
-                android:layout_width="wrap_content"
+                android:id="@+id/tituloplaza"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="-4dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/alex_brush"
-                android:textAlignment="gravity"
-                android:text=""
-                android:textColor="@color/black"
+                android:gravity='center'
                 android:textStyle="bold"
-                android:textSize="30sp" />
+                android:textColor="@color/black"
+                android:textSize="30sp"/>
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/ermita1text"
+                android:id="@+id/plazainfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginBottom="-40dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/ermitasfoto1"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:id="@+id/plazaimg1"
+                android:layout_width="330dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
                 android:src="@drawable/laalberca2"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/ermita2text"
+                android:id="@+id/plazainfotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <ImageView
-                android:id="@+id/ermitasfoto2"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:src="@drawable/laalberca2"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/ermita3text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
                 android:gravity="right"
                 android:orientation="horizontal">
 
-
                 <Button
-                    android:id="@+id/buttonVolverErmita"
+                    android:id="@+id/buttonVolverPlazaM"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -124,9 +96,7 @@
                     android:textSize="18sp"
                     tools:ignore="ButtonStyle" />
 
-
             </LinearLayout>
-
 
         </LinearLayout>
 
