@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.iglesia.retablosFragment">
+    tools:context=".mapsFragments.sitiosdeinteres.monumentos2">
 
     <ScrollView
-        android:id="@+id/scrollviewR"
+        android:id="@+id/scrollviewM2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloretablo"
+                android:id="@+id/titulomon2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -37,10 +37,32 @@
                 android:textSize="30sp"/>
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/retabloinfotext1"
+                android:id="@+id/monu2infotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/monu2img1"
+                android:layout_height="280dp"
+                android:layout_width="280dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/monu2infotext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="-20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
@@ -48,29 +70,6 @@
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
-
-            <ImageView
-                android:id="@+id/retabloimg1"
-                android:layout_width="330dp"
-                android:layout_height="280dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="-5dp"
-                android:src="@drawable/laalberca2"
-                tools:ignore="ContentDescription" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/retabloinfotext2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"/>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +81,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVolverRetablos"
+                    android:id="@+id/buttonVolverM2"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

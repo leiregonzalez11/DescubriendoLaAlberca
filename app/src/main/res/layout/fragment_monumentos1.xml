@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.iglesia.iglesiaMon1">
+    tools:context=".mapsFragments.sitiosdeinteres.monumentos1">
 
     <ScrollView
-        android:id="@+id/scrollviewIM"
+        android:id="@+id/scrollviewM"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloiglesiamon"
+                android:id="@+id/titulomon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -37,7 +37,7 @@
                 android:textSize="30sp"/>
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglemonuinfotext1"
+                android:id="@+id/monuinfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -50,11 +50,11 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/iglemonuimg1"
+                android:id="@+id/monuimg1"
+                android:layout_height="300dp"
                 android:layout_width="300dp"
-                android:layout_height="280dp"
-                android:layout_gravity="center"
                 android:layout_marginTop="-25dp"
+                android:layout_gravity="center"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
@@ -68,7 +68,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVolverIM"
+                    android:id="@+id/buttonVolverM"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

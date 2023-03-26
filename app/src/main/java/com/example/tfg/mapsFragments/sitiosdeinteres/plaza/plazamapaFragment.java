@@ -22,8 +22,9 @@ import android.widget.Toast;
 
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu2Fragment;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.retablosFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.info.infomonu2Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos2;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos3;
 
 
 public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
@@ -108,7 +109,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 monumento = "antiguasescuelas";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Antiguas escuelas");
-                fragment = new plazaMFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.buttonBiblioteca:
@@ -116,21 +117,21 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonUnamuno:
-                monumento = "retrato de unamuno";
+                monumento = "retratounamuno";
                 Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Cruz de la plaza");
-                fragment = new plazaMFragment();
+                fragment = new monumentos3();
                 zoomIn(fragment, btn);
                 break;
             case R.id.buttonAyuntamiento:
                 monumento = "ayuntamiento";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Ayuntamiento");
-                fragment = new plazaMFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.buttonTeatro:

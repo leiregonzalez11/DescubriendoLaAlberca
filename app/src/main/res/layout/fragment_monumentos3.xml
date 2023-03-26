@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.plaza.plazaMFragment">
+    tools:context=".mapsFragments.sitiosdeinteres.monumentos3">
 
     <ScrollView
-        android:id="@+id/scrollviewP"
+        android:id="@+id/scrollviewM3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloplaza"
+                android:id="@+id/titulomon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -37,11 +37,11 @@
                 android:textSize="30sp"/>
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/plazainfotext1"
+                android:id="@+id/monu3infotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
+                android:layout_marginBottom="-20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
                 android:textColor="@color/black"
@@ -50,27 +50,50 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/plazaimg1"
-                android:layout_width="330dp"
-                android:layout_height="280dp"
+                android:id="@+id/monu3img1"
+                android:layout_height="300dp"
+                android:layout_width="300dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="-25dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/plazainfotext2"
+                android:id="@+id/monu3infotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/amiri"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
+            <ImageView
+                android:id="@+id/monu3img2"
+                android:layout_height="300dp"
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-25dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.adapters.JustifyTextView
+                android:id="@+id/monu3infotext3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/amiri"
+                android:gravity='center'
+                android:textSize="18sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +105,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVolverPlazaM"
+                    android:id="@+id/buttonVolverM3"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

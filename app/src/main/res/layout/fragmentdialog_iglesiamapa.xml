@@ -66,62 +66,62 @@
 
             <ImageButton
                 android:id="@+id/buttonHornacina"
-                android:layout_width="40dp"
-                android:layout_height="38dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cuatro"
+                android:src="@drawable/tres"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.603"
+                app:layout_constraintHorizontal_bias="0.609"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.313" />
+                app:layout_constraintVertical_bias="0.426" />
 
             <ImageButton
                 android:id="@+id/buttonIglesia"
-                android:layout_width="55dp"
-                android:layout_height="50dp"
-                android:src="@drawable/tres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:src="@drawable/uno"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintHorizontal_bias="0.445"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.556" />
+                app:layout_constraintVertical_bias="0.533" />
 
             <ImageButton
                 android:id="@+id/buttonMarrano"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:src="@drawable/dos"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.242"
+                app:layout_constraintHorizontal_bias="0.262"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.502" />
+                app:layout_constraintVertical_bias="0.544" />
 
             <ImageButton
                 android:id="@+id/buttonpredio1"
                 android:layout_width="30dp"
                 android:layout_height="31dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cinco"
+                android:src="@drawable/cuatroi"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintHorizontal_bias="0.1"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.592" />
+                app:layout_constraintVertical_bias="0.599" />
 
             <ImageButton
                 android:id="@+id/buttonpredio2"
-                android:layout_width="30dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cinco"
+                android:src="@drawable/cuatroi"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
                 app:layout_constraintHorizontal_bias="0.408"
@@ -131,10 +131,10 @@
 
             <ImageButton
                 android:id="@+id/buttonpredio3"
-                android:layout_width="30dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cinco"
+                android:src="@drawable/cuatroi"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
                 app:layout_constraintHorizontal_bias="0.781"
@@ -142,44 +142,33 @@
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
                 app:layout_constraintVertical_bias="0.502" />
 
+
             <ImageButton
                 android:id="@+id/buttonpredio4"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:src="@drawable/cinco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/cuatroi"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintHorizontal_bias="0.151"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.412" />
-
+                app:layout_constraintVertical_bias="0.348" />
 
             <ImageButton
                 android:id="@+id/buttonpredio5"
-                android:layout_width="29dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cinco"
+                android:src="@drawable/cuatroi"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.918" />
-
-            <ImageButton
-                android:id="@+id/buttonCasaSS"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="#00FFFFFF"
-                android:src="@drawable/uno"
-                app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
-                app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.184"
-                app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
-                app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.831" />
+                app:layout_constraintVertical_bias="0.999" />
+            
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

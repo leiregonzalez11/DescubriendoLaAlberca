@@ -1,4 +1,4 @@
-package com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info;
+package com.example.tfg.mapsFragments.sitiosdeinteres.info;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -17,7 +17,7 @@ import android.widget.Button;
 
 import com.example.tfg.R;
 
-public class infoMonuFragment extends DialogFragment {
+public class infomonu2Fragment extends DialogFragment {
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -30,17 +30,15 @@ public class infoMonuFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        final View infomView = inflater.inflate(R.layout.fragment_info_monu, null);
+        final View infomView = inflater.inflate(R.layout.fragment_infomonu2, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(infomView);
 
-        Button volver = infomView.findViewById(R.id.buttonVolverInfo);
+        Button volver = infomView.findViewById(R.id.buttonVolverInfo2);
         volver.setOnClickListener(view -> dismiss());
 
         return builder.create();
     }
-
-
 }

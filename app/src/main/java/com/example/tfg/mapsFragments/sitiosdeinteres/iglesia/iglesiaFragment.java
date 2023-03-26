@@ -14,10 +14,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
+
 import com.example.tfg.R;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu3Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.info.infomonu3Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos1;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos2;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos3;
 
 public class iglesiaFragment extends DialogFragment implements View.OnClickListener {
 
@@ -113,23 +115,23 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
             case R.id.santocristo:
                 String monumento = "retablocristobatallas";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo del Santo Cristo");
-                fragment = new retablosFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.retablosanpedro:
                 monumento = "retablosanpedro";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de San Pedro");
-                fragment = new retablosFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de Santa Ana");
-                fragment = new retablosFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.pulpito:
@@ -142,21 +144,21 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "pilasaguabendita";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Pilas de agua bendita");
-                fragment = new iglesiaMon1();
+                fragment = new monumentos1();
                 zoomIn(fragment, btn);
                 break;
             case R.id.pilabautismal:
                 monumento = "pilabautismal";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Pila Bautismal");
-                fragment = new iglesiaMon1();
+                fragment = new monumentos1();
                 zoomIn(fragment, btn);
                 break;
             case R.id.retablocristosudor:
                 monumento = "retablocristosudor";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo del Cristo del Sudor");
-                //fragment = new retablosFragment();
+                //fragment = new monumentos2();
                 //zoomIn(fragment, btn);
                 break;
             case R.id.capillacentral:
@@ -166,7 +168,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "espadaña";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Espadaña");
-                fragment = new iglesiaMon1();
+                fragment = new monumentos1();
                 zoomIn(fragment, btn);
                 break;
             case R.id.portico1:
@@ -187,21 +189,21 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "sacristia";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Sacristía");
-                fragment = new iglesiaMon1();
+                fragment = new monumentos1();
                 zoomIn(fragment, btn);
                 break;
             case R.id.retablovirgencarmen:
                 monumento = "retablovirgendelcarmen";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Carmen");
-                fragment = new retablosFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
-                args.putString("retablo", monumento);
+                args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Rosario");
-                fragment = new retablosFragment();
+                fragment = new monumentos2();
                 zoomIn(fragment, btn);
                 break;
         }

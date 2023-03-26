@@ -36,7 +36,9 @@ import com.example.tfg.mapsFragments.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.mapsFragments.parking.senalParkingFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.ermitasFragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.iglesiamapaFragment;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infoMonuFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.info.infoMonuFragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos1;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos2;
 import com.example.tfg.mapsFragments.sitiosdeinteres.plaza.plazamapaFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
@@ -366,28 +368,34 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     public void monumentosOnClick(String monumento, View btn){
 
-        if (!monumento.contains("ermita") && !monumento.contains("info") && !monumento.equalsIgnoreCase("iglesia") && !monumento.equalsIgnoreCase("plazamayor")){
-            Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_SHORT).show();
+        args.putString("idioma", idioma);
+        DialogFragment fragment;
+        if (monumento.contains("ermita")){
+            fragment = new ermitasFragment();
+            args.putString("ermita", monumento);
+            zoomIn(fragment, btn);
+        } else if (monumento.equalsIgnoreCase("iglesia")){
+            fragment = new iglesiamapaFragment();
+            zoomIn(fragment, btn);
+        } else if (monumento.equalsIgnoreCase("plazamayor")){
+            fragment = new plazamapaFragment();
+            zoomIn(fragment, btn);
+        } else if (monumento.equalsIgnoreCase("antiguohospicio")){
+            fragment = new monumentos2();
+            args.putString("monumento", monumento);
+            args.putString("titulo", "Antiguo hospicio de los Carmelitas");
+            zoomIn(fragment, btn);
+        } else if (monumento.equalsIgnoreCase("plazasanantonio")){
+            fragment = new monumentos1();
+            args.putString("monumento", monumento);
+            args.putString("titulo", "Plaza San Antonio");
+            zoomIn(fragment, btn);
         } else{
-            args.putString("idioma", idioma);
-            DialogFragment fragment;
-            if (monumento.contains("ermita")){
-                fragment = new ermitasFragment();
-                args.putString("ermita", monumento);
-                zoomIn(fragment, btn);
-            } else if (monumento.equalsIgnoreCase("iglesia")){
-                fragment = new iglesiamapaFragment();
-                zoomIn(fragment, btn);
-            } else if (monumento.equalsIgnoreCase("plazamayor")){
-                fragment = new plazamapaFragment();
-                zoomIn(fragment, btn);
-            }else{
-                fragment = new infoMonuFragment();
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(),"plaza_fragment");
-            }
-
+            fragment = new infoMonuFragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"plaza_fragment");
         }
+
     }
 
     public void zoomIn (DialogFragment fragment, View view){

@@ -16,16 +16,16 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 import com.example.tfg.R;
-import com.example.tfg.mapsFragments.sitiosdeinteres.iglesia.info.infomonu1Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.info.infomonu1Fragment;
+import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos3;
 
 
 public class iglesiamapaFragment extends DialogFragment implements View.OnClickListener {
 
     private final Bundle args = new Bundle();
-    ImageButton iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano, casaSI;
+    ImageButton iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano;
     Animation slideAnimation;
     View iglesiaView;
 
@@ -73,8 +73,6 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
         marrano.setOnClickListener(this);
         iglesia = iglesiaView.findViewById(R.id.buttonIglesia);
         iglesia.setOnClickListener(this);
-        casaSI = iglesiaView.findViewById(R.id.buttonCasaSS);
-        casaSI.setOnClickListener(this);
         hornacina = iglesiaView.findViewById(R.id.buttonHornacina);
         hornacina.setOnClickListener(this);
         predio1 = iglesiaView.findViewById(R.id.buttonpredio1);
@@ -111,17 +109,16 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 DialogFragment iglesiaF = new iglesiaFragment();
                 zoomIn(iglesiaF, btn);
                 break;
-            case R.id.buttonCasaSS:
-                monumento = "casasantainquisición";
-                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
-                break;
             case R.id.buttonpredio1:
             case R.id.buttonpredio2:
             case R.id.buttonpredio3:
             case R.id.buttonpredio4:
             case R.id.buttonpredio5:
                 monumento = "predios";
-                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
+                DialogFragment fragment = new monumentos3();
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Predios");
+                zoomIn(fragment, btn);
                 break;
 
         }
