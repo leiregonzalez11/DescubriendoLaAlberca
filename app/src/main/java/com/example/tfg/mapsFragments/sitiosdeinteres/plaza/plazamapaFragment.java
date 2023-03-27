@@ -65,7 +65,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoMonumentosConCat(idioma, "plaza", "plaza", 3);
+        String [] datos = dbHelper.obtenerInfoMonumentos(idioma,"plaza", 3);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

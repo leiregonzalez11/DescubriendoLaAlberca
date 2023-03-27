@@ -5,23 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
-
 import com.example.tfg.ajustesFragments.alojamiento.Alojamiento;
 import com.example.tfg.ajustesFragments.comercio.Comercio;
 import com.example.tfg.ajustesFragments.restauracion.Establecimiento;
 import com.example.tfg.categoriasFragments.secundarias.cultura.diccionario.Palabra;
 import com.example.tfg.categoriasFragments.secundarias.gastronomia.Receta;
 import com.example.tfg.mapsFragments.otrosLugares.pueblos.Pueblo;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 public class GestorDB extends SQLiteOpenHelper {
 
@@ -492,24 +487,6 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Monumentos
-    public String[] obtenerInfoMonumentosConCat(String idioma, String categoriaMon, String nombreMonumento, int numTV) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        String descrip;
-        String [] descr = new String[numTV];
-        int i=0;
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descMon FROM monumento " +
-                "WHERE categoriaMon = ? AND nombreMon = ? AND idioma = ?;", new String[]{categoriaMon, nombreMonumento, idioma});
-        while (c.moveToNext()){
-            descrip = c.getString(0);
-            descr[i] = descrip;
-            i++;
-        }
-        c.close();
-        return descr;
-    }
-
     public String[] obtenerInfoMonumentos(String idioma, String nombreMonumento, int numTV) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
