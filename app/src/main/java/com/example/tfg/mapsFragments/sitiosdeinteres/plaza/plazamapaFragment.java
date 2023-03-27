@@ -17,14 +17,18 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.mapsFragments.sitiosdeinteres.info.infomonu2Fragment;
 import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos2;
 import com.example.tfg.mapsFragments.sitiosdeinteres.monumentos3;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 
 public class plazamapaFragment extends DialogFragment implements View.OnClickListener {
@@ -33,6 +37,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
     View plazaMView;
     String monumento;
     private final Bundle args = new Bundle();
+    private StorageReference storageRef;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
     @NonNull
@@ -67,6 +72,14 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         setListeners(plazaMView);
+
+        ImageView img1 = plazaMView.findViewById(R.id.plazafoto1);
+        ImageView img2 = plazaMView.findViewById(R.id.plazafoto2);
+
+        //Imagen
+        storageRef = FirebaseStorage.getInstance().getReference();
+        obtenerImagenFirebase("mapas/monumentos/plaza1.png", img1);
+        obtenerImagenFirebase("mapas/monumentos/plaza2.png", img2);
 
         ImageButton info = plazaMView.findViewById(R.id.moninfo2);
         info.setOnClickListener(view -> {
@@ -157,6 +170,12 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
         plazaMView.startAnimation(slideAnimation);
 
         new Handler().postDelayed(this::dismiss,900);
+    }
+
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
 }

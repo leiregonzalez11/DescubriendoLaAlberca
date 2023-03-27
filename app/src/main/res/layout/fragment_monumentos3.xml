@@ -51,11 +51,11 @@
 
             <ImageView
                 android:id="@+id/monu3img1"
-                android:layout_height="300dp"
+                android:layout_height="280dp"
                 android:layout_width="300dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-25dp"
-                android:layout_marginBottom="10dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
@@ -74,11 +74,11 @@
 
             <ImageView
                 android:id="@+id/monu3img2"
-                android:layout_height="300dp"
+                android:layout_height="280dp"
                 android:layout_width="300dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-25dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 

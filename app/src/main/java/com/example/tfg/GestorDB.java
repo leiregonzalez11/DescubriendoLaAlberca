@@ -26,7 +26,7 @@ import java.util.List;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 4;
     private final Context context;
     private boolean seguir = true;
 
@@ -66,6 +66,7 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS historia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS monumento");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS diccionario");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS fiesta");
         onCreate(sqLiteDatabase);
 
     }
@@ -143,12 +144,18 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla monumento
         query = "CREATE TABLE IF NOT EXISTS monumento (idMon INTEGER PRIMARY KEY AUTOINCREMENT, categoriaMon VARCHAR, nombreMon VARCHAR NOT NULL," +
                 "idioma VARCHAR(2) NOT NULL, descMon VARCHAR NOT NULL)";
-        Log.i("Tabla Historia: ", query);
+        Log.i("Tabla monumento: ", query);
         sqLiteDatabase.execSQL(query);
 
-        //Esquema de la tabla monumento
+        //Esquema de la tabla diccionario
         query = "CREATE TABLE IF NOT EXISTS diccionario (idDic INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, letra VARCHAR NOT NULL," +
                 "palabra VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
+        Log.i("Tabla diccionario: ", query);
+        sqLiteDatabase.execSQL(query);
+
+        //Esquema de la tabla fiesta
+        query = "CREATE TABLE IF NOT EXISTS diccionario (idFiesta INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, nombreFiesta VARCHAR NOT NULL," +
+                "fechaFiesta VARCHAR, descrFiesta VARCHAR NOT NULL)";
         Log.i("Tabla Historia: ", query);
         sqLiteDatabase.execSQL(query);
 
