@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.plaza.plazamapaFragment">
+    tools:context=".Maps.sitiosdeinteres.plaza.plazamapaFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -38,24 +38,23 @@
                     android:id="@+id/tituloplaza"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/alex_brush"
+                    android:fontFamily="casual"
                     android:text="Plaza Mayor"
                     android:textAlignment="gravity"
                     android:textColor="@color/black"
-                    android:textSize="35sp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/plaza1text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -69,15 +68,14 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/plaza2text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -91,15 +89,14 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/plaza3text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -114,7 +111,7 @@
                     android:id="@+id/plaza"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/alex_brush"
+                    android:fontFamily="casual"
                     android:text="Mapa de la plaza"
                     android:textAlignment="gravity"
                     android:textColor="@color/black"
@@ -248,9 +245,9 @@
                 android:id="@+id/textplazaiglesia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-25dp"
-                android:layout_marginBottom="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="casual"
                 android:text="@string/infomaps"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
@@ -274,7 +271,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginTop="-5dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="@string/volver"
                     android:textColor="@color/black"
                     android:textSize="18sp"

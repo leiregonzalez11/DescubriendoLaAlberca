@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ajustesFragments.Idiomas">
+    tools:context=".Ajustes.Idiomas">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,6 +20,8 @@
             android:layout_margin="15dp"
             android:layout_marginTop="10dp"
             app:cardCornerRadius="30dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +31,7 @@
                 android:id="@+id/layoutArte1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/fab_margin"
+                android:layout_margin="15dp"
                 android:layout_marginTop="@dimen/fab_margin"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -39,13 +41,13 @@
                     android:layout_width="323dp"
                     android:layout_height="58dp"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="-10dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="casual"
                     android:gravity="left"
                     android:text="@string/seleccione_un_idioma"
                     android:textAlignment="gravity"
                     android:textColor="@color/black"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -54,10 +56,10 @@
 
                 <RadioGroup
                     android:id="@+id/opciones_idiomas"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="-20dp"
+                    android:layout_marginTop="-18dp"
                     android:gravity="start"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +90,7 @@
                         android:layout_marginEnd="16dp"
                         android:textSize="23sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/amiri"
+                        android:fontFamily="casual"
                         android:text="@string/castellano" />
 
                     <!--
@@ -118,7 +120,7 @@
                         android:layout_marginEnd="16dp"
                         android:textSize="23sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/amiri"
+                        android:fontFamily="casual"
                         android:text="@string/euskera"/>
 
                     <!--
@@ -159,7 +161,7 @@
                         android:layout_marginEnd="16dp"
                         android:textSize="23sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/amiri"
+                        android:fontFamily="casual"
                         android:text="@string/ingles"
                         app:layout_constraintEnd_toStartOf="@+id/radio_castellano"
                         app:layout_constraintStart_toStartOf="parent"

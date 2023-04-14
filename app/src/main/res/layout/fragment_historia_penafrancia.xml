@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.penaFrancia.historiaPenaFrancia">
+    tools:context=".Maps.otrosLugares.penaFrancia.historiaPenaFrancia">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -35,47 +35,45 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text= "@string/historiamayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historiap1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="-50dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/historiaimg1"
                 android:layout_width="300dp"
                 android:layout_height="270dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historiap2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-50dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/historiaimg2"
@@ -85,17 +83,15 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historiap3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/historiaimg3"
@@ -105,17 +101,16 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historiap4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
         </LinearLayout>
 

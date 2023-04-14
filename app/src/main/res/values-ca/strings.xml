@@ -179,5 +179,15 @@
     <string name="sanblas">Ermita de San Blas</string>
     <string name="sanantonio">Ermita de San Antonio</string>
     <string name="cultura">Cultura</string>
+    <string name="facilidad_para_aparcar">FACILIDAD PARA APARCAR</string>
+    <string name="dificil">Dificil</string>
+    <string name="complicado">Complicado</string>
+    <string name="facil">Fácil</string>
+    <string name="la_boda_albercana">La Boda Albercana</string>
+    <string name="alboradas">Alboradas</string>
+    <string name="la_moza_de_animas">La moza de ánimas</string>
+    <string name="marrano">El Marrano de San Antón</string>
+    <string name="la_loa">La loa</string>
+    <string name="pe_a_de_francia">Peña de Francia</string>
 
 </resources>

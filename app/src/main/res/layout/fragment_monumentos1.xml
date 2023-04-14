@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.monumentos1">
+    tools:context=".Maps.sitiosdeinteres.monumentos1">
 
     <ScrollView
         android:id="@+id/scrollviewM"
@@ -27,25 +27,24 @@
 
             <TextView
                 android:id="@+id/titulomon"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:fontFamily="@font/alex_brush"
-                android:gravity='center'
+                android:fontFamily="casual"
+                android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="30sp"/>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/monuinfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -73,9 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="7dp"
-                    android:layout_marginTop="-10dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="@string/volver"
                     android:textStyle="bold"
                     android:textColor="@color/black"

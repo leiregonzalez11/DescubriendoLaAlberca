@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ajustesFragments.restauracion.establecimientoFragment">
+    tools:context=".EspacioDelViajero.restauracion.establecimientoFragment">
 
     <LinearLayout
         android:id="@+id/layoutAloj2"
@@ -23,7 +23,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="@font/alex_brush"
+            android:fontFamily="casual"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -77,8 +77,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="-12dp"
-                        android:fontFamily="@font/amiri"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="casual"
                         android:gravity='left'
                         android:textColor="@color/black"
                         android:textSize="19sp"/>
@@ -142,8 +142,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="-9dp"
-                        android:fontFamily="@font/amiri"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="casual"
                         android:gravity='left'
                         android:textColor="@color/black"
                         android:textSize="17sp"/>
@@ -170,9 +170,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

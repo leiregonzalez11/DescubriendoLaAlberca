@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:fontFamily="@font/aref_ruqaa"
+        android:fontFamily="casual"
         android:hint="@string/dialog_tour_titulo"
         android:textAlignment="gravity"
         android:textColor="#000000"
@@ -33,7 +33,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginBottom="7dp"
-        android:fontFamily="@font/aref_ruqaa"
+        android:fontFamily="casual"
         android:gravity='center'
         android:hint="@string/dialog_tour"
         android:textColor="#000000"

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".categoriasFragments.secundarias.cultura.diccionario.listapalabrasf">
+    tools:context=".Categorias.secundarias.cultura.diccionario.listapalabrasf">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:gravity="center_horizontal"
             android:text="A"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <ListView
@@ -47,11 +47,11 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="-5dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 tools:ignore="ButtonStyle" />
 
         </LinearLayout>

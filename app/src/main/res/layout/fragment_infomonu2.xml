@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.sitiosdeinteres.info.infomonu2Fragment">
+    tools:context=".Maps.sitiosdeinteres.info.infomonu2Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,20 +16,20 @@
             android:id="@+id/textaparcar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/amiri"
+            android:layout_marginTop="30dp"
+            android:fontFamily="casual"
             android:text="LISTA DE MONUMENTOS"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="18dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -47,12 +47,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Ayuntamiento"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -77,12 +77,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Crucero de la plaza"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -106,13 +106,13 @@
                 android:id="@+id/mon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Antiguas escuelas"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -137,12 +137,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Teatro"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -167,12 +167,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Retrato de Miguel de Unamuno"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -197,12 +197,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Biblioteca"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -221,9 +221,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.penaFrancia.lacasabajaFragment">
+    tools:context=".Maps.otrosLugares.penaFrancia.lacasabajaFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -26,9 +26,6 @@
             android:layout_height="wrap_content"
             android:gravity="left">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -51,10 +48,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="6dp"
                     android:layout_marginRight="4dp"
-                    android:layout_marginBottom="-4dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="casual"
                     android:hint="La Casa Baja"
                     android:textAlignment="gravity"
                     android:textColorHint="#000000"
@@ -63,16 +59,16 @@
 
             </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="-40dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -81,31 +77,28 @@
                 android:layout_width="300dp"
                 android:layout_height="270dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -117,16 +110,16 @@
                 android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -138,7 +131,7 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,7 +139,7 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -155,31 +148,29 @@
                 android:layout_width="300dp"
                 android:layout_height="270dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/casainfotext7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
@@ -198,9 +189,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="7dp"
-                    android:layout_marginTop="-10dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="Volver"
                     android:textStyle="bold"
                     android:textColor="@color/black"

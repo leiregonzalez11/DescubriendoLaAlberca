@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.penaFrancia.iglesia">
+    tools:context=".Maps.otrosLugares.penaFrancia.iglesia">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -39,12 +39,12 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
-            android:fontFamily="@font/alex_brush"
+            android:fontFamily="casual"
             android:gravity="center"
             android:text="@string/la_iglesia"
             android:textAlignment="gravity"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/iglesiatext"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,45 +52,43 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:targetApi="o" />
 
-        <com.example.tfg.adapters.JustifyTextView
+        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
             android:id="@+id/iglesiatext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:gravity='center'
-            android:textSize="18sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/iglesiatext2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iglesiainicio" />
 
-        <com.example.tfg.adapters.JustifyTextView
+        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
             android:id="@+id/iglesiatext2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="-20dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:gravity='center'
-            android:textSize="18sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/iglesiatext3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iglesiatext" />
 
-        <com.example.tfg.adapters.JustifyTextView
+        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
             android:id="@+id/iglesiatext3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="-20dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:gravity='center'
-            android:textSize="18sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +98,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="350dp"
                 android:layout_height="400dp"
-                android:layout_marginTop="-65dp"
+                android:layout_marginTop="-25dp"
                 android:src="@drawable/planoiglesia"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.557"
@@ -117,7 +115,7 @@
                 android:layout_marginEnd="70dp"
                 android:layout_marginBottom="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="casual"
                 android:text="@string/nave_izquierda"
                 android:focusableInTouchMode="true"
                 android:textSize="16sp"
@@ -136,7 +134,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="-15dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="casual"
                 android:text="@string/nave_derecha"
                 android:textSize="16sp"
                 android:focusableInTouchMode="true"
@@ -155,7 +153,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="casual"
                 android:text="@string/el_coro"
                 android:textSize="17sp"
                 android:focusableInTouchMode="true"
@@ -173,7 +171,7 @@
                 android:layout_height="54dp"
                 android:layout_marginStart="45dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/aref_ruqaa"
+                android:fontFamily="casual"
                 android:text="@string/altarmayor"
                 android:focusableInTouchMode="true"
                 android:textSize="16sp"
@@ -185,89 +183,6 @@
                 app:layout_constraintTop_toTopOf="@id/imageView2"
                 app:layout_constraintVertical_bias="0.092" />
 
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglesiatext4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView2" />
-
-            <ImageView
-                android:id="@+id/imageZona"
-                android:layout_width="350dp"
-                android:layout_height="300dp"
-                android:layout_marginTop="-35dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:layout_marginBottom="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.557"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iglesiatext4">
-
-            </ImageView>
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglesiatext5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageZona" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglesiatext6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iglesiatext5" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglesiatext7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iglesiatext6" />
-
-            <com.example.tfg.adapters.JustifyTextView
-                android:id="@+id/iglesiatext8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
-                android:gravity='center'
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iglesiatext7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.sitiosdeinteres.info.infoMonuFragment">
+    tools:context=".Maps.sitiosdeinteres.info.infoMonuFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,8 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/amiri"
+            android:layout_marginTop="30dp"
+            android:fontFamily="casual"
             android:text="LISTA DE MONUMENTOS"
             android:gravity='center'
             android:textStyle="bold"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -46,8 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Ermita de San Blás"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -76,8 +76,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Ermita del Humilladero"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -105,9 +105,9 @@
                 android:id="@+id/mon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Ermita de San Antonio"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -136,8 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Plaza de San Antonio"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -166,8 +166,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Antiguo Hospicio"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -196,8 +196,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Busto de Maurice Legendre"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -226,8 +226,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Iglesia Parroquial"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -256,8 +256,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Plaza Mayor"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -286,8 +286,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Las Espeñitas"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -316,8 +316,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Barrio El Castillo"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -346,8 +346,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Casa de cultura"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -376,8 +376,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="La Puente"
                 android:gravity='left'
                 android:textColor="@color/black"
@@ -400,9 +400,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

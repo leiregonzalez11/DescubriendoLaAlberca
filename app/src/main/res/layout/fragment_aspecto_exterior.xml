@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.arquitectura.aspectoExterior">
+    tools:context=".Categorias.secundarias.arquitectura.aspectoExterior">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -37,12 +37,12 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/la_casa_albercana"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"/>
 
             <LinearLayout
@@ -57,12 +57,11 @@
                     android:id="@+id/exttext"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
-                    android:layout_marginTop="-18dp"
                     android:layout_marginBottom="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:gravity="left"
                     android:text="@string/_1_aspecto_exterior"
                     tools:targetApi="o" />
@@ -95,17 +94,16 @@
 
             </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arqui21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/arqui21img"
@@ -116,17 +114,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arqui22"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="30dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/arqui22img"
@@ -137,17 +134,17 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arqui23"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/arqui23img"

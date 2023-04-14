@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.principal.rutasInicio">
+    tools:context=".Categorias.principal.rutasInicio">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -34,35 +34,34 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="40sp"
-                android:fontFamily="@font/alex_brush"
+                android:textSize="30sp"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/rutasmayus"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/rutas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/rutas_inicio"
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginRight="15dp"
-
                 android:layout_marginLeft="15dp"
-                android:layout_marginBottom="15dp"
+                app:strokeWidth="2dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
@@ -79,10 +78,8 @@
 
             <ImageView
                 android:id="@+id/rutasimg1"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                android:layout_marginTop="-100dp"
-                android:layout_marginBottom="-120dp"
+                android:layout_width="350dp"
+                android:layout_height="280dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 tools:ignore="ContentDescription">
@@ -94,7 +91,7 @@
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="35dp"
+                app:strokeWidth="3dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
@@ -107,7 +104,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -124,12 +121,11 @@
                             android:id="@+id/rutas3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="19sp"/>
 
                     </LinearLayout>
 
@@ -137,7 +133,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -154,12 +149,11 @@
                             android:id="@+id/rutas4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="19sp"/>
 
                     </LinearLayout>
 
@@ -167,7 +161,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -184,12 +177,12 @@
                             android:id="@+id/rutas5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="19sp"/>
 
                     </LinearLayout>
 
@@ -197,7 +190,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
@@ -214,12 +206,12 @@
                             android:id="@+id/rutas6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="18sp"/>
+                            android:textSize="19sp"/>
 
                     </LinearLayout>
 
@@ -229,32 +221,30 @@
 
             <ImageView
                 android:id="@+id/rutasimg7"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_width="350dp"
+                android:layout_height="280dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="-80dp"
-                android:layout_marginBottom="-100dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/rutas2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="-15dp"
+                android:fontFamily="casual"
                 android:paddingLeft="7dp"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/rutasimg2"
-                android:layout_width="wrap_content"
-                android:layout_height="400dp"
+                android:layout_width="300dp"
+                android:layout_height="380dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginBottom="20dp"

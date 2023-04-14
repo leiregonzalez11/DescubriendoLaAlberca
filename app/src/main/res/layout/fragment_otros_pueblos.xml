@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.otrosPueblos">
+    tools:context=".Maps.otrosLugares.otrosPueblos">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -29,22 +29,21 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="32sp"
+                android:textSize="25sp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/pueblos_de_la_sierra"
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/recetasTextIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="TEXTO DE INTRODUCCIÓN A OTROS PUEBLOS DE LA SIERRA DE FRANCIA \n"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
@@ -89,7 +88,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="-5dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -112,8 +110,7 @@
                             android:id="@+id/km"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/amiri"
-                            android:layout_marginTop="-10dp"
+                            android:fontFamily="casual"
                             android:layout_marginLeft="-5dp"
                             android:gravity='left'
                             android:text="@string/km_desde_la_alberca"
@@ -126,8 +123,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textColor="@color/black"
                             android:textSize="19sp"/>
@@ -138,6 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-5dp"
+                        android:layout_marginBottom="-5dp"
                         android:layout_gravity="left"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -154,9 +151,8 @@
                             android:id="@+id/fiesta"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-10dp"
                             android:layout_marginLeft="-5dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:text="@string/fiesta_mayor"
                             android:textStyle="bold"
@@ -168,8 +164,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="-10dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textColor="@color/black"
                             android:textSize="19sp"/>
@@ -184,19 +179,19 @@
                 android:id="@+id/imagepueblo"
                 android:layout_width="300dp"
                 android:layout_height="280dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/pueblosDescr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:paddingLeft="7dp"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'

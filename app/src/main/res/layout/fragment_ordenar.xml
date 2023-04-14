@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".dialogFragments.ordenarFragment">
+    tools:context=".OtherFiles.DialogFragments.ordenarFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,7 +19,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="-4dp"
-        android:fontFamily="@font/amiri"
+        android:fontFamily="casual"
         android:hint="Ordenar por..."
         android:textAlignment="gravity"
         android:textColorHint="#000000"
@@ -46,7 +46,7 @@
                 android:checked="false"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Orden alfabético" />
 
             <RadioButton
@@ -59,7 +59,7 @@
                 android:checked="false"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Orden alfabético inverso" />
 
             <RadioButton
@@ -73,7 +73,7 @@
                 android:textSize="22sp"
                 android:checked="false"
                 android:textStyle="bold"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Popularidad ascendente"/>
 
             <RadioButton
@@ -87,7 +87,7 @@
                 android:visibility="gone"
                 android:checked="false"
                 android:textStyle="bold"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Popularidad descendente" />
 
         </RadioGroup>

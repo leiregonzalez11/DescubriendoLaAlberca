@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.artesania.trajeserranoFragment">
+    tools:context=".Categorias.secundarias.artesania.trajeserranoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,8 @@
                 android:layout_height="50dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginRight="5dp"
-                android:background="#880E4F"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="15dp">
@@ -35,7 +36,6 @@
                     android:id="@+id/listviewfem"
                     android:layout_width="160dp"
                     android:layout_height="50dp"
-                    android:background="#880E4F"
                     android:gravity="center"
                     tools:ignore="NestedScrolling" />
 
@@ -46,7 +46,8 @@
                 android:layout_height="50dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginLeft="5dp"
-                android:background="#880E4F"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="15dp">
@@ -55,7 +56,6 @@
                     android:id="@+id/listviewmasc"
                     android:layout_width="160dp"
                     android:layout_height="50dp"
-                    android:background="#880E4F"
                     android:gravity="center"
                     tools:ignore="NestedScrolling" />
 
@@ -77,9 +77,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

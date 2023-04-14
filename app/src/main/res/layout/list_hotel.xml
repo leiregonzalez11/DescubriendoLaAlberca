@@ -9,21 +9,20 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="22dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="15dp"
-        app:srcCompat="@drawable/ic_hotel_solid"
-        tools:ignore="ContentDescription" />
+        app:srcCompat="@drawable/ic_hotel_solid"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:fontFamily="@font/amiri"
+        android:fontFamily="casual"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

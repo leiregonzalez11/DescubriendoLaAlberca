@@ -43,16 +43,16 @@
     <string name="aleman">Alemana</string>
     <string name="historiamayus">Historia</string>
     <string name="la_casa_albercana">La Albercako Etxeak</string>
-    <string name="_3_inscripciones">3. Inskripzioak</string>
+    <string name="_3_inscripciones">Inskripzioak</string>
     <string name="volver_a_categorias">Kategorietara itzuli</string>
     <string name="arquitecturamayus">Arkitektura</string>
-    <string name="_2_aspecto_interior">"2.  Barruko itxura "</string>
-    <string name="_1_aspecto_exterior">1. Kanpoko itxura</string>
+    <string name="_2_aspecto_interior">Barruko itxura</string>
+    <string name="_1_aspecto_exterior">Kanpoko itxura</string>
     <string name="artesaniamayus">Artisautza</string>
     <string name="el_bordado_serrano">Serrano Brodatua</string>
     <string name="traje_serrano">Soineko Serranoa</string>
-    <string name="traje_hombre">2. Gizonezko soinekoa</string>
-    <string name="traje_mujer">1. Emakumeko soinekoak</string>
+    <string name="traje_hombre">Gizonezko soinekoa</string>
+    <string name="traje_mujer">Emakumeko soinekoak</string>
     <string name="ajustes1">Nola iritsi?</string>
     <string name="ajustes2">Aplikazioaren hizkuntza</string>
     <string name="ajustes3">Non jan?</string>
@@ -149,6 +149,16 @@
     <string name="sanblas">San Blas baseliza</string>
     <string name="sanantonio">San Antonio baseliza</string>
     <string name="cultura">Kultura</string>
+    <string name="facilidad_para_aparcar">APARKATZEKO ERRAZTASUNA</string>
+    <string name="dificil">Nekeza</string>
+    <string name="complicado">Komplexua</string>
+    <string name="facil">Erraza</string>
+    <string name="la_boda_albercana">Alberkanar ezkontza</string>
+    <string name="alboradas">Alboradak</string>
+    <string name="la_moza_de_animas">Arima-neska</string>
+    <string name="marrano">San Antongo marranoa</string>
+    <string name="la_loa">Loa</string>
+    <string name="pe_a_de_francia">Peña de Francia</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

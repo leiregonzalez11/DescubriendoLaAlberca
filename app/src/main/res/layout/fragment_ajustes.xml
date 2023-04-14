@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".NavigationMenu.Ajustes">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -14,12 +13,6 @@
         android:scrollbarSize="8dp"
         android:background="@color/white"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UselessParent">
 
         <LinearLayout
@@ -33,16 +26,16 @@
 
             <TextView
                 android:id="@+id/ajustestext"
-                android:layout_width="323dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="40dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
-                android:text="@string/zona_de_usuarios"
+                android:text="@string/ajustes"
                 android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="45sp"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
@@ -58,7 +51,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listview"
+                    android:id="@+id/listviewA"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />
@@ -76,7 +69,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listview2"
+                    android:id="@+id/listview2A"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />
@@ -94,7 +87,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listview3"
+                    android:id="@+id/listview3A"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />
@@ -112,7 +105,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listview4"
+                    android:id="@+id/listview4A"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />

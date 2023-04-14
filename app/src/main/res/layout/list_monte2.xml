@@ -24,7 +24,7 @@
         android:layout_weight="1"
         android:layout_marginTop="-3dp"
         android:layout_marginLeft="-7dp"
-        android:fontFamily="@font/amiri"
+        android:fontFamily="casual"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="23sp"

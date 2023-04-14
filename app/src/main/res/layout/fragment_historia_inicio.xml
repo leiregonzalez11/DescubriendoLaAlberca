@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.principal.historiaInicio">
+    tools:context=".Categorias.principal.historiaInicio">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -32,7 +32,7 @@
                 android:id="@+id/pruebatextoh"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text= "1"
                 android:focusable="true"
@@ -41,7 +41,8 @@
                 android:textColor="@color/black"
                 android:textSize="0sp"
                 android:textStyle="bold"
-                tools:targetApi="o" />
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/historiatitulo"
@@ -49,27 +50,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text= "@string/historiamayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historia1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/histimg1"
@@ -79,18 +79,18 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historia2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/histimg2"
@@ -101,18 +101,18 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historia3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="-40dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/histimg3"
@@ -123,30 +123,100 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/historia4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
-            <ImageButton
-                android:id="@+id/historiabtn"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                app:tint="@color/black"
-                tools:ignore="ContentDescription">
-            </ImageButton>
+
+            <ImageView
+                android:id="@+id/histimg4"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                tools:ignore="ContentDescription" />
+
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/historia5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+            <ImageView
+                android:id="@+id/histimg5"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-10dp"
+                tools:ignore="ContentDescription" />
+
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/historia6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/historiabtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_circle_arrow_left_solid"
+                    android:textStyle="bold"
+                    app:tint="@color/black"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/historiabtn2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:visibility="invisible"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:src="@drawable/ic_circle_arrow_right_solid"
+                    android:textStyle="bold"
+                    app:tint="@color/black"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

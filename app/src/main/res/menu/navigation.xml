@@ -17,8 +17,13 @@
         android:icon="@drawable/maps_foreground"/>
 
     <item
+        android:id="@+id/navigation_viajero"
+        android:title="Espacio del Viajero"
+        android:icon="@drawable/person_foreground" />
+
+    <item
         android:id="@+id/navigation_ajustes"
         android:title="@string/ajustes"
-        android:icon="@drawable/person_foreground" />
+        android:icon="@drawable/settings" />
 
 </menu>

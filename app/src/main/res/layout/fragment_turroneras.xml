@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.gastronomia.turroneras">
+    tools:context=".Categorias.secundarias.gastronomia.turroneras">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -33,28 +33,28 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/turroneras"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/gastro31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/gastro31img"
@@ -66,17 +66,17 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/gastro32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-15dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/gastro32img"
@@ -88,29 +88,27 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/gastro33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="-10dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <Button
                 android:id="@+id/gastroAtras3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="-20dp"
                 android:layout_marginBottom="20dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
+                android:background="@drawable/borde_redondeado"
+                android:fontFamily="casual"
                 android:text="Arriba">
             </Button>
 

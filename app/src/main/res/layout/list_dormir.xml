@@ -21,10 +21,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:fontFamily="@font/amiri"
+        android:fontFamily="casual"
         android:textColor="@color/black"
+        android:layout_marginTop="2dp"
         android:textStyle="bold"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:layout_gravity="center_vertical" />
 
 </LinearLayout>

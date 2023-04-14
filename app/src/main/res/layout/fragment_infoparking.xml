@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.parking.infoparkingFragment">
+    tools:context=".Maps.parking.infoparkingFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/amiri"
-            android:text="FACILIDAD PARA APARCAR"
+            android:layout_marginTop="15dp"
+            android:fontFamily="casual"
+            android:text="@string/facilidad_para_aparcar"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -58,12 +58,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-9dp"
-                android:fontFamily="@font/amiri"
-                android:text="Dificil"
+                android:fontFamily="casual"
+                android:text="@string/dificil"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
         </LinearLayout>
 
@@ -99,12 +98,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-9dp"
-                android:fontFamily="@font/amiri"
-                android:text="Complicado"
+                android:fontFamily="casual"
+                android:text="@string/complicado"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
         </LinearLayout>
 
@@ -140,12 +138,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-9dp"
-                android:fontFamily="@font/amiri"
-                android:text="Fácil"
+                android:fontFamily="casual"
+                android:text="@string/facil"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
         </LinearLayout>
 
@@ -164,13 +161,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 tools:ignore="ButtonStyle" />
 
 

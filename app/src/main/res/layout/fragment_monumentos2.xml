@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.monumentos2">
+    tools:context=".Maps.sitiosdeinteres.monumentos2">
 
     <ScrollView
         android:id="@+id/scrollviewM2"
@@ -27,55 +27,52 @@
 
             <TextView
                 android:id="@+id/titulomon2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:fontFamily="@font/alex_brush"
-                android:gravity='center'
-                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/monu2infotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/monu2img1"
-                android:layout_height="280dp"
                 android:layout_width="300dp"
-                android:layout_marginTop="-20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_height="280dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/monu2infotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="-20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="15dp"
                 android:gravity="right"
                 android:orientation="horizontal">
@@ -86,13 +83,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="7dp"
-                    android:layout_marginTop="-10dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="@string/volver"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     tools:ignore="ButtonStyle" />
 
             </LinearLayout>

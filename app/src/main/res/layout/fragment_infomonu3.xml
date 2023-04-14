@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.info.infomonu3Fragment">
+    tools:context=".Maps.sitiosdeinteres.info.infomonu3Fragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -31,9 +31,9 @@
                 android:id="@+id/textaparcar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="casual"
                 android:text="LISTA DE MONUMENTOS"
                 android:gravity='center'
                 android:textStyle="bold"
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="18dp"
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
 
@@ -63,12 +63,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Capilla mayor"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -93,12 +93,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Sacristía"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -122,13 +122,13 @@
                     android:id="@+id/mon3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-5dp"
+                    android:layout_marginTop="7dp"
                     android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="Torre de la iglesia"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -153,12 +153,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo de Santa Ana"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -183,12 +183,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo de la Virgen del Rosario"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -213,12 +213,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Púlpito"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -243,12 +243,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo del Cristo de las Batallas"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -273,12 +273,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Pórticos"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -303,12 +303,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Pilas de agua bendita"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -333,12 +333,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Pila Bautismal"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -363,12 +363,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Espadaña"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -393,12 +393,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo de San Pedro"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -423,12 +423,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo del Santo Cristo del Sudor"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -453,12 +453,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Retablo de la Virgen del Carmen"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -483,12 +483,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
-                    android:fontFamily="@font/amiri"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="casual"
                     android:text="Capilla de la Virgen del Rosario"
                     android:gravity='left'
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -496,7 +496,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:gravity="right"
                 android:orientation="horizontal">
@@ -507,9 +507,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="7dp"
-                    android:layout_marginTop="-10dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="@string/volver"
                     android:textStyle="bold"
                     android:textColor="@color/black"

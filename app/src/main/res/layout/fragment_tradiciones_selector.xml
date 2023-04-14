@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.tradiciones.tradicionesSelector">
+    tools:context=".Categorias.secundarias.tradiciones.tradicionesSelector">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -34,12 +34,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/tradicionesmayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
@@ -151,7 +151,7 @@
                 android:textColor="@color/white"
                 android:background="#880E4F"
                 android:textStyle="bold"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/atras">
             </Button>
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ajustesFragments.ComoLlegar">
+    tools:context=".EspacioDelViajero.ComoLlegar">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -37,27 +37,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/comoLlegar2"
                 android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/comollegartextintro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:text="@string/introComoLlegar"
                 android:gravity='center'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
 
             <com.google.android.material.card.MaterialCardView
@@ -94,11 +94,10 @@
 
                         <TextView
                             android:id="@+id/encoche"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:layout_marginTop="-7dp"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/amiri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:text="@string/en_coche"
                             android:textColor="@color/black"
@@ -107,18 +106,19 @@
 
                     </LinearLayout>
 
-                    <com.example.tfg.adapters.JustifyTextView
+                    <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                         android:id="@+id/comollegartext1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="-40dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/amiri"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="-15dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="casual"
                         android:textColor="@color/black"
                         android:text="@string/comoLlegarCoche"
                         android:gravity='center'
-                        android:textSize="18sp"/>
+                        android:textSize="19sp"/>
 
                 </LinearLayout>
 
@@ -163,9 +163,8 @@
                             android:id="@+id/enbus"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:layout_marginTop="-7dp"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/amiri"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:text="@string/en_bus"
                             android:textColor="@color/black"
@@ -174,18 +173,19 @@
 
                     </LinearLayout>
 
-                    <com.example.tfg.adapters.JustifyTextView
+                    <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                         android:id="@+id/comollegartext2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="-30dp"
-                        android:fontFamily="@font/amiri"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="-15dp"
+                        android:fontFamily="casual"
                         android:textColor="@color/black"
                         android:text="@string/comoLlegarBus"
                         android:gravity='center'
-                        android:textSize="18sp"/>
+                        android:textSize="19sp"/>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"

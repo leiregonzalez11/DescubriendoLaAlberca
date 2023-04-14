@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".categoriasFragments.secundarias.cultura.diccionario.diccionario">
+    tools:context=".Categorias.secundarias.cultura.diccionario.diccionario">
 
     <LinearLayout
         android:id="@+id/layoutGastro"
@@ -19,23 +19,22 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textColor="@color/black"
-            android:fontFamily="@font/alex_brush"
+            android:fontFamily="casual"
             android:gravity="center"
             android:text="Diccionario Albercano"
             android:textAlignment="gravity"
             android:textStyle="bold"
             tools:targetApi="o" />
 
-        <com.example.tfg.adapters.JustifyTextView
+        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
             android:id="@+id/recetasTextIntro"
             android:layout_width="385dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="-40dp"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:text="Texto introducción a diccionario \n"
             android:textColor="@color/black"
             android:gravity='center_horizontal'

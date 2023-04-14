@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsFragments.sitiosdeinteres.info.infomonu1Fragment">
+    tools:context=".Maps.sitiosdeinteres.info.infomonu1Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,8 +16,8 @@
             android:id="@+id/textaparcar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/amiri"
+            android:layout_marginTop="30dp"
+            android:fontFamily="casual"
             android:text="LISTA DE MONUMENTOS"
             android:gravity='center'
             android:textStyle="bold"
@@ -29,7 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -47,12 +48,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Iglesia de Nª Señora de la Asunción"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -77,12 +79,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Escultura del Marrano de San Antón"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -90,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -106,13 +109,13 @@
                 android:id="@+id/mon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Hornacina de la Ánimas Benditas"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -120,6 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
@@ -137,12 +141,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="-5dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginTop="7dp"
+                android:fontFamily="casual"
                 android:text="Predios"
                 android:gravity='left'
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -161,9 +165,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

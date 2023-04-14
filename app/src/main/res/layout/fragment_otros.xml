@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.otrosLugares.otrosLugaresInicio">
+    tools:context=".Maps.otrosLugares.otrosLugaresInicio">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -29,32 +29,31 @@
 
             <TextView
                 android:id="@+id/otrostitulo"
-                android:layout_width="323dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/otrosmayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/otrostext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-25dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="@string/otros_lugares"
                 android:textAlignment="gravity"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 tools:targetApi="o" />
 
             <com.google.android.material.card.MaterialCardView
@@ -67,6 +66,22 @@
 
                 <ListView
                     android:id="@+id/listviewmajadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewhurdes"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="NestedScrolling" />

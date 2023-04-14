@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.principal.tradicionesInicio">
+    tools:context=".Categorias.principal.tradicionesInicio">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -34,37 +34,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/tradicionesmayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
             <LinearLayout
                 android:id="@+id/layoutvideo1"
@@ -78,7 +78,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="230dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     android:layout_marginBottom="15dp"
@@ -88,17 +88,23 @@
                     app:cardElevation="10dp"
                     app:cardCornerRadius="15dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/marrano"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     android:layout_marginBottom="15dp"
@@ -106,12 +112,18 @@
                     app:cardElevation="10dp"
                     app:cardCornerRadius="15dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/la_loa"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -129,7 +141,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="190dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
@@ -139,17 +151,23 @@
                     app:cardCornerRadius="15dp"
                     app:cardElevation="10dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/la_moza_de_animas"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="130dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
@@ -158,12 +176,18 @@
                     app:cardCornerRadius="15dp"
                     app:cardElevation="10dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="El Pendón"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -180,7 +204,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     android:layout_marginBottom="15dp"
@@ -189,17 +213,23 @@
                     app:cardElevation="10dp"
                     app:cardCornerRadius="15dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/alboradas"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     android:layout_marginBottom="15dp"
@@ -207,12 +237,18 @@
                     app:cardElevation="10dp"
                     app:cardCornerRadius="15dp">
 
-                    <ListView
-                        android:id="@+id/listviewtrad6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        tools:ignore="NestedScrolling" />
+                    <Button
+                        android:id="@+id/btntrad6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/la_boda_albercana"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"/>
 
                 </com.google.android.material.card.MaterialCardView>
 

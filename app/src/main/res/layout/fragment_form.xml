@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ajustesFragments.FormularioDeContacto">
+    tools:context=".Ajustes.FormularioDeContacto">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -33,22 +33,27 @@
                 android:id="@+id/ajustestext"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/formulario_de_contacto"
                 android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="38sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
                 app:cardElevation="10dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/black"
                 app:cardCornerRadius="15dp">
 
                 <LinearLayout
@@ -60,11 +65,11 @@
                         android:id="@+id/asuntoText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginBottom="-25dp"
+                        android:layout_marginBottom="0dp"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/amiri"
+                        android:fontFamily="casual"
                         android:gravity="left"
                         android:text="@string/asunto_del_mensaje"
                         android:textAlignment="gravity"
@@ -72,51 +77,52 @@
                         android:textStyle="bold"
                         tools:targetApi="o" />
 
-                    <EditText
-                        android:id="@+id/asunto"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/asuntoET"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:theme="@style/Theme.MaterialComponents.Light"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginBottom="-30dp"
-                        android:ems="10"
-                        android:fontFamily="@font/amiri"
-                        android:hint="@string/asuntoet"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPersonName"
-                        android:textSize="17sp"
-                        android:padding="15dp"
-                        android:textColor="#000000" />
+                        app:counterEnabled="true"
+                        app:counterMaxLength="30"
+                        app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                        app:counterTextAppearance="@style/Counter"
+                        app:errorEnabled="true"
+                        android:background="@color/white">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/asunto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:background="#00FFFFFF"
+                            android:fontFamily="casual"
+                            android:imeOptions="actionDone"
+                            android:textSize="19sp"
+                            android:hint="@string/asuntoet"
+                            android:paddingTop="35dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:id="@+id/mensajeText"
                         android:layout_width="323dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="0dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginBottom="-7dp"
-                        android:fontFamily="@font/amiri"
+                        android:layout_marginBottom="0dp"
+                        android:fontFamily="casual"
                         android:textColor="@color/black"
                         android:gravity="left"
                         android:text="@string/mensaje"
                         android:textAlignment="gravity"
                         android:textSize="23sp"
                         android:textStyle="bold"
-                        tools:targetApi="o" />
-
-                    <TextView
-                        android:id="@+id/mensajeText2"
-                        android:layout_width="323dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="-15dp"
-                        android:layout_marginBottom="-10dp"
-                        android:gravity="left"
-                        android:fontFamily="@font/amiri"
-                        android:text="@string/mensajeet"
-                        android:textAlignment="gravity"
-                        android:textColor="#66000000"
-                        android:textSize="18sp"
                         tools:targetApi="o" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -126,24 +132,31 @@
                         android:theme="@style/Theme.MaterialComponents.Light"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="30dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="500"
+                        app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                        app:counterTextAppearance="@style/Counter"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
                         android:background="@color/white">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/mensaje"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="-10dp"
                             android:background="#00FFFFFF"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:imeOptions="actionDone"
-                            android:textSize="17sp"
-                            android:paddingTop="15dp"
+                            android:textSize="19sp"
+                            android:hint="@string/mensajeet"
+                            android:paddingTop="35dp"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="5dp"
                             android:textColor="@color/black" />
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
@@ -154,12 +167,16 @@
                 android:id="@+id/btnEnviar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="18sp"
-                android:textColor="@color/white"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
-                android:textSize="15dp"
+                android:layout_margin="19sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
                 android:textStyle="bold"
+                android:fontFamily="casual"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
                 android:text="@string/enviar" />
 
 

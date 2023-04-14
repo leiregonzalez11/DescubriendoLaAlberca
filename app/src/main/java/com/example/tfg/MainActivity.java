@@ -11,11 +11,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.tfg.dialogFragments.ExitFragment;
-import com.example.tfg.navigationmenu.Ajustes;
-import com.example.tfg.navigationmenu.Categorias;
-import com.example.tfg.navigationmenu.Inicio;
-import com.example.tfg.navigationmenu.Maps;
+import com.example.tfg.OtherFiles.DialogFragments.ExitFragment;
+import com.example.tfg.NavigationMenu.Ajustes;
+import com.example.tfg.NavigationMenu.EspacioDelViajero;
+import com.example.tfg.NavigationMenu.Categorias;
+import com.example.tfg.NavigationMenu.Inicio;
+import com.example.tfg.NavigationMenu.Maps;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             case R.id.navigation_categoria:
                 fragment = Categorias.newInstance();
                 fragment_id = "categorias";
+                break;
+
+            case R.id.navigation_viajero:
+                fragment = EspacioDelViajero.newInstance();
+                fragment_id = "espaciodelviajero";
                 break;
 
             case R.id.navigation_ajustes:

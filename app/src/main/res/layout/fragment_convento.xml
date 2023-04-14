@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".mapsFragments.otrosLugares.penaFrancia.conventoFragment">
+    tools:context=".Maps.otrosLugares.penaFrancia.conventoFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -29,34 +29,33 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="20dp"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold"/>
 
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/santuariotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/santuariotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp" />
 
@@ -64,11 +63,10 @@
                 android:id="@+id/imageconv1"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="-15dp"
                 android:src="@drawable/laalberca2">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/santuariotext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,7 +74,7 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp" />
 
@@ -84,11 +82,10 @@
                 android:id="@+id/imageconv2"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="-15dp"
                 android:src="@drawable/laalberca2">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/santuariotext4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,19 +93,18 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/santuariotext5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="-20dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp" />
 
@@ -116,11 +112,11 @@
                 android:id="@+id/buttoncasabaja"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-30dp"
                 android:layout_marginBottom="20dp"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
-                android:textColor="@color/white"
+                android:background="@drawable/borde_redondeado"
+                android:fontFamily="casual"
+                android:textSize="18dp"
+                android:textColor="@color/black"
                 android:visibility="invisible"
                 android:textStyle="bold" />
 
@@ -139,9 +135,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="7dp"
-                    android:layout_marginTop="-10dp"
                     android:background="#00FFFFFF"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:text="@string/volver"
                     android:textStyle="bold"
                     android:textColor="@color/black"

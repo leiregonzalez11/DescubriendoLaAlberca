@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.artesania.trajesFemeninos">
+    tools:context=".Categorias.secundarias.artesania.trajesFemeninos">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -29,13 +29,13 @@
 
             <TextView
                 android:id="@+id/artetext"
-                android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/traje_serrano"
                 android:textAlignment="gravity"
@@ -44,13 +44,13 @@
             <TextView
                 android:id="@+id/exttext"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginBottom="-20dp"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity="left"
                 android:text="@string/traje_mujer" />
 
@@ -60,10 +60,11 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
                 app:cardCornerRadius="15dp">
 
                 <Spinner
@@ -76,45 +77,44 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
-        <LinearLayout
-            android:id="@+id/layoutFotoArte1"
-            android:layout_width="350dp"
-            android:layout_height="370dp"
-            android:layout_marginTop="-15dp"
-            android:layout_marginBottom="25dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/layoutFotoArte1"
+                android:layout_width="350dp"
+                android:layout_height="370dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/arte31img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:ignore="ContentDescription" >
-            </ImageView>
+                <ImageView
+                    android:id="@+id/arte31img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="ContentDescription" >
+                </ImageView>
 
-        </LinearLayout>
+            </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
             <ImageView
                 android:id="@+id/arte32img"
@@ -124,17 +124,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="19sp"/>
 
         </LinearLayout>
 

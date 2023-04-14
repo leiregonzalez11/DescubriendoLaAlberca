@@ -49,13 +49,13 @@
     <string name="volver_a_categorias">Back to Categories</string>
     <string name="atras">Previous</string>
     <string name="arquitecturamayus">Architecture</string>
-    <string name="_2_aspecto_interior">2. Interior appearance</string>
-    <string name="_1_aspecto_exterior">1. Exterior appearance</string>
+    <string name="_2_aspecto_interior">Interior appearance</string>
+    <string name="_1_aspecto_exterior">Exterior appearance</string>
     <string name="artesaniamayus">Handicrafts</string>
     <string name="el_bordado_serrano">The Serrano Embroidery</string>
     <string name="traje_serrano">The Serrano Suit</string>
-    <string name="traje_mujer">1. Women\'s suits</string>
-    <string name="traje_hombre">2. Men\'s suit</string>
+    <string name="traje_mujer">Women\'s suits</string>
+    <string name="traje_hombre">Men\'s suit</string>
     <string name="ajustes1">How to get?</string>
     <string name="ajustes2">Application\'s language</string>
     <string name="ajustes3">Where to eat?</string>
@@ -147,6 +147,16 @@
     <string name="sanblas">Hermitage of San Blas</string>
     <string name="sanantonio">Hermitage of San Antonio</string>
     <string name="cultura">Culture</string>
+    <string name="facilidad_para_aparcar">EASE OF PARKING</string>
+    <string name="dificil">Difficult</string>
+    <string name="complicado">Complicated</string>
+    <string name="facil">Easy</string>
+    <string name="la_boda_albercana">Albercana Weddings</string>
+    <string name="alboradas">Dawn choruses</string>
+    <string name="la_moza_de_animas">The wench of souls</string>
+    <string name="marrano">San Antón\'s pig</string>
+    <string name="la_loa">The Loa</string>
+    <string name="pe_a_de_francia">Peña de Francia</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

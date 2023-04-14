@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".categoriasFragments.secundarias.arquitectura.casaAlbercana">
+    tools:context=".Categorias.secundarias.arquitectura.casaAlbercana">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -37,8 +37,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alex_brush"
-                android:textSize="40sp"
+                android:fontFamily="casual"
+                android:textSize="30sp"
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="@string/la_casa_albercana"
@@ -64,10 +64,9 @@
                     android:id="@+id/exttext"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="casual"
                     android:textStyle="bold"
                     android:textSize="23sp"
-                    android:layout_marginTop="-18dp"
                     android:textColor="@color/black"
                     android:gravity="left"
                     android:text="@string/masinfo"
@@ -80,11 +79,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="7dp"
-                android:layout_marginBottom="-10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Casa Museo Satur y Juanela"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -114,7 +113,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
 
@@ -139,9 +140,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="-18dp"
                             android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:text="@string/horario2"
                             android:textColor="@color/black"
@@ -171,8 +171,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="-15dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -202,8 +201,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginBottom="-10dp"
-                            android:layout_marginTop="-15dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:text="@string/precio2"
                             android:textColor="@color/black"
@@ -234,8 +232,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="-15dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:gravity='left'
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -301,8 +298,7 @@
                             android:layout_marginLeft="7dp"
                             android:layout_marginRight="7dp"
                             android:layout_marginBottom="5dp"
-                            android:layout_marginTop="-16dp"
-                            android:fontFamily="@font/amiri"
+                            android:fontFamily="casual"
                             android:text="Calle Mesón, 7"
                             android:gravity='center'
                             android:textColor="@color/black"

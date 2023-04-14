@@ -50,14 +50,14 @@
     <string name="atras">Anterior</string>
     <string name="arquitecturamayus">Arquitectura</string>
     <string name="la_casa_albercana">La Casa Albercana</string>
-    <string name="_2_aspecto_interior">2. Aspecto Interior</string>
-    <string name="_1_aspecto_exterior">1. Aspecto Exterior</string>
-    <string name="_3_inscripciones">3. Inscripciones</string>
+    <string name="_2_aspecto_interior">Aspecto Interior</string>
+    <string name="_1_aspecto_exterior">Aspecto Exterior</string>
+    <string name="_3_inscripciones">Inscripciones</string>
     <string name="artesaniamayus">Artesanía</string>
     <string name="el_bordado_serrano">El Bordado Serrano</string>
     <string name="traje_serrano">El Traje Serrano</string>
-    <string name="traje_mujer">1. Los trajes de mujer</string>
-    <string name="traje_hombre">2. El traje de hombre</string>
+    <string name="traje_mujer">Los trajes de mujer</string>
+    <string name="traje_hombre">El traje de hombre</string>
     <string name="ajustes3">¿Dónde comer?</string>
     <string name="ajustes4">¿Dónde dormir?</string>
     <string name="zona_de_usuarios">Espacio del Viajero</string>
@@ -234,6 +234,16 @@
     <string name="sanblas">Ermita de San Blas</string>
     <string name="sanantonio">Ermita de San Antonio</string>
     <string name="cultura">Cultura</string>
+    <string name="facilidad_para_aparcar">FACILIDAD PARA APARCAR</string>
+    <string name="dificil">Dificil</string>
+    <string name="complicado">Complicado</string>
+    <string name="facil">Fácil</string>
+    <string name="la_boda_albercana">La Boda Albercana</string>
+    <string name="alboradas">Alboradas</string>
+    <string name="la_moza_de_animas">La moza de ánimas</string>
+    <string name="marrano">El Marrano de San Antón</string>
+    <string name="la_loa">La loa</string>
+    <string name="pe_a_de_francia">Peña de Francia</string>
 
 
 </resources>

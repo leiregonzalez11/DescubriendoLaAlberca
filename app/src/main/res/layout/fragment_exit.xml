@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".dialogFragments.ExitFragment">
+    tools:context=".OtherFiles.DialogFragments.ExitFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,7 +25,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="-4dp"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:hint="¿Seguro que quieres salir?"
             android:textAlignment="gravity"
             android:textColorHint="#000000"
@@ -48,10 +48,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/button_tour"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle" />
 
@@ -63,11 +63,11 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="Volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 tools:ignore="ButtonStyle" />
 
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.tradiciones.mozaDeAnimas">
+    tools:context=".Categorias.secundarias.tradiciones.mozaDeAnimas">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -39,23 +39,22 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
             <ImageView
                 android:id="@+id/imgTrad1"
@@ -67,17 +66,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
             <ImageView
                 android:id="@+id/imgTrad2"
@@ -89,30 +87,30 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
             <LinearLayout
                 android:id="@+id/layoutvideo1"
@@ -158,30 +156,30 @@
 
             </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-20dp"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-30dp"
-                android:fontFamily="@font/amiri"
+                android:layout_marginBottom="-10dp"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
             <LinearLayout
                 android:id="@+id/layoutvideo2"
@@ -227,19 +225,18 @@
 
             </LinearLayout>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="19sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/mozaAtras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -249,10 +246,12 @@
                 android:layout_marginBottom="30dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:background="#880E4F"
-                android:fontFamily="@font/amiri"
+                android:background="@color/white"
+                android:src="@drawable/ic_circle_arrow_left_solid"
+                app:tint="@color/black"
+                android:fontFamily="casual"
                 android:text="@string/atras">
-            </Button>
+            </ImageButton>
 
         </LinearLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mapsFragments.sitiosdeinteres.iglesia.iglesiaFragment">
+    tools:context=".Maps.sitiosdeinteres.iglesia.iglesiaFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="-15dp"
             android:orientation="horizontal">
 
@@ -24,18 +24,18 @@
                 android:id="@+id/tituloiglesia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:text="Iglesia"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="35sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/moninfo3"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:background="@color/white"
@@ -293,7 +293,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-35dp"
             android:layout_marginBottom="-5dp"
-            android:fontFamily="@font/amiri"
+            android:fontFamily="casual"
             android:textAlignment="gravity"
             android:text="@string/infomaps"
             android:textColor="@color/black"
@@ -303,6 +303,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
             android:gravity="right"
@@ -315,9 +316,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="5dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".categoriasFragments.secundarias.artesania.trajeMasculino">
+    tools:context=".Categorias.secundarias.artesania.trajeMasculino">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -30,13 +30,13 @@
 
             <TextView
                 android:id="@+id/artetext"
-                android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/alex_brush"
+                android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/traje_serrano"
                 android:textAlignment="gravity"
@@ -49,23 +49,23 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="20sp"
+                android:textSize="23sp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textStyle="bold"
                 android:gravity="left"
                 android:text="@string/traje_hombre" />
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="-25dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:gravity='center_horizontal' />
 
             <ImageView
@@ -76,16 +76,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:gravity='center_horizontal' />
 
             <ImageView
@@ -96,16 +96,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:gravity='center_horizontal' />
 
             <ImageView
@@ -116,18 +116,18 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.adapters.JustifyTextView
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arte44"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-40dp"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:gravity='center_horizontal'>
-            </com.example.tfg.adapters.JustifyTextView>
+            </com.example.tfg.OtherFiles.Adapters.JustifyTextView>
 
         </LinearLayout>
 
