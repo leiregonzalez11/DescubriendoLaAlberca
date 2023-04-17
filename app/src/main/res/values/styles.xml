@@ -6,7 +6,7 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">#880E4F</item>
-        <item name="colorPrimaryDark">#880E4F</item>
+        <item name="colorPrimaryDark">#B82071</item>
         <item name="colorAccent">#FF4081</item>
     </style>
 
@@ -16,7 +16,7 @@
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:fontFamily">casual</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="popupTheme">@style/PopupTheme</item>
         <item name="android:tint">#FFFFFF</item>

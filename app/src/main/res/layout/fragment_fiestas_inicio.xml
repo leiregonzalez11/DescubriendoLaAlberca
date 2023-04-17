@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".Categorias.principal.fiestasInicio">
 
     <ScrollView
@@ -16,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
@@ -23,11 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:background="@color/white"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/culturaTitulo"
+                android:id="@+id/fiestasTitulo"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -39,6 +42,130 @@
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+            
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/enerobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/febrerobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/marzobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/borde_redondeado_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/abrilbtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/white"/>
+
+                <ImageButton
+                    android:id="@+id/mayobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/juniobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/juliobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/borde_redondeado_black" />
+
+                <ImageButton
+                    android:id="@+id/agostobtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/borde_redondeado_black" />
+
+                <ImageButton
+                    android:id="@+id/septiembrebtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/borde_redondeado_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/octubrebtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/noviembrebtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/borde_redondeado_black" />
+
+                <ImageButton
+                    android:id="@+id/diciembrebtn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/white" />
+                
+            </LinearLayout>
 
         </LinearLayout>
 
