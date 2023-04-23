@@ -52,7 +52,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
 
         args = new Bundle();
 

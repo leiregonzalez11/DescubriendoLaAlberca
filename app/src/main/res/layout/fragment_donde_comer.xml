@@ -42,7 +42,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="25dp"
                 android:textColor="@color/black"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:fontFamily="casual"
                 android:text="@string/donde_comer_intro"
                 android:gravity="center"

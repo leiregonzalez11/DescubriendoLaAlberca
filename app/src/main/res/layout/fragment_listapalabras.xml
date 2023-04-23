@@ -24,7 +24,7 @@
 
         <ListView
             android:id="@+id/listviewpalabras"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="380dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
@@ -32,20 +32,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="29dp"
+            android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
             android:gravity="right"
             android:orientation="horizontal">
 
-
             <Button
                 android:id="@+id/buttonVolverPalabras"
-                android:layout_width="70dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-5dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

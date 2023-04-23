@@ -54,7 +54,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/loa2"
@@ -64,7 +64,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imgloa1"
@@ -85,7 +85,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imgloa2"
@@ -107,7 +107,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/loa5"
@@ -119,7 +119,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageButton
                 android:id="@+id/loaAtras"

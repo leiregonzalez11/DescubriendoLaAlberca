@@ -50,7 +50,7 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
         args = new Bundle();
     }
 

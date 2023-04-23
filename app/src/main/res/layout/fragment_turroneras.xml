@@ -54,7 +54,7 @@
                 android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/gastro31img"
@@ -76,7 +76,7 @@
                 android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/gastro32img"
@@ -97,7 +97,7 @@
                 android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/gastroAtras3"

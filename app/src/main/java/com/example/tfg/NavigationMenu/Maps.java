@@ -68,7 +68,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         TextView name = myToolbar.findViewById(R.id.name);
         name.setText(R.string.mapa);
         name.setTextSize(20);
-        setHasOptionsMenu(true);
+
         args = new Bundle();
         argsMenu = new Bundle(); //Argumentos para el menu de opciones
         argsMenu.putString("iu", "maps");

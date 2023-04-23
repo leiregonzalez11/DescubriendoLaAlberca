@@ -56,7 +56,7 @@ public class mozaDeAnimas extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
         }

@@ -14,7 +14,7 @@
         As the poet and professor from Alberca, Don José María Requejo, likes to say, La Alberca is… \n
     </string>
 
-    <string name="textoprincipal4" translatable="false">A Village To Dream Of</string>
+    <string name="textoprincipal4" translatable="false">A Village To Dream Of \n</string>
 
     <string name="dialog_tour_titulo">Welcome to La Alberca!</string>
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app? </string>
@@ -157,6 +157,7 @@
     <string name="marrano">San Antón\'s pig</string>
     <string name="la_loa">The Loa</string>
     <string name="pe_a_de_francia">Peña de Francia</string>
+    <string name="fiestas_notfound">No festivities were found this month…</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -187,18 +188,17 @@
     </string-array>
 
     <string-array name="recetasDulces">
-        <item>Bollo Maimón</item>
-        <item>Floretas</item>
-        <item>Leche Frita</item>
+        <item>Maimon bun</item>
+        <item>Florets</item>
         <item>Perrunillas</item>
         <item>Turuletes</item>
     </string-array>
 
     <string-array name="recetasSaladas">
-        <item>Cabrito Cuchifrito</item>
+        <item>Cuchifrito kid</item>
         <item>Hornazo</item>
-        <item>Limón Serrano</item>
-        <item>Patatas Meneás</item>
+        <item>Serrano lemon</item>
+        <item>Waggish potatoes</item>
         <item>Zorongollo</item>
     </string-array>
 

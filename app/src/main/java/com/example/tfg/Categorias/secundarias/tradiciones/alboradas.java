@@ -55,7 +55,7 @@ public class alboradas extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
         }

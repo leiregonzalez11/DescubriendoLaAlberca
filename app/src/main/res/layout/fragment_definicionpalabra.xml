@@ -22,7 +22,7 @@
             android:gravity='left'
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="35sp"/>
+            android:textSize="30sp"/>
 
 
         <LinearLayout
@@ -51,18 +51,16 @@
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="-10dp"
             android:layout_marginBottom="15dp"
             android:gravity="right"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonVolverDef"
-                android:layout_width="70dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

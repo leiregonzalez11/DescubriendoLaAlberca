@@ -42,7 +42,7 @@
                 android:text="@string/zona_de_usuarios"
                 android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="35sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 

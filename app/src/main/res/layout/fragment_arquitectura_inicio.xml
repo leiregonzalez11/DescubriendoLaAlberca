@@ -49,7 +49,7 @@
                 <com.smarteist.autoimageslider.SliderView
                     android:id="@+id/imageSliderArqui1"
                     android:layout_width="match_parent"
-                    android:layout_height="232dp"
+                    android:layout_height="220dp"
                     app:sliderAnimationDuration="600"
                     app:sliderAutoCycleDirection="right"
                     app:sliderAutoCycleEnabled="true"
@@ -70,7 +70,7 @@
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arqui11"
                 android:layout_height="wrap_content"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
@@ -82,7 +82,7 @@
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/arqui12"
                 android:layout_height="wrap_content"
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"

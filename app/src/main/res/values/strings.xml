@@ -14,7 +14,7 @@
         el Marrano de San Antón, su gastronomía… tantas y tantas razones que harán de su visita una experiencia inigualable.
         Como le gusta decir al poeta y catedrático albercano Don José María Requejo, La Alberca es…  \n</string>
 
-    <string name="textoprincipal4">Un Pueblo Para Soñar</string>
+    <string name="textoprincipal4">Un Pueblo Para Soñar \n</string>
 
     <string name="dialog_tour_titulo">¡Bienvenido a La Alberca!</string>
     <string name="dialog_tour"> ¿Eres nuevo? ¿Quieres hacer un tour por la aplicación?</string>
@@ -177,7 +177,6 @@
     <string-array name="recetasDulces">
         <item>Bollo Maimón</item>
         <item>Floretas</item>
-        <item>Leche Frita</item>
         <item>Perrunillas</item>
         <item>Turuletes</item>
     </string-array>
@@ -244,6 +243,7 @@
     <string name="marrano">El Marrano de San Antón</string>
     <string name="la_loa">La loa</string>
     <string name="pe_a_de_francia">Peña de Francia</string>
+    <string name="fiestas_notfound">No se encontraron fiestas este mes…</string>
 
 
 </resources>

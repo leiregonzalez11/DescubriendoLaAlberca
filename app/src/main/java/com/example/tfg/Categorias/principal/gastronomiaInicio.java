@@ -52,7 +52,7 @@ public class gastronomiaInicio extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setHasOptionsMenu(false);
+
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         TextView name = myToolbar.findViewById(R.id.name);
         name.setText(R.string.categorias);

@@ -53,7 +53,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imgpendon1"
@@ -74,7 +74,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/pendon3"
@@ -84,7 +84,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/pendon4"
@@ -94,7 +94,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/pendon5"
@@ -104,7 +104,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imgpendon2"
@@ -126,7 +126,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <ImageButton
                 android:id="@+id/pendonAtras"

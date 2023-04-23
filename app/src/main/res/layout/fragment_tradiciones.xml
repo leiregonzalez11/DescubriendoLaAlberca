@@ -39,7 +39,7 @@
                 android:text="@string/tradicionesmayus"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
@@ -52,7 +52,7 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/trad12"
@@ -64,193 +64,194 @@
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
-                android:textSize="19sp" />
+                android:textSize="18sp" />
 
             <LinearLayout
-                android:id="@+id/layoutvideo1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_marginBottom="-20dp"
-                android:layout_marginLeft="-20dp"
-                android:layout_marginRight="-20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/layoutvideo1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="-10dp"
-                    android:layout_marginRight="10dp"
-                    app:cardElevation="10dp"
-                    app:cardCornerRadius="15dp">
+                    android:layout_marginBottom="-20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btntrad2"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="@string/marrano"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="-10dp"
+                        android:layout_marginRight="10dp"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="15dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="@string/marrano"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    app:cardElevation="10dp"
-                    app:cardCornerRadius="15dp">
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <Button
-                        android:id="@+id/btntrad3"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="@string/la_loa"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="15dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="@string/la_loa"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
 
-            </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:id="@+id/layoutvideo2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_marginBottom="-15dp"
-                android:layout_marginLeft="-20dp"
-                android:layout_marginRight="-20dp"
-                android:orientation="horizontal">
+                </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/layoutvideo2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp">
+                    android:gravity="center"
+                    android:layout_marginBottom="-15dp"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btntrad1"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="@string/la_moza_de_animas"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="@string/la_moza_de_animas"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp">
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <Button
-                        android:id="@+id/btntrad5"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="El Pendón"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="El Pendón"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
 
-            </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:id="@+id/layoutvideo3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="70dp"
-                android:layout_marginLeft="-20dp"
-                android:layout_marginRight="-20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/layoutvideo3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    app:cardElevation="10dp"
-                    app:cardCornerRadius="15dp">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btntrad4"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="@string/alboradas"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="15dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="@string/alboradas"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    app:cardElevation="10dp"
-                    app:cardCornerRadius="15dp">
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <Button
-                        android:id="@+id/btntrad6"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp"
-                        android:text="@string/la_boda_albercana"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:background="@drawable/borde_redondeado"/>
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="15dp">
 
-                </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/btntrad6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:text="@string/la_boda_albercana"
+                            android:fontFamily="casual"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
 
             </LinearLayout>
 

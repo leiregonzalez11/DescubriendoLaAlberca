@@ -46,7 +46,7 @@ public class Inicio extends Fragment {
         TextView name = myToolbar.findViewById(R.id.name);
         name.setText(R.string.app_name);
         name.setTextSize(20);
-        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
+
         args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "inicio");
     }

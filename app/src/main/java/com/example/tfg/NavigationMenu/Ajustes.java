@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.tfg.Ajustes.Agradecimientos;
+import com.example.tfg.Ajustes.QuienesSomos;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.listViewAdapter;
 import com.example.tfg.Ajustes.FormularioDeContacto;
@@ -52,7 +54,7 @@ public class Ajustes extends Fragment {
         TextView name = myToolbar.findViewById(R.id.name);
         name.setText(R.string.ajustes);
         name.setTextSize(20);
-        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
+
         args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "ajustes");
 
@@ -128,6 +130,8 @@ public class Ajustes extends Fragment {
         listView3.setAdapter(myAdapter3);
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
+            fragment = Agradecimientos.newInstance();
+            cargarFragment(fragment);
         });
 
         /*---------------
@@ -143,6 +147,8 @@ public class Ajustes extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
+            fragment = QuienesSomos.newInstance();
+            cargarFragment(fragment);
         });
 
     }

@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.tfg.Categorias.secundarias.fiestas.fiestasElector;
 import com.example.tfg.R;
 import com.example.tfg.NavigationMenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
@@ -26,10 +27,11 @@ import com.google.firebase.storage.StorageReference;
 
 public class fiestasInicio extends Fragment implements View.OnClickListener {
 
-    private String idioma, path, mes;
+    private String idioma, mes, mesBBDD;
     private ImageButton btnenero, btnfebrero, btnmarzo, btnabril, btnmayo, 
             btnjunio, btnjulio, btnagosto, btnseptiembre, btnoctubre, btnnoviembre, btndiciembre;
     private StorageReference storageRef;
+    Bundle args;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -53,7 +55,6 @@ public class fiestasInicio extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setHasOptionsMenu(false);
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
@@ -69,7 +70,7 @@ public class fiestasInicio extends Fragment implements View.OnClickListener {
             idioma = getArguments().getString("idioma");
         }
 
-        Bundle args = new Bundle();
+        args = new Bundle();
         args.putString("idioma", idioma);
 
     }
@@ -116,45 +117,85 @@ public class fiestasInicio extends Fragment implements View.OnClickListener {
         switch (btn.getId()){
 
             case R.id.enerobtn:
-                mes = "enero";
+                mesBBDD = "enero";
+                if (idioma.equalsIgnoreCase("en")) mes = "January";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Urtarrila";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.febrerobtn:
-                mes = "febrero";
+                mesBBDD = "febrero";
+                if (idioma.equalsIgnoreCase("en")) mes = "February";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Otsaila";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.marzobtn:
-                mes = "marzo";
+                mesBBDD = "marzo";
+                if (idioma.equalsIgnoreCase("en")) mes = "March";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Martxoa";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.abrilbtn:
-                mes = "abril";
+                mesBBDD = "abril";
+                if (idioma.equalsIgnoreCase("en")) mes = "April";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Apirila";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.mayobtn:
-                mes = "mayo";
+                mesBBDD = "mayo";
+                if (idioma.equalsIgnoreCase("en")) mes = "May";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Maiatza";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.juniobtn:
-                mes = "junio";
+                mesBBDD = "junio";
+                if (idioma.equalsIgnoreCase("en")) mes = "June";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Ekaina";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.juliobtn:
-                mes = "julio";
+                mesBBDD = "julio";
+                if (idioma.equalsIgnoreCase("en")) mes = "July";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Uztaila";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.agostobtn:
-                mes = "agosto";
+                mesBBDD = "agosto";
+                if (idioma.equalsIgnoreCase("en")) mes = "August";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Abuztua";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.septiembrebtn:
-                mes = "septiembre";
+                mesBBDD = "septiembre";
+                if (idioma.equalsIgnoreCase("en")) mes = "September";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Iraila";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.octubrebtn:
-                mes = "octubre";
+                mesBBDD = "octubre";
+                if (idioma.equalsIgnoreCase("en")) mes = "October";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Urria";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.noviembrebtn:
-                mes = "noviembre";
+                mesBBDD = "noviembre";
+                if (idioma.equalsIgnoreCase("en")) mes = "November";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Azaroa";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
             case R.id.diciembrebtn:
-                mes = "diciembre";
+                mesBBDD = "diciembre";
+                if (idioma.equalsIgnoreCase("en")) mes = "December";
+                else if (idioma.equalsIgnoreCase("eu")) mes = "Abendua";
+                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
                 break;
         }
 
-        Toast.makeText(requireContext(), "Has pulsado: " + mes, Toast.LENGTH_SHORT).show();
+        args.putString("mes", mes);
+        args.putString("mesBBDD", mesBBDD);
+        Fragment fragment = fiestasElector.newInstance(args);
+        cargarFragment(fragment);
     }
+
 
     /** Setters de los listeners de las categorias */
     @SuppressLint("WrongViewCast")
@@ -162,7 +203,7 @@ public class fiestasInicio extends Fragment implements View.OnClickListener {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        path = "categorias/fiestas/portadameses/" + idioma + "/enero-" + idioma + ".png";
+        String path = "categorias/fiestas/portadameses/" + idioma + "/enero-" + idioma + ".png";
         btnenero.setOnClickListener(this);
         obtenerImagenFirebase(path, btnenero);
 

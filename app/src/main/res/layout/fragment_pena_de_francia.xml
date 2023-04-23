@@ -53,7 +53,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/pena12"
@@ -65,7 +65,7 @@
                 android:fontFamily="casual"
                 android:textStyle="italic"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/penaimg1"
@@ -86,7 +86,7 @@
                 android:textStyle="italic"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/penaimg2"
@@ -106,7 +106,7 @@
                 android:textStyle="italic"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/penaimg3"
@@ -125,7 +125,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/mapViewPena"
@@ -149,7 +149,7 @@
                     android:text="@string/historiamayus"
                     android:fontFamily="casual"
                     android:textStyle="bold"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textColor="#000000"
                     android:background="@drawable/borde_redondeado"/>
 
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:text="@string/quevisitar"
                     android:fontFamily="casual"
                     android:textStyle="bold"
@@ -177,7 +177,7 @@
                 android:text="@string/descubrimientovirgen"
                 android:fontFamily="casual"
                 android:textStyle="bold"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:textColor="#000000"
                 android:background="@drawable/borde_redondeado"/>
 
@@ -192,7 +192,7 @@
                 android:textStyle="italic"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textSize="19sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 

@@ -51,7 +51,7 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
 
         args = new Bundle();
 

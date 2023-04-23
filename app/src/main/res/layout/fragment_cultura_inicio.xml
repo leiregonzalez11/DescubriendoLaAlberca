@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:textStyle="bold"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:textColor="#000000"
                 android:background="@drawable/borde_redondeado"
                 android:text="Diccionario" />

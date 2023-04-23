@@ -50,7 +50,7 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
+
         args = new Bundle();
     }
 

@@ -1,74 +1,57 @@
-package com.example.tfg.Categorias.principal;
+package com.example.tfg.Ajustes;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import com.example.tfg.R;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import android.annotation.SuppressLint;
-import android.widget.Button;
-import android.widget.TextView;
-
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import com.example.tfg.Categorias.secundarias.cultura.diccionario.diccionario;
-import com.example.tfg.NavigationMenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class culturaInicio extends Fragment {
+import com.example.tfg.NavigationMenu.Ajustes;
+import com.example.tfg.NavigationMenu.Categorias;
+import com.example.tfg.R;
 
-    Bundle args;
-    private String idioma;
-    Button btndic;
+import java.util.Locale;
+
+public class QuienesSomos extends Fragment {
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static culturaInicio newInstance(Bundle args) {
-        culturaInicio fragment = new culturaInicio();
-        if (args != null){
-            fragment.setArguments(args);
-        }
-        return fragment;
+    public static QuienesSomos newInstance() {
+        return new QuienesSomos();
     }
 
     /** Required empty public constructor */
-    public culturaInicio() {}
+    public QuienesSomos() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
-        name.setText(R.string.categorias);
+        name.setText(R.string.ajustes);
         name.setTextSize(20);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
-            Fragment fragment = Categorias.newInstance();
+            Fragment fragment = Ajustes.newInstance();
             cargarFragment(fragment);
         });
-
-        args = new Bundle();
-
-        if (getArguments() != null) {
-            idioma = getArguments().getString("idioma");
-        }
-
-        args.putString("idioma", idioma);
-
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -78,23 +61,18 @@ public class culturaInicio extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_cultura_inicio, container, false);
+        View v =  inflater.inflate(R.layout.fragment_quienessomos, container, false);
         if(v != null){
-            btndic = v.findViewById(R.id.diccionario);
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        btndic.setOnClickListener(v -> {
-            Fragment fragment = diccionario.newInstance(args);
-            cargarFragment(fragment);
-        });
+        
 
     }
 
