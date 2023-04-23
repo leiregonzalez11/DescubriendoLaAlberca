@@ -160,6 +160,8 @@
     <string name="la_loa">Loa</string>
     <string name="pe_a_de_francia">Peña de Francia</string>
     <string name="fiestas_notfound">Hilabete honetan ez da jairik aurkitu…</string>
+    <string name="agradecimientotext">Aplikazio hau herri batenganako, bere jendearenganako eta bere ohiturekiko maitasunetik sortzen da. Zorte handia izan dut jaio nintzenetik, eta topikoa badirudi ere, ez dago bere historia eta sustraiak La Albercak baino gehiago neurtzen dituen herririk.\n\nEskerrak eman nahi dizkiet proiektu ero honetan zuzenean edo zeharka parte hartu duten guztiei. Herri zoragarri honi buruz ikertzen eman duzuen denborak, bertan hartu dituzuen argazkiek eta La Albercari diozuen maitasuna munduari zabaltzeko dedikazioak aplikazio honen emaitza pentsa nezakeen baino askoz hobea izatea eragin dute. Eskerrik asko, bihotzez.\n\nEskerrik asko familiari eta lagunei etengabeko laguntzagatik eta ilusioagatik aplikazioaren eguneratze bakoitzaren aurrerapenak ikustean eta nolabait bertan ordezkatuta daudela ikustean.\n\nAzkenik, eskerrik asko amari eta izeba Francisi une oro laguntzeko prest egoteagatik. Aplikazio hau zuena bezain nirea da.\n\nZuri esker, hau irakurtzen ari zaren gailuaren pantailaren atzean zaudenez, zeu zara aplikazio hori egoteko arrazoi nagusia. Orain eginkizun bakarra duzu:\n\n</string>
+    <string name="agradecimientostext2">La Alberca Deskubritzen disfrutatu \n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

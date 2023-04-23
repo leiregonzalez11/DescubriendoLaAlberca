@@ -42,7 +42,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private ImageView img1;
     private Spinner spinner;
     private ImageButton btnminfo;
-    private Bundle args, argsMenu;
+    private Bundle args;
     Animation slideAnimation;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
@@ -70,7 +70,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         name.setTextSize(20);
 
         args = new Bundle();
-        argsMenu = new Bundle(); //Argumentos para el menu de opciones
+        Bundle argsMenu = new Bundle(); //Argumentos para el menu de opciones
         argsMenu.putString("iu", "maps");
     }
 

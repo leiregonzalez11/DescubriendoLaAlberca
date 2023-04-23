@@ -260,7 +260,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                obtenerImagenFirebase("mapas/otros/penafrancia/altarmayor.png", img1);
+                obtenerImagenFirebase("mapas/otros/penafrancia/altarmayor.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;

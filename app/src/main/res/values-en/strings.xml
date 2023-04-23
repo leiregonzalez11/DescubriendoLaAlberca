@@ -158,6 +158,8 @@
     <string name="la_loa">The Loa</string>
     <string name="pe_a_de_francia">Peña de Francia</string>
     <string name="fiestas_notfound">No festivities were found this month…</string>
+    <string name="agradecimientotext">This application was born out of love for a town, its people and its customs. I have been lucky enough to be part of them since I was born, and although it may sound cliché, there is no town that pampers its history and roots more than La Alberca. \n\nI would like to thank all the people who, directly or indirectly, have been involved in this crazy project. The time you have spent researching this wonderful village, the photographs you have taken of it and the dedication to spread the love you feel for La Alberca to the world have made the result of this application much better than I could have imagined. Thank you from the bottom of my heart. \n\nThanks to my family and friends for their constant support and for the excitement of seeing the progress of each update of the application and seeing that in some way, they are represented in it.\n\nFinally, thanks to my mother and my aunt Francis for being willing to collaborate at all times. This application is as much mine as it is yours.\n\nThanks to you, who are behind the screen of your device reading this, you are the main reason why this application exists. Now you only have one mission left:\n\n</string>
+    <string name="agradecimientostext2">Enjoying Discovering La Alberca\n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
