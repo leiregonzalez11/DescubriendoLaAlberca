@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.tradiciones.laLoa">
+    tools:context=".Maps.otrosLugares.batuecas">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -12,16 +11,10 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutTrad11"
+            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -29,111 +22,115 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloloa"
-                android:layout_width="350dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="30sp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity="center"
+                android:text= "@string/batuecas"
                 android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
+
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/loa1"
+                android:id="@+id/bat11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/bat12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/batimg1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/bat13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/loa2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/imgloa1"
+                android:id="@+id/batimg2"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:src="@drawable/laalberca2"
+                android:layout_height="250dp"
                 android:padding="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/loa3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imgloa2"
-                android:layout_width="match_parent"
-                android:layout_height="230dp"
                 android:src="@drawable/laalberca2"
-                android:padding="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
+                android:layout_gravity="center"
+                tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/loa4"
+                android:id="@+id/bat14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="-30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/loa5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="-20dp"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapViewbat"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="300dp"
+                android:layout_height="190dp" />
 
-            <ImageButton
-                android:id="@+id/loaAtras"
+            <Button
+                android:id="@+id/btnbat1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="30dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:background="@color/white"
-                android:src="@drawable/ic_circle_arrow_left_solid"
-                app:tint="@color/black"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:text="@string/quevisitar"
                 android:fontFamily="casual"
-                android:text="@string/atras">
-            </ImageButton>
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"/>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/bat15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
 
         </LinearLayout>
 

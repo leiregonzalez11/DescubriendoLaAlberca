@@ -63,7 +63,7 @@
                 app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.94"
+                app:layout_constraintVertical_bias="0.97"
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp">
 
@@ -204,7 +204,7 @@
                 android:id="@+id/btnm4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/oncei"
+                android:src="@drawable/nueve"
                 android:background="#00000000"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
@@ -250,7 +250,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
-                android:src="@drawable/docei"
+                android:src="@drawable/oncei"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
@@ -258,21 +258,6 @@
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
                 app:layout_constraintVertical_bias="0.915"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/btnm8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/nueve"
-                android:background="#00000000"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@id/mapa"
-                app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.434"
-                app:layout_constraintStart_toStartOf="@id/mapa"
-                app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.81"
                 tools:ignore="ContentDescription" />
 
             <ImageButton
@@ -349,7 +334,7 @@
                 app:layout_constraintHorizontal_bias="0.046"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.872"
+                app:layout_constraintVertical_bias="0.892"
                 app:tint="@color/black"
                 tools:ignore="ContentDescription" />
 

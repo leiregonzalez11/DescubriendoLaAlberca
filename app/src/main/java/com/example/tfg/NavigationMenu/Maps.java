@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
@@ -46,7 +47,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     Animation slideAnimation;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
-    private ImageButton btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm8,btnm9,btnm10,btnm11,btnm12;
+    private ImageButton btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -100,7 +101,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm5 = v.findViewById(R.id.btnm5);
             btnm6 = v.findViewById(R.id.btnm6);
             btnm7 = v.findViewById(R.id.btnm7);
-            btnm8 = v.findViewById(R.id.btnm8);
             btnm9 = v.findViewById(R.id.btnm9);
             btnm10 = v.findViewById(R.id.btnm10);
             btnm11 = v.findViewById(R.id.btnm11);
@@ -252,7 +252,8 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
             if ( parking.equalsIgnoreCase("eras2")){
                 args.putInt("aparcar", 66);
-            } else if (parking.equalsIgnoreCase("sanantonio") || parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
+            } else if (parking.equalsIgnoreCase("sanantonio") ||
+                    parking.equalsIgnoreCase("afueras") || parking.equalsIgnoreCase("caravanas")){
                 args.putInt("aparcar", 100);
             } else{
                 args.putInt("aparcar", 33);
@@ -275,19 +276,18 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     public void setBtnMonumentos(){
 
-        btnm1.setOnClickListener(view -> monumentosOnClick("iglesia", btnm1));
-        btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor", btnm2));
-        btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo", btnm3));
-        btnm4.setOnClickListener(view -> monumentosOnClick("miradorsantafe", btnm4));
-        btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio", btnm5));
-        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre", btnm6));
-        btnm7.setOnClickListener(view -> monumentosOnClick("lapuente", btnm7));
-        btnm8.setOnClickListener(view -> monumentosOnClick("lasespeñitas", btnm8));
-        btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas", btnm9));
-        btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio", btnm10));
-        btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero", btnm11));
-        btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio", btnm12));
-        btnminfo.setOnClickListener(view -> monumentosOnClick("infomonumentos", btnminfo));
+        btnm1.setOnClickListener(view -> monumentosOnClick("iglesia", "Iglesia", btnm1));
+        btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor", "Plaza Mayor", btnm2));
+        btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo", "Barrio El Castillo", btnm3));
+        btnm4.setOnClickListener(view -> monumentosOnClick("casadecultura", "Casa de Cultura", btnm4));
+        btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio", "Antiguo hospicio de los Carmelitas", btnm5));
+        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre", "Busto de Maurice Legendre", btnm6));
+        btnm7.setOnClickListener(view -> monumentosOnClick("lapuente", "La Puente", btnm7));
+        btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas", "Ermita de San Blás", btnm9));
+        btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio", "Plaza San Antonio", btnm10));
+        btnm11.setOnClickListener(view -> monumentosOnClick("ermitadelhumilladero", "Ermita del Humilladero", btnm11));
+        btnm12.setOnClickListener(view -> monumentosOnClick("ermitasanantonio", "Ermita San Antonio", btnm12));
+        btnminfo.setOnClickListener(view -> monumentosOnClick("infomonumentos", "infobutton", btnminfo));
 
     }
 
@@ -301,7 +301,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm5.setVisibility(View.VISIBLE);
             btnm6.setVisibility(View.VISIBLE);
             btnm7.setVisibility(View.VISIBLE);
-            btnm8.setVisibility(View.VISIBLE);
             btnm9.setVisibility(View.VISIBLE);
             btnm10.setVisibility(View.VISIBLE);
             btnm11.setVisibility(View.VISIBLE);
@@ -317,7 +316,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm5.setVisibility(View.INVISIBLE);
             btnm6.setVisibility(View.INVISIBLE);
             btnm7.setVisibility(View.INVISIBLE);
-            btnm8.setVisibility(View.INVISIBLE);
             btnm9.setVisibility(View.INVISIBLE);
             btnm10.setVisibility(View.INVISIBLE);
             btnm11.setVisibility(View.INVISIBLE);
@@ -327,7 +325,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
-    public void monumentosOnClick(String monumento, View btn){
+    public void monumentosOnClick(String monumento, String titulo, View btn){
 
         args.putString("idioma", idioma);
         DialogFragment fragment;
@@ -344,17 +342,20 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         } else if (monumento.equalsIgnoreCase("antiguohospicio")){
             fragment = new monumentos2();
             args.putString("monumento", monumento);
-            args.putString("titulo", "Antiguo hospicio de los Carmelitas");
+            args.putString("titulo", titulo);
             zoomIn(fragment, btn);
-        } else if (monumento.equalsIgnoreCase("plazasanantonio")){
+        } else if (monumento.equalsIgnoreCase("plazasanantonio") || monumento.equalsIgnoreCase("lapuente")
+                || monumento.equalsIgnoreCase("barrioelcastillo")){
             fragment = new monumentos1();
             args.putString("monumento", monumento);
-            args.putString("titulo", "Plaza San Antonio");
+            args.putString("titulo", titulo);
             zoomIn(fragment, btn);
-        } else{
+        } else if (monumento.equalsIgnoreCase("infomonumentos")){
             fragment = new infoMonuFragment();
             fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"plaza_fragment");
+            fragment.show(getChildFragmentManager(),"info_fragment");
+        } else {
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
         }
 
     }

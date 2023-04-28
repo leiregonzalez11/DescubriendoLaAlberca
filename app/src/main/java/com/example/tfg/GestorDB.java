@@ -21,7 +21,7 @@ import java.util.LinkedList;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 7;
+    private static final int DB_VERSION = 12;
     private final Context context;
     private boolean seguir = true;
 
@@ -429,12 +429,12 @@ public class GestorDB extends SQLiteOpenHelper {
         return pueblos;
     }
 
-    public Double [] obtenerUbiPena (){
+    public Double [] obtenerUbiLugares (String categoria){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Double [] descr = new Double[2];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = 'peñadefrancia' AND nombreOtro = 'principal';", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria + "' AND nombreOtro = 'principal';", null);
         while (c.moveToNext()){
             for (int j = 0; j < 2; j++){
                 c.getString(j);
@@ -446,7 +446,7 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
-    public String [] obtenerInfoPena (String idioma, String lugar, String categoria, Integer numTV){
+    public String [] obtenerInfoLugares (String idioma, String lugar, String categoria, Integer numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 

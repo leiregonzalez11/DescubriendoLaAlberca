@@ -147,7 +147,11 @@ public class historiaInicio extends Fragment {
                 text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 pruebatexto.requestFocus();
 
-            obtenerImagenFirebase("categorias/historia/historia6.png", img1);
+                obtenerImagenFirebase("categorias/historia/historia1.png", img1);
+                obtenerImagenFirebase("categorias/historia/historia2.png", img2);
+                obtenerImagenFirebase("categorias/historia/historia5.png", img3);
+                obtenerImagenFirebase("categorias/historia/historia3.png", img4);
+                obtenerImagenFirebase("categorias/historia/historia4.png", img5);
 
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("3")){
                 pruebatexto.clearFocus();
@@ -164,6 +168,12 @@ public class historiaInicio extends Fragment {
                 text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 pruebatexto.requestFocus();
+
+                obtenerImagenFirebase("categorias/historia/historia6.png", img1);
+                obtenerImagenFirebase("categorias/historia/historia7.png", img2);
+                obtenerImagenFirebase("categorias/historia/historia8.png", img3);
+                obtenerImagenFirebase("categorias/historia/historia9.png", img4);
+                obtenerImagenFirebase("categorias/historia/historia10.png", img5);
 
             }
         });
@@ -185,6 +195,12 @@ public class historiaInicio extends Fragment {
                 text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 pruebatexto.requestFocus();
 
+                obtenerImagenFirebase("categorias/historia/historia6.png", img1);
+                obtenerImagenFirebase("categorias/historia/historia7.png", img2);
+                obtenerImagenFirebase("categorias/historia/historia8.png", img3);
+                obtenerImagenFirebase("categorias/historia/historia9.png", img4);
+                obtenerImagenFirebase("categorias/historia/historia10.png", img5);
+
             } else if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
                 pruebatexto.clearFocus();
                 ant.setVisibility(View.VISIBLE);
@@ -200,6 +216,12 @@ public class historiaInicio extends Fragment {
                 text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text6.setText("");
                 pruebatexto.requestFocus();
+
+                obtenerImagenFirebase("categorias/historia/historia11.png", img1);
+                obtenerImagenFirebase("categorias/historia/historia12.png", img2);
+                obtenerImagenFirebase("categorias/historia/historia13.png", img3);
+                obtenerImagenFirebase("categorias/historia/historia14.png", img4);
+                obtenerImagenFirebase("categorias/historia/historia15.png", img5);
 
             }
         });

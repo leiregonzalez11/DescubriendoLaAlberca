@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.principal.historiaInicio">
+    tools:context=".Maps.sitiosdeinteres.plaza.teatroFragment">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -12,16 +12,9 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -29,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/pruebatextoh"
+                android:id="@+id/pruebatextot"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
@@ -45,14 +38,13 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/historiatitulo"
-                android:layout_width="323dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text= "@string/historiamayus"
+                android:text= "Teatro - Casa Ducal"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -60,7 +52,7 @@
                 tools:targetApi="o" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia1"
+                android:id="@+id/t1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -72,7 +64,7 @@
                 android:textSize="19sp"/>
 
             <ImageView
-                android:id="@+id/histimg1"
+                android:id="@+id/timg1"
                 android:layout_width="300dp"
                 android:layout_height="230dp"
                 android:layout_gravity="center"
@@ -80,7 +72,7 @@
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia2"
+                android:id="@+id/t2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -93,7 +85,7 @@
                 android:textSize="19sp"/>
 
             <ImageView
-                android:id="@+id/histimg2"
+                android:id="@+id/timg2"
                 android:layout_width="300dp"
                 android:layout_height="230dp"
                 android:layout_gravity="center"
@@ -102,20 +94,20 @@
 
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia3"
+                android:id="@+id/t3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="-10dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="19sp"/>
 
             <ImageView
-                android:id="@+id/histimg3"
+                android:id="@+id/timg3"
                 android:layout_width="300dp"
                 android:layout_height="230dp"
                 android:layout_gravity="center"
@@ -124,54 +116,12 @@
 
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia4"
+                android:id="@+id/t4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textSize="19sp"/>
-
-
-            <ImageView
-                android:id="@+id/histimg4"
-                android:layout_width="300dp"
-                android:layout_height="230dp"
-                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                tools:ignore="ContentDescription" />
-
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textSize="19sp"/>
-
-            <ImageView
-                android:id="@+id/histimg5"
-                android:layout_width="300dp"
-                android:layout_height="230dp"
-                android:layout_gravity="center"
-                tools:ignore="ContentDescription" />
-
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/historia6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -180,15 +130,14 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/historiabtn"
+                    android:id="@+id/tbtn"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginRight="7dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
                     android:background="@color/white"
                     android:gravity="center"
                     android:visibility="invisible"
@@ -199,12 +148,10 @@
                 </ImageButton>
 
                 <ImageButton
-                    android:id="@+id/historiabtn2"
+                    android:id="@+id/tbtn2"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="7dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
                     android:visibility="invisible"
                     android:background="@color/white"
                     android:gravity="center"
@@ -216,6 +163,19 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/buttonVolverTeatro"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="casual"
+                android:text="@string/volver"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
 
         </LinearLayout>
 

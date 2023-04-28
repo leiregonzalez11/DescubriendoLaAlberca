@@ -144,6 +144,29 @@
     <string name="santocristo">Capilla Exterior del santo cristo</string>
     <string name="convento">El Convento</string>
     <string name="el_pozo_verde">El pozo verde</string>
+    <string name="acerca_de">Acerca De</string>
+    <string name="quienes_somos">¿Quienes somos?</string>
+    <string name="agradecimientos">Agradecimientos</string>
+    <string name="de_pago">Parking de Pago</string>
+    <string name="gratis">Parking gratuito</string>
+    <string name="volver">Volver</string>
+    <string name="humilladero">Ermita del Humilladero</string>
+    <string name="sanblas">Ermita de San Blas</string>
+    <string name="sanantonio">Ermita de San Antonio</string>
+    <string name="cultura">Cultura</string>
+    <string name="facilidad_para_aparcar">FACILIDAD PARA APARCAR</string>
+    <string name="dificil">Dificil</string>
+    <string name="complicado">Complicado</string>
+    <string name="facil">Fácil</string>
+    <string name="la_boda_albercana">La Boda Albercana</string>
+    <string name="alboradas">Alboradas</string>
+    <string name="la_moza_de_animas">La moza de ánimas</string>
+    <string name="marrano">El Marrano de San Antón</string>
+    <string name="la_loa">La loa</string>
+    <string name="pe_a_de_francia">Peña de Francia</string>
+    <string name="fiestas_notfound">No se encontraron fiestas este mes…</string>
+    <string name="agradecimientotext" tools:ignore="Typos">Esta aplicación nace del amor a un pueblo, a su gente y a sus costumbres. He tenido la gran suerte de poder formar parte de ellas desde que nací, y aunque suene a tópico, no hay pueblo que mime más su historia y sus raíces que La Alberca. \n\nQuiero agradecer a todas las personas que, directa o indirectamente, se han involucrado en este loco proyecto. El tiempo que habeis dedicado en investigar sobre este maravilloso pueblo, las fotografías que habéis tomado en él y la dedicación para difundir al mundo el cariño que sentís por La Alberca han hecho que el resultado de esta aplicación sea mucho mejor de lo que podría haber imaginado. \nGracias, de corazón. \n\nGracias a mi familia y a mis amigos por el apoyo constante y por la ilusión al ver los avances de cada actualización de la aplicación y ver que de alguna manera, están representados en ella. \n\nFinalmente, gracias a mi madre y a mi tía Francis por estar dispuestas a colaborar en todo momento. Esta aplicación es tan mía como vuestra.\n\nGracias a ti, que estás detrás de la pantalla de tu dispositivo leyendo esto, tú eres el principal motivo de que esta aplicación exista. Ahora solo te queda una misión:\n\n </string>
+    <string name="agradecimientostext2">Disfrutar de Descubriendo La Alberca\n</string>
 
 
     <string-array name="trajes_serranos">
@@ -220,30 +243,8 @@
         <item>Sitios de interés</item>
         <item>Alrededores</item>
     </string-array>
-
-    <string name="acerca_de">Acerca De</string>
-    <string name="quienes_somos">¿Quienes somos?</string>
-    <string name="agradecimientos">Agradecimientos</string>
-    <string name="de_pago">Parking de Pago</string>
-    <string name="gratis">Parking gratuito</string>
-    <string name="volver">Volver</string>
-    <string name="humilladero">Ermita del Humilladero</string>
-    <string name="sanblas">Ermita de San Blas</string>
-    <string name="sanantonio">Ermita de San Antonio</string>
-    <string name="cultura">Cultura</string>
-    <string name="facilidad_para_aparcar">FACILIDAD PARA APARCAR</string>
-    <string name="dificil">Dificil</string>
-    <string name="complicado">Complicado</string>
-    <string name="facil">Fácil</string>
-    <string name="la_boda_albercana">La Boda Albercana</string>
-    <string name="alboradas">Alboradas</string>
-    <string name="la_moza_de_animas">La moza de ánimas</string>
-    <string name="marrano">El Marrano de San Antón</string>
-    <string name="la_loa">La loa</string>
-    <string name="pe_a_de_francia">Peña de Francia</string>
-    <string name="fiestas_notfound">No se encontraron fiestas este mes…</string>
-    <string name="agradecimientotext" tools:ignore="Typos">Esta aplicación nace del amor a un pueblo, a su gente y a sus costumbres. He tenido la gran suerte de poder formar parte de ellas desde que nací, y aunque suene a tópico, no hay pueblo que mime más su historia y sus raíces que La Alberca. \n\nQuiero agradecer a todas las personas que, directa o indirectamente, se han involucrado en este loco proyecto. El tiempo que habeis dedicado en investigar sobre este maravilloso pueblo, las fotografías que habéis tomado en él y la dedicación para difundir al mundo el cariño que sentís por La Alberca han hecho que el resultado de esta aplicación sea mucho mejor de lo que podría haber imaginado. \nGracias, de corazón. \n\nGracias a mi familia y a mis amigos por el apoyo constante y por la ilusión al ver los avances de cada actualización de la aplicación y ver que de alguna manera, están representados en ella. \n\nFinalmente, gracias a mi madre y a mi tía Francis por estar dispuestas a colaborar en todo momento. Esta aplicación es tan mía como vuestra.\n\nGracias a ti, que estás detrás de la pantalla de tu dispositivo leyendo esto, tú eres el principal motivo de que esta aplicación exista. Ahora solo te queda una misión:\n\n </string>
-    <string name="agradecimientostext2">Disfrutar de Descubriendo La Alberca\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

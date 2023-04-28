@@ -105,7 +105,7 @@ public class elrollo extends Fragment implements View.OnClickListener {
         GestorDB dbHelper = new GestorDB(getContext());
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        String [] datos =dbHelper.obtenerInfoPena(idioma, "elrollo", "peñadefrancia", 4);
+        String [] datos =dbHelper.obtenerInfoLugares(idioma, "elrollo", "peñadefrancia", 4);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

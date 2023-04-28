@@ -53,7 +53,7 @@ public class saltoDelNinoFragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsaltodelniño", "peñadefrancia", 3);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "elsaltodelniño", "peñadefrancia", 3);
 
         info.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         info2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

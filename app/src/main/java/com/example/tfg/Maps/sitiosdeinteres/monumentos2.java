@@ -91,9 +91,7 @@ public class monumentos2 extends DialogFragment {
 
     public void zoomOut (){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
-        ScrollView scr = viewR.findViewById(R.id.scrollviewM2);
-        scr.startAnimation(slideAnimation);
-        img1.startAnimation(slideAnimation);
+        viewR.startAnimation(slideAnimation);
 
         new Handler().postDelayed(this::dismiss,900);
     }

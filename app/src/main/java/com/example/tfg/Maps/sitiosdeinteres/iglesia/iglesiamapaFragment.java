@@ -17,6 +17,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.tfg.Maps.sitiosdeinteres.monumentos1;
 import com.example.tfg.R;
 import com.example.tfg.Maps.sitiosdeinteres.info.infomonu1Fragment;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos3;
@@ -27,6 +29,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
     private final Bundle args = new Bundle();
     ImageButton iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano;
     Animation slideAnimation;
+    DialogFragment fragment;
     View iglesiaView;
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -102,8 +105,11 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonMarrano:
-                monumento = "esculturamarrano";
-                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
+                monumento = "marranosananton";
+                fragment = new monumentos1();
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Marrano de San Antón");
+                zoomIn(fragment, btn);
                 break;
             case R.id.buttonIglesia:
                 DialogFragment iglesiaF = new iglesiaFragment();
@@ -115,7 +121,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
             case R.id.buttonpredio4:
             case R.id.buttonpredio5:
                 monumento = "predios";
-                DialogFragment fragment = new monumentos3();
+                fragment = new monumentos3();
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Predios");
                 zoomIn(fragment, btn);
@@ -140,7 +146,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
 
     public void zoomOut (){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
-       iglesiaView.startAnimation(slideAnimation);
+        iglesiaView.startAnimation(slideAnimation);
 
         new Handler().postDelayed(this::dismiss,900);
     }

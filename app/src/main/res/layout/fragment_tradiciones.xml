@@ -3,25 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Categorias.principal.tradicionesInicio">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutTrad11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -66,192 +57,158 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
+            <!--Botones-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
+                <!--LINEA BOTONES TRADICIONES 1-->
+                <!--marrano y loa-->
                 <LinearLayout
-                    android:id="@+id/layoutvideo1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-20dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="-10dp"
-                        android:layout_marginRight="10dp"
-                        app:cardElevation="10dp"
-                        app:cardCornerRadius="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:layout_marginRight="3dp"
+                        android:text="@string/marrano"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle" />
 
-                        <Button
-                            android:id="@+id/btntrad2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="@string/marrano"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="10dp"
-                        app:cardElevation="10dp"
-                        app:cardCornerRadius="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:text="@string/la_loa"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle" />
 
-                        <Button
-                            android:id="@+id/btntrad3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="@string/la_loa"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
+                <!--LINEA BOTONES TRADICIONES 2-->
+                <!--moza de ánimas y pendón-->
                 <LinearLayout
                     android:id="@+id/layoutvideo2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginBottom="-15dp"
+                    android:layout_marginTop="7dp"
                     android:orientation="horizontal">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="15dp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="10dp">
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:layout_marginRight="3dp"
+                        android:text="@string/la_moza_de_animas"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle"/>
 
-                        <Button
-                            android:id="@+id/btntrad1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="@string/la_moza_de_animas"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="15dp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="10dp">
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:layout_marginRight="3dp"
+                        android:text="@string/alboradas"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle" />
 
-                        <Button
-                            android:id="@+id/btntrad5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="El Pendón"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
+                <!--LINEA BOTONES TRADICIONES 3-->
+                <!--alboradas y boda albercana-->
                 <LinearLayout
-                    android:id="@+id/layoutvideo3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        app:cardElevation="10dp"
-                        app:cardCornerRadius="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:text="El Pendón"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle"/>
 
-                        <Button
-                            android:id="@+id/btntrad4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="@string/alboradas"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
+                    <Button
+                        android:id="@+id/btntrad6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="10dp"
-                        app:cardElevation="10dp"
-                        app:cardCornerRadius="15dp">
-
-                        <Button
-                            android:id="@+id/btntrad6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:text="@string/la_boda_albercana"
-                            android:fontFamily="casual"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:textColor="#000000"
-                            android:background="@drawable/borde_redondeado"/>
-
-                    </com.google.android.material.card.MaterialCardView>
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="@string/la_boda_albercana"
+                        android:fontFamily="casual"
+                        android:layout_marginLeft="3dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:background="@drawable/borde_redondeado"
+                        style="?android:attr/buttonBarButtonStyle" />
 
                 </LinearLayout>
+
+                <!--LINEA BOTONES TRADICIONES 4-->
+                <!--fuentes de La Alberca-->
+                <Button
+                    android:id="@+id/btntrad7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Las fuentes de La Alberca"
+                    android:fontFamily="casual"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#000000"
+                    android:background="@drawable/borde_redondeado"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
             </LinearLayout>
 

@@ -60,7 +60,7 @@ public class naveIzqda extends DialogFragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        String [] datos2 = dbHelper.obtenerInfoPena(idioma, "naveizquierda", "peñadefrancia", 5);
+        String [] datos2 = dbHelper.obtenerInfoLugares(idioma, "naveizquierda", "peñadefrancia", 5);
         if (idioma.equalsIgnoreCase("es")){
             img1.setImageResource(R.drawable.planoiglesiaizqdaes);
         } else if (idioma.equalsIgnoreCase("en")){

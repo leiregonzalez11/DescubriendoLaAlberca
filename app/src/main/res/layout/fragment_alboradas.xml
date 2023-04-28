@@ -53,11 +53,10 @@
 
             <ImageView
                 android:id="@+id/imgalboradas1"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
                 android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:padding="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
@@ -151,11 +150,10 @@
 
             <ImageView
                 android:id="@+id/imgalboradas2"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
                 android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:padding="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
@@ -175,9 +173,8 @@
                 android:id="@+id/alboradasAtras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="center"
                 android:layout_marginTop="20sp"
-                android:layout_marginLeft="15dp"
                 android:layout_marginBottom="30dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"

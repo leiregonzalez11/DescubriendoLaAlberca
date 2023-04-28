@@ -102,7 +102,7 @@ public class santuario extends Fragment implements View.OnClickListener {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "elsantuario","peñadefrancia", 1);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "elsantuario","peñadefrancia", 1);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
     }

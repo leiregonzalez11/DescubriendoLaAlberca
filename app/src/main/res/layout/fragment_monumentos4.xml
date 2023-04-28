@@ -3,21 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Maps.sitiosdeinteres.monumentos1">
+    tools:context=".Maps.sitiosdeinteres.monumentos4">
 
     <ScrollView
-        android:id="@+id/scrollviewM"
+        android:id="@+id/scrollviewM3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UselessParent">
 
         <LinearLayout
@@ -26,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/titulomon"
+                android:id="@+id/titulomon4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -34,41 +27,91 @@
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="30sp"/>
+                android:textSize="28sp"/>
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/monuinfotext1"
+                android:id="@+id/monu4infotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/monuimg1"
-                android:layout_width="match_parent"
+                android:id="@+id/monu4img1"
                 android:layout_height="280dp"
+                android:layout_width="300dp"
+                android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:padding="20dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/monu4infotext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/monu4img2"
+                android:layout_height="280dp"
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/monu4infotext3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/monu4img3"
+                android:layout_height="280dp"
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/monu4infotext4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
                 android:gravity="right"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVolverM"
+                    android:id="@+id/buttonVolverM4"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

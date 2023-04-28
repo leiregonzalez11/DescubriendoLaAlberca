@@ -6,7 +6,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +19,29 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
+import com.example.tfg.Maps.sitiosdeinteres.monumentos4;
 import com.example.tfg.R;
 import com.example.tfg.Maps.sitiosdeinteres.info.infomonu3Fragment;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos1;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos2;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class iglesiaFragment extends DialogFragment implements View.OnClickListener {
 
     private final Bundle args = new Bundle();
     Animation slideAnimation;
-    View plazaView;
+    String idioma;
+    View iglesiaView;
+    TextView text1, text2, text3, text4, pruebatexto;
+    ImageButton ant, sig;
+    ImageView img1, img2, img3;
+    private StorageReference storageRef;
 
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -38,50 +55,134 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        plazaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
+        iglesiaView = inflater.inflate(R.layout.fragmentdialog_iglesia, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(plazaView);
+        builder.setView(iglesiaView);
 
         assert getArguments()!=null;
-        String idioma = getArguments().getString("idioma");
+        idioma = getArguments().getString("idioma");
         args.putString("idioma", idioma);
 
-        setListeners(plazaView);
+        setListenersBtnMapa();
+        setTextAndPhotos();
 
-        ImageButton info = plazaView.findViewById(R.id.moninfo3);
-        info.setOnClickListener(view -> {
-            DialogFragment fragment = new infomonu3Fragment();
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"plaza_fragment");
-        });
-
-        Button volver = plazaView.findViewById(R.id.buttonVolverIglesia);
+        Button volver = iglesiaView.findViewById(R.id.buttonVolverIglesia);
         volver.setOnClickListener(view -> zoomOut());
 
         return builder.create();
     }
 
-    private void setListeners(View plazaView) {
+    @SuppressLint("SetTextI18n")
+    private void setTextAndPhotos() {
 
-        ImageButton torre = plazaView.findViewById(R.id.torre);
-        ImageButton carmen = plazaView.findViewById(R.id.retablovirgencarmen);
-        ImageButton pedro = plazaView.findViewById(R.id.retablosanpedro);
-        ImageButton sudor = plazaView.findViewById(R.id.retablocristosudor);
-        ImageButton rosario = plazaView.findViewById(R.id.virgenrosario);
-        ImageButton capillacentral = plazaView.findViewById(R.id.capillacentral);
-        ImageButton salida1 = plazaView.findViewById(R.id.portico1);
-        ImageButton salida2 = plazaView.findViewById(R.id.portico2);
-        ImageButton pilab = plazaView.findViewById(R.id.pilabautismal);
-        ImageButton pila1 = plazaView.findViewById(R.id.pilaagua1);
-        ImageButton pila2 = plazaView.findViewById(R.id.pilaagua2);
-        ImageButton espadana = plazaView.findViewById(R.id.espadana);
-        ImageButton sacristia = plazaView.findViewById(R.id.sacristia);
-        ImageButton dolores = plazaView.findViewById(R.id.capilladolores);
-        ImageButton pulpito = plazaView.findViewById(R.id.pulpito);
-        ImageButton ana = plazaView.findViewById(R.id.retablosantaana);
-        ImageButton santoc = plazaView.findViewById(R.id.santocristo);
+        text1 = iglesiaView.findViewById(R.id.iglesia1text);
+        text2 = iglesiaView.findViewById(R.id.iglesia2text);
+        text3 = iglesiaView.findViewById(R.id.iglesia3text);
+        text4 = iglesiaView.findViewById(R.id.iglesia4text);
+        pruebatexto = iglesiaView.findViewById(R.id.pruebatextoi);
+
+        img1 = iglesiaView.findViewById(R.id.iglesiafoto1);
+        img2 = iglesiaView.findViewById(R.id.iglesiafoto2);
+        img3 = iglesiaView.findViewById(R.id.iglesiafoto3);
+
+        ant = iglesiaView.findViewById(R.id.ibtn);
+        sig = iglesiaView.findViewById(R.id.ibtn2);
+
+        GestorDB dbHelper = new GestorDB(getContext());
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
+
+            ant.setVisibility(View.GONE);
+            sig.setVisibility(View.VISIBLE);
+
+            String [] datos = dbHelper.obtenerInfoMonumentos(idioma, "iglesia-cat1",4);
+
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            obtenerImagenFirebase("mapas/monumentos/iglesia1.png", img1);
+            obtenerImagenFirebase("mapas/monumentos/iglesia2.png", img2);
+            obtenerImagenFirebase("mapas/monumentos/iglesia3.png", img3);
+        }
+
+
+        ant.setOnClickListener(view1 -> {
+            pruebatexto.clearFocus();
+            if (pruebatexto.getText().toString().equalsIgnoreCase("2")){
+
+                ant.setVisibility(View.GONE);
+                sig.setVisibility(View.VISIBLE);
+
+                pruebatexto.setText("1");
+
+                String [] datos = dbHelper.obtenerInfoMonumentos(idioma, "iglesia-cat1",4);
+
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                pruebatexto.requestFocus();
+
+                obtenerImagenFirebase("mapas/monumentos/iglesia1.png", img1);
+                obtenerImagenFirebase("mapas/monumentos/iglesia2.png", img2);
+                obtenerImagenFirebase("mapas/monumentos/iglesia3.png", img3);
+
+            }
+        });
+
+        sig.setOnClickListener(view1 -> {
+            pruebatexto.clearFocus();
+            if (pruebatexto.getText().toString().equalsIgnoreCase("1")){
+
+                ant.setVisibility(View.VISIBLE);
+                sig.setVisibility(View.GONE);
+
+                pruebatexto.setText("2");
+
+                String [] datos = dbHelper.obtenerInfoMonumentos(idioma, "teatro-cat2",4);
+
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                pruebatexto.requestFocus();
+
+                obtenerImagenFirebase("mapas/monumentos/iglesia4.png", img1);
+                obtenerImagenFirebase("mapas/monumentos/iglesia5.png", img2);
+                obtenerImagenFirebase("mapas/monumentos/iglesia6.png", img3);
+
+            }
+
+        });
+
+
+    }
+
+    private void setListenersBtnMapa() {
+
+        ImageButton info = iglesiaView.findViewById(R.id.moninfo3);
+        ImageButton torre = iglesiaView.findViewById(R.id.torre);
+        ImageButton carmen = iglesiaView.findViewById(R.id.retablovirgencarmen);
+        ImageButton pedro = iglesiaView.findViewById(R.id.retablosanpedro);
+        ImageButton sudor = iglesiaView.findViewById(R.id.retablocristosudor);
+        ImageButton rosario = iglesiaView.findViewById(R.id.virgenrosario);
+        ImageButton capillacentral = iglesiaView.findViewById(R.id.capillacentral);
+        ImageButton salida1 = iglesiaView.findViewById(R.id.portico1);
+        ImageButton salida2 = iglesiaView.findViewById(R.id.portico2);
+        ImageButton pilab = iglesiaView.findViewById(R.id.pilabautismal);
+        ImageButton pila1 = iglesiaView.findViewById(R.id.pilaagua1);
+        ImageButton pila2 = iglesiaView.findViewById(R.id.pilaagua2);
+        ImageButton espadana = iglesiaView.findViewById(R.id.espadana);
+        ImageButton sacristia = iglesiaView.findViewById(R.id.sacristia);
+        ImageButton dolores = iglesiaView.findViewById(R.id.capilladolores);
+        ImageButton pulpito = iglesiaView.findViewById(R.id.pulpito);
+        ImageButton ana = iglesiaView.findViewById(R.id.retablosantaana);
+        ImageButton santoc = iglesiaView.findViewById(R.id.santocristo);
+        info.setOnClickListener(this);
         torre.setOnClickListener(this);
         carmen.setOnClickListener(this);
         pedro.setOnClickListener(this);
@@ -112,6 +213,11 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
         switch (btn.getId()) {
 
+            case R.id.moninfo3:
+                fragment = new infomonu3Fragment();
+                fragment.setCancelable(false);
+                fragment.show(getChildFragmentManager(),"iglesia_fragment");
+                break;
             case R.id.santocristo:
                 String monumento = "retablocristobatallas";
                 args.putString("monumento", monumento);
@@ -137,6 +243,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "pulpito";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Púlpito");
+                fragment = new pulpitoFragment();
+                zoomIn(fragment, btn);
                 break;
             case R.id.pilaagua1:
             case R.id.pilaagua2:
@@ -161,7 +269,11 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 //zoomIn(fragment, btn);
                 break;
             case R.id.capillacentral:
-                monumento = "capillacentral";
+                monumento = "capillamayor";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Capilla Mayor");
+                fragment = new monumentos4();
+                zoomIn(fragment, btn);
                 break;
             case R.id.espadana:
                 monumento = "espadaña";
@@ -209,6 +321,12 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
     }
 
+    /** Método utilizado para obtener la imagen de Firebase Storage */
+    private void obtenerImagenFirebase(String path, ImageView img){
+        StorageReference pathReference = storageRef.child(path);
+        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
+    }
+
     public void zoomIn (DialogFragment fragment, View view){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
         view.startAnimation(slideAnimation);
@@ -222,8 +340,9 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
     public void zoomOut (){
         slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_out);
-        plazaView.startAnimation(slideAnimation);
+        iglesiaView.startAnimation(slideAnimation);
 
         new Handler().postDelayed(this::dismiss,900);
     }
+
 }

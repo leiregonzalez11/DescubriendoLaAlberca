@@ -107,11 +107,11 @@ public class iglesia extends Fragment implements View.OnClickListener{
 
         dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "iglesia","peñadefrancia", 2);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "iglesia","peñadefrancia", 2);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        String [] datos2 = dbHelper.obtenerInfoPena(idioma, "vidrieras","peñadefrancia", 1);
+        String [] datos2 = dbHelper.obtenerInfoLugares(idioma, "vidrieras","peñadefrancia", 1);
         text3.setText(datos2[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
     }

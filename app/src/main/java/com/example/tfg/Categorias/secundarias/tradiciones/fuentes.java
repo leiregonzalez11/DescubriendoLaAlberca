@@ -2,6 +2,7 @@ package com.example.tfg.Categorias.secundarias.tradiciones;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -9,35 +10,37 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
+import com.example.tfg.Categorias.principal.tradicionesInicio;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.Categorias.principal.tradicionesInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class marranoSanAnton extends Fragment {
+public class fuentes extends Fragment {
 
     private Bundle args;
     private String idioma;
     private StorageReference storageRef;
-    private ImageView img1, img2;
+    private ImageView img1, img2, img3;
     private ImageButton atrasBtn;
-    private TextView titulo, text1, text2, text3, text4;
+    private TextView titulo, text1, text2, text3, text4, text5, text6;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static marranoSanAnton newInstance(Bundle args) {
-        marranoSanAnton fragment = new marranoSanAnton();
+    public static fuentes newInstance(Bundle args) {
+        fuentes fragment = new fuentes();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -45,7 +48,7 @@ public class marranoSanAnton extends Fragment {
     }
 
     /** Required empty public constructor */
-    public marranoSanAnton() {}
+    public fuentes() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
@@ -81,19 +84,22 @@ public class marranoSanAnton extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_marrano, container, false);
+        View v = inflater.inflate(R.layout.fragment_fuentes, container, false);
         if (v != null){
             //Textos de la interfaz
-            titulo = v.findViewById(R.id.titulomarrano);
-            text1 = v.findViewById(R.id.marrano1);
-            text2 = v.findViewById(R.id.marrano2);
-            text3 = v.findViewById(R.id.marrano3);
-            text4 = v.findViewById(R.id.marrano4);
+            titulo = v.findViewById(R.id.titulofuentes);
+            text1 = v.findViewById(R.id.fuentes1);
+            text2 = v.findViewById(R.id.fuentes2);
+            text3 = v.findViewById(R.id.fuentes3);
+            text4 = v.findViewById(R.id.fuentes4);
+            text5 = v.findViewById(R.id.fuentes5);
+            text6 = v.findViewById(R.id.fuentes6);
             //Imágenes de la interfaz
-            img1 = v.findViewById(R.id.imgmarrano1);
-            img2 = v.findViewById(R.id.imgmarrano2);
+            img1 = v.findViewById(R.id.imgfuentes1);
+            img2 = v.findViewById(R.id.imgfuentes2);
+            img3 = v.findViewById(R.id.imgfuentes3);
             //Botones
-            atrasBtn = v.findViewById(R.id.marranoAtras);
+            atrasBtn = v.findViewById(R.id.fuentesAtras);
         }
         return v;
     }
@@ -107,23 +113,26 @@ public class marranoSanAnton extends Fragment {
         GestorDB dbHelper = new GestorDB(getContext());
 
         //Setter de los textos de la interfaz
-        String nombreTrad = "El Marrano de San Antón";
+        String nombreTrad = "Las fuentes de La Alberca";
         titulo.setText(nombreTrad);
         titulo.requestFocus();
         String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 
         //Obtención de datos desde la bbdd
-        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, 4);
+        String[] textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, 6);
 
         text1.setText(textoTrad[0]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(textoTrad[1]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(textoTrad[2]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text4.setText(textoTrad[3]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text5.setText(textoTrad[4]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text6.setText(textoTrad[5]+ HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-        //Setter de las imagenes de la interfaz TODO
+        //Setter de las imagenes de la interfaz
         storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase("categorias/tradiciones/marrano1.png", img1);
-        obtenerImagenFirebase("categorias/tradiciones/marrano2.png", img2);
+        obtenerImagenFirebase("categorias/tradiciones/fuentes1.png", img1);
+        obtenerImagenFirebase("categorias/tradiciones/fuentes2.png", img2);
+        obtenerImagenFirebase("categorias/tradiciones/fuentes3.png", img3);
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {

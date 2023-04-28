@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -58,11 +59,10 @@
 
             <ImageView
                 android:id="@+id/imgTrad1"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
                 android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:padding="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
@@ -71,7 +71,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="-5dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -79,11 +80,10 @@
 
             <ImageView
                 android:id="@+id/imgTrad2"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
                 android:src="@drawable/laalberca2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:padding="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -240,9 +240,8 @@
                 android:id="@+id/mozaAtras"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="center"
                 android:layout_marginTop="10sp"
-                android:layout_marginLeft="15dp"
                 android:layout_marginBottom="30dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"

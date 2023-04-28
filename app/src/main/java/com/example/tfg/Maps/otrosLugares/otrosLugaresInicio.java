@@ -24,9 +24,6 @@ public class otrosLugaresInicio extends Fragment {
 
     private Bundle args;
     private String idioma;
-    private String opc1;
-    private String opc4;
-    private String opc5;
     private ListView listView, listView2, listView3, listView4, listView5;
 
     /**
@@ -96,11 +93,11 @@ public class otrosLugaresInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        opc1 = getString(R.string.hurdes);
+        String opc1 = getString(R.string.hurdes);
         String opc2 = getString(R.string.penafrancia);
         String opc3 = getString(R.string.pueblos_de_la_sierra);
-        opc4 = getString(R.string.batuecas);
-        opc5 = "Majadas Viejas y alrededores";
+        String opc4 = getString(R.string.batuecas);
+        String opc5 = "Majadas Viejas y alrededores";
 
         //Majadas Viejas y Laguna de San Marcos
         ArrayList<String> lista5 = new ArrayList<>();
@@ -110,7 +107,7 @@ public class otrosLugaresInicio extends Fragment {
         listView5.setAdapter(myAdapter5);
 
         listView5.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(getContext(), "Has pulsado: "+ opc5, Toast.LENGTH_LONG).show());
+                Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show());
 
         //Hurdes
         ArrayList<String> lista1 = new ArrayList<>();
@@ -121,7 +118,7 @@ public class otrosLugaresInicio extends Fragment {
         listView.setAdapter(myAdapter);
 
         listView.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(getContext(), "Has pulsado: "+ opc1, Toast.LENGTH_LONG).show());
+                Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show());
 
 
         //Peña de Francia
@@ -158,8 +155,12 @@ public class otrosLugaresInicio extends Fragment {
         listViewAdapter myAdapter4 = new listViewAdapter(getContext() , R.layout.list_bosque, lista4);
         listView4.setAdapter(myAdapter4);
 
-        listView4.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(getContext(), "Has pulsado: "+ opc4, Toast.LENGTH_LONG).show());
+        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
+            args.putString("back", "false");
+            Fragment fragment = batuecas.newInstance(args);
+            cargarFragment(fragment);
+        });
+
 
 
     }

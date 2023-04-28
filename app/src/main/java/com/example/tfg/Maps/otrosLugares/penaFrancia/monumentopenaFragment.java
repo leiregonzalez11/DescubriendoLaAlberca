@@ -87,7 +87,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Mirador de Santo Domingo");
 
                 //Texto
-                String[] datos = dbHelper.obtenerInfoPena(idioma, "miradordesantodomingo","peñadefrancia", 2);
+                String[] datos = dbHelper.obtenerInfoLugares(idioma, "miradordesantodomingo","peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
@@ -104,7 +104,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Capilla de la Blanca");
 
                 //Texto
-                datos = dbHelper.obtenerInfoPena(idioma, "capilladelablanca", "peñadefrancia", 3);
+                datos = dbHelper.obtenerInfoLugares(idioma, "capilladelablanca", "peñadefrancia", 3);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -121,7 +121,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Capilla exterior de San Andrés");
 
                 //Texto
-                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordesanandrés","peñadefrancia", 2);
+                datos = dbHelper.obtenerInfoLugares(idioma, "capillaexteriordesanandrés","peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
@@ -138,7 +138,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Capilla exterior del Santo Cristo");
 
                 //Texto
-                datos = dbHelper.obtenerInfoPena(idioma, "capillaexteriordelsantocristo", "peñadefrancia", 2);
+                datos = dbHelper.obtenerInfoLugares(idioma, "capillaexteriordelsantocristo", "peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
@@ -155,7 +155,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("Balcón de Santiago");
 
                 //Texto
-                datos = dbHelper.obtenerInfoPena(idioma, "balcóndesantiago","peñadefrancia", 3);
+                datos = dbHelper.obtenerInfoLugares(idioma, "balcóndesantiago","peñadefrancia", 3);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -179,7 +179,7 @@ public class monumentopenaFragment extends DialogFragment {
                 titulo.setText("El Pozo Verde");
 
                 //Texto
-                datos = dbHelper.obtenerInfoPena(idioma, "pozoverde","peñadefrancia", 2);
+                datos = dbHelper.obtenerInfoLugares(idioma, "pozoverde","peñadefrancia", 2);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text3.setText("");
@@ -195,7 +195,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 titulo.setText("Nave Derecha");
 
-                String [] datos3 = dbHelper.obtenerInfoPena(idioma, "navederecha","peñadefrancia", 3);
+                String [] datos3 = dbHelper.obtenerInfoLugares(idioma, "navederecha","peñadefrancia", 3);
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiadchaes);
                 } else if (idioma.equalsIgnoreCase("en")){
@@ -219,7 +219,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 titulo.setText("Coro de la Iglesia");
 
-                String [] datos1 = dbHelper.obtenerInfoPena(idioma, "coro","peñadefrancia", 1);
+                String [] datos1 = dbHelper.obtenerInfoLugares(idioma, "coro","peñadefrancia", 1);
 
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiacoroes);
@@ -244,7 +244,7 @@ public class monumentopenaFragment extends DialogFragment {
 
                 titulo.setText("Altar Mayor");
 
-                String [] datos4 = dbHelper.obtenerInfoPena(idioma, "altarmayor","peñadefrancia", 2);
+                String [] datos4 = dbHelper.obtenerInfoLugares(idioma, "altarmayor","peñadefrancia", 2);
 
                 if (idioma.equalsIgnoreCase("es")){
                     img1.setImageResource(R.drawable.planoiglesiacentroes);

@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
+import com.example.tfg.Maps.sitiosdeinteres.monumentos4;
 import com.example.tfg.R;
 import com.example.tfg.Maps.sitiosdeinteres.info.infomonu2Fragment;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos2;
@@ -96,16 +97,16 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
 
     private void setListeners(View plazaMView) {
         ImageButton ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
-        ayunt.setOnClickListener(this);
         ImageButton teatro = plazaMView.findViewById(R.id.buttonTeatro);
-        teatro.setOnClickListener(this);
         ImageButton biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
-        biblio.setOnClickListener(this);
         ImageButton crucero = plazaMView.findViewById(R.id.buttonCrucero);
-        crucero.setOnClickListener(this);
         ImageButton unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
-        unamuno.setOnClickListener(this);
         ImageButton escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
+        ayunt.setOnClickListener(this);
+        teatro.setOnClickListener(this);
+        biblio.setOnClickListener(this);
+        crucero.setOnClickListener(this);
+        unamuno.setOnClickListener(this);
         escuelas.setOnClickListener(this);
     }
 
@@ -130,8 +131,11 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
                 break;
             case R.id.buttonUnamuno:
-                monumento = "retratounamuno";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                monumento = "retratomigueldeunamuno";
+                args.putString("monumento", monumento);
+                args.putString("titulo", "Retrato Miguel de Unamuno");
+                fragment = new monumentos4();
+                zoomIn(fragment, btn);
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
@@ -149,7 +153,8 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 break;
             case R.id.buttonTeatro:
                 monumento = "teatro";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                fragment = new teatroFragment();
+                zoomIn(fragment, btn);
                 break;
         }
     }

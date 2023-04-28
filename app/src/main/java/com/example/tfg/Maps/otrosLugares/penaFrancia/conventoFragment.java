@@ -84,7 +84,7 @@ public class conventoFragment extends DialogFragment {
     private void setText() {
 
         /* Texto */
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "convento", "peñadefrancia", 5);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "convento", "peñadefrancia", 5);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

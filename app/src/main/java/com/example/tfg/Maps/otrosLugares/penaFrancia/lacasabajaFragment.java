@@ -60,7 +60,7 @@ public class lacasabajaFragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "lacasabaja","peñadefrancia", 7);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "lacasabaja","peñadefrancia", 7);
 
         info.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         info2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

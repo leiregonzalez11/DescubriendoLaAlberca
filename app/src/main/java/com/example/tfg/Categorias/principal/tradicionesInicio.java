@@ -1,6 +1,8 @@
 package com.example.tfg.Categorias.principal;
 
 import android.os.Bundle;
+
+import com.example.tfg.Categorias.secundarias.tradiciones.fuentes;
 import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +33,7 @@ public class tradicionesInicio extends Fragment {
     private Fragment fragment;
     private TextView text1, text2;
     private String idioma;
-    private Button btn1, btn2, btn3, btn4, btn5, btn6;
+    private Button fuentesLA, alborada, mozaanimas, marrano, boda, loa, pendon;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -89,12 +91,13 @@ public class tradicionesInicio extends Fragment {
         if(v != null){
             text1 = v.findViewById(R.id.trad11);
             text2 = v.findViewById(R.id.trad12);
-            btn1 = v.findViewById(R.id.btntrad1);
-            btn2 = v.findViewById(R.id.btntrad2);
-            btn3 = v.findViewById(R.id.btntrad3);
-            btn4 = v.findViewById(R.id.btntrad4);
-            btn5 = v.findViewById(R.id.btntrad5);
-            btn6 = v.findViewById(R.id.btntrad6);
+            mozaanimas = v.findViewById(R.id.btntrad1);
+            marrano = v.findViewById(R.id.btntrad2);
+            loa = v.findViewById(R.id.btntrad3);
+            alborada = v.findViewById(R.id.btntrad4);
+            pendon = v.findViewById(R.id.btntrad5);
+            boda = v.findViewById(R.id.btntrad6);
+            fuentesLA = v.findViewById(R.id.btntrad7);
         }
         return v;
     }
@@ -118,7 +121,7 @@ public class tradicionesInicio extends Fragment {
          | Moza de Ánimas |
          ----------------*/
 
-        btn1.setOnClickListener(v -> {
+        mozaanimas.setOnClickListener(v -> {
             fragment = mozaDeAnimas.newInstance(args);
             cargarFragment(fragment);
         });
@@ -127,7 +130,7 @@ public class tradicionesInicio extends Fragment {
          | Marrano de San Antón |
          -----------------------*/
 
-        btn2.setOnClickListener(v -> {
+        marrano.setOnClickListener(v -> {
             fragment = marranoSanAnton.newInstance(args);
             cargarFragment(fragment);
         });
@@ -136,7 +139,7 @@ public class tradicionesInicio extends Fragment {
          | La Loa |
          --------*/
 
-        btn3.setOnClickListener(v -> {
+        loa.setOnClickListener(v -> {
             fragment = laLoa.newInstance(args);
             cargarFragment(fragment);
         });
@@ -145,7 +148,7 @@ public class tradicionesInicio extends Fragment {
          | Las alboradas |
          ---------------*/
 
-        btn4.setOnClickListener(v -> {
+        alborada.setOnClickListener(v -> {
             fragment = alboradas.newInstance(args);
             cargarFragment(fragment);
         });
@@ -154,7 +157,7 @@ public class tradicionesInicio extends Fragment {
          | El Pendón |
          -----------*/
 
-        btn5.setOnClickListener(v -> {
+        pendon.setOnClickListener(v -> {
             fragment = elpendon.newInstance(args);
             cargarFragment(fragment);
         });
@@ -163,10 +166,19 @@ public class tradicionesInicio extends Fragment {
          | La boda albercana |
          -------------------*/
 
-        btn6.setOnClickListener(v -> {
+        boda.setOnClickListener(v -> {
             /*fragment = elpendon.newInstance(args);
             cargarFragment(fragment);*/
             Toast.makeText(requireContext(), "HAS PULSADO LA BODA ALBERCANA", Toast.LENGTH_SHORT).show();
+        });
+
+        /*---------------------------
+         | Las fuentes de La Alberca |
+         ---------------------------*/
+
+        fuentesLA.setOnClickListener(v -> {
+            fragment = fuentes.newInstance(args);
+            cargarFragment(fragment);
         });
 
 

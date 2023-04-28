@@ -45,7 +45,7 @@ public class rolloinfofragment extends DialogFragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        String [] datos = dbHelper.obtenerInfoPena(idioma, "elrollo-info", "peñadefrancia", 1);
+        String [] datos = dbHelper.obtenerInfoLugares(idioma, "elrollo-info", "peñadefrancia", 1);
 
         info.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
