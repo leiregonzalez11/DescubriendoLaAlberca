@@ -66,9 +66,9 @@ public class trajeserranoFragment extends DialogFragment {
             cargarFragment(fragment);
         });
 
-        /*---------------------------
-         | El traje serrano femenino |
-         ---------------------------*/
+        /*----------------------------
+         | El traje serrano masculino |
+         ----------------------------*/
 
         String opc2 = "El traje masculino";
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.principal.rutasInicio">
+    tools:context=".Maps.otrosLugares.parquebatuecas.elchorro">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -28,56 +28,45 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text="@string/rutasmayus"
+                android:text="El Chorro de Batuecas"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/rutas"
+                android:id="@+id/chorro1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginBottom="-10dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
-                android:text="@string/rutas_inicio"
                 android:textSize="18sp"/>
 
-            <com.google.android.material.card.MaterialCardView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Pulsa sobre la imagen para más info."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold">
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/chorroimg1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                app:strokeWidth="2dp"
-                app:cardElevation="10dp"
-                app:strokeColor="@color/black"
-                app:cardCornerRadius="15dp">
-
-                <Spinner
-                    android:id="@+id/spinnerRutas"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:backgroundTint="@color/black" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <ImageView
-                android:id="@+id/rutasimg1"
-                android:layout_width="350dp"
-                android:layout_height="280dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_height="240dp"
+                android:padding="30dp"
+                android:background="@color/white"
                 tools:ignore="ContentDescription">
-            </ImageView>
+            </ImageButton>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -85,6 +74,7 @@
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
                 app:strokeWidth="3dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
@@ -104,7 +94,7 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg3"
+                            android:id="@+id/chorroimgp1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
@@ -112,7 +102,7 @@
                             tools:ignore="ContentDescription" />
 
                         <TextView
-                            android:id="@+id/rutas3"
+                            android:id="@+id/chorrop1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="casual"
@@ -131,7 +121,7 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg4"
+                            android:id="@+id/chorroimgp2"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
@@ -140,7 +130,7 @@
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/rutas4"
+                            android:id="@+id/chorrop2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="casual"
@@ -159,7 +149,7 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg5"
+                            android:id="@+id/chorroimgp3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
@@ -168,10 +158,10 @@
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/rutas5"
+                            android:id="@+id/chorrop3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            
+
                             android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
@@ -188,7 +178,7 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg6"
+                            android:id="@+id/chorroimgp4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="15dp"
@@ -197,10 +187,10 @@
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/rutas6"
+                            android:id="@+id/chorrop4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            
+
                             android:fontFamily="casual"
                             android:gravity='left'
                             android:textStyle="bold"
@@ -213,22 +203,13 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <ImageView
-                android:id="@+id/rutasimg7"
-                android:layout_width="350dp"
-                android:layout_height="280dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/rutas2"
+                android:id="@+id/chorro2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="-15dp"
                 android:fontFamily="casual"
                 android:paddingLeft="7dp"
                 android:textColor="@color/black"
@@ -236,14 +217,95 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/rutasimg2"
-                android:layout_width="300dp"
-                android:layout_height="380dp"
+                android:id="@+id/chorroimg2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/chorro3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="casual"
+                android:paddingLeft="7dp"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/chorro4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="casual"
+                android:paddingLeft="7dp"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/chorroimg3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
                 android:layout_marginBottom="20dp"
                 tools:ignore="ContentDescription">
             </ImageView>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/chorro5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="casual"
+                android:paddingLeft="7dp"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/chorro6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="casual"
+                android:paddingLeft="7dp"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/chorroimg4"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                android:layout_marginBottom="20dp"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/chorro7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="casual"
+                android:paddingLeft="7dp"
+                android:textColor="@color/black"
+                android:gravity='center_horizontal'
+                android:textSize="18sp"/>
+
 
         </LinearLayout>
 

@@ -156,7 +156,6 @@ public class otrosLugaresInicio extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            args.putString("back", "false");
             Fragment fragment = batuecas.newInstance(args);
             cargarFragment(fragment);
         });

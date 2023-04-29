@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
+import com.example.tfg.Maps.otrosLugares.parquebatuecas.batuecasElector;
 import com.example.tfg.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -83,7 +85,6 @@ public class batuecas extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-            back = getArguments().getString("back");
         }
 
         args.putString("idioma", idioma);
@@ -129,10 +130,6 @@ public class batuecas extends Fragment {
 
         GestorDB dbHelper = new GestorDB(getContext());
 
-        if (back.equalsIgnoreCase("true")){
-            text5.requestFocus();
-        }
-
         String[] datos = dbHelper.obtenerInfoLugares(idioma, "intro","batuecas", 4);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -162,7 +159,13 @@ public class batuecas extends Fragment {
          | ¿Qué visitar? |
          ---------------*/
 
-        btn1.setOnClickListener(v -> Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show());
+        btn1.setOnClickListener(v ->  {
+            DialogFragment fragment = new batuecasElector();
+            fragment.setArguments(args);
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"batuecaselector");
+
+        });
 
 
     }
