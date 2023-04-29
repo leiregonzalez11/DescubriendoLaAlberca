@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.tfg.Categorias.secundarias.artesania.trajesFemeninos;
 import com.example.tfg.R;
 
 public class batuecasElector extends DialogFragment implements View.OnClickListener {
@@ -74,14 +73,18 @@ public class batuecasElector extends DialogFragment implements View.OnClickListe
     public void onClick(View view) {
 
         Button btn = (Button) view;
-        DialogFragment fragment;
 
         switch (btn.getId()) {
             case R.id.btnermitas:
-                lugar = "ermitas";
+                DialogFragment f1 = new ermitasypinturas();
+                args.putString("button", "ermitas");
+                f1.setArguments(args);
+                f1.setCancelable(false);
+                f1.show(getChildFragmentManager(),"batuecasermitasypinturas");
                 break;
             case R.id.btncasaparque:
                 lugar = "casaparque";
+                Toast.makeText(getContext(), "No disponible en este momento", Toast.LENGTH_LONG).show();
                 break;
             case R.id.btnchorro:
                 lugar = "chorro";
@@ -90,12 +93,17 @@ public class batuecasElector extends DialogFragment implements View.OnClickListe
                 break;
             case R.id.btnmonasterio:
                 lugar = "monasteriointro";
+                Toast.makeText(getContext(), "No disponible en este momento", Toast.LENGTH_LONG).show();
                 break;
             case R.id.btnpinturas:
-                lugar = "pinturas";
+                DialogFragment f2 = new ermitasypinturas();
+                args.putString("button", "pinturas");
+                f2.setArguments(args);
+                f2.setCancelable(false);
+                f2.show(getChildFragmentManager(),"batuecasermitasypinturas");
                 break;
         }
-        Toast.makeText(getContext(), "No disponible en este momento", Toast.LENGTH_LONG).show();
+
     }
 
     private void cargarFragment(Fragment fragment){
