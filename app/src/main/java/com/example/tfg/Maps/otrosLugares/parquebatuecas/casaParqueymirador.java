@@ -22,14 +22,11 @@ import com.example.tfg.R;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class ermitasypinturas extends DialogFragment {
-
+public class casaParqueymirador extends DialogFragment {
 
     private StorageReference storageRef;
-    private View viewR;
-    private String [] datos;
 
-    public ermitasypinturas() {
+    public casaParqueymirador() {
     }
 
     @SuppressLint({"InflateParams", "SetTextI18n"})
@@ -43,7 +40,7 @@ public class ermitasypinturas extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
-        viewR = inflater.inflate(R.layout.fragment_ermitasbatuecas, null);
+        View viewR = inflater.inflate(R.layout.fragment_casaparque, null);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
@@ -53,37 +50,32 @@ public class ermitasypinturas extends DialogFragment {
         String idioma = getArguments().getString("idioma");
         String button = getArguments().getString("button");
 
-        TextView text1 = viewR.findViewById(R.id.erminfotext1);
-        TextView text2 = viewR.findViewById(R.id.erminfotext2);
-        TextView text3 = viewR.findViewById(R.id.erminfotext3);
-        TextView text4 = viewR.findViewById(R.id.erminfotext4);
-        TextView text5 = viewR.findViewById(R.id.erminfotext5);
-        ImageView img1 = viewR.findViewById(R.id.ermimg1);
-        ImageView img2 = viewR.findViewById(R.id.ermimg2);
-        ImageView img3 = viewR.findViewById(R.id.ermimg3);
+        TextView titulo = viewR.findViewById(R.id.titulocasa);
+        TextView text1 = viewR.findViewById(R.id.casainfotext1);
+        TextView text2 = viewR.findViewById(R.id.casainfotext2);
+        ImageView img1 = viewR.findViewById(R.id.casaimg1);
+        ImageView img2 = viewR.findViewById(R.id.casaimg2);
 
         storageRef = FirebaseStorage.getInstance().getReference();
         GestorDB dbHelper = new GestorDB(getContext());
 
-        if (button.equalsIgnoreCase("ermitas")){
-            datos = dbHelper.obtenerInfoLugares(idioma, "ermitas","batuecas", 5);
-            obtenerImagenFirebase("mapas/otros/batuecas/ermitas1.png", img1);
-            obtenerImagenFirebase("mapas/otros/batuecas/ermitas2.png", img2);
-            obtenerImagenFirebase("mapas/otros/batuecas/ermitas3.png", img3);
-        } else {
-            datos = dbHelper.obtenerInfoLugares(idioma, "pinturas","batuecas", 5);
-            obtenerImagenFirebase("mapas/otros/batuecas/pinturas1.png", img1);
-            obtenerImagenFirebase("mapas/otros/batuecas/pinturas2.png", img2);
-            obtenerImagenFirebase("mapas/otros/batuecas/pinturas3.png", img3);
+        String[] datos;
+        if (button.equalsIgnoreCase("casaparque")){
+            titulo.setText("Casa del Parque Natural de Las Batuecas-Sierra de Francia");
+            datos = dbHelper.obtenerInfoLugares(idioma, "casadelparque", "batuecas", 2);
+            obtenerImagenFirebase("mapas/otros/batuecas/casaparque1.png", img1);
+            obtenerImagenFirebase("mapas/otros/batuecas/casaparque2.png", img2);
+        } else{
+            titulo.setText("Mirador de San José");
+            datos = dbHelper.obtenerInfoLugares(idioma, "mirador","batuecas", 5);
+            obtenerImagenFirebase("mapas/otros/batuecas/mirador1.png", img1);
+            obtenerImagenFirebase("mapas/otros/batuecas/mirador2.png", img2);
         }
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        
-        Button volver = viewR.findViewById(R.id.buttonVolverErmitas);
+
+        Button volver = viewR.findViewById(R.id.buttonVolverCasaParque);
         volver.setOnClickListener(view -> dismiss());
 
         return builder.create();
@@ -95,5 +87,6 @@ public class ermitasypinturas extends DialogFragment {
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
-   
+
+
 }

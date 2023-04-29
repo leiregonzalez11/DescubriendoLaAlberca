@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.tfg.R;
 
@@ -54,13 +53,11 @@ public class batuecasElector extends DialogFragment implements View.OnClickListe
     }
 
     private void setListeners(View batView) {
-        
-        Button ermitas = batView.findViewById(R.id.btnermitas);
+
         Button casaparque = batView.findViewById(R.id.btncasaparque);
         Button chorro = batView.findViewById(R.id.btnchorro);
         Button pinturas = batView.findViewById(R.id.btnpinturas);
         Button monasterio = batView.findViewById(R.id.btnmonasterio);
-        ermitas.setOnClickListener(this);
         casaparque.setOnClickListener(this);
         chorro.setOnClickListener(this);
         pinturas.setOnClickListener(this);
@@ -75,32 +72,28 @@ public class batuecasElector extends DialogFragment implements View.OnClickListe
         Button btn = (Button) view;
 
         switch (btn.getId()) {
-            case R.id.btnermitas:
-                DialogFragment f1 = new ermitasypinturas();
-                args.putString("button", "ermitas");
-                f1.setArguments(args);
-                f1.setCancelable(false);
-                f1.show(getChildFragmentManager(),"batuecasermitasypinturas");
-                break;
             case R.id.btncasaparque:
                 lugar = "casaparque";
-                Toast.makeText(getContext(), "No disponible en este momento", Toast.LENGTH_LONG).show();
+                DialogFragment f1 = new casaParqueymirador();
+                args.putString("button", "casaparque");
+                f1.setArguments(args);
+                f1.setCancelable(false);
+                f1.show(getChildFragmentManager(),"casaparque");
                 break;
             case R.id.btnchorro:
-                lugar = "chorro";
-                Fragment f = elchorro.newInstance(args);
-                cargarFragment(f);
+                Fragment f2 = elchorro.newInstance(args);
+                cargarFragment(f2);
                 break;
             case R.id.btnmonasterio:
-                lugar = "monasteriointro";
-                Toast.makeText(getContext(), "No disponible en este momento", Toast.LENGTH_LONG).show();
+                Fragment f3 = monasterioBatuecas.newInstance(args);
+                cargarFragment(f3);
                 break;
             case R.id.btnpinturas:
-                DialogFragment f2 = new ermitasypinturas();
+                DialogFragment f4 = new ermitaspinturasmonasterio();
                 args.putString("button", "pinturas");
-                f2.setArguments(args);
-                f2.setCancelable(false);
-                f2.show(getChildFragmentManager(),"batuecasermitasypinturas");
+                f4.setArguments(args);
+                f4.setCancelable(false);
+                f4.show(getChildFragmentManager(),"batuecasermitasypinturas");
                 break;
         }
 

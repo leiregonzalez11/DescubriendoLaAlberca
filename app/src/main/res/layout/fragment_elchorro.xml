@@ -287,7 +287,7 @@
             <ImageView
                 android:id="@+id/chorroimg4"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="350dp"
                 android:padding="15dp"
                 android:src="@drawable/laalberca2"
                 android:layout_marginBottom="20dp"

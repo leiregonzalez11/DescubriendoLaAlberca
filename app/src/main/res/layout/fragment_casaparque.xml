@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Maps.otrosLugares.parquebatuecas.ermitaspinturasmonasterio">
+    tools:context=".Maps.otrosLugares.parquebatuecas.casaParqueymirador">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,18 +18,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tituloerm"
-                android:layout_width="wrap_content"
+                android:id="@+id/titulocasa"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:fontFamily="casual"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="26sp"/>
+                android:textSize="24sp"/>
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/erminfotext1"
+                android:id="@+id/casainfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -41,7 +41,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/ermimg1"
+                android:id="@+id/casaimg1"
                 android:layout_height="220dp"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
@@ -51,7 +51,7 @@
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/erminfotext2"
+                android:id="@+id/casainfotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -62,7 +62,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/ermimg2"
+                android:id="@+id/casaimg2"
                 android:layout_height="240dp"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
@@ -70,64 +70,20 @@
                 android:layout_marginBottom="15dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/erminfotext3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textSize="18sp"/>
-
-            <ImageView
-                android:id="@+id/ermimg3"
-                android:layout_height="240dp"
-                android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:padding="15dp"
-                android:layout_marginBottom="15dp"
-                android:src="@drawable/laalberca2"
-                tools:ignore="ContentDescription" />
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/erminfotext4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textSize="18sp"/>
-
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/erminfotext5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="casual"
-                android:gravity='center'
-                android:textSize="18sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="29dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginBottom="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
+                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVolverErmitas"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/buttonVolverCasaParque"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"
