@@ -148,9 +148,8 @@ public class Ajustes extends Fragment {
         listView4.setAdapter(myAdapter4);
 
         listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            /*fragment = QuienesSomos.newInstance();
-            cargarFragment(fragment);*/
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+            fragment = QuienesSomos.newInstance();
+            cargarFragment(fragment);
         });
 
     }
