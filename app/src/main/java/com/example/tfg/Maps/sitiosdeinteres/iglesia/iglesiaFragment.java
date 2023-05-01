@@ -8,9 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -243,7 +240,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "pulpito";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Púlpito");
-                fragment = new pulpitoFragment();
+                fragment = new pulpito();
                 zoomIn(fragment, btn);
                 break;
             case R.id.pilaagua1:
@@ -294,7 +291,9 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.torre:
                 monumento = "torre";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Torre de la iglesia");
+                args.putString("titulo", "Torre de la Iglesia");
+                fragment = new torre();
+                zoomIn(fragment, btn);
                 break;
             case R.id.sacristia:
                 monumento = "sacristia";

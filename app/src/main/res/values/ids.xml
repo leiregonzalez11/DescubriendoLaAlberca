@@ -2,4 +2,6 @@
 <resources>
     <item name="artefintraje" type="id" />
     <item name="recetasAtras" type="id" />
+    <item name="torreTitulo" type="id" />
+    <item name="tot1" type="id" />
 </resources>
