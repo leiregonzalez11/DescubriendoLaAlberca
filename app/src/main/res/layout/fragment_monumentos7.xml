@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Maps.sitiosdeinteres.iglesia.torre">
+    tools:context=".Maps.sitiosdeinteres.monumentos7">
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -32,13 +32,13 @@
                 android:textColor="@color/black"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:text="Torre de la Iglesia"
-                android:textSize="30sp"
+                android:text="Busto de Maurice Legendre"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to1"
+                android:id="@+id/bu1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -51,7 +51,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/toimg1"
+                android:id="@+id/buimg1"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_gravity="center"
@@ -59,7 +59,7 @@
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to2"
+                android:id="@+id/bu2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -71,18 +71,19 @@
                 android:textSize="18sp"/>
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to3"
+                android:id="@+id/bu3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:textColor="@color/black"
+                android:textStyle="italic"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/toimg2"
+                android:id="@+id/buimg2"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_gravity="center"
@@ -90,7 +91,7 @@
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to4"
+                android:id="@+id/bu4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -102,7 +103,7 @@
                 android:textSize="18sp"/>
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to5"
+                android:id="@+id/bu5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -113,7 +114,7 @@
                 android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/toimg3"
+                android:id="@+id/buimg3"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_gravity="center"
@@ -121,67 +122,24 @@
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to6"
+                android:id="@+id/bu6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="25dp"
                 android:textColor="@color/black"
+                android:textStyle="italic"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <LinearLayout
-                android:id="@+id/layoutvideoT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <VideoView
-                    android:id="@+id/videoViewTorre"
-                    android:layout_width="200dp"
-                    android:layout_height="180dp"
-                    android:focusable="false"/>
-
-                <ImageButton
-                    android:id="@+id/playT"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@color/white"
-                    android:src="@drawable/play"
-                    tools:ignore="ContentDescription">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/pauseT"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
-                    android:src="@drawable/pause"
-                    tools:ignore="ContentDescription">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/stopT"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
-                    android:src="@drawable/stop"
-                    tools:ignore="ContentDescription">
-                </ImageButton>
-
-            </LinearLayout>
-
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/to7"
+                android:id="@+id/bu7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -189,7 +147,7 @@
                 android:textSize="18sp"/>
 
             <Button
-                android:id="@+id/buttonVolverTorre"
+                android:id="@+id/buttonVolverBusto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

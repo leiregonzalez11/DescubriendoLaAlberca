@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tfg.Maps.sitiosdeinteres.monumentos7;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
 import com.example.tfg.Maps.parking.parkingFragment;
@@ -281,7 +282,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo", "Barrio El Castillo", btnm3));
         btnm4.setOnClickListener(view -> monumentosOnClick("casadecultura", "Casa de Cultura", btnm4));
         btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio", "Antiguo hospicio de los Carmelitas", btnm5));
-        btnm6.setOnClickListener(view -> monumentosOnClick("bustomauricelegendre", "Busto de Maurice Legendre", btnm6));
+        btnm6.setOnClickListener(view -> monumentosOnClick("busto", "Busto de Maurice Legendre", btnm6));
         btnm7.setOnClickListener(view -> monumentosOnClick("lapuente", "La Puente", btnm7));
         btnm9.setOnClickListener(view -> monumentosOnClick("ermitadesanblas", "Ermita de San Blás", btnm9));
         btnm10.setOnClickListener(view -> monumentosOnClick("plazasanantonio", "Plaza San Antonio", btnm10));
@@ -345,10 +346,14 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             args.putString("titulo", titulo);
             zoomIn(fragment, btn);
         } else if (monumento.equalsIgnoreCase("plazasanantonio") || monumento.equalsIgnoreCase("lapuente")
-                || monumento.equalsIgnoreCase("barrioelcastillo")){
+                || monumento.equalsIgnoreCase("barrioelcastillo")) {
             fragment = new monumentos1();
             args.putString("monumento", monumento);
             args.putString("titulo", titulo);
+            zoomIn(fragment, btn);
+        }else if (monumento.equalsIgnoreCase("busto")){
+            fragment = new monumentos7();
+            args.putString("monumento", monumento);
             zoomIn(fragment, btn);
         } else if (monumento.equalsIgnoreCase("infomonumentos")){
             fragment = new infoMonuFragment();
