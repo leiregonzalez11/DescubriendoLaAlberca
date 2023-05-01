@@ -20,7 +20,6 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
@@ -61,6 +60,8 @@
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
 
@@ -77,6 +78,8 @@
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
 
@@ -93,6 +96,8 @@
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
 
@@ -109,6 +114,8 @@
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
 
@@ -127,6 +134,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
                 android:layout_marginBottom="30dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="15dp">
