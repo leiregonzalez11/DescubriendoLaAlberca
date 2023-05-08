@@ -288,7 +288,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Casa de cultura"
+                android:text="La Puente"
                 android:gravity='left'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -324,38 +324,6 @@
                 android:textSize="20sp"/>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/once"
-                tools:ignore="ContentDescription">
-            </ImageView>
-
-            <TextView
-                android:id="@+id/mon11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
-                android:fontFamily="casual"
-                android:text="La Puente"
-                android:gravity='left'
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -201,21 +201,6 @@
                 tools:ignore="ContentDescription" />
 
             <ImageButton
-                android:id="@+id/btnm4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/nueve"
-                android:background="#00000000"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@id/mapa"
-                app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.56"
-                app:layout_constraintStart_toStartOf="@id/mapa"
-                app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.645"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
                 android:id="@+id/btnm5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -250,14 +235,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
-                android:src="@drawable/oncei"
+                android:src="@drawable/nueve"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintHorizontal_bias="0.559"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.915"
+                app:layout_constraintVertical_bias="0.95"
                 tools:ignore="ContentDescription" />
 
             <ImageButton

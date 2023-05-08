@@ -45,10 +45,9 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private Spinner spinner;
     private ImageButton btnminfo;
     private Bundle args;
-    Animation slideAnimation;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
-    private ImageButton btnm1,btnm2,btnm3,btnm4,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
+    private ImageButton btnm1,btnm2,btnm3,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -98,7 +97,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm1 = v.findViewById(R.id.btnm1);
             btnm2 = v.findViewById(R.id.btnm2);
             btnm3 = v.findViewById(R.id.btnm3);
-            btnm4 = v.findViewById(R.id.btnm4);
             btnm5 = v.findViewById(R.id.btnm5);
             btnm6 = v.findViewById(R.id.btnm6);
             btnm7 = v.findViewById(R.id.btnm7);
@@ -127,6 +125,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
+    /** Método donde se gestiona el Spinner **/
     @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
@@ -177,18 +176,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {}
 
-    private void cargarFragment(Fragment fragment){
-        // Obtenemos el administrador de fragmentos a través de la actividad
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        // Definimos una transacción
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Remplazamos el contenido principal por el fragmento
-        fragmentTransaction.replace(R.id.relativelayout, fragment);
-        fragmentTransaction.addToBackStack(null);
-        // Cambiamos el fragment en la interfaz
-        fragmentTransaction.commit();
-    }
-
     /** Método utilizado para obtener el idioma actual de la app */
     public String determinarIdioma() {
 
@@ -210,7 +197,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         return idioma;
     }
 
-    /** Métodos Mapa Parking*/
+    /** Métodos Mapa Parking */
 
     public void setBtnParking(){
 
@@ -273,14 +260,13 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         }
     }
 
-    /** Métodos Mapa Monumentos*/
+    /** Métodos Mapa Monumentos */
 
     public void setBtnMonumentos(){
 
         btnm1.setOnClickListener(view -> monumentosOnClick("iglesia", "Iglesia", btnm1));
         btnm2.setOnClickListener(view -> monumentosOnClick("plazamayor", "Plaza Mayor", btnm2));
         btnm3.setOnClickListener(view -> monumentosOnClick("barrioelcastillo", "Barrio El Castillo", btnm3));
-        btnm4.setOnClickListener(view -> monumentosOnClick("casadecultura", "Casa de Cultura", btnm4));
         btnm5.setOnClickListener(view -> monumentosOnClick("antiguohospicio", "Antiguo hospicio de los Carmelitas", btnm5));
         btnm6.setOnClickListener(view -> monumentosOnClick("busto", "Busto de Maurice Legendre", btnm6));
         btnm7.setOnClickListener(view -> monumentosOnClick("lapuente", "La Puente", btnm7));
@@ -298,7 +284,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm1.setVisibility(View.VISIBLE);
             btnm2.setVisibility(View.VISIBLE);
             btnm3.setVisibility(View.VISIBLE);
-            btnm4.setVisibility(View.VISIBLE);
             btnm5.setVisibility(View.VISIBLE);
             btnm6.setVisibility(View.VISIBLE);
             btnm7.setVisibility(View.VISIBLE);
@@ -313,7 +298,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm1.setVisibility(View.INVISIBLE);
             btnm2.setVisibility(View.INVISIBLE);
             btnm3.setVisibility(View.INVISIBLE);
-            btnm4.setVisibility(View.INVISIBLE);
             btnm5.setVisibility(View.INVISIBLE);
             btnm6.setVisibility(View.INVISIBLE);
             btnm7.setVisibility(View.INVISIBLE);
@@ -365,8 +349,10 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
+    /** Métodos comunes */
+
     public void zoomIn (DialogFragment fragment, View view){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
+        Animation slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
         view.startAnimation(slideAnimation);
 
         new Handler().postDelayed(() -> {
@@ -374,6 +360,18 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             fragment.setCancelable(false);
             fragment.show(getChildFragmentManager(),"fragment");
         },900);
+    }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
     }
 
 }
