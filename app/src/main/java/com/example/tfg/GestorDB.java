@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import com.example.tfg.EspacioDelViajero.alojamiento.Alojamiento;
 import com.example.tfg.EspacioDelViajero.comercio.Comercio;
 import com.example.tfg.EspacioDelViajero.restauracion.Establecimiento;
-import com.example.tfg.Categorias.secundarias.cultura.diccionario.Palabra;
 import com.example.tfg.Categorias.secundarias.gastronomia.Receta;
 import com.example.tfg.Maps.otrosLugares.pueblos.Pueblo;
 import java.io.BufferedReader;
@@ -21,7 +20,7 @@ import java.util.LinkedList;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 13;
+    private static final int DB_VERSION = 14;
     private final Context context;
     private boolean seguir = true;
 
@@ -38,8 +37,8 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("PRAGMA encoding=\"UTF-8\";");
         //Creamos las tablas de la BBDD
         crearTablas(sqLiteDatabase);
+        //Cargamos los datos en la BBDD
         try {
-            //Cargamos los datos en la BBDD
             cargarDatos(sqLiteDatabase);
             cargarDatosConComillas(sqLiteDatabase);
         } catch (IOException e) {
@@ -47,6 +46,7 @@ public class GestorDB extends SQLiteOpenHelper {
         }
 
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS arquitectura");
@@ -60,7 +60,6 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS historia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS monumento");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS diccionario");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS fiesta");
         onCreate(sqLiteDatabase);
 
@@ -142,12 +141,6 @@ public class GestorDB extends SQLiteOpenHelper {
         Log.i("Tabla monumento: ", query);
         sqLiteDatabase.execSQL(query);
 
-        //Esquema de la tabla diccionario
-        query = "CREATE TABLE IF NOT EXISTS diccionario (idDic INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, letra VARCHAR NOT NULL," +
-                "palabra VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
-        Log.i("Tabla diccionario: ", query);
-        sqLiteDatabase.execSQL(query);
-
         //Esquema de la tabla fiesta
         query = "CREATE TABLE IF NOT EXISTS fiesta (idFiesta INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, nombreFiesta VARCHAR NOT NULL," +
                 "fechaFiesta VARCHAR, descrFiesta VARCHAR NOT NULL)";
@@ -213,10 +206,6 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','en','lacasabaja','In the 19th century, the War of Independence left all the buildings with traces of looting and destruction. Despite this, in 1816 the monks began the restoration of the convent. This tenacity in building and rebuilding the convent was put an end to in 1835 by Mendizábal''s Disentailment.');");
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('peñadefrancia','en','lacasabaja','When the monks were expelled and the convent was sold, the destruction of the convent began. Today, there are no more roofs, the porter''s lodge, the ashlar cloister, the refectory, the kitchen, the cells, the bakery, the offices... everything is full of brambles and weeds that grow luxuriantly on the floor and walls. There are still traces of what was once a royal staircase, of a large and beautiful neoclassical church that serves as a hayloft and stable, and the only remaining vaults of the monastery, in what were once the sacristy and the chapter house, threaten to fall down.');");
         sqLiteDatabase.execSQL("INSERT INTO otroslugares (categoriaOtros, idioma, nombreOtro, descrOtro) VALUES ('batuecas','en','monasterio','The enclosure is made up of two fences, within which the convent and its outbuildings are located, and the church, built in 1602 and enlarged in 1686, is the central building of the complex, and is surrounded by a street paved with slate and large gardens in the form of a cloister. To the south, there are several monks'' oratory cells, and on the west wall, a door opens onto the refectory, kitchen, workshops, servants'' quarters, bakery, laundry... The definitive structure of the monastery took shape during the 17th and 18th centuries.');");
-        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('es', 'c', 'Cuarto''l salaero', 'Habitación para salar la matanza.');");
-        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('es', 'c', 'Cuquear', 'Mocking in the night imitating the cuckoo''s sound.');");
-        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('en', 't', 'Tiñuelas', 'Cracks transformed into sores that often appear on a woman''s nipple.');");
-        sqLiteDatabase.execSQL("INSERT INTO diccionario (idioma, letra, palabra, descr) VALUES ('en', 'mnñ', 'Novena (la)', 'Women''s prayer, on Sunday afternoon, facing the Virgen de los Dolores.');");
         sqLiteDatabase.execSQL("INSERT INTO fiesta (idioma, nombreFiesta, fechaFiesta, descrFiesta) VALUES ('en', 'sananton', 'enero', 'The feast of San Antón (Saint Anthony, Abbot), which is celebrated on 17 January, is a feast to bless the village''s livestock, to protect them from plagues and diseases. The day before, in the afternoon, the feast is announced by a parade with the tambourine and bagpipes. On the feast day, a mass and procession with the image of the saint is held in the morning around the church.');");
         sqLiteDatabase.execSQL("INSERT INTO fiesta (idioma, nombreFiesta, fechaFiesta, descrFiesta) VALUES ('en', 'sananton', 'enero', 'The saint has stewards, who play a special role on this day. In the afternoon, the rosary is recited and the animals are blessed by the priest in front of the church. In the old days, the cattle were given three laps around the church and surrounding streets, a good complement to the blessing with holy water. However, perhaps the most striking aspect of this fiesta is the so-called Marrano San Antón, something that had been lost and which has been recovered in recent years.');");
         sqLiteDatabase.execSQL("INSERT INTO fiesta (idioma, nombreFiesta, fechaFiesta, descrFiesta) VALUES ('en', 'sansebastian', 'enero', 'The festivity of San Sebastián consists of a mass with a procession around the church, with the image of the saint. The most significant part of this celebration is the \"alborada\" or \"alborá\" which is sung to the saint in the streets of the village on the night of the eve, i.e. the night of 19 January, sung to the town''s mayordomos and authorities, with each person having their own personalised verse.');");
@@ -515,24 +504,6 @@ public class GestorDB extends SQLiteOpenHelper {
         }
         c.close();
         return descr;
-    }
-
-    //Tabla Diccionario
-    public LinkedList<Palabra> obtenerPalabras(String idioma) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        LinkedList<Palabra> palabras = new LinkedList<>();
-
-        Cursor c = sqLiteDatabase.rawQuery("SELECT letra, palabra, descr FROM diccionario WHERE idioma = ?;", new String[]{idioma});
-        while (c.moveToNext()){
-            Palabra palabra = new Palabra();
-            palabra.setCategoriaPalabra(c.getString(0));
-            palabra.setNombrepalabra(c.getString(1));
-            palabra.setDefinicionpalabra(c.getString(2));
-            palabras.add(palabra);
-        }
-        c.close();
-        return palabras;
     }
 
 }

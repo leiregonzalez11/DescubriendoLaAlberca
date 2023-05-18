@@ -5,9 +5,10 @@ import android.os.Parcelable;
 
 public class Palabra implements Parcelable {
 
-    private String categoriaPalabra;
     private String nombrepalabra;
-    private String definicionpalabra;
+    private String definicionpalabraEs;
+    private String definicionpalabraEu;
+    private String definicionpalabraEn;
 
 
     @Override
@@ -17,17 +18,26 @@ public class Palabra implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.categoriaPalabra);
         parcel.writeString(this.nombrepalabra);
-        parcel.writeString(this.definicionpalabra);
+        parcel.writeString(this.definicionpalabraEs);
+        parcel.writeString(this.definicionpalabraEu);
+        parcel.writeString(this.definicionpalabraEn);
     }
 
     public Palabra (){}
 
+    public Palabra (String nombrepalabra, String definicionpalabraEs, String definicionpalabraEu, String definicionpalabraEn){
+        this.nombrepalabra = nombrepalabra;
+        this.definicionpalabraEs = definicionpalabraEs;
+        this.definicionpalabraEu = definicionpalabraEu;
+        this.definicionpalabraEn = definicionpalabraEn;
+    }
+
     protected Palabra(Parcel in) {
-        this.categoriaPalabra = in.readString();
         this.nombrepalabra = in.readString();
-        this.definicionpalabra = in.readString();
+        this.definicionpalabraEs = in.readString();
+        this.definicionpalabraEn = in.readString();
+        this.definicionpalabraEu = in.readString();
     }
 
     public static final Parcelable.Creator<Palabra> CREATOR = new Parcelable.Creator<Palabra>() {
@@ -42,28 +52,36 @@ public class Palabra implements Parcelable {
         }
     };
 
-    public String getCategoriaPalabra() {
-        return categoriaPalabra;
-    }
-
     public String getNombrePalabra() {
         return nombrepalabra;
     }
 
-    public String getDefinicionpalabra() {
-        return definicionpalabra;
+    public String getDefinicionpalabraEs() {
+        return definicionpalabraEs;
     }
 
-    public void setCategoriaPalabra(String categoriaPalabra) {
-        this.categoriaPalabra = categoriaPalabra;
+    public String getDefinicionpalabraEn() {
+        return definicionpalabraEn;
     }
 
-    public void setNombrepalabra(String nombrepalabra) {
+    public String getDefinicionpalabraEu() {
+        return definicionpalabraEu;
+    }
+
+    public void setNombrePalabra(String nombrepalabra) {
         this.nombrepalabra = nombrepalabra;
     }
 
-    public void setDefinicionpalabra(String definicionpalabra) {
-        this.definicionpalabra = definicionpalabra;
+    public void setDefinicionpalabraEs(String definicionpalabraEs) {
+        this.definicionpalabraEs = definicionpalabraEs;
+    }
+
+    public void setDefinicionpalabraEu(String definicionpalabraEu) {
+        this.definicionpalabraEu = definicionpalabraEu;
+    }
+
+    public void setDefinicionpalabraEn(String definicionpalabraEn) {
+        this.definicionpalabraEn = definicionpalabraEn;
     }
 
 }

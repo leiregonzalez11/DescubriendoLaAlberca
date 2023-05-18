@@ -12,32 +12,34 @@ import java.util.List;
 
 public class ListaPalabras {
 
-    private final LinkedList<Palabra> palabras;
+    private LinkedList<Palabra> palabras1;
 
-    public ListaPalabras (Context context, String idioma){
+    public ListaPalabras (Context context, String letra, String idioma){
         GestorDB dbHelper = new GestorDB(context);
-        palabras = dbHelper.obtenerPalabras(idioma);
-    }
-
-    public Palabra buscarPalabra(String nombrePalabra){
-        for (int i = 0; i< palabras.size(); i++){
-            Palabra palabra = palabras.get(i);
-            if (palabra.getNombrePalabra().equalsIgnoreCase(nombrePalabra)){
-                return palabra;
-            }
+        for (int i = 0; i< palabras1.size(); i++){
+            System.out.println("PALABRA NOMBRE " + i + " " + palabras1.get(i).getNombrePalabra());
         }
-        return null;
+        //palabras = dbHelper.obtenerPalabras(idioma);
     }
 
-    public List<String> obtenerListaPalabras(String letra){
+    public ListaPalabras (LinkedList<Palabra> lista){
+        this.palabras1 = lista;
+    }
+
+
+
+    public void setListaPalabras(LinkedList<Palabra> listaPalabras){
+        palabras1 = listaPalabras;
+    }
+
+    public List<String> obtenerListaPalabras(){
 
         List<String> lista = new ArrayList<>();
-
-        for (int i = 0; i< palabras.size(); i++){
-            Palabra palabra = palabras.get(i);
-            if (palabra.getCategoriaPalabra().equalsIgnoreCase(letra)){
-                lista.add(palabra.getNombrePalabra());
-            }
+        for (int i = 0; i< palabras1.size(); i++){
+            Palabra palabra = palabras1.get(i);
+            System.out.println("PALABRA NOMBRE " + i + " " + palabras1.get(i).getNombrePalabra());
+            System.out.println("PALABRA NOMBRE2 " + i + " " + palabra.getNombrePalabra());
+            lista.add(palabra.getNombrePalabra());
         }
         return organizedAlphabeticList(lista);
     }

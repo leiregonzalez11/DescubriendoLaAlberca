@@ -41,8 +41,18 @@ public class definicionpalabra extends DialogFragment {
         TextView palabratitulo = infoView.findViewById(R.id.palabratitulo);
         TextView definicion = infoView.findViewById(R.id.definicionpalabra);
 
+        String def = "";
+
+        if (idioma.equalsIgnoreCase("es")){
+            def = palabra.getDefinicionpalabraEs();
+        } else if (idioma.equalsIgnoreCase("eu")){
+            def = palabra.getDefinicionpalabraEu();
+        } else if (idioma.equalsIgnoreCase("en")){
+            def = palabra.getDefinicionpalabraEn();
+        }
+
         palabratitulo.setText(palabra.getNombrePalabra());
-        definicion.setText(palabra.getDefinicionpalabra() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        definicion.setText(def + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         Button volver = infoView.findViewById(R.id.buttonVolverDef);
         volver.setOnClickListener(view -> dismiss());
