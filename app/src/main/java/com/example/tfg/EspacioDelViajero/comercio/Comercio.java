@@ -5,7 +5,6 @@ import android.os.Parcelable;
 
 public class Comercio implements Parcelable{
 
-    private String catComercio;
     private String nombreComercio;
     private String locationComercio;
     private String telComercio;
@@ -17,7 +16,6 @@ public class Comercio implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.catComercio);
         parcel.writeString(this.nombreComercio);
         parcel.writeString(this.locationComercio);
         parcel.writeString(this.telComercio);
@@ -25,14 +23,17 @@ public class Comercio implements Parcelable{
 
     public Comercio (){}
 
+    public Comercio (String nombreComercio, String localizacion, String telefono){
+        this.nombreComercio = nombreComercio;
+        this.locationComercio = localizacion;
+        this.telComercio = telefono;
+    }
+
     protected Comercio(Parcel in) {
-        this.catComercio = in.readString();
         this.nombreComercio = in.readString();
         this.locationComercio = in.readString();
         this.telComercio = in.readString();
     }
-
-
 
     public static final Parcelable.Creator<Comercio> CREATOR = new Parcelable.Creator<Comercio>() {
         @Override
@@ -45,15 +46,6 @@ public class Comercio implements Parcelable{
             return new Comercio[size];
         }
     };
-
-
-    public String getCatComercio() {
-        return catComercio;
-    }
-
-    public void setCatComercio(String catComercio) {
-        this.catComercio = catComercio;
-    }
 
     public String getNombreComercio() {
         return nombreComercio;

@@ -1,8 +1,12 @@
 package com.example.tfg.EspacioDelViajero.comercio;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -20,18 +25,26 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.listViewAdapter;
 import com.example.tfg.OtherFiles.DialogFragments.ordenarFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.Collator;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
-public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextListener {
+public class ArtesaniaTienda extends Fragment {
 
     private Bundle args;
     private String nombreTienda, ordenLista;
     private ListView listView;
     private ImageButton ordenarBtn;
     private listViewAdapter myAdapter;
-    List<String> listanombres;
-    List<Comercio> com;
     private SearchView editsearch;
 
     /**
@@ -75,67 +88,147 @@ public class ArtesaniaTienda extends Fragment implements SearchView.OnQueryTextL
     @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ListaComercio listaCom = ListaComercio.getMiListaComercios();
-        listaCom.setContext(requireContext());
+        setListView(view, "artesania");
 
-        //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
-        ordenLista = "atoz";
-        listanombres = determinarOrden(listaCom);
+    }
 
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_arte, listanombres);
-        listView.setAdapter(myAdapter);
+    public void setListView(View infomView, String categoria){
 
-        Bundle argsD = new Bundle();
+        ListView listView = infomView.findViewById(R.id.listviewArtesania);
 
-        ordenarBtn.setOnClickListener(v ->{
-            ordenarFragment dialog = new ordenarFragment();
-            argsD.putString("ordenar", ordenLista);
-            argsD.putString("origen", "comercio");
-            dialog.setArguments(argsD);
-            //Se implementa la interfaz
-            dialog.setOnClickButtonListener(ordenar -> {
-                ordenLista = ordenar;
-                listanombres = determinarOrden(listaCom);
-                myAdapter.setmData(listanombres);
-            });
+        //Instancia a la base de datos
+        FirebaseDatabase fdb = FirebaseDatabase.getInstance();
+        //apuntamos al nodo que queremos leer
+        DatabaseReference myRef = fdb.getReference().child("comercio").child(categoria);
 
-            dialog.show(getChildFragmentManager(), "OrdenarFragment");
+        //Agregamos un ValueEventListener para que los cambios que se hagan en la base de datos
+        //se reflejen en la aplicacion
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.R)
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                if (dataSnapshot.exists()){
+                    LinkedList<Comercio> ps = new LinkedList<>();
+                    HashMap dataMap = (HashMap) dataSnapshot.getValue();
+                    assert dataMap != null;
+                    for (Object key: dataMap.keySet()){
+                        Object datos = dataMap.get(key);
+                        HashMap userData = (HashMap) datos;
+                        assert userData != null;
+                        Comercio comercio = new Comercio((String) key, (String) userData.get("ubicacion"), (String) userData.get("telefono"));
+                        ps.add(comercio);
+                        Log.d(TAG, "Value of palabras is: " + comercio.getNombreComercio());
+                    }
+
+                    //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
+                    ordenLista = "atoz";
+                    List<String> listaNombres = obtenerListaNombresComercio(ps, ordenLista);
+
+                    myAdapter = new listViewAdapter(getContext(), R.layout.list_alim, listaNombres);
+                    listView.setAdapter(myAdapter);
+
+                    Bundle argsD = new Bundle();
+
+                    ordenarBtn.setOnClickListener(v ->{
+                        ordenarFragment dialog = new ordenarFragment();
+                        argsD.putString("ordenar", ordenLista);
+                        argsD.putString("origen", "comercio");
+                        dialog.setArguments(argsD);
+                        //Se implementa la interfaz
+                        dialog.setOnClickButtonListener(ordenar -> {
+                            ordenLista = ordenar;
+                            List<String> listanombres = obtenerListaNombresComercio(ps, ordenLista);
+                            myAdapter.setmData(listanombres);
+                        });
+
+                        dialog.show(getChildFragmentManager(), "OrdenarFragment");
+                    });
+
+
+                    editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                        @Override
+                        public boolean onQueryTextSubmit(String query) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onQueryTextChange(String newText) {
+                            myAdapter.getFilter().filter(newText);
+                            return false;
+                        }
+                    });
+                    @SuppressLint("DiscouragedApi")
+                    int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+                    TextView searchText = editsearch.findViewById(idtext);
+                    Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
+                    searchText.setTypeface(typeface);
+
+                    listView.setOnItemClickListener((adapterView, v, position, id) -> {
+                        //Obtenemos el nombre del elemento pulsado y cargamos su información
+                        nombreTienda = adapterView.getItemAtPosition(position).toString();
+                        args.putParcelable("comercio", buscarComercio(nombreTienda, ps));
+                        DialogFragment tiendaFragment = new tiendaFragment();
+                        tiendaFragment.setArguments(args);
+                        tiendaFragment.setCancelable(false);
+                        tiendaFragment.show(getChildFragmentManager(),"tienda_fragment");
+
+                    });
+                }
+
+            }
+
+
+            @RequiresApi(api = Build.VERSION_CODES.R)
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
         });
+    }
+
+    public List<String> obtenerListaNombresComercio(List<Comercio> est, String orden){
+
+        List<String> lista = new LinkedList<>();
+        for (int i = 0; i < est.size(); i++){
+            lista.add(est.get(i).getNombreComercio());
+        }
+
+        if (orden.equalsIgnoreCase("atoz")){
+            organizedAlphabeticList(lista);
+        } else if (orden.equalsIgnoreCase("ztoa")){
+            organizedAlphabeticList(lista);
+            Collections.reverse(lista);
+        }
+
+        return lista;
+    }
 
 
-        editsearch.setOnQueryTextListener(this);
-        int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-        TextView searchText = editsearch.findViewById(idtext);
-        Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
-        searchText.setTypeface(typeface);
+    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
+    public static List<String> organizedAlphabeticList(List<String> list) {
+        list.sort(new Comparator<String>() {
+            final Collator collator = Collator.getInstance();
 
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Obtenemos el nombre del elemento pulsado y cargamos su información
-            nombreTienda = adapterView.getItemAtPosition(position).toString();
-            args.putParcelable("comercio", listaCom.buscarComercio(nombreTienda, com));
-            DialogFragment tiendaFragment = new tiendaFragment();
-            tiendaFragment.setArguments(args);
-            tiendaFragment.setCancelable(false);
-            tiendaFragment.show(getChildFragmentManager(),"tienda_fragment");
-
+            public int compare(String o1, String o2) {
+                return collator.compare(o1, o2);
+            }
         });
+        return list;
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        myAdapter.getFilter().filter(s);
-        return false;
-    }
-
-    private List <String> determinarOrden(ListaComercio comercio){
-        com = comercio.getListaComercios("artesania");
-        List<String> nombres = comercio.getListaNombres(com, ordenLista);
-        return nombres;
+    public Comercio buscarComercio(String nombreCom, List<Comercio> com){
+        for (int i = 0; i <com.size(); i++){
+            Comercio comr = com.get(i);
+            if (comr.getNombreComercio().equalsIgnoreCase(nombreCom)){
+                return comr;
+            }
+        }
+        return null;
     }
 
 }

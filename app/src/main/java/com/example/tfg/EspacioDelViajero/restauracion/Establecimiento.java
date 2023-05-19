@@ -4,8 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Establecimiento implements Parcelable {
-    
-    private String catEstabl;
+
     private String nombreEstabl;
     private double puntEstabl;
     private String locationEstabl;
@@ -18,7 +17,6 @@ public class Establecimiento implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.catEstabl);
         parcel.writeString(this.nombreEstabl);
         parcel.writeDouble(this.puntEstabl);
         parcel.writeString(this.locationEstabl);
@@ -27,8 +25,14 @@ public class Establecimiento implements Parcelable {
 
     public Establecimiento (){}
 
+    public Establecimiento (String nombreEstabl, String localizacion, String telEstabl, Double puntEstabl){
+        this.nombreEstabl = nombreEstabl;
+        this.locationEstabl = localizacion;
+        this.telEstabl = telEstabl;
+        this.puntEstabl = puntEstabl;
+    }
+
     protected Establecimiento(Parcel in) {
-        this.catEstabl = in.readString();
         this.nombreEstabl = in.readString();
         this.puntEstabl = in.readDouble();
         this.locationEstabl = in.readString();
@@ -47,10 +51,6 @@ public class Establecimiento implements Parcelable {
         }
     };
 
-    public String getCatEstabl() {
-        return catEstabl;
-    }
-
     public String getNombreEstabl() {
         return nombreEstabl;
     }
@@ -65,10 +65,6 @@ public class Establecimiento implements Parcelable {
 
     public String getTelEstabl() {
         return telEstabl;
-    }
-
-    public void setCatEstabl(String catEstabl) {
-        this.catEstabl = catEstabl;
     }
 
     public void setNombreEstabl(String nombreEstabl) {

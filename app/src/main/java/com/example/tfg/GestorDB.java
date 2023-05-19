@@ -116,13 +116,6 @@ public class GestorDB extends SQLiteOpenHelper {
         Log.i("Tabla Restaurantes: ", query);
         sqLiteDatabase.execSQL(query);
 
-        //Esquema de la tabla comercio
-        query = "CREATE TABLE IF NOT EXISTS comercio (idCom INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "categoriaCom VARCHAR NOT NULL, nombreCom VARCHAR NOT NULL, " +
-                "numCom VARCHAR NOT NULL, ubiCom VARCHAR NOT NULL)";
-        Log.i("Tabla Comercio: ", query);
-        sqLiteDatabase.execSQL(query);
-
         //Esquema de la tabla tradiciones
         query = "CREATE TABLE IF NOT EXISTS tradiciones (idTrad INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nombreTrad VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, descr VARCHAR NOT NULL)";
@@ -300,7 +293,7 @@ public class GestorDB extends SQLiteOpenHelper {
         Cursor c = sqLiteDatabase.rawQuery(query, null);
         while (c.moveToNext()){
             Alojamiento alojamiento = new Alojamiento();
-            alojamiento.setCatAloj(c.getString(1));
+            //alojamiento.setCatAloj(c.getString(1));
             alojamiento.setNombreAloj(c.getString(2));
             alojamiento.setTelAloj(c.getString(5));
             alojamiento.setLocationAloj(c.getString(3));
@@ -320,7 +313,7 @@ public class GestorDB extends SQLiteOpenHelper {
         Cursor c = sqLiteDatabase.rawQuery(query, null);
         while (c.moveToNext()){
             Establecimiento establecimiento = new Establecimiento();
-            establecimiento.setCatEstabl(c.getString(1));
+            //establecimiento.setCatEstabl(c.getString(1));
             establecimiento.setNombreEstabl(c.getString(2));
             establecimiento.setTelEstabl(c.getString(3));
             establecimiento.setLocationEstabl(c.getString(4));
@@ -329,25 +322,6 @@ public class GestorDB extends SQLiteOpenHelper {
         }
         c.close();
         return establecimientos;
-    }
-
-    //Tabla Comercios
-    public LinkedList<Comercio> obtenerComercios(String query) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        LinkedList<Comercio> comercios = new LinkedList<>();
-
-        Cursor c = sqLiteDatabase.rawQuery(query, null);
-        while (c.moveToNext()){
-            Comercio comercio = new Comercio();
-            comercio.setCatComercio(c.getString(1));
-            comercio.setNombreComercio(c.getString(2));
-            comercio.setTelComercio(c.getString(3));
-            comercio.setLocationComercio(c.getString(4));
-            comercios.add(comercio);
-        }
-        c.close();
-        return comercios;
     }
 
     //Tabla Gastronomia

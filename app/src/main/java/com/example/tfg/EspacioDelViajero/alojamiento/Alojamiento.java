@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 public class Alojamiento implements Parcelable {
 
-
-    private String catAloj;
     private String nombreAloj;
     private double puntAloj;
     private String locationAloj;
@@ -19,7 +17,6 @@ public class Alojamiento implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.catAloj);
         parcel.writeString(this.nombreAloj);
         parcel.writeDouble(this.puntAloj);
         parcel.writeString(this.locationAloj);
@@ -28,8 +25,14 @@ public class Alojamiento implements Parcelable {
 
     public Alojamiento(){}
 
+    public Alojamiento (String nombreAloj, String localizacion, String telAloj, Double puntAloj){
+        this.nombreAloj = nombreAloj;
+        this.locationAloj = localizacion;
+        this.telAloj = telAloj;
+        this.puntAloj = puntAloj;
+    }
+
     protected Alojamiento(Parcel in) {
-        this.catAloj = in.readString();
         this.nombreAloj = in.readString();
         this.puntAloj = in.readDouble();
         this.locationAloj = in.readString();
@@ -48,10 +51,6 @@ public class Alojamiento implements Parcelable {
         }
     };
 
-    public String getCatAloj() {
-        return catAloj;
-    }
-
     public String getNombreAloj() {
         return nombreAloj;
     }
@@ -66,10 +65,6 @@ public class Alojamiento implements Parcelable {
 
     public String getTelAloj() {
         return telAloj;
-    }
-
-    public void setCatAloj(String catAloj) {
-        this.catAloj = catAloj;
     }
 
     public void setNombreAloj(String nombreAloj) {
