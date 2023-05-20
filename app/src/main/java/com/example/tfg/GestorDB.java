@@ -304,26 +304,6 @@ public class GestorDB extends SQLiteOpenHelper {
         return alojamientos;
     }
 
-    //Tabla Restaurantes
-    public LinkedList<Establecimiento> obtenerestablecimientos(String query) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        LinkedList<Establecimiento> establecimientos = new LinkedList<>();
-
-        Cursor c = sqLiteDatabase.rawQuery(query, null);
-        while (c.moveToNext()){
-            Establecimiento establecimiento = new Establecimiento();
-            //establecimiento.setCatEstabl(c.getString(1));
-            establecimiento.setNombreEstabl(c.getString(2));
-            establecimiento.setTelEstabl(c.getString(3));
-            establecimiento.setLocationEstabl(c.getString(4));
-            establecimiento.setPuntEstabl(c.getDouble(5));
-            establecimientos.add(establecimiento);
-        }
-        c.close();
-        return establecimientos;
-    }
-
     //Tabla Gastronomia
     public String[] obtenerDescrGastro(String idioma, String categoria, int numTV){
 

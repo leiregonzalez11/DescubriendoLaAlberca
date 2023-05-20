@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class Establecimiento implements Parcelable {
 
     private String nombreEstabl;
-    private double puntEstabl;
+    private Double puntEstabl;
     private String locationEstabl;
     private String telEstabl;
 
@@ -55,7 +55,7 @@ public class Establecimiento implements Parcelable {
         return nombreEstabl;
     }
 
-    public double getPuntEstabl() {
+    public Double getPuntEstabl() {
         return puntEstabl;
     }
 
@@ -71,7 +71,7 @@ public class Establecimiento implements Parcelable {
         this.nombreEstabl = nombreEstabl;
     }
 
-    public void setPuntEstabl(double puntEstabl) {
+    public void setPuntEstabl(Double puntEstabl) {
         this.puntEstabl = puntEstabl;
     }
 

@@ -1,8 +1,12 @@
 package com.example.tfg.EspacioDelViajero.restauracion;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -20,19 +25,30 @@ import androidx.fragment.app.Fragment;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.listViewAdapter;
 import com.example.tfg.OtherFiles.DialogFragments.ordenarFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.Collator;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 public class Bares extends Fragment implements SearchView.OnQueryTextListener {
 
+    private static boolean swapped;
     private Bundle args;
     private String nombreRest, ordenLista;
-    private ListView listView;
     private ImageButton ordenarBtn;
     private listViewAdapter myAdapter;
-    List<String> listanombres;
     List<Establecimiento> est;
     private SearchView editsearch;
+    private ListView listView;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -64,61 +80,116 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
         if(v != null){
             listView = v.findViewById(R.id.listviewBares);
             ordenarBtn = v.findViewById(R.id.ordenarButtonR1);
-            editsearch = (SearchView) v.findViewById(R.id.svBares);
+            editsearch = v.findViewById(R.id.svBares);
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @Override
     @SuppressLint("SetTextI18n")
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        setListView(view, "bar");
+    }
 
-        ListaEstablecimiento listaRest = ListaEstablecimiento.getMiListaestablecimientos();
-        listaRest.setContext(requireContext());
+    public void setListView(View infomView, String categoria){
 
-        //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
-        ordenLista = "atoz";
-        listanombres = determinarOrden(listaRest);
+        ListView listView = infomView.findViewById(R.id.listviewBares);
 
-        myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, listanombres);
-        listView.setAdapter(myAdapter);
+        //Instancia a la base de datos
+        FirebaseDatabase fdb = FirebaseDatabase.getInstance();
+        //apuntamos al nodo que queremos leer
+        DatabaseReference myRef = fdb.getReference().child("hosteleria").child(categoria);
 
-        Bundle argsD = new Bundle();
+        //Agregamos un ValueEventListener para que los cambios que se hagan en la base de datos
+        //se reflejen en la aplicacion
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
 
-        ordenarBtn.setOnClickListener(v ->{
-            ordenarFragment dialog = new ordenarFragment();
-            argsD.putString("ordenar", ordenLista);
-            argsD.putString("origen", "establecimiento");
-            dialog.setArguments(argsD);
-            //Se implementa la interfaz
-            dialog.setOnClickButtonListener(ordenar -> {
-                ordenLista = ordenar;
-                listanombres = determinarOrden(listaRest);
-                myAdapter.setmData(listanombres);
-            });
+            @RequiresApi(api = Build.VERSION_CODES.R)
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                if (dataSnapshot.exists()){
+                    LinkedList<Establecimiento> ps = new LinkedList<>();
+                    HashMap dataMap = (HashMap) dataSnapshot.getValue();
+                    assert dataMap != null;
+                    for (Object key: dataMap.keySet()){
+                        Object datos = dataMap.get(key);
+                        HashMap userData = (HashMap) datos;
+                        assert userData != null;
+                        Establecimiento establecimiento = new Establecimiento((String) key, (String) userData.get("ubicacion"),
+                                (String) userData.get("telefono"), (Double) userData.get("puntuación"));
+                        ps.add(establecimiento);
+                        Log.d(TAG, "Value of palabras is: " + establecimiento.getNombreEstabl());
+                    }
 
-            dialog.show(getChildFragmentManager(), "OrdenarFragment");
+                    //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
+                    ordenLista = "atoz";
+                    List<String> listaNombres = getListaNombresEstablecimiento(ps, ordenLista);
+
+                    myAdapter = new listViewAdapter(getContext(), R.layout.list_bar, listaNombres);
+                    listView.setAdapter(myAdapter);
+
+                    Bundle argsD = new Bundle();
+
+                    ordenarBtn.setOnClickListener(v ->{
+                        ordenarFragment dialog = new ordenarFragment();
+                        argsD.putString("ordenar", ordenLista);
+                        argsD.putString("origen", "establecimiento");
+                        dialog.setArguments(argsD);
+                        //Se implementa la interfaz
+                        dialog.setOnClickButtonListener(ordenar -> {
+                            ordenLista = ordenar;
+                            List<String> listanombres = getListaNombresEstablecimiento(ps, ordenLista);
+                            myAdapter.setmData(listanombres);
+                        });
+
+                        dialog.show(getChildFragmentManager(), "OrdenarFragment");
+                    });
+
+
+                    editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                        @Override
+                        public boolean onQueryTextSubmit(String query) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onQueryTextChange(String newText) {
+                            myAdapter.getFilter().filter(newText);
+                            return false;
+                        }
+                    });
+                    @SuppressLint("DiscouragedApi")
+                    int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+                    TextView searchText = editsearch.findViewById(idtext);
+                    Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
+                    searchText.setTypeface(typeface);
+
+                    listView.setOnItemClickListener((adapterView, v, position, id) -> {
+                        //Obtenemos el nombre del elemento pulsado y cargamos su información
+                        nombreRest = adapterView.getItemAtPosition(position).toString();
+                        args.putParcelable("establ", buscarEst(nombreRest, ps));
+                        DialogFragment restFragment = new establecimientoFragment();
+                        restFragment.setArguments(args);
+                        restFragment.setCancelable(false);
+                        restFragment.show(getChildFragmentManager(),"rest_fragment");
+
+                    });
+                }
+
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.R)
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
         });
-
-
-        editsearch.setOnQueryTextListener(this);
-        int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-        TextView searchText = editsearch.findViewById(idtext);
-        Typeface typeface = ResourcesCompat.getFont(requireContext(), R.font.amiri);
-        searchText.setTypeface(typeface);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
-            //Obtenemos el nombre del elemento pulsado y cargamos su información
-            nombreRest = adapterView.getItemAtPosition(position).toString();
-            args.putParcelable("establ", listaRest.buscarEst(nombreRest, est));
-            DialogFragment restFragment = new establecimientoFragment();
-            restFragment.setArguments(args);
-            restFragment.setCancelable(false);
-            restFragment.show(getChildFragmentManager(),"rest_fragment");
-        });
-
     }
 
     @Override
@@ -132,20 +203,75 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
         return false;
     }
 
-    private List <String> determinarOrden(ListaEstablecimiento establecimientos){
+    public List<String> getListaNombresEstablecimiento(List<Establecimiento> est, String orden){
 
-        List<String> nombres;
+        if (orden.equalsIgnoreCase("asc")){
+            est = organizedPuntuacionAscList(est);
 
-        if (ordenLista.equalsIgnoreCase("atoz") || ordenLista.equalsIgnoreCase("ztoa")){
-            est = establecimientos.getListaEstablecimientos("bar", false, "alfabetico");
-            nombres = establecimientos.getListaNombres(est, ordenLista);
-        }
-        else{
-            est = establecimientos.getListaEstablecimientos("bar", true, ordenLista);
-            nombres = establecimientos.getListaNombres(est, "asc/desc");
+        } else if (orden.equalsIgnoreCase("desc")){
+            est = organizedPuntuacionAscList(est);
+            Collections.reverse(est);
         }
 
-        return nombres;
+        List<String> lista = new LinkedList<>();
+        for (int i = 0; i < Objects.requireNonNull(est).size(); i++){
+            lista.add(est.get(i).getNombreEstabl());
+        }
+
+        if (orden.equalsIgnoreCase("atoz")){
+            organizedAlphabeticList(lista);
+        } else if (orden.equalsIgnoreCase("ztoa")){
+            organizedAlphabeticList(lista);
+            Collections.reverse(lista);
+        }
+
+        return lista;
+    }
+
+
+    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
+    public static void organizedAlphabeticList(List<String> list) {
+        list.sort(new Comparator<String>() {
+            final Collator collator = Collator.getInstance();
+
+            public int compare(String o1, String o2) {
+                return collator.compare(o1, o2);
+            }
+        });
+    }
+
+    public static List<Establecimiento> organizedPuntuacionAscList (List<Establecimiento> est){
+
+        List<Establecimiento> listaOrdenada = new LinkedList<>();
+        Establecimiento temp =null;
+        boolean seguir = false;
+
+        for (int i = 0; i <est.size()-1; i++){
+            Establecimiento actual = est.get(i);
+            Establecimiento siguiente = est.get(i+1);
+            System.out.println("ACTUAL " + actual.getNombreEstabl() + " PUNTUACION: " + actual.getPuntEstabl());
+            System.out.println("SIGUIENTE  " + i + " " + siguiente.getNombreEstabl() + " PUNTUACION: " + siguiente.getPuntEstabl());
+
+            if (actual.getPuntEstabl() > siguiente.getPuntEstabl()){
+                temp = actual;
+                actual = siguiente;
+                siguiente = temp;
+            }
+
+        }
+
+        return est;
+    }
+
+
+    public Establecimiento buscarEst(String nombreAloj, List<Establecimiento> est){
+        for (int i = 0; i <est.size(); i++){
+            Establecimiento estbl = est.get(i);
+            if (estbl.getNombreEstabl().equalsIgnoreCase(nombreAloj)){
+                return estbl;
+            }
+        }
+        return null;
     }
 
 }
