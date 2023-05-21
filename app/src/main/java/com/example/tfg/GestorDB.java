@@ -1,26 +1,23 @@
 package com.example.tfg;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import androidx.annotation.Nullable;
-import com.example.tfg.EspacioDelViajero.alojamiento.Alojamiento;
-import com.example.tfg.EspacioDelViajero.comercio.Comercio;
-import com.example.tfg.EspacioDelViajero.restauracion.Establecimiento;
-import com.example.tfg.Categorias.secundarias.gastronomia.Receta;
-import com.example.tfg.Maps.otrosLugares.pueblos.Pueblo;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.LinkedList;
+import java.io.BufferedReader;
+import android.content.Context;
+import android.database.Cursor;
+import java.io.InputStreamReader;
+import androidx.annotation.Nullable;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import com.example.tfg.Maps.otrosLugares.pueblos.Pueblo;
+import com.example.tfg.Categorias.secundarias.gastronomia.Receta;
 
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 14;
+    private static final int DB_VERSION = 15;
     private final Context context;
     private boolean seguir = true;
 
@@ -53,11 +50,8 @@ public class GestorDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS artesania");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS gastronomia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS otroslugares");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS restaurante");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS rutas");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tradiciones");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alojamiento");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS comercio");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS historia");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS monumento");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS fiesta");
@@ -100,20 +94,6 @@ public class GestorDB extends SQLiteOpenHelper {
                 "categoriaOtros VARCHAR NOT NULL, idioma VARCHAR(2) NOT NULL, nombreOtro VARCHAR NOT NULL, descrOtro VARCHAR NOT NULL, " +
                 "kmdesdeLa VARCHAR, fiestamayor VARCHAR, latLugar VARCHAR, lonLugar VARCHAR)";
         Log.d("Tabla Otros Lugares: ", query);
-        sqLiteDatabase.execSQL(query);
-
-        //Esquema de la tabla alojamiento
-        query = "CREATE TABLE IF NOT EXISTS alojamiento (idAloj INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "categoriaAloj VARCHAR NOT NULL, nombreAloj VARCHAR NOT NULL UNIQUE, ubiAloj VARCHAR NOT NULL, " +
-                "puntuacion DOUBLE NOT NULL, numTel VARCHAR NOT NULL)";
-        Log.i("Tabla Alojamiento: ", query);
-        sqLiteDatabase.execSQL(query);
-
-        //Esquema de la tabla restaurantes
-        query = "CREATE TABLE IF NOT EXISTS restaurante (idRest INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "categoriaRest VARCHAR NOT NULL, nombreRest VARCHAR UNIQUE NOT NULL, numTel VARCHAR NOT NULL, " +
-                "ubiRest VARCHAR NOT NULL, puntuacion DOUBLE NOT NULL)";
-        Log.i("Tabla Restaurantes: ", query);
         sqLiteDatabase.execSQL(query);
 
         //Esquema de la tabla tradiciones
@@ -282,26 +262,6 @@ public class GestorDB extends SQLiteOpenHelper {
         }
         c.close();
         return descr;
-    }
-
-    //Tabla Alojamientos
-    public LinkedList<Alojamiento> obteneralojamientos(String query) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
-        LinkedList<Alojamiento> alojamientos = new LinkedList<>();
-
-        Cursor c = sqLiteDatabase.rawQuery(query, null);
-        while (c.moveToNext()){
-            Alojamiento alojamiento = new Alojamiento();
-            //alojamiento.setCatAloj(c.getString(1));
-            alojamiento.setNombreAloj(c.getString(2));
-            alojamiento.setTelAloj(c.getString(5));
-            alojamiento.setLocationAloj(c.getString(3));
-            alojamiento.setPuntAloj(c.getDouble(4));
-            alojamientos.add(alojamiento);
-        }
-        c.close();
-        return alojamientos;
     }
 
     //Tabla Gastronomia

@@ -110,7 +110,7 @@ public class ordenarFragment extends DialogFragment{
             ztoa.setChecked(true);
         } else if (orden.equalsIgnoreCase("asc")){
             asc.setChecked(true);
-        } else{
+        } else if (orden.equalsIgnoreCase("desc")){
             desc.setChecked(true);
         }
     }

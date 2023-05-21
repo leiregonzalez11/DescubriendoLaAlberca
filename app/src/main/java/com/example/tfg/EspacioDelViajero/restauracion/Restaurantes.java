@@ -161,6 +161,7 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
                             return false;
                         }
                     });
+
                     @SuppressLint("DiscouragedApi")
                     int idtext = editsearch.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
                     TextView searchText = editsearch.findViewById(idtext);
@@ -204,10 +205,10 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
     public List<String> getListaNombresEstablecimiento(List<Establecimiento> est, String orden){
 
         if (orden.equalsIgnoreCase("asc")){
-            organizedPuntuacionAscList(est);
+            est = organizedPuntuacionAscList(est);
 
         } else if (orden.equalsIgnoreCase("desc")){
-            organizedPuntuacionAscList(est);
+            est = organizedPuntuacionAscList(est);
             Collections.reverse(est);
         }
 
@@ -224,8 +225,8 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
         }
 
         return lista;
-    }
 
+    }
 
     //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
     public static List<String> organizedAlphabeticList(List<String> list) {
@@ -241,24 +242,44 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
 
     public static List<Establecimiento> organizedPuntuacionAscList (List<Establecimiento> est){
 
-        boolean swapped = false;
+        boolean ordenada = false;
+        List<Establecimiento> listaOrdenada = new LinkedList<>();
 
-        for (int i = 0; i <est.size()-1; i++){
-            for (int j = 0; j<est.size()-i-1; j++){
-                Establecimiento act = est.get(j);
-                Establecimiento sig = est.get(j+1);
-                if (est.get(j).getPuntEstabl() > est.get(j+1).getPuntEstabl()){
-                    Establecimiento tmp = act;
-                    act = sig;
-                    sig = tmp;
-                    swapped = true;
+        while (!ordenada){
+            int i=0;
+            while (i< est.size()){
+                Log.d(TAG, "EST SIZE : " + est.size() + " ");
+                Establecimiento actual = est.get(i);
+                Log.d(TAG, "ACTUAL : " + i + " " + actual.getNombreEstabl() + " PUNTUACION: " + actual.getPuntEstabl());
+                if (!listaOrdenada.contains(actual)) {
+                    for (int j = 0; j < est.size(); j++) {
+                        Establecimiento comp = est.get(j);
+                        Log.d(TAG, "COMPARADOR : " + j + " " + comp.getNombreEstabl() + " PUNTUACION: " + comp.getPuntEstabl());
+                        if (!listaOrdenada.contains(comp)){
+                            if (actual.getPuntEstabl() >= comp.getPuntEstabl()){
+                                actual = comp;
+                                Log.d(TAG, "TEMPORAL : " + j + " " + actual.getNombreEstabl() + " PUNTUACION: " + actual.getPuntEstabl());
+                            }
+                        }
+                    }
                 }
-            }
-            if (!swapped){
-                break;
+                if (!listaOrdenada.contains(actual)){
+                    listaOrdenada.add(actual);
+                }
+
+                if (listaOrdenada.size() == est.size()){
+                    ordenada = true;
+                }
+                i++;
             }
         }
-        return est;
+
+        System.out.println("LISTA ORDENADA FINAL");
+        for (Establecimiento estab: listaOrdenada) {
+            System.out.println("ESTABLECIMIENTO: "+ estab.getNombreEstabl() + " PUNTUACION: "+ estab.getPuntEstabl());
+        }
+
+        return listaOrdenada;
     }
 
 

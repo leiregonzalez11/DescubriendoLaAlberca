@@ -1,5 +1,6 @@
 package com.example.tfg.EspacioDelViajero.restauracion;
 
+import static android.content.Context.ACCESSIBILITY_SERVICE;
 import static android.service.controls.ControlsProviderService.TAG;
 
 import android.annotation.SuppressLint;
@@ -242,25 +243,35 @@ public class Bares extends Fragment implements SearchView.OnQueryTextListener {
 
     public static List<Establecimiento> organizedPuntuacionAscList (List<Establecimiento> est){
 
+        boolean ordenada = false;
         List<Establecimiento> listaOrdenada = new LinkedList<>();
-        Establecimiento temp =null;
-        boolean seguir = false;
 
-        for (int i = 0; i <est.size()-1; i++){
-            Establecimiento actual = est.get(i);
-            Establecimiento siguiente = est.get(i+1);
-            System.out.println("ACTUAL " + actual.getNombreEstabl() + " PUNTUACION: " + actual.getPuntEstabl());
-            System.out.println("SIGUIENTE  " + i + " " + siguiente.getNombreEstabl() + " PUNTUACION: " + siguiente.getPuntEstabl());
+        while (!ordenada){
+            int i=0;
+            while (i< est.size()){
+                Establecimiento actual = est.get(i);
+                if (!listaOrdenada.contains(actual)) {
+                    for (int j = 0; j < est.size(); j++) {
+                        Establecimiento comp = est.get(j);
+                        if (!listaOrdenada.contains(comp)){
+                            if (actual.getPuntEstabl() >= comp.getPuntEstabl()){
+                                actual = comp;
+                            }
+                        }
+                    }
+                }
+                if (!listaOrdenada.contains(actual)){
+                    listaOrdenada.add(actual);
+                }
 
-            if (actual.getPuntEstabl() > siguiente.getPuntEstabl()){
-                temp = actual;
-                actual = siguiente;
-                siguiente = temp;
+                if (listaOrdenada.size() == est.size()){
+                    ordenada = true;
+                }
+                i++;
             }
-
         }
 
-        return est;
+        return listaOrdenada;
     }
 
 

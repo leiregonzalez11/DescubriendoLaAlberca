@@ -59,17 +59,6 @@ public class ListaAlojamientos {
         return null;
     }
 
-    public List<Alojamiento> getListaAlojamientos (String categoriaAloj, boolean ascdesc, String tipo){
-        String query;
-        if (!ascdesc){
-            query = "SELECT * FROM alojamiento WHERE categoriaAloj = '" + categoriaAloj + "';";
-        } else {
-            query = "SELECT * FROM alojamiento WHERE categoriaAloj = '" + categoriaAloj + "' ORDER BY puntuacion " + tipo.toUpperCase() + ";";
-        }
-        alojamientos = dbHelper.obteneralojamientos(query);
-        return alojamientos;
-    }
-
 
     //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
     public static List<String> organizedAlphabeticList(List<String> list) {
