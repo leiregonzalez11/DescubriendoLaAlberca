@@ -1,0 +1,1113 @@
+{
+	"diccionario": {
+		"a": {
+			"Amesentao": {
+				"descrEs": "Que tiene miedo.",
+				"descrEu": "Beldurra duela.",
+				"descrEn": "Who is afraid."
+			},
+			"Ande": {
+				"descrEs": "Donde, a donde.",
+				"descrEu": "Non, nora.",
+				"descrEn": "Where, to where."
+			},
+			"Andinantes": {
+				"descrEs": "Antes.",
+				"descrEu": "Lehenago.",
+				"descrEn": "Before."
+			},
+			"Anillos de horno y pan": {
+				"descrEs": "Las alianzas de la boda.",
+				"descrEu": "Ezkontzako eraztunak.",
+				"descrEn": "Wedding rings."
+			},
+			"Antaño": {
+				"descrEs": "Hace mucho tiempo.",
+				"descrEu": "Duela denbora asko.",
+				"descrEn": "A long time ago."
+			},
+			"Antier": {
+				"descrEs": "Antes de ayer.",
+				"descrEu": "Herenegun.",
+				"descrEn": "Before yesterday."
+			},
+			"Antroja": {
+				"descrEs": "Frase rara.",
+				"descrEu": "Esaldi arraroa.",
+				"descrEn": "Rare phrase."
+			},
+			"Arró": {
+				"descrEs": "Arroyo.",
+				"descrEu": "Erreka.",
+				"descrEn": "Stream."
+			},
+			"Arzapón": {
+				"descrEs": "Portezuela que tapa la parte anterior de los calzones y de alguna clase de pantalones.",
+				"descrEu": "Praken eta praka motaren baten aurrealdea estaltzen duen atexka.",
+				"descrEn": "A kind of doorway which covers the front part of breeches and some kinds of trousers."
+			},
+			"Asina": {
+				"descrEs": "Así.",
+				"descrEu": "Horrela.",
+				"descrEn": "This way, thus."
+			},
+			"Asisiones": {
+				"descrEs": "Tubérculo comestible.",
+				"descrEu": "Jan ahal den tuberkulua.",
+				"descrEn": "Edible tuber."
+			}		
+		},
+		"b": {
+			"Bajero": {
+				"descrEs": "Que se usa o se pone debajo de otra cosa.",
+				"descrEu": "Beste zerbaiten gainean jartzen den arropa.",
+				"descrEn": "To be used or placed under something else."
+			},
+			"Bandujo": {
+				"descrEs": "Tripa grande de cerdo, carnero o vaca, llena de carne picada.",
+				"descrEu": "Txerri , ahari  edo behi tripa handia, haragi xehatuz betea.",
+				"descrEn": "Large pork, mutton or beef casing filled with minced meat."
+			},
+			"Barquillos": {
+				"descrEs": "Bernegal, vasos de plata en los que se sirve el vino el Lunes de Aguas.",
+				"descrEu": "'Bernegal', Lunes de Aguas en ardoa zerbitzatzen den zilarreko edalontziak.",
+				"descrEn": "'Bernegal', silver vessels in which wine is served on Lunes de Aguas."
+			},
+			"Bellotones": {
+				"descrEs": "Nódulos de celulitis.",
+				"descrEu": "Zelulitis noduluak.",
+				"descrEn": "Cellulite nodules."
+			},
+			"Bernegal": {
+				"descrEs": "Taza para beber, ancha de boca y de forma ondeada.",
+				"descrEu": "Edateko katilua, aho zabala eta uhinduta.",
+				"descrEn": "Wide mouthed, wavy shaped drinking cup."
+			},
+			"Bernio": {
+				"descrEs": "Mandil o delantal.",
+				"descrEu": "Amantala, dabantala.",
+				"descrEn": "Apron or smock."
+			},
+			"Bollagras": {
+				"descrEs": "Bolas afiligranadas ensartadas en las vueltas del traje de vistas.",
+				"descrEu": "Vistas jantziaren itzulietan jartzen diren bola zorrotzak.",
+				"descrEn": "Filigree balls strung on the laps of the Vistas suit."
+			},
+			"Brazaleras": {
+				"descrEs": "Manojo de cadenillas que cuelgan en el arranque del brazo del traje de vistas.",
+				"descrEu": "Vistas jantziaren besoaren abioan zintzilik dauden kateatxo sortak.",
+				"descrEn": "Bunch of chains hanging at the start of the arm of the Vistas suit."
+			}
+		},
+		"c": {
+			"Cachas": {
+				"descrEs": "Armazón de listones de madera a modo de bastidor enrejado para colocar las castañas en el sequero.",
+				"descrEu": "Zurezko listoizko armazoia, sareta moduko bastidore bat, gaztainak 'sequero' an jartzeko.",
+				"descrEn": "Frame made of wooden slats as a lattice frame to place the chestnuts in the dryer."
+			},
+			"Calbochero": {
+				"descrEs": "Recipiente de barro para asar las castañas.",
+				"descrEu": "Gaztainak erretzeko buztinezko ontzia.",
+				"descrEn": "Earthenware container for roasting chestnuts."
+			},
+			"Camisa galana": {
+				"descrEs": "Camisa de lienzo con tabla bordada.",
+				"descrEu": "Oihalezko alkandora, taula brodatua duena.",
+				"descrEn": "Canvas shirt with embroidered board."
+			},			
+			"Campo casa": {
+				"descrEs": "Vestíbulo.",
+				"descrEu": "Atondoa.",
+				"descrEn": "Foyer, lobby."
+			},			
+			"Candorga": {
+				"descrEs": "Planta de hojas largas y carnosas que crece en las paredes, empleado como amuleto por las mujeres contra brujerías.",
+				"descrEu": "Horman hazten den hosto luze eta haragitsuko landarea, sorginkerien aurka emakumeek kutun gisa erabiltzen dutena.",
+				"descrEn": "A plant with long, fleshy leaves that grows on walls, used as a charm by women against witchcraft."
+			},
+			"Canicú": {
+				"descrEs": "Calabaza común.",
+				"descrEu": "Arrunt kuia.",
+				"descrEn": "Common pumpkin."
+			},
+			"Capullina": {
+				"descrEs": "Copa de árbol.",
+				"descrEu": "Zuhaitzen adaburua.",
+				"descrEn": "Tree cup."
+			},
+			"Caracoles": {
+				"descrEs": "Adorno en curvas sobrepuesto en la parte baja de las sayas.",
+				"descrEu": "Saien behealdean gainjarritako bihurguneetan jartzen den apaindura.",
+				"descrEn": "Curved ornamentation superimposed on the lower part of the 'sayas'."
+			},
+			"Carretes": {
+				"descrEs": "Especie de torres de ajedrez sobredoradas, que alternan con las bollagras en el traje de vistas.",
+				"descrEu": "Urre koloreko xake dorreen antzekoa, 'Vistas' jantzian bollagrekin txandakatzen direnak.",
+				"descrEn": "A kind of gilded chess rooks, alternating with the 'bollagras' on the Vistas suit."
+			},
+			"Casas de por Dios": {
+				"descrEs": "Casas del ayuntamiento en las que vivían las familias más pobres del pueblo.",
+				"descrEu": "Herriko familia pobreenak bizi ziren udaletxeko etxeak.",
+				"descrEn": "Town council houses where the poorest families of the village lived."
+			},
+			"Cascarreña": {
+				"descrEs": "Ripio con que se rellenan los espacios entre maderas en la construcción.",
+				"descrEu": "Eraikuntzan zuren arteko espazioak betetzeko erabiltzen den betegarria.",
+				"descrEn": "Rubble used to fill the spaces between timbers in the construction industry."
+			},
+			"Casorio": {
+				"descrEs": "Boda.",
+				"descrEu": "Ezkontza.",
+				"descrEn": "Wedding."
+			},
+			"Cazoletas": {
+				"descrEs": "Sostén de asador y otros utensilios.",
+				"descrEu": "Erretegiko eta beste tresna batzuen euskarria.",
+				"descrEn": "Rotisserie holder and other utensils."
+			},
+			"Chapatale": {
+				"descrEs": "Charco de agua.",
+				"descrEu": "Putzuak, potxingoak.",
+				"descrEn": "Puddles, ponds."
+			},
+			"Chaguarzo": {
+				"descrEs": "Mata parecida al tomillo pero inodora.",
+				"descrEu": "Ezkaiaren antzeko sastraka, baina usaingabekoa.",
+				"descrEn": "Thyme like but odourless shrub."
+			},
+			"Chazan (se)": {
+				"descrEs": "Se coagulan.",
+				"descrEu": "Gatzaten dira.",
+				"descrEn": "They coagulate."
+			},
+			"Cintas": {
+				"descrEs": "Listones que forman el enrejado de las cachas del sequero.",
+				"descrEu": "'Sequero' ko txortenak saretzea osatzen duten listoiak.",
+				"descrEn": "Strips that form the latticework of the cores of the 'sequero'."
+			},
+			"Cirigüeña": {
+				"descrEs": "Pequeña planta cuyo látex era utilizado para quemar verrugas.",
+				"descrEu": "Landare txikia, zeinaren latexa garatxoak erretzeko erabiltzen zen.",
+				"descrEn": "A small plant whose latex was used to burn warts."
+			},
+			"Coce": {
+				"descrEs": "Tronco.",
+				"descrEu": "Enborra.",
+				"descrEn": "Trunk."
+			},
+			"Cogolmillo": {
+				"descrEs": "Hondo comestible.",
+				"descrEu": "Onddo jangarria.",
+				"descrEn": "Edible mushroom."
+			},
+			"Corazón de novia": {
+				"descrEs": "Joya o amuleto, regalo del novio, que se cuelga en el traje de vistas.",
+				"descrEu": "Bitxi edo kutuna, mutil lagunaren oparia, Vistas jantzian zintzilikatzen dena.",
+				"descrEn": "Jewellery or amulet, gift of the groom, to be hung on the Vistas suit."
+			},
+			"Cuartillas": {
+				"descrEs": "Ofrenda pública que se hacía a los novios en el atardecer el día de la boda.",
+				"descrEu": "Ezkontza egunean arratsean ezkongaiei egiten zitzaien eskaintza publikoa.",
+				"descrEn": "Public offering made to the bride and groom at sunset on the wedding day."
+			},
+			"Cuarto'l salaero": {
+				"descrEs": "Habitación para salar la matanza.",
+				"descrEu": "Sarraskia gazitzeko gela.",
+				"descrEn": "Room for salting the slaughter."
+			},
+			"Cuquear": {
+				"descrEs": "Burlar en la noche imitando el canto del cuco.",
+				"descrEu": "Gauean iseka egitea kukuaren kantua imitatuz.",
+				"descrEn": "Mocking in the night imitating the cuckoo's sound."
+			}
+		},
+		"d": {
+			"Dácalo": {
+				"descrEs": "Dámelo acá.",
+				"descrEu": "Hemen eman.",
+				"descrEn": "Give it to me here."
+			},
+			"Dande": {
+				"descrEs": "De donde.",
+				"descrEu": "Nongoa.",
+				"descrEn": "From where."
+			},
+			"Dejaime": {
+				"descrEs": "Dejadme.",
+				"descrEu": "Utzi nazazue.",
+				"descrEn": "Leave me alone."
+			},
+			"Dijes": {
+				"descrEs": "Amuletos.",
+				"descrEu": "Zinginarriak",
+				"descrEn": "Charms."
+			},
+			"Dispués": {
+				"descrEs": "Después.",
+				"descrEu": "Geroago",
+				"descrEn": "After."
+			},
+			"Duelos": {
+				"descrEs": "Contracción dolorosa del parto.",
+				"descrEu": "Erditzearen uzkurdura mingarria.",
+				"descrEn": "Painful labour contraction."
+			},
+			"Dulces de llevar": {
+				"descrEs": "Aquellos dulces que se obsequian a las visitas para que se los lleven a sus casas: floretas, turruletes, etc.",
+				"descrEu": "Etxera eramateko bisitei oparitzen zaizkien gozokiak: floretak, turruleteak, etab.",
+				"descrEn": "Sweets that are given to visitors to take home with them: floretas, turruletes, etc."
+			}
+		},
+		"e": {
+			"Echaime": {
+				"descrEs": "Echadme.",
+				"descrEu": "Bota nazazue.",
+				"descrEn": "Throw me out of here."
+			},
+			"Encetar": {
+				"descrEs": "Empezar el hornazo cortándolo con una navaja nueva.",
+				"descrEu": "Hornazo bat labana berri batekin moztuz hasi.",
+				"descrEn": "Start the hornazo by cutting it with a new knife."
+			},
+			"Engarañao": {
+				"descrEs": "Aterido, congelado, con frío.",
+				"descrEu": "Aterea, izoztua, hotzarekin.",
+				"descrEn": "Chilled, frozen, cold."
+			},
+			"Enriá (estar)": {
+				"descrEs": "Enferma con supresión de menstruación por estar mojada.",
+				"descrEu": "Bustita egoteagatik hilekoa kentzen duen gaixoa.",
+				"descrEn": "Sick with menstruation suppression due to soaking."
+			},
+			"Entavía": {
+				"descrEs": "Todavía.",
+				"descrEu": "Oraindik.",
+				"descrEn": "Still."
+			},
+			"Entremijo": {
+				"descrEs": "Piedra plana circular para blanquear el lino, también usada para escurrir las 'escuillas'.",
+				"descrEu": "Harri lau biribila lihoa zuritzeko, 'escuilla'k xukatzeko ere erabiltzen dena.",
+				"descrEn": "Circular flat stone for bleaching linen, also used for draining the 'escuillas'."
+			},
+			"Escancianos": {
+				"descrEs": "Hombres casados el año anterior que sirven el vino durante el día del trago.",
+				"descrEu": "Aurreko urtean ezkondutako gizonak, ardoa zerbitzatzen 'Día del Trago'n",
+				"descrEn": "Men married the previous year who serve the wine on the 'Día del trago'"
+			},
+			"Escuarajaura": {
+				"descrEs": "Enfermedad con formación de 'bellotones'.",
+				"descrEu": "'Bellotones' osatzen dituen gaixotasuna.",
+				"descrEn": "Disease with formation of 'bellotones'."
+			},
+			"Escuilla": {
+				"descrEs": "Loza pequeña de barro.",
+				"descrEu": "Lokatzezko loza txikia.",
+				"descrEn": "Small earthenware crockery."
+			},
+			"Espetera": {
+				"descrEs": "Conjunto de objetos de cobre que se cuelgan de la pared para adornar.",
+				"descrEu": "Apaintzeko horman zintzilikatzen diren kobrezko objektuen multzoa.",
+				"descrEn": "A set of copper objects that are hung on the wall for decoration."
+			},
+			"Espiga (la)": {
+				"descrEs": "Obsequio que después de la cena de la boda, iban dando a cada novio quienes bailaban con ellos.",
+				"descrEu": "Ezkontzako afariaren ondoren, senargai bakoitzari beraiekin dantza egiten zutela ematen zioten oparia.",
+				"descrEn": "A gift that was given to each groom after the wedding dinner by those who danced with them."
+			},
+			"Expotricar": {
+				"descrEs": "Saltar la lumbre.",
+				"descrEu": "Sua saltatu.",
+				"descrEn": "Jump the fire."
+			}
+		},
+		"fg": {
+			"Farraco o fratiquera": {
+				"descrEs": "Bolsa de tela que se ata a la cintura y se lleva colgando bajo la vestimenta.",
+				"descrEu": "Gerrira lotu eta janzkeraren azpian zintzilik eramaten den oihalezko poltsa.",
+				"descrEn": "A cloth bag that is tied around the waist and worn under the garment."
+			},
+			"Frejones": {
+				"descrEs": "Judías verdes.",
+				"descrEu": "Lekak.",
+				"descrEn": "Green beans."
+			},
+			"Galumanes": {
+				"descrEs": "Muy rápidos.",
+				"descrEu": "Oso azkarrak.",
+				"descrEn": "Very fast."
+			},
+			"Galletas": {
+				"descrEs": "Ánforas de cobre con 'pitocho' con los que se llenan los 'barquillos'.",
+				"descrEu": "Kobrezko anforak 'pitocho'-rekin, 'barquillo'ak betetzeko.",
+				"descrEn": "Copper amphorae with 'pitocho' used to fill the 'barquillos'."
+			},
+			"Garrapato": {
+				"descrEs": "Cerdo que no ha cumplido el año.",
+				"descrEu": "Urtea bete ez duen txerria.",
+				"descrEn": "Pig that has not reached his first year."
+			},
+			"Guilindina": {
+				"descrEs": "Resina de guindo o cerezo.",
+				"descrEu": "Gindo edo gereziondo erretxina.",
+				"descrEn": "Cherry resin."
+			}
+		},			
+		"hj": {
+			"Hilos": {
+				"descrEs": "Collares de oro.",
+				"descrEu": "Urreko lepokoak.",
+				"descrEn": "Golden necklaces."
+			},
+			"Hogaño": {
+				"descrEs": "En el presente.",
+				"descrEu": "Oraingoan.",
+				"descrEn": "Nowadays."
+			},
+			"Hoguero": {
+				"descrEs": "Hogar, cocina.",
+				"descrEu": "Sukaldea, sutondoa.",
+				"descrEn": "Household, kitchen."
+			},
+			"Hollecas": {
+				"descrEs": "Castañas sin fruto.",
+				"descrEu": "Fruiturik gabeko gaztainak.",
+				"descrEn": "Chestnuts with no fruit."
+			},
+			"Horconera": {
+				"descrEs": "Montaña en la Sierra de La Alberca lindante con Batuecas.",
+				"descrEu": "La Alberca mendilerroko mendia, Batuecasekin muga eginez.",
+				"descrEn": "Mountain in the Sierra de La Alberca bordering Batuecas."
+			},
+			"Jugón": {
+				"descrEs": "Vestidura que cubría desde los hombros hasta la cintura, ceñida y ajustada al cuerpo.",
+				"descrEu": "Soingainekoa sorbaldetatik gerriraino, estekatua eta gorputzari lotua.",
+				"descrEn": "Dress that covered from the shoulders to the waist, close-fitting and tight to the body."
+			},
+			"Justicias": {
+				"descrEs": "Concejales.",
+				"descrEu": "Zinegotziak.",
+				"descrEn": "Councillors."
+			}
+		},
+		"mnñ": {
+			"Magosto": {
+				"descrEs": "Asar castañas en las noches de serano.",
+				"descrEu": "Gaztainak erretzea 'serano' gauetan.",
+				"descrEn": "Roasting chestnuts on 'serano' nights."
+			},
+			"Majada": {
+				"descrEs": "Pequeña caseta donde se guardaba el ganado y se refugiaban los pastores.",
+				"descrEu": "Etxola txiki bat, non ganadua gorde eta artzainak babesten ziren.",
+				"descrEn": "Small hut where livestock was kept and shepherds took refuge."
+			},
+			"Majos": {
+				"descrEs": "Vestidos o atavíos propios de los días de fiesta.",
+				"descrEu": "Jaiegunetako jantziak.",
+				"descrEn": "Festive dresses or attires."
+			},
+			"Malas": {
+				"descrEs": "Brujas.",
+				"descrEu": "Sorginak.",
+				"descrEn": "Witches."
+			},
+			"Malo de enfermedad": {
+				"descrEs": "Estar gravemente enfermo.",
+				"descrEu": "Oso gaixo egotea.",
+				"descrEn": "Being seriously ill."
+			},
+			"Mallao": {
+				"descrEs": "Estar molido, estar dolorido después de recibir palos.",
+				"descrEu": "Minduta egotea zartadak jaso ondoren.",
+				"descrEn": "To be bruised, to be sore after being beaten."
+			},
+			"Mamaluco": {
+				"descrEs": "Que come mucho.",
+				"descrEu": "Asko jaten duena.",
+				"descrEn": "Who eats a lot."
+			},
+			"Manojitos de coral": {
+				"descrEs": "Collares pequeños del traje de vistas.",
+				"descrEu": "Vistas jantziaren lepoko txikiak.",
+				"descrEn": "Small necklaces from the Vistas suit."
+			},
+			"Maza de macho": {
+				"descrEs": "Pata de atrás del macho cabrío sacrificado.",
+				"descrEu": "Aker sakrifikatuaren atzeko hanka.",
+				"descrEn": "Hind leg of slaughtered goat."
+			},
+			"Me caiso en brena": {
+				"descrEs": "Frase interjectiva para expresar asombro, enfado, etc.",
+				"descrEu": "Harridura, haserrea eta abar adierazteko esaldi interjektiboa.",
+				"descrEn": "Interjective phrase to express astonishment, anger, etc."
+			},
+			"Mi señor o señora": {
+				"descrEs": "Tratamiento que se da a los padres politicos.",
+				"descrEu": "Guraso politikoei ematen zaien tratamendua.",
+				"descrEn": "Treatment of political parents."
+			},
+			"Mollique": {
+				"descrEs": "Ropas bajo la saya que sirven para marcar la cadera.",
+				"descrEu": "'Saya' azpiko arropak, aldaka markatzeko balio dutenak.",
+				"descrEn": "Undergarments under the skirt used to mark the hips."
+			},
+			"Mora": {
+				"descrEs": "Vesiculita o principio de grieta muy superficial en el pezón de la mujer.",
+				"descrEu": "Besikulatxoa edo arrakala oso azalekoa emakumearen titiburuan.",
+				"descrEn": "A small blister or the beginning of a very superficial crack in the female nipple."
+			},
+			"Morrando": {
+				"descrEs": "Sentir que la cabeza se va, estado de embriaguez.",
+				"descrEu": "Burua badoala sentitzea, mozkortuta.",
+				"descrEn": "Feeling the head going, state of drunkenness."
+			},
+			"Moza la pica": {
+				"descrEs": "Hermana o familiar directa de edad más cercana a la novia.",
+				"descrEu": "Ahizpa edo zuzeneko senidea, neska-lagunarengandik hurbilen dagoena.",
+				"descrEn": "Sister or direct female relative closest in age to the bride."
+			},
+			"Mozo del pollo": {
+				"descrEs": "Hermano o familiar directo de edad más cercano al novio. En la boda lleva un pequeño arbolito en el que cuelga un pollo.",
+				"descrEu": "Senargaiarengandik hurbilen dagoen anaia edo senide zuzena. Ezkontzan, oilasko bat zintzilik duen zuhaitz txiki bat darama.",
+				"descrEn": "Brother or next of kin closest in age to the groom. At the wedding he carries a small tree on which hangs a chicken."
+			},
+			"Muchachinos": {
+				"descrEs": "Niños.",
+				"descrEu": "Haurrak.",
+				"descrEn": "Children."
+			},
+			"Mullina": {
+				"descrEs": "Especie de chiri-miri.",
+				"descrEu": "Zirimiri antzekoa.",
+				"descrEn": "Kind of light drizzle."
+			},
+			"Niña la vela": {
+				"descrEs": "Niña que acompaña a la novia en su ida a la iglesia en el día de la boda.",
+				"descrEu": "Ezkontza-egunean elizara joateko neskalagunari laguntzen dion neskatoa.",
+				"descrEn": "Girl who accompanies the bride on her way to the church on her wedding day."
+			},
+			"Novena (la)": {
+				"descrEs": "Rezo de las mujeres, en la tarde del domingo, ante la Virgen de los Dolores.",
+				"descrEu": "Emakumeen otoitza, igande arratsaldean, Doloreetako Ama Birjinaren aurrean.",
+				"descrEn": "Women's prayer, on Sunday afternoon, facing the Virgen de los Dolores."
+			},
+			"Novenas": {
+				"descrEs": "Rosarios con relicarios que lleva de la mano la que va a ofrecer en entierros y oficios de difuntos.",
+				"descrEu": "Arrosarioak erlikia-ontziekin, hildakoen ehorzketa eta ofizioetan eskainiko duena eskutik daramala.",
+				"descrEn": "Rosaries with reliquaries that are carried by the hand of the one who is going to offer them at funerals and services for the dead."
+			},
+			"Ñisqueros": {
+				"descrEs": "Pescadores de peces pequeños.",
+				"descrEu": "Arrain txikien arrantzaleak.",
+				"descrEn": "Small fish anglers."
+			}
+		},
+		"p": {
+			"Pa": {
+				"descrEs": "Para.",
+				"descrEu": "-rako, -ko (Adibide bat: zertarako).",
+				"descrEn": "For"
+			},
+			"Pa to": {
+				"descrEs": "Para todo.",
+				"descrEu": "Edozertarako.",
+				"descrEn": "For everything."
+			},
+			"Paice": {
+				"descrEs": "Parece.",
+				"descrEu": "Dirudi.",
+				"descrEn": "It seems"
+			},
+			"Pájaras": {
+				"descrEs": "Figuras de ave en los bordados típicos locales.",
+				"descrEu": "Hegazti-irudiak bertako brodatu tipikoetan.",
+				"descrEn": "Bird figures on typical local embroidery."
+			},
+			"Palmero": {
+				"descrEs": "Castillo circular hecho con mimbre.",
+				"descrEu": "Zumez egindako gaztelu zirkularra.",
+				"descrEn": "Circular castle made with wicker."
+			},
+			"Pamplinas": {
+				"descrEs": "Maruja.",
+				"descrEu": "Etxekoandre",
+				"descrEn": "Housewife"
+			},
+			"Pañizuelo": {
+				"descrEs": "Paño que cubre el 'palmero'.",
+				"descrEu": "'Palmero' estaltzen duen oihala.",
+				"descrEn": "Cloth that covers the 'palmero'."
+			},
+			"Paño de pared": {
+				"descrEs": "Paño de lino bordado para adornar.",
+				"descrEu": "Apaintzeko lihozko oihal brodatua.",
+				"descrEn": "Embroidered linen cloth for decoration."
+			},
+			"Patajeno": {
+				"descrEs": "Pata de heno. Personaje carnavalesco albercano.",
+				"descrEu": "Belar-hanka. La Alberca-ko inauterietako pertsonaia.",
+				"descrEn": "Hay leg. A carnival character from La Alberca."
+			},
+			"Pechar": {
+				"descrEs": "Cerrar la puerta con llave.",
+				"descrEu": "Atea itxi giltzaz.",
+				"descrEn": "Locking the door."
+			},
+			"Pelajustranes y pindongos": {
+				"descrEs": "Pillos fiesteros.",
+				"descrEu": "Parrandazale bihurriak.",
+				"descrEn": "Party rascals."
+			},
+			"Perguétanos": {
+				"descrEs": "Fruta no madura.",
+				"descrEu": "Fruta ez heldua.",
+				"descrEn": "Unripe fruit."
+			},
+			"Petalla": {
+				"descrEs": "Hacha pequeña.",
+				"descrEu": "Aizkora txikia.",
+				"descrEn": "Small axe."
+			},
+			"Pibas": {
+				"descrEs": "Judías secas.",
+				"descrEu": "Babarrun lehorrak.",
+				"descrEn": "Dried beans."
+			},
+			"Pica": {
+				"descrEs": "Rosca en pico, generalmente de pan.",
+				"descrEu": "Gari zuri edo galdera haria, gehienetan ogizkoa.",
+				"descrEn": "Spiked doughnut, usually made of bread."
+			},
+			"Pitocho": {
+				"descrEs": "Tubo cónico que arranca de la parte inferior del cuello en los botijos y porrones que sirve para moderar la salida del líquido que en ellos se contiene.",
+				"descrEu": "Lepoaren behealdetik abiatzen den hodi konikoa, botiletan eta porroietan, bertan dagoen likidoaren irteera moderatzeko balio duena.",
+				"descrEn": "Conical tube that starts from the lower part of the neck of the botijos and porrones that serves to moderate the liquid contained in them."
+			},
+			"Pus": {
+				"descrEs": "Pues",
+				"descrEu": "Beraz.",
+				"descrEn": "Well, so"
+			}
+		},
+		"rs": {
+			"Ratá": {
+				"descrEs": "Lluvia intensísima y caudalosa.",
+				"descrEu": "Euri oso handia eta emaria.",
+				"descrEn": "Heavy rain and heavy rainfall."
+			},
+			"Remudo": {
+				"descrEs": "Muda de ropa interior.",
+				"descrEu": "Azpiko arropa mutua.",
+				"descrEn": "Underwear change."
+			},
+			"Ripio": {
+				"descrEs": "Cascajo o fragmentos de ladrillos, piedras y otros materiales de obra de albañilería desechados o quebrados, que se utiliza para rellenar huecos de paredes o pisos.",
+				"descrEu": "Adreiluen, harrien eta baztertutako edo hautsitako igeltserotza-obrako beste material batzuen zorroa edo zatiak, horma edo solairuetako hutsuneak betetzeko erabiltzen direnak.",
+				"descrEn": "Rubble or fragments of discarded or broken bricks, stones and other masonry materials used to fill gaps in walls or floors."
+			},
+			"Ristres": {
+				"descrEs": "Trenza hecha de tallos de ajos o cebollas.",
+				"descrEu": "Baratxuri edo tipulen zurtoinez egindako txirikordak.",
+				"descrEn": "Braid made from garlic or onion stalks."
+			},
+			"Sanjuanes": {
+				"descrEs": "Árboles esbeltos que, mozos y niños, levantaban en la noche de san Juan en las plazuelas del pueblo.",
+				"descrEu": "San Joan gauean herriko plazatxoetan, gazte eta ume, altxatzen zituzten zuhaitz lirainak.",
+				"descrEn": "Slender trees that, young men and children, raised on the night of Saint John in the small squares of the village."
+			},
+			"Sequero": {
+				"descrEs": "Espacio del desván, sobre la cocina, donde se dejaban secar las castañas.",
+				"descrEu": "Ganbarako espazioa, sukaldearen gainean, gaztainak lehortzen uzten ziren lekua.",
+				"descrEn": "Attic space above the kitchen where chestnuts were left to dry."
+			},
+			"Serano": {
+				"descrEs": "Reunión en torno a la lumbre que servía de entretenimiento durante el invierno.",
+				"descrEu": "Neguan entretenimendu gisa erabiltzen zen suaren inguruko bilera.",
+				"descrEn": "Gathering around the fire for entertainment during the winter."
+			},
+			"Solano": {
+				"descrEs": "Solana, sitio donde se toma el sol en tiempos frescos.",
+				"descrEu": "Egutera, garai freskoetan eguzkia hartzen den lekua.",
+				"descrEn": "Solana, a place for sunbathing in cooler weather."
+			},
+			"Soconusco": {
+				"descrEs": "Chocolate.",
+				"descrEu": "Txokolate.",
+				"descrEn": "Chocolate"
+			},
+			"Sostibaos": {
+				"descrEs": "Arrimaos a algo.",
+				"descrEu": "Harrapa zaitezte zerbaitetara.",
+				"descrEn": "Get close to something."
+			},
+			"Susuncorda": {
+				"descrEs": "Frase que indicaba no hacer caso a nadie.",
+				"descrEu": "Inori kasurik ez egitea adierazten zuen esaldia.",
+				"descrEn": "A phrase that indicated to pay no attention to anyone."
+			}
+		},
+		"t": {
+			"Tabla": {
+				"descrEs": "Pechera de camisa.",
+				"descrEu": "Alkandoraren bularraldea.",
+				"descrEn": "Shirt breastplate."
+			},
+			"Tallizo": {
+				"descrEs": "Lancha tras la lumbre de la cocina.",
+				"descrEu": "Sukaldeko suaren atzean dagoen xafla.",
+				"descrEn": "Boat behind the kitchen cooker."
+			},
+			"Tardar los kirios": {
+				"descrEs": "Tardar mucho.",
+				"descrEu": "Luze jo.",
+				"descrEn": "Take a long time."
+			},
+			"Tiñuelas": {
+				"descrEs": "Grietas transformadas en llagas que suelen aparecer en el pezón de la mujer.",
+				"descrEu": "Emakumearen titiburuan agertu ohi diren zauri bihurtutako pitzadurak.",
+				"descrEn": "Cracks transformed into sores that often appear on a woman's nipple."
+			},
+			"Tizneras": {
+				"descrEs": "Postes pequeños al lado del fuego de la cocina.",
+				"descrEu": "Sukaldeko suaren ondoko poste txikiak.",
+				"descrEn": "Small posts next to the kitchen fire."
+			},
+			"To": {
+				"descrEs": "Exclamación que significa extrañeza.",
+				"descrEu": "Harridura esan nahi duen deiadarra.",
+				"descrEn": "Exclamation meaning strangeness."
+			},
+			"Tomatinos": {
+				"descrEs": "Parte de donde ha nacido la flor con forma de tomate.",
+				"descrEu": "Tomate itxurako lorea jaio den lekua.",
+				"descrEn": "Part of where the tomato-shaped flower was born."
+			},
+			"Tornapeón (trabajar a)": {
+				"descrEs": "Manera de ayuda mutua que usaban los labradores.",
+				"descrEu": "Nekazariek elkarri laguntzeko erabiltzen zuten modua.",
+				"descrEn": "A form of mutual aid used by farmers."
+			},
+			"Trago": {
+				"descrEs": "Obsequio de un trago de vino que ofrece el Ayuntamiento el día del trago.",
+				"descrEu": "Trago egunean Udalak eskaintzen duen ardo tragoa.",
+				"descrEn": "Gift of a glass of wine offered by the City Council on the day of the drink."
+			},
+			"Trashoguero": {
+				"descrEs": "Espacio entre el fuego y la pared en la cocina.",
+				"descrEu": "Suaren eta hormaren arteko tartea sukaldean.",
+				"descrEn": "Space between the fire and the wall in the kitchen."
+			},
+			"Tresantier": {
+				"descrEs": "Hace tres días.",
+				"descrEu": "Duela hiru egun.",
+				"descrEn": "Three days ago."
+			},
+			"Tronera": {
+				"descrEs": "Tormenta",
+				"descrEu": "Ekaitza.",
+				"descrEn": "Storm."
+			},
+			"Tropicar": {
+				"descrEs": "Tropezar.",
+				"descrEu": "Behaztopa egin.",
+				"descrEn": "Stumble."
+			},
+			"Trujon": {
+				"descrEs": "Trajeron.",
+				"descrEu": "Ekarri zuten.",
+				"descrEn": "They brought."
+			}
+		},
+		"uvz": {
+			"Uña de gato": {
+				"descrEs": "Tipo de revoco áspero, hecho con escobilla fuerte.",
+				"descrEu": "Emokadura latz mota, eskuila sendoz egina.",
+				"descrEn": "Type of rough plaster, made with a strong brush."
+			},
+			"Vallipuerta": {
+				"descrEs": "Batipuerta o parte superior de una puerta grande, cuando está dividida horizontalmente en dos mitades.",
+				"descrEu": "Ate handi baten batipuerta edo goikaldea, horizontalean bi erditan banatuta dagoenean.",
+				"descrEn": "A door or upper part of a large door, when it is divided horizontally into two halves."
+			},
+			"Ventanillo de la hierba": {
+				"descrEs": "Especie de ventana por donde se introducía el heno en el sobrado.",
+				"descrEu": "Belar ondua soberakinean sartzeko leiho moduko bat.",
+				"descrEn": "A kind of window through which the hay was introduced into the garret."
+			},
+			"Vueltas": {
+				"descrEs": "Collares grandes del traje de vistas.",
+				"descrEu": "Vistas jantziaren iduneko handiak.",
+				"descrEn": "Large necklaces from the Vistas suit."
+			},
+			"Zambulerio": {
+				"descrEs": "Columpio.",
+				"descrEu": "Kulunka.",
+				"descrEn": "Swing."
+			}
+		}
+	},
+	"alojamiento": {
+		"hotel": {
+			"Camping Al-Bereka": {
+				"ubicacion": "Carretera Salamanca-La Alberca Km 75",
+				"telefono": "923 41 51 95",
+				"puntuación": 4.1
+			},
+			"Hostal El Castillo": {
+				"ubicacion": "Carretera de Mogarraz 5",
+				"telefono": "923 41 53 08",
+				"puntuación": 3.9
+			},
+			"Hostal La Balsá": {
+				"ubicacion": "Calle  Balsada 2",
+				"telefono": "923 41 53 37",
+				"puntuación": 4.2
+			},
+			"Hostal San Blas": {
+				"ubicacion": "Avenida de Las Batuecas 25",
+				"telefono": "923 41 53 22",
+				"puntuación": 4.1
+			},
+			"Hotel Antiguas Eras La Alberca": {
+				"ubicacion": "Avenida de Las Batuecas 29",
+				"telefono": "923 41 51 13",
+				"puntuación": 4.3
+			},
+			"Hotel Doña Teresa": {
+				"ubicacion": "Avenida de la Guardia Civil s/n",
+				"telefono": "923 41 53 08",
+				"puntuación": 4.2
+			},
+			"Hostal La Alberca": {
+				"ubicacion": "Plaza San Antonio 1",
+				"telefono": "923 41 51 16",
+				"puntuación": 4.1
+			},
+			"Hotel Las Batuecas": {
+				"ubicacion": "Avenida de Las Batuecas 4",
+				"telefono": "923 41 51 88",
+				"puntuación": 3.6
+			},
+			"Hotel Termal Abadía de los Templarios": {
+				"ubicacion": "Carretera Salamanca-La Alberca Km 76",
+				"telefono": "923 42 31 07",
+				"puntuación": 4.6
+			}
+		},
+		"apartamento": {
+			"El Palaero": {
+				"ubicacion": "Calle Hospicio 30",
+				"telefono": "630 93 80 86",
+				"puntuación": 4.35 
+			},
+			"Villadolores": {
+				"ubicacion": "Calle Chorrito 6",
+				"telefono": "628 03 96 30",
+				"puntuación": 4.2
+			},
+			"Apartamentos Anita": {
+				"ubicacion": "Avenida de Las Batuecas 4",
+				"telefono": "923 28 21 20",
+				"puntuación": 4.2 
+			},
+			"Apartamento La Campanina": {
+				"ubicacion": "Plaza de la Iglesia 33 1º",
+				"telefono": "658 18 09 51",
+				"puntuación": 4.9
+			},
+			"Apartamentos Rurality Home": {
+				"ubicacion": "Avenida de la Virgen de la Peña 12 1ºA",
+				"telefono": "686 17 97 70",
+				"puntuación": 4.9 
+			}
+		},
+		"casarural": {
+			"Casitas del Huerto": {
+				"ubicacion": "Paraje de las Correderas s/n",
+				"telefono": "923 41 52 37",
+				"puntuación": 4.6 
+			},
+			"Casa del tablao": {
+				"ubicacion": "Calle Pedragal 2",
+				"telefono": "No Disponible",
+				"puntuación": 4.7
+			},
+			"Casa La Tía Bruja": {
+				"ubicacion": "Calle Barrio Nuevo 46",
+				"telefono": "No Disponible",
+				"puntuación": 3.8
+			},
+			"Casa Rural Espeñitas": {
+				"ubicacion": "Calle Las Espeñitas 4",
+				"telefono": "686 82 84 90",
+				"puntuación": 4.8
+			},
+			"Casa Rural Río La Llana": {
+				"ubicacion": "Calle Nogales 5",
+				"telefono": "923 41 51 43",
+				"puntuación": 4.7 
+			},
+			"Castillo Alto": {
+				"ubicacion": "Calle Castillo Alto 10",
+				"telefono": "690 10 45 21",
+				"puntuación": 4.1
+			},
+			"El Aserradero": {
+				"ubicacion": "Carretera de Mogarraz 4",
+				"telefono": "671 71 20 75",
+				"puntuación": 4.6
+			},
+			"La Casa del Burro": {
+				"ubicacion": "Plaza de la Iglesia 19",
+				"telefono": "625 75 58 19",
+				"puntuación": 4.8
+			},
+			"La Esquina de Ánimas": {
+				"ubicacion": "Plaza de la Iglesia 9",
+				"telefono": "923 41 54 43",
+				"puntuación": 4.9
+			}
+		},
+		"hospederia": {
+			"Hospedería Peña de Francia": {
+				"ubicacion": "www.hospederiapenadefrancia.com",
+				"telefono": "923 16 40 00",
+				"puntuación": 4.5 
+			}
+		}
+	},
+	"comercio": {
+		"alimentacion": {
+			"Supermercado Rita": {
+				"ubicacion": "Calle Puente 5",
+				"telefono": "923 41 5 64"
+			},
+			"Supermercado Covirán": {
+				"ubicacion": "Avenida Batuecas 2",
+				"telefono": "901 11 69 95"
+			},
+			"Supermercado HG": {
+				"ubicacion": "Carretera Mogarraz 1",
+				"telefono": "635 28 36 82"
+			},
+			"La Alberca Sabores": {
+				"ubicacion": "Calle Tablado 1",
+				"telefono": "No Disponible"
+			},
+			"Cárnicas Madroñal de la Sierra": {
+				"ubicacion": "Plaza Mayor 0",
+				"telefono": "923 41 52 62"
+			},
+			"Carnicería Herederos De Fermín": {
+				"ubicacion": "Calle Tablado 45",
+				"telefono": "923 41 52 65"
+			},
+			"Alimentación Mar San": {
+				"ubicacion": "Calle Barrionuevo 2",
+				"telefono": "No Disponible"
+			},
+			"Ibéricos Doña Consuelo": {
+				"ubicacion": "Calle Puente 3",
+				"telefono": "923 05 25 57"
+			},
+			"Embutidos Fermin": {
+				"ubicacion": "Carretera Salamanca Km 77.3",
+				"telefono": "923 41 51 35"
+			},
+			"Embutidos Basilio Hoyos": {
+				"ubicacion": "Avenida Peña de Francia 3 Bajo",
+				"telefono": "923 41 50 28"
+			},
+			"Jamones y Embutidos Josefa Hoyos": {
+				"ubicacion": "Avenida Peña de Francia 0'",
+				"telefono": "923 41 52 61"
+			},
+			"Garcigrande de Bellota": {
+				"ubicacion": "Calle Tablado 9",
+				"telefono": "923 41 52 12"
+			},
+			"Embutidos Casa Eusebio": {
+				"ubicacion": "Calle Tablado 30",
+				"telefono": "No Disponible"
+			},
+			"Jamones Andrés Becerro E Hijos": {
+				"ubicacion": "Calle Tablado 64",
+				"telefono": "No Disponible"
+			},
+			"Jamones Julián Becerro": {
+				"ubicacion": "Calle Luciano Barcala 1",
+				"telefono": "917 05 61 70"
+			},
+			"El Pan Negro de Mariluz": {
+				"ubicacion": "Calle Tablado 13",
+				"telefono": "923 41 54 68"
+			},
+			"Reina Sierra de Francia": {
+				"ubicacion": "Plaza de la Iglesia 32",
+				"telefono": "675 39 45 93"
+			},
+			"Panadería La Puente": {
+				"ubicacion": "Calle Puente 35",
+				"telefono": "923 41 50 02"
+			}
+		},
+		"artesania": {
+			"Tienda Museo San Antonio": {
+				"ubicacion": "Calle Tablado 72",
+				"telefono": "923 41 51 02"
+			},
+			"Artesanía La Alberca": {
+				"ubicacion": "Calle Tablado 68",
+				"telefono": "No Disponible"
+			},
+			"Artesanía El Tablao": {
+				"ubicacion": "Calle Tablado 39",
+				"telefono": "No Disponible"
+			},
+			"Artesanía Hoyos Calama": {
+				"ubicacion": "Plaza de la Iglesia 33",
+				"telefono": "625 75 58 19"
+			},
+			"El Tablao 33": {
+				"ubicacion": "Calle Tablado 33",
+				"telefono": "654 58 42 74"
+			},
+			"Artesanía Daniela": {
+				"ubicacion": "Calle Puente 11",
+				"telefono": "923 41 50 82"
+			},
+			"Regalos La Puente": {
+				"ubicacion": "Calle Puente 25",
+				"telefono": "No Disponible"
+			},
+			"Artesanía y Platería Puri y Charo": {
+				"ubicacion": "Calle Tablado 45",
+				"telefono": "923 41 53 94"
+			},
+			"La Esquina de Ánimas": {
+				"ubicacion": "Plaza de la Iglesia 9",
+				"telefono": "923 41 54 43"
+			}
+		}
+	},
+	"hosteleria": {
+		"bar": {
+			"Bar Marcos": {
+				"ubicacion": "Calle Tablado 4",
+				"telefono": "923 41 53 16",
+				"puntuación": 3.7 
+			},
+			"El Porrón": {
+				"ubicacion": "Plaza Mayor 12",
+				"telefono": "No Disponible",
+				"puntuación": 3.2
+			},
+			"El Rincón de Lola": {
+				"ubicacion": "Plaza Mayor 10",
+				"telefono": "923 41 54 58",
+				"puntuación": 4.2
+			},
+			"La Balsá": {
+				"ubicacion": "Calle Balsada 2",
+				"telefono": "923 41 53 37",
+				"puntuación": 2.4
+			},
+			"La Barrera": {
+				"ubicacion": "Plaza de la Iglesia 37",
+				"telefono": "665 34 78 18",
+				"puntuación": 4.9
+			},
+			"La Nogal": {
+				"ubicacion": "Plaza Padre Arsenio s/n",
+				"telefono": "923 41 51 14",
+				"puntuación": 3.7
+			},
+			"La Peña": {
+				"ubicacion": "Plaza Mayor 8",
+				"telefono": "No Disponible",
+				"puntuación": 3.1 
+			},
+			"Tetería Singular": {
+				"ubicacion": "Calle Espeñitas 2",
+				"telefono": "654 93 61 48",
+				"puntuación": 4.6 
+			},
+			"San Blás": {
+				"ubicacion": "Avenida de Las Batuecas 25",
+				"telefono": "923 41 55 32",
+				"puntuación": 4.2
+			}
+		},
+		"restaurante": {
+			"1830": {
+				"ubicacion": "Calle Tablado 66",
+				"telefono": "923 41 50 20",
+				"puntuación": 3.8
+			},
+			"El Balcón de la Plaza": {
+				"ubicacion": "Plaza Mayor 11",
+				"telefono": "923 41 52 24",
+				"puntuación": 4.1
+			},
+			"El Castillo": {
+				"ubicacion": "Carretera de Mogarraz 5",
+				"telefono": "923 41 50 01",
+				"puntuación": 3.9
+			},
+			"El Encuentro": {
+				"ubicacion": "Calle Tablado 8",
+				"telefono": "923 41 53 10",
+				"puntuación": 4.5
+			},
+			"El Soportal": {
+				"ubicacion": "Plaza Mayor 7",
+				"telefono": "923 41 52 96",
+				"puntuación": 4.2
+			},
+			"Ibéricos de la Alberca Doña Consuelo": {
+				"ubicacion": "Calle Puente 3",
+				"telefono": "923 05 25 57",
+				"puntuación": 4.7
+			},
+			"La Abuela Carmen": {
+				"ubicacion": "Avenida de la Guardia Civil s/n",
+				"telefono": "923 41 53 08",
+				"puntuación": 4.2
+			},
+			"La Cantina de Elías": {
+				"ubicacion": "Plaza San Antonio 2",
+				"telefono": "923 41 52 37",
+				"puntuación": 4.2
+			},
+			"La Catedral": {
+				"ubicacion": "Plaza Mayor 4",
+				"telefono": "923 41 52 67",
+				"puntuación": 4.2 
+			},
+			"La Parrilla": {
+				"ubicacion": "Calle Tablado 64",
+				"telefono": "No Disponible",
+				"puntuación": 1.8
+			},
+			"La Taberna": {
+				"ubicacion": "Plaza Mayor 5",
+				"telefono": "923 41 52 37",
+				"puntuación": 4.4
+			},
+			"Las Bóvedas": {
+				"ubicacion": "Carretera Salamanca-La Alberca Km 76",
+				"telefono": "923 42 31 07",
+				"puntuación": 4.6
+			},
+			"Mesón La Colmena": {
+				"ubicacion": "Calle Tablado 37",
+				"telefono": "923 41 54 85",
+				"puntuación": 4.3 
+			},
+			"¡Oh! Espacio del Jamón": {
+				"ubicacion": "Calle Tablado 32",
+				"telefono": "923 41 54 69",
+				"puntuación": 4.6
+			}
+		}
+	}
+}
