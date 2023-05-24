@@ -117,8 +117,10 @@ public class otrosLugaresInicio extends Fragment {
 
         listView.setAdapter(myAdapter);
 
-        listView.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show());
+        listView.setOnItemClickListener((adapterView, v, position, id) -> {
+            Fragment fragment = hurdes.newInstance(args);
+            cargarFragment(fragment);
+        });
 
 
         //Peña de Francia

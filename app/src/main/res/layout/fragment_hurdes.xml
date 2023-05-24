@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Maps.otrosLugares.hurdes">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "@string/hurdes"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/hur11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/hur12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/hurimg1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/hur13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/hurimg2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                android:layout_gravity="center"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:id="@+id/hur14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/hurimg3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="15dp"
+                android:src="@drawable/laalberca2"
+                android:layout_gravity="center"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/btnhur1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:text="@string/quevisitar"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
