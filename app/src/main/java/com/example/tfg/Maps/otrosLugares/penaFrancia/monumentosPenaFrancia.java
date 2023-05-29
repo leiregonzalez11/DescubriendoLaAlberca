@@ -25,10 +25,8 @@ import com.google.firebase.storage.StorageReference;
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 
     private Bundle args;
-    private GestorDB dbHelper;
-    private String idioma, categoria;
+    private String idioma;
     private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
-    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -52,14 +50,12 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         args = new Bundle();
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
 
         }
-
         args.putString("idioma", idioma);
         args.putString("back", "true");
 
@@ -109,10 +105,6 @@ public class monumentosPenaFrancia extends Fragment implements View.OnClickListe
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
-
-        dbHelper = new GestorDB(getContext());
-        storageRef = FirebaseStorage.getInstance().getReference();
-
     }
 
 

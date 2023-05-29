@@ -21,6 +21,8 @@ public class Servicio implements Parcelable {
         parcel.writeString(this.nombreServ);
         parcel.writeString(this.locationServ);
         parcel.writeString(this.telServ);
+        parcel.writeString(this.horarioServ);
+        parcel.writeString(this.precioServ);
     }
 
     public Servicio (){}
@@ -29,6 +31,13 @@ public class Servicio implements Parcelable {
             this.nombreServ = nombreServ;
             this.locationServ = localizacion;
             this.telServ = telServ;
+    }
+
+    public Servicio (String nombreServ, String localizacion, String horario, String precio){
+        this.nombreServ = nombreServ;
+        this.locationServ = localizacion;
+        this.horarioServ = horario;
+        this.precioServ = precio;
     }
 
     protected Servicio(Parcel in) {

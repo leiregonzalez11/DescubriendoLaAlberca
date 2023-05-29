@@ -1114,13 +1114,13 @@
 		"municipales":{
 			"piscina":{
 				"ubicacion": "Avenida de las Batuecas 16",
-				"precio": "Laborables: 2,15€ (Adulto), 1,10€ (Junior). Festivos: 2,50€ (Adulto), 1,30€ (Junior)",
+				"precio": "Laborables: 2,15€ (Adulto), 1,10€ (Junior)--Festivos: 2,50€ (Adulto), 1,30€ (Junior)",
 				"horario": "13:00-21:00" 
 			},
 			"gimnasio":{
 				"ubicacion": "Calle Las Eras 2",
-				"precio": "1,50€ (Adulto), 1€ (Junior, Desempleados, Discapacitados y Mayores de 65)",
-				"horario": "Mañanas 09:00-12:30, Tardes 17:00-21:00" 
+				"precio": "1,50€ (Adulto)--1€ (Junior, Desempleados, Discapacitados y Mayores de 65)",
+				"horario": "Mañanas 09:00-12:30--Tardes 17:00-21:00" 
 			},
 			"oficinaturismo":{
 				"ubicacion": "Plaza Mayor 11",

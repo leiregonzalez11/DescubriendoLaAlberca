@@ -121,7 +121,6 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
                         Establecimiento establecimiento = new Establecimiento((String) key, (String) userData.get("ubicacion"),
                                 (String) userData.get("telefono"), (Double) userData.get("puntuación"));
                         ps.add(establecimiento);
-                        Log.d(TAG, "Value of palabras is: " + establecimiento.getNombreEstabl());
                     }
 
                     //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
@@ -283,10 +282,10 @@ public class Restaurantes extends Fragment implements SearchView.OnQueryTextList
     }
 
 
-    public Establecimiento buscarEst(String nombreAloj, List<Establecimiento> est){
+    public Establecimiento buscarEst(String nombre, List<Establecimiento> est){
         for (int i = 0; i <est.size(); i++){
             Establecimiento estbl = est.get(i);
-            if (estbl.getNombreEstabl().equalsIgnoreCase(nombreAloj)){
+            if (estbl.getNombreEstabl().equalsIgnoreCase(nombre)){
                 return estbl;
             }
         }

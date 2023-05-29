@@ -81,7 +81,7 @@
 
             <Button
                 android:id="@+id/btns10"
-                android:layout_width="55dp"
+                android:layout_width="35dp"
                 android:layout_height="36dp"
                 android:background="#00000000"
                 android:visibility="invisible"
@@ -319,10 +319,10 @@
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/mapa"
                 app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.524"
+                app:layout_constraintHorizontal_bias="0.603"
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.993"
+                app:layout_constraintVertical_bias="1.0"
                 tools:ignore="ContentDescription" />
 
             <Button

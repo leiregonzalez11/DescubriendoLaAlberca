@@ -24,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tfg.Maps.servicios.infoServFragment;
+import com.example.tfg.Maps.servicios.serviciosBasico;
+import com.example.tfg.Maps.servicios.serviciosElaborado;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos7;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
@@ -374,22 +376,22 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     public void setBtnServicios(){
 
-        btns1.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriamaleni", "Peluquería y Belleza Maleni", btns1));
-        btns2.setOnClickListener(view -> serviciosOnClick("peluqueria", "barberia12", "Barbería 12", btns2));
-        btns3.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriadestellos", "Peluquería Destellos", btns3));
-        btns4.setOnClickListener(view -> serviciosOnClick("banco", "lacaixa", "La Caixa", btns4));
-        btns5.setOnClickListener(view -> serviciosOnClick("banco", "cajarural", "Caja Rural", btns5));
-        btns6.setOnClickListener(view -> serviciosOnClick("banco", "unicaja", "Unicaja", btns6));
-        btns7.setOnClickListener(view -> serviciosOnClick("banco", "santander", "Santander", btns7));
-        btns10.setOnClickListener(view -> serviciosOnClick("transporte", "taxi", "Taxi La Alberca", btns10));
-        btns11.setOnClickListener(view -> serviciosOnClick("transporte", "gasolinera", "Estación de Servicio Repsol", btns11));
-        btns12.setOnClickListener(view -> serviciosOnClick("medicos", "farmacia", "Angel Sánchez Hernández", btns12));
-        btns13.setOnClickListener(view -> serviciosOnClick("medicos", "centromedico", "La Alberca Centro de Salud", btns13));
-        btns9.setOnClickListener(view -> serviciosOnClick("municipales", "piscina", "Piscinas Municipales La Alberca", btns9));
-        btns8.setOnClickListener(view -> serviciosOnClick("municipales", "gimnasio", "Gimnasio La Pecera", btns8));
-        btns14.setOnClickListener(view -> serviciosOnClick("municipales", "oficinaturismo", "Oficina de turismo", btns14));
-        btns15.setOnClickListener(view -> serviciosOnClick("municipales", "guardiacivil", "Cuartel de la Guardia Civil", btns15));
-        btnminfo.setOnClickListener(view -> serviciosOnClick("infoservicios", "infobutton", "infobutton", btnminfo));
+        btns1.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriamaleni", "Peluquería y Belleza Maleni"));
+        btns2.setOnClickListener(view -> serviciosOnClick("peluqueria", "barberia12", "Barbería 12"));
+        btns3.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriadestellos", "Peluquería Destellos"));
+        btns4.setOnClickListener(view -> serviciosOnClick("banco", "lacaixa", "La Caixa"));
+        btns5.setOnClickListener(view -> serviciosOnClick("banco", "cajarural", "Caja Rural de Salamanca"));
+        btns6.setOnClickListener(view -> serviciosOnClick("banco", "unicaja", "Unicaja"));
+        btns7.setOnClickListener(view -> serviciosOnClick("banco", "santander", "Banco Santander"));
+        btns10.setOnClickListener(view -> serviciosOnClick("transporte", "taxi", "Taxi La Alberca"));
+        btns11.setOnClickListener(view -> serviciosOnClick("transporte", "gasolinera", "Estación de Servicio Repsol"));
+        btns12.setOnClickListener(view -> serviciosOnClick("medicos", "farmacia", "Angel Sánchez Hernández"));
+        btns13.setOnClickListener(view -> serviciosOnClick("medicos", "centromedico", "Centro de Salud La Alberca"));
+        btns9.setOnClickListener(view -> serviciosOnClick("municipales", "piscina", "Piscinas Municipales La Alberca"));
+        btns8.setOnClickListener(view -> serviciosOnClick("municipales", "gimnasio", "Gimnasio La Pecera"));
+        btns14.setOnClickListener(view -> serviciosOnClick("municipales", "oficinaturismo", "Oficina de turismo"));
+        btns15.setOnClickListener(view -> serviciosOnClick("municipales", "guardiacivil", "Cuartel de la Guardia Civil"));
+        btnminfo.setOnClickListener(view -> serviciosOnClick("infoservicios", "infobutton", "infobutton"));
 
     }
 
@@ -435,39 +437,26 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
-    public void serviciosOnClick(String serviciocat, String servicio, String titulo, View btn){
+    public void serviciosOnClick(String serviciocat, String servicio, String titulo){
 
         args.putString("idioma", idioma);
-        DialogFragment fragment = null;
-        if (serviciocat.contains("peluqueria")){
-            //fragment = new servicios1();
-            args.putString("servicio", servicio);
-            args.putString("titulo", titulo);
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
-        } else if (servicio.equalsIgnoreCase("banco")){
-            args.putString("servicio", servicio);
-            args.putString("titulo", titulo);
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
-        } else if (servicio.equalsIgnoreCase("municipales")){
-            args.putString("servicio", servicio);
-            args.putString("titulo", titulo);
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
-        } else if (servicio.equalsIgnoreCase("medicos")){
-            args.putString("servicio", servicio);
-            args.putString("titulo", titulo);
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
-        } else if (servicio.equalsIgnoreCase("transporte")){
-            args.putString("servicio", servicio);
-            args.putString("titulo", titulo);
-            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
-        } else if (serviciocat.equalsIgnoreCase("infoservicios")){
+        DialogFragment fragment;
+
+        args.putString("servicio", servicio);
+        args.putString("catServicio", serviciocat);
+        args.putString("titulo", titulo);
+
+        if (serviciocat.equalsIgnoreCase("infoservicios")){
             fragment = new infoServFragment();
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"fragment");
+        } else if (!servicio.equalsIgnoreCase("gimnasio") && !servicio.equalsIgnoreCase("piscina")){
+            fragment = new serviciosBasico();
+        } else {
+            fragment = new serviciosElaborado();
         }
-        /*fragment.setArguments(args);
+
+        fragment.setArguments(args);
         fragment.setCancelable(false);
-        fragment.show(getChildFragmentManager(),"fragment");*/
+        fragment.show(getChildFragmentManager(),"fragment");
 
     }
     
