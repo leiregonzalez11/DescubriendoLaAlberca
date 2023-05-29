@@ -7,7 +7,6 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tfg.Maps.servicios.infoServFragment;
 import com.example.tfg.Maps.sitiosdeinteres.monumentos7;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
@@ -47,6 +47,8 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private Bundle args;
     private String [] opcionesSpinner;
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
+    private Button btns1,btns2,btns3,btns4,btns5,btns6,btns7,btns8,
+            btns9,btns10,btns11,btns12,btns13,btns14,btns15;
     private ImageButton btnm1,btnm2,btnm3,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
 
     /**
@@ -104,6 +106,21 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10 = v.findViewById(R.id.btnm10);
             btnm11 = v.findViewById(R.id.btnm11);
             btnm12 = v.findViewById(R.id.btnm12);
+            btns1 = v.findViewById(R.id.btns1);
+            btns2 = v.findViewById(R.id.btns2);
+            btns3 = v.findViewById(R.id.btns3);
+            btns4 = v.findViewById(R.id.btns4);
+            btns5 = v.findViewById(R.id.btns5);
+            btns6 = v.findViewById(R.id.btns6);
+            btns7 = v.findViewById(R.id.btns7);
+            btns8 = v.findViewById(R.id.btns8);
+            btns9 = v.findViewById(R.id.btns9);
+            btns10 = v.findViewById(R.id.btns10);
+            btns11 = v.findViewById(R.id.btns11);
+            btns12 = v.findViewById(R.id.btns12);
+            btns13 = v.findViewById(R.id.btns13);
+            btns14 = v.findViewById(R.id.btns14);
+            btns15 = v.findViewById(R.id.btns15);
             btnminfo = v.findViewById(R.id.moninfo);
         }
         return v;
@@ -136,6 +153,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             setBtnParking();
             setVisibilityP(true);
             setVisibilityM(false);
+            setVisibilityS(false);
 
             if (idioma.equalsIgnoreCase("es")) {
                 img1.setImageResource(R.drawable.planolaalbercaparkinges);
@@ -155,12 +173,15 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             setBtnMonumentos();
             setVisibilityP(false);
             setVisibilityM(true);
+            setVisibilityS(false);
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){ //Opcion seleccionada: Servicios
             img1.setImageResource(R.drawable.planolaalbercaservicios);
+            setBtnServicios();
             setVisibilityP(false);
             setVisibilityM(false);
+            setVisibilityS(true);
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[3])){
@@ -349,6 +370,107 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
 
     }
 
+    /** Métodos Mapa Servicios */
+
+    public void setBtnServicios(){
+
+        btns1.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriamaleni", "Peluquería y Belleza Maleni", btns1));
+        btns2.setOnClickListener(view -> serviciosOnClick("peluqueria", "barberia12", "Barbería 12", btns2));
+        btns3.setOnClickListener(view -> serviciosOnClick("peluqueria", "peluqueriadestellos", "Peluquería Destellos", btns3));
+        btns4.setOnClickListener(view -> serviciosOnClick("banco", "lacaixa", "La Caixa", btns4));
+        btns5.setOnClickListener(view -> serviciosOnClick("banco", "cajarural", "Caja Rural", btns5));
+        btns6.setOnClickListener(view -> serviciosOnClick("banco", "unicaja", "Unicaja", btns6));
+        btns7.setOnClickListener(view -> serviciosOnClick("banco", "santander", "Santander", btns7));
+        btns10.setOnClickListener(view -> serviciosOnClick("transporte", "taxi", "Taxi La Alberca", btns10));
+        btns11.setOnClickListener(view -> serviciosOnClick("transporte", "gasolinera", "Estación de Servicio Repsol", btns11));
+        btns12.setOnClickListener(view -> serviciosOnClick("medicos", "farmacia", "Angel Sánchez Hernández", btns12));
+        btns13.setOnClickListener(view -> serviciosOnClick("medicos", "centromedico", "La Alberca Centro de Salud", btns13));
+        btns9.setOnClickListener(view -> serviciosOnClick("municipales", "piscina", "Piscinas Municipales La Alberca", btns9));
+        btns8.setOnClickListener(view -> serviciosOnClick("municipales", "gimnasio", "Gimnasio La Pecera", btns8));
+        btns14.setOnClickListener(view -> serviciosOnClick("municipales", "oficinaturismo", "Oficina de turismo", btns14));
+        btns15.setOnClickListener(view -> serviciosOnClick("municipales", "guardiacivil", "Cuartel de la Guardia Civil", btns15));
+        btnminfo.setOnClickListener(view -> serviciosOnClick("infoservicios", "infobutton", "infobutton", btnminfo));
+
+    }
+
+    public void setVisibilityS(boolean activar){
+
+        if (activar){
+            btns1.setVisibility(View.VISIBLE);
+            btns2.setVisibility(View.VISIBLE);
+            btns3.setVisibility(View.VISIBLE);
+            btns4.setVisibility(View.VISIBLE);
+            btns5.setVisibility(View.VISIBLE);
+            btns6.setVisibility(View.VISIBLE);
+            btns7.setVisibility(View.VISIBLE); 
+            btns8.setVisibility(View.VISIBLE);
+            btns9.setVisibility(View.VISIBLE);
+            btns10.setVisibility(View.VISIBLE);
+            btns11.setVisibility(View.VISIBLE);
+            btns12.setVisibility(View.VISIBLE);
+            btns13.setVisibility(View.VISIBLE);
+            btns14.setVisibility(View.VISIBLE);
+            btns15.setVisibility(View.VISIBLE);
+            btnminfo.setVisibility(View.VISIBLE);
+        }
+
+        else{
+            btns1.setVisibility(View.INVISIBLE);
+            btns2.setVisibility(View.INVISIBLE);
+            btns3.setVisibility(View.INVISIBLE);
+            btns4.setVisibility(View.INVISIBLE);
+            btns5.setVisibility(View.INVISIBLE);
+            btns6.setVisibility(View.INVISIBLE);
+            btns7.setVisibility(View.INVISIBLE);
+            btns8.setVisibility(View.INVISIBLE);
+            btns9.setVisibility(View.INVISIBLE);
+            btns10.setVisibility(View.INVISIBLE);
+            btns11.setVisibility(View.INVISIBLE);
+            btns12.setVisibility(View.INVISIBLE);
+            btns13.setVisibility(View.INVISIBLE);
+            btns14.setVisibility(View.INVISIBLE);
+            btns15.setVisibility(View.INVISIBLE);
+            btnminfo.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    public void serviciosOnClick(String serviciocat, String servicio, String titulo, View btn){
+
+        args.putString("idioma", idioma);
+        DialogFragment fragment = null;
+        if (serviciocat.contains("peluqueria")){
+            //fragment = new servicios1();
+            args.putString("servicio", servicio);
+            args.putString("titulo", titulo);
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+        } else if (servicio.equalsIgnoreCase("banco")){
+            args.putString("servicio", servicio);
+            args.putString("titulo", titulo);
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+        } else if (servicio.equalsIgnoreCase("municipales")){
+            args.putString("servicio", servicio);
+            args.putString("titulo", titulo);
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+        } else if (servicio.equalsIgnoreCase("medicos")){
+            args.putString("servicio", servicio);
+            args.putString("titulo", titulo);
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+        } else if (servicio.equalsIgnoreCase("transporte")){
+            args.putString("servicio", servicio);
+            args.putString("titulo", titulo);
+            Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show();
+        } else if (serviciocat.equalsIgnoreCase("infoservicios")){
+            fragment = new infoServFragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"fragment");
+        }
+        /*fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");*/
+
+    }
+    
     /** Métodos comunes */
 
     public void zoomIn (DialogFragment fragment, View view){

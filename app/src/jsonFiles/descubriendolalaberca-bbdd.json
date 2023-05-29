@@ -1109,5 +1109,79 @@
 				"puntuación": 4.6
 			}
 		}
+	},
+	"servicios": {
+		"municipales":{
+			"piscina":{
+				"ubicacion": "Avenida de las Batuecas 16",
+				"precio": "Laborables: 2,15€ (Adulto), 1,10€ (Junior). Festivos: 2,50€ (Adulto), 1,30€ (Junior)",
+				"horario": "13:00-21:00" 
+			},
+			"gimnasio":{
+				"ubicacion": "Calle Las Eras 2",
+				"precio": "1,50€ (Adulto), 1€ (Junior, Desempleados, Discapacitados y Mayores de 65)",
+				"horario": "Mañanas 09:00-12:30, Tardes 17:00-21:00" 
+			},
+			"oficinaturismo":{
+				"ubicacion": "Plaza Mayor 11",
+				"telefono": "923 41 52 91"
+			},
+			"guardiacivil": {
+				"ubicacion": "Avenida de Guardia Civil 9",
+				"telefono": "923 41 52 29"
+			}
+		},
+		"medicos":{
+			"centromedico": {
+				"ubicacion": "Avenida de las Batuecas 0",
+				"telefono": "923 41 51 36"
+			},
+			"farmacia": {
+				"ubicacion": "Calle Tablado 70",
+				"telefono": "923 41 50 62"
+			}
+		},
+		"banco": {
+			"lacaixa": {
+				"ubicacion": "Avenida de Las Batuecas 17",
+				"telefono": "923 40 99 10"
+			},
+			"cajarural": {
+				"ubicacion": "Travesía Tablado 2",
+				"telefono": "923 41 50 89"
+			},
+			"santander": {
+				"ubicacion": "Calle Puente 17",
+				"telefono": "902 24 24 24"
+			},
+			"unicaja": {
+				"ubicacion": "Calle Tablado 2",
+				"telefono": "923 41 50 58"
+			}
+		}, 
+		"peluqueria": {
+			"peluqueriamaleni": {
+				"ubicacion": "Calle Chorrito 11",
+				"telefono": "923 41 51 50"
+			},
+			"barberia12": {
+				"ubicacion": "Calle Llanito 30",
+				"telefono": "673 15 23 54"
+			},
+			"peluqueriadestellos": {
+				"ubicacion": "Calle Mesón 19",
+				"telefono": "923 41 53 53"
+			}
+		},
+		"transporte": {
+			"taxi": {
+				"ubicacion": "Plaza de San Antonio",
+				"telefono": "679 32 57 21"
+			},
+			"gasolinera": {
+				"ubicacion": "SA-201 Km 75",
+				"telefono": "609 43 06 68"
+			}
+		}
 	}
 }

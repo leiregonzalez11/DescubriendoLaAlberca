@@ -17,7 +17,7 @@ import com.example.tfg.Categorias.secundarias.gastronomia.Receta;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 15;
+    private static final int DB_VERSION = 16;
     private final Context context;
     private boolean seguir = true;
 
