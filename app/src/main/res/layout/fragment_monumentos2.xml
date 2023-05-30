@@ -33,7 +33,7 @@
                 android:fontFamily="casual"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView

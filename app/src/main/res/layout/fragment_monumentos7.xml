@@ -33,7 +33,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:text="Busto de Maurice Legendre"
-                android:textSize="26sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />
 

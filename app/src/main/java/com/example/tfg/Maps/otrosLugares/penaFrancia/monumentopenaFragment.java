@@ -210,7 +210,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText(datos3[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
                 //Imagenes
-                //obtenerImagenFirebase("mapas/otros/penafrancia/navederecha.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/navederecha.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;
@@ -235,7 +235,7 @@ public class monumentopenaFragment extends DialogFragment {
                 text3.setText("");
 
                 //Imagenes
-                //obtenerImagenFirebase("mapas/otros/penafrancia/coro.png", img2);
+                obtenerImagenFirebase("mapas/otros/penafrancia/coro.png", img2);
 
                 btnExtra.setVisibility(View.GONE);
                 break;

@@ -140,7 +140,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
 
                 pruebatexto.setText("2");
 
-                String [] datos = dbHelper.obtenerInfoMonumentos(idioma, "teatro-cat2",4);
+                String [] datos = dbHelper.obtenerInfoMonumentos(idioma, "iglesia-cat2",4);
 
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));

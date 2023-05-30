@@ -27,9 +27,8 @@ public class iglesia extends Fragment implements View.OnClickListener{
     private Bundle args;
     private String idioma;
     private ImageView img1;
-    private GestorDB dbHelper;
     private Button btn1,btn2,btn3, btn4;
-    private TextView text1, text2, text3, text4, text5, text6, text7, text8;
+    private TextView text1, text2, text3;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -105,7 +104,7 @@ public class iglesia extends Fragment implements View.OnClickListener{
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
 
-        dbHelper = new GestorDB(getContext());
+        GestorDB dbHelper = new GestorDB(getContext());
 
         String [] datos = dbHelper.obtenerInfoLugares(idioma, "iglesia","peñadefrancia", 2);
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
