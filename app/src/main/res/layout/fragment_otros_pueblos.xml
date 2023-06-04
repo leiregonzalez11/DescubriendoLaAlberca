@@ -12,10 +12,10 @@
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:layout_gravity="center"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutGastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -24,7 +24,6 @@
             tools:context=".anterior.categorias.artesania.artesaniaActivity2">
 
             <TextView
-                android:id="@+id/gastrotext"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -44,7 +43,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="casual"
-                android:text="TEXTO DE INTRODUCCIÓN A OTROS PUEBLOS DE LA SIERRA DE FRANCIA \n"
+                android:text=" \n"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>

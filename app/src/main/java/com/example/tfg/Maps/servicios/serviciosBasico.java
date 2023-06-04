@@ -115,6 +115,13 @@ public class serviciosBasico extends DialogFragment {
                     } else{
                         tel.setText(telefono);
                     }
+
+                    ImageView img = infoView.findViewById(R.id.imgServ);
+
+                    //Imagen
+                    storageRef = FirebaseStorage.getInstance().getReference();
+                    obtenerImagenFirebase(img);
+
                 }
             }
 
@@ -126,12 +133,6 @@ public class serviciosBasico extends DialogFragment {
             }
         });
 
-        ImageView img = infoView.findViewById(R.id.imgServ);
-
-        //Imagen
-        storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase(img);
-
         Button back = infoView.findViewById(R.id.buttonVolverServ);
         back.setOnClickListener(view -> dismiss());
 
@@ -140,7 +141,7 @@ public class serviciosBasico extends DialogFragment {
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(ImageView img){
-        StorageReference pathReference = storageRef.child("mapas/otros/servicios/" + servicio + "alo.png");
+        StorageReference pathReference = storageRef.child("mapas/servicios/" + servicio.getNombreServ() + ".png");
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 

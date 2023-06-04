@@ -11,7 +11,6 @@ public class Pueblo {
 
     public Pueblo (){}
 
-
     public String getNombrePueblo() {
         return nombrePueblo;
     }

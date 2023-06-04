@@ -4,8 +4,6 @@ import static android.service.controls.ControlsProviderService.TAG;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -14,14 +12,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -86,12 +80,7 @@ public class serviciosElaborado extends DialogFragment {
                     HashMap dataMap = (HashMap) dataSnapshot.getValue();
                     assert dataMap != null;
                     for (Object key: dataMap.keySet()){
-                        Object datos = dataMap.get(key);
-                        HashMap userData = (HashMap) datos;
-                        assert userData != null;
-                        servicio = new Servicio((String) key, (String) userData.get("ubicacion"),
-                                (String) userData.get("horario"), (String) userData.get("precio"));
-                        ps.add(servicio);
+                        ps.add(crearServicioElaborado(key, dataMap));
                     }
 
                     TextView text1 = infoView.findViewById(R.id.nombreServE);
@@ -109,6 +98,12 @@ public class serviciosElaborado extends DialogFragment {
                     price.setText(servicio.getPrecioServ().replaceAll("--", "\n"));
                     horario.setText(servicio.getHorarioServ().replaceAll("--", "\n"));
 
+                    ImageView img = infoView.findViewById(R.id.imgServE);
+
+                    //Imagen
+                    storageRef = FirebaseStorage.getInstance().getReference();
+                    obtenerImagenFirebase(img);
+
                 }
             }
 
@@ -120,21 +115,24 @@ public class serviciosElaborado extends DialogFragment {
             }
         });
 
-        ImageView img = infoView.findViewById(R.id.imgServE);
-
-        //Imagen
-        storageRef = FirebaseStorage.getInstance().getReference();
-        obtenerImagenFirebase(img);
-
         Button back = infoView.findViewById(R.id.buttonVolverServE);
         back.setOnClickListener(view -> dismiss());
 
         return builder.create();
     }
 
+    private Servicio crearServicioElaborado(Object key, HashMap dataMap) {
+        Object datos = dataMap.get(key);
+        HashMap userData = (HashMap) datos;
+        assert userData != null;
+        servicio = new Servicio((String) key, (String) userData.get("ubicacion"),
+                (String) userData.get("horario"), (String) userData.get("precio"));
+        return servicio;
+    }
+
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(ImageView img){
-        StorageReference pathReference = storageRef.child("mapas/otros/servicios/" + servicio + "alo.png");
+        StorageReference pathReference = storageRef.child("mapas/servicios/" + servicio.getNombreServ() + ".png");
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 

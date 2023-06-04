@@ -104,12 +104,6 @@ public class diccionario extends Fragment implements View.OnClickListener {
         setListeners();
     }
 
-    /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageView img){
-        StorageReference pathReference = storageRef.child(path);
-        pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
-    }
-
     private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();

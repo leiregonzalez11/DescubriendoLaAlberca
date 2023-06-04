@@ -20,10 +20,12 @@ public class GestorDB extends SQLiteOpenHelper {
     private static final int DB_VERSION = 16;
     private final Context context;
     private boolean seguir = true;
+    SQLiteDatabase sqLiteDatabase;
 
     public GestorDB(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context = context;
+        sqLiteDatabase = this.getWritableDatabase();
     }
 
     @Override
@@ -33,11 +35,11 @@ public class GestorDB extends SQLiteOpenHelper {
         //Establecemos el encoding a UTF-8
         sqLiteDatabase.execSQL("PRAGMA encoding=\"UTF-8\";");
         //Creamos las tablas de la BBDD
-        crearTablas(sqLiteDatabase);
+        crearTablas();
         //Cargamos los datos en la BBDD
         try {
-            cargarDatos(sqLiteDatabase);
-            cargarDatosConComillas(sqLiteDatabase);
+            cargarDatos();
+            cargarDatosConComillas();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +61,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
-    private void crearTablas(SQLiteDatabase sqLiteDatabase){
+    private void crearTablas(){
 
 
         //Esquema de la tabla arquitectura
@@ -122,7 +124,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
-    private void cargarDatos(SQLiteDatabase sqLiteDatabase) throws IOException {
+    private void cargarDatos() throws IOException {
 
         //Carga de datos desde un archivo .txt usando res/raw
         assert context != null;
@@ -145,7 +147,7 @@ public class GestorDB extends SQLiteOpenHelper {
         }
     }
 
-    private void cargarDatosConComillas(SQLiteDatabase sqLiteDatabase) throws IOException{
+    private void cargarDatosConComillas() throws IOException{
         sqLiteDatabase.execSQL("INSERT INTO historia (catHistoria, idioma, descHistoria) VALUES ('cat2', 'en', 'In the Modern Age, La Alberca played an important role in the Spanish War of Independence, during which the inhabitants of the town joined the resistance forces against the French invader. In 1812, French troops invaded La Alberca, sacking and burning several houses and public buildings as they passed, and stealing a large number of valuable objects, such as silverware and paintings, which belonged to the church and the town''s wealthiest families.');");
         sqLiteDatabase.execSQL("INSERT INTO artesania (catArte, idioma, nombreTraje, descrArte) VALUES ('trajes1','en','vistas','The vistas suit is perhaps the most interesting and richest in Spain, as well as being the oldest. It is difficult to determine the date of its origin, as even in the village there is no one who knows its origins, although some old women claim that it is of Jewish origin. It is of absolute chastity, as it hides the woman''s anatomy and conceals her forms. It was originally a wedding dress, but over time it has lost its bridal character to become a festive garment linked to the celebration of processions and offertories.');");
         sqLiteDatabase.execSQL("INSERT INTO artesania (catArte, idioma, nombreTraje, descrArte) VALUES ('trajes3','en','vistas','This suit from La Alberca has inspired artists, painters such as Sorolla, sculptors and photographers such as Ortiz Echagüe, who portrays the women of La Alberca in all their splendour. The great masters such as Givenchy and Galiano have also drunk from this source of the mountain village, because the richness of its forms, the superimposition of fabrics and jewels and the singular way in which it sits on the woman''s body suggest a multitude of ideas.');");
@@ -189,8 +191,6 @@ public class GestorDB extends SQLiteOpenHelper {
     //Tabla Arquitectura
     public String[] obtenerDatosArqui(String idioma, String categoria, int numTV){
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
         String descrip;
         int i = 0;
         String [] descr = new String[numTV];
@@ -208,8 +208,6 @@ public class GestorDB extends SQLiteOpenHelper {
     //Tabla Artesania
     public String[] obtenerDatosArte(String idioma, String categoria, int numTV){
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
         String descrip;
         int i = 0;
         String [] descr = new String[numTV];
@@ -225,8 +223,6 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     public String[] obtenerDatosTrajes(String idioma, String categoria, int numTV, String nombreTraje){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         int i = 0;
@@ -245,8 +241,6 @@ public class GestorDB extends SQLiteOpenHelper {
 
     //Tabla Rutas
     public String[] obtenerDatosRutas(String idioma, String nombreRuta){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         int i = 0;
@@ -267,8 +261,6 @@ public class GestorDB extends SQLiteOpenHelper {
     //Tabla Gastronomia
     public String[] obtenerDescrGastro(String idioma, String categoria, int numTV){
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
         String descrip;
         int i = 0;
         String [] descr = new String[numTV];
@@ -285,7 +277,6 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     public LinkedList<Receta> obtenerRecetas(String idioma){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         LinkedList<Receta> recetas = new LinkedList<>();
         Cursor c = sqLiteDatabase.rawQuery("SELECT nombreReceta, descrGastro, ingrReceta, pasosReceta FROM gastronomia WHERE idioma = ? AND nombreReceta IS NOT NULL", new String[]{idioma});
@@ -304,8 +295,6 @@ public class GestorDB extends SQLiteOpenHelper {
     //Tabla Tradiciones
     public String[] obtenerInfoTrad(String idioma, String interfaz, int numTV){
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-
         String descrip;
         int i = 0;
         String [] descr = new String[numTV];
@@ -323,8 +312,6 @@ public class GestorDB extends SQLiteOpenHelper {
 
     //Tabla Otros lugares
     public LinkedList<Pueblo> obtenerPueblos (String idioma){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         LinkedList<Pueblo> pueblos = new LinkedList<>();
 
@@ -346,7 +333,6 @@ public class GestorDB extends SQLiteOpenHelper {
 
     public Double [] obtenerUbiLugares (String categoria){
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Double [] descr = new Double[2];
 
         Cursor c = sqLiteDatabase.rawQuery("SELECT latLugar, lonLugar FROM otrosLugares WHERE categoriaOtros = '" + categoria + "' AND nombreOtro = 'principal';", null);
@@ -362,8 +348,6 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     public String [] obtenerInfoLugares (String idioma, String lugar, String categoria, Integer numTV){
-
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[numTV];
@@ -381,7 +365,6 @@ public class GestorDB extends SQLiteOpenHelper {
 
     //Tabla Historia
     public String[] obtenerInfoHist(String catHist, String idioma, int numTV) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[numTV];
@@ -403,7 +386,6 @@ public class GestorDB extends SQLiteOpenHelper {
 
     //Tabla Monumentos
     public String[] obtenerInfoMonumentos(String idioma, String nombreMonumento, int numTV) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String descrip;
         String [] descr = new String[numTV];
