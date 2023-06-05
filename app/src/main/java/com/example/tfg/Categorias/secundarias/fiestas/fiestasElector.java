@@ -55,8 +55,6 @@ public class fiestasElector extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
             mes = getArguments().getString("mes");

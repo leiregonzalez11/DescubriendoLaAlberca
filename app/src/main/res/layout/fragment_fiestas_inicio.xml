@@ -42,11 +42,24 @@
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:fontFamily="casual"
+                android:text="@string/fiestas_iniciotext"
+                android:gravity="center"
+                android:textAlignment="gravity" />
             
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
@@ -59,22 +72,22 @@
 
                     <ImageButton
                         android:id="@+id/enerobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white" />
 
                     <ImageButton
                         android:id="@+id/febrerobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@color/white" />
 
                     <ImageButton
                         android:id="@+id/marzobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white" />
 
                 </LinearLayout>
@@ -90,22 +103,22 @@
 
                     <ImageButton
                         android:id="@+id/abrilbtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white"/>
 
                     <ImageButton
                         android:id="@+id/mayobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@color/white" />
 
                     <ImageButton
                         android:id="@+id/juniobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white" />
 
                 </LinearLayout>
@@ -121,22 +134,22 @@
 
                     <ImageButton
                         android:id="@+id/juliobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white"  />
 
                     <ImageButton
                         android:id="@+id/agostobtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@color/white"  />
 
                     <ImageButton
                         android:id="@+id/septiembrebtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white"  />
 
                 </LinearLayout>
@@ -152,22 +165,22 @@
 
                     <ImageButton
                         android:id="@+id/octubrebtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white" />
 
                     <ImageButton
                         android:id="@+id/noviembrebtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@color/white" />
 
                     <ImageButton
                         android:id="@+id/diciembrebtn"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
                         android:background="@color/white" />
 
                 </LinearLayout>                

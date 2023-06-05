@@ -43,18 +43,19 @@
                 android:id="@+id/naveizqtext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/naveizqimg1"
-                android:layout_width="300dp"
-                android:layout_height="270dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:padding="25dp"
                 android:layout_gravity="center"
                 tools:ignore="ContentDescription" />
 
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -71,31 +72,31 @@
 
             <ImageView
                 android:id="@+id/naveizqimg2"
-                android:layout_width="270dp"
-                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:padding="25dp"
                 android:layout_gravity="center"
                 android:src="@drawable/laalberca3"
-                android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
             <com.example.tfg.OtherFiles.Adapters.JustifyTextView
                 android:id="@+id/naveizqtext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/naveizqimg3"
-                android:layout_width="270dp"
-                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:padding="25dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
                 android:src="@drawable/laalberca3"
                 tools:ignore="ContentDescription" />
 
@@ -103,10 +104,10 @@
                 android:id="@+id/naveizqtext4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -114,10 +115,10 @@
 
             <ImageView
                 android:id="@+id/naveizqimg4"
-                android:layout_width="300dp"
-                android:layout_height="270dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:padding="25dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-5dp"
                 android:src="@drawable/laalberca3"
                 tools:ignore="ContentDescription" />
 
@@ -126,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -141,7 +142,6 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-
                 <Button
                     android:id="@+id/buttonVolverNave"
                     android:layout_width="70dp"
@@ -155,7 +155,6 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     tools:ignore="ButtonStyle" />
-
 
             </LinearLayout>
 

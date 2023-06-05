@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Maps.otrosLugares.penaFrancia.monumentopenaFragment">
 
     <ScrollView
@@ -41,7 +40,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="-10dp"
+                android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -49,8 +48,9 @@
 
             <ImageView
                 android:id="@+id/imagemon1"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="280dp"
+                android:padding="25dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription">
             </ImageView>
@@ -63,6 +63,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="-15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -70,8 +71,9 @@
 
             <ImageView
                 android:id="@+id/imagemon2"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:padding="25dp"
                 android:src="@drawable/laalberca2">
             </ImageView>
 
@@ -81,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
