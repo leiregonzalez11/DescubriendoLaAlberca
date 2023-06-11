@@ -15,14 +15,12 @@ import com.example.tfg.EspacioDelViajero.restauracion.Restaurantes;
 
 public class tabAdapter extends FragmentStateAdapter {
 
-    private String clase;
+    private final String clase;
 
     public tabAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, String pClase) {
         super(fragmentManager, lifecycle);
         clase = pClase;
     }
-
-
 
     @NonNull
     @Override

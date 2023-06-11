@@ -1,7 +1,5 @@
 package com.example.tfg.OtherFiles;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +7,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tfg.MainActivity;
 import com.example.tfg.R;
@@ -36,7 +36,6 @@ public class activity_splash_screen extends AppCompatActivity {
         // to send a message with a delayed time.
 
         new Handler().postDelayed(() -> {
-
                 /* INTERFAZ PRINCIPAL*/
                 //Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
                 Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
@@ -44,7 +43,6 @@ public class activity_splash_screen extends AppCompatActivity {
                 finish();
 
             },3500); // 3000 is the delayed time in milliseconds.
-
     }
 
     @Override

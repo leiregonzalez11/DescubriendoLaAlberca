@@ -1,22 +1,24 @@
 package com.example.tfg.Categorias.secundarias.gastronomia;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;

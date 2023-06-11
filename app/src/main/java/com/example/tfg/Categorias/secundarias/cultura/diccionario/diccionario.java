@@ -1,33 +1,27 @@
 package com.example.tfg.Categorias.secundarias.cultura.diccionario;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tfg.R;
-import com.bumptech.glide.Glide;
 import com.example.tfg.NavigationMenu.Categorias;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 
 public class diccionario extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma, letra;
-    private StorageReference storageRef;
     private ImageButton btna, btnb, btnc, btnd, btne, btnfg, btnhj, btnmn, btnp, btnrs, btnt, btnuvz;
 
     /**
@@ -94,14 +88,6 @@ public class diccionario extends Fragment implements View.OnClickListener {
             btnuvz = v.findViewById(R.id.uvz);
         }
         return v;
-    }
-
-    /** La vista de layout ha sido creada y ya está disponible
-     Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        storageRef = FirebaseStorage.getInstance().getReference();
-        setListeners();
     }
 
     private void cargarFragment(Fragment fragment){

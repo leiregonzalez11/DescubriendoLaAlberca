@@ -56,10 +56,7 @@ public class Agradecimientos extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_agradecimientos, container, false);
-        if(v != null){
-        }
-        return v;
+        return inflater.inflate(R.layout.fragment_agradecimientos, container, false);
     }
 
     /** La vista de layout ha sido creada y ya está disponible

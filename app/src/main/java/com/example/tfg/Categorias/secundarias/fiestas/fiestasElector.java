@@ -1,8 +1,5 @@
 package com.example.tfg.Categorias.secundarias.fiestas;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -14,17 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.tfg.Categorias.principal.fiestasInicio;
-import com.example.tfg.NavigationMenu.Categorias;
 import com.example.tfg.R;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class fiestasElector extends Fragment {
 

@@ -1,31 +1,31 @@
 package com.example.tfg.Categorias.principal;
 
 import android.os.Bundle;
-
-import com.example.tfg.Categorias.secundarias.tradiciones.fuentes;
-import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import com.example.tfg.GestorDB;
-import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
-import androidx.annotation.Nullable;
-import androidx.core.text.HtmlCompat;
-import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.widget.Toast;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
+
+import com.example.tfg.R;
+import com.example.tfg.GestorDB;
+import com.example.tfg.Categorias.secundarias.tradiciones.fuentes;
 import com.example.tfg.Categorias.secundarias.tradiciones.elpendon;
 import com.example.tfg.NavigationMenu.Categorias;
-import androidx.fragment.app.FragmentTransaction;
 import com.example.tfg.Categorias.secundarias.tradiciones.alboradas;
 import com.example.tfg.Categorias.secundarias.tradiciones.laLoa;
 import com.example.tfg.Categorias.secundarias.tradiciones.marranoSanAnton;
 import com.example.tfg.Categorias.secundarias.tradiciones.mozaDeAnimas;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class tradicionesInicio extends Fragment {
 
@@ -167,7 +167,7 @@ public class tradicionesInicio extends Fragment {
          -------------------*/
 
         boda.setOnClickListener(v -> {
-            /*fragment = elpendon.newInstance(args);
+            /*fragment = boda.newInstance(args);
             cargarFragment(fragment);*/
             Toast.makeText(requireContext(), "HAS PULSADO LA BODA ALBERCANA", Toast.LENGTH_SHORT).show();
         });

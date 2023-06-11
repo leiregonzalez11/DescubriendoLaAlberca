@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Maps.otrosLugares.penaFrancia.historiaPenaFrancia">
+    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.historiaPenaFrancia">
 
     <ScrollView
         android:id="@+id/scrollview"

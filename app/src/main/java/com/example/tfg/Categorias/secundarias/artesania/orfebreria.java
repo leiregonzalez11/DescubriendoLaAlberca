@@ -24,11 +24,11 @@ import com.google.firebase.storage.StorageReference;
 
 public class orfebreria extends Fragment {
 
-    Bundle args;
-    String idioma, categoria;
-    ImageView img1, img2;
-    TextView text1, text2;
-    StorageReference storageRef;
+    private Bundle args;
+    private String idioma;
+    private ImageView img1, img2;
+    private TextView text1, text2;
+    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia

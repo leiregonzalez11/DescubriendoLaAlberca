@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Maps.otrosLugares.hurdes">
+    tools:context=".EspacioDelViajero.Maps.otrosLugares.hurdes">
 
     <ScrollView
         android:id="@+id/scrollview"

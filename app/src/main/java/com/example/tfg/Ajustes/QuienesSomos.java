@@ -1,9 +1,11 @@
 package com.example.tfg.Ajustes;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,16 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.example.tfg.NavigationMenu.Ajustes;
-import com.example.tfg.NavigationMenu.Categorias;
 import com.example.tfg.R;
-
-import java.util.Locale;
 
 public class QuienesSomos extends Fragment {
 
@@ -61,10 +55,7 @@ public class QuienesSomos extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_quienessomos, container, false);
-        if(v != null){
-        }
-        return v;
+        return inflater.inflate(R.layout.fragment_quienessomos, container, false);
     }
 
     /** La vista de layout ha sido creada y ya está disponible
@@ -72,7 +63,6 @@ public class QuienesSomos extends Fragment {
     @SuppressLint("ResourceAsColor")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        
 
     }
 

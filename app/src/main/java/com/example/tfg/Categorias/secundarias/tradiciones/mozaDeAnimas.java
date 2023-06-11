@@ -1,7 +1,6 @@
 package com.example.tfg.Categorias.secundarias.tradiciones;
 
 import android.net.Uri;
-import com.example.tfg.R;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +8,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.VideoView;
-import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
-import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
@@ -21,6 +19,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.tfg.R;
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.Categorias.principal.tradicionesInicio;

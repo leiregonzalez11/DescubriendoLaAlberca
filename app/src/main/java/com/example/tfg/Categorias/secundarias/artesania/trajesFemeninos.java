@@ -3,27 +3,28 @@ package com.example.tfg.Categorias.secundarias.artesania;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import com.example.tfg.R;
-
 import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ImageView;
-import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
 import android.widget.AdapterView;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.annotation.SuppressLint;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
-import android.annotation.SuppressLint;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.R;
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
+import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.Categorias.principal.artesaniaInicio;
@@ -36,7 +37,7 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
     private ImageView img1, img2;
     private StorageReference storageRef;
     private TextView text1, text2, text3;
-    private String idioma, categoria, nombreTraje;
+    private String idioma, nombreTraje;
     private LinearLayout layout;
     private Spinner spinner;
 

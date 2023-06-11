@@ -11,15 +11,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import com.example.tfg.R;
 import com.example.tfg.NavigationMenu.Ajustes;
 import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Objects;
 
 public class FormularioDeContacto extends Fragment implements View.OnClickListener {
@@ -27,10 +30,8 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
     private boolean enviado;
     private EditText asuntoET;
     private Toolbar myToolbar;
-    private Fragment fragment;
     private Button siguienteBtn;
     private TextInputEditText mensajeET;
-    private String asunto, asuntoet, mensajeet, mensaje;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -84,7 +85,6 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         //Cuando se presione el botón, realiza una acción aquí
         Button btn = (Button) view;
         if (btn.getId() == R.id.btnEnviar) {
-            //Toast.makeText(contactoActivity.this, "Has pulsado Enviar", Toast.LENGTH_LONG).show();
             if (validarDatos()){
                 enviado = enviarEmail();
                 if (enviado){
@@ -119,7 +119,7 @@ public class FormularioDeContacto extends Fragment implements View.OnClickListen
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         String mensajeet = Objects.requireNonNull(mensajeET.getText()).toString();
-        asuntoet = asuntoET.getText().toString();
+        String asuntoet = asuntoET.getText().toString();
 
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");

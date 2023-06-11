@@ -76,10 +76,6 @@ public class Palabra implements Parcelable {
         this.definicionpalabraEs = definicionpalabraEs;
     }
 
-    public void setDefinicionpalabraEu(String definicionpalabraEu) {
-        this.definicionpalabraEu = definicionpalabraEu;
-    }
-
     public void setDefinicionpalabraEn(String definicionpalabraEn) {
         this.definicionpalabraEn = definicionpalabraEn;
     }

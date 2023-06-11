@@ -1,12 +1,13 @@
 package com.example.tfg.OtherFiles.Adapters;
 
-import android.view.View;
 import com.example.tfg.R;
+import com.smarteist.autoimageslider.SliderViewAdapter;
+
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.view.LayoutInflater;
 import android.annotation.SuppressLint;
-import com.smarteist.autoimageslider.SliderViewAdapter;
 
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHolder>{
 

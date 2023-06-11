@@ -1,7 +1,5 @@
 package com.example.tfg.Categorias.secundarias.artesania;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -9,11 +7,15 @@ import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -21,14 +23,13 @@ import com.example.tfg.Categorias.principal.artesaniaInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
 public class bordadoSerrano extends Fragment {
 
-    Bundle args;
-    String idioma;
-    ImageView img1, img2, img3;
-    StorageReference storageRef;
-    TextView text1, text2, text3, text4;
+    private Bundle args;
+    private String idioma;
+    private ImageView img1, img2, img3;
+    private StorageReference storageRef;
+    private TextView text1, text2, text3, text4;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia

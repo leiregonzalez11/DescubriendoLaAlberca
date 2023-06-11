@@ -1,24 +1,25 @@
 package com.example.tfg.Categorias.secundarias.arquitectura;
 
 import android.os.Bundle;
-import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
+import android.annotation.SuppressLint;
 import android.widget.ImageButton;
 import android.view.LayoutInflater;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
-import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
+import com.example.tfg.R;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.tfg.Categorias.principal.arquitecturaInicio;

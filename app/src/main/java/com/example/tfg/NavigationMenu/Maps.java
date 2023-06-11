@@ -7,6 +7,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,21 +24,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tfg.Maps.servicios.infoServFragment;
-import com.example.tfg.Maps.servicios.serviciosBasico;
-import com.example.tfg.Maps.servicios.serviciosElaborado;
-import com.example.tfg.Maps.sitiosdeinteres.monumentos7;
+import com.example.tfg.EspacioDelViajero.Maps.servicios.infoServFragment;
+import com.example.tfg.EspacioDelViajero.Maps.servicios.serviciosBasico;
+import com.example.tfg.EspacioDelViajero.Maps.servicios.serviciosElaborado;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.monumentos7;
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.SpinnerAdapter;
-import com.example.tfg.Maps.parking.parkingFragment;
-import com.example.tfg.Maps.otrosLugares.otrosLugaresInicio;
-import com.example.tfg.Maps.parking.senalParkingFragment;
-import com.example.tfg.Maps.sitiosdeinteres.ermitasFragment;
-import com.example.tfg.Maps.sitiosdeinteres.iglesia.iglesiamapaFragment;
-import com.example.tfg.Maps.sitiosdeinteres.info.infoMonuFragment;
-import com.example.tfg.Maps.sitiosdeinteres.monumentos1;
-import com.example.tfg.Maps.sitiosdeinteres.monumentos2;
-import com.example.tfg.Maps.sitiosdeinteres.plaza.plazamapaFragment;
+import com.example.tfg.EspacioDelViajero.Maps.parking.parkingFragment;
+import com.example.tfg.EspacioDelViajero.Maps.otrosLugares.otrosLugaresInicio;
+import com.example.tfg.EspacioDelViajero.Maps.parking.senalParkingFragment;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.ermitasFragment;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.iglesia.iglesiamapaFragment;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.info.infoMonuFragment;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.monumentos1;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.monumentos2;
+import com.example.tfg.EspacioDelViajero.Maps.sitiosdeinteres.plaza.plazamapaFragment;
 
 public class Maps extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -243,7 +244,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp5.setVisibility(View.VISIBLE);
             btnparking.setVisibility(View.VISIBLE);
         }
-
         else{
             btnp1.setVisibility(View.INVISIBLE);
             btnp2.setVisibility(View.INVISIBLE);
@@ -252,7 +252,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnp5.setVisibility(View.INVISIBLE);
             btnparking.setVisibility(View.INVISIBLE);
         }
-
     }
 
     public void parkingOnClick(String parking){

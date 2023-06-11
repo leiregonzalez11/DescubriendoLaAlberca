@@ -1,34 +1,33 @@
 package com.example.tfg.Categorias.principal;
 
 import android.os.Bundle;
-import com.example.tfg.R;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
-import com.example.tfg.GestorDB;
 import android.view.LayoutInflater;
+import android.annotation.SuppressLint;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import android.annotation.SuppressLint;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tfg.R;
+import com.example.tfg.GestorDB;
 import com.example.tfg.OtherFiles.Adapters.SliderAdapter;
-import com.example.tfg.OtherFiles.Adapters.listViewAdapter;
 import com.example.tfg.Categorias.secundarias.artesania.bordadoSerrano;
 import com.example.tfg.Categorias.secundarias.artesania.orfebreria;
 import com.example.tfg.Categorias.secundarias.artesania.trajeserranoFragment;
-import com.smarteist.autoimageslider.SliderView;
 import com.example.tfg.NavigationMenu.Categorias;
-import androidx.fragment.app.FragmentTransaction;
+
+import com.smarteist.autoimageslider.SliderView;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-
-import java.util.ArrayList;
 
 public class artesaniaInicio extends Fragment {
 

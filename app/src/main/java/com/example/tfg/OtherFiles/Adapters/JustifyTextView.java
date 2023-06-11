@@ -38,7 +38,7 @@ public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView
 
             float width = StaticLayout.getDesiredWidth(text, lineStart, lineEnd, getPaint());
             if (needScale(line)) {
-                drawScaledText(canvas, lineStart, line, width);
+                drawScaledText(canvas, line, width);
             } else {
                 canvas.drawText(line, 0, mLineY, paint);
             }
@@ -47,9 +47,9 @@ public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView
         }
     }
 
-    private void drawScaledText(Canvas canvas, int lineStart, String line, float lineWidth) {
+    private void drawScaledText(Canvas canvas, String line, float lineWidth) {
         float x = 0;
-        if (isFirstLineOfParagraph(lineStart, line)) {
+        if (isFirstLineOfParagraph(line)) {
             String blanks = "  ";
             canvas.drawText(blanks, x, mLineY, getPaint());
             float bw = StaticLayout.getDesiredWidth(blanks, getPaint());
@@ -67,7 +67,7 @@ public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView
         }
     }
 
-    private boolean isFirstLineOfParagraph(int lineStart, String line) {
+    private boolean isFirstLineOfParagraph(String line) {
         return line.length() > 3 && line.charAt(0) == ' ' && line.charAt(1) == ' ';
     }
 

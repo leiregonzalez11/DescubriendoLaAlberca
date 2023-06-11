@@ -1,17 +1,19 @@
 package com.example.tfg.Categorias.secundarias.cultura.diccionario;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.DialogFragment;
+
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.example.tfg.R;
 
 public class definicionpalabra extends DialogFragment {
@@ -34,7 +36,6 @@ public class definicionpalabra extends DialogFragment {
         builder.setView(infoView);
 
         assert getArguments()!=null;
-        String palabraElegida = getArguments().getString("palabra");
         String idioma = getArguments().getString("idioma");
         Palabra palabra = getArguments().getParcelable("palabra");
 
@@ -59,6 +60,5 @@ public class definicionpalabra extends DialogFragment {
 
         return builder.create();
     }
-
 
 }

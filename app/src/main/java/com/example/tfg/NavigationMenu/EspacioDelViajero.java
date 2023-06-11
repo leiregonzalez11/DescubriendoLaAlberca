@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import com.example.tfg.R;
 import com.example.tfg.OtherFiles.Adapters.listViewAdapter;
 import com.example.tfg.EspacioDelViajero.Comercio;
@@ -22,7 +23,6 @@ import com.example.tfg.EspacioDelViajero.DondeComer;
 import com.example.tfg.EspacioDelViajero.DondeDormir;
 
 import java.util.ArrayList;
-
 
 public class EspacioDelViajero extends Fragment {
 
