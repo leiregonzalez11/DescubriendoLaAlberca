@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.DondeComer">
+    tools:context=".espacioDelViajero.DondeComer">
 
         <LinearLayout
-            android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -17,10 +16,10 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/Comertitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -34,11 +33,11 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="25dp"
                 android:textColor="@color/black"
@@ -52,8 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="410dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginTop="-25dp"
                 android:layout_marginBottom="40dp"
                 app:cardElevation="10dp">

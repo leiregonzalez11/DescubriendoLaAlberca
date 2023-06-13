@@ -6,12 +6,12 @@
     android:layout_height="80dp">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="22dp"
         android:layout_height="25dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="14dp"
-        app:srcCompat="@drawable/ic_utensils_solid" />
+        app:srcCompat="@drawable/ic_utensils_solid"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"

@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categorias.secundarias.cultura.diccionario.definicionpalabra">
+    tools:context=".categorias.secundarias.cultura.diccionario.definicionpalabra">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/palabratitulo"
@@ -18,8 +19,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginStart="20dp"
             android:fontFamily="casual"
-            android:text="Palabra"
-            android:gravity='left'
+            android:gravity='start'
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="30sp"/>
@@ -33,15 +33,15 @@
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/definicionpalabra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="casual"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -49,10 +49,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <Button
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

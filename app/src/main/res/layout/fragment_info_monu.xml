@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.info.infoMonuFragment">
+    tools:context=".mapOptions.sitiosdeinteres.info.infoMonuFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/textaparcar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:fontFamily="casual"
-            android:text="LISTA DE MONUMENTOS"
+            android:text="@string/lista_de_monumentos"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -36,20 +36,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/uno"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Ermita de San Blás"
-                android:gravity='left'
+                android:text="@string/ermita_sanblas"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -66,20 +65,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/dos"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Ermita del Humilladero"
-                android:gravity='left'
+                android:text="@string/ermita_humilladero"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -96,20 +94,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/tres"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
-                android:text="Ermita de San Antonio"
-                android:gravity='left'
+                android:text="@string/ermita_sanantonio"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -126,20 +123,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/cuatro"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Plaza de San Antonio"
-                android:gravity='left'
+                android:text="@string/plaza_sanantonio"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -156,20 +152,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/cinco"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Antiguo Hospicio"
-                android:gravity='left'
+                android:text="@string/antiguo_hospicio"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -186,20 +181,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/seis"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Busto de Maurice Legendre"
-                android:gravity='left'
+                android:text="@string/busto_legendre"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -216,20 +210,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/siete"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Iglesia Parroquial"
-                android:gravity='left'
+                android:text="@string/iglesia_parroquial"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -246,20 +239,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/ocho"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Plaza Mayor"
-                android:gravity='left'
+                android:text="@string/plaza_mayor"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -276,20 +268,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/nueve"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="La Puente"
-                android:gravity='left'
+                android:text="@string/la_puente"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -306,20 +297,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/diez"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Barrio El Castillo"
-                android:gravity='left'
+                android:text="@string/barrio_el_castillo"
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
@@ -328,10 +318,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <Button
@@ -339,7 +329,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

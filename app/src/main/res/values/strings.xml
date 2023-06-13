@@ -28,9 +28,7 @@
         el resto de secciones de la aplicación.</string>
     <string name="seleccione_un_idioma">Seleccione un idioma:</string>
     <string name="tradicionesmayus">Tradiciones y Leyendas</string>
-    <string name="monumentosmayus">Monumentos</string>
     <string name="gastronomiamayus">Gastronomía</string>
-    <string name="alojamientomayus">Alojamiento</string>
     <string name="rutasmayus">Rutas Senderistas</string>
     <string name="otrosmayus">Otros Lugares</string>
     <string name="inicio">Inicio</string>
@@ -41,12 +39,7 @@
     <string name="castellano">Castellano</string>
     <string name="euskera">Euskera</string>
     <string name="ingles">Inglés</string>
-    <string name="catalan">Catalán</string>
-    <string name="gallego">Gallego</string>
-    <string name="frances">Francés</string>
-    <string name="aleman">Alemán</string>
     <string name="historiamayus">Historia</string>
-    <string name="volver_a_categorias">Volver a Categorias</string>
     <string name="atras">Anterior</string>
     <string name="arquitecturamayus">Arquitectura</string>
     <string name="la_casa_albercana">La Casa Albercana</string>
@@ -63,7 +56,6 @@
     <string name="zona_de_usuarios">Espacio del Viajero</string>
     <string name="masinfo">Más información</string>
     <string name="alhajas">Orfebrería</string>
-    <string name="volver_a_artesania">Volver a artesanía</string>
     <string name="interior_inicio">La casa albercana tenía tres partes fundamentales: la cuadra,
         la vivienda y el lugar de almacenamiento. \n</string>
     <string name="rutas_inicio">Todo pueblo de cuento debe tener un entorno de ensueño, y La Alberca no iba a ser menos. Bosques de
@@ -74,13 +66,10 @@
     <string name="apart">Apartamentos</string>
     <string name="hotel">Hoteles</string>
     <string name="casas">Casas Rurales</string>
-    <string name="ubicacion">Ubicación</string>
     <string name="bares">Bares</string>
     <string name="rest">Restaurantes</string>
     <string name="contacto">Contacto</string>
-    <string name="email">Email</string>
     <string name="asunto_del_mensaje">Asunto del mensaje</string>
-    <string name="emailet">Introduce aquí tu email</string>
     <string name="mensajeet">¿Qué deseas comentarnos?</string>
     <string name="mensaje">Mensaje</string>
     <string name="asuntoet">¿Cuál es el motivo de tu mensaje?</string>
@@ -99,25 +88,17 @@
     <string name="en_bus">En Autobús</string>
     <string name="comoLlegarBus">Si no dispone de vehículo propio para poder venir hasta La Alberca o simplemente desea venir en autobús,
         existen líneas de autobuses con diferentes horarios de ida y vuelta para poder visitar el pueblo: \n</string>
-    <string name="puntuacion">Puntuación:</string>
-    <string name="telefono">Teléfono:</string>
     <string name="otros_lugares">En los alrededores de La Alberca existen muchos otros preciosos pueblos y lugares que descubrir. Aquí van unos cuantos: \n</string>
     <string name="turroneras">Las Turroneras</string>
     <string name="alimentacion">Alimentación</string>
-    <string name="otras_tiendas">Otros Comercios</string>
     <string name="idioma_validator">idioma</string>
     <string name="pueblos_de_la_sierra">Pueblos de la Sierra de Francia</string>
     <string name="km_desde_la_alberca">Km desde La Alberca:</string>
     <string name="fiesta_mayor">Fiesta Mayor:</string>
-    <string name="servicios">Servicios</string>
     <string name="recetas">Recetas típicas</string>
-    <string name="horario">Horario:</string>
     <string name="horario2">Sábados: 11:30–13:30 / 16:00–19:00 \n Domingos: 11:30–13:30</string>
-    <string name="precio">Precio:</string>
     <string name="precio2">General: 2,5€ / Grupos: 2€</string>
-    <string name="pueblos">Pueblos de la Sierra</string>
     <string name="batuecas">Valle de Las Batuecas</string>
-    <string name="otras_tradiciones">Otras tradiciones y leyendas</string>
     <string name="ingredientes">INGREDIENTES \n</string>
     <string name="pasos_a_seguir">PASOS A SEGUIR \n</string>
     <string name="recetas_intro">La gastronomía de la Sierra de Francia destaca por el altísimo valor culinario de los productos que emplea para sus guisos y manjares, dando lugar a elaboraciones y productos de altísima calidad, de ahí que las recetas de la Sierra sean tan populares. \n</string>
@@ -144,7 +125,6 @@
     <string name="santocristo">Capilla Exterior del santo cristo</string>
     <string name="convento">El Convento</string>
     <string name="el_pozo_verde">El pozo verde</string>
-    <string name="acerca_de">Acerca De</string>
     <string name="quienes_somos">¿Quienes somos?</string>
     <string name="agradecimientos">Agradecimientos</string>
     <string name="de_pago">Parking de Pago</string>
@@ -212,31 +192,6 @@
         <item>Zorongollo</item>
     </string-array>
 
-    <string-array name="pueblosdelasierra">
-        <item>Cepeda</item>
-        <item>Garcibuey</item>
-        <item>Herguijuela de la Sierra</item>
-        <item>Las Casas del Conde</item>
-        <item>Madroñal</item>
-        <item>Miranda del Castañar</item>
-        <item>Mogarraz</item>
-        <item>San Martin del Castañar</item>
-        <item>San Miguel del Robledo</item>
-        <item>Sequeros</item>
-        <item>Sotoserrano</item>
-        <item>Valero</item>
-        <item>Villanueva del Conde</item>
-    </string-array>
-
-    <string-array name="tradiciones">
-        <item>Alboradas</item>
-        <item>El Cristo del Sudor</item>
-        <item>El Marrano de San Antón</item>
-        <item>El Pendón</item>
-        <item>La Loa</item>
-        <item>La Moza de Ánimas</item>
-    </string-array>
-
     <string-array name="opcionesmapa">
         <item>Parkings</item>
         <item>Servicios</item>
@@ -247,6 +202,39 @@
     <string name="comercio_intro">¿Qué serían los pueblos sin sus ultramarinos, sus tiendas de artesanía, las panaderias…? Por suerte, en La Alberca disponemos de una gran selección de ellas, donde tanto vecinos como curiosos pueden disfrutar de los productos locales:\n</string>
     <string name="fiestas_iniciotext">Las fiestas de pueblo son sinónimo de tradición, cultura y recreo, pero también son el escenario ideal para que sus gentes puedan desencorsetarse de la rigidez cotidiana de sus vidas. Todas las fiestas regionales se parecen y todas son especiales en su riqueza, por eso merecen tanto mimo como cualquier otro tipo de patrimonio cultural que merezca la pena conservarse, transmitiéndolas de generación en generación. \n</string>
     <string name="majadasyalrededores">Majadas Viejas y alrededores</string>
+    <string name="el_chorro">El Chorro</string>
+    <string name="el_monasterio">El Monasterio</string>
+    <string name="la_casa_del_parque">La Casa del Parque</string>
+    <string name="las_pinturas_rupestres">Las Pinturas Rupestres</string>
+    <string name="diccionario">Diccionario</string>
+    <string name="diccionario_albercano">Diccionario Albercano</string>
+    <string name="intro_diccionario">Texto introducción a diccionario \n</string>
+    <string name="pulsa_boton">Pulsa sobre la imagen para más info.</string>
+    <string name="chorro2">El Chorro de Batuecas</string>
+    <string name="seguro_que_quieres_salir">¿Seguro que quieres salir?</string>
+    <string name="el_gasco">El Gasco</string>
+    <string name="las_mestas">Las Mestas</string>
+    <string name="riomalo_de_arriba">Riomalo de Arriba</string>
+    <string name="meandro_del_melero">Meandro del Melero</string>
+    <string name="chorro_de_la_meancera">Chorro de la Meancera</string>
+    <string name="lista_de_monumentos">LISTA DE MONUMENTOS</string>
+    <string name="ermita_sanblas">Ermita de San Blás</string>
+    <string name="ermita_humilladero">Ermita del Humilladero</string>
+    <string name="ermita_sanantonio">Ermita de San Antonio</string>
+    <string name="plaza_sanantonio">Plaza de San Antonio</string>
+    <string name="antiguo_hospicio">Antiguo Hospicio</string>
+    <string name="busto_legendre">Busto de Maurice Legendre</string>
+    <string name="iglesia_parroquial">Iglesia Parroquial</string>
+    <string name="plaza_mayor">Plaza Mayor</string>
+    <string name="la_puente">La Puente</string>
+    <string name="barrio_el_castillo">Barrio El Castillo</string>
+    <string name="iglesia">Iglesia de Nª Señora de la Asunción</string>
+    <string name="marrano_escultura">Escultura del Marrano de San Antón</string>
+    <string name="hornacina">Hornacina de la Ánimas Benditas</string>
+    <string name="predios">Predios</string>
+    <string name="arriba">Arriba</string>
+    <string name="espacio_del_viajero">Espacio del Viajero</string>
+    <string name="ordenar_por">Ordenar por...</string>
 
 
 </resources>

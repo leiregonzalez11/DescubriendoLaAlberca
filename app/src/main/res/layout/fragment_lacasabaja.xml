@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.lacasabajaFragment">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.lacasabajaFragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -24,7 +23,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left">
+            android:gravity="start">
 
 
             <LinearLayout
@@ -33,22 +32,21 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/casainfo"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginTop="25dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:src="@drawable/ic_circle_info_solid"
-                    app:tint="@color/black"/>
+                    app:tint="@color/black"
+                    android:importantForAccessibility="no" />
 
                 <TextView
-                    android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_marginTop="25dp"
                     android:fontFamily="casual"
                     android:hint="La Casa Baja"
@@ -59,12 +57,12 @@
 
             </LinearLayout>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-40dp"
                 android:textColor="@color/black"
@@ -79,23 +77,23 @@
                 android:layout_gravity="center"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -110,12 +108,12 @@
                 android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
@@ -131,12 +129,12 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="-50dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -151,23 +149,23 @@
                 android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/casainfotext7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -177,9 +175,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
 
@@ -188,10 +186,10 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
-                    android:text="Volver"
+                    android:text="@string/volver"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp"

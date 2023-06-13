@@ -1,7 +1,6 @@
 package com.example.tfg;
 
 import android.annotation.SuppressLint;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -11,12 +10,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.tfg.OtherFiles.DialogFragments.ExitFragment;
-import com.example.tfg.NavigationMenu.Ajustes;
-import com.example.tfg.NavigationMenu.EspacioDelViajero;
-import com.example.tfg.NavigationMenu.Categorias;
-import com.example.tfg.NavigationMenu.Inicio;
-import com.example.tfg.NavigationMenu.Maps;
+import com.example.tfg.otherFiles.dialogFragments.ExitFragment;
+import com.example.tfg.navigationMenu.Ajustes;
+import com.example.tfg.navigationMenu.EspacioDelViajero;
+import com.example.tfg.navigationMenu.Categorias;
+import com.example.tfg.navigationMenu.Inicio;
+import com.example.tfg.navigationMenu.Maps;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         myToolbar.setTitleTextColor(R.color.white);
 
         /*Cargamos la BD...*/
-        GestorDB dbHelper =  new GestorDB(getApplicationContext());
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        //try (GestorDB dbHelper = new GestorDB(getApplicationContext())) {}
 
         fragment_id = "inicio";
 

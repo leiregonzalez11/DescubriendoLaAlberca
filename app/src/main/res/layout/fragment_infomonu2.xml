@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.info.infomonu2Fragment">
+    tools:context=".mapOptions.sitiosdeinteres.info.infomonu2Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical">
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/textaparcar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="casual"
-            android:text="LISTA DE MONUMENTOS"
+            android:text="@string/lista_de_monumentos"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -37,20 +37,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/uno"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
                 android:text="Ayuntamiento"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -67,20 +66,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/dos"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
                 android:text="Crucero de la plaza"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -97,20 +95,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/tres"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
                 android:text="Antiguas escuelas"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -127,20 +124,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/cuatro"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
                 android:text="Teatro"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -157,20 +153,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/cinco"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
                 android:text="Retrato de Miguel de Unamuno"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -187,20 +182,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/seis"
                 tools:ignore="ContentDescription">
             </ImageView>
 
             <TextView
-                android:id="@+id/mon6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
                 android:text="Biblioteca"
-                android:gravity='left'
+                android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -209,10 +203,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <Button
@@ -220,7 +214,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

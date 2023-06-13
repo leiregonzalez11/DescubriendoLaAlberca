@@ -3,11 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.conventoFragment">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.conventoFragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -37,23 +35,23 @@
                 android:textStyle="bold"/>
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/santuariotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/santuariotext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -63,15 +61,16 @@
                 android:id="@+id/imageconv1"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:src="@drawable/laalberca2">
+                android:src="@drawable/laalberca2"
+                android:importantForAccessibility="no">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/santuariotext3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -82,27 +81,28 @@
                 android:id="@+id/imageconv2"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:src="@drawable/laalberca2">
+                android:src="@drawable/laalberca2"
+                android:importantForAccessibility="no">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/santuariotext4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/santuariotext5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -115,7 +115,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/borde_redondeado"
                 android:fontFamily="casual"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:visibility="invisible"
                 android:textStyle="bold" />
@@ -123,9 +123,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="25dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
 
@@ -134,7 +134,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"

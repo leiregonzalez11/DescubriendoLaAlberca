@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.batuecas">
+    tools:context=".mapOptions.otrosLugares.batuecas">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -14,7 +13,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -36,22 +34,22 @@
                 tools:targetApi="o" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bat11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bat12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -66,11 +64,11 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bat13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
@@ -87,11 +85,11 @@
                 android:layout_gravity="center"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bat14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -119,11 +117,10 @@
                 android:textColor="#000000"
                 android:background="@drawable/borde_redondeado"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/bat15"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"

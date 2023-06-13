@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.monumentos7">
+    tools:context=".mapOptions.sitiosdeinteres.monumentos7">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -37,12 +36,12 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
@@ -58,24 +57,24 @@
                 android:layout_marginTop="15dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 android:fontFamily="casual"
@@ -90,24 +89,24 @@
                 android:layout_marginTop="5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -121,12 +120,12 @@
                 android:layout_marginTop="5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="25dp"
                 android:textColor="@color/black"
                 android:textStyle="italic"
@@ -134,12 +133,12 @@
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/bu7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"

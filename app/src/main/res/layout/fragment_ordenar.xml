@@ -4,29 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".OtherFiles.DialogFragments.ordenarFragment">
+    tools:context=".otherFiles.dialogFragments.ordenarFragment">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left">
+        android:gravity="start"
+        tools:ignore="UselessParent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="4dp"
         android:fontFamily="casual"
-        android:hint="Ordenar por..."
+        android:hint="@string/ordenar_por"
         android:textAlignment="gravity"
         android:textColorHint="#000000"
         android:textStyle="bold"
         android:textSize="24sp" />
 
         <RadioGroup
-            android:id="@+id/opciones_idiomas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"

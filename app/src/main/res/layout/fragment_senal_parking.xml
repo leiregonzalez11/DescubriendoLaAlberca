@@ -3,28 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.parking.senalParkingFragment">
+    tools:context=".mapOptions.parking.senalParkingFragment">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/parkingsenalfoto"
             android:layout_width="330dp"
             android:layout_height="200dp"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"
+            android:importantForAccessibility="no">
         </ImageView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <Button
@@ -32,7 +34,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

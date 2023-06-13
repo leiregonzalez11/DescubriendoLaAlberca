@@ -3,11 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".Ajustes.Agradecimientos">
+    tools:context=".ajustes.Agradecimientos">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -36,25 +34,23 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/agradecimientos"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:text="@string/agradecimientotext"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/agradecimientos2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"

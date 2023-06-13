@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.leyendaPenaFrancia">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.leyendaPenaFrancia">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -21,7 +20,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -30,7 +28,6 @@
             tools:context=".anterior.categorias.gastronomia.gastronomiaActivity">
 
             <TextView
-                android:id="@+id/gastrotitulo"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -57,46 +54,47 @@
                 android:textColor="@color/black"
                 android:textSize="0sp"
                 android:textStyle="bold"
-                tools:targetApi="o" />
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/leyendap1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/leyendap2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/leyendap3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textSize="18sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/leyendap4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-5dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -111,7 +109,8 @@
                 android:layout_marginBottom="30dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                app:tint="@color/black">
+                app:tint="@color/black"
+                android:importantForAccessibility="no">
             </ImageButton>
 
         </LinearLayout>

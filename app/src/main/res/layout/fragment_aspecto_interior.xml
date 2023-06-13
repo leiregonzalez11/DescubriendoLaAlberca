@@ -4,11 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    tools:context=".Categorias.secundarias.arquitectura.aspectoInterior">
+    tools:context=".categorias.secundarias.arquitectura.aspectoInterior">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -23,7 +21,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArqui21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -31,7 +28,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/arquitext"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -51,10 +47,9 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:orientation="horizontal"
-                android:layout_marginLeft="15dp">
+                android:layout_marginStart="15dp">
 
                 <TextView
-                    android:id="@+id/exttext"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
@@ -62,7 +57,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="casual"
-                    android:gravity="left"
+                    android:gravity="start"
                     android:text="@string/_2_aspecto_interior"
                     tools:targetApi="o" />
 
@@ -70,13 +65,14 @@
                     android:id="@+id/arquiAtras3"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:background="@color/white"
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginStart="110dp"
                     android:src="@drawable/ic_circle_arrow_left_solid"
-                    app:tint="@color/black">
+                    app:tint="@color/black"
+                    android:importantForAccessibility="no">
                 </ImageButton>
 
                 <ImageButton
@@ -84,21 +80,21 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:background="@color/white"
                     android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:src="@drawable/ic_circle_arrow_right_solid"
-                    app:tint="@color/black">
+                    app:tint="@color/black"
+                    android:importantForAccessibility="no">
                 </ImageButton>
 
             </LinearLayout>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/arquiintro"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="casual"
                 android:textColor="@color/black"
@@ -110,16 +106,16 @@
                 android:id="@+id/arqui31img"
                 android:layout_width="300dp"
                 android:layout_height="400dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/arqui31"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="casual"
                 android:textColor="@color/black"
@@ -130,17 +126,17 @@
                 android:id="@+id/arqui32img"
                 android:layout_width="360dp"
                 android:layout_height="300dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/arqui32"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="casual"
                 android:textColor="@color/black"
@@ -151,16 +147,16 @@
                 android:id="@+id/arqui33img"
                 android:layout_width="300dp"
                 android:layout_height="250dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/arqui33"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
                 android:textColor="@color/black"
@@ -171,16 +167,16 @@
                 android:id="@+id/arqui34img"
                 android:layout_width="300dp"
                 android:layout_height="250dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/arqui34"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
                 android:textColor="@color/black"
@@ -191,16 +187,16 @@
                 android:id="@+id/arqui35img"
                 android:layout_width="300dp"
                 android:layout_height="250dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/arqui35"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
@@ -235,9 +231,10 @@
                     android:gravity="center"
                     android:background="@color/white"
                     android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:src="@drawable/ic_circle_arrow_right_solid"
-                    app:tint="@color/black">
+                    app:tint="@color/black"
+                    android:importantForAccessibility="no">
                 </ImageButton>
 
             </LinearLayout>

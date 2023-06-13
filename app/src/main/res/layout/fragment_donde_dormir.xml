@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.DondeDormir">
+    tools:context=".espacioDelViajero.DondeDormir">
 
     <LinearLayout
-        android:id="@+id/layoutHist1"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +15,6 @@
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/otrostitulo"
             android:layout_width="323dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -30,11 +27,10 @@
             android:textStyle="bold"
             tools:targetApi="o" />
 
-        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-            android:id="@+id/otrostext"
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="25dp"
             android:fontFamily="casual"
@@ -48,9 +44,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="430dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="-25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
             android:layout_marginBottom="40dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:cardElevation="10dp">

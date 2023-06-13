@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.ermitasFragment">
+    tools:context=".mapOptions.sitiosdeinteres.ermitasFragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -30,9 +29,9 @@
                 android:id="@+id/tituloermita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginEnd="4dp"
                 android:layout_marginBottom="-4dp"
                 android:fontFamily="casual"
                 android:textAlignment="gravity"
@@ -41,12 +40,12 @@
                 android:textStyle="bold"
                 android:textSize="30sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/ermita1text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -63,12 +62,12 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/ermita2text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -85,12 +84,12 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/ermita3text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -100,10 +99,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
 
@@ -112,7 +111,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"

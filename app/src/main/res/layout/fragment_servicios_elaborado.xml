@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Maps.ServEicios.ServEiciosElaborado">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,9 +17,9 @@
             android:id="@+id/nombreServE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="casual"
             android:gravity='center'
@@ -37,9 +36,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
             app:strokeWidth="3dp"
             android:theme="@style/Theme.MaterialComponents.Light"
@@ -56,8 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="left"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="start"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
@@ -65,7 +64,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:src="@drawable/ic_clock_solid"
                         tools:ignore="ContentDescription">
                     </ImageView>
@@ -74,10 +73,10 @@
                         android:id="@+id/clockServE2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="casual"
-                        android:gravity='left'
+                        android:gravity="start"
                         android:textColor="@color/black"
                         android:textSize="17sp"/>
 
@@ -86,15 +85,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/ic_money_bills_solid"
                         tools:ignore="ContentDescription">
@@ -104,11 +103,11 @@
                         android:id="@+id/priceServE2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="casual"
-                        android:gravity='left'
+                        android:gravity="start"
                         android:textColor="@color/black"
                         android:textSize="16sp"/>
 
@@ -117,8 +116,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="30dp"
                     android:orientation="horizontal"
@@ -128,7 +127,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:src="@drawable/ic_map_location_dot_solid"
                         tools:ignore="ContentDescription">
                     </ImageView>
@@ -137,10 +136,10 @@
                         android:id="@+id/ubiServE2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="7dp"
                         android:fontFamily="casual"
-                        android:gravity='left'
+                        android:gravity="start"
                         android:textColor="@color/black"
                         android:textSize="17sp"/>
 
@@ -154,9 +153,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
 
@@ -165,7 +164,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

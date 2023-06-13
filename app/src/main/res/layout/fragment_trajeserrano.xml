@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.artesania.trajeserranoFragment">
+    tools:context=".categorias.secundarias.artesania.trajeserranoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_width="160dp"
                 android:layout_height="50dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 app:strokeWidth="3dp"
                 app:strokeColor="#880E4F"
                 android:gravity="center"
@@ -45,7 +45,7 @@
                 android:layout_width="160dp"
                 android:layout_height="50dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 app:strokeWidth="3dp"
                 app:strokeColor="#880E4F"
                 android:gravity="center"
@@ -76,7 +76,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

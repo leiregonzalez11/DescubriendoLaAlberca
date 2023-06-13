@@ -3,21 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.tradiciones.alboradas">
+    tools:context=".categorias.secundarias.tradiciones.alboradas">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:scrollbarSize="8dp"
         android:background="@color/white"
         android:scrollbars="vertical"
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutTrad11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -38,13 +35,15 @@
                 android:gravity="center"
                 android:textAlignment="gravity"
                 android:textStyle="bold"
-                tools:targetApi="o" />
+                android:hint="Alboradas"
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/alboradas1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -60,11 +59,11 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/alboradas2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
@@ -73,9 +72,8 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/alboradas3"
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -85,7 +83,6 @@
                 android:textStyle="italic" />
 
             <LinearLayout
-                android:id="@+id/layoutvideo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -100,49 +97,52 @@
                 <ImageButton
                     android:id="@+id/play"
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_height="48dp"
+                    android:contentDescription= "Play"
+                    android:layout_marginStart="20dp"
                     android:background="@color/white"
                     android:src="@drawable/play"
-                    tools:ignore="ContentDescription">
+                    tools:ignore="ContentDescription,HardcodedText">
                 </ImageButton>
 
                 <ImageButton
                     android:id="@+id/pause"
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/pause"
-                    tools:ignore="ContentDescription">
+                    android:contentDescription="Pause"
+                    tools:ignore="HardcodedText">
                 </ImageButton>
 
                 <ImageButton
                     android:id="@+id/stop"
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/stop"
-                    tools:ignore="ContentDescription">
+                    android:contentDescription="Stop"
+                    tools:ignore="HardcodedText">
                 </ImageButton>
 
             </LinearLayout>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/alboradas4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/alboradas5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -157,11 +157,11 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/alboradas6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
@@ -182,9 +182,9 @@
                 android:src="@drawable/ic_circle_arrow_left_solid"
                 app:tint="@color/black"
                 android:fontFamily="casual"
-                android:text="@string/atras">
+                android:text="@string/atras"
+                tools:ignore="ContentDescription">
             </ImageButton>
-
 
         </LinearLayout>
 

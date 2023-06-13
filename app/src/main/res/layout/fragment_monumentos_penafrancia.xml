@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.monumentosPenaFrancia">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.monumentosPenaFrancia">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -16,7 +14,6 @@
         android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -55,7 +52,8 @@
                 android:src="@drawable/planopenadefrancia"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/monumentospena">
+                app:layout_constraintTop_toBottomOf="@id/monumentospena"
+                android:importantForAccessibility="no">
 
             </ImageView>
 

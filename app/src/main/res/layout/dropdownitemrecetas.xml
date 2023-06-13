@@ -5,16 +5,15 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/white"
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
         app:srcCompat="@drawable/ic_utensils_solid"
-        android:layout_marginLeft="5dp"
-        android:layout_gravity="center_vertical"/>
+        android:layout_marginStart="5dp"
+        android:layout_gravity="center_vertical"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"

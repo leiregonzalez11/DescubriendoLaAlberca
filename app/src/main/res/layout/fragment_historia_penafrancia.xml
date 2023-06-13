@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.historiaPenaFrancia">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.historiaPenaFrancia">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -21,7 +20,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -30,7 +28,6 @@
             tools:context=".anterior.categorias.gastronomia.gastronomiaActivity">
 
             <TextView
-                android:id="@+id/gastrotitulo"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -45,11 +42,11 @@
                 tools:targetApi="o" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historiap1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
@@ -64,11 +61,11 @@
                 android:layout_gravity="center"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historiap2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="-20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -83,11 +80,11 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historiap3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -101,11 +98,11 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historiap4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"

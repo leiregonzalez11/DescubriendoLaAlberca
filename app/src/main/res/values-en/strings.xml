@@ -14,7 +14,9 @@
         As the poet and professor from Alberca, Don José María Requejo, likes to say, La Alberca is… \n
     </string>
 
-    <string name="textoprincipal4" translatable="false">A Village To Dream Of \n</string>
+
+    <string name="textoprincipal4"> A Village To Dream About \n
+    </string>
 
     <string name="dialog_tour_titulo">Welcome to La Alberca!</string>
     <string name="dialog_tour"> Are you new here? Do you want to take a free tour through the app? </string>
@@ -26,9 +28,7 @@
         able to access all the other sections of the application from here.</string>
     <string name="seleccione_un_idioma">Choose a language:</string>
     <string name="tradicionesmayus">Traditions and Legends</string>
-    <string name="monumentosmayus">Monuments</string>
     <string name="gastronomiamayus">Gastronomy</string>
-    <string name="alojamientomayus">Accommodation</string>
     <string name="rutasmayus">Hiking Trails</string>
     <string name="otrosmayus">Other Places</string>
     <string name="inicio">Home</string>
@@ -39,14 +39,9 @@
     <string name="castellano">Spanish</string>
     <string name="euskera">Basque</string>
     <string name="ingles">English</string>
-    <string name="catalan">Catalan</string>
-    <string name="gallego">Galician</string>
-    <string name="frances">French</string>
-    <string name="aleman">Germany</string>
     <string name="historiamayus">History</string>
     <string name="la_casa_albercana">La Alberca Houses</string>
     <string name="_3_inscripciones">3. Legends</string>
-    <string name="volver_a_categorias">Back to Categories</string>
     <string name="atras">Previous</string>
     <string name="arquitecturamayus">Architecture</string>
     <string name="_2_aspecto_interior">Interior appearance</string>
@@ -63,7 +58,6 @@
     <string name="zona_de_usuarios">Traveler Space</string>
     <string name="masinfo">Further information</string>
     <string name="alhajas">Goldsmithing</string>
-    <string name="volver_a_artesania">Back to handicrafts</string>
     <string name="interior_inicio">The albercan house had three main parts: the stable, the dwelling and the storage place.\\n</string>
     <string name="rutas_inicio">Every fairytale village must have a dream setting, and La Alberca is no exception. Forests of pine,
         oak and chestnut woods give life to the surroundings of this village, with all kinds of routes where you can enjoy nature,
@@ -72,13 +66,10 @@
     <string name="apart">Apartments</string>
     <string name="hotel">Hotels</string>
     <string name="casas">Rural Houses</string>
-    <string name="ubicacion">Location</string>
     <string name="bares">Bar</string>
     <string name="rest">Restaurants</string>
     <string name="contacto">Contact</string>
-    <string name="email">Email</string>
     <string name="asunto_del_mensaje">Message subject</string>
-    <string name="emailet">Enter your email here</string>
     <string name="mensajeet">What do you want to tell us?</string>
     <string name="mensaje">Message</string>
     <string name="asuntoet">What is the reason for your message?</string>
@@ -88,30 +79,22 @@
     <string name="mensajeVacio">The message cannot be empty</string>
     <string name="ajustes6">Local Commerce</string>
     <string name="comoLlegar2">How to get to La Alberca?</string>
-    <string name="telefono">Telephone:</string>
     <string name="en_coche">By Car</string>
     <string name="en_bus">By Bus</string>
     <string name="comoLlegarCoche">The easiest way to get to La Alberca from the capital of the province is through the SA-215 highway, to the town of Tamames, where we will take the detour to the SA-201, which will take us to our destination after traveling 76 km. that separate Salamanca from La Alberca.\n</string>
     <string name="comoLlegarBus">If you do not have your own vehicle to come to La Alberca or simply want to come by bus, there are bus lines with different round-trip schedules to visit the town:\n</string>
     <string name="introComoLlegar">La Alberca is located south of the province of Salamanca, bordering the province of Cáceres. Due to its bordering location, historically, La Alberca was known as the gate of Las Hurdes. \n</string>
-    <string name="puntuacion">Score:</string>
     <string name="alimentacion">Food Store</string>
-    <string name="otras_tiendas">Other Stores</string>
     <string name="otros_lugares">In the surroundings of La Alberca there are many other beautiful villages and places to discover. Here are a few options: \n</string>
     <string name="idioma_validator">language</string>
     <string name="pueblos_de_la_sierra">Villages of the Sierra de Francia</string>
     <string name="km_desde_la_alberca">Km from La Alberca:</string>
     <string name="fiesta_mayor">Main festivity:</string>
-    <string name="servicios">Services</string>
     <string name="recetas">Typical recipes</string>
     <string name="turroneras">The Turroneras</string>
-    <string name="horario">Schedule:</string>
     <string name="horario2">Saturdays: 11:30–13:30 / 16:00–19:00 \n  Sundays: 11:30–13:30</string>
-    <string name="precio">Rate:</string>
     <string name="precio2">General: 2,5€ / Groups: 2€</string>
-    <string name="pueblos">Villages of the Sierra de Francia</string>
     <string name="batuecas">Las Batuecas Valley</string>
-    <string name="otras_tradiciones">Other traditions and legends</string>
     <string name="ingredientes">INGREDIENTS \n</string>
     <string name="pasos_a_seguir">STEPS TO TAKE \n</string>
     <string name="recetas_intro">The gastronomy of the Sierra de Francia stands out for the high culinary value of the products used for its stews and delicacies, giving rise to preparations and products of the highest quality, which is why the recipes of the Sierra are so popular. \n</string>
@@ -137,7 +120,6 @@
     <string name="santocristo">Saint Christ\'s Exterior Chapel</string>
     <string name="convento">The Convent</string>
     <string name="el_pozo_verde">The green well</string>
-    <string name="acerca_de">About the App</string>
     <string name="quienes_somos">About Us</string>
     <string name="agradecimientos">Appreciations</string>
     <string name="de_pago">Toll Parking</string>
@@ -163,6 +145,39 @@
     <string name="comercio_intro">What would a village be without its grocery stores, craft shops, bakeries…? Fortunately, in La Alberca we have a large selection of them, where both locals and onlookers can enjoy local products:\n</string>
     <string name="fiestas_iniciotext">Village festivals are synonymous with tradition, culture and recreation, but they are also the ideal setting for the people to escape from the rigidity of their daily lives. All regional festivals are similar and all are special in their richness, which is why they deserve as much pampering as any other type of cultural heritage worth preserving, passing them on from generation to generation.</string>
     <string name="majadasyalrededores">Majadas Viejas and surroundings</string>
+    <string name="el_chorro">El chorro</string>
+    <string name="la_casa_del_parque">El Monasterio</string>
+    <string name="el_monasterio">El Monasterio</string>
+    <string name="las_pinturas_rupestres">Las Pinturas Rupestres</string>
+    <string name="diccionario">Dictionary</string>
+    <string name="diccionario_albercano">Diccionario Albercano</string>
+    <string name="intro_diccionario">Texto introducción a diccionario \n</string>
+    <string name="pulsa_boton">Pulsa sobre la imagen para más info.</string>
+    <string name="chorro2">El Chorro de Batuecas</string>
+    <string name="seguro_que_quieres_salir">¿Seguro que quieres salir?</string>
+    <string name="el_gasco">El Gasco</string>
+    <string name="las_mestas">Las Mestas</string>
+    <string name="riomalo_de_arriba">Riomalo de Arriba</string>
+    <string name="meandro_del_melero">Meandro del Melero</string>
+    <string name="chorro_de_la_meancera">Chorro de la Meancera</string>
+    <string name="lista_de_monumentos">LISTA DE MONUMENTOS</string>
+    <string name="ermita_sanblas">Ermita de San Blás</string>
+    <string name="ermita_humilladero">Ermita del Humilladero</string>
+    <string name="ermita_sanantonio">Ermita de San Antonio</string>
+    <string name="plaza_sanantonio">Plaza de San Antonio</string>
+    <string name="antiguo_hospicio">Antiguo Hospicio</string>
+    <string name="busto_legendre">Busto de Maurice Legendre</string>
+    <string name="iglesia_parroquial">Iglesia Parroquial</string>
+    <string name="plaza_mayor">Plaza Mayor</string>
+    <string name="la_puente">La Puente</string>
+    <string name="barrio_el_castillo">Barrio El Castillo</string>
+    <string name="iglesia">Iglesia de Nª Señora de la Asunción</string>
+    <string name="marrano_escultura">Escultura del Marrano de San Antón</string>
+    <string name="hornacina">Hornacina de la Ánimas Benditas</string>
+    <string name="predios">Predios</string>
+    <string name="arriba">Arriba</string>
+    <string name="espacio_del_viajero">Espacio del Viajero</string>
+    <string name="ordenar_por">Ordenar por...</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -205,22 +220,6 @@
         <item>Serrano lemon</item>
         <item>Waggish potatoes</item>
         <item>Zorongollo</item>
-    </string-array>
-
-    <string-array name="pueblosdelasierra">
-        <item>Cepeda</item>
-        <item>Garcibuey</item>
-        <item>Herguijuela de la Sierra</item>
-        <item>Las Casas del Conde</item>
-        <item>Madroñal</item>
-        <item>Miranda del Castañar</item>
-        <item>Mogarraz</item>
-        <item>San Martin del Castañar</item>
-        <item>San Miguel del Robledo</item>
-        <item>Sequeros</item>
-        <item>Sotoserrano</item>
-        <item>Valero</item>
-        <item>Villanueva del Conde</item>
     </string-array>
 
     <string-array name="opcionesmapa">

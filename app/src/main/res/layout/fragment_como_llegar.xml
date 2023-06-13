@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.ComoLlegar">
+    tools:context=".espacioDelViajero.ComoLlegar">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -22,7 +20,6 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -46,11 +43,10 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/comollegartextintro"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
@@ -78,27 +74,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/comollegar1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginTop="7dp"
                             android:src="@drawable/car"
                             tools:ignore="ContentDescription" />
 
                         <TextView
-                            android:id="@+id/encoche"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:text="@string/en_coche"
                             android:textColor="@color/black"
                             android:textSize="23sp"
@@ -106,12 +100,11 @@
 
                     </LinearLayout>
 
-                    <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                        android:id="@+id/comollegartext1"
+                    <com.example.tfg.otherFiles.adapters.JustifyTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginBottom="-15dp"
                         android:layout_marginTop="7dp"
                         android:fontFamily="casual"
@@ -130,8 +123,8 @@
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="30dp">
 
@@ -145,27 +138,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/comollegar2"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_marginTop="12dp"
                             android:src="@drawable/ic_bus_solid"
                             tools:ignore="ContentDescription" />
 
                         <TextView
-                            android:id="@+id/enbus"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:layout_marginTop="5dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:text="@string/en_bus"
                             android:textColor="@color/black"
                             android:textSize="23sp"
@@ -173,13 +164,12 @@
 
                     </LinearLayout>
 
-                    <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                        android:id="@+id/comollegartext2"
+                    <com.example.tfg.otherFiles.adapters.JustifyTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginBottom="-15dp"
                         android:fontFamily="casual"
                         android:textColor="@color/black"
@@ -191,8 +181,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:theme="@style/Theme.MaterialComponents.Light"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="7dp"
                         android:layout_marginBottom="15dp"
                         app:cardElevation="10dp"
@@ -203,8 +193,8 @@
                             android:id="@+id/spinnerBus"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
                             android:backgroundTint="@color/black" >
 
                         </Spinner>

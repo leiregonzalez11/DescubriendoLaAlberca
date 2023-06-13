@@ -4,22 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="60dp"
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginRight="0dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         app:srcCompat="@drawable/ic_shirt_solid"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"

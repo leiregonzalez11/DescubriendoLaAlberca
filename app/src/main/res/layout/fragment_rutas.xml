@@ -4,17 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.principal.rutasInicio">
+    tools:context=".categorias.principal.rutasInicio">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutHist1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -22,7 +21,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/otrostitulo"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -36,13 +34,12 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/rutas"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -53,8 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 app:strokeWidth="2dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
@@ -64,8 +61,8 @@
                     android:id="@+id/spinnerRutas"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:backgroundTint="@color/black" />
 
             </com.google.android.material.card.MaterialCardView>
@@ -74,8 +71,8 @@
                 android:id="@+id/rutasimg1"
                 android:layout_width="350dp"
                 android:layout_height="280dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
@@ -83,8 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 app:strokeWidth="3dp"
                 app:cardElevation="10dp"
                 app:strokeColor="@color/black"
@@ -99,15 +96,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription" />
 
@@ -116,7 +112,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
@@ -126,15 +122,14 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -144,7 +139,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
@@ -154,15 +149,14 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg5"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -173,7 +167,7 @@
                             android:layout_height="wrap_content"
                             
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
@@ -183,15 +177,14 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:id="@+id/rutasimg6"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -202,7 +195,7 @@
                             android:layout_height="wrap_content"
                             
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
@@ -217,20 +210,21 @@
                 android:id="@+id/rutasimg7"
                 android:layout_width="350dp"
                 android:layout_height="280dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/rutas2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="-15dp"
                 android:fontFamily="casual"
-                android:paddingLeft="7dp"
+                android:paddingStart="7dp"
+                android:paddingEnd="0dp"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>
@@ -239,8 +233,8 @@
                 android:id="@+id/rutasimg2"
                 android:layout_width="300dp"
                 android:layout_height="380dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginBottom="20dp"
                 tools:ignore="ContentDescription">
             </ImageView>

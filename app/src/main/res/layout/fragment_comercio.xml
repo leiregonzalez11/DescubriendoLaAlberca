@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Comercio">
+    tools:context=".espacioDelViajero.Comercio">
 
     <LinearLayout
-        android:id="@+id/layoutHist1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -23,7 +21,6 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/Comerciotitulo"
             android:layout_width="323dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -37,12 +34,11 @@
             android:textStyle="bold"
             tools:targetApi="o" />
 
-        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-            android:id="@+id/otrostext"
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="25dp"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -55,8 +51,8 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="420dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="-25dp"
             android:layout_marginBottom="40dp"
             android:theme="@style/Theme.MaterialComponents.Light"

@@ -4,11 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    tools:context=".Categorias.secundarias.arquitectura.casaAlbercana">
+    tools:context=".categorias.secundarias.arquitectura.casaAlbercana">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -23,7 +21,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArqui21"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="15dp"
@@ -32,7 +29,6 @@
             tools:ignore="ScrollViewSize">
 
             <TextView
-                android:id="@+id/arquitext"
                 android:layout_width="323dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -51,24 +47,23 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-20dp"
                 android:orientation="horizontal"
-                android:layout_marginLeft="15dp">
+                android:layout_marginStart="15dp">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_circle_info_solid"
                     tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/exttext"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:fontFamily="casual"
                     android:textStyle="bold"
                     android:textSize="23sp"
                     android:textColor="@color/black"
-                    android:gravity="left"
+                    android:gravity="start"
                     android:text="@string/masinfo"
                     tools:targetApi="o" />
 
@@ -78,9 +73,9 @@
                 android:id="@+id/nombreRest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="7dp"
+                android:layout_marginEnd="7dp"
                 android:layout_marginBottom="10dp"
                 android:text="Casa Museo Satur y Juanela"
                 android:fontFamily="casual"
@@ -93,16 +88,16 @@
                 android:id="@+id/imgcasa"
                 android:layout_width="300dp"
                 android:layout_height="230dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="360dp"
                 android:layout_height="270dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
@@ -114,15 +109,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="25dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="15dp"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:layout_marginTop="5dp"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
@@ -131,18 +126,17 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:src="@drawable/ic_clock_solid"
                             tools:ignore="ContentDescription" />
 
                         <TextView
-                            android:id="@+id/horario2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginBottom="10dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:text="@string/horario2"
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -154,14 +148,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-7dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/ic_mobile_retro_solid"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -170,9 +164,9 @@
                             android:id="@+id/telcasa2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             tools:ignore="HardcodedText" />
@@ -182,7 +176,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:layout_marginTop="5dp"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
@@ -191,18 +185,17 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/ic_money_bills_solid"
                             tools:ignore="ContentDescription" />
 
                         <TextView
-                            android:id="@+id/precio2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:layout_marginBottom="-10dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:text="@string/precio2"
                             android:textColor="@color/black"
                             android:textSize="18sp"
@@ -215,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="-10dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:background="#00FFFFFF"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -223,7 +216,7 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/ic_globe_solid"
                             tools:ignore="ContentDescription" />
 
@@ -231,9 +224,9 @@
                             android:id="@+id/webcasa2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             tools:ignore="HardcodedText" />
@@ -243,7 +236,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:layout_marginTop="17dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -251,7 +244,7 @@
                         <ImageView
                             android:layout_width="21dp"
                             android:layout_height="21dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:layout_marginTop="2dp"
                             android:src="@drawable/ic_star_half_stroke_solid"
                             tools:ignore="ContentDescription">
@@ -262,8 +255,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-12dp"
-                            android:layout_marginLeft="-50dp"
-                            android:layout_marginRight="-25dp"
+                            android:layout_marginStart="-50dp"
+                            android:layout_marginEnd="-25dp"
                             android:isIndicator="true"
                             android:numStars="5"
                             android:rating="4.5"
@@ -278,7 +271,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:layout_marginTop="-5dp"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
@@ -286,7 +279,7 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/ic_map_location_dot_solid"
                             tools:ignore="ContentDescription">
                         </ImageView>
@@ -295,8 +288,8 @@
                             android:id="@+id/ubirest2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="7dp"
-                            android:layout_marginRight="7dp"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
                             android:layout_marginBottom="5dp"
                             android:fontFamily="casual"
                             android:text="Calle Mesón, 7"
@@ -321,7 +314,8 @@
                     android:gravity="center"
                     android:textStyle="bold"
                     android:src="@drawable/ic_circle_arrow_left_solid"
-                    app:tint="@color/black">
+                    app:tint="@color/black"
+                    android:importantForAccessibility="no">
                 </ImageButton>
 
         </LinearLayout>

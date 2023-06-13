@@ -7,15 +7,14 @@
     tools:context="com.example.tfg.MainActivity">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:scrollbarSize="8dp"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -23,7 +22,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/bienvenidatextPrueba"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -64,33 +62,30 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/textoprincipal1"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="casual"
                 android:text="@string/textoprincipal"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/textoprincipal2"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:text="@string/textoprincipal2"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
-                android:id="@+id/textoprincipal3"
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"

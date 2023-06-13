@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categorias.principal.tradicionesInicio">
+    tools:context=".categorias.principal.tradicionesInicio">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tradtitulo"
                 android:layout_width="385dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -33,24 +32,24 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -61,8 +60,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
@@ -81,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="15dp"
-                        android:layout_marginRight="3dp"
+                        android:layout_marginEnd="3dp"
                         android:text="@string/marrano"
                         android:fontFamily="casual"
                         android:textStyle="bold"
@@ -96,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="15dp"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:text="@string/la_loa"
                         android:fontFamily="casual"
                         android:textStyle="bold"
@@ -111,7 +110,6 @@
                 <!--LINEA BOTONES TRADICIONES 2-->
                 <!--moza de ánimas y pendón-->
                 <LinearLayout
-                    android:id="@+id/layoutvideo2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -124,7 +122,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="15dp"
-                        android:layout_marginRight="3dp"
+                        android:layout_marginEnd="3dp"
                         android:text="@string/la_moza_de_animas"
                         android:fontFamily="casual"
                         android:textStyle="bold"
@@ -139,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="15dp"
-                        android:layout_marginRight="3dp"
+                        android:layout_marginEnd="3dp"
                         android:text="@string/alboradas"
                         android:fontFamily="casual"
                         android:textStyle="bold"
@@ -166,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="15dp"
                         android:paddingEnd="15dp"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:text="El Pendón"
                         android:fontFamily="casual"
                         android:textStyle="bold"
@@ -183,7 +181,7 @@
                         android:paddingEnd="15dp"
                         android:text="@string/la_boda_albercana"
                         android:fontFamily="casual"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:textStyle="bold"
                         android:textSize="17sp"
                         android:textColor="#000000"

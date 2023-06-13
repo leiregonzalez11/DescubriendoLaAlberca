@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.monumentos1">
+    tools:context=".mapOptions.sitiosdeinteres.monumentos1">
 
     <ScrollView
-        android:id="@+id/scrollviewM"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -36,13 +35,13 @@
                 android:textColor="@color/black"
                 android:textSize="25sp"/>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/monuinfotext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -61,10 +60,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
                 <Button
@@ -72,7 +71,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"

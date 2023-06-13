@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/navigation_viajero"
-        android:title="Espacio del Viajero"
+        android:title="@string/espacio_del_viajero"
         android:icon="@drawable/person_foreground" />
 
     <item

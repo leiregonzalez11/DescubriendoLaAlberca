@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.tradiciones.marranoSanAnton">
+    tools:context=".categorias.secundarias.tradiciones.marranoSanAnton">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,11 +36,11 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/marrano1"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -56,22 +56,22 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/marrano2"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
                 android:textSize="19sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/marrano3"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -86,11 +86,11 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/marrano4"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
@@ -111,7 +111,8 @@
                 android:fontFamily="casual"
                 android:src="@drawable/ic_circle_arrow_left_solid"
                 app:tint="@color/black"
-                android:text="@string/atras">
+                android:text="@string/atras"
+                android:importantForAccessibility="no">
             </ImageButton>
 
         </LinearLayout>

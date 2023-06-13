@@ -4,16 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.info.infomonu3Fragment">
+    tools:context=".mapOptions.sitiosdeinteres.info.infomonu3Fragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
         android:scrollbars="vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -24,17 +23,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textaparcar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="casual"
-                android:text="LISTA DE MONUMENTOS"
+                android:text="@string/lista_de_monumentos"
                 android:gravity='center'
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -53,20 +51,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/uno"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Capilla mayor"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -83,20 +80,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/dos"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Sacristía"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -113,20 +109,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/tres"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:fontFamily="casual"
                     android:text="Torre de la iglesia"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -143,20 +138,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/cuatro"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo de Santa Ana"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -173,20 +167,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/cinco"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo de la Virgen del Rosario"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -203,20 +196,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/seis"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Púlpito"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -233,20 +225,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/siete"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo del Cristo de las Batallas"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -263,20 +254,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/ocho"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Pórticos"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -293,20 +283,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/nueve"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Pilas de agua bendita"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -323,20 +312,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/diez"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Pila Bautismal"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -353,20 +341,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/once"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Espadaña"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -383,20 +370,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/doce"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo de San Pedro"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -413,20 +399,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/trece"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo del Santo Cristo del Sudor"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -443,20 +428,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/catorce"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Retablo de la Virgen del Carmen"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -473,20 +457,19 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/quince"
                     tools:ignore="ContentDescription">
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/mon15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
                     android:text="Capilla de la Virgen del Rosario"
-                    android:gravity='left'
+                    android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
@@ -495,10 +478,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
                 <Button
@@ -506,7 +489,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"

@@ -11,8 +11,8 @@ import java.io.InputStreamReader;
 import androidx.annotation.Nullable;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.example.tfg.EspacioDelViajero.Maps.otrosLugares.pueblos.Pueblo;
-import com.example.tfg.Categorias.secundarias.gastronomia.Receta;
+import com.example.tfg.mapOptions.otrosLugares.pueblos.Pueblo;
+import com.example.tfg.categorias.secundarias.gastronomia.Receta;
 
 public class GestorDB extends SQLiteOpenHelper {
 
@@ -59,7 +59,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
     }
 
-    public void crearTablas(SQLiteDatabase sqLiteDatabase) throws IOException{
+    public void crearTablas(SQLiteDatabase sqLiteDatabase) {
 
         //Esquema de la tabla arquitectura
         String query = "CREATE TABLE IF NOT EXISTS arquitectura (idArqui INTEGER PRIMARY KEY AUTOINCREMENT, " +

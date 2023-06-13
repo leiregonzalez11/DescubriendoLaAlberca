@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash</item>
-    </style>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">#880E4F</item>
+        <item name="background">@color/white</item>
         <item name="colorPrimaryDark">#B82071</item>
         <item name="colorAccent">#FF4081</item>
     </style>
@@ -24,6 +22,7 @@
     </style>
 
     <style name="PopupTheme" parent="Theme.AppCompat.Light">
+        <item name="background">@color/white</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
         <!--https://github.com/danielme-com/-Android-popup-menu- -Support-library/blob/master/res/values/styles.xml-->
     </style>

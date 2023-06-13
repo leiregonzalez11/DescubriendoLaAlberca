@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.otrosPueblos">
+    tools:context=".mapOptions.otrosLugares.otrosPueblos">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -36,12 +35,12 @@
                 android:textAlignment="gravity"
                 android:textStyle="bold" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/recetasTextIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
                 android:text=" \n"
                 android:textColor="@color/black"
@@ -52,8 +51,8 @@
                     android:theme="@style/Theme.MaterialComponents.Light"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginBottom="25dp"
                     app:cardElevation="10dp"
                     app:strokeColor="@color/black"
@@ -76,8 +75,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_marginTop="35dp"
                 app:cardElevation="10dp"
@@ -93,25 +92,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/km"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="casual"
-                            android:layout_marginLeft="-5dp"
-                            android:gravity='left'
+                            android:layout_marginStart="-5dp"
+                            android:gravity="start"
                             android:text="@string/km_desde_la_alberca"
                             android:textStyle="bold"
                             android:textColor="@color/black"
@@ -121,9 +119,9 @@
                             android:id="@+id/km2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
 
@@ -134,25 +132,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-5dp"
                         android:layout_marginBottom="-5dp"
-                        android:layout_gravity="left"
+                        android:layout_gravity="start"
                         android:orientation="horizontal"
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginStart="15dp"
                             android:src="@drawable/arrow_right_foreground"
                             tools:ignore="ContentDescription">
                         </ImageView>
 
                         <TextView
-                            android:id="@+id/fiesta"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="-5dp"
+                            android:layout_marginStart="-5dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:text="@string/fiesta_mayor"
                             android:textStyle="bold"
                             android:textColor="@color/black"
@@ -162,9 +159,9 @@
                             android:id="@+id/fiesta2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="casual"
-                            android:gravity='left'
+                            android:gravity="start"
                             android:textColor="@color/black"
                             android:textSize="18sp"/>
 
@@ -183,15 +180,16 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/pueblosDescr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:fontFamily="casual"
-                android:paddingLeft="7dp"
+                android:paddingStart="7dp"
+                android:paddingEnd="0dp"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>

@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.iglesia">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.iglesia">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -23,8 +21,7 @@
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutArte1"
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center"
@@ -52,14 +49,14 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:targetApi="o" />
 
-        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:id="@+id/iglesiatext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:fontFamily="casual"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
             android:gravity='center'
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/iglesiatext2"
@@ -67,13 +64,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iglesiainicio" />
 
-        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:id="@+id/iglesiatext2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
             android:fontFamily="casual"
             android:gravity='center'
             android:textSize="18sp"
@@ -82,12 +79,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iglesiatext" />
 
-        <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:id="@+id/iglesiatext3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
             android:textColor="@color/black"
             android:fontFamily="casual"
             android:gravity='center'
@@ -106,7 +103,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.557"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iglesiatext3">
+                app:layout_constraintTop_toBottomOf="@id/iglesiatext3"
+                android:importantForAccessibility="no">
 
             </ImageView>
 

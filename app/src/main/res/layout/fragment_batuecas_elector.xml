@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.parquebatuecas.batuecasElector">
+    tools:context=".mapOptions.otrosLugares.parquebatuecas.batuecasElector">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_marginBottom="15dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="¿Qué visitar?"
+            android:text="@string/quevisitar"
             android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -32,7 +32,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:layout_gravity="center"
-                android:text="El chorro"
+                android:text="@string/el_chorro"
                 android:fontFamily="casual"
                 android:textStyle="bold"
                 android:textSize="17sp"
@@ -47,7 +47,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:layout_marginTop="7dp"
-                android:text="El Monasterio"
+                android:text="@string/el_monasterio"
                 android:layout_gravity="center"
                 android:fontFamily="casual"
                 android:textStyle="bold"
@@ -63,7 +63,7 @@
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:layout_marginTop="7dp"
-            android:text="La casa del Parque"
+            android:text="@string/la_casa_del_parque"
             android:layout_gravity="center"
             android:fontFamily="casual"
             android:textStyle="bold"
@@ -79,7 +79,7 @@
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:layout_marginTop="7dp"
-            android:text="Las Pinturas rupestres"
+            android:text="@string/las_pinturas_rupestres"
             android:layout_gravity="center"
             android:fontFamily="casual"
             android:textStyle="bold"

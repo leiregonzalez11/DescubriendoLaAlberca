@@ -10,12 +10,11 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="casual"
         android:hint="@string/dialog_tour_titulo"
@@ -26,12 +25,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="7dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginEnd="7dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="casual"
         android:gravity='center'

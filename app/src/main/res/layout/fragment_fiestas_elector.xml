@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.fiestas.fiestasElector">
+    tools:context=".categorias.secundarias.fiestas.fiestasElector">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -18,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +36,6 @@
                 android:layout_marginBottom="40dp"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text="Mes"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -59,7 +58,6 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="Fiesta 1"
                     android:fontFamily="casual"
                     android:textStyle="bold"
                     android:visibility="visible"
@@ -74,7 +72,6 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
                     android:layout_marginTop="15dp"
-                    android:text="Fiesta 2"
                     android:fontFamily="casual"
                     android:visibility="visible"
                     android:textStyle="bold"
@@ -89,7 +86,6 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
                     android:layout_marginTop="15dp"
-                    android:text="Fiesta 3"
                     android:fontFamily="casual"
                     android:textStyle="bold"
                     android:visibility="visible"
@@ -104,7 +100,6 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
                     android:layout_marginTop="15dp"
-                    android:text="Fiesta 4"
                     android:fontFamily="casual"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -125,13 +120,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView3"
                     android:layout_width="300dp"
                     android:layout_height="230dp"
-                    android:src="@drawable/oops" />
+                    android:src="@drawable/oops"
+                    android:importantForAccessibility="no" />
 
                 <TextView
-                    android:id="@+id/textFiestasNotFound"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"

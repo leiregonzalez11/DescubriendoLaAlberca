@@ -4,24 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.otrosLugares.penaFrancia.hospederiaFragment">
+    tools:context=".mapOptions.otrosLugares.penaFrancia.hospederiaFragment">
 
     <LinearLayout
-        android:id="@+id/layoutAloj2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="5dp"
-        tools:context=".anterior.ajustes.aloj.alojamientoActivity">
+        tools:context=".anterior.ajustes.aloj.alojamientoActivity"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/nombreHosp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="25dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginBottom="25dp"
             android:fontFamily="casual"
             android:gravity='center'
@@ -38,14 +38,15 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.697" />
+            app:layout_constraintVertical_bias="0.697"
+            android:importantForAccessibility="no" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="35dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="20dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:cardCornerRadius="30dp"
@@ -60,8 +61,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
@@ -69,7 +70,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/ic_mobile_retro_solid"
                         tools:ignore="ContentDescription">
@@ -79,10 +80,10 @@
                         android:id="@+id/telHosp2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="casual"
-                        android:gravity='left'
+                        android:gravity="start"
                         android:textColor="@color/black"
                         android:textSize="19sp" />
 
@@ -91,8 +92,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
                     android:layout_marginBottom="-7dp"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
@@ -100,7 +101,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/ic_star_half_stroke_solid"
                         tools:ignore="ContentDescription" />
@@ -109,9 +110,9 @@
                         android:id="@+id/ratingBarHosp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="-50dp"
+                        android:layout_marginStart="-50dp"
                         android:layout_marginTop="-7dp"
-                        android:layout_marginRight="-25dp"
+                        android:layout_marginEnd="-25dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:progressBackgroundTint="#B4000000"
@@ -125,15 +126,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/ic_globe_solid"
                         tools:ignore="ContentDescription" />
@@ -142,11 +143,11 @@
                         android:id="@+id/ubiHosp2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="casual"
-                        android:gravity='left'
+                        android:gravity="start"
                         android:textColor="@color/black"
                         android:textSize="17sp" />
 
@@ -159,9 +160,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
 
@@ -170,7 +171,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="Volver"

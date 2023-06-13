@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EspacioDelViajero.Maps.sitiosdeinteres.iglesia.iglesiaFragment">
+    tools:context=".mapOptions.sitiosdeinteres.iglesia.iglesiaFragment">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -24,11 +23,10 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/tituloiglesia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
@@ -55,13 +53,13 @@
                 tools:targetApi="o"
                 tools:ignore="HardcodedText" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/iglesia1text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -76,13 +74,13 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/iglesia2text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -97,13 +95,13 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/iglesia3text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -118,13 +116,13 @@
                 android:src="@drawable/laalberca2"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/iglesia4text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="casual"
                 android:gravity='center'
                 android:textColor="@color/black"
@@ -187,7 +185,7 @@
                     android:id="@+id/moninfo3"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="4dp"
                     android:background="@color/white"
                     android:gravity="center"
@@ -203,7 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="435dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
@@ -230,7 +228,8 @@
                     app:layout_constraintHorizontal_bias="0.496"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.233" />
+                    app:layout_constraintVertical_bias="0.233"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/capilladolores"
@@ -243,7 +242,8 @@
                     app:layout_constraintHorizontal_bias="0.821"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.24" />
+                    app:layout_constraintVertical_bias="0.24"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/retablosantaana"
@@ -256,7 +256,8 @@
                     app:layout_constraintHorizontal_bias="0.358"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.432" />
+                    app:layout_constraintVertical_bias="0.432"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/retablovirgencarmen"
@@ -269,7 +270,8 @@
                     app:layout_constraintHorizontal_bias="0.672"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.442" />
+                    app:layout_constraintVertical_bias="0.442"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/espadana"
@@ -282,7 +284,8 @@
                     app:layout_constraintHorizontal_bias="0.506"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.964" />
+                    app:layout_constraintVertical_bias="0.964"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/sacristia"
@@ -295,7 +298,8 @@
                     app:layout_constraintHorizontal_bias="0.242"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.241" />
+                    app:layout_constraintVertical_bias="0.241"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/pulpito"
@@ -308,7 +312,8 @@
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.557" />
+                    app:layout_constraintVertical_bias="0.557"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/retablosanpedro"
@@ -321,7 +326,8 @@
                     app:layout_constraintHorizontal_bias="0.703"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.591" />
+                    app:layout_constraintVertical_bias="0.591"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/retablocristosudor"
@@ -334,7 +340,8 @@
                     app:layout_constraintHorizontal_bias="0.886"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.437" />
+                    app:layout_constraintVertical_bias="0.437"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/pilaagua1"
@@ -347,7 +354,8 @@
                     app:layout_constraintHorizontal_bias="0.366"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.752" />
+                    app:layout_constraintVertical_bias="0.752"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/pilaagua2"
@@ -360,7 +368,8 @@
                     app:layout_constraintHorizontal_bias="0.642"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.752" />
+                    app:layout_constraintVertical_bias="0.752"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/torre"
@@ -373,7 +382,8 @@
                     app:layout_constraintHorizontal_bias="0.116"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.311" />
+                    app:layout_constraintVertical_bias="0.311"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/virgenrosario"
@@ -386,7 +396,8 @@
                     app:layout_constraintHorizontal_bias="0.125"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.425" />
+                    app:layout_constraintVertical_bias="0.425"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/santocristo"
@@ -399,7 +410,8 @@
                     app:layout_constraintHorizontal_bias="0.295"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.603" />
+                    app:layout_constraintVertical_bias="0.603"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/pilabautismal"
@@ -412,7 +424,8 @@
                     app:layout_constraintHorizontal_bias="0.290"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.89" />
+                    app:layout_constraintVertical_bias="0.89"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/portico1"
@@ -425,7 +438,8 @@
                     app:layout_constraintHorizontal_bias="0.084"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.745" />
+                    app:layout_constraintVertical_bias="0.745"
+                    android:importantForAccessibility="no" />
 
                 <ImageButton
                     android:id="@+id/portico2"
@@ -438,12 +452,12 @@
                     app:layout_constraintHorizontal_bias="0.956"
                     app:layout_constraintStart_toStartOf="@id/iglesiamapa"
                     app:layout_constraintTop_toTopOf="@id/iglesiamapa"
-                    app:layout_constraintVertical_bias="0.745" />
+                    app:layout_constraintVertical_bias="0.745"
+                    android:importantForAccessibility="no" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textplazaiglesia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
@@ -459,9 +473,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="20dp"
-                android:gravity="right"
+                android:gravity="end"
                 android:orientation="horizontal">
 
 
@@ -470,7 +484,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="casual"
                     android:text="@string/volver"

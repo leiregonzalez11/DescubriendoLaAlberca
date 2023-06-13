@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.secundarias.tradiciones.mozaDeAnimas">
+    tools:context=".categorias.secundarias.tradiciones.mozaDeAnimas">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -22,7 +20,6 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/layoutTrad11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -45,11 +42,11 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
 
                 android:fontFamily="casual"
@@ -66,11 +63,11 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="-5dp"
                 android:fontFamily="casual"
@@ -87,11 +84,11 @@
                 tools:ignore="ContentDescription">
             </ImageView>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
@@ -99,11 +96,11 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
@@ -113,7 +110,6 @@
                 android:textSize="18sp" />
 
             <LinearLayout
-                android:id="@+id/layoutvideo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -130,7 +126,7 @@
                     android:id="@+id/play1"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:background="@color/white"
                     android:src="@drawable/play"
                     tools:ignore="ContentDescription">
@@ -156,11 +152,11 @@
 
             </LinearLayout>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-20dp"
                 android:fontFamily="casual"
@@ -168,11 +164,11 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="-10dp"
                 android:fontFamily="casual"
@@ -182,7 +178,6 @@
                 android:textSize="18sp" />
 
             <LinearLayout
-                android:id="@+id/layoutvideo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -199,7 +194,7 @@
                     android:id="@+id/play2"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:background="@color/white"
                     android:src="@drawable/play"
                     tools:ignore="ContentDescription">
@@ -225,11 +220,11 @@
 
             </LinearLayout>
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/trad18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="casual"
                 android:gravity='center'
@@ -249,7 +244,8 @@
                 android:src="@drawable/ic_circle_arrow_left_solid"
                 app:tint="@color/black"
                 android:fontFamily="casual"
-                android:text="@string/atras">
+                android:text="@string/atras"
+                android:importantForAccessibility="no">
             </ImageButton>
 
         </LinearLayout>

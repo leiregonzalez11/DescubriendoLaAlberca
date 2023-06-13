@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Categorias.principal.historiaInicio">
+    tools:context=".categorias.principal.historiaInicio">
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="8dp"
@@ -21,7 +20,6 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/layoutArte1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -45,7 +43,6 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/historiatitulo"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -59,12 +56,12 @@
                 android:textStyle="bold"
                 tools:targetApi="o" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -79,12 +76,12 @@
                 android:layout_marginTop="-5dp"
                 tools:ignore="ContentDescription" />
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
@@ -101,12 +98,12 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="-10dp"
                 android:textColor="@color/black"
@@ -123,12 +120,12 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -145,12 +142,12 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -165,12 +162,12 @@
                 tools:ignore="ContentDescription" />
 
 
-            <com.example.tfg.OtherFiles.Adapters.JustifyTextView
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
@@ -186,7 +183,7 @@
                     android:id="@+id/historiabtn"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginRight="7dp"
+                    android:layout_marginEnd="7dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     android:background="@color/white"
@@ -202,7 +199,7 @@
                     android:id="@+id/historiabtn2"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     android:visibility="invisible"
