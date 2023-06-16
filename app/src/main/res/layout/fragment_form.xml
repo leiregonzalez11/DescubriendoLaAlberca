@@ -39,7 +39,7 @@
                 android:text="@string/formulario_de_contacto"
                 android:textColor="@color/black"
                 android:textAlignment="gravity"
-                android:textSize="30sp"
+                android:textSize="27sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView

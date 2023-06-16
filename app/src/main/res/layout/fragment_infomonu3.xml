@@ -62,7 +62,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Capilla mayor"
+                    android:text="@string/capilla_mayor"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -91,7 +91,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Sacristía"
+                    android:text="@string/sacristia"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -120,7 +120,7 @@
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="10dp"
                     android:fontFamily="casual"
-                    android:text="Torre de la iglesia"
+                    android:text="@string/torre_de_la_iglesia"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -149,7 +149,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo de Santa Ana"
+                    android:text="@string/retablo_de_santa_ana"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -178,7 +178,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo de la Virgen del Rosario"
+                    android:text="@string/retablo_virgenrosario"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -207,7 +207,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Púlpito"
+                    android:text="@string/pulpito"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -236,7 +236,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo del Cristo de las Batallas"
+                    android:text="@string/cristobatallas"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -265,7 +265,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Pórticos"
+                    android:text="@string/porticos"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -294,7 +294,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Pilas de agua bendita"
+                    android:text="@string/pilas_de_agua_bendita"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -323,7 +323,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Pila Bautismal"
+                    android:text="@string/pila_bautismal"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -352,7 +352,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Espadaña"
+                    android:text="@string/espadana"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -381,7 +381,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo de San Pedro"
+                    android:text="@string/retablo_de_san_pedro"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -410,7 +410,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo del Santo Cristo del Sudor"
+                    android:text="@string/cristosudor"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -439,7 +439,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Retablo de la Virgen del Carmen"
+                    android:text="@string/virgencarmen"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
@@ -468,7 +468,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
                     android:fontFamily="casual"
-                    android:text="Capilla de la Virgen del Rosario"
+                    android:text="@string/virgenrosario"
                     android:gravity='start'
                     android:textColor="@color/black"
                     android:textSize="18sp"/>

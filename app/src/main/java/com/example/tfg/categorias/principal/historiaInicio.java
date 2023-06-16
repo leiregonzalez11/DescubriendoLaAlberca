@@ -111,7 +111,7 @@ public class historiaInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             storageRef = FirebaseStorage.getInstance().getReference();
 
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")) {

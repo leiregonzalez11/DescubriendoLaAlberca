@@ -43,7 +43,7 @@ public class rolloinfofragment extends DialogFragment {
         TextView info = infoView.findViewById(R.id.rolloinfotext);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoLugares(idioma, "elrollo-info", "peñadefrancia", 1);
         }

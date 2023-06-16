@@ -31,7 +31,7 @@
                 android:textColor="@color/black"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:text="Torre de la Iglesia"
+                android:text="@string/torre_de_la_iglesia"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />

@@ -99,7 +99,7 @@ public class rutasInicio extends Fragment implements AdapterView.OnItemSelectedL
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        dbHelper = new GestorDB(requireContext());
+        dbHelper = GestorDB.getInstance(requireContext());
         storageRef = FirebaseStorage.getInstance().getReference();
 
         String [] rutas = getResources().getStringArray(R.array.rutas);

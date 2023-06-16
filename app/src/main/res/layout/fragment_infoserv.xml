@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="casual"
-            android:text="SERVICIOS - LEYENDA"
+            android:text="@string/servicios_leyenda"
             android:gravity='center'
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -49,7 +49,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Entidades Bancarias"
+                android:text="@string/entidades_bancarias"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -79,7 +79,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Servicio de Taxi"
+                android:text="@string/servicio_de_taxi"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -109,7 +109,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="casual"
-                android:text="Peluquería/Barbería"
+                android:text="@string/peluqueria"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -139,7 +139,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Centro Médico"
+                android:text="@string/centromedico"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -169,7 +169,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Farmacia"
+                android:text="@string/farmacia"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -199,7 +199,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Gimnasio municipal"
+                android:text="@string/gimnasio_municipal"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -229,7 +229,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Piscina Municipal"
+                android:text="@string/piscina"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -259,7 +259,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Guardia Civil"
+                android:text="@string/guardia_civil"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -289,7 +289,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="casual"
-                android:text="Gasolinera"
+                android:text="@string/gasolinera"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -319,7 +319,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="9dp"
                 android:fontFamily="casual"
-                android:text="Oficina de turismo"
+                android:text="@string/oficina_de_turismo"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="20sp"/>

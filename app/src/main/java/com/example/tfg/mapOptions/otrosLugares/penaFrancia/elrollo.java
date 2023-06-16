@@ -100,7 +100,7 @@ public class elrollo extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())){
             storageRef = FirebaseStorage.getInstance().getReference();
 
             datos = dbHelper.obtenerInfoLugares(idioma, "elrollo", "peñadefrancia", 4);

@@ -116,7 +116,7 @@ public class elchorro extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(requireContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(requireContext())) {
 
             String[] datosRuta = dbHelper.obtenerDatosRutas(idioma, "chorro");
 

@@ -80,7 +80,7 @@ public class monumentos7 extends DialogFragment {
     private void setInfo() {
         String[] datos;
         storageRef = FirebaseStorage.getInstance().getReference();
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             datos = dbHelper.obtenerInfoMonumentos(idioma, mon, 7);
         }
 

@@ -101,7 +101,7 @@ public class bordadoSerrano extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             //OBTENEMOS LOS TEXTOS Y LAS IMAGENES DE LA INTERFAZ
 

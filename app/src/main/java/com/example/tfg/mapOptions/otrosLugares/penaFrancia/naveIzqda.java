@@ -57,7 +57,7 @@ public class naveIzqda extends DialogFragment {
         ImageView img4 = infoView.findViewById(R.id.naveizqimg4);
 
         String[] datos2;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             storageRef = FirebaseStorage.getInstance().getReference();
 

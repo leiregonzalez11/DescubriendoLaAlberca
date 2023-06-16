@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ajustes.administrador.administrador_InicioSesion">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="8dp"
+            android:scrollbars="vertical"
+            tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:paddingBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:context=".anterior.ajustes.comoLlegarActivity">
+
+                        <TextView
+                            android:id="@+id/ajustestext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="casual"
+                            android:gravity="center"
+                            android:text="@string/login_admin"
+                            android:textColor="@color/black"
+                            android:textAlignment="gravity"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="15dp"
+                            app:cardElevation="10dp"
+                            app:strokeWidth="3dp"
+                            app:strokeColor="@color/black"
+                            app:cardCornerRadius="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:textColor="@color/black"
+                                            android:fontFamily="casual"
+                                            android:gravity="start"
+                                            android:text="Email"
+                                            android:textAlignment="gravity"
+                                            android:textSize="23sp"
+                                            android:textStyle="bold"
+                                            tools:targetApi="o"
+                                            tools:ignore="HardcodedText" />
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:theme="@style/Theme.MaterialComponents.Light"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_marginEnd="20dp"
+                                            android:background="@color/white">
+
+                                                <com.google.android.material.textfield.TextInputEditText
+                                                    android:id="@+id/textEmailLogin"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="-10dp"
+                                                    android:background="#00FFFFFF"
+                                                    android:fontFamily="casual"
+                                                    android:imeOptions="actionDone"
+                                                    android:textSize="18sp"
+                                                    android:paddingTop="35dp"
+                                                    android:paddingLeft="15dp"
+                                                    android:paddingRight="15dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:textColor="@color/black" />
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <TextView
+                                            android:layout_width="323dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="casual"
+                                            android:textColor="@color/black"
+                                            android:gravity="start"
+                                            android:text="@string/passwd"
+                                            android:textAlignment="gravity"
+                                            android:textSize="23sp"
+                                            android:textStyle="bold"
+                                            tools:targetApi="o" />
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:theme="@style/Theme.MaterialComponents.Light"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_marginEnd="20dp"
+                                            android:layout_marginBottom="30dp"
+                                            app:errorEnabled="true"
+                                            app:hintAnimationEnabled="true"
+                                            android:background="@color/white">
+
+                                                <com.google.android.material.textfield.TextInputEditText
+                                                    android:id="@+id/textPaswdLogin"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="-10dp"
+                                                    android:background="#00FFFFFF"
+                                                    android:fontFamily="casual"
+                                                    android:imeOptions="actionDone"
+                                                    android:textSize="18sp"
+                                                    android:paddingTop="35dp"
+                                                    android:paddingLeft="15dp"
+                                                    android:paddingRight="15dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:textColor="@color/black" />
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <Button
+                            android:id="@+id/btnLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="18sp"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:textStyle="bold"
+                            android:fontFamily="casual"
+                            android:textSize="20sp"
+                            android:textColor="#000000"
+                            android:background="@drawable/borde_redondeado"
+                            android:text="@string/acceder" />
+
+
+                </LinearLayout>
+
+        </ScrollView>
+
+</FrameLayout>

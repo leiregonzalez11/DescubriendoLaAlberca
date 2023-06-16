@@ -128,7 +128,7 @@ public class batuecas extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         Double[] ubicacion;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             String[] datos = dbHelper.obtenerInfoLugares(idioma, "intro", "batuecas", 4);
 

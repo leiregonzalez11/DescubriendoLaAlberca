@@ -44,7 +44,7 @@
                 android:layout_marginEnd="15dp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
-                android:text="Descubriendo La Alberca no es más que un proyecto de Fin de Grado con ganas y grandes expectativas de convertirse en algo importante a futuro. \n\n ¿Su creador? \n\n Yo. Me llamo Leire, tengo 24 años y desde hace unos años estudio el grado de Ingeniería Informática en la especialidad de Gestión y Sistemas de Información en la Escuela de Ingeniería de Bilbao. \n\n Siempre me ha gustado llevar mi pueblo por bandera, presumir de él y darlo a conocer al mundo. Por ello, siempre tuve claro que mi trabajo de fin de grado sería de alguna manera un homenaje. Gracias a ello, en Septiembre de 2022 nació Descubriendo La Alberca.\n\n Espero que ésta aplicación te ayude, a tí querido lector, a entender el amor, el respeto y la admiración de la gente de La Alberca hacia su pueblo, hacia su hogar.\n"
+                android:text="@string/quienessomostext"
                 android:textSize="19sp" />
 
         </LinearLayout>

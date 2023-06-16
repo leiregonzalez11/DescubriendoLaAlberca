@@ -122,7 +122,7 @@ public class mozaDeAnimas extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] textoTrad;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "La Moza de Ánimas";

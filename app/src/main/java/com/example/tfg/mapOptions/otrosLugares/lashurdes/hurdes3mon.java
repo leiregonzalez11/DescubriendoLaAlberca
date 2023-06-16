@@ -65,7 +65,7 @@ public class hurdes3mon extends DialogFragment {
         ImageView img1 = viewR.findViewById(R.id.hurdes3img1);
         ImageView img2 = viewR.findViewById(R.id.hurdes3img2);
 
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             storageRef = FirebaseStorage.getInstance().getReference();
 
             if (!sitio.equalsIgnoreCase("lasmestas")) {

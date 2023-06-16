@@ -9,7 +9,6 @@
         android:id="@+id/textView"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:text="Text"
         android:gravity="center"
         android:fontFamily="casual"
         android:layout_marginTop="2dp"

@@ -174,7 +174,7 @@
                 android:layout_marginStart="7dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
-                android:text="Volver"
+                android:text="@string/volver"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="18sp"

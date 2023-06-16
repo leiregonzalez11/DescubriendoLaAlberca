@@ -64,7 +64,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
         TextView text3 = plazaMView.findViewById(R.id.plaza3text);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoMonumentos(idioma, "plaza", 3);
         }

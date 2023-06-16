@@ -64,7 +64,7 @@ public class monumentos4 extends DialogFragment {
         TextView text4 = viewR.findViewById(R.id.monu4infotext4);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoMonumentos(idioma, monumento, 4);
         }

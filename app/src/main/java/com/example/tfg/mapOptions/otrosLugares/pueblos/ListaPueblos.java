@@ -9,7 +9,7 @@ public class ListaPueblos {
     private final LinkedList<Pueblo> pueblos;
 
     public ListaPueblos (Context context, String idioma){
-        try (GestorDB dbHelper = new GestorDB(context)) {
+        try (GestorDB dbHelper = GestorDB.getInstance(context.getApplicationContext())) {
             pueblos = dbHelper.obtenerPueblos(idioma);
         }
     }

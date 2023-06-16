@@ -36,16 +36,17 @@
                 android:textStyle="bold" />
 
             <com.example.tfg.otherFiles.adapters.JustifyTextView
-                android:id="@+id/recetasTextIntro"
+                android:id="@+id/pueblosIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="casual"
-                android:text=" \n"
+                android:text=" TODO\n"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:theme="@style/Theme.MaterialComponents.Light"

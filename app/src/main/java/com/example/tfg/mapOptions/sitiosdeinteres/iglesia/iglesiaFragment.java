@@ -87,7 +87,7 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         ant = iglesiaView.findViewById(R.id.ibtn);
         sig = iglesiaView.findViewById(R.id.ibtn2);
 
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             storageRef = FirebaseStorage.getInstance().getReference();
 
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")) {

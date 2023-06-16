@@ -135,7 +135,7 @@ public class penaDeFrancia extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         Double[] ubicacion;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             if (back.equalsIgnoreCase("true")) {
                 text6.requestFocus();

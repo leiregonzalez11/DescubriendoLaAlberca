@@ -79,7 +79,7 @@ public class pulpito extends DialogFragment {
     @SuppressLint("SetTextI18n")
     private void setInfo() {
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             storageRef = FirebaseStorage.getInstance().getReference();
 
             datos = dbHelper.obtenerInfoMonumentos(idioma, mon, 7);

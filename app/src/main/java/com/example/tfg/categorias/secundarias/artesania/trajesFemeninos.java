@@ -109,7 +109,7 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        dbHelper = new GestorDB(getContext());
+        dbHelper = GestorDB.getInstance(requireContext());
 
         //Spinner
         String [] trajes = getResources().getStringArray(R.array.trajes_serranos);

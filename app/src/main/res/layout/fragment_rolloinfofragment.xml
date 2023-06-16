@@ -41,7 +41,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="-4dp"
                 android:fontFamily="casual"
-                android:hint="¿Qué es un rollo?"
+                android:hint="@string/que_es_un_rollo"
                 android:textAlignment="gravity"
                 android:textColorHint="#000000"
                 android:textStyle="bold"

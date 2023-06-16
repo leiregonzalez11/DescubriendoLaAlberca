@@ -31,7 +31,7 @@
                 android:textColor="@color/black"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:text="Busto de Maurice Legendre"
+                android:text="@string/busto"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 tools:targetApi="o" />

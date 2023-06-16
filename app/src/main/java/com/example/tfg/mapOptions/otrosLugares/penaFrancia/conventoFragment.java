@@ -47,7 +47,7 @@ public class conventoFragment extends DialogFragment {
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(infoView);
 
-        dbHelper = new GestorDB(getContext());
+        dbHelper = GestorDB.getInstance(requireContext());
         storageRef = FirebaseStorage.getInstance().getReference();
 
         assert getArguments() != null;

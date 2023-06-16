@@ -57,7 +57,7 @@ public class casaParqueymirador extends DialogFragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             if (button.equalsIgnoreCase("casaparque")) {
                 titulo.setText("Casa del Parque Natural de Las Batuecas-Sierra de Francia");

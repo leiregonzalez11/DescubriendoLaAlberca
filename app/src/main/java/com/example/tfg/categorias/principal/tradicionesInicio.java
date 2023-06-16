@@ -109,7 +109,7 @@ public class tradicionesInicio extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             datos = dbHelper.obtenerInfoTrad(idioma, "inicio", 2);
         }
 

@@ -96,7 +96,7 @@ public class leyendaPenaFrancia extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")) {
                 btn.setImageResource(R.drawable.ic_circle_arrow_right_solid);

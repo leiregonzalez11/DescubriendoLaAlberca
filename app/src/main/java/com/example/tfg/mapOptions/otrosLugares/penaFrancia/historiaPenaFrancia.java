@@ -101,7 +101,7 @@ public class historiaPenaFrancia extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoLugares(idioma, "historia", "peñadefrancia", 4);
         }

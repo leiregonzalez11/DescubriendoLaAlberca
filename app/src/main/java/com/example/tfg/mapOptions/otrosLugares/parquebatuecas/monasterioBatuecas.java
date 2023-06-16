@@ -103,7 +103,7 @@ public class monasterioBatuecas extends Fragment implements View.OnClickListener
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(requireContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(requireContext())) {
             storageRef = FirebaseStorage.getInstance().getReference();
 
             datos = dbHelper.obtenerInfoLugares(idioma, "monasteriointro", "batuecas", 2);

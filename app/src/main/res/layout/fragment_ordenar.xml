@@ -47,7 +47,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:fontFamily="casual"
-                android:text="Orden alfabético" />
+                android:text="@string/orden_alfabetico" />
 
             <RadioButton
                 android:id="@+id/radio_ztoa"
@@ -59,7 +59,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:fontFamily="casual"
-                android:text="Orden alfabético inverso" />
+                android:text="@string/orden_alfabetico_inverso" />
 
             <RadioButton
                 android:id="@+id/radio_asc"
@@ -72,7 +72,7 @@
                 android:checked="false"
                 android:textStyle="bold"
                 android:fontFamily="casual"
-                android:text="Popularidad ascendente"/>
+                android:text="@string/popularidad_ascendente"/>
 
             <RadioButton
                 android:id="@+id/radio_desc"
@@ -85,7 +85,7 @@
                 android:checked="false"
                 android:textStyle="bold"
                 android:fontFamily="casual"
-                android:text="Popularidad descendente" />
+                android:text="@string/popularidad_descendente" />
 
         </RadioGroup>
 

@@ -1,5 +1,6 @@
 package com.example.tfg;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,11 +20,20 @@ public class GestorDB extends SQLiteOpenHelper {
     private static final String DB_NAME = "BBDDprueba1";
     private static final int DB_VERSION = 20;
     private final Context context;
+    @SuppressLint("StaticFieldLeak")
+    private static GestorDB sInstance;
     private boolean seguir = true;
 
-    public GestorDB(@Nullable Context context) {
+    private GestorDB(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context = context;
+    }
+
+    public static synchronized GestorDB getInstance(Context context) {
+        if (sInstance == null) {
+            sInstance = new GestorDB(context.getApplicationContext());
+        }
+        return sInstance;
     }
 
     @Override

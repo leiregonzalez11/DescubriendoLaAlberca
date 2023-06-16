@@ -52,7 +52,7 @@ public class ermitasFragment extends DialogFragment {
         TextView text3 = ermitaView.findViewById(R.id.ermita3text);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoMonumentos(idioma, ermita, 3);
         }

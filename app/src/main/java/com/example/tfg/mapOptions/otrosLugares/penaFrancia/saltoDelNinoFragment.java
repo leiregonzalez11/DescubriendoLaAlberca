@@ -50,7 +50,7 @@ public class saltoDelNinoFragment extends DialogFragment {
         ImageView img1 = infoView.findViewById(R.id.saltoimg1);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoLugares(idioma, "elsaltodelniño", "peñadefrancia", 3);
         }

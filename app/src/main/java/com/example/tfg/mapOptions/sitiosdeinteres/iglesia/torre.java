@@ -91,7 +91,7 @@ public class torre extends DialogFragment {
         storageRef = FirebaseStorage.getInstance().getReference();
         String[] datos;
         titulo.requestFocus();
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             datos = dbHelper.obtenerInfoMonumentos(idioma, mon, 7);
         }
 

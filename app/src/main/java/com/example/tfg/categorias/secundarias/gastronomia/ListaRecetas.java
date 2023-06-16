@@ -11,7 +11,7 @@ public class ListaRecetas {
     private final LinkedList<Receta> recetas;
 
     public ListaRecetas (Context context, String idioma){
-        try (GestorDB dbHelper = new GestorDB(context)) {
+        try (GestorDB dbHelper = GestorDB.getInstance(context.getApplicationContext())) {
             recetas = dbHelper.obtenerRecetas(idioma);
         }
     }

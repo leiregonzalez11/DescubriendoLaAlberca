@@ -8,6 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -18,6 +21,7 @@ import android.os.Bundle;
 import com.example.tfg.ajustes.Agradecimientos;
 import com.example.tfg.ajustes.QuienesSomos;
 import com.example.tfg.R;
+import com.example.tfg.ajustes.administrador.administrador_InicioSesion;
 import com.example.tfg.otherFiles.adapters.listViewAdapter;
 import com.example.tfg.ajustes.FormularioDeContacto;
 import com.example.tfg.ajustes.Idiomas;
@@ -53,6 +57,7 @@ public class Ajustes extends Fragment {
         TextView name = myToolbar.findViewById(R.id.name);
         name.setText(R.string.ajustes);
         name.setTextSize(20);
+        setHasOptionsMenu(true); //Indicamos que este Fragment tiene su propio menu de opciones
 
         args = new Bundle(); //Argumentos para el menu de opciones
         args.putString("iu", "ajustes");
@@ -152,6 +157,24 @@ public class Ajustes extends Fragment {
 
     }
 
+    /** Menu Administrador */
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.navigation_admin, menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+
+        if (menuItem.getItemId() == R.id.navigation_admin) {//Creamos el fragmento
+            fragment = administrador_InicioSesion.newInstance();
+            cargarFragment(fragment);
+        } else {
+            return super.onOptionsItemSelected(menuItem);
+        }
+        return true;
+    }
+
     private void cargarFragment(Fragment fragment){
         // Obtenemos el administrador de fragmentos a través de la actividad
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -163,6 +186,5 @@ public class Ajustes extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
-
 
 }

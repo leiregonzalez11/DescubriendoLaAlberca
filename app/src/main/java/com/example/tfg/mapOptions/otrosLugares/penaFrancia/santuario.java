@@ -96,7 +96,7 @@ public class santuario extends Fragment implements View.OnClickListener {
         btn3.setOnClickListener(this);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoLugares(idioma, "elsantuario", "peñadefrancia", 1);
         }

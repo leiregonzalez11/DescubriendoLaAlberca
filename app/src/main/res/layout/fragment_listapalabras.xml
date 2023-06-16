@@ -18,7 +18,6 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/aref_ruqaa"
             android:gravity="center_horizontal"
-            android:text="A"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />

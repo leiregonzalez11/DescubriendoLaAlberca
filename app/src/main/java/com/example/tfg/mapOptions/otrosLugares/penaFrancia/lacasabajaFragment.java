@@ -58,7 +58,7 @@ public class lacasabajaFragment extends DialogFragment {
         ImageView img4 = infoView.findViewById(R.id.casaimg4);
 
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             datos = dbHelper.obtenerInfoLugares(idioma, "lacasabaja", "peñadefrancia", 7);
         }

@@ -48,7 +48,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Ayuntamiento"
+                android:text="@string/ayuntamiento"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
@@ -77,7 +77,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Crucero de la plaza"
+                android:text="@string/crucero_de_la_plaza"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
@@ -106,7 +106,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="casual"
-                android:text="Antiguas escuelas"
+                android:text="@string/antiguas_escuelas"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
@@ -135,7 +135,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Teatro"
+                android:text="@string/teatro"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
@@ -164,7 +164,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Retrato de Miguel de Unamuno"
+                android:text="@string/retrato_de_miguel_de_unamuno"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
@@ -193,7 +193,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="casual"
-                android:text="Biblioteca"
+                android:text="@string/biblioteca"
                 android:gravity='start'
                 android:textColor="@color/black"
                 android:textSize="18sp"/>

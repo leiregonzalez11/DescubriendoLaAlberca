@@ -61,7 +61,7 @@ public class ermitaspinturasmonasterio extends DialogFragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
         String[] datos;
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             if (button.equalsIgnoreCase("ermitas")) {
                 titulo.setText("Las ermitas de Batuecas");

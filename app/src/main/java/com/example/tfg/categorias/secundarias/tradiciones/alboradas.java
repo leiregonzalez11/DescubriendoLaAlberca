@@ -122,7 +122,7 @@ public class alboradas extends Fragment {
         titulo.requestFocus();
         String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 
-        try (GestorDB dbHelper = new GestorDB(getContext())) {
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
             //Obtención de datos desde la bbdd
             textoTrad = dbHelper.obtenerInfoTrad(idioma, nombreTradBBDD, 5);
