@@ -65,7 +65,7 @@
                 app:cardCornerRadius="15dp">
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnerTrajesFem"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginStart="15dp"

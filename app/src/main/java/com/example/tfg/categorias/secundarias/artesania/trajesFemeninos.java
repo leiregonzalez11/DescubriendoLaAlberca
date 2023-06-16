@@ -30,7 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import com.example.tfg.categorias.principal.artesaniaInicio;
 
 
-public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelectedListener{
+public class trajesFemeninos extends Fragment {
 
     private Bundle args;
     private GestorDB dbHelper;
@@ -78,7 +78,6 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
-
         }
 
         args.putString("idioma", idioma);
@@ -99,7 +98,7 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
             text3 = v.findViewById(R.id.arte33);
             img1 = v.findViewById(R.id.arte31img);
             img2 = v.findViewById(R.id.arte32img);
-            spinner = v.findViewById(R.id.spinner);
+            spinner = v.findViewById(R.id.spinnerTrajesFem);
         }
         return v;
     }
@@ -112,44 +111,33 @@ public class trajesFemeninos extends Fragment implements AdapterView.OnItemSelec
         dbHelper = GestorDB.getInstance(requireContext());
 
         //Spinner
-        String [] trajes = getResources().getStringArray(R.array.trajes_serranos);
-        spinner.setAdapter(new SpinnerAdapter(getContext(), R.layout.dropdownitemartesania, trajes));
-        spinner.setOnItemSelectedListener(this);
+        String [] rutas = getResources().getStringArray(R.array.trajes_serranos);
+        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitemartesania, rutas));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @SuppressLint({"SetTextI18n", "NewApi"})
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
+
+                String [] datos = dbHelper.obtenerDatosTrajes(idioma, "trajes",3, nombreTraje);
+
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+                storageRef = FirebaseStorage.getInstance().getReference();
+
+                obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "1.png", img1);
+                obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "2.png", img2);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
     }
-
-    @SuppressLint("SetTextI18n")
-    @RequiresApi(api = Build.VERSION_CODES.Q)
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-
-        nombreTraje = determinarTraje((String) adapterView.getItemAtPosition(position));
-
-        String [] datos = dbHelper.obtenerDatosTrajes(idioma, "trajes",3, nombreTraje);
-
-        if (nombreTraje.equalsIgnoreCase("vistas") & idioma.equalsIgnoreCase("en")){
-            text1.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text3.setText(datos[2]);
-        } else if (nombreTraje.equalsIgnoreCase("manteo") & idioma.equalsIgnoreCase("en")){
-            text1.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text2.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text3.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        } else{
-            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        }
-
-        storageRef = FirebaseStorage.getInstance().getReference();
-
-        obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "1.png", img1);
-        obtenerImagenFirebase("categorias/artesania/" + nombreTraje + "2.png", img2);
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {}
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
     private void obtenerImagenFirebase(String path, ImageView img){
