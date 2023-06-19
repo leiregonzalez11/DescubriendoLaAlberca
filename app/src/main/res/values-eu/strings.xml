@@ -240,6 +240,11 @@
     <string name="emailIncorrecto">El email introducido no es correcto. Pruebe de nuevo.</string>
     <string name="contraseñaIncorrecta">Contraseña incorrecta, inténtelo de nuevo.</string>
     <string name="regex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
+    <string name="seccionadmin">¿A qué sección desea acceder?</string>
+    <string name="whattodo">¿Qué deseas realizar?</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="anadir">Añadir</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -285,9 +290,9 @@
     </string-array>
 
     <string-array name="opcionesmapa">
+        <item>Interes guneak</item>
         <item>Parking-ak</item>
         <item>Zerbitzuak</item>
-        <item>Interes guneak</item>
         <item>Ingurualdeak</item>
     </string-array>
 

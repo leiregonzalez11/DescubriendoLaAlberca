@@ -16,7 +16,7 @@
             android:id="@+id/textomaps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:fontFamily="casual"
             android:text="@string/infomaps"
@@ -31,18 +31,66 @@
             app:layout_constraintVertical_bias="1.0">
         </TextView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="210dp"
+                android:layout_height="35dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/mapa"
+                app:layout_constraintEnd_toEndOf="@id/mapa"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@id/mapa"
+                app:layout_constraintTop_toTopOf="@id/mapa"
+                app:layout_constraintVertical_bias="0.97"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp">
+
+                <Spinner
+                    android:id="@+id/spinnerMapa"
+                    android:layout_width="200dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageButton
+                android:id="@+id/moninfo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:src="@drawable/ic_circle_info_solid"
+                android:textStyle="bold"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:tint="@color/black"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:background="@color/white"
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/mapa"
                 android:layout_width="match_parent"
-                android:layout_height="690dp"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -119,32 +167,6 @@
                 app:layout_constraintTop_toTopOf="@id/mapa"
                 app:layout_constraintVertical_bias="0.024"
                 tools:ignore="ContentDescription" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="170dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="210dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="@id/mapa"
-                app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.47"
-                app:layout_constraintStart_toStartOf="@id/mapa"
-                app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.97"
-                app:strokeColor="@color/black"
-                app:strokeWidth="2dp">
-
-                <Spinner
-                    android:id="@+id/spinnerMapa"
-                    android:layout_width="170dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black" />
-
-            </com.google.android.material.card.MaterialCardView>
 
             <Button
                 android:id="@+id/btnp1"
@@ -511,24 +533,6 @@
                 app:layout_constraintStart_toStartOf="@id/mapa"
                 app:layout_constraintTop_toTopOf="@id/mapa"
                 app:layout_constraintVertical_bias="0.033"
-                tools:ignore="ContentDescription" />
-
-            <ImageButton
-                android:id="@+id/moninfo"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:gravity="center"
-                android:src="@drawable/ic_circle_info_solid"
-                android:textStyle="bold"
-                android:background="@color/white"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@id/mapa"
-                app:layout_constraintEnd_toEndOf="@id/mapa"
-                app:layout_constraintHorizontal_bias="0.046"
-                app:layout_constraintStart_toStartOf="@id/mapa"
-                app:layout_constraintTop_toTopOf="@id/mapa"
-                app:layout_constraintVertical_bias="0.892"
-                app:tint="@color/black"
                 tools:ignore="ContentDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

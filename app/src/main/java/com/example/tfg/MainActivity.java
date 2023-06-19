@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         myToolbar.setTitleTextColor(R.color.white);
 
-        /*Cargamos la BD...*/
-        //try (GestorDB dbHelper = new GestorDB(getApplicationContext())) {}
-
         fragment_id = "inicio";
 
         //MENU

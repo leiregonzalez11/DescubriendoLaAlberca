@@ -3,12 +3,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ajustes.administrador.administrador_inicio">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HELLO :) FUNCIONA :)" />
+        android:scrollbarSize="8dp"
+        android:background="@color/white"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@color/white"
+            android:layout_margin="@dimen/fab_margin"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="@string/seccionadmin"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewA1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewA2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewA3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewA4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="15dp"
+                app:strokeWidth="3dp"
+                app:strokeColor="#880E4F"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ListView
+                    android:id="@+id/listviewA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NestedScrolling" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

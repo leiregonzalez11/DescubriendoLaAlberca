@@ -34,8 +34,8 @@
 
                 <ListView
                     android:id="@+id/listviewfem"
-                    android:layout_width="160dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     tools:ignore="NestedScrolling" />
 
@@ -54,8 +54,8 @@
 
                 <ListView
                     android:id="@+id/listviewmasc"
-                    android:layout_width="160dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     tools:ignore="NestedScrolling" />
 

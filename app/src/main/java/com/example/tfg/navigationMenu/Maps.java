@@ -151,9 +151,10 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         String selecteditem = adapterView.getSelectedItem().toString();
 
-        if (selecteditem.equalsIgnoreCase(opcionesSpinner[0])){ //Opcion seleccionada: Parking
+        if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){ //Opcion seleccionada: Parking
 
             setBtnParking();
+            btnminfo.setVisibility(View.GONE);
             setVisibilityP(true);
             setVisibilityM(false);
             setVisibilityS(false);
@@ -171,25 +172,25 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             }
         }
 
-        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){ //Opcion seleccionada: Sitios de interés
-            img1.setImageResource(R.drawable.planolaalbercabasico);
+        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[0])){ //Opcion seleccionada: Sitios de interés
+            img1.setImageResource(R.drawable.planolaalbercamonumentos);
             setBtnMonumentos();
+            btnminfo.setVisibility(View.VISIBLE);
             setVisibilityP(false);
             setVisibilityM(true);
             setVisibilityS(false);
         }
 
-        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[1])){ //Opcion seleccionada: Servicios
+        else if (selecteditem.equalsIgnoreCase(opcionesSpinner[2])){ //Opcion seleccionada: Servicios
             img1.setImageResource(R.drawable.planolaalbercaservicios);
             setBtnServicios();
+            btnminfo.setVisibility(View.VISIBLE);
             setVisibilityP(false);
             setVisibilityM(false);
             setVisibilityS(true);
         }
 
         else if (selecteditem.equalsIgnoreCase(opcionesSpinner[3])){
-            setVisibilityP(false);
-            setVisibilityP(false);
             args.putString("idioma", idioma);
             Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);
@@ -313,7 +314,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10.setVisibility(View.VISIBLE);
             btnm11.setVisibility(View.VISIBLE);
             btnm12.setVisibility(View.VISIBLE);
-            btnminfo.setVisibility(View.VISIBLE);
         }
 
         else{
@@ -327,7 +327,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btnm10.setVisibility(View.INVISIBLE);
             btnm11.setVisibility(View.INVISIBLE);
             btnm12.setVisibility(View.INVISIBLE);
-            btnminfo.setVisibility(View.INVISIBLE);
         }
 
     }
@@ -412,7 +411,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btns13.setVisibility(View.VISIBLE);
             btns14.setVisibility(View.VISIBLE);
             btns15.setVisibility(View.VISIBLE);
-            btnminfo.setVisibility(View.VISIBLE);
+
         }
 
         else{
@@ -431,7 +430,6 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
             btns13.setVisibility(View.INVISIBLE);
             btns14.setVisibility(View.INVISIBLE);
             btns15.setVisibility(View.INVISIBLE);
-            btnminfo.setVisibility(View.INVISIBLE);
         }
 
     }

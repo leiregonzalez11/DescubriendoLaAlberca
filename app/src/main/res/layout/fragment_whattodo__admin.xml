@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".otherFiles.dialogFragments.whatToDo_Admin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/whattodo"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnadminanadir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/anadir"
+                android:visibility="gone"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/btnadminmodificar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/modificar"
+                android:fontFamily="casual"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/btnadmineliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/eliminar"
+                android:visibility="gone"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                style="?android:attr/buttonBarButtonStyle" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

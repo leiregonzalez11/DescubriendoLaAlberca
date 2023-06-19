@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".categorias.secundarias.gastronomia.turroneras">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,5 +108,7 @@
             </Button>
 
         </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

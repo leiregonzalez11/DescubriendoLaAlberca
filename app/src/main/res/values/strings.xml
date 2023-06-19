@@ -193,11 +193,12 @@
     </string-array>
 
     <string-array name="opcionesmapa">
+        <item>Sitios de interés</item>
         <item>Parkings</item>
         <item>Servicios</item>
-        <item>Sitios de interés</item>
         <item>Alrededores</item>
     </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="comercio_intro">¿Qué serían los pueblos sin sus ultramarinos, sus tiendas de artesanía, las panaderias…? Por suerte, en La Alberca disponemos de una gran selección de ellas, donde tanto vecinos como curiosos pueden disfrutar de los productos locales:\n</string>
     <string name="fiestas_iniciotext">Las fiestas de pueblo son sinónimo de tradición, cultura y recreo, pero también son el escenario ideal para que sus gentes puedan desencorsetarse de la rigidez cotidiana de sus vidas. Todas las fiestas regionales se parecen y todas son especiales en su riqueza, por eso merecen tanto mimo como cualquier otro tipo de patrimonio cultural que merezca la pena conservarse, transmitiéndolas de generación en generación. \n</string>
@@ -297,6 +298,13 @@
     <string name="contraseñaIncorrecta">Contraseña incorrecta. Inténtelo de nuevo.</string>
     <string name="regex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
     <string name="administracion_ajustes">Administración: Ajustes</string>
+    <string name="seccionadmin">¿A qué sección desea acceder?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="whattodo">¿Qué deseas realizar?</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="anadir">Añadir</string>
 
 
 </resources>
