@@ -22,17 +22,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
             android:gravity="center"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/gastrotext"
-                android:layout_width="323dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="30sp"
+                android:textSize="27sp"
                 android:textColor="@color/black"
                 android:fontFamily="casual"
                 android:gravity="center"
@@ -57,15 +57,17 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
                     android:theme="@style/Theme.MaterialComponents.Light"
@@ -77,8 +79,8 @@
 
                     <Spinner
                         android:id="@+id/spinnerTipo"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
                         android:layout_marginStart="5dp"
                         android:backgroundTint="@color/black" />
 
@@ -86,11 +88,11 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:theme="@style/Theme.MaterialComponents.Light"
-                    android:layout_width="220dp"
-                    android:layout_height="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="10dp"
                     app:cardElevation="10dp"
                     app:strokeWidth="2dp"
                     app:strokeColor="@color/black"
@@ -98,8 +100,9 @@
 
                     <Spinner
                         android:id="@+id/spinnerRecetas"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="3dp"
                         android:backgroundTint="@color/black" />
 
                 </com.google.android.material.card.MaterialCardView>
@@ -539,7 +542,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="40dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:background="@drawable/borde_redondeado"

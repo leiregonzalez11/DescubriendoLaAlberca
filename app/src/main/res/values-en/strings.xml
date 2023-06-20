@@ -145,105 +145,107 @@
     <string name="comercio_intro">What would a village be without its grocery stores, craft shops, bakeries…? Fortunately, in La Alberca we have a large selection of them, where both locals and onlookers can enjoy local products:\n</string>
     <string name="fiestas_iniciotext">Village festivals are synonymous with tradition, culture and recreation, but they are also the ideal setting for the people to escape from the rigidity of their daily lives. All regional festivals are similar and all are special in their richness, which is why they deserve as much pampering as any other type of cultural heritage worth preserving, passing them on from generation to generation.</string>
     <string name="majadasyalrededores">Majadas Viejas and surroundings</string>
-    <string name="el_chorro">El chorro</string>
-    <string name="la_casa_del_parque">El Monasterio</string>
-    <string name="el_monasterio">El Monasterio</string>
-    <string name="las_pinturas_rupestres">Las Pinturas Rupestres</string>
+    <string name="el_chorro">The stream</string>
+    <string name="la_casa_del_parque">The park house</string>
+    <string name="el_monasterio">The Monastery</string>
+    <string name="las_pinturas_rupestres">The Cave Paintings</string>
     <string name="diccionario">Dictionary</string>
-    <string name="diccionario_albercano">Diccionario Albercano</string>
+    <string name="diccionario_albercano">Albercan Dictionary</string>
     <string name="intro_diccionario">Texto introducción a diccionario \n</string>
-    <string name="pulsa_boton">Pulsa sobre la imagen para más info.</string>
-    <string name="chorro2">El Chorro de Batuecas</string>
-    <string name="seguro_que_quieres_salir">¿Seguro que quieres salir?</string>
+    <string name="pulsa_boton">Click on the image for more info.</string>
+    <string name="chorro2">The Batuecas Stream</string>
+    <string name="seguro_que_quieres_salir">Sure you want to go out?</string>
     <string name="el_gasco">El Gasco</string>
     <string name="las_mestas">Las Mestas</string>
     <string name="riomalo_de_arriba">Riomalo de Arriba</string>
-    <string name="meandro_del_melero">Meandro del Melero</string>
-    <string name="chorro_de_la_meancera">Chorro de la Meancera</string>
+    <string name="meandro_del_melero">Meander of the Melero</string>
+    <string name="chorro_de_la_meancera">La Meancera Stream</string>
     <string name="lista_de_monumentos">MONUMENT LIST</string>
     <string name="ermita_sanblas">San Blás Hermitage</string>
     <string name="ermita_humilladero">Humilladero Hermitage</string>
     <string name="ermita_sanantonio">San Antonio Hermitage</string>
-    <string name="plaza_sanantonio">Plaza de San Antonio</string>
-    <string name="antiguo_hospicio">Antiguo Hospicio</string>
-    <string name="busto_legendre">Busto de Maurice Legendre</string>
-    <string name="iglesia_parroquial">Iglesia Parroquial</string>
+    <string name="plaza_sanantonio">San Antonio Square</string>
+    <string name="antiguo_hospicio">Old Hospice</string>
+    <string name="busto_legendre">Maurice Legendre\'s Bust</string>
+    <string name="iglesia_parroquial">Parochial Church</string>
     <string name="plaza_mayor">Plaza Mayor</string>
     <string name="la_puente">The Puente</string>
     <string name="barrio_el_castillo">El Castillo Neighbourhood</string>
-    <string name="iglesia">Iglesia de Nª Señora de la Asunción</string>
-    <string name="marrano_escultura">Escultura del Marrano de San Antón</string>
-    <string name="hornacina">Hornacina de la Ánimas Benditas</string>
-    <string name="predios">Predios</string>
+    <string name="iglesia">Nª Señora de la Asunción Church</string>
+    <string name="marrano_escultura">Marrano de San Antón Sculpture</string>
+    <string name="hornacina">Ánimas Benditas Recess</string>
+    <string name="predios">Predios (Lands)</string>
     <string name="arriba">Up</string>
-    <string name="espacio_del_viajero">Espacio del Viajero</string>
-    <string name="ordenar_por">Ordenar por…</string>
-    <string name="ayuntamiento">Ayuntamiento</string>
-    <string name="crucero_de_la_plaza">Crucero de la plaza</string>
-    <string name="antiguas_escuelas">Antiguas escuelas</string>
+    <string name="espacio_del_viajero">Traveller\'s Space</string>
+    <string name="ordenar_por">Sort by…</string>
+    <string name="ayuntamiento">City Council</string>
+    <string name="crucero_de_la_plaza">Cross of the square</string>
+    <string name="antiguas_escuelas">Old schools</string>
     <string name="teatro">Theatre</string>
-    <string name="retrato_de_miguel_de_unamuno">Retrato de Miguel de Unamuno</string>
+    <string name="retrato_de_miguel_de_unamuno">Portrait of Miguel de Unamuno</string>
     <string name="biblioteca">Library</string>
-    <string name="capilla_mayor">Capilla mayor</string>
-    <string name="sacristia">Sacristía</string>
-    <string name="torre_de_la_iglesia">Torre de la iglesia</string>
-    <string name="retablo_de_santa_ana">Retablo de Santa Ana</string>
-    <string name="retablo_virgenrosario">Retablo de la Virgen del Rosario</string>
-    <string name="pulpito">Púlpito</string>
-    <string name="cristobatallas">Retablo del Cristo de las Batallas</string>
-    <string name="porticos">Pórticos</string>
-    <string name="pilas_de_agua_bendita">Pilas de agua bendita</string>
-    <string name="pila_bautismal">Pila Bautismal</string>
-    <string name="espadana">Espadaña</string>
-    <string name="retablo_de_san_pedro">Retablo de San Pedro</string>
-    <string name="cristosudor">Retablo del Santo Cristo del Sudor</string>
-    <string name="virgencarmen">Retablo de la Virgen del Carmen</string>
-    <string name="virgenrosario">Capilla de la Virgen del Rosario</string>
-    <string name="servicios_leyenda">SERVICIOS - LEYENDA</string>
-    <string name="entidades_bancarias">Entidades Bancarias</string>
-    <string name="servicio_de_taxi">Servicio de Taxi</string>
-    <string name="peluqueria">Peluquería/Barbería</string>
-    <string name="centromedico">Centro Médico</string>
-    <string name="farmacia">Farmacia</string>
-    <string name="gimnasio_municipal">Gimnasio municipal</string>
-    <string name="piscina">Piscina Municipal</string>
+    <string name="capilla_mayor">Main chapel</string>
+    <string name="sacristia">Sacristy</string>
+    <string name="torre_de_la_iglesia">Church tower</string>
+    <string name="retablo_de_santa_ana">Saint Anne Altarpiece</string>
+    <string name="retablo_virgenrosario">Altarpiece of the Virgin of Rosario</string>
+    <string name="pulpito">Pulpit</string>
+    <string name="cristobatallas">Altarpiece of Christ of the Battles</string>
+    <string name="porticos">Porticos</string>
+    <string name="pilas_de_agua_bendita">Holy water fonts</string>
+    <string name="pila_bautismal">Baptismal font</string>
+    <string name="espadana">Bell Gable</string>
+    <string name="retablo_de_san_pedro">Saint Peter\'s Altarpiece</string>
+    <string name="cristosudor">Altarpiece of the Holy Christ of Sweat</string>
+    <string name="virgencarmen">Altarpiece of the Virgin of Carmen</string>
+    <string name="virgendolores">Chapel of the Virgin of Dolores</string>
+    <string name="servicios_leyenda">SERVICES - LEGEND</string>
+    <string name="entidades_bancarias">Banking Entities</string>
+    <string name="servicio_de_taxi">Taxi Service</string>
+    <string name="peluqueria">Hairdresser/Barbershop</string>
+    <string name="centromedico">Medical center</string>
+    <string name="farmacia">Pharmacy</string>
+    <string name="gimnasio_municipal">Municipal gymnasium</string>
+    <string name="piscina">Municipal Swimming Pool</string>
     <string name="guardia_civil">Guardia Civil</string>
-    <string name="gasolinera">Gasolinera</string>
-    <string name="oficina_de_turismo">Oficina de turismo</string>
-    <string name="la_casa_baja">La Casa Baja</string>
-    <string name="monasteriobatuecas">Monasterio de San José de Batuecas</string>
-    <string name="historia_del_monasterio">Historia del monasterio</string>
-    <string name="mirador_de_san_jose">Mirador de San José</string>
-    <string name="las_ermitas_de_las_batuecas">Las ermitas de Las Batuecas</string>
-    <string name="busto">Busto de Maurice Legendre</string>
-    <string name="quienessomostext">Descubriendo La Alberca no es más que un proyecto de Fin de Grado con ganas y grandes expectativas de convertirse en algo importante a futuro. \n\n ¿Su creador? \n\n Yo. Me llamo Leire, tengo 24 años y desde hace unos años estudio el grado de Ingeniería Informática en la especialidad de Gestión y Sistemas de Información en la Escuela de Ingeniería de Bilbao. \n\n Siempre me ha gustado llevar mi pueblo por bandera, presumir de él y darlo a conocer al mundo. Por ello, siempre tuve claro que mi trabajo de fin de grado sería de alguna manera un homenaje. Gracias a ello, en Septiembre de 2022 nació Descubriendo La Alberca.\n\n Espero que ésta aplicación te ayude, a tí querido lector, a entender el amor, el respeto y la admiración de la gente de La Alberca hacia su pueblo, hacia su hogar.\n</string>
-    <string name="orden_alfabetico">Orden alfabético</string>
-    <string name="orden_alfabetico_inverso">Orden alfabético inverso</string>
-    <string name="popularidad_ascendente">Popularidad ascendente</string>
-    <string name="popularidad_descendente">Popularidad descendente</string>
-    <string name="que_es_un_rollo">¿Qué es un rollo?</string>
-    <string name="el_salto_del_nino">El Salto del Niño</string>
-    <string name="teatro_casa_ducal">Teatro - Casa Ducal</string>
-    <string name="las_fuentes_de_la_alberca">Las fuentes de La Alberca</string>
-    <string name="el_pendon">El Pendón</string>
-    <string name="mapa_de_la_iglesia">Mapa de la iglesia</string>
-    <string name="plaza_de_la_iglesia">Plaza de la Iglesia</string>
-    <string name="mapa_de_la_plaza">Mapa de la plaza</string>
-    <string name="passwd">Contraseña</string>
-    <string name="login_admin">Inicio de Sesión - Administrador</string>
-    <string name="acceder">Acceder</string>
-    <string name="passwdVacia">La contraseña no puede estar vacía.</string>
-    <string name="passwdNoCoincide">Las contraseñas no coinciden.</string>
-    <string name="emailVacio">El email no puede estar vacío.</string>
-    <string name="emailNoValido">El email introducido no es correcto.</string>
-    <string name="emailIncorrecto">El email introducido no es correcto. Pruebe de nuevo.</string>
-    <string name="contraseñaIncorrecta">Contraseña incorrecta, inténtelo de nuevo.</string>
-    <string name="regex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
-    <string name="seccionadmin">¿A qué sección desea acceder?</string>
-    <string name="whattodo">¿Qué deseas realizar?</string>
-    <string name="modificar">Modificar</string>
-    <string name="eliminar">Eliminar</string>
-    <string name="anadir">Añadir</string>
+    <string name="gasolinera">Gas station</string>
+    <string name="oficina_de_turismo">Tourist information office</string>
+    <string name="la_casa_baja">The Low House</string>
+    <string name="monasteriobatuecas">San José de Batuecas Monastery</string>
+    <string name="historia_del_monasterio">Monastery history</string>
+    <string name="mirador_de_san_jose">San José viewpoint</string>
+    <string name="las_ermitas_de_las_batuecas">The hermitages of Las Batuecas</string>
+    <string name="busto">Bust of Maurice Legendre</string>
+    <string name="quienessomostext">Discovering La Alberca is nothing more than a Final Degree project with the desire and great expectations of becoming something important in the future. \n\n Its creator? \n\n Me. My name is Leire, I am 24 years old and since a few years ago I have been studying a degree in Computer Engineering specialising in Management and Information Systems at the School of Engineering in Bilbao. \n\n I have always liked to carry my town as a flag, to show it off and make it known to the world. For this reason, it was always clear to me that my final degree project would in some way be a tribute to it. Thanks to this, in September 2022 Descubriendo La Alberca was born. \n\n I hope that this application will help you, dear reader, to understand the love, respect and admiration of the people of La Alberca for their town, for their home. \n</string>
+    <string name="orden_alfabetico">Alphabetical order</string>
+    <string name="orden_alfabetico_inverso">Reverse alphabetical order</string>
+    <string name="popularidad_ascendente">Rising popularity</string>
+    <string name="popularidad_descendente">Declining popularity</string>
+    <string name="que_es_un_rollo">What is a rollo?</string>
+    <string name="el_salto_del_nino">The Child\'s Leap</string>
+    <string name="teatro_casa_ducal">Theatre - Ducal House</string>
+    <string name="las_fuentes_de_la_alberca">The fountains of La Alberca</string>
+    <string name="el_pendon">The Banner</string>
+    <string name="mapa_de_la_iglesia">Map of the church</string>
+    <string name="plaza_de_la_iglesia">Church Square</string>
+    <string name="mapa_de_la_plaza">Map of the Square</string>
+    <string name="passwd">Password</string>
+    <string name="login_admin">Login - Administrator</string>
+    <string name="acceder">Access</string>
+    <string name="passwdVacia">The password cannot be empty.</string>
+    <string name="passwdNoCoincide">Incorrect password, please try again.</string>
+    <string name="emailVacio">The email cannot be empty.</string>
+    <string name="emailNoValido">The email address you entered is invalid. Please try again.</string>
+    <string name="emailIncorrecto">The email address you entered is not correct. Please try again.</string>
+    <string name="contraseñaIncorrecta">Incorrect password, please try again.</string>
+    <string name="seccionadmin">Which section would you like to access?</string>
+    <string name="whattodo">What do you wish to do?</string>
+    <string name="modificar">Modify</string>
+    <string name="eliminar">Remove</string>
+    <string name="anadir">Add</string>
+    <string name="administracion_ajustes">Administration: Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>
@@ -293,6 +295,18 @@
         <item>Parkings</item>
         <item>Services</item>
         <item>Surroundings</item>
+    </string-array>
+
+    <string-array name="opcionesFiestas">
+        <item>Saint Anton</item>
+        <item>San Sebastián</item>
+        <item>Patron Saint festivities</item>
+        <item>Carnivals</item>
+        <item>The Candelas</item>
+        <item>Holy Week</item>
+        <item>Drinks Day</item>
+        <item>Pilgrimage of Majadas Viejas</item>
+        <item>Christ of Sweat</item>
     </string-array>
 
 </resources>
