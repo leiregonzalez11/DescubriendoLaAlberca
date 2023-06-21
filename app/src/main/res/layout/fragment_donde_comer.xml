@@ -6,70 +6,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".espacioDelViajero.DondeComer">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="casual"
             android:gravity="center"
-            android:orientation="vertical"
-            android:layout_margin="10dp"
-            tools:ignore="UselessParent">
+            android:text="@string/ajustes3"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="casual"
-                android:gravity="center"
-                android:text="@string/ajustes3"
-                android:textAlignment="gravity"
-                android:textColor="@color/black"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/donde_comer_intro"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            tools:targetApi="o" />
 
-            <com.example.tfg.otherFiles.adapters.JustifyTextView
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginBottom="40dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardElevation="10dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layoutComer"
+                app:tabIndicatorColor="#880E4F"
+                app:tabTextColor="@color/black"
+                app:tabSelectedTextColor="#880E4F"
+                app:tabTextAppearance="@style/tab_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerComer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="25dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:fontFamily="casual"
-                android:text="@string/donde_comer_intro"
-                android:gravity="center"
-                android:textAlignment="gravity" />
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="-20dp"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="-25dp"
-                android:layout_marginBottom="40dp"
-                app:cardElevation="10dp">
+        </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tab_layoutComer"
-                    app:tabIndicatorColor="#880E4F"
-                    app:tabTextColor="@color/black"
-                    app:tabSelectedTextColor="#880E4F"
-                    app:tabTextAppearance="@style/tab_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPagerComer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginBottom="-20dp"/>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

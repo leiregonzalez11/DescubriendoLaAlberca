@@ -148,7 +148,7 @@
     <string name="agradecimientotext" tools:ignore="Typos">Esta aplicación nace del amor a un pueblo, a su gente y a sus costumbres. He tenido la gran suerte de poder formar parte de ellas desde que nací, y aunque suene a tópico, no hay pueblo que mime más su historia y sus raíces que La Alberca. \n\nQuiero agradecer a todas las personas que, directa o indirectamente, se han involucrado en este loco proyecto. El tiempo que habeis dedicado en investigar sobre este maravilloso pueblo, las fotografías que habéis tomado en él y la dedicación para difundir al mundo el cariño que sentís por La Alberca han hecho que el resultado de esta aplicación sea mucho mejor de lo que podría haber imaginado. \nGracias, de corazón. \n\nGracias a mi familia y a mis amigos por el apoyo constante y por la ilusión al ver los avances de cada actualización de la aplicación y ver que de alguna manera, están representados en ella. \n\nFinalmente, gracias a mi madre y a mi tía Francis por estar dispuestas a colaborar en todo momento. Esta aplicación es tan mía como vuestra.\n\nGracias a ti, que estás detrás de la pantalla de tu dispositivo leyendo esto, tú eres el principal motivo de que esta aplicación exista. Ahora solo te queda una misión:\n\n </string>
     <string name="agradecimientostext2">Disfrutar de Descubriendo La Alberca\n</string>
     <string name="comercio_intro">¿Qué serían los pueblos sin sus ultramarinos, sus tiendas de artesanía, las panaderias…? Por suerte, en La Alberca disponemos de una gran selección de ellas, donde tanto vecinos como curiosos pueden disfrutar de los productos locales:\n</string>
-    <string name="fiestas_iniciotext">Las fiestas de pueblo son sinónimo de tradición, cultura y recreo, pero también son el escenario ideal para que sus gentes puedan desencorsetarse de la rigidez cotidiana de sus vidas. Todas las fiestas regionales se parecen y todas son especiales en su riqueza, por eso merecen tanto mimo como cualquier otro tipo de patrimonio cultural que merezca la pena conservarse, transmitiéndolas de generación en generación. \n</string>
+    <string name="fiestas_iniciotext">Las fiestas de pueblo son sinónimo de tradición, cultura y recreo, pero también son el escenario ideal para que sus gentes puedan desencorsetarse de la rigidez cotidiana de sus vidas. \n\nTodas las fiestas regionales se parecen y todas son especiales en su riqueza, por eso merecen tanto mimo como cualquier otro tipo de patrimonio cultural que merezca la pena conservarse, transmitiéndolas de generación en generación. \n</string>
     <string name="majadasyalrededores">Majadas Viejas y alrededores</string>
     <string name="el_chorro">El Chorro</string>
     <string name="el_monasterio">El Monasterio</string>
@@ -312,6 +312,8 @@
         <item>Dia del trago</item>
         <item>Romería de Majadas Viejas</item>
         <item>Cristo del Sudor</item>
+        <item>Santa Águeda</item>
+        <item>Corpus Christi</item>
     </string-array>
 
 

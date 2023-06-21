@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,22 +14,37 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.tfg.categorias.secundarias.fiestas.fiestasElector;
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.navigationMenu.Categorias;
+import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
+import com.google.android.gms.common.util.ArrayUtils;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class fiestasInicio extends Fragment implements View.OnClickListener {
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Objects;
 
-    private String idioma, mes, mesBBDD;
-    private ImageButton btnenero, btnfebrero, btnmarzo, btnabril, btnmayo, 
-            btnjunio, btnjulio, btnagosto, btnseptiembre, btnoctubre, btnnoviembre, btndiciembre;
+public class fiestasInicio extends Fragment implements AdapterView.OnItemSelectedListener {
+
+    private String idioma, nombreFiesta;
+    private Spinner spinner;
+    private Button upBtn;
+    private GestorDB dbHelper;
     private StorageReference storageRef;
+
+    private TextView text1,text2,text3,text4,text5,text6,text7,text8, focus, titulo;
+    private ImageView img1,img2,img3,img4,img5;
     Bundle args;
 
     /**
@@ -82,177 +98,246 @@ public class fiestasInicio extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_fiestas_inicio, container, false);
         if(v != null){
-            btnenero = v.findViewById(R.id.enerobtn);
-            btnfebrero = v.findViewById(R.id.febrerobtn);
-            btnmarzo = v.findViewById(R.id.marzobtn);
-            btnabril = v.findViewById(R.id.abrilbtn);
-            btnmayo = v.findViewById(R.id.mayobtn);
-            btnjunio = v.findViewById(R.id.juniobtn);
-            btnjulio = v.findViewById(R.id.juliobtn);
-            btnagosto = v.findViewById(R.id.agostobtn);
-            btnseptiembre = v.findViewById(R.id.septiembrebtn);
-            btnoctubre = v.findViewById(R.id.octubrebtn);
-            btnnoviembre = v.findViewById(R.id.noviembrebtn);
-            btndiciembre = v.findViewById(R.id.diciembrebtn);
+            spinner = v.findViewById(R.id.spinnerFiestas);
+            focus = v.findViewById(R.id.focusfiestas);
+            titulo = v.findViewById(R.id.tituloF);
+            text1 = v.findViewById(R.id.fiestas1);
+            text2 = v.findViewById(R.id.fiestas2);
+            text3 = v.findViewById(R.id.fiestas3);
+            text4 = v.findViewById(R.id.fiestas4);
+            text5 = v.findViewById(R.id.fiestas5);
+            text6 = v.findViewById(R.id.fiestas6);
+            text7 = v.findViewById(R.id.fiestas7);
+            text8 = v.findViewById(R.id.fiestas8);
+            upBtn = v.findViewById(R.id.upbtn);
+            img1  = v.findViewById(R.id.fiestaimg1);
+            img2  = v.findViewById(R.id.fiestaimg2);
+            img3  = v.findViewById(R.id.fiestaimg3);
+            img4  = v.findViewById(R.id.fiestaimg4);
+            img5  = v.findViewById(R.id.fiestaimg5);
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        setBtnListeners();
+
+        dbHelper = GestorDB.getInstance(requireContext());
+        storageRef = FirebaseStorage.getInstance().getReference();
+
+        String [] fiestas = getResources().getStringArray(R.array.opcionesFiestas);
+        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropsownitemsimple, fiestas));
+        spinner.setOnItemSelectedListener(this);
+
+        upBtn.setOnClickListener(v -> {
+            focus.clearFocus();
+            focus.requestFocus();
+        });
+
     }
 
-    @SuppressLint({"NonConstantResourceId", "ShowToast"})
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
-        ImageButton btn = (ImageButton) view;
+        titulo.setText((String) adapterView.getItemAtPosition(position));
+        nombreFiesta = determinarFiesta(position);
+        
+        if (position == 0 || position == 1){
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 2); //San Anton y San Sebastian
 
-        switch (btn.getId()){
+            text1.setVisibility(View.VISIBLE);
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setVisibility(View.VISIBLE);
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setVisibility(View.GONE);
+            text4.setVisibility(View.GONE);
+            text5.setVisibility(View.GONE);
+            text6.setVisibility(View.GONE);
+            text7.setVisibility(View.GONE);
+            text8.setVisibility(View.GONE);
 
-            case R.id.enerobtn:
-                mesBBDD = "enero";
-                if (idioma.equalsIgnoreCase("en")) mes = "January";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Urtarrila";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.GONE);
+            img3.setVisibility(View.GONE);
+            img4.setVisibility(View.GONE);
+            img5.setVisibility(View.GONE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            
+        } else if (position == 3 || position == 6 || position == 9){
+
+            if (position != 9){
+                String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 4); //Carnavales y Día del Trago
+
+                text1.setVisibility(View.VISIBLE);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setVisibility(View.VISIBLE);
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setVisibility(View.VISIBLE);
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text4.setVisibility(View.VISIBLE);
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text5.setVisibility(View.GONE);
+                text6.setVisibility(View.GONE);
+                text7.setVisibility(View.GONE);
+                text8.setVisibility(View.GONE);
+            } else {
+                String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 5); //Santa Águeda
+
+                text1.setVisibility(View.VISIBLE);
+                text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text2.setVisibility(View.VISIBLE);
+                text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text3.setVisibility(View.VISIBLE);
+                text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text4.setVisibility(View.VISIBLE);
+                text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text5.setVisibility(View.VISIBLE);
+                text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                text6.setVisibility(View.GONE);
+                text7.setVisibility(View.GONE);
+                text8.setVisibility(View.GONE);
+            }
+
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.VISIBLE);
+            img3.setVisibility(View.VISIBLE);
+            img4.setVisibility(View.GONE);
+            img5.setVisibility(View.GONE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
+            
+        } else if (position == 5 || position == 7){
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 3); //Majadas y Semana Santa
+
+            text1.setVisibility(View.VISIBLE);
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setVisibility(View.VISIBLE);
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setVisibility(View.VISIBLE);
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setVisibility(View.GONE);
+            text5.setVisibility(View.GONE);
+            text6.setVisibility(View.GONE);
+            text7.setVisibility(View.GONE);
+            text8.setVisibility(View.GONE);
+
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.VISIBLE);
+            img3.setVisibility(View.GONE);
+            img4.setVisibility(View.GONE);
+            img5.setVisibility(View.GONE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
+            
+            
+        } else if (position == 4){
+
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 8); //Las Candelas
+
+            text1.setVisibility(View.VISIBLE);
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setVisibility(View.VISIBLE);
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setVisibility(View.VISIBLE);
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setVisibility(View.VISIBLE);
+            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text5.setVisibility(View.VISIBLE);
+            text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text6.setVisibility(View.VISIBLE);
+            text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text7.setVisibility(View.VISIBLE);
+            text7.setText(datos[6] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text8.setVisibility(View.VISIBLE);
+            text8.setText(datos[7] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.VISIBLE);
+            img3.setVisibility(View.VISIBLE);
+            img4.setVisibility(View.VISIBLE);
+            img5.setVisibility(View.VISIBLE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "5.png", img5);
+            
+        } else if (position == 2 || position == 8 || position == 10){ //Fiestas Patronales y Cristo del Sudor //TODO
+
+            text1.setVisibility(View.GONE);
+            text2.setVisibility(View.GONE);
+            text3.setVisibility(View.GONE);
+            text4.setVisibility(View.GONE);
+            text5.setVisibility(View.GONE);
+            text6.setVisibility(View.GONE);
+            text7.setVisibility(View.GONE);
+            text8.setVisibility(View.GONE);
+
+            img1.setVisibility(View.GONE);
+            img2.setVisibility(View.GONE);
+            img3.setVisibility(View.GONE);
+            img4.setVisibility(View.GONE);
+            img5.setVisibility(View.GONE);
+        }
+        
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    /** Método utilizado para conocer la ruta elegida por el usuario para obtener la información */
+    private String determinarFiesta(int idFiesta) {
+
+        switch (idFiesta){
+            case 0:
+                nombreFiesta = "sananton";
                 break;
-            case R.id.febrerobtn:
-                mesBBDD = "febrero";
-                if (idioma.equalsIgnoreCase("en")) mes = "February";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Otsaila";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 1:
+                nombreFiesta = "sansebastian";
                 break;
-            case R.id.marzobtn:
-                mesBBDD = "marzo";
-                if (idioma.equalsIgnoreCase("en")) mes = "March";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Martxoa";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 2:
+                nombreFiesta = "fiestasagosto";
                 break;
-            case R.id.abrilbtn:
-                mesBBDD = "abril";
-                if (idioma.equalsIgnoreCase("en")) mes = "April";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Apirila";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 3:
+                nombreFiesta = "carnavales";
                 break;
-            case R.id.mayobtn:
-                mesBBDD = "mayo";
-                if (idioma.equalsIgnoreCase("en")) mes = "May";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Maiatza";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 4:
+                nombreFiesta = "lascandelas";
                 break;
-            case R.id.juniobtn:
-                mesBBDD = "junio";
-                if (idioma.equalsIgnoreCase("en")) mes = "June";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Ekaina";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 5:
+                nombreFiesta = "semanasanta";
                 break;
-            case R.id.juliobtn:
-                mesBBDD = "julio";
-                if (idioma.equalsIgnoreCase("en")) mes = "July";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Uztaila";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 6:
+                nombreFiesta = "diadeltrago";
                 break;
-            case R.id.agostobtn:
-                mesBBDD = "agosto";
-                if (idioma.equalsIgnoreCase("en")) mes = "August";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Abuztua";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 7:
+                nombreFiesta = "romeriamajadas";
                 break;
-            case R.id.septiembrebtn:
-                mesBBDD = "septiembre";
-                if (idioma.equalsIgnoreCase("en")) mes = "September";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Iraila";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 8:
+                nombreFiesta = "cristosudor";
                 break;
-            case R.id.octubrebtn:
-                mesBBDD = "octubre";
-                if (idioma.equalsIgnoreCase("en")) mes = "October";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Urria";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
-                break;
-            case R.id.noviembrebtn:
-                mesBBDD = "noviembre";
-                if (idioma.equalsIgnoreCase("en")) mes = "November";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Azaroa";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
-                break;
-            case R.id.diciembrebtn:
-                mesBBDD = "diciembre";
-                if (idioma.equalsIgnoreCase("en")) mes = "December";
-                else if (idioma.equalsIgnoreCase("eu")) mes = "Abendua";
-                else mes = mesBBDD.toUpperCase().charAt(0) + mesBBDD.substring(1).toLowerCase();
+            case 9:
+                nombreFiesta = "santaagueda";
                 break;
         }
 
-        args.putString("mes", mes);
-        args.putString("mesBBDD", mesBBDD);
-        Fragment fragment = fiestasElector.newInstance(args);
-        cargarFragment(fragment);
-    }
 
-
-    /** Setters de los listeners de las categorias */
-    @SuppressLint("WrongViewCast")
-    private void setBtnListeners() {
-
-        storageRef = FirebaseStorage.getInstance().getReference();
-
-        String path = "categorias/fiestas/portadameses/" + idioma + "/enero-" + idioma + ".png";
-        btnenero.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnenero);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/febrero-" + idioma + ".png";
-        btnfebrero.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnfebrero);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/marzo-" + idioma + ".png";
-        btnmarzo.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnmarzo);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/abril-" + idioma + ".png";
-        btnabril.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnabril);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/mayo-" + idioma + ".png";
-        btnmayo.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnmayo);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/junio-" + idioma + ".png";
-        btnjunio.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnjunio);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/julio-" + idioma + ".png";
-        btnjulio.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnjulio);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/agosto-" + idioma + ".png";
-        btnagosto.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnagosto);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/septiembre-" + idioma + ".png";
-        btnseptiembre.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnseptiembre);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/octubre-" + idioma + ".png";
-        btnoctubre.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnoctubre);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/noviembre-" + idioma + ".png";
-        btnnoviembre.setOnClickListener(this);
-        obtenerImagenFirebase(path, btnnoviembre);
-
-        path = "categorias/fiestas/portadameses/" + idioma + "/diciembre-" + idioma + ".png";
-        btndiciembre.setOnClickListener(this);
-        obtenerImagenFirebase(path, btndiciembre);
-
+        return nombreFiesta;
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
-    private void obtenerImagenFirebase(String path, ImageButton btn){
+    private void obtenerImagenFirebase(String path, ImageView btn){
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(btn));
     }

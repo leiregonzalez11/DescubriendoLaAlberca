@@ -112,7 +112,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:layout_margin="15dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -124,18 +124,17 @@
 
                 <ImageButton
                     android:id="@+id/play1"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="20dp"
                     android:background="@color/white"
                     android:src="@drawable/play"
-                    tools:ignore="ContentDescription">
-                </ImageButton>
+                    tools:ignore="ContentDescription" />
 
                 <ImageButton
                     android:id="@+id/pause1"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/pause"
                     tools:ignore="ContentDescription">
@@ -143,8 +142,8 @@
 
                 <ImageButton
                     android:id="@+id/stop1"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/stop"
                     tools:ignore="ContentDescription">
@@ -180,7 +179,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:layout_margin="15dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -192,8 +191,8 @@
 
                 <ImageButton
                     android:id="@+id/play2"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="20dp"
                     android:background="@color/white"
                     android:src="@drawable/play"
@@ -202,8 +201,8 @@
 
                 <ImageButton
                     android:id="@+id/pause2"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/pause"
                     tools:ignore="ContentDescription">
@@ -211,8 +210,8 @@
 
                 <ImageButton
                     android:id="@+id/stop2"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:background="@color/white"
                     android:src="@drawable/stop"
                     tools:ignore="ContentDescription">

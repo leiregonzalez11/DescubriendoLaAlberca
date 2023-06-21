@@ -59,8 +59,8 @@ public class DondeDormir extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_donde_dormir, container, false);
         if(v != null){
-            viewPager = v.findViewById(R.id.viewPager);
-            tabLayout  = v.findViewById(R.id.tab_layout);
+            viewPager = v.findViewById(R.id.viewPagerDormir);
+            tabLayout  = v.findViewById(R.id.tab_layoutDormir);
         }
         return v;
     }

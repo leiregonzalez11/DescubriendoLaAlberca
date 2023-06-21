@@ -43,7 +43,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:orientation="horizontal"
@@ -57,7 +57,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="casual"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:text="@string/_2_aspecto_interior"
                     tools:targetApi="o" />
 
@@ -69,7 +69,7 @@
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:background="@color/white"
-                    android:layout_marginStart="95dp"
+                    android:layout_marginStart="80dp"
                     android:layout_marginEnd="-3dp"
                     android:src="@drawable/ic_circle_arrow_left_solid"
                     app:tint="@color/black"
@@ -84,7 +84,7 @@
                     android:layout_gravity="end"
                     android:background="@color/white"
                     android:textStyle="bold"
-                    android:layout_marginStart="-10dp"
+                    android:layout_marginStart="-7dp"
                     android:src="@drawable/ic_circle_arrow_right_solid"
                     app:tint="@color/black"
                     android:importantForAccessibility="no">

@@ -392,4 +392,23 @@ public class GestorDB extends SQLiteOpenHelper {
         return descr;
     }
 
+    public String[] obtenerDatosFiestas(String idioma, String nombreFiesta, int numTV) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String descrip;
+        String [] descr = new String[numTV];
+        int i=0;
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descrFiesta FROM fiesta " +
+                "WHERE nombreFiesta = ? AND idioma = ?;", new String[]{nombreFiesta, idioma});
+        while (c.moveToNext()){
+            descrip = c.getString(0);
+            descr[i] = descrip;
+            i++;
+        }
+        c.close();
+        return descr;
+
+    }
 }

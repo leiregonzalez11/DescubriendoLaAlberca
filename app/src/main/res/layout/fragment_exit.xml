@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="-4dp"
             android:fontFamily="casual"
@@ -32,8 +32,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:gravity="end"
@@ -41,10 +41,9 @@
 
             <Button
                 android:id="@+id/buttonSi"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/button_tour"
@@ -55,11 +54,10 @@
 
             <Button
                 android:id="@+id/buttonNo"
-                android:layout_width="70dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="7dp"
-                android:layout_marginTop="-10dp"
                 android:background="#00FFFFFF"
                 android:fontFamily="casual"
                 android:text="@string/volver"

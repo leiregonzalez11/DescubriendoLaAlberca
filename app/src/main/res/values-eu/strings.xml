@@ -144,7 +144,7 @@
     <string name="agradecimientotext">Aplikazio hau herri batenganako, bere jendearenganako eta bere ohiturekiko maitasunetik sortzen da. Zorte handia izan dut jaio nintzenetik, eta topikoa badirudi ere, ez dago bere historia eta sustraiak La Albercak baino gehiago neurtzen dituen herririk.\n\nEskerrak eman nahi dizkiet proiektu ero honetan zuzenean edo zeharka parte hartu duten guztiei. Herri zoragarri honi buruz ikertzen eman duzuen denborak, bertan hartu dituzuen argazkiek eta La Albercari diozuen maitasuna munduari zabaltzeko dedikazioak aplikazio honen emaitza pentsa nezakeen baino askoz hobea izatea eragin dute. Eskerrik asko, bihotzez.\n\nEskerrik asko familiari eta lagunei etengabeko laguntzagatik eta ilusioagatik aplikazioaren eguneratze bakoitzaren aurrerapenak ikustean eta nolabait bertan ordezkatuta daudela ikustean.\n\nAzkenik, eskerrik asko amari eta izeba Francisi une oro laguntzeko prest egoteagatik. Aplikazio hau zuena bezain nirea da.\n\nZuri esker, hau irakurtzen ari zaren gailuaren pantailaren atzean zaudenez, zeu zara aplikazio hori egoteko arrazoi nagusia. Orain eginkizun bakarra duzu:\n\n</string>
     <string name="agradecimientostext2">La Alberca Deskubritzen disfrutatu \n</string>
     <string name="comercio_intro">Zer lirateke herriak beren janari-dendarik, artisautza-dendarik, okindegirik gabe? Zorionez, La Albercan bertako produktuez gozatzeko aukera paregabea dugu:\n</string>
-    <string name="fiestas_iniciotext">Herriko jaiak tradizioaren, kulturaren eta jolasaren sinonimoak dira, baina, era berean, eszenatoki ezin hobeak dira jendea eguneroko bizimoduaren zurruntasunetik askatzeko. Eskualdeko jai guztiek dute antza eta denak dira bereziak beren aberastasunean; horregatik, kontserbatzea merezi duen beste edozein kultur ondare bezain mimoa merezi dute, belaunaldiz belaunaldi transmitituz.</string>
+    <string name="fiestas_iniciotext">Herriko jaiak tradizioaren, kulturaren eta jolasaren sinonimoak dira, baina, era berean, eszenatoki ezin hobeak dira jendea eguneroko bizimoduaren zurruntasunetik askatzeko. \n\nEskualdeko jai guztiek dute antza eta denak dira bereziak beren aberastasunean; horregatik, kontserbatzea merezi duen beste edozein kultur ondare bezain mimoa merezi dute, belaunaldiz belaunaldi transmitituz.</string>
     <string name="majadasyalrededores">Majadas Viejas eta inguruak</string>
     <string name="el_chorro">El chorro</string>
     <string name="el_monasterio">El Monasterio</string>
@@ -217,7 +217,7 @@
     <string name="mirador_de_san_jose">Mirador de San José</string>
     <string name="las_ermitas_de_las_batuecas">Las ermitas de Las Batuecas</string>
     <string name="busto">Busto de Maurice Legendre</string>
-    <string name="quienessomostext">Descubriendo La Alberca no es más que un proyecto de Fin de Grado con ganas y grandes expectativas de convertirse en algo importante a futuro. \n\n ¿Su creador? \n\n Yo. Me llamo Leire, tengo 24 años y desde hace unos años estudio el grado de Ingeniería Informática en la especialidad de Gestión y Sistemas de Información en la Escuela de Ingeniería de Bilbao. \n\n Siempre me ha gustado llevar mi pueblo por bandera, presumir de él y darlo a conocer al mundo. Por ello, siempre tuve claro que mi trabajo de fin de grado sería de alguna manera un homenaje. Gracias a ello, en Septiembre de 2022 nació Descubriendo La Alberca.\n\n Espero que ésta aplicación te ayude, a tí querido lector, a entender el amor, el respeto y la admiración de la gente de La Alberca hacia su pueblo, hacia su hogar.\n</string>
+    <string name="quienessomostext">La Alberca Deskubritzen gradu amaierako proiektu bat baino ez da, etorkizunean zerbait garrantzitsua izateko gogoz eta itxaropen handiz egina.\n\n ¿Bere sortzailea?\n\n Ni. Leire dut izena, 24 urte ditut, eta duela urte batzuetatik Informatika Ingeniaritzako gradua ikasi dut Bilboko Ingeniaritza Eskolako Kudeaketa eta Informazio Sistemen espezialitatean.\n\n Beti gustatu izan zait nire herria banderatzat eramatea, harro egotea eta munduari ezagutaraztea. Horregatik, beti izan dut argi nire gradu amaierako lana nolabait omenaldi bat izango zela. Horri esker, 2022ko irailean Descubriendo La Alberca jaio zen.\n\n Espero dut aplikazio honek lagunduko dizula irakurle maiteari ulertzen La Albercako jendeak bere herriarekiko, etxearekiko duen maitasuna, errespetua eta miresmena.\n</string>
     <string name="orden_alfabetico">Orden alfabético</string>
     <string name="orden_alfabetico_inverso">Orden alfabético inverso</string>
     <string name="popularidad_ascendente">Popularidad ascendente</string>
@@ -308,6 +308,8 @@
         <item>Dia del trago</item>
         <item>Romería de Majadas Viejas</item>
         <item>Cristo del Sudor</item>
+        <item>Santa Águeda</item>
+        <item>Corpus Christi</item>
     </string-array>
 
 </resources>

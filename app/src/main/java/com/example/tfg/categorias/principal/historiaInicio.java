@@ -31,7 +31,7 @@ public class historiaInicio extends Fragment {
     private ImageView img1, img2, img3, img4, img5;
     private String idioma;
     private StorageReference storageRef;
-    private TextView text1, text2, text3, text4, text5, text6, pruebatexto;
+    private TextView text1, text2, text3, text4, text5, text6, pruebatexto, pruebatexto2, titulo;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -87,6 +87,8 @@ public class historiaInicio extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_historia_inicio, container, false);
         if(v != null){
             pruebatexto = v.findViewById(R.id.pruebatextoh);
+            pruebatexto2 = v.findViewById(R.id.pruebatextoh2);
+            titulo = v.findViewById(R.id.historiatitulo);
             text1 = v.findViewById(R.id.historia1);
             text2 = v.findViewById(R.id.historia2);
             text3 = v.findViewById(R.id.historia3);
@@ -117,6 +119,8 @@ public class historiaInicio extends Fragment {
             if (pruebatexto.getText().toString().equalsIgnoreCase("1")) {
                 ant.setVisibility(View.GONE);
                 sig.setVisibility(View.VISIBLE);
+                titulo.setVisibility(View.VISIBLE);
+
                 String[] datos = dbHelper.obtenerInfoHist("cat1", idioma, 6);
                 text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
                 text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -137,7 +141,9 @@ public class historiaInicio extends Fragment {
                 if (pruebatexto.getText().toString().equalsIgnoreCase("2")) {
                     ant.setVisibility(View.GONE);
                     sig.setVisibility(View.VISIBLE);
+                    titulo.setVisibility(View.VISIBLE);
                     pruebatexto.setText("1");
+                    pruebatexto2.setText("- 1 -");
 
                     String[] datos = dbHelper.obtenerInfoHist("cat1", idioma, 6);
 
@@ -159,7 +165,9 @@ public class historiaInicio extends Fragment {
                     pruebatexto.clearFocus();
                     ant.setVisibility(View.VISIBLE);
                     sig.setVisibility(View.VISIBLE);
+                    titulo.setVisibility(View.GONE);
                     pruebatexto.setText("2");
+                    pruebatexto2.setText("- 2 -");
 
                     String[] datos = dbHelper.obtenerInfoHist("cat2", idioma, 6);
 
@@ -185,7 +193,9 @@ public class historiaInicio extends Fragment {
                 if (pruebatexto.getText().toString().equalsIgnoreCase("1")) {
                     ant.setVisibility(View.VISIBLE);
                     sig.setVisibility(View.VISIBLE);
+                    titulo.setVisibility(View.GONE);
                     pruebatexto.setText("2");
+                    pruebatexto2.setText("- 2 -");
 
                     String[] datos = dbHelper.obtenerInfoHist("cat2", idioma, 6);
 
@@ -207,7 +217,9 @@ public class historiaInicio extends Fragment {
                     pruebatexto.clearFocus();
                     ant.setVisibility(View.VISIBLE);
                     sig.setVisibility(View.GONE);
+                    titulo.setVisibility(View.GONE);
                     pruebatexto.setText("3");
+                    pruebatexto2.setText("- 3 -");
 
                     String[] datos = dbHelper.obtenerInfoHist("cat3", idioma, 5);
 

@@ -32,8 +32,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/bars_solid"
+                android:layout_weight="2"
+                app:srcCompat="@drawable/sliders_solid__3_"
                 android:importantForAccessibility="no" />
 
 

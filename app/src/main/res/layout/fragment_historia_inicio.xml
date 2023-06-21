@@ -27,6 +27,22 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/historiatitulo"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "@string/historiamayus"
+                android:visibility="invisible"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <TextView
                 android:id="@+id/pruebatextoh"
                 android:layout_width="323dp"
                 android:layout_height="wrap_content"
@@ -41,20 +57,6 @@
                 android:textStyle="bold"
                 tools:targetApi="o"
                 tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="323dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="casual"
-                android:gravity="center"
-                android:text= "@string/historiamayus"
-                android:textAlignment="gravity"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
 
             <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/historia1"
@@ -174,6 +176,22 @@
                 android:gravity='center'
                 android:textSize="19sp"/>
 
+            <TextView
+                android:id="@+id/pruebatextoh2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "- 1 -"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -202,9 +220,9 @@
                     android:layout_marginStart="7dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
-                    android:visibility="invisible"
                     android:background="@color/white"
                     android:gravity="center"
+                    android:visibility="invisible"
                     android:src="@drawable/ic_circle_arrow_right_solid"
                     android:textStyle="bold"
                     app:tint="@color/black"

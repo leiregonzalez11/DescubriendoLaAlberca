@@ -41,7 +41,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:orientation="horizontal"
@@ -55,7 +55,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="casual"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:text="@string/_3_inscripciones"
                     tools:targetApi="o" />
 
@@ -67,7 +67,7 @@
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:background="@color/white"
-                    android:layout_marginStart="110dp"
+                    android:layout_marginStart="100dp"
                     android:src="@drawable/ic_circle_arrow_left_solid"
                     app:tint="@color/black"
                     android:importantForAccessibility="no">
@@ -77,7 +77,6 @@
                     android:id="@+id/arquisiguiente4"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="-5dp"
                     android:layout_gravity="end"
                     android:textStyle="bold"
