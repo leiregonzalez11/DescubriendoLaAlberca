@@ -52,7 +52,7 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     private Button btnp1,btnp2,btnp3,btnp4,btnp5, btnparking;
     private Button btns1,btns2,btns3,btns4,btns5,btns6,btns7,btns8,
             btns9,btns10,btns11,btns12,btns13,btns14,btns15;
-    private ImageButton btnm1,btnm2,btnm3,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
+    private Button btnm1,btnm2,btnm3,btnm5,btnm6,btnm7,btnm9,btnm10,btnm11,btnm12;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -338,28 +338,28 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
         if (monumento.contains("ermita")){
             fragment = new ermitasFragment();
             args.putString("ermita", monumento);
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         } else if (monumento.equalsIgnoreCase("iglesia")){
             fragment = new iglesiamapaFragment();
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         } else if (monumento.equalsIgnoreCase("plazamayor")){
             fragment = new plazamapaFragment();
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         } else if (monumento.equalsIgnoreCase("antiguohospicio")){
             fragment = new monumentos2();
             args.putString("monumento", monumento);
             args.putString("titulo", titulo);
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         } else if (monumento.equalsIgnoreCase("plazasanantonio") || monumento.equalsIgnoreCase("lapuente")
                 || monumento.equalsIgnoreCase("barrioelcastillo")) {
             fragment = new monumentos1();
             args.putString("monumento", monumento);
             args.putString("titulo", titulo);
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         }else if (monumento.equalsIgnoreCase("busto")){
             fragment = new monumentos7();
             args.putString("monumento", monumento);
-            zoomIn(fragment, btn);
+            cargarDialogFragment(fragment);
         } else if (monumento.equalsIgnoreCase("infomonumentos")){
             fragment = new infoMonuFragment();
             fragment.setCancelable(false);
@@ -459,15 +459,10 @@ public class Maps extends Fragment implements AdapterView.OnItemSelectedListener
     
     /** Métodos comunes */
 
-    public void zoomIn (DialogFragment fragment, View view){
-        Animation slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
-        view.startAnimation(slideAnimation);
-
-        new Handler().postDelayed(() -> {
-            fragment.setArguments(args);
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"fragment");
-        },900);
+    private void cargarDialogFragment(DialogFragment fragment){
+        fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");
     }
 
     private void cargarFragment(Fragment fragment){

@@ -9,9 +9,10 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:layout_margin="15dp"
+        android:layout_margin="12dp"
         app:srcCompat="@drawable/food"
-        android:importantForAccessibility="no" />
+        android:importantForAccessibility="no"
+        app:tint="@color/black" />
 
     <TextView
         android:id="@+id/textView"
