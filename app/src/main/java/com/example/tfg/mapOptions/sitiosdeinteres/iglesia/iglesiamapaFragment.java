@@ -26,7 +26,7 @@ import com.example.tfg.R;
 public class iglesiamapaFragment extends DialogFragment implements View.OnClickListener {
 
     private final Bundle args = new Bundle();
-    ImageButton iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano;
+    Button iglesia, predio1, predio2, predio3, predio4, predio5, hornacina, marrano;
     Animation slideAnimation;
     DialogFragment fragment;
     View iglesiaView;
@@ -92,7 +92,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
     @Override
     public void onClick(View view) {
 
-        ImageButton btn = (ImageButton) view;
+        Button btn = (Button) view;
 
         switch (btn.getId()) {
 
@@ -105,11 +105,11 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 fragment = new monumentos1();
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Marrano de San Antón");
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonIglesia:
                 DialogFragment iglesiaF = new iglesiaFragment();
-                zoomIn(iglesiaF, btn);
+                cargarDialogFragment(iglesiaF);
                 break;
             case R.id.buttonpredio1:
             case R.id.buttonpredio2:
@@ -120,21 +120,15 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 fragment = new monumentos3();
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Predios");
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
         }
     }
 
-    public void zoomIn (DialogFragment fragment, View view){
-
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
-        view.startAnimation(slideAnimation);
-
-        new Handler().postDelayed(() -> {
-            fragment.setArguments(args);
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"fragment");
-        },1000);
+    private void cargarDialogFragment(DialogFragment fragment){
+        fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");
     }
 
 

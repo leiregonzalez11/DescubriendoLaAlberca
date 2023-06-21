@@ -152,40 +152,37 @@
                     app:layout_constraintVertical_bias="0.0"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonAyuntamiento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="46dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/uno"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
-                    app:layout_constraintHorizontal_bias="0.544"
+                    app:layout_constraintHorizontal_bias="0.479"
                     app:layout_constraintStart_toStartOf="@id/plazamapa"
                     app:layout_constraintTop_toTopOf="@id/plazamapa"
-                    app:layout_constraintVertical_bias="0.151"
+                    app:layout_constraintVertical_bias="0.235"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonCrucero"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="47dp"
+                    android:layout_height="50dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/dos"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
-                    app:layout_constraintHorizontal_bias="0.382"
+                    app:layout_constraintHorizontal_bias="0.461"
                     app:layout_constraintStart_toStartOf="@id/plazamapa"
                     app:layout_constraintTop_toTopOf="@id/plazamapa"
-                    app:layout_constraintVertical_bias="0.574"
+                    app:layout_constraintVertical_bias="0.558"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonEscuelas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="53dp"
+                    android:layout_height="49dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/tres"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
                     app:layout_constraintHorizontal_bias="0.164"
@@ -194,46 +191,43 @@
                     app:layout_constraintVertical_bias="0.502"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonTeatro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="54dp"
+                    android:layout_height="47dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/cuatroi"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
-                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintHorizontal_bias="0.601"
                     app:layout_constraintStart_toStartOf="@id/plazamapa"
                     app:layout_constraintTop_toTopOf="@id/plazamapa"
-                    app:layout_constraintVertical_bias="0.869"
+                    app:layout_constraintVertical_bias="0.907"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonBiblioteca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="52dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/seisi"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
-                    app:layout_constraintHorizontal_bias="0.883"
+                    app:layout_constraintHorizontal_bias="0.954"
                     app:layout_constraintStart_toStartOf="@id/plazamapa"
                     app:layout_constraintTop_toTopOf="@id/plazamapa"
-                    app:layout_constraintVertical_bias="0.869"
+                    app:layout_constraintVertical_bias="1.0"
                     tools:ignore="ContentDescription" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/buttonUnamuno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="54dp"
+                    android:layout_height="45dp"
                     android:background="#00FFFFFF"
-                    android:src="@drawable/cinco"
                     app:layout_constraintBottom_toBottomOf="@id/plazamapa"
                     app:layout_constraintEnd_toEndOf="@id/plazamapa"
-                    app:layout_constraintHorizontal_bias="0.871"
+                    app:layout_constraintHorizontal_bias="0.851"
                     app:layout_constraintStart_toStartOf="@id/plazamapa"
                     app:layout_constraintTop_toTopOf="@id/plazamapa"
-                    app:layout_constraintVertical_bias="0.659"
+                    app:layout_constraintVertical_bias="0.702"
                     tools:ignore="ContentDescription" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

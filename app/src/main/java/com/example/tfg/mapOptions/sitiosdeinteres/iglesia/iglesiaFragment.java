@@ -163,24 +163,28 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
     private void setListenersBtnMapa() {
 
         ImageButton info = iglesiaView.findViewById(R.id.moninfo3);
-        ImageButton torre = iglesiaView.findViewById(R.id.torre);
-        ImageButton carmen = iglesiaView.findViewById(R.id.retablovirgencarmen);
-        ImageButton pedro = iglesiaView.findViewById(R.id.retablosanpedro);
-        ImageButton sudor = iglesiaView.findViewById(R.id.retablocristosudor);
-        ImageButton rosario = iglesiaView.findViewById(R.id.virgenrosario);
-        ImageButton capillacentral = iglesiaView.findViewById(R.id.capillacentral);
-        ImageButton salida1 = iglesiaView.findViewById(R.id.portico1);
-        ImageButton salida2 = iglesiaView.findViewById(R.id.portico2);
-        ImageButton pilab = iglesiaView.findViewById(R.id.pilabautismal);
-        ImageButton pila1 = iglesiaView.findViewById(R.id.pilaagua1);
-        ImageButton pila2 = iglesiaView.findViewById(R.id.pilaagua2);
-        ImageButton espadana = iglesiaView.findViewById(R.id.espadana);
-        ImageButton sacristia = iglesiaView.findViewById(R.id.sacristia);
-        ImageButton dolores = iglesiaView.findViewById(R.id.capilladolores);
-        ImageButton pulpito = iglesiaView.findViewById(R.id.pulpito);
-        ImageButton ana = iglesiaView.findViewById(R.id.retablosantaana);
-        ImageButton santoc = iglesiaView.findViewById(R.id.santocristo);
-        info.setOnClickListener(this);
+        Button torre = iglesiaView.findViewById(R.id.torre);
+        Button carmen = iglesiaView.findViewById(R.id.retablovirgencarmen);
+        Button pedro = iglesiaView.findViewById(R.id.retablosanpedro);
+        Button sudor = iglesiaView.findViewById(R.id.retablocristosudor);
+        Button rosario = iglesiaView.findViewById(R.id.virgenrosario);
+        Button capillacentral = iglesiaView.findViewById(R.id.capillacentral);
+        Button salida1 = iglesiaView.findViewById(R.id.portico1);
+        Button salida2 = iglesiaView.findViewById(R.id.portico2);
+        Button pilab = iglesiaView.findViewById(R.id.pilabautismal);
+        Button pila1 = iglesiaView.findViewById(R.id.pilaagua1);
+        Button pila2 = iglesiaView.findViewById(R.id.pilaagua2);
+        Button espadana = iglesiaView.findViewById(R.id.espadana);
+        Button sacristia = iglesiaView.findViewById(R.id.sacristia);
+        Button dolores = iglesiaView.findViewById(R.id.capilladolores);
+        Button pulpito = iglesiaView.findViewById(R.id.pulpito);
+        Button ana = iglesiaView.findViewById(R.id.retablosantaana);
+        Button santoc = iglesiaView.findViewById(R.id.santocristo);
+        info.setOnClickListener(v -> {
+            DialogFragment fragment = new infomonu3Fragment();
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"iglesia_fragment");
+        });
         torre.setOnClickListener(this);
         carmen.setOnClickListener(this);
         pedro.setOnClickListener(this);
@@ -206,43 +210,37 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        ImageButton btn = (ImageButton) view;
+        Button btn = (Button) view;
         DialogFragment fragment;
 
         switch (btn.getId()) {
-
-            case R.id.moninfo3:
-                fragment = new infomonu3Fragment();
-                fragment.setCancelable(false);
-                fragment.show(getChildFragmentManager(),"iglesia_fragment");
-                break;
             case R.id.santocristo:
                 String monumento = "retablocristobatallas";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo del Santo Cristo");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.retablosanpedro:
                 monumento = "retablosanpedro";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de San Pedro");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de Santa Ana");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.pulpito:
                 monumento = "pulpito";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Púlpito");
                 fragment = new pulpito();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.pilaagua1:
             case R.id.pilaagua2:
@@ -250,14 +248,14 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Pilas de agua bendita");
                 fragment = new monumentos1();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.pilabautismal:
                 monumento = "pilabautismal";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Pila Bautismal");
                 fragment = new monumentos1();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.retablocristosudor:
                 monumento = "retablocristosudor";
@@ -269,14 +267,14 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Capilla Mayor");
                 fragment = new monumentos4();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.espadana:
                 monumento = "espadaña";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Espadaña");
                 fragment = new monumentos1();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.portico1:
             case R.id.portico2:
@@ -294,28 +292,28 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Torre de la Iglesia");
                 fragment = new torre();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.sacristia:
                 monumento = "sacristia";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Sacristía");
                 fragment = new monumentos1();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.retablovirgencarmen:
                 monumento = "retablovirgendelcarmen";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Carmen");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retablo de la Virgen del Rosario");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
         }
 
@@ -327,15 +325,10 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
 
-    public void zoomIn (DialogFragment fragment, View view){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
-        view.startAnimation(slideAnimation);
-
-        new Handler().postDelayed(() -> {
-            fragment.setArguments(args);
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"fragment");
-        },900);
+    private void cargarDialogFragment(DialogFragment fragment){
+        fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");
     }
 
     public void zoomOut (){

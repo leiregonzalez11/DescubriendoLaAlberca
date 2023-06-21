@@ -97,12 +97,12 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
     }
 
     private void setListeners(View plazaMView) {
-        ImageButton ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
-        ImageButton teatro = plazaMView.findViewById(R.id.buttonTeatro);
-        ImageButton biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
-        ImageButton crucero = plazaMView.findViewById(R.id.buttonCrucero);
-        ImageButton unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
-        ImageButton escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
+        Button ayunt = plazaMView.findViewById(R.id.buttonAyuntamiento);
+        Button teatro = plazaMView.findViewById(R.id.buttonTeatro);
+        Button biblio = plazaMView.findViewById(R.id.buttonBiblioteca);
+        Button crucero = plazaMView.findViewById(R.id.buttonCrucero);
+        Button unamuno = plazaMView.findViewById(R.id.buttonUnamuno);
+        Button escuelas = plazaMView.findViewById(R.id.buttonEscuelas);
         ayunt.setOnClickListener(this);
         teatro.setOnClickListener(this);
         biblio.setOnClickListener(this);
@@ -116,7 +116,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        ImageButton btn = (ImageButton) view;
+        Button btn = (Button) view;
         DialogFragment fragment;
 
         switch (btn.getId()) {
@@ -125,7 +125,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Antiguas escuelas");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonBiblioteca:
                 monumento = "biblioteca";
@@ -136,39 +136,34 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Retrato Miguel de Unamuno");
                 fragment = new monumentos4();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Cruz de la plaza");
                 fragment = new monumentos3();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonAyuntamiento:
                 monumento = "ayuntamiento";
                 args.putString("monumento", monumento);
                 args.putString("titulo", "Ayuntamiento");
                 fragment = new monumentos2();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonTeatro:
                 monumento = "teatro";
                 fragment = new teatroFragment();
-                zoomIn(fragment, btn);
+                cargarDialogFragment(fragment);
                 break;
         }
     }
 
-    public void zoomIn (DialogFragment fragment, View view){
-        slideAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.zoom_in2);
-        view.startAnimation(slideAnimation);
-
-        new Handler().postDelayed(() -> {
-            fragment.setArguments(args);
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"fragment");
-        },900);
+    private void cargarDialogFragment(DialogFragment fragment){
+        fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");
     }
 
     public void zoomOut (){

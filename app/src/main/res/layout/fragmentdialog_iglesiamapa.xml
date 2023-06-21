@@ -64,119 +64,113 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonHornacina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="37dp"
                 android:background="#00FFFFFF"
+                android:importantForAccessibility="no"
                 android:src="@drawable/tres"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.609"
+                app:layout_constraintHorizontal_bias="0.594"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.426"
-                android:importantForAccessibility="no" />
+                app:layout_constraintVertical_bias="0.325" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonIglesia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="45dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/uno"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.445"
+                app:layout_constraintHorizontal_bias="0.464"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.533"
-                android:importantForAccessibility="no" />
+                app:layout_constraintVertical_bias="0.58" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonMarrano"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="47dp"
+                android:layout_height="36dp"
                 android:background="#00FFFFFF"
+                android:importantForAccessibility="no"
                 android:src="@drawable/dos"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.262"
+                app:layout_constraintHorizontal_bias="0.205"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
-                app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.544"
-                android:importantForAccessibility="no" />
+                app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonpredio1"
-                android:layout_width="30dp"
-                android:layout_height="31dp"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cuatroi"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintHorizontal_bias="0.136"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.599"
-                android:importantForAccessibility="no" />
+                app:layout_constraintVertical_bias="0.783" />
 
-            <ImageButton
+
+            <Button
                 android:id="@+id/buttonpredio2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="49dp"
+                android:layout_height="35dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cuatroi"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.408"
+                app:layout_constraintHorizontal_bias="0.565"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.088"
-                android:importantForAccessibility="no" />
+                app:layout_constraintVertical_bias="0.036" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonpredio3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="38dp"
+                android:layout_height="37dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cuatroi"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.781"
+                app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.502"
-                android:importantForAccessibility="no" />
+                app:layout_constraintVertical_bias="0.527" />
 
-
-            <ImageButton
+            <Button
                 android:id="@+id/buttonpredio4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:src="@drawable/cuatroi"
-                app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
-                app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.151"
-                app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
-                app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.348"
-                android:importantForAccessibility="no" />
+                android:layout_width="42dp"
+                android:layout_height="42dp"
 
-            <ImageButton
-                android:id="@+id/buttonpredio5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:src="@drawable/cuatroi"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
                 app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
-                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintHorizontal_bias="0.042"
                 app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
                 app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
-                app:layout_constraintVertical_bias="0.999"
-                android:importantForAccessibility="no" />
-            
+                app:layout_constraintVertical_bias="0.455" />
+
+            <Button
+                android:id="@+id/buttonpredio5"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:background="#00FFFFFF"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/plazaiglesiamapa"
+                app:layout_constraintEnd_toEndOf="@id/plazaiglesiamapa"
+                app:layout_constraintHorizontal_bias="0.53"
+                app:layout_constraintStart_toStartOf="@id/plazaiglesiamapa"
+                app:layout_constraintTop_toTopOf="@id/plazaiglesiamapa"
+                app:layout_constraintVertical_bias="1.0" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
