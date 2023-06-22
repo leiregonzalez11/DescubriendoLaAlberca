@@ -1,40 +1,45 @@
-package com.example.tfg.categorias.principal;
+package com.example.tfg.categorias.secundarias.cultura;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import com.example.tfg.R;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import android.annotation.SuppressLint;
-import android.widget.Button;
-import android.widget.TextView;
-
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import com.example.tfg.categorias.secundarias.cultura.deporte;
-import com.example.tfg.categorias.secundarias.cultura.diccionario.diccionario;
-import com.example.tfg.navigationMenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class culturaInicio extends Fragment {
+import com.example.tfg.R;
+import com.example.tfg.categorias.secundarias.cultura.diccionario.diccionario;
+import com.example.tfg.navigationMenu.Categorias;
 
-    Bundle args;
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link deporte#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class deporte extends Fragment {
+
+    private Bundle args;
     private String idioma;
-    Button btndic, btndeporte;
+    private Button btntresvalles, btntirolinas;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static culturaInicio newInstance(Bundle args) {
-        culturaInicio fragment = new culturaInicio();
+    public static deporte newInstance(Bundle args) {
+        deporte fragment = new deporte();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -42,7 +47,7 @@ public class culturaInicio extends Fragment {
     }
 
     /** Required empty public constructor */
-    public culturaInicio() {}
+    public deporte() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
@@ -50,13 +55,12 @@ public class culturaInicio extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
-        name.setText(R.string.categorias);
+        name.setText(R.string.cultura);
         name.setTextSize(20);
-        myToolbar.setNavigationOnClickListener(view12 -> {
+        myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
@@ -69,7 +73,6 @@ public class culturaInicio extends Fragment {
         }
 
         args.putString("idioma", idioma);
-
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -77,12 +80,11 @@ public class culturaInicio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_cultura_inicio, container, false);
-        if(v != null){
-            btndic = v.findViewById(R.id.diccionario);
-            btndeporte = v.findViewById(R.id.deporte);
+        View v = inflater.inflate(R.layout.fragment_deporte, container, false);
+        if (v != null){
+            btntresvalles = v.findViewById(R.id.tresvalles);
+            btntirolinas = v.findViewById(R.id.tirolinas);
         }
         return v;
     }
@@ -93,14 +95,12 @@ public class culturaInicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        btndic.setOnClickListener(v -> {
-            Fragment fragment = diccionario.newInstance(args);
-            cargarFragment(fragment);
+        btntresvalles.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Has Pulsado Tres Valles", Toast.LENGTH_SHORT).show();
         });
 
-        btndeporte.setOnClickListener(v -> {
-            Fragment fragment = deporte.newInstance(args);
-            cargarFragment(fragment);
+        btntirolinas.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Has Pulsado Tirolinas", Toast.LENGTH_SHORT).show();
         });
 
     }
@@ -116,4 +116,5 @@ public class culturaInicio extends Fragment {
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
     }
+
 }

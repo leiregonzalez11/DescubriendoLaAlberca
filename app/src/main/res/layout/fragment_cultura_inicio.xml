@@ -41,14 +41,54 @@
 
             <Button
                 android:id="@+id/diccionario"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:textStyle="bold"
+                android:padding="15dp"
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:background="@drawable/borde_redondeado"
-                android:text="@string/diccionario" />
+                android:text="@string/diccionario_albercano" />
+
+            <Button
+                android:id="@+id/medios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                android:text="@string/la_alberca_en_los_medios" />
+
+            <Button
+                android:id="@+id/personajesilustres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                android:text="Personajes ilustres" />
+
+            <Button
+                android:id="@+id/deporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"
+                android:text="@string/la_alberca_y_el_deporte" />
 
         </LinearLayout>
 

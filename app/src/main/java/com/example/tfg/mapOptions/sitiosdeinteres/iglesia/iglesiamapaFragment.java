@@ -104,7 +104,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 monumento = "marranosananton";
                 fragment = new monumentos1();
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Marrano de San Antón");
+                args.putString("titulo", String.valueOf(R.string.marrano_escultura));
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonIglesia:
@@ -119,7 +119,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 monumento = "predios";
                 fragment = new monumentos3();
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Predios");
+                args.putString("titulo", String.valueOf(R.string.predios));
                 cargarDialogFragment(fragment);
                 break;
         }

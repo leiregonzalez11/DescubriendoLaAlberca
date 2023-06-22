@@ -123,7 +123,7 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
             case R.id.buttonEscuelas:
                 monumento = "antiguasescuelas";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Antiguas escuelas");
+                args.putString("titulo", String.valueOf(R.string.antiguas_escuelas));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
@@ -134,21 +134,21 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
             case R.id.buttonUnamuno:
                 monumento = "retratomigueldeunamuno";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retrato Miguel de Unamuno");
+                args.putString("titulo", String.valueOf(R.string.retrato_de_miguel_de_unamuno));
                 fragment = new monumentos4();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Cruz de la plaza");
+                args.putString("titulo", String.valueOf(R.string.crucero_de_la_plaza));
                 fragment = new monumentos3();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonAyuntamiento:
                 monumento = "ayuntamiento";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Ayuntamiento");
+                args.putString("titulo", String.valueOf(R.string.ayuntamiento));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".categorias.secundarias.cultura.deporte">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        tools:ignore="UselessParent">
+
+    <TextView
+        android:id="@+id/gastrotext"
+        android:layout_width="323dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="27sp"
+        android:textColor="@color/black"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/la_alberca_y_el_deporte"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        tools:targetApi="o"
+        tools:ignore="HardcodedText" />
+
+    <com.example.tfg.otherFiles.adapters.JustifyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="casual"
+        android:text="La Alberca y el deporte han estado siempre muy unidos. Desde rutas senderistas, hasta carreras
+populares pasando por pruebas ciclistas o campeonatos de fútbol. Es más, La Alberca puede presumir de haber formado parte
+del recorrido de la Vuelta Ciclista a España en varias ocasiones.  \n"
+        android:textColor="@color/black"
+        android:gravity='center_horizontal'
+        android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/imgdeporte1"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/laalberca2"
+            android:contentDescription="Foto receta"
+            tools:ignore="HardcodedText">
+        </ImageView>
+
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="casual"
+            android:text="Pero sin duda alguna, hasta hace algunos años, la prueba
+ deportiva por excelencia en La Alberca y la Sierra de Francia ha sido la carrera de montaña Tres Valles. \n"
+            android:textColor="@color/black"
+            android:gravity='center_horizontal'
+            android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/tresvalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/borde_redondeado"
+        android:text="Tres Valles" />
+
+    <com.example.tfg.otherFiles.adapters.JustifyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="casual"
+        android:text="El gran paisaje del que dispone y del que se puede disfrutar en la Sierra de Francia lo convierte en el lugar idóneo
+para practicar multitud de deportes y actividades de aventuras al aire libre. Entre las actividades de carácter más
+aventurero que se puede llevar a cabo en la Sierra de Francia se encuentra la posibilidad de desarrollar escalada,
+rapel, trekking, piragüismo, tirolina, rutas con bicicleta de montaña, rutas a caballo, barranquismo, tiro con arco o
+ rafting, actividades la mayoría ofrecidas por negocios locales. \n"
+        android:textColor="@color/black"
+        android:gravity='center_horizontal'
+        android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/imgdeporte2"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/laalberca2"
+            android:contentDescription="Foto receta"
+            tools:ignore="HardcodedText">
+        </ImageView>
+
+    <com.example.tfg.otherFiles.adapters.JustifyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="casual"
+        android:text="Además, se puede disfrutar de deportes más tradicionales como fútbol, baloncesto, bowling o frontenis, gracias a las diferentes infraestructuras de ocio que ofrece La Alberca \n\n"
+        android:textColor="@color/black"
+        android:gravity='center_horizontal'
+        android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/imgdeporte3"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/laalberca2"
+            android:contentDescription="Foto receta"
+            tools:ignore="HardcodedText">
+        </ImageView>
+
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="casual"
+            android:text="Por ejemplo, si quisiéramos pasar una tarde llena de diversión en la naturaleza, se puede acudir al Parque de
+Aventura en Árboles de Las Batuecas en la Alberca en el que los árboles son los protagonistas. \n\n"
+            android:textColor="@color/black"
+            android:gravity='center_horizontal'
+            android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/tirolinas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/borde_redondeado"
+        android:text="Tirolinas" />
+
+    <com.example.tfg.otherFiles.adapters.JustifyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="casual"
+        android:text=""
+        android:textColor="@color/black"
+        android:gravity='center_horizontal'
+        android:textSize="18sp"/>
+
+    </LinearLayout>
+
+</ScrollView>

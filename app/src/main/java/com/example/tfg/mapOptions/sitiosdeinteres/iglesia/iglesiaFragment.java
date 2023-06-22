@@ -217,28 +217,28 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.santocristo:
                 String monumento = "retablocristobatallas";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo del Santo Cristo");
+                args.putString("titulo", String.valueOf(R.string.cristobatallas));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.retablosanpedro:
                 monumento = "retablosanpedro";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo de San Pedro");
+                args.putString("titulo", String.valueOf(R.string.retablo_de_san_pedro));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.retablosantaana:
                 monumento = "retablosantaana";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo de Santa Ana");
+                args.putString("titulo", String.valueOf(R.string.retablo_de_santa_ana));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.pulpito:
                 monumento = "pulpito";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Púlpito");
+                args.putString("titulo", String.valueOf(R.string.pulpito));
                 fragment = new pulpito();
                 cargarDialogFragment(fragment);
                 break;
@@ -246,33 +246,33 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.pilaagua2:
                 monumento = "pilasaguabendita";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Pilas de agua bendita");
+                args.putString("titulo", String.valueOf(R.string.pilas_de_agua_bendita));
                 fragment = new monumentos1();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.pilabautismal:
                 monumento = "pilabautismal";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Pila Bautismal");
+                args.putString("titulo", String.valueOf(R.string.pila_bautismal));
                 fragment = new monumentos1();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.retablocristosudor:
                 monumento = "retablocristosudor";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo del Cristo del Sudor");
+                args.putString("titulo", String.valueOf(R.string.cristosudor));
                 break;
             case R.id.capillacentral:
                 monumento = "capillamayor";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Capilla Mayor");
+                args.putString("titulo", String.valueOf(R.string.capilla_mayor));
                 fragment = new monumentos4();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.espadana:
                 monumento = "espadaña";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Espadaña");
+                args.putString("titulo", String.valueOf(R.string.espadana));
                 fragment = new monumentos1();
                 cargarDialogFragment(fragment);
                 break;
@@ -280,38 +280,38 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
             case R.id.portico2:
                 monumento = "porticos";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Pórticos de la iglesia");
+                args.putString("titulo", String.valueOf(R.string.porticos));
                 break;
             case R.id.capilladolores:
                 monumento = "dolores";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Capilla de la Virgen de los Dolores");
+                args.putString("titulo", String.valueOf(R.string.virgendolores));
                 break;
             case R.id.torre:
                 monumento = "torre";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Torre de la Iglesia");
+                args.putString("titulo", String.valueOf(R.string.torre_de_la_iglesia));
                 fragment = new torre();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.sacristia:
                 monumento = "sacristia";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Sacristía");
+                args.putString("titulo", String.valueOf(R.string.sacristia));
                 fragment = new monumentos1();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.retablovirgencarmen:
                 monumento = "retablovirgendelcarmen";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo de la Virgen del Carmen");
+                args.putString("titulo", String.valueOf(R.string.virgencarmen));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.virgenrosario:
                 monumento = "retablorosario";
                 args.putString("monumento", monumento);
-                args.putString("titulo", "Retablo de la Virgen del Rosario");
+                args.putString("titulo", String.valueOf(R.string.retablo_virgenrosario));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
