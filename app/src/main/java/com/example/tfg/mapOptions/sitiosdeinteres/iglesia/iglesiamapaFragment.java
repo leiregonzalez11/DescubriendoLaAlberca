@@ -19,6 +19,7 @@ import android.os.Bundle;
 
 import com.example.tfg.mapOptions.sitiosdeinteres.info.infomonu1Fragment;
 import com.example.tfg.mapOptions.sitiosdeinteres.monumentos1;
+import com.example.tfg.mapOptions.sitiosdeinteres.monumentos2;
 import com.example.tfg.mapOptions.sitiosdeinteres.monumentos3;
 import com.example.tfg.R;
 
@@ -98,13 +99,16 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
 
             case R.id.buttonHornacina:
                 String monumento = "hornacinaanimas";
-                Toast.makeText(getContext(), "Has pulsado:" + monumento, Toast.LENGTH_LONG).show();
+                fragment = new monumentos2();
+                args.putString("monumento", monumento);
+                args.putString("titulo",getResources().getString(R.string.hornacina));
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonMarrano:
                 monumento = "marranosananton";
                 fragment = new monumentos1();
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.marrano_escultura));
+                args.putString("titulo", getResources().getString(R.string.marrano_escultura));
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonIglesia:
@@ -119,7 +123,7 @@ public class iglesiamapaFragment extends DialogFragment implements View.OnClickL
                 monumento = "predios";
                 fragment = new monumentos3();
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.predios));
+                args.putString("titulo", getResources().getString(R.string.predios));
                 cargarDialogFragment(fragment);
                 break;
         }

@@ -123,32 +123,35 @@ public class plazamapaFragment extends DialogFragment implements View.OnClickLis
             case R.id.buttonEscuelas:
                 monumento = "antiguasescuelas";
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.antiguas_escuelas));
+                args.putString("titulo", getResources().getString(R.string.antiguas_escuelas));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonBiblioteca:
                 monumento = "biblioteca";
-                Toast.makeText(getContext(), "Has pulsado: " + monumento, Toast.LENGTH_LONG).show();
+                args.putString("monumento", monumento);
+                args.putString("titulo", getResources().getString(R.string.biblioteca));
+                fragment = new monumentos2();
+                cargarDialogFragment(fragment);
                 break;
             case R.id.buttonUnamuno:
                 monumento = "retratomigueldeunamuno";
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.retrato_de_miguel_de_unamuno));
+                args.putString("titulo", getResources().getString(R.string.retrato_de_miguel_de_unamuno));
                 fragment = new monumentos4();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonCrucero:
                 monumento = "crucero";
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.crucero_de_la_plaza));
+                args.putString("titulo", getResources().getString(R.string.crucero_de_la_plaza));
                 fragment = new monumentos3();
                 cargarDialogFragment(fragment);
                 break;
             case R.id.buttonAyuntamiento:
                 monumento = "ayuntamiento";
                 args.putString("monumento", monumento);
-                args.putString("titulo", String.valueOf(R.string.ayuntamiento));
+                args.putString("titulo", getResources().getString(R.string.ayuntamiento));
                 fragment = new monumentos2();
                 cargarDialogFragment(fragment);
                 break;
