@@ -246,8 +246,13 @@
     <string name="administracion_ajustes">Administration: Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="la_alberca_en_los_medios">La Alberca en los medios</string>
-    <string name="la_alberca_y_el_deporte">La Alberca y el deporte</string>
+    <string name="la_alberca_en_los_medios">La Alberca in the media</string>
+    <string name="la_alberca_y_el_deporte">La Alberca and sports</string>
+    <string name="textdeporte1">La Alberca and sport have always been closely linked. From hiking routes, to popular races, cycling events and football championships, La Alberca can boast of having been part of the route of the Vuelta Ciclista a España on several occasions. What\'s more, La Alberca can boast of having formed part of the route of the Vuelta Ciclista a España (Tour of Spain) on several occasions. \n</string>
+    <string name="textdeporte2">But without a doubt, until a few years ago, the sporting event par excellence in La Alberca and the Sierra de Francia has been the Tres Valles mountain race: an authentic endurance event with a variety of distances for all types of runners, with routes of infinite beauty through the Sierra de Francia Natural Park and the Las Batuecas Valley.\n</string>
+    <string name="textdeporte3">The great landscape of the Sierra de Francia makes it the ideal place to practice a multitude of sports and leisure activities. for a multitude of sports and outdoor adventure activities. Among the most adventurous activities that can be carried out in the Sierra de Francia include climbing, abseiling, trekking, canoeing, zip-lining, mountain biking, horse riding, canyoning, archery and rafting, most of which are offered by local businesses. \n</string>
+    <string name="textdeporte4">For example, if you would like to spend an afternoon full of fun in nature, you can go to the Parque de Aventura en Árboles de Las Batuecas in La Alberca, where the trees are the protagonists. \n</string>
+    <string name="textdeporte5">In addition, in La Alberca you can also enjoy more traditional sports such as football, basketball, bowls, petanque or frontenis, thanks to the different leisure infrastructures offered by the town. \n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

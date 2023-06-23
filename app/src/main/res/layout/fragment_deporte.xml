@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:fontFamily="casual"
-        android:text="@string/textodeporte1"
+        android:text="@string/textdeporte1"
         android:textColor="@color/black"
         android:gravity='center_horizontal'
         android:textSize="18sp"/>
@@ -45,7 +45,7 @@
         <ImageView
             android:id="@+id/imgdeporte1"
             android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_height="190dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="30dp"
@@ -57,7 +57,7 @@
         <com.example.tfg.otherFiles.adapters.JustifyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_marginStart="10dp"
             android:fontFamily="casual"
             android:text="@string/textdeporte2"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="-15dp"
         android:textStyle="bold"
         android:padding="15dp"
         android:textSize="18sp"
@@ -84,7 +84,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:fontFamily="casual"
-        android:text="@string/textdeporte4"
+        android:text="@string/textdeporte3"
         android:textColor="@color/black"
         android:gravity='center_horizontal'
         android:textSize="18sp"/>
@@ -95,7 +95,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/laalberca2"
             android:contentDescription="Foto receta"
             tools:ignore="HardcodedText">
@@ -107,47 +107,49 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:fontFamily="casual"
-        android:text="@string/textdeporte5"
+        android:text="@string/textdeporte4"
         android:textColor="@color/black"
         android:gravity='center_horizontal'
         android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/tirolinas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            android:padding="15dp"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:background="@drawable/borde_redondeado"
+            android:text="Parque de Aventura La Alberca" />
+
+
+        <com.example.tfg.otherFiles.adapters.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="casual"
+            android:text="@string/textdeporte5"
+            android:textColor="@color/black"
+            android:gravity='center_horizontal'
+            android:textSize="18sp"/>
 
         <ImageView
             android:id="@+id/imgdeporte3"
             android:layout_width="300dp"
             android:layout_height="200dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="50dp"
             android:src="@drawable/laalberca2"
             android:contentDescription="Foto receta"
             tools:ignore="HardcodedText">
         </ImageView>
 
-        <com.example.tfg.otherFiles.adapters.JustifyTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:fontFamily="casual"
-            android:text="@string/textdeporte6"
-            android:textColor="@color/black"
-            android:gravity='center_horizontal'
-            android:textSize="18sp"/>
-
-    <Button
-        android:id="@+id/tirolinas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:layout_marginBottom="40dp"
-        android:textStyle="bold"
-        android:layout_marginTop="-30dp"
-        android:padding="15dp"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:background="@drawable/borde_redondeado"
-        android:text="Tirolinas" />
 
     </LinearLayout>
 
