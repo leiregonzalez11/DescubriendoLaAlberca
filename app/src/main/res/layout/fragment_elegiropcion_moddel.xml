@@ -14,7 +14,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:textColor="@color/black"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="@string/elija_un_elemento_de_la_lista"
@@ -45,7 +45,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="420dp"
         android:theme="@style/Theme.MaterialComponents.Light"
         android:layout_marginEnd="15dp"

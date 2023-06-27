@@ -3,7 +3,6 @@ package com.example.tfg.ajustes.administrador;
 import static android.service.controls.ControlsProviderService.TAG;
 
 import android.annotation.SuppressLint;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -11,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -23,22 +21,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tfg.R;
-import com.example.tfg.categorias.principal.fiestasInicio;
+import com.example.tfg.ajustes.administrador.dialogs.confirmModifDelete;
+import com.example.tfg.ajustes.administrador.dialogs.whatToDo_Admin;
 import com.example.tfg.categorias.secundarias.cultura.diccionario.Palabra;
 import com.example.tfg.categorias.secundarias.cultura.diccionario.definicionpalabra;
 import com.example.tfg.espacioDelViajero.alojamiento.Alojamiento;
-import com.example.tfg.espacioDelViajero.alojamiento.alojamientoFragment;
 import com.example.tfg.espacioDelViajero.comercio.Comercio;
-import com.example.tfg.espacioDelViajero.comercio.tiendaFragment;
 import com.example.tfg.espacioDelViajero.restauracion.Establecimiento;
 import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
 import com.example.tfg.otherFiles.adapters.listViewAdapter;
-import com.example.tfg.otherFiles.dialogFragments.ordenarFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +42,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -90,7 +84,7 @@ public class elegirOpcionModDel extends Fragment {
         myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
-        name.setText("Administración: Inicio");
+        name.setText(getResources().getString(R.string.administracion_ajustes));
         name.setTextSize(20);
         myToolbar.setNavigationOnClickListener(view12 -> {
             myToolbar.setNavigationIcon(null);
@@ -102,6 +96,11 @@ public class elegirOpcionModDel extends Fragment {
             opcionElegida = getArguments().getString("choose");
             origen = getArguments().getString("origen");
         }
+
+        args = new Bundle();
+
+        args.putString("choose", opcionElegida);
+        args.putString("origen", origen);
 
     }
 
@@ -153,6 +152,7 @@ public class elegirOpcionModDel extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String categoria = (String) parent.getItemAtPosition(position);
+                args.putString("categoria", categoria);
                 cargarLista(categoria);
             }
 
@@ -161,12 +161,7 @@ public class elegirOpcionModDel extends Fragment {
         });
     }
 
-    private void cargarDialogFragment(){
-        DialogFragment fragment = new whatToDo_Admin();
-        fragment.setArguments(args);
-        fragment.setCancelable(false);
-        fragment.show(getChildFragmentManager(),"WHATTODOFRAGMENT");
-    }
+
 
     public void cargarLista (String categoria) {
 
@@ -209,10 +204,7 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreTienda = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("comercio", buscarComercio(nombreTienda, ps));
-                                //DialogFragment tiendaFragment = new tiendaFragment();
-                                //fragment = modificarDatos.newInstance(args);
-                                cargarFragment(fragment);
-
+                                cargarDialogFragment();
                             });
                             break;
 
@@ -239,9 +231,7 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreAloj = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("aloj", buscarAloj(nombreAloj, ps2));
-                                //DialogFragment tiendaFragment = new tiendaFragment();
-                                //fragment = modificarDatos.newInstance(args);
-                                cargarFragment(fragment);
+                                cargarDialogFragment();
                             });
                             break;
 
@@ -268,9 +258,7 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreRest = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("establ", buscarEst(nombreRest, ps3));
-                                //DialogFragment tiendaFragment = new tiendaFragment();
-                                //fragment = modificarDatos.newInstance(args);
-                                cargarFragment(fragment);
+                                cargarDialogFragment();
                             });
                             break;
 
@@ -296,11 +284,7 @@ public class elegirOpcionModDel extends Fragment {
                                 String palabra = adapterView.getItemAtPosition(position).toString();
                                 args.putString("palabra", palabra);
                                 args.putParcelable("palabra", buscarPalabra(ps4, palabra));
-
-                                DialogFragment defFr = new definicionpalabra();
-                                defFr.setArguments(args);
-                                defFr.setCancelable(false);
-                                defFr.show(getChildFragmentManager(),"def_fragment");
+                                cargarDialogFragment();
                             });
                             break;
                     }
@@ -419,6 +403,13 @@ public class elegirOpcionModDel extends Fragment {
         fragmentTransaction.addToBackStack(null);
         // Cambiamos el fragment en la interfaz
         fragmentTransaction.commit();
+    }
+
+    private void cargarDialogFragment(){
+        DialogFragment fragment = new confirmModifDelete();
+        fragment.setArguments(args);
+        fragment.setCancelable(false);
+        fragment.show(getChildFragmentManager(),"fragment");
     }
 
     public static void organizedAlphabeticList(List<String> list) {

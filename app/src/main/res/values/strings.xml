@@ -259,6 +259,10 @@
 de ocio que ofrece el pueblo. \n</string>
     <string name="elija_un_elemento_de_la_lista">Elija un elemento de la lista</string>
     <string name="introPueblos">Además de La Alberca, en la Sierra de Francia podemos encontrar otros 14 pueblos en los que se respira cultura y tradición, todos distintos entre ellos pero con algo en común: el amor y la fidelidad a sus raíces y a su Sierra de Francia.\n</string>
+    <string name="tituloconfirmmod">¿Estás seguro de modificar este registro?</string>
+    <string name="tituloconfirmdel">¿Estás seguro de eliminar este registro?</string>
+    <string name="modifok">Registro modificado correctamente.</string>
+    <string name="deleteok">Registro eliminado correctamente.</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

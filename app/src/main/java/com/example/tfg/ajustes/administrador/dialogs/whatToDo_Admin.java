@@ -1,4 +1,4 @@
-package com.example.tfg.ajustes.administrador;
+package com.example.tfg.ajustes.administrador.dialogs;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -20,6 +20,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.tfg.R;
+import com.example.tfg.ajustes.administrador.elegirOpcionModDel;
+
 public class whatToDo_Admin extends DialogFragment implements View.OnClickListener {
 
     Button anadir, modificar, eliminar;

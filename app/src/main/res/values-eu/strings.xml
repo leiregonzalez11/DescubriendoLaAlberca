@@ -256,6 +256,10 @@
     <string name="textdeporte5">Gainera, La Albercan kirol tradizionalagoez ere goza daiteke, hala nola futbola, saskibaloia, boloak, petanka edo frontenisa, herriak eskaintzen dituen aisialdirako azpiegiturei esker. \n</string>
     <string name="elija_un_elemento_de_la_lista">Elija un elemento de la lista</string>
     <string name="introPueblos">La Albercaz gain, Frantziako Mendilerroan kultura eta tradizioa arnasten duten beste 14 herri aurki ditzakegu, guztiak ezberdinak euren artean, baina zerbait komunarekin: sustraiekiko eta Frantziako mendilerroarekiko maitasuna eta leialtasuna.\n</string>
+    <string name="tituloconfirmmod">¿Estás seguro de modificar este registro?</string>
+    <string name="tituloconfirmdel">¿Estás seguro de eliminar este registro?</string>
+    <string name="modifok">Registro modificado correctamente.</string>
+    <string name="deleteok">Registro eliminado correctamente.</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
