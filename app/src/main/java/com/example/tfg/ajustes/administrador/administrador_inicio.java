@@ -18,14 +18,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.tfg.R;
-import com.example.tfg.espacioDelViajero.Comercio;
-import com.example.tfg.espacioDelViajero.ComoLlegar;
-import com.example.tfg.espacioDelViajero.DondeComer;
-import com.example.tfg.espacioDelViajero.DondeDormir;
 import com.example.tfg.navigationMenu.Ajustes;
-import com.example.tfg.navigationMenu.EspacioDelViajero;
 import com.example.tfg.otherFiles.adapters.listViewAdapter;
-import com.example.tfg.otherFiles.dialogFragments.whatToDo_Admin;
 
 import java.util.ArrayList;
 
@@ -35,8 +29,8 @@ public class administrador_inicio extends Fragment {
     Bundle args;
     Fragment fragment;
     Toolbar myToolbar;
-    ListView listView, listView2, listView3, listView4, listView5;
-    String opc1, opc2, opc3, opc4, opc5, origen;
+    ListView listView, listView2, listView3, listView5;
+    String opc1, opc2, opc3, opc5, origen;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -81,7 +75,6 @@ public class administrador_inicio extends Fragment {
             listView = v.findViewById(R.id.listviewA1);
             listView2 = v.findViewById(R.id.listviewA2);
             listView3 = v.findViewById(R.id.listviewA3);
-            listView4 = v.findViewById(R.id.listviewA4);
             listView5 = v.findViewById(R.id.listviewA5);
         }
         return v;
@@ -142,23 +135,6 @@ public class administrador_inicio extends Fragment {
 
         listView3.setOnItemClickListener((adapterView, v, position, id) -> {
             origen = "alojamiento";
-            cargarDialogFragment();
-        });
-
-     /*----------
-     | Servicios |
-     -----------*/
-
-        opc4 = "Servicios";
-
-        ArrayList<String> lista4 = new ArrayList<>();
-        lista4.add(opc4);
-
-        listViewAdapter myAdapter4 = new listViewAdapter(getContext(), R.layout.list_idiomas, lista4);
-        listView4.setAdapter(myAdapter4);
-
-        listView4.setOnItemClickListener((adapterView, v, position, id) -> {
-            origen = "servicios";
             cargarDialogFragment();
         });
 

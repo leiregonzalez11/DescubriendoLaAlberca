@@ -1,6 +1,6 @@
 {
 	"diccionario": {
-		"a": {
+		"ab": {
 			"Amesentao": {
 				"descrEs": "Que tiene miedo.",
 				"descrEu": "Beldurra duela.",
@@ -55,9 +55,7 @@
 				"descrEs": "Tubérculo comestible.",
 				"descrEu": "Jan ahal den tuberkulua.",
 				"descrEn": "Edible tuber."
-			}		
-		},
-		"b": {
+			},
 			"Bajero": {
 				"descrEs": "Que se usa o se pone debajo de otra cosa.",
 				"descrEu": "Beste zerbaiten gainean jartzen den arropa.",
@@ -97,7 +95,7 @@
 				"descrEs": "Manojo de cadenillas que cuelgan en el arranque del brazo del traje de vistas.",
 				"descrEu": "Vistas jantziaren besoaren abioan zintzilik dauden kateatxo sortak.",
 				"descrEn": "Bunch of chains hanging at the start of the arm of the Vistas suit."
-			}
+			}			
 		},
 		"c": {
 			"Cachas": {
@@ -221,7 +219,7 @@
 				"descrEn": "Mocking in the night imitating the cuckoo's sound."
 			}
 		},
-		"d": {
+		"de": {
 			"Dácalo": {
 				"descrEs": "Dámelo acá.",
 				"descrEu": "Hemen eman.",
@@ -256,10 +254,8 @@
 				"descrEs": "Aquellos dulces que se obsequian a las visitas para que se los lleven a sus casas: floretas, turruletes, etc.",
 				"descrEu": "Etxera eramateko bisitei oparitzen zaizkien gozokiak: floretak, turruleteak, etab.",
 				"descrEn": "Sweets that are given to visitors to take home with them: floretas, turruletes, etc."
-			}
-		},
-		"e": {
-			"Echaime": {
+			},
+						"Echaime": {
 				"descrEs": "Echadme.",
 				"descrEu": "Bota nazazue.",
 				"descrEn": "Throw me out of here."
@@ -352,7 +348,7 @@
 				"descrEn": "Cherry resin."
 			}
 		},			
-		"hj": {
+		"hi": {
 			"Hilos": {
 				"descrEs": "Collares de oro.",
 				"descrEu": "Urreko lepokoak.",
@@ -377,7 +373,10 @@
 				"descrEs": "Montaña en la Sierra de La Alberca lindante con Batuecas.",
 				"descrEu": "La Alberca mendilerroko mendia, Batuecasekin muga eginez.",
 				"descrEn": "Mountain in the Sierra de La Alberca bordering Batuecas."
-			},
+			}
+			
+		},
+		"jkl":{
 			"Jugón": {
 				"descrEs": "Vestidura que cubría desde los hombros hasta la cintura, ceñida y ajustada al cuerpo.",
 				"descrEu": "Soingainekoa sorbaldetatik gerriraino, estekatua eta gorputzari lotua.",
@@ -501,7 +500,7 @@
 				"descrEn": "Small fish anglers."
 			}
 		},
-		"p": {
+		"opq": {
 			"Pa": {
 				"descrEs": "Para.",
 				"descrEu": "-rako, -ko (Adibide bat: zertarako).",
@@ -645,7 +644,7 @@
 				"descrEn": "A phrase that indicated to pay no attention to anyone."
 			}
 		},
-		"t": {
+		"tuv": {
 			"Tabla": {
 				"descrEs": "Pechera de camisa.",
 				"descrEu": "Alkandoraren bularraldea.",
@@ -715,9 +714,7 @@
 				"descrEs": "Trajeron.",
 				"descrEu": "Ekarri zuten.",
 				"descrEn": "They brought."
-			}
-		},
-		"uvz": {
+			},
 			"Uña de gato": {
 				"descrEs": "Tipo de revoco áspero, hecho con escobilla fuerte.",
 				"descrEu": "Emokadura latz mota, eskuila sendoz egina.",
@@ -737,7 +734,9 @@
 				"descrEs": "Collares grandes del traje de vistas.",
 				"descrEu": "Vistas jantziaren iduneko handiak.",
 				"descrEn": "Large necklaces from the Vistas suit."
-			},
+			}
+		},
+		"wxyz": {
 			"Zambulerio": {
 				"descrEs": "Columpio.",
 				"descrEu": "Kulunka.",

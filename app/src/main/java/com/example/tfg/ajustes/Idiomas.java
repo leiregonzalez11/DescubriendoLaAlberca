@@ -76,13 +76,13 @@ public class Idiomas extends Fragment {
 
         if (texto.getText().toString().equals("Seleccione un idioma:")){
             radioCas.setChecked(true);
-            radioCas.setTextColor(R.color.purple_500);
+            radioCas.setTextColor(R.color.principal);
         } else if (texto.getText().toString().contains("aukeratu:")){
             radioEus.setChecked(true);
-            radioEus.setTextColor(R.color.purple_500);
+            radioEus.setTextColor(R.color.principal);
         }else if (texto.getText().toString().contains("language:")){
             radioIng.setChecked(true);
-            radioIng.setTextColor(R.color.purple_500);
+            radioIng.setTextColor(R.color.principal);
         }
 
         comprobarIdioma();

@@ -1,4 +1,4 @@
-package com.example.tfg.otherFiles.dialogFragments;
+package com.example.tfg.ajustes.administrador;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,9 @@ import com.example.tfg.R;
 public class whatToDo_Admin extends DialogFragment implements View.OnClickListener {
 
     Button anadir, modificar, eliminar;
+    String opcionElegida;
+    Bundle args;
+    Fragment fragment;
 
     @SuppressLint("InflateParams")
     @NonNull
@@ -40,6 +45,10 @@ public class whatToDo_Admin extends DialogFragment implements View.OnClickListen
 
         assert getArguments() != null;
         String origen = getArguments().getString("origen");
+
+        args = new Bundle();
+        args.putString("origen", origen);
+
 
         anadir = view.findViewById(R.id.btnadminanadir);
         modificar = view.findViewById(R.id.btnadminmodificar);
@@ -74,15 +83,36 @@ public class whatToDo_Admin extends DialogFragment implements View.OnClickListen
 
         switch (btn.getId()) {
             case R.id.btnadminanadir:
+                opcionElegida = "add";
+                args.putString("choose", opcionElegida);
                 Toast.makeText(getContext(), "Has pulsado: AÑADIR", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnadminmodificar:
-                Toast.makeText(getContext(), "Has pulsado: MODIFICAR", Toast.LENGTH_SHORT).show();
+                opcionElegida = "modif";
+                args.putString("choose", opcionElegida);
+                fragment = elegirOpcionModDel.newInstance(args);
+                cargarFragment(fragment);
                 break;
             case R.id.btnadmineliminar:
-                Toast.makeText(getContext(), "Has pulsado: ELIMINAR", Toast.LENGTH_SHORT).show();
+                opcionElegida = "del";
+                args.putString("choose", opcionElegida);
+                fragment = elegirOpcionModDel.newInstance(args);
+                cargarFragment(fragment);
                 break;
 
         }
     }
+
+    private void cargarFragment(Fragment fragment){
+        // Obtenemos el administrador de fragmentos a través de la actividad
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        // Definimos una transacción
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Remplazamos el contenido principal por el fragmento
+        fragmentTransaction.replace(R.id.relativelayout, fragment);
+        fragmentTransaction.addToBackStack(null);
+        // Cambiamos el fragment en la interfaz
+        fragmentTransaction.commit();
+    }
+
 }

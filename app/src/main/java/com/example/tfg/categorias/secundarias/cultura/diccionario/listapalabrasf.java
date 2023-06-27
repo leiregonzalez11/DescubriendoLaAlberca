@@ -72,6 +72,9 @@ public class listapalabrasf extends DialogFragment {
         }else if (letra.length() == 3){
             String tit = letra.charAt(0) + " - " + letra.charAt(1) + " - " + letra.charAt(2);
             letraTV.setText(tit.toUpperCase());
+        }else if (letra.length() == 4){
+            String tit = letra.charAt(0) + " - " + letra.charAt(1) + " - " + letra.charAt(2) +" - " + letra.charAt(3);
+            letraTV.setText(tit.toUpperCase());
         }
 
        setListView(infomView, letra);
@@ -110,7 +113,6 @@ public class listapalabrasf extends DialogFragment {
                         assert userData != null;
                         Palabra palabra = new Palabra((String) key, (String) userData.get("descrEs"), (String) userData.get("descrEu"), (String) userData.get("descrEn"));
                         ps.add(palabra);
-                        Log.d(TAG, "Value of palabras is: " + palabra.getNombrePalabra());
                     }
 
                     List<String> listaNombres = obtenerListaPalabras(ps);

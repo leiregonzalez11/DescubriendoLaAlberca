@@ -152,7 +152,7 @@
     <string name="las_pinturas_rupestres">Pintura labarrak</string>
     <string name="diccionario">Hiztegia</string>
     <string name="diccionario_albercano">La Albercako Hiztegia</string>
-    <string name="intro_diccionario">Texto introducción a diccionario \n</string>
+    <string name="intro_diccionario">Hiri-bizitzak eta beste fenomeno batzuek, hala nola emigrazioak, turismoak eta telebistak, landa-bizitzak eguneroko bizitzako tresnei, lanei edo jantziei izena emateko sortzen zituen hitzen erabilerarik eza eragin dute.\n\nHitz horiek desagertu egingo diren arren, oraindik asko dira haurtzaroan ikasitako landa-hizkera erabiltzen duten bertakoak. Hemen lexiko berezi honi leku egin nahi diogu:\n</string>
     <string name="pulsa_boton">Sakatu irudiaren gainean informazio gehiagorako.</string>
     <string name="chorro2">Batuecasko zurrusta</string>
     <string name="seguro_que_quieres_salir">-Ziur zaude irten nahi duzula?</string>
@@ -254,6 +254,8 @@
     <string name="textdeporte3">Frantziako mendilerroan duen eta goza daitekeen paisaia handia dela eta, leku ezin hobea da kirol eta abentura-jarduera ugari aire zabalean egiteko. Frantziako Mendilerroan egin daitezkeen jarduera abenturazaleenen artean, eskalada, rapela, trekkinga, piraguismoa, tirolina, mendiko bizikletarekin ibilbideak, zaldiko ibilbideak, sakanismoa, arku-tiroa edo raftinga garatzeko aukera dago. \n</string>
     <string name="textdeporte4">Adibidez, naturan dibertimenduz betetako arratsalde bat igaro nahi izanez gero, Aterpetxean dagoen Las Batuecaseko Zuhaitzetako Abentura Parkera joan gaitezke, bertan zuhaitzak baitira protagonista. \n</string>
     <string name="textdeporte5">Gainera, La Albercan kirol tradizionalagoez ere goza daiteke, hala nola futbola, saskibaloia, boloak, petanka edo frontenisa, herriak eskaintzen dituen aisialdirako azpiegiturei esker. \n</string>
+    <string name="elija_un_elemento_de_la_lista">Elija un elemento de la lista</string>
+    <string name="introPueblos">La Albercaz gain, Frantziako Mendilerroan kultura eta tradizioa arnasten duten beste 14 herri aurki ditzakegu, guztiak ezberdinak euren artean, baina zerbait komunarekin: sustraiekiko eta Frantziako mendilerroarekiko maitasuna eta leialtasuna.\n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>
@@ -317,6 +319,51 @@
         <item>Izerdiaren Kristoa</item>
         <item>Santa Ageda</item>
         <item>Corpus Christi</item>
+    </string-array>
+
+    <string-array name="spinnerHosteleria">
+        <item>Bar</item>
+        <item>Restaurante</item>
+    </string-array>
+
+    <string-array name="spinnerAlojamientoModif">
+        <item>Hotel</item>
+        <item>Apartamento</item>
+        <item>Casa Rural</item>
+        <item>Hospederia</item>
+    </string-array>
+
+    <string-array name="spinnerAlojamientoDelete">
+        <item>Hotel</item>
+        <item>Apartamento</item>
+        <item>Casa Rural</item>
+    </string-array>
+
+    <string-array name="spinnerComercio">
+        <item>Artesania</item>
+        <item>Alimentacion</item>
+    </string-array>
+
+    <string-array name="spinnerServicios">
+        <item>Banco</item>
+        <item>Medicos</item>
+        <item>Municipales</item>
+        <item>Peluquería</item>
+        <item>Transporte</item>
+    </string-array>
+
+    <string-array name="spinnerDiccionario">
+        <item>AB</item>
+        <item>C</item>
+        <item>DE</item>
+        <item>FG</item>
+        <item>HI</item>
+        <item>JKL</item>
+        <item>MNÑ</item>
+        <item>OPQ</item>
+        <item>RS</item>
+        <item>TUV</item>
+        <item>WXYZ</item>
     </string-array>
 
 </resources>

@@ -102,24 +102,6 @@
                 app:cardCornerRadius="15dp">
 
                 <ListView
-                    android:id="@+id/listviewA4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:ignore="NestedScrolling" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:layout_margin="15dp"
-                app:strokeWidth="3dp"
-                app:strokeColor="#880E4F"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="15dp">
-
-                <ListView
                     android:id="@+id/listviewA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

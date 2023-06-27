@@ -22,7 +22,7 @@ public class diccionario extends Fragment implements View.OnClickListener {
 
     private Bundle args;
     private String idioma, letra;
-    private ImageButton btna, btnb, btnc, btnd, btne, btnfg, btnhj, btnmn, btnp, btnrs, btnt, btnuvz;
+    private ImageButton btnab, btnde, btnc, btnhi, btnjkl, btnfg, btnopq, btnmn, btntuv, btnrs, btnwxyz;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -74,18 +74,17 @@ public class diccionario extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_diccionario, container, false);
         if (v != null){
-            btna = v.findViewById(R.id.a);
-            btnb = v.findViewById(R.id.b);
+            btnab = v.findViewById(R.id.ab);
             btnc = v.findViewById(R.id.c);
-            btnd = v.findViewById(R.id.d);
-            btne = v.findViewById(R.id.e);
+            btnde = v.findViewById(R.id.de);
             btnfg = v.findViewById(R.id.fg);
-            btnhj = v.findViewById(R.id.hj);
+            btnhi = v.findViewById(R.id.hi);
+            btnjkl = v.findViewById(R.id.jkl);
             btnmn = v.findViewById(R.id.mn);
-            btnp = v.findViewById(R.id.p);
+            btnopq = v.findViewById(R.id.opq);
             btnrs = v.findViewById(R.id.rs);
-            btnt = v.findViewById(R.id.t);
-            btnuvz = v.findViewById(R.id.uvz);
+            btntuv = v.findViewById(R.id.tuv);
+            btnwxyz = v.findViewById(R.id.wxyz);
         }
         setListeners();
         return v;
@@ -105,18 +104,17 @@ public class diccionario extends Fragment implements View.OnClickListener {
 
     /** Setter de Listeners para los botones de la interfaz*/
     private void setListeners() {
-        btna.setOnClickListener(this);
-        btnb.setOnClickListener(this);
+        btnab.setOnClickListener(this);
         btnc.setOnClickListener(this);
-        btnd.setOnClickListener(this);
-        btne.setOnClickListener(this);
+        btnde.setOnClickListener(this);
         btnfg.setOnClickListener(this);
-        btnhj.setOnClickListener(this);
+        btnhi.setOnClickListener(this);
+        btnjkl.setOnClickListener(this);
         btnmn.setOnClickListener(this);
-        btnp.setOnClickListener(this);
+        btnopq.setOnClickListener(this);
         btnrs.setOnClickListener(this);
-        btnt.setOnClickListener(this);
-        btnuvz.setOnClickListener(this);
+        btntuv.setOnClickListener(this);
+        btnwxyz.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -126,41 +124,38 @@ public class diccionario extends Fragment implements View.OnClickListener {
         ImageButton btn = (ImageButton) view;
 
         switch (btn.getId()) {
-            case R.id.a:
-                letra = "a";
-                break;
-            case R.id.b:
-                letra = "b";
+            case R.id.ab:
+                letra = "ab";
                 break;
             case R.id.c:
                 letra = "c";
                 break;
-            case R.id.d:
-                letra = "d";
-                break;
-            case R.id.e:
-                letra = "e";
+            case R.id.de:
+                letra = "de";
                 break;
             case R.id.fg:
                 letra = "fg";
                 break;
-            case R.id.hj:
-                letra = "hj";
+            case R.id.hi:
+                letra = "hi";
+                break;
+            case R.id.jkl:
+                letra = "jkl";
                 break;
             case R.id.mn:
                 letra = "mnñ";
                 break;
-            case R.id.p:
-                letra = "p";
+            case R.id.opq:
+                letra = "opq";
                 break;
             case R.id.rs:
                 letra = "rs";
                 break;
-            case R.id.t:
-                letra = "t";
+            case R.id.tuv:
+                letra = "tuv";
                 break;
-            case R.id.uvz:
-                letra = "uvz";
+            case R.id.wxyz:
+                letra = "wxyz";
                 break;
         }
 

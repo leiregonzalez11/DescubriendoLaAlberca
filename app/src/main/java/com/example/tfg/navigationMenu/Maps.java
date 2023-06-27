@@ -10,12 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,9 +21,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tfg.mapOptions.servicios.infoServFragment;
-import com.example.tfg.mapOptions.servicios.serviciosBasico;
-import com.example.tfg.mapOptions.servicios.serviciosElaborado;
+import com.example.tfg.mapOptions.parking.servicios.infoServFragment;
+import com.example.tfg.mapOptions.parking.servicios.serviciosBasico;
+import com.example.tfg.mapOptions.parking.servicios.serviciosElaborado;
 import com.example.tfg.mapOptions.sitiosdeinteres.monumentos7;
 import com.example.tfg.R;
 import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
