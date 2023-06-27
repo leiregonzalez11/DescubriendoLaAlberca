@@ -128,6 +128,7 @@
                                                     android:layout_marginTop="-10dp"
                                                     android:background="#00FFFFFF"
                                                     android:fontFamily="casual"
+                                                    android:inputType="textPassword"
                                                     android:imeOptions="actionDone"
                                                     android:textSize="18sp"
                                                     android:paddingTop="35dp"

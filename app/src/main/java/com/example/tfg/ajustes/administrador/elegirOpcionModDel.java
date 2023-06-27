@@ -168,7 +168,7 @@ public class elegirOpcionModDel extends Fragment {
         //Instancia a la base de datos
         FirebaseDatabase fdb = FirebaseDatabase.getInstance();
         //apuntamos al nodo que queremos leer
-        DatabaseReference myRef = fdb.getReference().child(origen).child(categoria.toLowerCase());
+        DatabaseReference myRef = fdb.getReference().child(origen).child(categoria.toLowerCase().replace(" ", ""));
 
         //Agregamos un ValueEventListener para que los cambios que se hagan en la base de datos
         //se reflejen en la aplicacion
@@ -204,7 +204,12 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreTienda = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("comercio", buscarComercio(nombreTienda, ps));
-                                cargarDialogFragment();
+                                if (opcionElegida.equals("del")){
+                                    cargarDialogFragment();
+                                } else {
+                                    fragment = addModif.newInstance(args);
+                                    cargarFragment(fragment);
+                                }
                             });
                             break;
 
@@ -231,7 +236,12 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreAloj = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("aloj", buscarAloj(nombreAloj, ps2));
-                                cargarDialogFragment();
+                                if (opcionElegida.equals("del")){
+                                    cargarDialogFragment();
+                                } else {
+                                    fragment = addModif.newInstance(args);
+                                    cargarFragment(fragment);
+                                }
                             });
                             break;
 
@@ -258,7 +268,12 @@ public class elegirOpcionModDel extends Fragment {
                                 //Obtenemos el nombre del elemento pulsado y cargamos su información
                                 String nombreRest = adapterView.getItemAtPosition(position).toString();
                                 args.putParcelable("establ", buscarEst(nombreRest, ps3));
-                                cargarDialogFragment();
+                                if (opcionElegida.equals("del")){
+                                    cargarDialogFragment();
+                                } else {
+                                    fragment = addModif.newInstance(args);
+                                    cargarFragment(fragment);
+                                }
                             });
                             break;
 
