@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:layout_margin="5dp"
     android:layout_height="80dp"
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_gravity="center_vertical"
-        android:layout_margin="15dp"
+        android:layout_margin="5dp"
         app:srcCompat="@drawable/monte"
         tools:ignore="ContentDescription" />
 
@@ -23,6 +24,6 @@
         android:fontFamily="casual"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:layout_gravity="center_vertical" />
 </LinearLayout>

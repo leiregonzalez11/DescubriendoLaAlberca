@@ -96,7 +96,7 @@
                             android:background="#00FFFFFF"
                             android:fontFamily="casual"
                             android:imeOptions="actionDone"
-                            android:textSize="18sp"
+                            android:textSize="16sp"
                             android:hint="@string/asuntoet"
                             android:paddingTop="35dp"
                             android:paddingLeft="15dp"

@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/pruebatextohurdes"
-                android:layout_width="323dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:gravity="center"
@@ -43,7 +43,7 @@
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="30sp"/>
+                android:textSize="25sp"/>
 
             <com.example.tfg.otherFiles.adapters.JustifyTextView
                 android:id="@+id/hurdes3infotext1"

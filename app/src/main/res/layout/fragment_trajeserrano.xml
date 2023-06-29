@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="7dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".categorias.secundarias.artesania.trajeserranoFragment">
 
@@ -21,7 +22,7 @@
             android:textStyle="bold"
             android:fontFamily="casual"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:text="@string/sel_options"
             android:gravity="center"/>
 
