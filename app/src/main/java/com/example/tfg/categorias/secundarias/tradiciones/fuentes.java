@@ -114,7 +114,7 @@ public class fuentes extends Fragment {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "Las fuentes de La Alberca";
-            titulo.setText(nombreTrad);
+            titulo.setText(getResources().getString(R.string.las_fuentes_de_la_alberca));
             titulo.requestFocus();
             String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

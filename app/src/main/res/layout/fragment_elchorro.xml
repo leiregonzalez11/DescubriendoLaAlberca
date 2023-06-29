@@ -301,6 +301,7 @@
                 android:layout_marginEnd="15dp"
                 android:paddingStart="7dp"
                 android:paddingEnd="0dp"
+                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:gravity='center_horizontal'
                 android:textSize="18sp"/>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".categorias.secundarias.tradiciones.bodaAlbercana">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pruebatextob"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="0sp"
+                android:textStyle="bold"
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/bodatitulo"
+                android:layout_width="323dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="@string/la_boda_albercana"
+                android:visibility="visible"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/boda1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+            <ImageView
+                android:id="@+id/bodaimg1"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/boda2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/boda3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+            <ImageView
+                android:id="@+id/bodaimg2"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/boda4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+
+            <ImageView
+                android:id="@+id/bodaimg3"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/laalberca2"
+                tools:ignore="ContentDescription" />
+
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/boda5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/pruebatextob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "- 1 -"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bodabtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_circle_arrow_left_solid"
+                    android:textStyle="bold"
+                    app:tint="@color/black"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/bodabtn2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_circle_arrow_right_solid"
+                    android:textStyle="bold"
+                    app:tint="@color/black"
+                    tools:ignore="ContentDescription">
+                </ImageButton>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

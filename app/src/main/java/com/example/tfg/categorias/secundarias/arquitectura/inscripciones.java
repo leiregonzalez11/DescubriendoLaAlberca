@@ -87,9 +87,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
             text3 = v.findViewById(R.id.arqui43);
             img1 = v.findViewById(R.id.arqui41img);
             img2 = v.findViewById(R.id.arqui42img);
-            siguienteBtn = v.findViewById(R.id.arquisiguiente4);
             siguienteBtn2 = v.findViewById(R.id.arquisiguiente44);
-            finBtn = v.findViewById(R.id.arquiAtras4);
             finBtn2 = v.findViewById(R.id.arquiAtras44);
         }
 
@@ -133,10 +131,13 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
 
         int id = btn.getId();
-        if ((id == R.id.arquisiguiente4) || (id == R.id.arquisiguiente44)) {
-            fragment = casaAlbercana.newInstance(args);
-        } else if ((id == R.id.arquiAtras4) || (id == R.id.arquiAtras44)){
-            fragment = aspectoInterior.newInstance(args);
+        switch (id) {
+            case R.id.arquisiguiente44:
+                fragment = casaAlbercana.newInstance(args);
+                break;
+            case R.id.arquiAtras44:
+                fragment = aspectoInterior.newInstance(args);
+                break;
         }
 
         assert fragment != null;

@@ -263,6 +263,8 @@ de ocio que ofrece el pueblo. \n</string>
     <string name="tituloconfirmdel">¿Estás seguro de eliminar este registro?</string>
     <string name="modifok">Registro modificado correctamente.</string>
     <string name="deleteok">Registro eliminado correctamente.</string>
+    <string name="personajes_ilustres">Personajes ilustres</string>
+    <string name="sel_options">Seleccione una de las opciones</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

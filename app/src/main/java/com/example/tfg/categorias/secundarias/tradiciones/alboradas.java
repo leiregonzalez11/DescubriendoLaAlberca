@@ -118,7 +118,7 @@ public class alboradas extends Fragment {
 
         //Setter de los textos de la interfaz
         String nombreTrad = "Las Alboradas";
-        titulo.setText(nombreTrad);
+        titulo.setText(getResources().getString(R.string.alboradas));
         titulo.requestFocus();
         String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

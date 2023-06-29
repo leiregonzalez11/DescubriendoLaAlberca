@@ -111,7 +111,7 @@ public class marranoSanAnton extends Fragment {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "El Marrano de San Antón";
-            titulo.setText(nombreTrad);
+            titulo.setText(getResources().getString(R.string.marrano));
             titulo.requestFocus();
             String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

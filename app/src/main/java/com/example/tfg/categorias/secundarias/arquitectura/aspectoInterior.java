@@ -94,9 +94,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
             img3 = v.findViewById(R.id.arqui33img);
             img4 = v.findViewById(R.id.arqui34img);
             img5 = v.findViewById(R.id.arqui35img);
-            atrasBtn = v.findViewById(R.id.arquiAtras3);
             atrasBtn2 = v.findViewById(R.id.arquiAtras33);
-            siguienteBtn = v.findViewById(R.id.arquisiguiente3);
             siguienteBtn2 = v.findViewById(R.id.arquisiguiente33);
         }
 
@@ -150,10 +148,13 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
         Fragment fragment = null;
 
         int id = btn.getId();
-        if ((id == R.id.arquisiguiente3) || (id == R.id.arquisiguiente33)) {
-            fragment = inscripciones.newInstance(args);
-        } else if ((id == R.id.arquiAtras3) || (id == R.id.arquiAtras33)){
-            fragment = aspectoExterior.newInstance(args);
+        switch (id) {
+            case R.id.arquisiguiente33:
+                fragment = inscripciones.newInstance(args);
+                break;
+            case R.id.arquiAtras33:
+                fragment = aspectoExterior.newInstance(args);
+                break;
         }
 
         if (fragment != null) {

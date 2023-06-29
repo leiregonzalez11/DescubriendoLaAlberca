@@ -49,18 +49,7 @@ public class trajeserranoFragment extends DialogFragment {
         /*---------------------------
          | El traje serrano femenino |
          ---------------------------*/
-
-        String opc1 = "El traje femenino";
-
-        ListView listView = view.findViewById(R.id.listviewfem);
-
-        ArrayList<String> lista = new ArrayList<>();
-        lista.add(opc1);
-
-        listViewAdapter myAdapter = new listViewAdapter(getContext(), R.layout.listview_artesania, lista);
-        listView.setAdapter(myAdapter);
-
-        listView.setOnItemClickListener((adapterView, v, position, id) -> {
+        view.findViewById(R.id.btnfem).setOnClickListener(v -> {
             Fragment fragment = trajesFemeninos.newInstance(args);
             cargarFragment(fragment);
         });
@@ -68,18 +57,7 @@ public class trajeserranoFragment extends DialogFragment {
         /*----------------------------
          | El traje serrano masculino |
          ----------------------------*/
-
-        String opc2 = "El traje masculino";
-
-        ListView listView2 = view.findViewById(R.id.listviewmasc);
-
-        ArrayList<String> lista2 = new ArrayList<>();
-        lista2.add(opc2);
-
-        listViewAdapter myAdapter2 = new listViewAdapter(getContext(), R.layout.listview_artesania, lista2);
-        listView2.setAdapter(myAdapter2);
-
-        listView2.setOnItemClickListener((adapterView, v, position, id) -> {
+        view.findViewById(R.id.btnmasc).setOnClickListener(v -> {
             Fragment fragment = trajeMasculino.newInstance(args);
             cargarFragment(fragment);
         });

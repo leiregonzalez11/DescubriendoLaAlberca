@@ -110,7 +110,7 @@ public class laLoa extends Fragment {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "La Loa";
-            titulo.setText(nombreTrad);
+            titulo.setText(getResources().getString(R.string.la_loa));
             titulo.requestFocus();
             String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

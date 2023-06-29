@@ -253,12 +253,14 @@
     <string name="textdeporte3">The great landscape of the Sierra de Francia makes it the ideal place to practice a multitude of sports and leisure activities. for a multitude of sports and outdoor adventure activities. Among the most adventurous activities that can be carried out in the Sierra de Francia include climbing, abseiling, trekking, canoeing, zip-lining, mountain biking, horse riding, canyoning, archery and rafting, most of which are offered by local businesses. \n</string>
     <string name="textdeporte4">For example, if you would like to spend an afternoon full of fun in nature, you can go to the Parque de Aventura en Árboles de Las Batuecas in La Alberca, where the trees are the protagonists. \n</string>
     <string name="textdeporte5">In addition, in La Alberca you can also enjoy more traditional sports such as football, basketball, bowls, petanque or frontenis, thanks to the different leisure infrastructures offered by the town. \n</string>
-    <string name="elija_un_elemento_de_la_lista">Elija un elemento de la lista</string>
+    <string name="elija_un_elemento_de_la_lista">Select one of the following list</string>
     <string name="introPueblos">In addition to La Alberca, in the Sierra de Francia we can find 14 other villages where you can breathe culture and tradition, all different from each other but with something in common: the love and loyalty to their roots and to their Sierra de Francia.\n</string>
-    <string name="tituloconfirmmod">¿Estás seguro de modificar este registro?</string>
-    <string name="tituloconfirmdel">¿Estás seguro de eliminar este registro?</string>
-    <string name="modifok">Registro modificado correctamente.</string>
-    <string name="deleteok">Registro eliminado correctamente.</string>
+    <string name="tituloconfirmmod">Are you sure you want to change this record?</string>
+    <string name="tituloconfirmdel">Are you sure you want to delete this record?</string>
+    <string name="modifok">Record successfully amended.</string>
+    <string name="deleteok">Record successfully deleted.</string>
+    <string name="personajes_ilustres">Illustrious personalities</string>
+    <string name="sel_options">Select one of the following options</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

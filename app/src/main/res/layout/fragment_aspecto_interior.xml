@@ -47,7 +47,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:orientation="horizontal"
-                android:layout_marginStart="15dp">
+                android:layout_marginStart="7dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -60,35 +60,6 @@
                     android:gravity="center_vertical"
                     android:text="@string/_2_aspecto_interior"
                     tools:targetApi="o" />
-
-                <ImageButton
-                    android:id="@+id/arquiAtras3"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:background="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginEnd="-3dp"
-                    android:src="@drawable/ic_circle_arrow_left_solid"
-                    app:tint="@color/black"
-                    android:importantForAccessibility="no">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/arquisiguiente3"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="end"
-                    android:background="@color/white"
-                    android:textStyle="bold"
-                    android:layout_marginStart="-7dp"
-                    android:src="@drawable/ic_circle_arrow_right_solid"
-                    app:tint="@color/black"
-                    android:importantForAccessibility="no">
-                </ImageButton>
 
             </LinearLayout>
 

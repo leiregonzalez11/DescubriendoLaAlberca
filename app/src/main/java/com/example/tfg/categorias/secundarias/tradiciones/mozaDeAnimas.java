@@ -126,7 +126,7 @@ public class mozaDeAnimas extends Fragment implements View.OnClickListener {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "La Moza de Ánimas";
-            titulo.setText(nombreTrad);
+            titulo.setText(getResources().getString(R.string.la_moza_de_animas));
             titulo.requestFocus();
             String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

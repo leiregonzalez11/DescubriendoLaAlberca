@@ -112,7 +112,7 @@ public class elpendon extends Fragment {
 
             //Setter de los textos de la interfaz
             String nombreTrad = "El Pendón";
-            titulo.setText(nombreTrad);
+            titulo.setText(getResources().getString(R.string.el_pendon));
             titulo.requestFocus();
             String nombreTradBBDD = nombreTrad.toLowerCase().replaceAll(" ", "");
 

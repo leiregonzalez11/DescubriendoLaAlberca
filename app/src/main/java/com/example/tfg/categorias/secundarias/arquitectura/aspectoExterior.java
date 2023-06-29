@@ -92,9 +92,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
             img1 = v.findViewById(R.id.arqui21img);
             img2 = v.findViewById(R.id.arqui22img);
             img3 = v.findViewById(R.id.arqui23img);
-            siguienteBtn = v.findViewById(R.id.arquisiguiente2);
             siguienteBtn2 = v.findViewById(R.id.arquisiguiente22);
-            finBtn = v.findViewById(R.id.arquiAtras2);
             finBtn2 = v.findViewById(R.id.arquiAtras22);
         }
         return v;
@@ -144,10 +142,13 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
         Fragment fragment = null;
 
         int id = btn.getId();
-        if ((btn.getId() == R.id.arquisiguiente2) || (id == R.id.arquisiguiente22)) {
-            fragment = aspectoInterior.newInstance(args);
-        } else if ((id == R.id.arquiAtras2) || (id == R.id.arquiAtras22)) {
-            fragment = arquitecturaInicio.newInstance(args);
+        switch (id) {
+            case R.id.arquisiguiente22:
+                fragment = aspectoInterior.newInstance(args);
+                break;
+            case R.id.arquiAtras22:
+                fragment = arquitecturaInicio.newInstance(args);
+                break;
         }
 
         assert fragment != null;

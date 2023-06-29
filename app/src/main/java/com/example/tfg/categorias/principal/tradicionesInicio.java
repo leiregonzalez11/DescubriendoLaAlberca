@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.tfg.R;
 import com.example.tfg.GestorDB;
+import com.example.tfg.categorias.secundarias.tradiciones.bodaAlbercana;
 import com.example.tfg.categorias.secundarias.tradiciones.fuentes;
 import com.example.tfg.categorias.secundarias.tradiciones.elpendon;
 import com.example.tfg.navigationMenu.Categorias;
@@ -168,9 +169,8 @@ public class tradicionesInicio extends Fragment {
          -------------------*/
 
         boda.setOnClickListener(v -> {
-            /*fragment = boda.newInstance(args);
-            cargarFragment(fragment);*/
-            Toast.makeText(requireContext(), "HAS PULSADO LA BODA ALBERCANA", Toast.LENGTH_SHORT).show();
+            fragment = bodaAlbercana.newInstance(args);
+            cargarFragment(fragment);
         });
 
         /*---------------------------

@@ -47,7 +47,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="-10dp"
                 android:orientation="horizontal"
-                android:layout_marginStart="15dp">
+                android:layout_marginStart="7dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -60,33 +60,6 @@
                     android:text="@string/_1_aspecto_exterior"
                     tools:targetApi="o"
                     tools:ignore="RtlHardcoded" />
-
-                <ImageButton
-                    android:id="@+id/arquiAtras2"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="end"
-                    android:background="@color/white"
-                    android:layout_marginStart="75dp"
-                    android:layout_marginEnd="-5dp"
-                    android:textStyle="bold"
-                    android:src="@drawable/ic_circle_arrow_left_solid"
-                    app:tint="@color/black"
-                    android:importantForAccessibility="no">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/arquisiguiente2"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:background="@color/white"
-                    android:layout_gravity="end"
-                    android:textStyle="bold"
-                    android:layout_marginStart="-7dp"
-                    android:src="@drawable/ic_circle_arrow_right_solid"
-                    app:tint="@color/black"
-                    android:importantForAccessibility="no">
-                </ImageButton>
 
             </LinearLayout>
 

@@ -18,7 +18,7 @@ import com.example.tfg.categorias.secundarias.gastronomia.Receta;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 21;
+    private static final int DB_VERSION = 22;
     private final Context context;
     @SuppressLint("StaticFieldLeak")
     private static GestorDB sInstance;
@@ -271,7 +271,7 @@ public class GestorDB extends SQLiteOpenHelper {
     }
 
     //Tabla Tradiciones
-    public String[] obtenerInfoTrad(String idioma, String interfaz, int numTV){
+    public String[] obtenerInfoTrad(String idioma, String nombreTrad, int numTV){
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -279,7 +279,7 @@ public class GestorDB extends SQLiteOpenHelper {
         int i = 0;
         String [] descr = new String[numTV];
 
-        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM tradiciones WHERE nombreTrad LIKE '" + interfaz + "%'" +
+        Cursor c = sqLiteDatabase.rawQuery("SELECT descr FROM tradiciones WHERE nombreTrad LIKE '" + nombreTrad + "%'" +
                 "AND idioma = ?;", new String [] {idioma});
         while (c.moveToNext()){
             descrip = c.getString(0);
