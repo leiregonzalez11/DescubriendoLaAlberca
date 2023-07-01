@@ -31,7 +31,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
     private ImageView img1, img2, img3;
     private StorageReference storageRef;
     private TextView text1, text2, text3;
-    private ImageButton siguienteBtn, siguienteBtn2, finBtn, finBtn2;
+    private ImageButton siguienteBtn, finBtn;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -92,8 +92,8 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
             img1 = v.findViewById(R.id.arqui21img);
             img2 = v.findViewById(R.id.arqui22img);
             img3 = v.findViewById(R.id.arqui23img);
-            siguienteBtn2 = v.findViewById(R.id.arquisiguiente22);
-            finBtn2 = v.findViewById(R.id.arquiAtras22);
+            siguienteBtn = v.findViewById(R.id.arquisiguiente22);
+            finBtn = v.findViewById(R.id.arquiAtras22);
         }
         return v;
     }
@@ -122,9 +122,7 @@ public class aspectoExterior extends Fragment implements View.OnClickListener{
 
         //BOTON SIGUIENTE y ATRAS
         siguienteBtn.setOnClickListener(this);
-        siguienteBtn2.setOnClickListener(this);
         finBtn.setOnClickListener(this);
-        finBtn2.setOnClickListener(this);
 
     }
 
