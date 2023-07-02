@@ -106,8 +106,11 @@ public class otrosLugaresInicio extends Fragment {
         listViewAdapter myAdapter5 = new listViewAdapter(getContext(), R.layout.list_monte, lista5);
         listView5.setAdapter(myAdapter5);
 
-        listView5.setOnItemClickListener((adapterView, v, position, id) ->
-                Toast.makeText(requireContext(), "No disponible en este momento", Toast.LENGTH_SHORT).show());
+        listView5.setOnItemClickListener((adapterView, v, position, id) ->{
+            Fragment fragment = majadasYAlrededores.newInstance(args);
+            cargarFragment(fragment);
+        });
+
 
         //Hurdes
         ArrayList<String> lista1 = new ArrayList<>();

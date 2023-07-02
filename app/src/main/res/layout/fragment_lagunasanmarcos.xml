@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mapOptions.otrosLugares.majadas.lagunaSanMarcos">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="8dp"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text= "Ermita de San Marcos"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/lag11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/lagimg1"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:src="@drawable/laalberca2"
+                android:layout_gravity="center"
+                android:layout_marginTop="-25dp"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/lag12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/lagimg2"
+                android:layout_width="300dp"
+                android:layout_height="270dp"
+                android:src="@drawable/laalberca2"
+                android:layout_gravity="center"
+                tools:ignore="ContentDescription" />
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/lag13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapViewlag"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="300dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="190dp" />
+
+            <com.example.tfg.otherFiles.adapters.JustifyTextView
+                android:id="@+id/lag14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="casual"
+                android:gravity='center'
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btnlag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/volver"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginBottom="40dp"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redondeado"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
