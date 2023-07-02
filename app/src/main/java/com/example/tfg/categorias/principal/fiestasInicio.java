@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,14 +25,8 @@ import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.example.tfg.navigationMenu.Categorias;
 import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
-import com.google.android.gms.common.util.ArrayUtils;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
 
 public class fiestasInicio extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -271,7 +264,38 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "5.png", img5);
             
-        } else if (position == 2 || position == 8){ //Fiestas Patronales y Cristo del Sudor //TODO
+        } else if (position == 8){
+
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 7); //Cristo del Sudor
+
+            text1.setVisibility(View.VISIBLE);
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setVisibility(View.VISIBLE);
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setVisibility(View.VISIBLE);
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setVisibility(View.VISIBLE);
+            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text5.setVisibility(View.VISIBLE);
+            text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text6.setVisibility(View.VISIBLE);
+            text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text7.setVisibility(View.VISIBLE);
+            text7.setText(datos[6] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text8.setVisibility(View.GONE);
+
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.VISIBLE);
+            img3.setVisibility(View.VISIBLE);
+            img4.setVisibility(View.VISIBLE);
+            img5.setVisibility(View.GONE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
+
+        } else if (position == 2){ //Fiestas Patronales //TODO
 
             text1.setVisibility(View.GONE);
             text2.setVisibility(View.GONE);
@@ -325,7 +349,7 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
                 nombreFiesta = "romeriamajadas";
                 break;
             case 8:
-                nombreFiesta = "cristosudor";
+                nombreFiesta = "cristodelsudor";
                 break;
             case 9:
                 nombreFiesta = "santaagueda";
