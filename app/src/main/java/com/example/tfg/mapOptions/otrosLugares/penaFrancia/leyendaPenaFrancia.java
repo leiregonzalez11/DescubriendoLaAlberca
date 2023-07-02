@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.tfg.mapOptions.otrosLugares.penaDeFrancia;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 

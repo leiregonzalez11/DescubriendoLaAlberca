@@ -1,69 +1,46 @@
-package com.example.tfg.mapOptions.otrosLugares;
+package com.example.tfg.mapOptions.otrosLugares.lashurdes;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
+import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.mapOptions.otrosLugares.pueblos.ListaPueblos;
-import com.example.tfg.mapOptions.otrosLugares.pueblos.Pueblo;
-import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
+import com.example.tfg.mapOptions.otrosLugares.otrosLugaresInicio;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class otrosPueblos extends Fragment {
+public class hurdes extends Fragment {
 
     private Bundle args;
-    private ImageView img;
-    private Pueblo pueblo;
-    private Spinner spinner;
+    private ImageView img1, img2, img3;
     private StorageReference storageRef;
-    private String puebloSelected, idioma;
-    private SupportMapFragment mapFragment;
-    private TextView km, fiestamayor, descr;
-
-    /** Este callback se activa cuando el mapa está listo para ser utilizado. */
-    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-        /**
-         * Manipula el mapa una vez haya sido creado.
-         * Aquí es donde podemos añadir marcadores o líneas, añadir listeners o mover la cámara.
-         */
-        @Override
-        public void onMapReady(GoogleMap googleMap) {
-            LatLng location = new LatLng(pueblo.getLatitud(), pueblo.getLongitud());
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.5f));
-            //Tipo de mapa: Hibrido
-            googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        }
-    };
+    private String idioma;
+    private Button btn1;
+    private TextView text1, text2, text3, text4;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static otrosPueblos newInstance(Bundle args) {
-        otrosPueblos fragment = new otrosPueblos();
+    public static hurdes newInstance(Bundle args) {
+        hurdes fragment = new hurdes();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -71,14 +48,13 @@ public class otrosPueblos extends Fragment {
     }
 
     /** Required empty public constructor */
-    public otrosPueblos() {}
+    public hurdes() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         args = new Bundle();
 
@@ -98,7 +74,6 @@ public class otrosPueblos extends Fragment {
             Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);
         });
-
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -107,53 +82,55 @@ public class otrosPueblos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_otros_pueblos, container, false);
+        View v = inflater.inflate(R.layout.fragment_hurdes, container, false);
         if (v != null){
-            spinner = v.findViewById(R.id.spinnerPueblos);
-            km = v.findViewById(R.id.km2);
-            fiestamayor = v.findViewById(R.id.fiesta2);
-            descr = v.findViewById(R.id.pueblosDescr);
-            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPueblo);
-            img = v.findViewById(R.id.imagepueblo);
+            text1 = v.findViewById(R.id.hur11);
+            text2 = v.findViewById(R.id.hur12);
+            text3 = v.findViewById(R.id.hur13);
+            text4 = v.findViewById(R.id.hur14);
+            img1 = v.findViewById(R.id.hurimg1);
+            img2 = v.findViewById(R.id.hurimg2);
+            img3 = v.findViewById(R.id.hurimg3);
+            btn1 = v.findViewById(R.id.btnhur1);
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
+    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ListaPueblos listaPueblos = new ListaPueblos(requireContext(), idioma);
-        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, listaPueblos.listaNombres()));
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        String[] datos;
+        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
-                puebloSelected = (String) adapterView.getItemAtPosition(position);
+            datos = dbHelper.obtenerInfoLugares(idioma, "intro", "hurdes", 4);
+        }
 
-                pueblo = listaPueblos.buscarPueblo(puebloSelected);
+        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+        text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-                descr.setText(pueblo.getDescrPueblo() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                km.setText(pueblo.getKmDesdeLA());
-                fiestamayor.setText(pueblo.getFiestamayor());
+        //Imagenes
 
-                //Mapa
-                if (mapFragment != null) {
-                    mapFragment.getMapAsync(callback);
-                }
+        storageRef = FirebaseStorage.getInstance().getReference();
 
-                //Imagenes
-                storageRef = FirebaseStorage.getInstance().getReference();
-                obtenerImagenFirebase("mapas/otros/otrospueblos/" + puebloSelected.replaceAll(" ", "").toLowerCase() +".png", img);
+        obtenerImagenFirebase("mapas/otros/hurdes/hurdes3.png", img1);
+        obtenerImagenFirebase("mapas/otros/hurdes/hurdes1.png", img2);
+        obtenerImagenFirebase("mapas/otros/hurdes/hurdes2.png", img3);
 
-            }
+        /*---------------
+         | ¿Qué visitar? |
+         ---------------*/
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        btn1.setOnClickListener(v ->  {
+            DialogFragment fragment = new hurdesElector();
+            fragment.setArguments(args);
+            fragment.setCancelable(false);
+            fragment.show(getChildFragmentManager(),"hurdeselector");
 
-            }
         });
 
     }
@@ -175,6 +152,4 @@ public class otrosPueblos extends Fragment {
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
-
-
 }

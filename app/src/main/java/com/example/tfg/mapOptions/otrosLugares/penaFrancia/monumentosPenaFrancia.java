@@ -17,7 +17,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.example.tfg.R;
-import com.example.tfg.mapOptions.otrosLugares.penaDeFrancia;
 
 public class monumentosPenaFrancia extends Fragment implements View.OnClickListener {
 

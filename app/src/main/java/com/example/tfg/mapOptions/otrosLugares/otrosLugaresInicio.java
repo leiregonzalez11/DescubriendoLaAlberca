@@ -3,7 +3,6 @@ package com.example.tfg.mapOptions.otrosLugares;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.view.LayoutInflater;
@@ -17,6 +16,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
+import com.example.tfg.mapOptions.otrosLugares.lashurdes.hurdes;
+import com.example.tfg.mapOptions.otrosLugares.majadas.majadasYAlrededores;
+import com.example.tfg.mapOptions.otrosLugares.parquebatuecas.batuecas;
+import com.example.tfg.mapOptions.otrosLugares.penaFrancia.penaDeFrancia;
+import com.example.tfg.mapOptions.otrosLugares.pueblos.otrosPueblos;
 import com.example.tfg.otherFiles.adapters.listViewAdapter;
 import com.example.tfg.R;
 import com.example.tfg.navigationMenu.Maps;

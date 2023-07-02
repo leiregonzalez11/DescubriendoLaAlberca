@@ -18,7 +18,7 @@ import com.example.tfg.categorias.secundarias.gastronomia.Receta;
 public class GestorDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "BBDDprueba1";
-    private static final int DB_VERSION = 23;
+    private static final int DB_VERSION = 24;
     private final Context context;
     @SuppressLint("StaticFieldLeak")
     private static GestorDB sInstance;
@@ -125,7 +125,7 @@ public class GestorDB extends SQLiteOpenHelper {
 
         //Esquema de la tabla fiesta
         query = "CREATE TABLE IF NOT EXISTS fiesta (idFiesta INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, nombreFiesta VARCHAR NOT NULL," +
-                "fechaFiesta VARCHAR, descrFiesta VARCHAR NOT NULL)";
+                "descrFiesta VARCHAR NOT NULL)";
         Log.i("Tabla Historia: ", query);
         sqLiteDatabase.execSQL(query);
 

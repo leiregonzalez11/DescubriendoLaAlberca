@@ -213,8 +213,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
             
-        } else if (position == 5 || position == 7){
-            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 3); //Majadas y Semana Santa
+        } else if (position == 5 || position == 7 || position == 10){
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 3); //Majadas, Semana Santa y Corpus
 
             text1.setVisibility(View.VISIBLE);
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -271,7 +271,7 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "5.png", img5);
             
-        } else if (position == 2 || position == 8 || position == 10){ //Fiestas Patronales y Cristo del Sudor //TODO
+        } else if (position == 2 || position == 8){ //Fiestas Patronales y Cristo del Sudor //TODO
 
             text1.setVisibility(View.GONE);
             text2.setVisibility(View.GONE);
@@ -330,8 +330,10 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             case 9:
                 nombreFiesta = "santaagueda";
                 break;
+            case 10:
+                nombreFiesta = "corpus";
+                break;
         }
-
 
         return nombreFiesta;
     }

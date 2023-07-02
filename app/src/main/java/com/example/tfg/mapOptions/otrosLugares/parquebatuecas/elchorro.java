@@ -20,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.tfg.mapOptions.otrosLugares.batuecas;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
 import com.google.firebase.storage.FirebaseStorage;

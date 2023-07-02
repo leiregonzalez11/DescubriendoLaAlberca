@@ -1,27 +1,27 @@
-package com.example.tfg.mapOptions.otrosLugares;
+package com.example.tfg.mapOptions.otrosLugares.pueblos;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
-import com.example.tfg.mapOptions.otrosLugares.parquebatuecas.batuecasElector;
 import com.example.tfg.R;
+import com.example.tfg.mapOptions.otrosLugares.otrosLugaresInicio;
+import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -30,17 +30,16 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
-public class batuecas extends Fragment {
+public class otrosPueblos extends Fragment {
 
     private Bundle args;
-    private double lat, lon;
-    private ImageView img1, img2;
+    private ImageView img;
+    private Pueblo pueblo;
+    private Spinner spinner;
     private StorageReference storageRef;
+    private String puebloSelected, idioma;
     private SupportMapFragment mapFragment;
-    private String idioma;
-    private Button btn1;
-    private TextView text1, text2, text3, text4;
+    private TextView km, fiestamayor, descr;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -50,10 +49,8 @@ public class batuecas extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            //Localización de las batuecas
-            LatLng location = new LatLng(lat, lon);
-            //googleMap.addMarker(new MarkerOptions().position(location).title("Peña de Francia"));
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 13.5f));
+            LatLng location = new LatLng(pueblo.getLatitud(), pueblo.getLongitud());
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.5f));
             //Tipo de mapa: Hibrido
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
@@ -64,8 +61,8 @@ public class batuecas extends Fragment {
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static batuecas newInstance(Bundle args) {
-        batuecas fragment = new batuecas();
+    public static otrosPueblos newInstance(Bundle args) {
+        otrosPueblos fragment = new otrosPueblos();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -73,13 +70,14 @@ public class batuecas extends Fragment {
     }
 
     /** Required empty public constructor */
-    public batuecas() {}
+    public otrosPueblos() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         args = new Bundle();
 
@@ -99,6 +97,7 @@ public class batuecas extends Fragment {
             Fragment fragment = otrosLugaresInicio.newInstance(args);
             cargarFragment(fragment);
         });
+
     }
 
     /** El Fragment va a cargar su layout, el cual debemos especificar.
@@ -107,64 +106,53 @@ public class batuecas extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_batuecas, container, false);
+        View v = inflater.inflate(R.layout.fragment_otros_pueblos, container, false);
         if (v != null){
-            text1 = v.findViewById(R.id.bat11);
-            text2 = v.findViewById(R.id.bat12);
-            text3 = v.findViewById(R.id.bat13);
-            text4 = v.findViewById(R.id.bat14);
-            img1 = v.findViewById(R.id.batimg1);
-            img2 = v.findViewById(R.id.batimg2);
-            btn1 = v.findViewById(R.id.btnbat1);
-            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewbat);
+            spinner = v.findViewById(R.id.spinnerPueblos);
+            km = v.findViewById(R.id.km2);
+            fiestamayor = v.findViewById(R.id.fiesta2);
+            descr = v.findViewById(R.id.pueblosDescr);
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPueblo);
+            img = v.findViewById(R.id.imagepueblo);
         }
         return v;
     }
 
     /** La vista de layout ha sido creada y ya está disponible
      Aquí fijaremos todos los parámetros de nuestras vistas **/
-    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        Double[] ubicacion;
-        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
+        ListaPueblos listaPueblos = new ListaPueblos(requireContext(), idioma);
+        spinner.setAdapter(new SpinnerAdapter(requireContext(), R.layout.dropdownitempueblos, listaPueblos.listaNombres()));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
-            String[] datos = dbHelper.obtenerInfoLugares(idioma, "intro", "batuecas", 4);
+                puebloSelected = (String) adapterView.getItemAtPosition(position);
 
-            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                pueblo = listaPueblos.buscarPueblo(puebloSelected);
 
-            //Imagenes
+                descr.setText(pueblo.getDescrPueblo() + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+                km.setText(pueblo.getKmDesdeLA());
+                fiestamayor.setText(pueblo.getFiestamayor());
 
-            storageRef = FirebaseStorage.getInstance().getReference();
+                //Mapa
+                if (mapFragment != null) {
+                    mapFragment.getMapAsync(callback);
+                }
 
-            obtenerImagenFirebase("mapas/otros/batuecas/batuecas1.png", img1);
-            obtenerImagenFirebase("mapas/otros/batuecas/batuecas2.png", img2);
+                //Imagenes
+                storageRef = FirebaseStorage.getInstance().getReference();
+                obtenerImagenFirebase("mapas/otros/otrospueblos/" + puebloSelected.replaceAll(" ", "").toLowerCase() +".png", img);
 
-            //Ubicacion
-            ubicacion = dbHelper.obtenerUbiLugares("batuecas");
-        }
-        lat = ubicacion[0];
-        lon = ubicacion[1];
+            }
 
-        //Mapa
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
-        }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-        /*---------------
-         | ¿Qué visitar? |
-         ---------------*/
-
-        btn1.setOnClickListener(v ->  {
-            DialogFragment fragment = new batuecasElector();
-            fragment.setArguments(args);
-            fragment.setCancelable(false);
-            fragment.show(getChildFragmentManager(),"batuecaselector");
-
+            }
         });
 
     }
@@ -186,4 +174,6 @@ public class batuecas extends Fragment {
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
+
+
 }

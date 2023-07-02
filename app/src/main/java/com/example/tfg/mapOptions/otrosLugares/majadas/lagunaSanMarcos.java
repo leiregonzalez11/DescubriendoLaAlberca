@@ -21,8 +21,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.mapOptions.otrosLugares.majadasYAlrededores;
-import com.example.tfg.mapOptions.otrosLugares.otrosLugaresInicio;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

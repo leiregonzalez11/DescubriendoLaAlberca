@@ -1,7 +1,4 @@
-package com.example.tfg.mapOptions.otrosLugares;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
+package com.example.tfg.mapOptions.otrosLugares.penaFrancia;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,11 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
+import com.example.tfg.mapOptions.otrosLugares.otrosLugaresInicio;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.mapOptions.otrosLugares.majadas.lagunaSanMarcos;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -30,17 +29,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class majadasYAlrededores extends Fragment {
+public class penaDeFrancia extends Fragment {
 
     private Bundle args;
     private double lat, lon;
     private Fragment fragment;
-    private ImageView img1, img2;
+    private ImageView img1, img2, img3;
     private StorageReference storageRef;
     private SupportMapFragment mapFragment;
-    private String idioma;
-    private Button btn;
-    private TextView text1, text2, text3, text4;
+    private String idioma, back;
+    private Button btn, btn2, btn3;
+    private TextView text1, text2, text3, text4, text5, text6;
 
     /** Este callback se activa cuando el mapa está listo para ser utilizado. */
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -52,7 +51,8 @@ public class majadasYAlrededores extends Fragment {
         public void onMapReady(GoogleMap googleMap) {
             //Localización de la peña de francia
             LatLng location = new LatLng(lat, lon);
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 17.5f));
+            //googleMap.addMarker(new MarkerOptions().position(location).title("Peña de Francia"));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.5f));
             //Tipo de mapa: Hibrido
             googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
@@ -63,8 +63,8 @@ public class majadasYAlrededores extends Fragment {
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static majadasYAlrededores newInstance(Bundle args) {
-        majadasYAlrededores fragment = new majadasYAlrededores();
+    public static penaDeFrancia newInstance(Bundle args) {
+        penaDeFrancia fragment = new penaDeFrancia();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -72,7 +72,7 @@ public class majadasYAlrededores extends Fragment {
     }
 
     /** Required empty public constructor */
-    public majadasYAlrededores() {}
+    public penaDeFrancia() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
@@ -84,6 +84,7 @@ public class majadasYAlrededores extends Fragment {
 
         if (getArguments() != null) {
             idioma = getArguments().getString("idioma");
+            back = getArguments().getString("back");
         }
 
         args.putString("idioma", idioma);
@@ -106,16 +107,21 @@ public class majadasYAlrededores extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_majadasyalrededores, container, false);
+        View v = inflater.inflate(R.layout.fragment_pena_de_francia, container, false);
         if (v != null){
-            text1 = v.findViewById(R.id.maj11);
-            text2 = v.findViewById(R.id.maj12);
-            text3 = v.findViewById(R.id.maj13);
-            text4 = v.findViewById(R.id.maj14);
-            img1 = v.findViewById(R.id.majimg1);
-            img2 = v.findViewById(R.id.majimg2);
-            btn = v.findViewById(R.id.btnmaj);
-            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewmaj);
+            text1 = v.findViewById(R.id.pena11);
+            text2 = v.findViewById(R.id.pena12);
+            text3 = v.findViewById(R.id.pena13);
+            text4 = v.findViewById(R.id.pena14);
+            text5 = v.findViewById(R.id.pena15);
+            text6 = v.findViewById(R.id.pena16);
+            img1 = v.findViewById(R.id.penaimg1);
+            img2 = v.findViewById(R.id.penaimg2);
+            img3 = v.findViewById(R.id.penaimg3);
+            btn = v.findViewById(R.id.btnPena1);
+            btn2 = v.findViewById(R.id.btnPena2);
+            btn3 = v.findViewById(R.id.btnPena3);
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapViewPena);
         }
         return v;
     }
@@ -129,38 +135,61 @@ public class majadasYAlrededores extends Fragment {
         Double[] ubicacion;
         try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
 
-            String[] datos = dbHelper.obtenerInfoLugares(idioma, "majadas", "majadas", 4);
+            if (back.equalsIgnoreCase("true")) {
+                text6.requestFocus();
+            }
+
+            String[] datos = dbHelper.obtenerInfoLugares(idioma, "inicio", "peñadefrancia", 5);
 
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
             //Imagenes
 
             storageRef = FirebaseStorage.getInstance().getReference();
 
-            obtenerImagenFirebase("mapas/otros/majadas/majadas1.png", img1);
-            obtenerImagenFirebase("mapas/otros/majadas/majadas2.png", img2);
+            obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia1.png", img1);
+            obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia2.png", img2);
+            obtenerImagenFirebase("mapas/otros/penafrancia/peñafrancia3.png", img3);
 
             //Ubicacion
-            ubicacion = dbHelper.obtenerUbiLugares("majadas");
+            ubicacion = dbHelper.obtenerUbiLugares("peñadefrancia");
         }
-        
         lat = ubicacion[0];
         lon = ubicacion[1];
 
         //Mapa
         if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
+          mapFragment.getMapAsync(callback);
         }
 
-        /*------------
-         | San Marcos |
-         ------------*/
+        /*----------
+         | Historia |
+         ----------*/
 
         btn.setOnClickListener(v -> {
-            fragment = lagunaSanMarcos.newInstance(args);
+            fragment = historiaPenaFrancia.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        /*---------------
+         | ¿Qué visitar? |
+         ---------------*/
+
+        btn2.setOnClickListener(v -> {
+            fragment = monumentosPenaFrancia.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        /*---------
+         | Leyenda |
+         ---------*/
+
+        btn3.setOnClickListener(v -> {
+            fragment = leyendaPenaFrancia.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -183,4 +212,5 @@ public class majadasYAlrededores extends Fragment {
         StorageReference pathReference = storageRef.child(path);
         pathReference.getDownloadUrl().addOnSuccessListener(uri -> Glide.with(requireContext()).load(uri).into(img));
     }
+
 }
