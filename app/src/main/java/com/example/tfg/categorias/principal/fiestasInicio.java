@@ -295,22 +295,35 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
 
-        } else if (position == 2){ //Fiestas Patronales //TODO
+        } else if (position == 2){ //Fiestas Patronales
 
-            text1.setVisibility(View.GONE);
-            text2.setVisibility(View.GONE);
-            text3.setVisibility(View.GONE);
-            text4.setVisibility(View.GONE);
-            text5.setVisibility(View.GONE);
-            text6.setVisibility(View.GONE);
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 6);
+
+            text1.setVisibility(View.VISIBLE);
+            text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text2.setVisibility(View.VISIBLE);
+            text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text3.setVisibility(View.VISIBLE);
+            text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text4.setVisibility(View.VISIBLE);
+            text4.setText(datos[3] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text5.setVisibility(View.VISIBLE);
+            text5.setText(datos[4] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+            text6.setVisibility(View.VISIBLE);
+            text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text7.setVisibility(View.GONE);
             text8.setVisibility(View.GONE);
 
-            img1.setVisibility(View.GONE);
-            img2.setVisibility(View.GONE);
-            img3.setVisibility(View.GONE);
-            img4.setVisibility(View.GONE);
+            img1.setVisibility(View.VISIBLE);
+            img2.setVisibility(View.VISIBLE);
+            img3.setVisibility(View.VISIBLE);
+            img4.setVisibility(View.VISIBLE);
             img5.setVisibility(View.GONE);
+
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
+            obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "4.png", img4);
         }
         
     }
@@ -331,7 +344,7 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
                 nombreFiesta = "sansebastian";
                 break;
             case 2:
-                nombreFiesta = "fiestasagosto";
+                nombreFiesta = "fiestaspatronales";
                 break;
             case 3:
                 nombreFiesta = "carnavales";
