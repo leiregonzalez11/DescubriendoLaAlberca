@@ -150,13 +150,28 @@
                 android:gravity="center"
                 android:textAlignment="gravity" />
 
+            <Button
+                android:id="@+id/diagostobtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@drawable/borde_redondeado"
+                android:fontFamily="casual"
+                android:text="@string/diagosto">
+            </Button>
+
             <ImageView
                 android:id="@+id/fiestaimg3"
                 android:layout_width="300dp"
                 android:layout_height="230dp"
                 android:layout_gravity="center"
                 android:src="@drawable/laalberca2"
-                android:layout_marginTop="-5dp"
+                android:layout_marginTop="-15dp"
                 android:visibility="visible"
                 tools:ignore="ContentDescription" />
 
@@ -256,7 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -264,149 +279,6 @@
                 android:fontFamily="casual"
                 android:text="@string/arriba">
             </Button>
-            
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/enerobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/febrerobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/marzobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/abrilbtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/mayobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/juniobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/juliobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/agostobtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/septiembrebtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/octubrebtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/noviembrebtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                    <ImageButton
-                        android:id="@+id/diciembrebtn"
-                        android:layout_width="115dp"
-                        android:layout_height="115dp"
-                        android:background="@color/white"
-                        android:importantForAccessibility="no" />
-
-                </LinearLayout>                
-                
-            </LinearLayout>-->
-
 
         </LinearLayout>
 

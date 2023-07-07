@@ -71,12 +71,12 @@ public class diagosto extends Fragment implements View.OnClickListener {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
-        name.setText(R.string.tradicionesmayus);
+        name.setText(R.string.fiestasmayus);
         name.setTextSize(20);
         myToolbar.setNavigationOnClickListener(v -> {
             myToolbar.setNavigationIcon(null);
             //Creamos el fragment
-            Fragment fragment = tradicionesInicio.newInstance(args);
+            Fragment fragment = fiestasInicio.newInstance(args);
             cargarFragment(fragment);
         });
 
@@ -116,6 +116,9 @@ public class diagosto extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        TextView titulo = view.findViewById(R.id.titulodia);
+        titulo.requestFocus();
+
         String[] datos;
         try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
             //Obtención de datos desde la bbdd
@@ -140,7 +143,6 @@ public class diagosto extends Fragment implements View.OnClickListener {
         btnPlay.setOnClickListener(this);
         btnPause.setOnClickListener(this);
         btnStop.setOnClickListener(this);
-
 
         //Botón atrás
         atrasBtn.setOnClickListener(v -> {

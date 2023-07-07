@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
+import com.example.tfg.categorias.secundarias.fiestas.diagosto;
 import com.example.tfg.navigationMenu.Categorias;
 import com.example.tfg.otherFiles.adapters.SpinnerAdapter;
 import com.google.firebase.storage.FirebaseStorage;
@@ -32,7 +33,7 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
 
     private String idioma, nombreFiesta;
     private Spinner spinner;
-    private Button upBtn;
+    private Button upBtn, diagostobtn;
     private GestorDB dbHelper;
     private StorageReference storageRef;
 
@@ -103,6 +104,7 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             text7 = v.findViewById(R.id.fiestas7);
             text8 = v.findViewById(R.id.fiestas8);
             upBtn = v.findViewById(R.id.upbtn);
+            diagostobtn = v.findViewById(R.id.diagostobtn);
             img1  = v.findViewById(R.id.fiestaimg1);
             img2  = v.findViewById(R.id.fiestaimg2);
             img3  = v.findViewById(R.id.fiestaimg3);
@@ -139,8 +141,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
         titulo.setText((String) adapterView.getItemAtPosition(position));
         nombreFiesta = determinarFiesta(position);
         
-        if (position == 0 || position == 1){
-            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 2); //San Anton y San Sebastian
+        if (position == 0 || position == 1 || position == 11){
+            String[] datos = dbHelper.obtenerDatosFiestas(idioma, nombreFiesta, 2); //San Anton, San Sebastian y Lunes de Pascua
 
             text1.setVisibility(View.VISIBLE);
             text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -158,6 +160,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             img3.setVisibility(View.GONE);
             img4.setVisibility(View.GONE);
             img5.setVisibility(View.GONE);
+
+            diagostobtn.setVisibility(View.GONE);
 
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
             
@@ -202,6 +206,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             img4.setVisibility(View.GONE);
             img5.setVisibility(View.GONE);
 
+            diagostobtn.setVisibility(View.GONE);
+
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
@@ -226,6 +232,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             img3.setVisibility(View.GONE);
             img4.setVisibility(View.GONE);
             img5.setVisibility(View.GONE);
+
+            diagostobtn.setVisibility(View.GONE);
 
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
@@ -257,6 +265,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             img3.setVisibility(View.VISIBLE);
             img4.setVisibility(View.VISIBLE);
             img5.setVisibility(View.VISIBLE);
+
+            diagostobtn.setVisibility(View.GONE);
 
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
@@ -290,6 +300,8 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             img4.setVisibility(View.VISIBLE);
             img5.setVisibility(View.GONE);
 
+            diagostobtn.setVisibility(View.GONE);
+
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "1.png", img1);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "2.png", img2);
             obtenerImagenFirebase("categorias/fiestas/" + nombreFiesta + "3.png", img3);
@@ -313,6 +325,12 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
             text6.setText(datos[5] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
             text7.setVisibility(View.GONE);
             text8.setVisibility(View.GONE);
+
+            diagostobtn.setVisibility(View.VISIBLE);
+            diagostobtn.setOnClickListener(v -> {
+                Fragment fragment = diagosto.newInstance(args);
+                cargarFragment(fragment);
+            });
 
             img1.setVisibility(View.VISIBLE);
             img2.setVisibility(View.VISIBLE);
@@ -369,6 +387,9 @@ public class fiestasInicio extends Fragment implements AdapterView.OnItemSelecte
                 break;
             case 10:
                 nombreFiesta = "corpus";
+                break;
+            case 11:
+                nombreFiesta = "lunesdepascua";
                 break;
         }
 
