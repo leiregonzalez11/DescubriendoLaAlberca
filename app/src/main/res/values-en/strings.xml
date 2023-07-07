@@ -261,6 +261,8 @@
     <string name="deleteok">Record successfully deleted.</string>
     <string name="personajes_ilustres">Illustrious personalities</string>
     <string name="sel_options">Select one of the following options</string>
+    <string name="diagosto">Diagosto</string>
+    <string name="lunes_de_pascua">Lunes de Pascua</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

@@ -265,6 +265,8 @@ de ocio que ofrece el pueblo. \n</string>
     <string name="deleteok">Registro eliminado correctamente.</string>
     <string name="personajes_ilustres">Personajes ilustres</string>
     <string name="sel_options">Seleccione una de las opciones</string>
+    <string name="diagosto">Diagosto</string>
+    <string name="lunes_de_pascua">Lunes de Pascua</string>
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

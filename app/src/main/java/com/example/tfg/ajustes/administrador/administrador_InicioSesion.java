@@ -94,7 +94,7 @@ public class administrador_InicioSesion extends Fragment {
         boolean valido = true;
         //Validamos el email
         String email = textEmail.getText().toString();
-        Pattern patternEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+        Pattern patternEmail = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         if (email.equals("")) { //Si el email está vacío
             Toast.makeText(getContext(), getString(R.string.emailVacio), Toast.LENGTH_SHORT).show();

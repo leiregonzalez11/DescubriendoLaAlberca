@@ -1,4 +1,4 @@
-package com.example.tfg.mapOptions.parking.servicios;
+package com.example.tfg.mapOptions.servicios;
 
 import android.os.Parcel;
 import android.os.Parcelable;

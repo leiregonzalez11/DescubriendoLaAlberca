@@ -262,6 +262,8 @@
     <string name="deleteok">Erregistroa behar bezala ezabatu da.</string>
     <string name="personajes_ilustres">Pertsonaia ospetsuak</string>
     <string name="sel_options">Hautatu aukeretako bat</string>
+    <string name="diagosto">Diagosto</string>
+    <string name="lunes_de_pascua">Lunes de Pascua</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

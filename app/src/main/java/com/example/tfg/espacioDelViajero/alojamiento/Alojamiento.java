@@ -5,10 +5,10 @@ import android.os.Parcelable;
 
 public class Alojamiento implements Parcelable {
 
-    private String nombreAloj;
-    private double puntAloj;
-    private String locationAloj;
-    private String telAloj;
+    private final String nombreAloj;
+    private final double puntAloj;
+    private final String locationAloj;
+    private final String telAloj;
 
     @Override
     public int describeContents() {
@@ -23,8 +23,6 @@ public class Alojamiento implements Parcelable {
         parcel.writeString(this.telAloj);
     }
 
-    public Alojamiento(){}
-
     public Alojamiento (String nombreAloj, String localizacion, String telAloj, Double puntAloj){
         this.nombreAloj = nombreAloj;
         this.locationAloj = localizacion;
@@ -32,11 +30,11 @@ public class Alojamiento implements Parcelable {
         this.puntAloj = puntAloj;
     }
 
-    protected Alojamiento(Parcel in) {
-        this.nombreAloj = in.readString();
-        this.puntAloj = in.readDouble();
-        this.locationAloj = in.readString();
-        this.telAloj = in.readString();
+    protected Alojamiento(Parcel input) {
+        this.nombreAloj = input.readString();
+        this.puntAloj = input.readDouble();
+        this.locationAloj = input.readString();
+        this.telAloj = input.readString();
     }
 
     public static final Parcelable.Creator<Alojamiento> CREATOR = new Parcelable.Creator<Alojamiento>() {

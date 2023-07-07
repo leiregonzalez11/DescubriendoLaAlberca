@@ -51,7 +51,6 @@ public class GestorDB extends SQLiteOpenHelper {
             e.printStackTrace();
         }
 
-
     }
 
     @Override
@@ -126,7 +125,7 @@ public class GestorDB extends SQLiteOpenHelper {
         //Esquema de la tabla fiesta
         query = "CREATE TABLE IF NOT EXISTS fiesta (idFiesta INTEGER PRIMARY KEY AUTOINCREMENT, idioma VARCHAR NOT NULL, nombreFiesta VARCHAR NOT NULL," +
                 "descrFiesta VARCHAR NOT NULL)";
-        Log.i("Tabla Historia: ", query);
+        Log.i("Tabla fiesta: ", query);
         sqLiteDatabase.execSQL(query);
 
     }
