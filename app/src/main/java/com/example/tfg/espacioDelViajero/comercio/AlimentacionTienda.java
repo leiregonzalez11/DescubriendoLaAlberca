@@ -38,7 +38,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AlimentacionTienda extends Fragment {
+public class AlimentacionTienda extends Fragment implements ListaComercios {
 
     private Bundle args;
     private String nombreTienda, ordenLista;
@@ -124,7 +124,7 @@ public class AlimentacionTienda extends Fragment {
 
                     //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
                     ordenLista = "atoz";
-                    listanombres = obtenerListaNombresComercio(ps, ordenLista);
+                    listanombres = ListaComercios.obtenerListaNombresComercio(ps, ordenLista);
 
                     myAdapter = new listViewAdapter(getContext(), R.layout.list_alim, listanombres);
                     listView.setAdapter(myAdapter);
@@ -139,7 +139,7 @@ public class AlimentacionTienda extends Fragment {
                         //Se implementa la interfaz
                         dialog.setOnClickButtonListener(ordenar -> {
                             ordenLista = ordenar;
-                            listanombres = obtenerListaNombresComercio(ps, ordenLista);
+                            listanombres = ListaComercios.obtenerListaNombresComercio(ps, ordenLista);
                             myAdapter.setmData(listanombres);
                         });
 
@@ -168,7 +168,7 @@ public class AlimentacionTienda extends Fragment {
                     listView.setOnItemClickListener((adapterView, v, position, id) -> {
                         //Obtenemos el nombre del elemento pulsado y cargamos su información
                         nombreTienda = adapterView.getItemAtPosition(position).toString();
-                        args.putParcelable("comercio", buscarComercio(nombreTienda, ps));
+                        args.putParcelable("comercio", ListaComercios.buscarComercio(nombreTienda, ps));
                         DialogFragment tiendaFragment = new tiendaFragment();
                         tiendaFragment.setArguments(args);
                         tiendaFragment.setCancelable(false);
@@ -187,45 +187,6 @@ public class AlimentacionTienda extends Fragment {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-    }
-
-    public List<String> obtenerListaNombresComercio(List<Comercio> est, String orden){
-
-        List<String> lista = new LinkedList<>();
-        for (int i = 0; i < est.size(); i++){
-            lista.add(est.get(i).getNombreComercio());
-        }
-
-        if (orden.equalsIgnoreCase("atoz")){
-            organizedAlphabeticList(lista);
-        } else if (orden.equalsIgnoreCase("ztoa")){
-            organizedAlphabeticList(lista);
-            Collections.reverse(lista);
-        }
-
-        return lista;
-    }
-
-
-    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
-    public static void organizedAlphabeticList(List<String> list) {
-        list.sort(new Comparator<String>() {
-            final Collator collator = Collator.getInstance();
-
-            public int compare(String o1, String o2) {
-                return collator.compare(o1, o2);
-            }
-        });
-    }
-
-    public Comercio buscarComercio(String nombreCom, List<Comercio> com){
-        for (int i = 0; i < com.size(); i++){
-            Comercio comr = com.get(i);
-            if (comr.getNombreComercio().equalsIgnoreCase(nombreCom)){
-                return comr;
-            }
-        }
-        return null;
     }
 
 }

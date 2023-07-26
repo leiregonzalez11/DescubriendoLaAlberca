@@ -263,6 +263,14 @@
     <string name="sel_options">Select one of the following options</string>
     <string name="diagosto">Diagosto</string>
     <string name="lunes_de_pascua">Lunes de Pascua</string>
+    <string name="textpersonajesilustres1" ></string>
+    <string name="textpersonajesilustres2" ></string>
+    <string name="textpersonajesilustres3" ></string>
+    <string name="textpersonajesilustres4" ></string>
+    <string name="textmedios1" >The fact that La Alberca is such a picturesque village has meant that it has been the setting for numerous films, series and TV programmes. Famous films such as Tierra Sin Pan, filmed in 1932 by Luis Buñuel, Marcelino Pan y Vino, filmed in 1955, or La Marrana, starring Alfredo Landa and Antonio Resines, have used the streets and squares of La Alberca as a backdrop. \n</string>
+    <string name="textmedios2" >As for television programmes, Masterchef, Maestros de la Costura, España Directo or El Paisano are some of the many that have wanted to soak up the traditions, gastronomy and craftsmanship of La Alberca. In addition, major production companies such as Netflix have chosen this special enclave as the setting for their series, such as the Netflix series "Once Upon a Time, But No More" in which we can see several places in the village. \n</string>
+    <string name="textmedios3" >Its streets and surroundings have also served as inspiration for many writers who have wanted to reflect the history and customs of the place in their books. In verse or prose, faithful to the history and daily life of its inhabitants, such as La Madre de los Aires by the Alberca writer José Luis Puerto, in which he recalls his peasant childhood, or La Alberca: Vida y costumbre, by Padre Hoyos, as well as the occasional mystery novel, such as La Prisionera de la Cumbre Nevada, by the writer Christian Furquet. \n</string>
+    <string name="cutltura_intro">La Alberca is also the scene of other cultural aspects that do not reflect the history, tradition or customs of the town. Here are a few of them:\n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas suit</item>

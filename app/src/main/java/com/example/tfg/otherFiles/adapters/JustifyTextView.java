@@ -32,6 +32,7 @@ public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView
         mLineY += getTextSize();
         Layout layout = getLayout();
         for (int i = 0; i < layout.getLineCount(); i++) {
+
             int lineStart = layout.getLineStart(i);
             int lineEnd = layout.getLineEnd(i);
             String line = text.substring(lineStart, lineEnd);
@@ -46,6 +47,7 @@ public class JustifyTextView extends androidx.appcompat.widget.AppCompatTextView
             mLineY += getLineHeight();
         }
     }
+
 
     private void drawScaledText(Canvas canvas, String line, float lineWidth) {
         float x = 0;

@@ -124,7 +124,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
 
                     //Por defecto, la opción seleccionada será "Ordenar alfabéticamente ascendente"
                     ordenLista = "atoz";
-                    List<String> listaNombres = getListaNombresAlojamiento(ps, ordenLista);
+                    List<String> listaNombres = ListaAlojamiento.getListaNombresAlojamiento(ps, ordenLista);
 
                     myAdapter = new listViewAdapter(getContext(), R.layout.list_apart, listaNombres);
                     listView.setAdapter(myAdapter);
@@ -139,7 +139,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
                         //Se implementa la interfaz
                         dialog.setOnClickButtonListener(ordenar -> {
                             ordenLista = ordenar;
-                            List<String> listanombres = getListaNombresAlojamiento(ps, ordenLista);
+                            List<String> listanombres = ListaAlojamiento.getListaNombresAlojamiento(ps, ordenLista);
                             myAdapter.setmData(listanombres);
                         });
 
@@ -169,7 +169,7 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
                     listView.setOnItemClickListener((adapterView, v, position, id) -> {
                         //Obtenemos el nombre del elemento pulsado y cargamos su información
                         nombreAloj = adapterView.getItemAtPosition(position).toString();
-                        args.putParcelable("aloj", buscarAloj(nombreAloj, ps));
+                        args.putParcelable("aloj", ListaAlojamiento.buscarAloj(nombreAloj, ps));
                         DialogFragment alojamientoFragment = new alojamientoFragment();
                         alojamientoFragment.setArguments(args);
                         alojamientoFragment.setCancelable(false);
@@ -197,102 +197,6 @@ public class Apartamento extends Fragment implements SearchView.OnQueryTextListe
     public boolean onQueryTextChange(String s) {
         myAdapter.getFilter().filter(s);
         return false;
-    }
-
-    public List<String> getListaNombresAlojamiento(LinkedList<Alojamiento> est, String orden){
-
-        if (orden.equalsIgnoreCase("asc")){
-            organizedPuntuacionAscList(est);
-
-        } else if (orden.equalsIgnoreCase("desc")){
-            organizedPuntuacionAscList(est);
-            Collections.reverse(est);
-        }
-
-        List<String> lista = new LinkedList<>();
-        for (int i = 0; i < Objects.requireNonNull(est).size(); i++){
-            lista.add(est.get(i).getNombreAloj());
-        }
-
-        if (orden.equalsIgnoreCase("atoz")){
-            organizedAlphabeticList(lista);
-        } else if (orden.equalsIgnoreCase("ztoa")){
-            organizedAlphabeticList(lista);
-            Collections.reverse(lista);
-        }
-
-        return lista;
-
-    }
-    
-    public Alojamiento buscarAloj(String nombreAloj, List<Alojamiento> aloj){
-        for (int i = 0; i <aloj.size(); i++){
-            Alojamiento aloja = aloj.get(i);
-            if (aloja.getNombreAloj().equalsIgnoreCase(nombreAloj)){
-                return aloja;
-            }
-        }
-        return null;
-    }
-
-    public static void organizedPuntuacionAscList (List<Alojamiento> est){
-
-        boolean ordenada = false;
-        List<Alojamiento> listaOrdenada = new LinkedList<>();
-
-        while (!ordenada){
-            int i=0;
-            while (i< est.size()){
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    Log.d(TAG, "EST SIZE : " + est.size() + " ");
-                }
-                Alojamiento actual = est.get(i);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    Log.d(TAG, "ACTUAL : " + i + " " + actual.getNombreAloj() + " PUNTUACION: " + actual.getPuntAloj());
-                }
-                if (!listaOrdenada.contains(actual)) {
-                    for (int j = 0; j < est.size(); j++) {
-                        Alojamiento comp = est.get(j);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                            Log.d(TAG, "COMPARADOR : " + j + " " + comp.getNombreAloj() + " PUNTUACION: " + comp.getPuntAloj());
-                        }
-                        if (!listaOrdenada.contains(comp)){
-                            if (actual.getPuntAloj() >= comp.getPuntAloj()){
-                                actual = comp;
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                                    Log.d(TAG, "TEMPORAL : " + j + " " + actual.getNombreAloj() + " PUNTUACION: " + actual.getPuntAloj());
-                                }
-                            }
-                        }
-                    }
-                }
-                if (!listaOrdenada.contains(actual)){
-                    listaOrdenada.add(actual);
-                }
-
-                if (listaOrdenada.size() == est.size()){
-                    ordenada = true;
-                }
-                i++;
-            }
-        }
-
-        System.out.println("LISTA ORDENADA FINAL");
-        for (Alojamiento estab: listaOrdenada) {
-            System.out.println("Alojamiento: "+ estab.getNombreAloj() + " PUNTUACION: "+ estab.getPuntAloj());
-        }
-
-    }
-
-    //Utilizando la Clase Collator que actúa como comparadora de cadena para solucionar el error de las tildes
-    public static void organizedAlphabeticList(List<String> list) {
-        list.sort(new Comparator<String>() {
-            final Collator collator = Collator.getInstance();
-
-            public int compare(String o1, String o2) {
-                return collator.compare(o1, o2);
-            }
-        });
     }
 
 }

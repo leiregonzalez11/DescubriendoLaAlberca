@@ -117,6 +117,7 @@ public class diagosto extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         TextView titulo = view.findViewById(R.id.titulodia);
+        titulo.clearFocus();
         titulo.requestFocus();
 
         String[] datos;

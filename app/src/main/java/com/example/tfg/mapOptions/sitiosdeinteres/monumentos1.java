@@ -29,6 +29,8 @@ public class monumentos1 extends DialogFragment {
     private StorageReference storageRef;
     ImageView img1;
     private View viewR;
+
+    GestorDB dbHelper;
     Animation slideAnimation;
 
     public monumentos1() {
@@ -61,11 +63,10 @@ public class monumentos1 extends DialogFragment {
 
         TextView text1 = viewR.findViewById(R.id.monuinfotext1);
 
-        String[] datos;
-        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
+        dbHelper = GestorDB.getInstance(getContext());
 
-            datos = dbHelper.obtenerInfoMonumentos(idioma, monumento, 1);
-        }
+        String[] datos;
+        datos = dbHelper.obtenerInfoMonumentos(idioma, monumento, 1);
 
         text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
@@ -92,5 +93,15 @@ public class monumentos1 extends DialogFragment {
         viewR.startAnimation(slideAnimation);
 
         new Handler().postDelayed(this::dismiss,900);
+    }
+
+    //Cómo conectarse a una base de datos persistente
+    //Dado que llamar a getWritableDatabase() y getReadableDatabase() es costoso cuando la base de datos
+    // está cerrada, debes dejar abierta la conexión con la base de datos durante el tiempo que posiblemente
+    // necesites acceder a ella. Por lo general, lo óptimo es cerrar la base de datos en el método onDestroy() de la actividad de llamada.
+    @Override
+    public void onDestroy() {
+        dbHelper.close();
+        super.onDestroy();
     }
 }

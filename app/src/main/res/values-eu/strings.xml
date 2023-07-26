@@ -264,6 +264,14 @@
     <string name="sel_options">Hautatu aukeretako bat</string>
     <string name="diagosto">Diagosto</string>
     <string name="lunes_de_pascua">Lunes de Pascua</string>
+    <string name="textpersonajesilustres1" ></string>
+    <string name="textpersonajesilustres2" ></string>
+    <string name="textpersonajesilustres3" ></string>
+    <string name="textpersonajesilustres4" ></string>
+    <string name="textmedios1" >La Alberca hain herri bitxia izateak TBko film, telesail eta programa ugariren eszenatoki izatea ekarri du. Luis Buñuelek 1932an filmatutako Tierra Sin Pan, 1955ean filmatutako Marcelino Pan y Vino edo Alfredo Landak eta Antonio Resinesek antzeztutako La Marrana bezalako film ospetsuek La Albercako kaleak eta plazak erabili dituzte eszenografia gisa.\n</string>
+    <string name="textmedios2" >Telebistako programei dagokienez, Masterchef, Maestros de la Costura, España Directo edo El Paisano dira La Albercako tradizioez, gastronomiaz eta artisautzaz blaitu nahi izan duten ugarietako batzuk. Gainera, Netflix bezalako ekoiztetxe handiek tan berezi hau aukeratu dute beren telesailetarako agertoki gisa, Netflix telesaileko Érase Una Vez, Pero Ya NoLK seriea kasu, non herriko hainbat leku ikus ditzakegun. \n</string>
+    <string name="textmedios3" >Bertako kaleak eta inguruak ere inspirazio iturri izan dira bertako historia eta ohiturak liburuetan islatuta utzi nahi izan dituzten idazleentzat. Bertsotan edo prosan, bertako biztanleen historiari eta egunerokotasunari leial, hala nola Jose Luis Puerto idazle alberdiarraren La Madre de los Aires, nekazal haurtzaroa oroitarazten duena, edo Aita Hoyosen La Alberca: Vida y costumbre, misteriozko eleberriren bat edo beste, Christian Furquet idazlearen La Prisionera de la Cumbre Nevada kasu. \n</string>
+    <string name="cutltura_intro">Herriko historiaren, tradizioaren edo ohituren isla ez diren beste alderdi kultural batzuen eszenatoki ere bada Alberca. Hona hemen batzuk: \n</string>
 
     <string-array name="trajes_serranos">
         <item>Sayas soinekoa</item>

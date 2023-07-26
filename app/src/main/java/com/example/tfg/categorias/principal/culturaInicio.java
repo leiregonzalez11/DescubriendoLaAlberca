@@ -18,6 +18,8 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.tfg.categorias.secundarias.cultura.deporte;
 import com.example.tfg.categorias.secundarias.cultura.diccionario.diccionario;
+import com.example.tfg.categorias.secundarias.cultura.medios;
+import com.example.tfg.categorias.secundarias.cultura.personajesilustres;
 import com.example.tfg.navigationMenu.Categorias;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -26,7 +28,7 @@ public class culturaInicio extends Fragment {
 
     Bundle args;
     private String idioma;
-    Button btndic, btndeporte;
+    Button btndic, btndeporte, btnmedios, btnpers;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -83,6 +85,8 @@ public class culturaInicio extends Fragment {
         if(v != null){
             btndic = v.findViewById(R.id.diccionario);
             btndeporte = v.findViewById(R.id.deporte);
+            btnmedios = v.findViewById(R.id.medios);
+            btnpers = v.findViewById(R.id.personajesilustres);
         }
         return v;
     }
@@ -100,6 +104,16 @@ public class culturaInicio extends Fragment {
 
         btndeporte.setOnClickListener(v -> {
             Fragment fragment = deporte.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        btnmedios.setOnClickListener(v -> {
+            Fragment fragment = medios.newInstance(args);
+            cargarFragment(fragment);
+        });
+
+        btnpers.setOnClickListener(v -> {
+            Fragment fragment = personajesilustres.newInstance(args);
             cargarFragment(fragment);
         });
 

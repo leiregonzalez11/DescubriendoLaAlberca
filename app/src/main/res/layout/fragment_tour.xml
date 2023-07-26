@@ -21,7 +21,7 @@
         android:textAlignment="gravity"
         android:textColor="#000000"
         android:textColorHint="#000000"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <TextView

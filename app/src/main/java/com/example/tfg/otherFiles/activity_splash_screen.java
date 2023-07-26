@@ -37,7 +37,6 @@ public class activity_splash_screen extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
                 /* INTERFAZ PRINCIPAL*/
-                //Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
                 Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
                 startActivity(intent);
                 finish();

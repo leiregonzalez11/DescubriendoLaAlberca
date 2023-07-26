@@ -23,8 +23,6 @@ public class Establecimiento implements Parcelable {
         parcel.writeString(this.telEstabl);
     }
 
-    public Establecimiento (){}
-
     public Establecimiento (String nombreEstabl, String localizacion, String telEstabl, Double puntEstabl){
         this.nombreEstabl = nombreEstabl;
         this.locationEstabl = localizacion;

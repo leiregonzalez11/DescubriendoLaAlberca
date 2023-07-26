@@ -31,7 +31,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
     StorageReference storageRef;
     ImageView img1, img2, img3, img4, img5;
     TextView text1, text2, text3, text4, text5;
-    ImageButton siguienteBtn, siguienteBtn2, atrasBtn, atrasBtn2;
+    ImageButton siguienteBtn2, atrasBtn2;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
@@ -128,9 +128,7 @@ public class aspectoInterior extends Fragment implements View.OnClickListener{
         obtenerImagenFirebase("categorias/arquitectura/interior3.png", img5);
 
         //BOTON SIGUIENTE y ATRAS
-        siguienteBtn.setOnClickListener(this);
         siguienteBtn2.setOnClickListener(this);
-        atrasBtn.setOnClickListener(this);
         atrasBtn2.setOnClickListener(this);
     }
 

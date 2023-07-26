@@ -21,8 +21,6 @@ public class Comercio implements Parcelable{
         parcel.writeString(this.telComercio);
     }
 
-    public Comercio (){}
-
     public Comercio (String nombreComercio, String localizacion, String telefono){
         this.nombreComercio = nombreComercio;
         this.locationComercio = localizacion;

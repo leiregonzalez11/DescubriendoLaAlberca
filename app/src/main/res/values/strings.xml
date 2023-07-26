@@ -267,6 +267,15 @@ de ocio que ofrece el pueblo. \n</string>
     <string name="sel_options">Seleccione una de las opciones</string>
     <string name="diagosto">Diagosto</string>
     <string name="lunes_de_pascua">Lunes de Pascua</string>
+    <string name="textpersonajesilustres1" />
+    <string name="textpersonajesilustres2" />
+    <string name="textpersonajesilustres3" />
+    <string name="textpersonajesilustres4" />
+    <string name="textmedios1" >Que La Alberca sea un pueblo tan pintoresco ha propiciado que haya sido escenario de numerosas películas, series y programas de TV. Películas tan famosas como Tierra Sin Pan, rodada en 1932 por Luis Buñuel, Marcelino Pan y Vino, rodada en 1955, o La Marrana, interpretada por Alfredo Landa y Antonio Resines, han utilizado las calles y plazas de La Alberca como escenografía. \n</string>
+    <string name="textmedios2" > Respecto a programas de televisión, Masterchef, Maestros de la Costura, España Directo o El Paisano son algunos de los muchos que han querido empaparse de las tradiciones, gastronomía y artesanía de La Alberca. Además, grandes productoras como Netflix han elegido este enclave tán especial como escenario para sus series, como la serie de Netflix “Érase Una Vez, Pero Ya No” en la que podemos ver varios lugares del pueblo.  \n</string>
+    <string name="textmedios3"> También sus calles y alrededores han servido de inspiración a muchos escritores que han querido dejar reflejada en sus libros la historia y costumbres del lugar. En verso o en prosa, fieles a la historia y al día a día de sus habitantes, como La Madre de los Aires del escritor albercano José Luis Puerto, donde rememora su infancia campesina o La Alberca: Vida y costumbre, del Padre Hoyos, además de alguna que otra novela de misterio, como La Prisionera de la Cumbre Nevada, del escritor Christian Furquet. \n </string>
+    <string name="cutltura_intro">La Alberca también es escenario de otros aspectos culturales que no son reflejo de la historia, tradición o costumbres del pueblo. Aquí van una muestra de ellos: \n</string>
+
 
     <string-array name="trajes_serranos">
         <item>Traje de Sayas</item>

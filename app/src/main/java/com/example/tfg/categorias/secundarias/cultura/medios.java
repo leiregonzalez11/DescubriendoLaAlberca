@@ -1,45 +1,44 @@
-package com.example.tfg.categorias.secundarias.arquitectura;
+package com.example.tfg.categorias.secundarias.cultura;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
-import com.example.tfg.GestorDB;
 import com.example.tfg.R;
-import com.example.tfg.categorias.principal.arquitecturaInicio;
+import com.example.tfg.navigationMenu.Categorias;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class inscripciones extends Fragment implements View.OnClickListener {
+public class medios extends Fragment {
 
-    Bundle args;
-    String idioma;
-    StorageReference storageRef;
-    ImageView img1, img2;
-    TextView text1, text2, text3;
-    ImageButton siguienteBtn, siguienteBtn2, finBtn, finBtn2;
+    private Bundle args;
+    private String idioma;
+    private ImageView img1, img2, img3;
+    private StorageReference storageRef;
 
     /**
      * Utilizaremos este Factory Method para crear una nueva instancia
      * de este fragmento utilizando los parámetros dados.
      * @return Una nueva instancia del Fragment.
      */
-    public static inscripciones newInstance(Bundle args) {
-        inscripciones fragment = new inscripciones();
+    public static medios newInstance(Bundle args) {
+        medios fragment = new medios();
         if (args != null){
             fragment.setArguments(args);
         }
@@ -47,7 +46,7 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     }
 
     /** Required empty public constructor */
-    public inscripciones() {}
+    public medios() {}
 
     /** El Fragment ha sido creado.
      * Aqui fijamos los parámetros que tengan que ver con el Activity. */
@@ -58,10 +57,11 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         Toolbar myToolbar = requireActivity().findViewById(R.id.toolbar);
         myToolbar.setNavigationIcon(R.drawable.ic_circle_arrow_left_solid);
         TextView name = myToolbar.findViewById(R.id.name);
-        name.setText(R.string.arquitecturamayus);
+        name.setText(R.string.cultura);
         name.setTextSize(20);
-        myToolbar.setNavigationOnClickListener(view12 -> {
-            Fragment fragment = arquitecturaInicio.newInstance(args);
+        myToolbar.setNavigationOnClickListener(v -> {
+            myToolbar.setNavigationIcon(null);
+            Fragment fragment = Categorias.newInstance();
             cargarFragment(fragment);
         });
 
@@ -74,23 +74,18 @@ public class inscripciones extends Fragment implements View.OnClickListener {
         args.putString("idioma", idioma);
     }
 
-    /** La vista de layout ha sido creada y ya está disponible
-     Aquí fijaremos todos los parámetros de nuestras vistas **/
+    /** El Fragment va a cargar su layout, el cual debemos especificar.
+     Aquí se instanciarán los objetos que si son vistas */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_inscripciones, container, false);
+        View v = inflater.inflate(R.layout.fragment_medios, container, false);
         if (v != null){
-            text1 = v.findViewById(R.id.arqui41);
-            text2 = v.findViewById(R.id.arqui42);
-            text3 = v.findViewById(R.id.arqui43);
-            img1 = v.findViewById(R.id.arqui41img);
-            img2 = v.findViewById(R.id.arqui42img);
-            siguienteBtn2 = v.findViewById(R.id.arquisiguiente44);
-            finBtn2 = v.findViewById(R.id.arquiAtras44);
+            img1 = v.findViewById(R.id.imgmedios1);
+            img2 = v.findViewById(R.id.imgmedios2);
+            img3 = v.findViewById(R.id.imgmedios3);
         }
-
         return v;
     }
 
@@ -100,46 +95,12 @@ public class inscripciones extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        String[] datos;
-        try (GestorDB dbHelper = GestorDB.getInstance(getContext())) {
-
-            datos = dbHelper.obtenerDatosArqui(idioma, "inscripciones", 3);
-        }
-
-        text1.setText(datos[0] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-        text3.setText(datos[2] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("categorias/arquitectura/inscripciones2.png", img1);
-        obtenerImagenFirebase("categorias/arquitectura/inscripciones3.png", img2);
+        obtenerImagenFirebase("categorias/cultura/marcelino.png", img1);
+        obtenerImagenFirebase("categorias/cultura/masterchef.png", img2);
+        obtenerImagenFirebase("categorias/cultura/netflix.png", img3);
 
-        //BOTON SIGUIENTE y ATRAS
-        siguienteBtn2.setOnClickListener(this);
-        finBtn2.setOnClickListener(this);
-
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        //Cuando se presione el botón, realiza una acción aquí
-
-        ImageButton btn = (ImageButton) view;
-        Fragment fragment = null;
-
-        int id = btn.getId();
-        switch (id) {
-            case R.id.arquisiguiente44:
-                fragment = casaAlbercana.newInstance(args);
-                break;
-            case R.id.arquiAtras44:
-                fragment = aspectoInterior.newInstance(args);
-                break;
-        }
-
-        assert fragment != null;
-        cargarFragment(fragment);
     }
 
     /** Método utilizado para obtener la imagen de Firebase Storage */
