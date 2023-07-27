@@ -97,9 +97,9 @@ public class personajesilustres extends Fragment {
 
             storageRef = FirebaseStorage.getInstance().getReference();
 
-            obtenerImagenFirebase("categorias/cultura/vueltaciclistalaalberca.png", img1);
-            obtenerImagenFirebase("categorias/cultura/piraguaslaalberca.png", img2);
-            obtenerImagenFirebase("categorias/cultura/bolosdeporte.png", img3);
+            obtenerImagenFirebase("categorias/cultura/padrehoyos.png", img1);
+            obtenerImagenFirebase("categorias/cultura/joseluispuerto.png", img2);
+            obtenerImagenFirebase("categorias/cultura/ismaelblat.png", img3);
 
         }
 
