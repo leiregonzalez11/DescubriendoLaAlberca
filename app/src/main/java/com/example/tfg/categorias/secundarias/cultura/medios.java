@@ -97,9 +97,9 @@ public class medios extends Fragment {
 
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        obtenerImagenFirebase("categorias/cultura/marcelino.png", img1);
-        obtenerImagenFirebase("categorias/cultura/masterchef.png", img2);
-        obtenerImagenFirebase("categorias/cultura/netflix.png", img3);
+        obtenerImagenFirebase("categorias/cultura/laalbercatv1.png", img1);
+        obtenerImagenFirebase("categorias/cultura/laalbercatv2.png", img2);
+        obtenerImagenFirebase("categorias/cultura/laalbercatv3.png", img3);
 
     }
 

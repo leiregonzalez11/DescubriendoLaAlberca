@@ -21,6 +21,7 @@ import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
 import com.example.tfg.mapOptions.sitiosdeinteres.monumentos1;
+import com.example.tfg.mapOptions.sitiosdeinteres.monumentos3;
 import com.example.tfg.mapOptions.sitiosdeinteres.monumentos4;
 import com.example.tfg.GestorDB;
 import com.example.tfg.R;
@@ -281,6 +282,8 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 monumento = "porticos";
                 args.putString("monumento", monumento);
                 args.putString("titulo", getResources().getString(R.string.porticos));
+                fragment = new monumentos3();
+                cargarDialogFragment(fragment);
                 break;
             case R.id.capilladolores:
                 monumento = "dolores";

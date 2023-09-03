@@ -138,8 +138,8 @@ public class diagosto extends Fragment implements View.OnClickListener {
         obtenerImagenFirebase("categorias/fiestas/diagosto2.png", img2);
 
         //Setter de los videos de la interfaz
-        //Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.diagosto);
-        //videoView.setVideoURI(uri);
+        Uri uri = Uri.parse("android.resource://"+ requireActivity().getPackageName()+"/"+R.raw.diagosto);
+        videoView.setVideoURI(uri);
 
         btnPlay.setOnClickListener(this);
         btnPause.setOnClickListener(this);
