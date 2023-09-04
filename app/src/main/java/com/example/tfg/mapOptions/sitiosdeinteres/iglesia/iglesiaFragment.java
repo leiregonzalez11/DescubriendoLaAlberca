@@ -259,9 +259,11 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 cargarDialogFragment(fragment);
                 break;
             case R.id.retablocristosudor:
-                monumento = "retablocristosudor";
+                monumento = "cristodelsudor";
                 args.putString("monumento", monumento);
                 args.putString("titulo", getResources().getString(R.string.cristosudor));
+                fragment = new monumentos4();
+                cargarDialogFragment(fragment);
                 break;
             case R.id.capillacentral:
                 monumento = "capillamayor";
@@ -286,9 +288,11 @@ public class iglesiaFragment extends DialogFragment implements View.OnClickListe
                 cargarDialogFragment(fragment);
                 break;
             case R.id.capilladolores:
-                monumento = "dolores";
+                monumento = "virgendelosdolores";
                 args.putString("monumento", monumento);
                 args.putString("titulo", getResources().getString(R.string.virgendolores));
+                fragment = new monumentos3();
+                cargarDialogFragment(fragment);
                 break;
             case R.id.torre:
                 monumento = "torre";

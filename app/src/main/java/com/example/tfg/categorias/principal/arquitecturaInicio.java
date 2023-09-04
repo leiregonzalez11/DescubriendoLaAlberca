@@ -110,7 +110,7 @@ public class arquitecturaInicio extends Fragment {
         text2.setText(datos[1] + HtmlCompat.fromHtml("<br>", HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         //SLIDER
-        int[] images = new int[]{R.drawable.laalberca1, R.drawable.laalberca2, R.drawable.laalberca3, R.drawable.laalberca4};
+        int[] images = new int[]{R.drawable.arqui1, R.drawable.arqui2, R.drawable.arqui3};
         SliderAdapter adapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(adapter);
         sliderView.setSliderTransformAnimation(SliderAnimations.FADETRANSFORMATION);
