@@ -16,4 +16,4 @@ conocidos, los servicios que ofrece el pueblo, dónde aparcar...
 En resumidas cuentas, se trata de una guía muy completa cuya finalidad y objetivo final es
 servir de ayuda a todo aquel que la necesite: desde un forastero a un vecino del pueblo.
 
-![Logo de la aplicación] (../figures/app/logo.jpg)
+![Logo de la aplicación](../figures/app/logo.jpg)
